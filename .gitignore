@@ -15,5 +15,3 @@ dist/
 .idea/
 .DS_Store
 exercises.json
-review-queue.csv
-review-summary.json
