@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/free-exercise-db-plusplus.schema.json",
+  "title": "Free Exercise DB++",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metadata",
+    "exercises"
+  ],
+  "$defs": {
+    "muscle": {
+      "type": "string",
+      "enum": [
+        "abdominals",
+        "abductors",
+        "adductors",
+        "biceps",
+        "calves",
+        "chest",
+        "forearms",
+        "glutes",
+        "hamstrings",
+        "lats",
+        "lower_back",
+        "middle_back",
+        "neck",
+        "quadriceps",
+        "shoulders",
+        "traps",
+        "triceps",
+        "tibialis",
+        "rotator_cuff",
+        "hip_flexors"
+      ]
+    },
+    "muscleArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/muscle"
+      }
+    },
+    "sourceExercise": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "force",
+        "level",
+        "mechanic",
+        "equipment",
+        "primaryMuscles",
+        "secondaryMuscles",
+        "instructions",
+        "category",
+        "images"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "force": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "level": {
+          "type": "string"
+        },
+        "mechanic": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "equipment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "primaryMuscles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "secondaryMuscles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "instructions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "converterVersion",
+        "generatedAt",
+        "upstream",
+        "setCredits",
+        "muscleOntology",
+        "sourceExerciseCount",
+        "outputExerciseCount",
+        "completeness"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "type": "string"
+        },
+        "converterVersion": {
+          "type": "string"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "upstream": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "project",
+            "sourceUrl",
+            "sha256"
+          ],
+          "properties": {
+            "project": {
+              "type": "string"
+            },
+            "sourceUrl": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "setCredits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "direct",
+            "indirect",
+            "stabilizer"
+          ],
+          "properties": {
+            "direct": {
+              "type": "number"
+            },
+            "indirect": {
+              "type": "number"
+            },
+            "stabilizer": {
+              "type": "number"
+            }
+          }
+        },
+        "muscleOntology": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/muscle"
+          }
+        },
+        "sourceExerciseCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputExerciseCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "completeness": {
+          "type": "string",
+          "enum": [
+            "full",
+            "fixture",
+            "partial"
+          ]
+        }
+      }
+    },
+    "exercises": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "exerciseId",
+          "annotation",
+          "source"
+        ],
+        "properties": {
+          "exerciseId": {
+            "type": "string"
+          },
+          "annotation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "patterns",
+              "direct",
+              "indirect",
+              "stabilizers",
+              "volumeEligible",
+              "confidence",
+              "reviewReasons"
+            ],
+            "properties": {
+              "patterns": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "direct": {
+                "$ref": "#/$defs/muscleArray"
+              },
+              "indirect": {
+                "$ref": "#/$defs/muscleArray"
+              },
+              "stabilizers": {
+                "$ref": "#/$defs/muscleArray"
+              },
+              "volumeEligible": {
+                "type": "boolean"
+              },
+              "confidence": {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "reviewReasons": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "source": {
+            "$ref": "#/$defs/sourceExercise"
+          }
+        }
+      }
+    }
+  }
+}

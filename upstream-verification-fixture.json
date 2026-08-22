@@ -1,0 +1,108 @@
+[
+  {
+    "id": "Alternate_Incline_Dumbbell_Curl",
+    "name": "Alternate Incline Dumbbell Curl",
+    "force": "pull",
+    "level": "beginner",
+    "mechanic": "isolation",
+    "equipment": "dumbbell",
+    "primaryMuscles": [
+      "biceps"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
+    "instructions": [
+      "Sit on an incline bench and curl the dumbbells while keeping the upper arms relatively stationary."
+    ],
+    "category": "strength",
+    "images": [
+      "Alternate_Incline_Dumbbell_Curl/0.jpg",
+      "Alternate_Incline_Dumbbell_Curl/1.jpg"
+    ]
+  },
+  {
+    "id": "Barbell_Bench_Press_-_Medium_Grip",
+    "name": "Barbell Bench Press - Medium Grip",
+    "force": "push",
+    "level": "beginner",
+    "mechanic": "compound",
+    "equipment": "barbell",
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "instructions": [
+      "Lower the bar to the chest under control and press it upward."
+    ],
+    "category": "strength",
+    "images": [
+      "Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+      "Barbell_Bench_Press_-_Medium_Grip/1.jpg"
+    ]
+  },
+  {
+    "id": "Barbell_Full_Squat",
+    "name": "Barbell Full Squat",
+    "force": "push",
+    "level": "intermediate",
+    "mechanic": "compound",
+    "equipment": "barbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "calves",
+      "glutes",
+      "hamstrings",
+      "lower back"
+    ],
+    "instructions": [
+      "Descend by flexing the hips and knees, then stand by extending them."
+    ],
+    "category": "strength",
+    "images": [
+      "Barbell_Full_Squat/0.jpg",
+      "Barbell_Full_Squat/1.jpg"
+    ]
+  },
+  {
+    "id": "Standing_Calf_Raises",
+    "name": "Standing Calf Raises",
+    "force": "push",
+    "level": "beginner",
+    "mechanic": "isolation",
+    "equipment": "machine",
+    "primaryMuscles": [
+      "calves"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "Plantar flex the ankles to raise the heels, then lower under control."
+    ],
+    "category": "strength",
+    "images": []
+  },
+  {
+    "id": "Sample_Hamstring_Stretch",
+    "name": "Sample Hamstring Stretch",
+    "force": "static",
+    "level": "beginner",
+    "mechanic": null,
+    "equipment": null,
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "instructions": [
+      "Hold a comfortable hamstring stretch."
+    ],
+    "category": "stretching",
+    "images": []
+  }
+]
