@@ -236,3 +236,4 @@ jobs:
 
           git commit -m "build: regenerate Free Exercise DB++ [skip ci]"
           git push
+
