@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.1.0"
-CONVERTER_VERSION = "0.1.0"
+CONVERTER_VERSION = "0.2.0"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -159,6 +159,79 @@ PATTERNS: dict[str, dict[str, list[str]]] = {
     "plantar_flexion_straight_knee": {
         "direct": ["calves"], "indirect": [], "stabilizers": []
     },
+    "leg_press": {
+        "direct": ["quadriceps", "glutes"],
+        "indirect": ["adductors"],
+        "stabilizers": [],
+    },
+    "conventional_deadlift": {
+        "direct": ["glutes", "hamstrings"],
+        "indirect": ["quadriceps"],
+        "stabilizers": ["lower_back", "traps", "forearms", "lats"],
+    },
+    "sumo_deadlift": {
+        "direct": ["glutes", "quadriceps", "adductors"],
+        "indirect": ["hamstrings"],
+        "stabilizers": ["lower_back", "traps", "forearms"],
+    },
+    "chest_fly": {
+        "direct": ["chest"], "indirect": [], "stabilizers": ["shoulders"]
+    },
+    "pullover": {
+        "direct": ["lats"], "indirect": ["chest"], "stabilizers": ["triceps"]
+    },
+    "upright_row": {
+        "direct": ["shoulders", "traps"],
+        "indirect": ["biceps"],
+        "stabilizers": ["forearms"],
+    },
+    "face_pull": {
+        "direct": ["shoulders", "middle_back"],
+        "indirect": ["traps", "biceps"],
+        "stabilizers": ["forearms"],
+    },
+    "shoulder_flexion": {
+        "direct": ["shoulders"], "indirect": [], "stabilizers": []
+    },
+    "shoulder_internal_rotation": {
+        "direct": ["rotator_cuff"], "indirect": [], "stabilizers": []
+    },
+    "hip_flexion": {
+        "direct": ["hip_flexors"], "indirect": ["abdominals"], "stabilizers": []
+    },
+    "plantar_flexion_bent_knee": {
+        "direct": ["calves"], "indirect": [], "stabilizers": []
+    },
+    "dorsiflexion": {
+        "direct": ["tibialis"], "indirect": [], "stabilizers": []
+    },
+    "anti_extension": {
+        "direct": ["abdominals"], "indirect": [], "stabilizers": ["shoulders"]
+    },
+    "lateral_flexion": {
+        "direct": ["abdominals"], "indirect": [], "stabilizers": []
+    },
+    "farmer_carry": {
+        "direct": ["forearms", "traps"],
+        "indirect": [],
+        "stabilizers": ["abdominals", "lower_back"],
+    },
+    "loaded_carry": {
+        "direct": ["forearms"], "indirect": ["traps"],
+        "stabilizers": ["abdominals", "lower_back"],
+    },
+    "sled_push": {
+        "direct": ["quadriceps", "glutes"], "indirect": ["calves"],
+        "stabilizers": ["abdominals"],
+    },
+    "sled_pull": {
+        "direct": ["quadriceps", "glutes"], "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["forearms"],
+    },
+    "kettlebell_swing": {
+        "direct": ["glutes", "hamstrings"], "indirect": [],
+        "stabilizers": ["lower_back", "forearms"],
+    },
     "trunk_flexion": {
         "direct": ["abdominals"], "indirect": [], "stabilizers": []
     },
@@ -224,16 +297,29 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "vertical_press"
     if "pull-up" in name or "pull up" in name or "chin-up" in name or "chin up" in name or "pulldown" in name:
         return "vertical_pull"
+    if "face pull" in name:
+        return "face_pull"
+    if "upright row" in name:
+        return "upright_row"
     if "row" in name:
         return "horizontal_pull"
     if "shrug" in name:
         return "shrug"
+    if "pullover" in name or "pull-over" in name:
+        return "pullover"
+    if any(x in name for x in ["pec deck", "butterfly", "chest fly", "chest flye",
+                               "dumbbell fly", "dumbbell flye", "cable crossover"]):
+        return "chest_fly"
     if "reverse fly" in name or "rear delt" in name:
         return "reverse_fly"
     if "lateral raise" in name or "side lateral" in name:
         return "shoulder_abduction"
+    if "front raise" in name:
+        return "shoulder_flexion"
     if "external rotation" in name:
         return "shoulder_external_rotation"
+    if "internal rotation" in name:
+        return "shoulder_internal_rotation"
     if "hammer curl" in name or "reverse curl" in name:
         return "elbow_flexion_brachioradialis_bias"
     if "curl" in name and ("leg curl" not in name):
@@ -244,6 +330,8 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "wrist_flexion"
     if "reverse wrist curl" in name or "wrist extension" in name:
         return "wrist_extension"
+    if "leg press" in name:
+        return "leg_press"
     if "leg extension" in name:
         return "knee_extension"
     if "leg curl" in name:
@@ -256,22 +344,50 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "squat_quad_bias"
     if "squat" in name:
         return "squat"
-    if any(x in name for x in ["romanian deadlift", "stiff-legged deadlift", "stiff legged deadlift", "good morning"]):
+    if "sumo deadlift" in name:
+        return "sumo_deadlift"
+    if any(x in name for x in ["romanian deadlift", "stiff-legged deadlift", "stiff legged deadlift",
+                               "stiff-leg deadlift", "good morning"]):
         return "hip_hinge"
-    if "hip thrust" in name or "glute bridge" in name:
+    if "deadlift" in name:
+        return "conventional_deadlift"
+    if any(x in name for x in ["hip thrust", "glute bridge", "glute kickback",
+                                 "glute kick back", "pull-through", "pull through"]):
         return "hip_extension"
+    if any(x in name for x in ["hip flexion", "knee raise", "leg raise"]):
+        return "hip_flexion"
     if "abduction" in name:
         return "hip_abduction"
     if "adduction" in name:
         return "hip_adduction"
-    if "calf raise" in name or "calf press" in name:
+    if "seated calf" in name or "seated toe raise" in name:
+        return "plantar_flexion_bent_knee"
+    if "calf raise" in name or "calf press" in name or "toe raise" in name:
         return "plantar_flexion_straight_knee"
+    if "tibialis raise" in name or "dorsiflexion" in name:
+        return "dorsiflexion"
+    if any(x in name for x in ["ab wheel", "ab roller", "rollout", "roll-out"]):
+        return "anti_extension"
+    if "side bend" in name or "side plank" in name:
+        return "lateral_flexion"
     if any(x in name for x in ["crunch", "sit-up", "sit up"]):
         return "trunk_flexion"
+    if "plank" in name:
+        return "anti_extension"
     if "back extension" in name or "hyperextension" in name:
         return "trunk_extension"
-    if "russian twist" in name or "wood chop" in name or "woodchop" in name:
+    if "russian twist" in name or "wood chop" in name or "woodchop" in name or "torso rotation" in name:
         return "trunk_rotation"
+    if "farmer" in name and "walk" in name:
+        return "farmer_carry"
+    if exercise.get("category") == "strongman" and ("carry" in name or "walk" in name):
+        return "loaded_carry"
+    if "sled push" in name or "prowler" in name:
+        return "sled_push"
+    if "sled" in name and ("pull" in name or "drag" in name):
+        return "sled_pull"
+    if "kettlebell swing" in name:
+        return "kettlebell_swing"
 
     # A small muscle-informed assist for obvious isolation records.
     if exercise.get("mechanic") == "isolation":

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.1.0",
-    "converterVersion": "0.1.0",
-    "generatedAt": "2026-08-22T17:25:19.699154+00:00",
+    "converterVersion": "0.2.0",
+    "generatedAt": "2026-08-22T18:47:35.591387+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
