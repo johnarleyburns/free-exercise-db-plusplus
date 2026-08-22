@@ -1,0 +1,659 @@
+exerciseId,name,category,mechanic,primary,secondary,patterns,direct,indirect,stabilizers,confidence,reviewReasons
+Air_Bike,Air Bike,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Alternating_Floor_Press,Alternating Floor Press,strength,compound,chest,"abdominals, shoulders, triceps",,chest,"abdominals, shoulders, triceps",,low,compound_fallback_requires_review
+Alternating_Hang_Clean,Alternating Hang Clean,strength,compound,hamstrings,"biceps, calves, forearms, glutes, lower back, traps",,hamstrings,"biceps, calves, forearms, glutes, lower_back, traps",,low,compound_fallback_requires_review
+Alternating_Kettlebell_Press,Alternating Kettlebell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Anti-Gravity_Press,Anti-Gravity Press,strength,compound,shoulders,"middle back, traps, triceps",,shoulders,"middle_back, traps, triceps",,low,compound_fallback_requires_review
+Arnold_Dumbbell_Press,Arnold Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Around_The_Worlds,Around The Worlds,strength,compound,chest,shoulders,,chest,shoulders,,low,compound_fallback_requires_review
+Atlas_Stone_Trainer,Atlas Stone Trainer,strongman,compound,lower back,"biceps, forearms, glutes, hamstrings, quadriceps",,lower_back,"biceps, forearms, glutes, hamstrings, quadriceps",,low,compound_fallback_requires_review
+Atlas_Stones,Atlas Stones,strongman,compound,lower back,"abdominals, adductors, biceps, calves, forearms, glutes, hamstrings, middle back, quadriceps, traps",,lower_back,"abdominals, adductors, biceps, calves, forearms, glutes, hamstrings, middle_back, quadriceps, traps",,low,compound_fallback_requires_review
+Back_Flyes_-_With_Bands,Back Flyes - With Bands,strength,compound,shoulders,"middle back, triceps",,shoulders,"middle_back, triceps",,low,compound_fallback_requires_review
+Backward_Drag,Backward Drag,strongman,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back",,low,compound_fallback_requires_review
+Balance_Board,Balance Board,strength,compound,calves,"hamstrings, quadriceps",,calves,"hamstrings, quadriceps",,low,compound_fallback_requires_review
+Barbell_Incline_Shoulder_Raise,Barbell Incline Shoulder Raise,strength,compound,shoulders,chest,,shoulders,chest,,low,compound_fallback_requires_review
+Battling_Ropes,Battling Ropes,strength,compound,shoulders,"chest, forearms",,shoulders,"chest, forearms",,low,compound_fallback_requires_review
+Bench_Dips,Bench Dips,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Bent_Press,Bent Press,strength,compound,abdominals,"glutes, hamstrings, lower back, quadriceps, shoulders, triceps",,abdominals,"glutes, hamstrings, lower_back, quadriceps, shoulders, triceps",,low,compound_fallback_requires_review
+Bent-Knee_Hip_Raise,Bent-Knee Hip Raise,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Board_Press,Board Press,powerlifting,compound,triceps,"chest, forearms, lats, shoulders",,triceps,"chest, forearms, lats, shoulders",,low,compound_fallback_requires_review
+Bottoms_Up,Bottoms Up,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Bottoms-Up_Clean_From_The_Hang_Position,Bottoms-Up Clean From The Hang Position,strength,compound,forearms,"biceps, shoulders",,forearms,"biceps, shoulders",,low,compound_fallback_requires_review
+Bradford_Rocky_Presses,Bradford/Rocky Presses,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Butt-Ups,Butt-Ups,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Cable_Judo_Flip,Cable Judo Flip,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Chain_Press,Chain Press,powerlifting,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Circus_Bell,Circus Bell,strongman,compound,shoulders,"forearms, glutes, hamstrings, lower back, traps, triceps",,shoulders,"forearms, glutes, hamstrings, lower_back, traps, triceps",,low,compound_fallback_requires_review
+Clean,Clean,olympic weightlifting,compound,hamstrings,"calves, forearms, glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"calves, forearms, glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Clean_and_Jerk,Clean and Jerk,olympic weightlifting,compound,shoulders,"abdominals, glutes, hamstrings, lower back, quadriceps, traps, triceps",,shoulders,"abdominals, glutes, hamstrings, lower_back, quadriceps, traps, triceps",,low,compound_fallback_requires_review
+Clean_and_Press,Clean and Press,strength,compound,shoulders,"abdominals, calves, glutes, hamstrings, lower back, middle back, quadriceps, shoulders, traps, triceps",,shoulders,"abdominals, calves, glutes, hamstrings, lower_back, middle_back, quadriceps, traps, triceps",,low,compound_fallback_requires_review
+Clean_from_Blocks,Clean from Blocks,olympic weightlifting,compound,quadriceps,"calves, glutes, hamstrings, shoulders, traps",,quadriceps,"calves, glutes, hamstrings, shoulders, traps",,low,compound_fallback_requires_review
+Clean_Pull,Clean Pull,olympic weightlifting,compound,quadriceps,"forearms, glutes, hamstrings, lower back, traps",,quadriceps,"forearms, glutes, hamstrings, lower_back, traps",,low,compound_fallback_requires_review
+Close-Grip_Dumbbell_Press,Close-Grip Dumbbell Press,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Close-Grip_EZ-Bar_Press,Close-Grip EZ-Bar Press,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Cocoons,Cocoons,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Conans_Wheel,Conan's Wheel,strongman,compound,quadriceps,"abdominals, biceps, calves, forearms, lower back, shoulders, traps",,quadriceps,"abdominals, biceps, calves, forearms, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+Cross_Over_-_With_Bands,Cross Over - With Bands,strength,compound,chest,"biceps, shoulders",,chest,"biceps, shoulders",,low,compound_fallback_requires_review
+Cuban_Press,Cuban Press,strength,compound,shoulders,traps,,shoulders,traps,,low,compound_fallback_requires_review
+Dead_Bug,Dead Bug,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Dip_Machine,Dip Machine,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Dips_-_Chest_Version,Dips - Chest Version,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Dips_-_Triceps_Version,Dips - Triceps Version,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Double_Kettlebell_Alternating_Hang_Clean,Double Kettlebell Alternating Hang Clean,strength,compound,hamstrings,"biceps, calves, forearms, glutes, lower back, quadriceps, traps",,hamstrings,"biceps, calves, forearms, glutes, lower_back, quadriceps, traps",,low,compound_fallback_requires_review
+Double_Kettlebell_Jerk,Double Kettlebell Jerk,strength,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+Double_Kettlebell_Push_Press,Double Kettlebell Push Press,strength,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+Double_Kettlebell_Snatch,Double Kettlebell Snatch,strength,compound,shoulders,"glutes, hamstrings, quadriceps",,shoulders,"glutes, hamstrings, quadriceps",,low,compound_fallback_requires_review
+Double_Kettlebell_Windmill,Double Kettlebell Windmill,strength,,abdominals,"glutes, hamstrings, shoulders, triceps",,abdominals,"glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Dumbbell_Clean,Dumbbell Clean,strength,compound,hamstrings,"calves, forearms, glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"calves, forearms, glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Dumbbell_Floor_Press,Dumbbell Floor Press,powerlifting,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Dumbbell_Raise,Dumbbell Raise,strength,compound,shoulders,biceps,,shoulders,biceps,,low,compound_fallback_requires_review
+Elbow_to_Knee,Elbow to Knee,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Exercise_Ball_Pull-In,Exercise Ball Pull-In,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Extended_Range_One-Arm_Kettlebell_Floor_Press,Extended Range One-Arm Kettlebell Floor Press,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Flat_Bench_Leg_Pull-In,Flat Bench Leg Pull-In,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Floor_Press,Floor Press,powerlifting,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Floor_Press_with_Chains,Floor Press with Chains,powerlifting,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Flutter_Kicks,Flutter Kicks,strength,compound,glutes,hamstrings,,glutes,hamstrings,,low,compound_fallback_requires_review
+Forward_Drag_with_Press,Forward Drag with Press,strongman,compound,chest,"calves, glutes, hamstrings, quadriceps, shoulders, triceps",,chest,"calves, glutes, hamstrings, quadriceps, shoulders, triceps",,low,compound_fallback_requires_review
+Gironda_Sternum_Chins,Gironda Sternum Chins,strength,compound,lats,"biceps, middle back",,lats,"biceps, middle_back",,low,compound_fallback_requires_review
+Glute_Ham_Raise,Glute Ham Raise,powerlifting,compound,hamstrings,"calves, glutes",,hamstrings,"calves, glutes",,low,compound_fallback_requires_review
+Hang_Clean,Hang Clean,olympic weightlifting,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back, shoulders, traps",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+Hang_Clean_-_Below_the_Knees,Hang Clean - Below the Knees,olympic weightlifting,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back, shoulders, traps",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+Hang_Snatch,Hang Snatch,olympic weightlifting,compound,hamstrings,"abdominals, calves, forearms, glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"abdominals, calves, forearms, glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Hang_Snatch_-_Below_Knees,Hang Snatch - Below Knees,olympic weightlifting,compound,hamstrings,"abdominals, calves, forearms, glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"abdominals, calves, forearms, glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Hanging_Pike,Hanging Pike,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Heaving_Snatch_Balance,Heaving Snatch Balance,olympic weightlifting,compound,quadriceps,"abdominals, forearms, glutes, hamstrings, shoulders, triceps",,quadriceps,"abdominals, forearms, glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Hip_Extension_with_Bands,Hip Extension with Bands,strength,compound,glutes,hamstrings,,glutes,hamstrings,,low,compound_fallback_requires_review
+Hip_Lift_with_Band,Hip Lift with Band,powerlifting,compound,glutes,"calves, hamstrings",,glutes,"calves, hamstrings",,low,compound_fallback_requires_review
+Incline_Dumbbell_Bench_With_Palms_Facing_In,Incline Dumbbell Bench With Palms Facing In,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Iron_Cross,Iron Cross,strength,compound,shoulders,"chest, glutes, hamstrings, lower back, quadriceps, traps",,shoulders,"chest, glutes, hamstrings, lower_back, quadriceps, traps",,low,compound_fallback_requires_review
+Isometric_Wipers,Isometric Wipers,strength,compound,chest,"abdominals, shoulders, triceps",,chest,"abdominals, shoulders, triceps",,low,compound_fallback_requires_review
+Jerk_Balance,Jerk Balance,olympic weightlifting,compound,shoulders,"glutes, hamstrings, quadriceps, triceps",,shoulders,"glutes, hamstrings, quadriceps, triceps",,low,compound_fallback_requires_review
+JM_Press,JM Press,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Keg_Load,Keg Load,strongman,compound,lower back,"abdominals, biceps, calves, forearms, glutes, hamstrings, middle back, quadriceps, shoulders, traps",,lower_back,"abdominals, biceps, calves, forearms, glutes, hamstrings, middle_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Kettlebell_Dead_Clean,Kettlebell Dead Clean,strength,compound,hamstrings,"calves, glutes, lower back, quadriceps, traps",,hamstrings,"calves, glutes, lower_back, quadriceps, traps",,low,compound_fallback_requires_review
+Kettlebell_Figure_8,Kettlebell Figure 8,strength,,abdominals,"hamstrings, shoulders",,abdominals,"hamstrings, shoulders",,low,compound_fallback_requires_review
+Kettlebell_Hang_Clean,Kettlebell Hang Clean,strength,compound,hamstrings,"calves, glutes, lower back, shoulders, traps",,hamstrings,"calves, glutes, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+Kettlebell_Pass_Between_The_Legs,Kettlebell Pass Between The Legs,strength,compound,abdominals,"glutes, hamstrings, shoulders",,abdominals,"glutes, hamstrings, shoulders",,low,compound_fallback_requires_review
+Kettlebell_Pirate_Ships,Kettlebell Pirate Ships,strength,compound,shoulders,abdominals,,shoulders,abdominals,,low,compound_fallback_requires_review
+Kettlebell_Seated_Press,Kettlebell Seated Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Kettlebell_Seesaw_Press,Kettlebell Seesaw Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Kettlebell_Sumo_High_Pull,Kettlebell Sumo High Pull,strength,compound,traps,"adductors, glutes, hamstrings, quadriceps, shoulders",,traps,"adductors, glutes, hamstrings, quadriceps, shoulders",,low,compound_fallback_requires_review
+Kettlebell_Thruster,Kettlebell Thruster,strength,compound,shoulders,"quadriceps, triceps",,shoulders,"quadriceps, triceps",,low,compound_fallback_requires_review
+Kettlebell_Windmill,Kettlebell Windmill,strength,compound,abdominals,"glutes, hamstrings, shoulders, triceps",,abdominals,"glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Kipping_Muscle_Up,Kipping Muscle Up,strength,compound,lats,"abdominals, biceps, forearms, middle back, shoulders, traps, triceps",,lats,"abdominals, biceps, forearms, middle_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Landmine_180s,Landmine 180's,strength,compound,abdominals,"glutes, lower back, shoulders",,abdominals,"glutes, lower_back, shoulders",,low,compound_fallback_requires_review
+Landmine_Linear_Jammer,Landmine Linear Jammer,strength,compound,shoulders,"abdominals, calves, chest, hamstrings, quadriceps, triceps",,shoulders,"abdominals, calves, chest, hamstrings, quadriceps, triceps",,low,compound_fallback_requires_review
+Leg_Pull-In,Leg Pull-In,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Leg-Over_Floor_Press,Leg-Over Floor Press,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Log_Lift,Log Lift,strongman,compound,shoulders,"abdominals, chest, glutes, hamstrings, lower back, middle back, quadriceps, traps, triceps",,shoulders,"abdominals, chest, glutes, hamstrings, lower_back, middle_back, quadriceps, traps, triceps",,low,compound_fallback_requires_review
+London_Bridges,London Bridges,strength,compound,lats,"biceps, forearms, middle back",,lats,"biceps, forearms, middle_back",,low,compound_fallback_requires_review
+Machine_Shoulder_Military_Press,Machine Shoulder (Military) Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Mixed_Grip_Chin,Mixed Grip Chin,strength,compound,middle back,"biceps, lats",,middle_back,"biceps, lats",,low,compound_fallback_requires_review
+Monster_Walk,Monster Walk,strength,compound,abductors,,,abductors,,,low,compound_fallback_requires_review
+Muscle_Snatch,Muscle Snatch,olympic weightlifting,compound,hamstrings,"glutes, lower back, quadriceps, shoulders, triceps",,hamstrings,"glutes, lower_back, quadriceps, shoulders, triceps",,low,compound_fallback_requires_review
+Muscle_Up,Muscle Up,strength,compound,lats,"abdominals, biceps, forearms, middle back, shoulders, traps, triceps",,lats,"abdominals, biceps, forearms, middle_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Natural_Glute_Ham_Raise,Natural Glute Ham Raise,strength,compound,hamstrings,"calves, glutes, lower back",,hamstrings,"calves, glutes, lower_back",,low,compound_fallback_requires_review
+Neck_Press,Neck Press,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+One_Arm_Floor_Press,One Arm Floor Press,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Clean,One-Arm Kettlebell Clean,strength,compound,hamstrings,"glutes, lower back, shoulders, traps",,hamstrings,"glutes, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Clean_and_Jerk,One-Arm Kettlebell Clean and Jerk,strength,compound,shoulders,,,shoulders,,,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Floor_Press,One-Arm Kettlebell Floor Press,strength,compound,chest,triceps,,chest,triceps,,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Jerk,One-Arm Kettlebell Jerk,strength,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Para_Press,One-Arm Kettlebell Para Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Push_Press,One-Arm Kettlebell Push Press,strength,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Snatch,One-Arm Kettlebell Snatch,strength,compound,shoulders,"calves, glutes, hamstrings, lower back, traps, triceps",,shoulders,"calves, glutes, hamstrings, lower_back, traps, triceps",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Split_Jerk,One-Arm Kettlebell Split Jerk,strength,compound,shoulders,"glutes, hamstrings, quadriceps, triceps",,shoulders,"glutes, hamstrings, quadriceps, triceps",,low,compound_fallback_requires_review
+One-Arm_Kettlebell_Split_Snatch,One-Arm Kettlebell Split Snatch,strength,compound,shoulders,"hamstrings, quadriceps",,shoulders,"hamstrings, quadriceps",,low,compound_fallback_requires_review
+One-Arm_Medicine_Ball_Slam,One-Arm Medicine Ball Slam,strength,compound,abdominals,"lats, shoulders",,abdominals,"lats, shoulders",,low,compound_fallback_requires_review
+One-Arm_Open_Palm_Kettlebell_Clean,One-Arm Open Palm Kettlebell Clean,strength,compound,hamstrings,"forearms, glutes, lower back, quadriceps, shoulders",,hamstrings,"forearms, glutes, lower_back, quadriceps, shoulders",,low,compound_fallback_requires_review
+Open_Palm_Kettlebell_Clean,Open Palm Kettlebell Clean,strength,compound,hamstrings,"glutes, lower back, quadriceps, shoulders",,hamstrings,"glutes, lower_back, quadriceps, shoulders",,low,compound_fallback_requires_review
+Otis-Up,Otis-Up,strength,compound,abdominals,"chest, shoulders, triceps",,abdominals,"chest, shoulders, triceps",,low,compound_fallback_requires_review
+Pallof_Press_With_Rotation,Pallof Press With Rotation,strength,compound,abdominals,"chest, shoulders, triceps",,abdominals,"chest, shoulders, triceps",,low,compound_fallback_requires_review
+Parallel_Bar_Dip,Parallel Bar Dip,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Physioball_Hip_Bridge,Physioball Hip Bridge,strength,compound,glutes,hamstrings,,glutes,hamstrings,,low,compound_fallback_requires_review
+Pin_Presses,Pin Presses,powerlifting,compound,triceps,"chest, forearms, lats, middle back, shoulders",,triceps,"chest, forearms, lats, middle_back, shoulders",,low,compound_fallback_requires_review
+Plate_Twist,Plate Twist,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Plyo_Kettlebell_Pushups,Plyo Kettlebell Pushups,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Power_Clean,Power Clean,strength,compound,hamstrings,"calves, forearms, glutes, lower back, middle back, quadriceps, shoulders, traps, triceps",,hamstrings,"calves, forearms, glutes, lower_back, middle_back, quadriceps, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Power_Clean_from_Blocks,Power Clean from Blocks,olympic weightlifting,compound,hamstrings,quadriceps,,hamstrings,quadriceps,,low,compound_fallback_requires_review
+Power_Jerk,Power Jerk,olympic weightlifting,compound,quadriceps,"abdominals, calves, glutes, hamstrings, shoulders, triceps",,quadriceps,"abdominals, calves, glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Power_Snatch,Power Snatch,olympic weightlifting,compound,hamstrings,"calves, glutes, lower back, quadriceps, shoulders, traps, triceps",,hamstrings,"calves, glutes, lower_back, quadriceps, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Power_Snatch_from_Blocks,Power Snatch from Blocks,olympic weightlifting,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back, shoulders, traps, triceps",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Power_Stairs,Power Stairs,strongman,compound,hamstrings,"adductors, calves, glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"adductors, calves, glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Pullups,Pullups,strength,compound,lats,"biceps, middle back",,lats,"biceps, middle_back",,low,compound_fallback_requires_review
+Push_Press,Push Press,olympic weightlifting,compound,shoulders,"quadriceps, triceps",,shoulders,"quadriceps, triceps",,low,compound_fallback_requires_review
+Push_Press_-_Behind_the_Neck,Push Press - Behind the Neck,olympic weightlifting,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+Pushups,Pushups,strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Pushups_Close_and_Wide_Hand_Positions,Pushups (Close and Wide Hand Positions),strength,compound,chest,"shoulders, triceps",,chest,"shoulders, triceps",,low,compound_fallback_requires_review
+Rack_Delivery,Rack Delivery,olympic weightlifting,compound,shoulders,"forearms, traps",,shoulders,"forearms, traps",,low,compound_fallback_requires_review
+Rack_Pull_with_Bands,Rack Pull with Bands,powerlifting,compound,lower back,"forearms, glutes, hamstrings, quadriceps, traps",,lower_back,"forearms, glutes, hamstrings, quadriceps, traps",,low,compound_fallback_requires_review
+Rack_Pulls,Rack Pulls,powerlifting,compound,lower back,"forearms, glutes, hamstrings, traps",,lower_back,"forearms, glutes, hamstrings, traps",,low,compound_fallback_requires_review
+Ring_Dips,Ring Dips,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Rope_Climb,Rope Climb,strength,compound,lats,"biceps, forearms, middle back, shoulders",,lats,"biceps, forearms, middle_back, shoulders",,low,compound_fallback_requires_review
+Sandbag_Load,Sandbag Load,strongman,compound,quadriceps,"abdominals, biceps, calves, forearms, glutes, hamstrings, lower back, middle back, shoulders, traps",,quadriceps,"abdominals, biceps, calves, forearms, glutes, hamstrings, lower_back, middle_back, shoulders, traps",,low,compound_fallback_requires_review
+Seated_Dumbbell_Press,Seated Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Seated_Flat_Bench_Leg_Pull-In,Seated Flat Bench Leg Pull-In,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+See-Saw_Press_Alternating_Side_Press,See-Saw Press (Alternating Side Press),strength,compound,shoulders,"abdominals, triceps",,shoulders,"abdominals, triceps",,low,compound_fallback_requires_review
+Side_Bridge,Side Bridge,strength,,abdominals,shoulders,,abdominals,shoulders,,low,compound_fallback_requires_review
+Side_Jackknife,Side Jackknife,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+Side_To_Side_Chins,Side To Side Chins,strength,compound,lats,"biceps, forearms, middle back, shoulders",,lats,"biceps, forearms, middle_back, shoulders",,low,compound_fallback_requires_review
+Single-Arm_Linear_Jammer,Single-Arm Linear Jammer,strength,compound,shoulders,"chest, triceps",,shoulders,"chest, triceps",,low,compound_fallback_requires_review
+Sled_Overhead_Backward_Walk,Sled Overhead Backward Walk,strength,compound,shoulders,"calves, middle back, quadriceps",,shoulders,"calves, middle_back, quadriceps",,low,compound_fallback_requires_review
+Smith_Machine_Hang_Power_Clean,Smith Machine Hang Power Clean,strength,compound,hamstrings,"glutes, lower back, quadriceps, shoulders, traps",,hamstrings,"glutes, lower_back, quadriceps, shoulders, traps",,low,compound_fallback_requires_review
+Snatch,Snatch,olympic weightlifting,compound,quadriceps,"biceps, glutes, hamstrings, lower back, shoulders, traps, triceps",,quadriceps,"biceps, glutes, hamstrings, lower_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Snatch_Balance,Snatch Balance,olympic weightlifting,compound,quadriceps,"calves, glutes, hamstrings, shoulders, triceps",,quadriceps,"calves, glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Snatch_from_Blocks,Snatch from Blocks,olympic weightlifting,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back, shoulders, traps, triceps",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Snatch_Pull,Snatch Pull,strength,compound,hamstrings,"calves, glutes, lower back, quadriceps, traps",,hamstrings,"calves, glutes, lower_back, quadriceps, traps",,low,compound_fallback_requires_review
+Spell_Caster,Spell Caster,strength,compound,abdominals,"glutes, shoulders",,abdominals,"glutes, shoulders",,low,compound_fallback_requires_review
+Spider_Crawl,Spider Crawl,strength,compound,abdominals,"chest, shoulders, triceps",,abdominals,"chest, shoulders, triceps",,low,compound_fallback_requires_review
+Split_Clean,Split Clean,olympic weightlifting,compound,quadriceps,"calves, forearms, glutes, hamstrings, lower back, shoulders, traps",,quadriceps,"calves, forearms, glutes, hamstrings, lower_back, shoulders, traps",,low,compound_fallback_requires_review
+Split_Jerk,Split Jerk,olympic weightlifting,compound,quadriceps,"glutes, hamstrings, shoulders, triceps",,quadriceps,"glutes, hamstrings, shoulders, triceps",,low,compound_fallback_requires_review
+Split_Snatch,Split Snatch,olympic weightlifting,compound,hamstrings,"calves, forearms, glutes, hamstrings, lower back, quadriceps, shoulders, traps, triceps",,hamstrings,"calves, forearms, glutes, lower_back, quadriceps, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Standing_Alternating_Dumbbell_Press,Standing Alternating Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Standing_Barbell_Press_Behind_Neck,Standing Barbell Press Behind Neck,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Standing_Bradford_Press,Standing Bradford Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Standing_Cable_Lift,Standing Cable Lift,strength,compound,abdominals,shoulders,,abdominals,shoulders,,low,compound_fallback_requires_review
+Standing_Dumbbell_Press,Standing Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Standing_Palm-In_One-Arm_Dumbbell_Press,Standing Palm-In One-Arm Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Standing_Palms-In_Dumbbell_Press,Standing Palms-In Dumbbell Press,strength,compound,shoulders,triceps,,shoulders,triceps,,low,compound_fallback_requires_review
+Svend_Press,Svend Press,strength,compound,chest,"forearms, shoulders, triceps",,chest,"forearms, shoulders, triceps",,low,compound_fallback_requires_review
+Tire_Flip,Tire Flip,strongman,compound,quadriceps,"calves, chest, forearms, glutes, hamstrings, lower back, shoulders, traps, triceps",,quadriceps,"calves, chest, forearms, glutes, hamstrings, lower_back, shoulders, traps, triceps",,low,compound_fallback_requires_review
+Two-Arm_Kettlebell_Clean,Two-Arm Kettlebell Clean,strength,compound,shoulders,"calves, glutes, hamstrings, lower back, traps",,shoulders,"calves, glutes, hamstrings, lower_back, traps",,low,compound_fallback_requires_review
+Two-Arm_Kettlebell_Jerk,Two-Arm Kettlebell Jerk,strength,compound,shoulders,"calves, quadriceps, triceps",,shoulders,"calves, quadriceps, triceps",,low,compound_fallback_requires_review
+V-Bar_Pullup,V-Bar Pullup,strength,compound,lats,"biceps, middle back, shoulders",,lats,"biceps, middle_back, shoulders",,low,compound_fallback_requires_review
+Weighted_Bench_Dip,Weighted Bench Dip,strength,compound,triceps,"chest, shoulders",,triceps,"chest, shoulders",,low,compound_fallback_requires_review
+Wide_Stance_Stiff_Legs,Wide Stance Stiff Legs,olympic weightlifting,compound,hamstrings,"adductors, glutes, lower back",,hamstrings,"adductors, glutes, lower_back",,low,compound_fallback_requires_review
+Wind_Sprints,Wind Sprints,strength,compound,abdominals,,,abdominals,,,low,compound_fallback_requires_review
+3_4_Sit-Up,3/4 Sit-Up,strength,compound,abdominals,,trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Ab_Roller,Ab Roller,strength,compound,abdominals,shoulders,anti_extension,abdominals,,shoulders,medium,rule_based_compound_mapping
+Alternating_Cable_Shoulder_Press,Alternating Cable Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Alternating_Deltoid_Raise,Alternating Deltoid Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Alternating_Renegade_Row,Alternating Renegade Row,strength,compound,middle back,"abdominals, biceps, chest, lats, triceps",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Axle_Deadlift,Axle Deadlift,strongman,compound,lower back,"forearms, glutes, hamstrings, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Band_Assisted_Pull-Up,Band Assisted Pull-Up,strength,compound,lats,"abdominals, forearms, middle back",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Band_Good_Morning,Band Good Morning,powerlifting,compound,hamstrings,"glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Band_Good_Morning_Pull_Through,Band Good Morning (Pull Through),powerlifting,compound,hamstrings,"glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Band_Pull_Apart,Band Pull Apart,strength,isolation,shoulders,"middle back, traps",,shoulders,"middle_back, traps",,medium,isolation_primary_secondary_fallback
+Barbell_Ab_Rollout,Barbell Ab Rollout,strength,compound,abdominals,"lower back, shoulders",anti_extension,abdominals,,shoulders,medium,rule_based_compound_mapping
+Barbell_Ab_Rollout_-_On_Knees,Barbell Ab Rollout - On Knees,strength,compound,abdominals,"lower back, shoulders",anti_extension,abdominals,,shoulders,medium,rule_based_compound_mapping
+Barbell_Deadlift,Barbell Deadlift,strength,compound,lower back,"calves, forearms, glutes, hamstrings, lats, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Barbell_Glute_Bridge,Barbell Glute Bridge,powerlifting,compound,glutes,"calves, hamstrings",hip_extension,glutes,hamstrings,lower_back,medium,rule_based_compound_mapping
+Barbell_Guillotine_Bench_Press,Barbell Guillotine Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Barbell_Hack_Squat,Barbell Hack Squat,strength,compound,quadriceps,"calves, forearms, hamstrings",squat_quad_bias,quadriceps,"glutes, adductors",lower_back,medium,rule_based_compound_mapping
+Barbell_Hip_Thrust,Barbell Hip Thrust,powerlifting,compound,glutes,"calves, hamstrings",hip_extension,glutes,hamstrings,lower_back,medium,rule_based_compound_mapping
+Barbell_Incline_Bench_Press_-_Medium_Grip,Barbell Incline Bench Press - Medium Grip,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Barbell_Lunge,Barbell Lunge,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Barbell_Rear_Delt_Row,Barbell Rear Delt Row,strength,compound,shoulders,"biceps, lats, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Barbell_Rollout_from_Bench,Barbell Rollout from Bench,strength,compound,abdominals,"glutes, hamstrings, lats, shoulders",anti_extension,abdominals,,shoulders,medium,rule_based_compound_mapping
+Barbell_Shoulder_Press,Barbell Shoulder Press,strength,compound,shoulders,"chest, triceps",vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Barbell_Side_Split_Squat,Barbell Side Split Squat,strength,compound,quadriceps,"calves, hamstrings, lower back",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Barbell_Squat,Barbell Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Barbell_Squat_To_A_Bench,Barbell Squat To A Bench,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Barbell_Step_Ups,Barbell Step Ups,strength,compound,quadriceps,"calves, glutes, hamstrings, quadriceps",step_up,"quadriceps, glutes",adductors,calves,medium,rule_based_compound_mapping
+Barbell_Walking_Lunge,Barbell Walking Lunge,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Bear_Crawl_Sled_Drags,Bear Crawl Sled Drags,strongman,compound,quadriceps,"calves, glutes, hamstrings",sled_pull,"quadriceps, glutes","hamstrings, calves",forearms,medium,rule_based_compound_mapping
+Bench_Press_-_Powerlifting,Bench Press - Powerlifting,powerlifting,compound,triceps,"chest, forearms, lats, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Bench_Press_-_With_Bands,Bench Press - With Bands,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Bench_Press_with_Chains,Bench Press with Chains,powerlifting,compound,triceps,"chest, lats, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Bent_Over_Barbell_Row,Bent Over Barbell Row,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bent_Over_One-Arm_Long_Bar_Row,Bent Over One-Arm Long Bar Row,strength,compound,middle back,"biceps, lats, lower back, traps",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bent_Over_Two-Arm_Long_Bar_Row,Bent Over Two-Arm Long Bar Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bent_Over_Two-Dumbbell_Row,Bent Over Two-Dumbbell Row,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bent_Over_Two-Dumbbell_Row_With_Palms_In,Bent Over Two-Dumbbell Row With Palms In,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bent-Arm_Barbell_Pullover,Bent-Arm Barbell Pullover,strength,compound,lats,"chest, lats, shoulders, triceps",pullover,lats,chest,triceps,medium,rule_based_compound_mapping
+Bent-Arm_Dumbbell_Pullover,Bent-Arm Dumbbell Pullover,strength,compound,chest,"lats, shoulders, triceps",pullover,lats,chest,triceps,medium,rule_based_compound_mapping
+Bodyweight_Flyes,Bodyweight Flyes,strength,isolation,chest,"abdominals, shoulders, triceps",,chest,"abdominals, shoulders, triceps",,medium,isolation_primary_secondary_fallback
+Bodyweight_Mid_Row,Bodyweight Mid Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Bodyweight_Squat,Bodyweight Squat,strength,compound,quadriceps,"glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Bodyweight_Walking_Lunge,Bodyweight Walking Lunge,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Box_Squat,Box Squat,powerlifting,compound,quadriceps,"adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Box_Squat_with_Bands,Box Squat with Bands,powerlifting,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Box_Squat_with_Chains,Box Squat with Chains,strength,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Butt_Lift_Bridge,Butt Lift (Bridge),strength,isolation,glutes,hamstrings,,glutes,hamstrings,,medium,isolation_primary_secondary_fallback
+Cable_Chest_Press,Cable Chest Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Cable_Deadlifts,Cable Deadlifts,strength,compound,quadriceps,"forearms, glutes, hamstrings, lower back",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Cable_Internal_Rotation,Cable Internal Rotation,strength,compound,shoulders,,shoulder_internal_rotation,rotator_cuff,,,medium,rule_based_compound_mapping
+Cable_Iron_Cross,Cable Iron Cross,strength,isolation,chest,,,chest,,,medium,isolation_primary_secondary_fallback
+Cable_Rope_Rear-Delt_Rows,Cable Rope Rear-Delt Rows,strength,compound,shoulders,"biceps, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Cable_Russian_Twists,Cable Russian Twists,strength,compound,abdominals,,trunk_rotation,abdominals,,,medium,rule_based_compound_mapping
+Cable_Shoulder_Press,Cable Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Car_Deadlift,Car Deadlift,strongman,compound,quadriceps,"forearms, glutes, hamstrings, lower back, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Car_Drivers,Car Drivers,strength,isolation,shoulders,forearms,,shoulders,forearms,,medium,isolation_primary_secondary_fallback
+Chair_Squat,Chair Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Chin-Up,Chin-Up,strength,compound,lats,"biceps, forearms, middle back",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Clean_Deadlift,Clean Deadlift,olympic weightlifting,compound,hamstrings,"forearms, glutes, lower back, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Clean_Shrug,Clean Shrug,olympic weightlifting,compound,traps,"forearms, shoulders",shrug,traps,,forearms,medium,rule_based_compound_mapping
+Clock_Push-Up,Clock Push-Up,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Close-Grip_Barbell_Bench_Press,Close-Grip Barbell Bench Press,strength,compound,triceps,"chest, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Close-Grip_Front_Lat_Pulldown,Close-Grip Front Lat Pulldown,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Close-Grip_Push-Up_off_of_a_Dumbbell,Close-Grip Push-Up off of a Dumbbell,strength,compound,triceps,"abdominals, chest, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Cross-Body_Crunch,Cross-Body Crunch,strength,compound,abdominals,,trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Crucifix,Crucifix,strongman,isolation,shoulders,forearms,,shoulders,forearms,,medium,isolation_primary_secondary_fallback
+Deadlift_with_Bands,Deadlift with Bands,powerlifting,compound,lower back,"forearms, glutes, hamstrings, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Deadlift_with_Chains,Deadlift with Chains,powerlifting,compound,lower back,"forearms, glutes, hamstrings, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Decline_Barbell_Bench_Press,Decline Barbell Bench Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Decline_Close-Grip_Bench_To_Skull_Crusher,Decline Close-Grip Bench To Skull Crusher,strength,compound,triceps,"chest, shoulders",elbow_extension,triceps,,,medium,rule_based_compound_mapping
+Decline_Dumbbell_Bench_Press,Decline Dumbbell Bench Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Decline_Dumbbell_Flyes,Decline Dumbbell Flyes,strength,compound,chest,,chest_fly,chest,,shoulders,medium,rule_based_compound_mapping
+Decline_Oblique_Crunch,Decline Oblique Crunch,strength,compound,abdominals,,trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Decline_Push-Up,Decline Push-Up,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Decline_Reverse_Crunch,Decline Reverse Crunch,strength,compound,abdominals,,trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Decline_Smith_Press,Decline Smith Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Deficit_Deadlift,Deficit Deadlift,powerlifting,compound,lower back,"forearms, glutes, hamstrings, middle back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Downward_Facing_Balance,Downward Facing Balance,strength,isolation,glutes,"abdominals, hamstrings",,glutes,"abdominals, hamstrings",,medium,isolation_primary_secondary_fallback
+Drag_Curl,Drag Curl,strength,compound,biceps,forearms,elbow_flexion,biceps,forearms,,medium,rule_based_compound_mapping
+Dumbbell_Bench_Press,Dumbbell Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Dumbbell_Bench_Press_with_Neutral_Grip,Dumbbell Bench Press with Neutral Grip,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Dumbbell_Incline_Row,Dumbbell Incline Row,strength,compound,middle back,"biceps, forearms, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Dumbbell_Incline_Shoulder_Raise,Dumbbell Incline Shoulder Raise,strength,isolation,shoulders,triceps,,shoulders,triceps,,medium,isolation_primary_secondary_fallback
+Dumbbell_Lunges,Dumbbell Lunges,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Dumbbell_Lying_Pronation,Dumbbell Lying Pronation,strength,isolation,forearms,,,forearms,,,medium,isolation_primary_secondary_fallback
+Dumbbell_Lying_Supination,Dumbbell Lying Supination,strength,isolation,forearms,,,forearms,,,medium,isolation_primary_secondary_fallback
+Dumbbell_One-Arm_Shoulder_Press,Dumbbell One-Arm Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Dumbbell_One-Arm_Upright_Row,Dumbbell One-Arm Upright Row,strength,compound,shoulders,"biceps, traps",upright_row,"shoulders, traps",biceps,forearms,medium,rule_based_compound_mapping
+Dumbbell_Rear_Lunge,Dumbbell Rear Lunge,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Dumbbell_Scaption,Dumbbell Scaption,strength,isolation,shoulders,traps,,shoulders,traps,,medium,isolation_primary_secondary_fallback
+Dumbbell_Shoulder_Press,Dumbbell Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Dumbbell_Squat,Dumbbell Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Dumbbell_Squat_To_A_Bench,Dumbbell Squat To A Bench,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Dumbbell_Step_Ups,Dumbbell Step Ups,strength,compound,quadriceps,"calves, glutes, hamstrings",step_up,"quadriceps, glutes",adductors,calves,medium,rule_based_compound_mapping
+Elevated_Back_Lunge,Elevated Back Lunge,strength,compound,quadriceps,"glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Elevated_Cable_Rows,Elevated Cable Rows,strength,compound,lats,"middle back, traps",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+External_Rotation_with_Band,External Rotation with Band,strength,compound,shoulders,,shoulder_external_rotation,rotator_cuff,,,medium,rule_based_compound_mapping
+Face_Pull,Face Pull,strength,compound,shoulders,middle back,face_pull,"shoulders, middle_back","traps, biceps",forearms,medium,rule_based_compound_mapping
+Farmers_Walk,Farmer's Walk,strongman,compound,forearms,"abdominals, glutes, hamstrings, lower back, quadriceps, traps",farmer_carry,"forearms, traps",,"abdominals, lower_back",medium,rule_based_compound_mapping
+Flat_Bench_Cable_Flyes,Flat Bench Cable Flyes,strength,isolation,chest,,,chest,,,medium,isolation_primary_secondary_fallback
+Frankenstein_Squat,Frankenstein Squat,olympic weightlifting,compound,quadriceps,"abdominals, calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Freehand_Jump_Squat,Freehand Jump Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Front_Barbell_Squat,Front Barbell Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Front_Barbell_Squat_To_A_Bench,Front Barbell Squat To A Bench,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Front_Cable_Raise,Front Cable Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Front_Dumbbell_Raise,Front Dumbbell Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Front_Incline_Dumbbell_Raise,Front Incline Dumbbell Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Front_Plate_Raise,Front Plate Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Front_Raise_And_Pullover,Front Raise And Pullover,strength,compound,chest,"lats, shoulders, triceps",pullover,lats,chest,triceps,medium,rule_based_compound_mapping
+Front_Squat_Clean_Grip,Front Squat (Clean Grip),strength,compound,quadriceps,"abdominals, glutes, hamstrings",squat_quad_bias,quadriceps,"glutes, adductors",lower_back,medium,rule_based_compound_mapping
+Front_Squats_With_Two_Kettlebells,Front Squats With Two Kettlebells,strength,compound,quadriceps,"calves, glutes",squat_quad_bias,quadriceps,"glutes, adductors",lower_back,medium,rule_based_compound_mapping
+Front_Two-Dumbbell_Raise,Front Two-Dumbbell Raise,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Full_Range-Of-Motion_Lat_Pulldown,Full Range-Of-Motion Lat Pulldown,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Glute_Kickback,Glute Kickback,strength,compound,glutes,hamstrings,hip_extension,glutes,hamstrings,lower_back,medium,rule_based_compound_mapping
+Goblet_Squat,Goblet Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, shoulders",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Good_Morning,Good Morning,powerlifting,compound,hamstrings,"abdominals, glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Good_Morning_off_Pins,Good Morning off Pins,powerlifting,compound,hamstrings,"abdominals, glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Gorilla_Chin_Crunch,Gorilla Chin/Crunch,strength,compound,abdominals,"biceps, lats",trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Hack_Squat,Hack Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat_quad_bias,quadriceps,"glutes, adductors",lower_back,medium,rule_based_compound_mapping
+Hammer_Grip_Incline_DB_Bench_Press,Hammer Grip Incline DB Bench Press,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Handstand_Push-Ups,Handstand Push-Ups,strength,compound,shoulders,triceps,horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Hanging_Bar_Good_Morning,Hanging Bar Good Morning,powerlifting,compound,hamstrings,"abdominals, glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+High_Cable_Curls,High Cable Curls,strength,compound,biceps,,elbow_flexion,biceps,forearms,,medium,rule_based_compound_mapping
+Hip_Flexion_with_Band,Hip Flexion with Band,strength,compound,quadriceps,,hip_flexion,hip_flexors,abdominals,,medium,rule_based_compound_mapping
+Hyperextensions_With_No_Hyperextension_Bench,Hyperextensions With No Hyperextension Bench,strength,compound,lower back,"glutes, hamstrings",trunk_extension,lower_back,"glutes, hamstrings",,medium,rule_based_compound_mapping
+Incline_Bench_Pull,Incline Bench Pull,strength,isolation,middle back,"lats, shoulders",,middle_back,"lats, shoulders",,medium,isolation_primary_secondary_fallback
+Incline_Cable_Chest_Press,Incline Cable Chest Press,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Cable_Flye,Incline Cable Flye,strength,isolation,chest,shoulders,,chest,shoulders,,medium,isolation_primary_secondary_fallback
+Incline_Dumbbell_Flyes,Incline Dumbbell Flyes,strength,compound,chest,shoulders,chest_fly,chest,,shoulders,medium,rule_based_compound_mapping
+Incline_Dumbbell_Flyes_-_With_A_Twist,Incline Dumbbell Flyes - With A Twist,strength,compound,chest,shoulders,chest_fly,chest,,shoulders,medium,rule_based_compound_mapping
+Incline_Dumbbell_Press,Incline Dumbbell Press,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Push-Up,Incline Push-Up,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Push-Up_Close-Grip,Incline Push-Up Close-Grip,strength,compound,triceps,"chest, shoulders",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Push-Up_Medium,Incline Push-Up Medium,strength,compound,chest,"abdominals, shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Push-Up_Reverse_Grip,Incline Push-Up Reverse Grip,strength,compound,chest,"abdominals, shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Incline_Push-Up_Wide,Incline Push-Up Wide,strength,compound,chest,"abdominals, shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Inverted_Row,Inverted Row,strength,compound,middle back,lats,horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Inverted_Row_with_Straps,Inverted Row with Straps,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Isometric_Neck_Exercise_-_Front_And_Back,Isometric Neck Exercise - Front And Back,strength,isolation,neck,,,neck,,,medium,isolation_primary_secondary_fallback
+Isometric_Neck_Exercise_-_Sides,Isometric Neck Exercise - Sides,strength,isolation,neck,,,neck,,,medium,isolation_primary_secondary_fallback
+Jackknife_Sit-Up,Jackknife Sit-Up,strength,compound,abdominals,,trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Jefferson_Squats,Jefferson Squats,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back, traps",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Jerk_Dip_Squat,Jerk Dip Squat,olympic weightlifting,compound,quadriceps,"abdominals, calves",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Kettlebell_Arnold_Press,Kettlebell Arnold Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Kettlebell_One-Legged_Deadlift,Kettlebell One-Legged Deadlift,strength,compound,hamstrings,"glutes, lower back",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Kettlebell_Pistol_Squat,Kettlebell Pistol Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, shoulders",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Kettlebell_Turkish_Get-Up_Lunge_style,Kettlebell Turkish Get-Up (Lunge style),strength,compound,shoulders,"abdominals, hamstrings, quadriceps, triceps",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Kettlebell_Turkish_Get-Up_Squat_style,Kettlebell Turkish Get-Up (Squat style),strength,compound,shoulders,"abdominals, calves, hamstrings, quadriceps, triceps",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Kneeling_High_Pulley_Row,Kneeling High Pulley Row,strength,compound,lats,"biceps, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Kneeling_Jump_Squat,Kneeling Jump Squat,olympic weightlifting,compound,glutes,"calves, hamstrings, quadriceps",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Kneeling_Single-Arm_High_Pulley_Row,Kneeling Single-Arm High Pulley Row,strength,compound,lats,"biceps, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Kneeling_Squat,Kneeling Squat,powerlifting,compound,glutes,"abdominals, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Leg_Lift,Leg Lift,strength,isolation,glutes,hamstrings,,glutes,hamstrings,,medium,isolation_primary_secondary_fallback
+Leg_Press,Leg Press,strength,compound,quadriceps,"calves, glutes, hamstrings",leg_press,"quadriceps, glutes",adductors,,medium,rule_based_compound_mapping
+Leverage_Chest_Press,Leverage Chest Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Leverage_Deadlift,Leverage Deadlift,strength,compound,quadriceps,"glutes, hamstrings",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Leverage_Decline_Chest_Press,Leverage Decline Chest Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Leverage_High_Row,Leverage High Row,strength,compound,middle back,lats,horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Leverage_Incline_Chest_Press,Leverage Incline Chest Press,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Leverage_Iso_Row,Leverage Iso Row,strength,compound,lats,"biceps, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Leverage_Shoulder_Press,Leverage Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Low_Pulley_Row_To_Neck,Low Pulley Row To Neck,strength,compound,shoulders,"biceps, middle back, traps",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Lunge_Pass_Through,Lunge Pass Through,strength,compound,hamstrings,"calves, glutes, quadriceps",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Lunge_Sprint,Lunge Sprint,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Lying_Face_Down_Plate_Neck_Resistance,Lying Face Down Plate Neck Resistance,strength,isolation,neck,,,neck,,,medium,isolation_primary_secondary_fallback
+Lying_Face_Up_Plate_Neck_Resistance,Lying Face Up Plate Neck Resistance,strength,isolation,neck,,,neck,,,medium,isolation_primary_secondary_fallback
+Lying_Machine_Squat,Lying Machine Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Lying_T-Bar_Row,Lying T-Bar Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Machine_Bench_Press,Machine Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Narrow_Stance_Hack_Squats,Narrow Stance Hack Squats,strength,compound,quadriceps,"calves, glutes, hamstrings",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Narrow_Stance_Leg_Press,Narrow Stance Leg Press,strength,compound,quadriceps,"calves, glutes, hamstrings",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Narrow_Stance_Squats,Narrow Stance Squats,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Olympic_Squat,Olympic Squat,olympic weightlifting,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+One_Arm_Chin-Up,One Arm Chin-Up,strength,compound,middle back,"biceps, forearms, lats",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+One_Arm_Dumbbell_Bench_Press,One Arm Dumbbell Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+One_Arm_Lat_Pulldown,One Arm Lat Pulldown,strength,compound,lats,"biceps, middle back",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+One_Leg_Barbell_Squat,One Leg Barbell Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+One-Arm_Dumbbell_Row,One-Arm Dumbbell Row,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+One-Arm_Kettlebell_Military_Press_To_The_Side,One-Arm Kettlebell Military Press To The Side,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+One-Arm_Kettlebell_Row,One-Arm Kettlebell Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+One-Arm_Kettlebell_Swings,One-Arm Kettlebell Swings,strength,compound,hamstrings,"calves, glutes, lower back, shoulders",kettlebell_swing,"glutes, hamstrings",,"lower_back, forearms",medium,rule_based_compound_mapping
+One-Arm_Long_Bar_Row,One-Arm Long Bar Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+One-Arm_Overhead_Kettlebell_Squats,One-Arm Overhead Kettlebell Squats,strength,compound,quadriceps,"calves, glutes, hamstrings, shoulders",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+One-Arm_Side_Deadlift,One-Arm Side Deadlift,strength,compound,quadriceps,"abdominals, calves, glutes, hamstrings, lower back, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+One-Legged_Cable_Kickback,One-Legged Cable Kickback,strength,isolation,glutes,hamstrings,,glutes,hamstrings,,medium,isolation_primary_secondary_fallback
+Overhead_Squat,Overhead Squat,olympic weightlifting,compound,quadriceps,"abdominals, calves, glutes, hamstrings, lower back, shoulders, triceps",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Plate_Pinch,Plate Pinch,strength,isolation,forearms,,,forearms,,,medium,isolation_primary_secondary_fallback
+Plie_Dumbbell_Squat,Plie Dumbbell Squat,strength,compound,quadriceps,"abdominals, calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Power_Partials,Power Partials,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Press_Sit-Up,Press Sit-Up,strength,compound,abdominals,"chest, shoulders, triceps",trunk_flexion,abdominals,,,medium,rule_based_compound_mapping
+Pull_Through,Pull Through,strength,compound,glutes,"hamstrings, lower back",hip_extension,glutes,hamstrings,lower_back,medium,rule_based_compound_mapping
+Push_Up_to_Side_Plank,Push Up to Side Plank,strength,compound,chest,"abdominals, shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Push-Up_Wide,Push-Up Wide,strength,compound,chest,"abdominals, shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Push-Ups_-_Close_Triceps_Position,Push-Ups - Close Triceps Position,strength,compound,triceps,"chest, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Push-Ups_With_Feet_Elevated,Push-Ups With Feet Elevated,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Push-Ups_With_Feet_On_An_Exercise_Ball,Push-Ups With Feet On An Exercise Ball,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Reverse_Band_Bench_Press,Reverse Band Bench Press,powerlifting,compound,triceps,"chest, forearms, lats, middle back, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Reverse_Band_Box_Squat,Reverse Band Box Squat,powerlifting,compound,quadriceps,"abductors, adductors, calves, forearms, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Reverse_Band_Deadlift,Reverse Band Deadlift,powerlifting,compound,lower back,"abductors, adductors, calves, glutes, hamstrings, quadriceps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Reverse_Band_Power_Squat,Reverse Band Power Squat,powerlifting,compound,quadriceps,"adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Reverse_Band_Sumo_Deadlift,Reverse Band Sumo Deadlift,powerlifting,compound,hamstrings,"abductors, adductors, calves, forearms, glutes, lower back, quadriceps, traps",sumo_deadlift,"glutes, quadriceps, adductors",hamstrings,"lower_back, traps, forearms",medium,rule_based_compound_mapping
+Reverse_Grip_Bent-Over_Rows,Reverse Grip Bent-Over Rows,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Reverse_Hyperextension,Reverse Hyperextension,strength,,hamstrings,"calves, glutes",trunk_extension,lower_back,"glutes, hamstrings",,medium,rule_based_compound_mapping
+Reverse_Machine_Flyes,Reverse Machine Flyes,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Reverse_Triceps_Bench_Press,Reverse Triceps Bench Press,strength,compound,triceps,"chest, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Rickshaw_Carry,Rickshaw Carry,strongman,compound,forearms,"abdominals, calves, glutes, hamstrings, lower back, quadriceps, traps",loaded_carry,forearms,traps,"abdominals, lower_back",medium,rule_based_compound_mapping
+Rickshaw_Deadlift,Rickshaw Deadlift,strongman,compound,quadriceps,"forearms, glutes, hamstrings, lower back, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Rocky_Pull-Ups_Pulldowns,Rocky Pull-Ups/Pulldowns,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Romanian_Deadlift,Romanian Deadlift,strength,compound,hamstrings,"calves, glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Romanian_Deadlift_from_Deficit,Romanian Deadlift from Deficit,olympic weightlifting,compound,hamstrings,"forearms, glutes, lower back, traps",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Russian_Twist,Russian Twist,strength,compound,abdominals,lower back,trunk_rotation,abdominals,,,medium,rule_based_compound_mapping
+Seated_Barbell_Military_Press,Seated Barbell Military Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Seated_Cable_Rows,Seated Cable Rows,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Seated_Cable_Shoulder_Press,Seated Cable Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Seated_Good_Mornings,Seated Good Mornings,powerlifting,compound,lower back,glutes,hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Seated_Head_Harness_Neck_Resistance,Seated Head Harness Neck Resistance,strength,isolation,neck,,,neck,,,medium,isolation_primary_secondary_fallback
+Seated_One-arm_Cable_Pulley_Rows,Seated One-arm Cable Pulley Rows,strength,compound,middle back,"biceps, lats, traps",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Shotgun_Row,Shotgun Row,strength,compound,lats,"biceps, middle back",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Shoulder_Press_-_With_Bands,Shoulder Press - With Bands,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Single_Dumbbell_Raise,Single Dumbbell Raise,strength,isolation,shoulders,"forearms, traps",,shoulders,"forearms, traps",,medium,isolation_primary_secondary_fallback
+Single-Arm_Push-Up,Single-Arm Push-Up,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Single-Leg_High_Box_Squat,Single-Leg High Box Squat,strength,compound,quadriceps,"glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Sled_Drag_-_Harness,Sled Drag - Harness,strongman,compound,quadriceps,"calves, glutes, hamstrings",sled_pull,"quadriceps, glutes","hamstrings, calves",forearms,medium,rule_based_compound_mapping
+Sled_Push,Sled Push,strongman,compound,quadriceps,"calves, chest, glutes, hamstrings, triceps",sled_push,"quadriceps, glutes",calves,abdominals,medium,rule_based_compound_mapping
+Sled_Row,Sled Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Smith_Incline_Shoulder_Raise,Smith Incline Shoulder Raise,strength,isolation,shoulders,chest,,shoulders,chest,,medium,isolation_primary_secondary_fallback
+Smith_Machine_Bench_Press,Smith Machine Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Smith_Machine_Bent_Over_Row,Smith Machine Bent Over Row,strength,compound,middle back,"biceps, lats, shoulders",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Smith_Machine_Close-Grip_Bench_Press,Smith Machine Close-Grip Bench Press,strength,compound,triceps,"chest, shoulders",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Smith_Machine_Decline_Press,Smith Machine Decline Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Smith_Machine_Incline_Bench_Press,Smith Machine Incline Bench Press,strength,compound,chest,"shoulders, triceps",incline_press,"chest, shoulders",triceps,,medium,rule_based_compound_mapping
+Smith_Machine_Leg_Press,Smith Machine Leg Press,strength,compound,quadriceps,"calves, glutes, hamstrings",leg_press,"quadriceps, glutes",adductors,,medium,rule_based_compound_mapping
+Smith_Machine_One-Arm_Upright_Row,Smith Machine One-Arm Upright Row,strength,compound,shoulders,"biceps, traps",upright_row,"shoulders, traps",biceps,forearms,medium,rule_based_compound_mapping
+Smith_Machine_Overhead_Shoulder_Press,Smith Machine Overhead Shoulder Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Smith_Machine_Pistol_Squat,Smith Machine Pistol Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Smith_Machine_Squat,Smith Machine Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Smith_Machine_Stiff-Legged_Deadlift,Smith Machine Stiff-Legged Deadlift,strength,compound,hamstrings,"glutes, lower back",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Smith_Machine_Upright_Row,Smith Machine Upright Row,strength,compound,traps,"biceps, middle back, shoulders",upright_row,"shoulders, traps",biceps,forearms,medium,rule_based_compound_mapping
+Smith_Single-Leg_Split_Squat,Smith Single-Leg Split Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Snatch_Deadlift,Snatch Deadlift,olympic weightlifting,compound,hamstrings,"forearms, glutes, hamstrings, lower back, quadriceps, traps",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Snatch_Shrug,Snatch Shrug,olympic weightlifting,compound,traps,"forearms, shoulders",shrug,traps,,forearms,medium,rule_based_compound_mapping
+Speed_Box_Squat,Speed Box Squat,powerlifting,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Speed_Squats,Speed Squats,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Split_Squat_with_Dumbbells,Split Squat with Dumbbells,strength,compound,quadriceps,"glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+Squat_Jerk,Squat Jerk,strength,compound,quadriceps,"calves, glutes, hamstrings, shoulders, triceps",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Squat_with_Bands,Squat with Bands,powerlifting,compound,quadriceps,"adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Squat_with_Chains,Squat with Chains,powerlifting,compound,quadriceps,"adductors, calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Squat_with_Plate_Movers,Squat with Plate Movers,strength,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Squats_-_With_Bands,Squats - With Bands,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Standing_Cable_Chest_Press,Standing Cable Chest Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Standing_Cable_Wood_Chop,Standing Cable Wood Chop,strength,compound,abdominals,shoulders,trunk_rotation,abdominals,,,medium,rule_based_compound_mapping
+Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head,Standing Dumbbell Straight-Arm Front Delt Raise Above Head,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Standing_Dumbbell_Upright_Row,Standing Dumbbell Upright Row,strength,compound,traps,"biceps, shoulders",upright_row,"shoulders, traps",biceps,forearms,medium,rule_based_compound_mapping
+Standing_Front_Barbell_Raise_Over_Head,Standing Front Barbell Raise Over Head,strength,isolation,shoulders,,,shoulders,,,medium,isolation_primary_secondary_fallback
+Standing_Low-Pulley_Deltoid_Raise,Standing Low-Pulley Deltoid Raise,strength,isolation,shoulders,forearms,,shoulders,forearms,,medium,isolation_primary_secondary_fallback
+Standing_Military_Press,Standing Military Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Standing_Olympic_Plate_Hand_Squeeze,Standing Olympic Plate Hand Squeeze,strength,isolation,forearms,biceps,,forearms,biceps,,medium,isolation_primary_secondary_fallback
+Step-up_with_Knee_Raise,Step-up with Knee Raise,strength,compound,glutes,"hamstrings, quadriceps",step_up,"quadriceps, glutes",adductors,calves,medium,rule_based_compound_mapping
+Stiff_Leg_Barbell_Good_Morning,Stiff Leg Barbell Good Morning,strength,compound,lower back,"glutes, hamstrings",hip_hinge,"hamstrings, glutes",,"lower_back, forearms",medium,rule_based_compound_mapping
+Stiff-Legged_Barbell_Deadlift,Stiff-Legged Barbell Deadlift,strength,compound,hamstrings,"glutes, lower back",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Stiff-Legged_Dumbbell_Deadlift,Stiff-Legged Dumbbell Deadlift,strength,compound,hamstrings,"glutes, lower back",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Straight_Bar_Bench_Mid_Rows,Straight Bar Bench Mid Rows,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Straight_Raises_on_Incline_Bench,Straight Raises on Incline Bench,strength,isolation,shoulders,traps,,shoulders,traps,,medium,isolation_primary_secondary_fallback
+Straight-Arm_Dumbbell_Pullover,Straight-Arm Dumbbell Pullover,strength,compound,chest,"lats, shoulders, triceps",pullover,lats,chest,triceps,medium,rule_based_compound_mapping
+Sumo_Deadlift,Sumo Deadlift,powerlifting,compound,hamstrings,"adductors, forearms, glutes, lower back, middle back, quadriceps, traps",sumo_deadlift,"glutes, quadriceps, adductors",hamstrings,"lower_back, traps, forearms",medium,rule_based_compound_mapping
+Sumo_Deadlift_with_Bands,Sumo Deadlift with Bands,powerlifting,compound,hamstrings,"adductors, forearms, glutes, lower back, middle back, quadriceps, traps",sumo_deadlift,"glutes, quadriceps, adductors",hamstrings,"lower_back, traps, forearms",medium,rule_based_compound_mapping
+Sumo_Deadlift_with_Chains,Sumo Deadlift with Chains,powerlifting,compound,hamstrings,"abductors, adductors, forearms, glutes, lower back, middle back, quadriceps, traps",sumo_deadlift,"glutes, quadriceps, adductors",hamstrings,"lower_back, traps, forearms",medium,rule_based_compound_mapping
+Suspended_Push-Up,Suspended Push-Up,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Suspended_Row,Suspended Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Suspended_Split_Squat,Suspended Split Squat,strength,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",lunge,"quadriceps, glutes",adductors,"hamstrings, calves",medium,rule_based_compound_mapping
+T-Bar_Row_with_Handle,T-Bar Row with Handle,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Trap_Bar_Deadlift,Trap Bar Deadlift,strength,compound,quadriceps,"glutes, hamstrings",conventional_deadlift,"glutes, hamstrings",quadriceps,"lower_back, traps, forearms, lats",medium,rule_based_compound_mapping
+Two-Arm_Kettlebell_Military_Press,Two-Arm Kettlebell Military Press,strength,compound,shoulders,triceps,vertical_press,shoulders,triceps,abdominals,medium,rule_based_compound_mapping
+Two-Arm_Kettlebell_Row,Two-Arm Kettlebell Row,strength,compound,middle back,"biceps, lats",horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Underhand_Cable_Pulldowns,Underhand Cable Pulldowns,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Upright_Barbell_Row,Upright Barbell Row,strength,compound,shoulders,traps,horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Upright_Cable_Row,Upright Cable Row,strength,compound,traps,shoulders,horizontal_pull,"middle_back, lats","biceps, shoulders",forearms,medium,rule_based_compound_mapping
+Upright_Row_-_With_Bands,Upright Row - With Bands,strength,compound,traps,shoulders,upright_row,"shoulders, traps",biceps,forearms,medium,rule_based_compound_mapping
+V-Bar_Pulldown,V-Bar Pulldown,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Weighted_Ball_Hyperextension,Weighted Ball Hyperextension,strength,compound,lower back,"glutes, hamstrings, middle back",trunk_extension,lower_back,"glutes, hamstrings",,medium,rule_based_compound_mapping
+Weighted_Jump_Squat,Weighted Jump Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Weighted_Pull_Ups,Weighted Pull Ups,strength,compound,lats,"biceps, middle back",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Weighted_Sissy_Squat,Weighted Sissy Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Weighted_Squat,Weighted Squat,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Wide_Stance_Barbell_Squat,Wide Stance Barbell Squat,strength,compound,quadriceps,"calves, glutes, hamstrings, lower back",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+Wide-Grip_Barbell_Bench_Press,Wide-Grip Barbell Bench Press,strength,compound,chest,"shoulders, triceps",horizontal_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Wide-Grip_Decline_Barbell_Bench_Press,Wide-Grip Decline Barbell Bench Press,strength,compound,chest,"shoulders, triceps",decline_press,chest,"triceps, shoulders",,medium,rule_based_compound_mapping
+Wide-Grip_Decline_Barbell_Pullover,Wide-Grip Decline Barbell Pullover,strength,compound,chest,"shoulders, triceps",pullover,lats,chest,triceps,medium,rule_based_compound_mapping
+Wide-Grip_Lat_Pulldown,Wide-Grip Lat Pulldown,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Wide-Grip_Pulldown_Behind_The_Neck,Wide-Grip Pulldown Behind The Neck,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Wide-Grip_Rear_Pull-Up,Wide-Grip Rear Pull-Up,strength,compound,lats,"biceps, middle back, shoulders",vertical_pull,lats,"biceps, middle_back",forearms,medium,rule_based_compound_mapping
+Wrist_Roller,Wrist Roller,strength,isolation,forearms,shoulders,,forearms,shoulders,,medium,isolation_primary_secondary_fallback
+Wrist_Rotations_with_Straight_Bar,Wrist Rotations with Straight Bar,strength,isolation,forearms,,,forearms,,,medium,isolation_primary_secondary_fallback
+Yoke_Walk,Yoke Walk,strongman,compound,quadriceps,"abdominals, abductors, adductors, calves, glutes, hamstrings, lower back",loaded_carry,forearms,traps,"abdominals, lower_back",medium,rule_based_compound_mapping
+Zercher_Squats,Zercher Squats,strength,compound,quadriceps,"calves, glutes, hamstrings",squat,"quadriceps, glutes",adductors,"lower_back, hamstrings, calves",medium,rule_based_compound_mapping
+90_90_Hamstring,90/90 Hamstring,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Adductor,Adductor,stretching,isolation,adductors,,,,,,high,non_volume_category:stretching
+Adductor_Groin,Adductor/Groin,stretching,,adductors,,,,,,high,non_volume_category:stretching
+All_Fours_Quad_Stretch,All Fours Quad Stretch,stretching,,quadriceps,quadriceps,,,,,high,non_volume_category:stretching
+Alternate_Leg_Diagonal_Bound,Alternate Leg Diagonal Bound,plyometrics,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Ankle_Circles,Ankle Circles,stretching,isolation,calves,,,,,,high,non_volume_category:stretching
+Ankle_On_The_Knee,Ankle On The Knee,stretching,,glutes,,,,,,high,non_volume_category:stretching
+Anterior_Tibialis-SMR,Anterior Tibialis-SMR,stretching,,calves,,,,,,high,non_volume_category:stretching
+Arm_Circles,Arm Circles,stretching,isolation,shoulders,traps,,,,,high,non_volume_category:stretching
+Backward_Medicine_Ball_Throw,Backward Medicine Ball Throw,plyometrics,compound,shoulders,,,,,,high,non_volume_category:plyometrics
+Behind_Head_Chest_Stretch,Behind Head Chest Stretch,stretching,isolation,chest,shoulders,,,,,high,non_volume_category:stretching
+Bench_Jump,Bench Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Bench_Sprint,Bench Sprint,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Bicycling,Bicycling,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Bicycling_Stationary,"Bicycling, Stationary",cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Box_Jump_Multiple_Response,Box Jump (Multiple Response),plyometrics,compound,hamstrings,"abductors, adductors, calves, glutes, quadriceps",,,,,high,non_volume_category:plyometrics
+Box_Skip,Box Skip,plyometrics,compound,hamstrings,"abductors, adductors, calves, glutes, quadriceps",,,,,high,non_volume_category:plyometrics
+Brachialis-SMR,Brachialis-SMR,stretching,,biceps,,,,,,high,non_volume_category:stretching
+Calf_Stretch_Elbows_Against_Wall,Calf Stretch Elbows Against Wall,stretching,isolation,calves,,,,,,high,non_volume_category:stretching
+Calf_Stretch_Hands_Against_Wall,Calf Stretch Hands Against Wall,stretching,isolation,calves,,,,,,high,non_volume_category:stretching
+Calves-SMR,Calves-SMR,stretching,,calves,,,,,,high,non_volume_category:stretching
+Carioca_Quick_Step,Carioca Quick Step,plyometrics,,adductors,"abdominals, abductors, calves, glutes, hamstrings, quadriceps",,,,,high,non_volume_category:plyometrics
+Cat_Stretch,Cat Stretch,stretching,,lower back,"middle back, traps",,,,,high,non_volume_category:stretching
+Catch_and_Overhead_Throw,Catch and Overhead Throw,plyometrics,compound,lats,"abdominals, chest, shoulders",,,,,high,non_volume_category:plyometrics
+Chair_Leg_Extended_Stretch,Chair Leg Extended Stretch,stretching,isolation,hamstrings,adductors,,,,,high,non_volume_category:stretching
+Chair_Lower_Back_Stretch,Chair Lower Back Stretch,stretching,isolation,lats,lower back,,,,,high,non_volume_category:stretching
+Chair_Upper_Body_Stretch,Chair Upper Body Stretch,stretching,,shoulders,"biceps, chest",,,,,high,non_volume_category:stretching
+Chest_And_Front_Of_Shoulder_Stretch,Chest And Front Of Shoulder Stretch,stretching,isolation,chest,shoulders,,,,,high,non_volume_category:stretching
+Chest_Push_multiple_response,Chest Push (multiple response),plyometrics,compound,chest,"abdominals, shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Chest_Push_single_response,Chest Push (single response),plyometrics,compound,chest,"abdominals, shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Chest_Push_from_3_point_stance,Chest Push from 3 point stance,plyometrics,compound,chest,"abdominals, shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Chest_Push_with_Run_Release,Chest Push with Run Release,plyometrics,compound,chest,"abdominals, shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Chest_Stretch_on_Stability_Ball,Chest Stretch on Stability Ball,stretching,isolation,chest,,,,,,high,non_volume_category:stretching
+Childs_Pose,Child's Pose,stretching,,lower back,"glutes, middle back",,,,,high,non_volume_category:stretching
+Chin_To_Chest_Stretch,Chin To Chest Stretch,stretching,,neck,traps,,,,,high,non_volume_category:stretching
+Crossover_Reverse_Lunge,Crossover Reverse Lunge,stretching,,lower back,"abdominals, abductors, glutes, hamstrings, quadriceps",,,,,high,non_volume_category:stretching
+Dancers_Stretch,Dancer's Stretch,stretching,,lower back,"abductors, glutes",,,,,high,non_volume_category:stretching
+Depth_Jump_Leap,Depth Jump Leap,plyometrics,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Double_Leg_Butt_Kick,Double Leg Butt Kick,plyometrics,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Drop_Push,Drop Push,plyometrics,compound,chest,"shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Dumbbell_Seated_Box_Jump,Dumbbell Seated Box Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Dynamic_Back_Stretch,Dynamic Back Stretch,stretching,,lats,,,,,,high,non_volume_category:stretching
+Dynamic_Chest_Stretch,Dynamic Chest Stretch,stretching,,chest,middle back,,,,,high,non_volume_category:stretching
+Elbow_Circles,Elbow Circles,stretching,isolation,shoulders,traps,,,,,high,non_volume_category:stretching
+Elbows_Back,Elbows Back,stretching,isolation,chest,shoulders,,,,,high,non_volume_category:stretching
+Elliptical_Trainer,Elliptical Trainer,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Fast_Skipping,Fast Skipping,plyometrics,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Foot-SMR,Foot-SMR,stretching,,calves,,,,,,high,non_volume_category:stretching
+Frog_Hops,Frog Hops,stretching,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:stretching
+Front_Box_Jump,Front Box Jump,plyometrics,compound,hamstrings,"abductors, adductors, calves, glutes, quadriceps",,,,,high,non_volume_category:plyometrics
+Front_Cone_Hops_or_hurdle_hops,Front Cone Hops (or hurdle hops),plyometrics,compound,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Front_Leg_Raises,Front Leg Raises,stretching,,hamstrings,,,,,,high,non_volume_category:stretching
+Groin_and_Back_Stretch,Groin and Back Stretch,stretching,compound,adductors,,,,,,high,non_volume_category:stretching
+Groiners,Groiners,stretching,compound,adductors,,,,,,high,non_volume_category:stretching
+Hamstring_Stretch,Hamstring Stretch,stretching,isolation,hamstrings,,,,,,high,non_volume_category:stretching
+Hamstring-SMR,Hamstring-SMR,stretching,isolation,hamstrings,,,,,,high,non_volume_category:stretching
+Heavy_Bag_Thrust,Heavy Bag Thrust,plyometrics,compound,chest,"abdominals, shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Hip_Circles_prone,Hip Circles (prone),stretching,isolation,abductors,adductors,,,,,high,non_volume_category:stretching
+Hug_A_Ball,Hug A Ball,stretching,isolation,lower back,"calves, glutes",,,,,high,non_volume_category:stretching
+Hug_Knees_To_Chest,Hug Knees To Chest,stretching,,lower back,glutes,,,,,high,non_volume_category:stretching
+Hurdle_Hops,Hurdle Hops,plyometrics,compound,hamstrings,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Iliotibial_Tract-SMR,Iliotibial Tract-SMR,stretching,isolation,abductors,,,,,,high,non_volume_category:stretching
+Inchworm,Inchworm,stretching,compound,hamstrings,,,,,,high,non_volume_category:stretching
+Incline_Push-Up_Depth_Jump,Incline Push-Up Depth Jump,plyometrics,compound,chest,"shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Intermediate_Groin_Stretch,Intermediate Groin Stretch,stretching,isolation,hamstrings,,,,,,high,non_volume_category:stretching
+Intermediate_Hip_Flexor_and_Quad_Stretch,Intermediate Hip Flexor and Quad Stretch,stretching,compound,quadriceps,,,,,,high,non_volume_category:stretching
+Iron_Crosses_stretch,Iron Crosses (stretch),stretching,compound,quadriceps,,,,,,high,non_volume_category:stretching
+Isometric_Chest_Squeezes,Isometric Chest Squeezes,plyometrics,compound,chest,"shoulders, triceps",,,,,high,non_volume_category:plyometrics
+IT_Band_and_Glute_Stretch,IT Band and Glute Stretch,stretching,,abductors,,,,,,high,non_volume_category:stretching
+Jogging_Treadmill,"Jogging, Treadmill",cardio,,quadriceps,"glutes, hamstrings",,,,,high,non_volume_category:cardio
+Knee_Across_The_Body,Knee Across The Body,stretching,,glutes,"abductors, lower back",,,,,high,non_volume_category:stretching
+Knee_Circles,Knee Circles,stretching,compound,calves,"hamstrings, quadriceps",,,,,high,non_volume_category:stretching
+Knee_Tuck_Jump,Knee Tuck Jump,plyometrics,compound,hamstrings,"abductors, adductors, calves, glutes, quadriceps",,,,,high,non_volume_category:plyometrics
+Kneeling_Arm_Drill,Kneeling Arm Drill,plyometrics,,shoulders,abdominals,,,,,high,non_volume_category:plyometrics
+Kneeling_Forearm_Stretch,Kneeling Forearm Stretch,stretching,isolation,forearms,,,,,,high,non_volume_category:stretching
+Kneeling_Hip_Flexor,Kneeling Hip Flexor,stretching,isolation,quadriceps,quadriceps,,,,,high,non_volume_category:stretching
+Lateral_Bound,Lateral Bound,plyometrics,compound,adductors,"abductors, calves, glutes, hamstrings, quadriceps",,,,,high,non_volume_category:plyometrics
+Lateral_Box_Jump,Lateral Box Jump,plyometrics,compound,adductors,"abductors, calves, glutes, hamstrings, quadriceps",,,,,high,non_volume_category:plyometrics
+Lateral_Cone_Hops,Lateral Cone Hops,plyometrics,compound,adductors,"abductors, calves, glutes, hamstrings, quadriceps",,,,,high,non_volume_category:plyometrics
+Latissimus_Dorsi-SMR,Latissimus Dorsi-SMR,stretching,isolation,lats,,,,,,high,non_volume_category:stretching
+Leg-Up_Hamstring_Stretch,Leg-Up Hamstring Stretch,stretching,isolation,hamstrings,,,,,,high,non_volume_category:stretching
+Linear_3-Part_Start_Technique,Linear 3-Part Start Technique,plyometrics,compound,hamstrings,"calves, quadriceps",,,,,high,non_volume_category:plyometrics
+Linear_Acceleration_Wall_Drill,Linear Acceleration Wall Drill,plyometrics,compound,hamstrings,"calves, glutes, quadriceps",,,,,high,non_volume_category:plyometrics
+Linear_Depth_Jump,Linear Depth Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Looking_At_Ceiling,Looking At Ceiling,stretching,isolation,quadriceps,,,,,,high,non_volume_category:stretching
+Lower_Back_Curl,Lower Back Curl,stretching,,abdominals,,,,,,high,non_volume_category:stretching
+Lower_Back-SMR,Lower Back-SMR,stretching,,lower back,,,,,,high,non_volume_category:stretching
+Lying_Bent_Leg_Groin,Lying Bent Leg Groin,stretching,,adductors,,,,,,high,non_volume_category:stretching
+Lying_Crossover,Lying Crossover,stretching,,abductors,,,,,,high,non_volume_category:stretching
+Lying_Glute,Lying Glute,stretching,,glutes,abductors,,,,,high,non_volume_category:stretching
+Lying_Hamstring,Lying Hamstring,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Lying_Prone_Quadriceps,Lying Prone Quadriceps,stretching,,quadriceps,,,,,,high,non_volume_category:stretching
+Medicine_Ball_Chest_Pass,Medicine Ball Chest Pass,plyometrics,compound,chest,"shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Medicine_Ball_Full_Twist,Medicine Ball Full Twist,plyometrics,compound,abdominals,shoulders,,,,,high,non_volume_category:plyometrics
+Medicine_Ball_Scoop_Throw,Medicine Ball Scoop Throw,plyometrics,compound,shoulders,"abdominals, hamstrings, quadriceps",,,,,high,non_volume_category:plyometrics
+Middle_Back_Stretch,Middle Back Stretch,stretching,isolation,middle back,"abdominals, lats, lower back",,,,,high,non_volume_category:stretching
+Mountain_Climbers,Mountain Climbers,plyometrics,compound,quadriceps,"chest, hamstrings, shoulders",,,,,high,non_volume_category:plyometrics
+Moving_Claw_Series,Moving Claw Series,plyometrics,compound,hamstrings,"calves, quadriceps",,,,,high,non_volume_category:plyometrics
+Neck-SMR,Neck-SMR,stretching,,neck,,,,,,high,non_volume_category:stretching
+On_Your_Side_Quad_Stretch,On Your Side Quad Stretch,stretching,isolation,quadriceps,,,,,,high,non_volume_category:stretching
+On-Your-Back_Quad_Stretch,On-Your-Back Quad Stretch,stretching,isolation,quadriceps,,,,,,high,non_volume_category:stretching
+One_Arm_Against_Wall,One Arm Against Wall,stretching,isolation,lats,,,,,,high,non_volume_category:stretching
+One_Half_Locust,One Half Locust,stretching,,quadriceps,"abdominals, biceps, chest",,,,,high,non_volume_category:stretching
+One_Handed_Hang,One Handed Hang,stretching,,lats,biceps,,,,,high,non_volume_category:stretching
+One_Knee_To_Chest,One Knee To Chest,stretching,compound,glutes,"hamstrings, lower back",,,,,high,non_volume_category:stretching
+Overhead_Lat,Overhead Lat,stretching,,lats,triceps,,,,,high,non_volume_category:stretching
+Overhead_Slam,Overhead Slam,plyometrics,compound,lats,,,,,,high,non_volume_category:plyometrics
+Overhead_Stretch,Overhead Stretch,stretching,compound,abdominals,"chest, forearms, lats, triceps",,,,,high,non_volume_category:stretching
+Overhead_Triceps,Overhead Triceps,stretching,,triceps,lats,,,,,high,non_volume_category:stretching
+Pelvic_Tilt_Into_Bridge,Pelvic Tilt Into Bridge,stretching,compound,lower back,,,,,,high,non_volume_category:stretching
+Peroneals_Stretch,Peroneals Stretch,stretching,,calves,,,,,,high,non_volume_category:stretching
+Peroneals-SMR,Peroneals-SMR,stretching,,calves,,,,,,high,non_volume_category:stretching
+Piriformis-SMR,Piriformis-SMR,stretching,isolation,glutes,,,,,,high,non_volume_category:stretching
+Plyo_Push-up,Plyo Push-up,plyometrics,compound,chest,"shoulders, triceps",,,,,high,non_volume_category:plyometrics
+Posterior_Tibialis_Stretch,Posterior Tibialis Stretch,stretching,,calves,,,,,,high,non_volume_category:stretching
+Prowler_Sprint,Prowler Sprint,cardio,compound,hamstrings,"calves, chest, glutes, quadriceps, shoulders",,,,,high,non_volume_category:cardio
+Pyramid,Pyramid,stretching,,lower back,shoulders,,,,,high,non_volume_category:stretching
+Quad_Stretch,Quad Stretch,stretching,,quadriceps,,,,,,high,non_volume_category:stretching
+Quadriceps-SMR,Quadriceps-SMR,stretching,isolation,quadriceps,,,,,,high,non_volume_category:stretching
+Quick_Leap,Quick Leap,plyometrics,compound,quadriceps,"calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Rear_Leg_Raises,Rear Leg Raises,stretching,,quadriceps,,,,,,high,non_volume_category:stretching
+Recumbent_Bike,Recumbent Bike,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Return_Push_from_Stance,Return Push from Stance,plyometrics,compound,shoulders,"chest, triceps",,,,,high,non_volume_category:plyometrics
+Rhomboids-SMR,Rhomboids-SMR,stretching,,middle back,traps,,,,,high,non_volume_category:stretching
+Rocket_Jump,Rocket Jump,plyometrics,compound,quadriceps,"calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Rope_Jumping,Rope Jumping,cardio,,quadriceps,"calves, hamstrings",,,,,high,non_volume_category:cardio
+Round_The_World_Shoulder_Stretch,Round The World Shoulder Stretch,stretching,,shoulders,"biceps, chest",,,,,high,non_volume_category:stretching
+Rowing_Stationary,"Rowing, Stationary",cardio,,quadriceps,"biceps, calves, glutes, hamstrings, lower back, middle back",,,,,high,non_volume_category:cardio
+Runners_Stretch,Runner's Stretch,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Running_Treadmill,"Running, Treadmill",cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Scissor_Kick,Scissor Kick,stretching,isolation,abdominals,,,,,,high,non_volume_category:stretching
+Scissors_Jump,Scissors Jump,plyometrics,compound,quadriceps,"glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Seated_Biceps,Seated Biceps,stretching,isolation,biceps,"chest, shoulders",,,,,high,non_volume_category:stretching
+Seated_Calf_Stretch,Seated Calf Stretch,stretching,,calves,"hamstrings, lower back",,,,,high,non_volume_category:stretching
+Seated_Floor_Hamstring_Stretch,Seated Floor Hamstring Stretch,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Seated_Front_Deltoid,Seated Front Deltoid,stretching,,shoulders,chest,,,,,high,non_volume_category:stretching
+Seated_Glute,Seated Glute,stretching,,glutes,adductors,,,,,high,non_volume_category:stretching
+Seated_Hamstring,Seated Hamstring,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Seated_Hamstring_and_Calf_Stretch,Seated Hamstring and Calf Stretch,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Seated_Overhead_Stretch,Seated Overhead Stretch,stretching,isolation,abdominals,,,,,,high,non_volume_category:stretching
+Shoulder_Circles,Shoulder Circles,stretching,,shoulders,traps,,,,,high,non_volume_category:stretching
+Shoulder_Raise,Shoulder Raise,stretching,,shoulders,lats,,,,,high,non_volume_category:stretching
+Shoulder_Stretch,Shoulder Stretch,stretching,,shoulders,,,,,,high,non_volume_category:stretching
+Side_Hop-Sprint,Side Hop-Sprint,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Side_Leg_Raises,Side Leg Raises,stretching,,adductors,,,,,,high,non_volume_category:stretching
+Side_Lying_Groin_Stretch,Side Lying Groin Stretch,stretching,isolation,adductors,hamstrings,,,,,high,non_volume_category:stretching
+Side_Neck_Stretch,Side Neck Stretch,stretching,isolation,neck,,,,,,high,non_volume_category:stretching
+Side_Standing_Long_Jump,Side Standing Long Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Side_to_Side_Box_Shuffle,Side to Side Box Shuffle,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Side_Wrist_Pull,Side Wrist Pull,stretching,isolation,shoulders,"forearms, lats",,,,,high,non_volume_category:stretching
+Side-Lying_Floor_Stretch,Side-Lying Floor Stretch,stretching,,lats,,,,,,high,non_volume_category:stretching
+Single_Leg_Butt_Kick,Single Leg Butt Kick,plyometrics,compound,quadriceps,"calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Single_Leg_Push-off,Single Leg Push-off,plyometrics,compound,quadriceps,"calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Single-Cone_Sprint_Drill,Single-Cone Sprint Drill,plyometrics,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Single-Leg_Hop_Progression,Single-Leg Hop Progression,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Single-Leg_Lateral_Hop,Single-Leg Lateral Hop,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Single-Leg_Stride_Jump,Single-Leg Stride Jump,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Sit_Squats,Sit Squats,stretching,,quadriceps,"abductors, glutes, hamstrings",,,,,high,non_volume_category:stretching
+Skating,Skating,cardio,,quadriceps,"abductors, adductors, calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Sledgehammer_Swings,Sledgehammer Swings,plyometrics,compound,abdominals,"calves, forearms, lats, middle back, shoulders",,,,,high,non_volume_category:plyometrics
+Spinal_Stretch,Spinal Stretch,stretching,isolation,middle back,"lats, lower back, neck, traps",,,,,high,non_volume_category:stretching
+Split_Jump,Split Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Split_Squats,Split Squats,stretching,,hamstrings,"calves, glutes, quadriceps",,,,,high,non_volume_category:stretching
+Stairmaster,Stairmaster,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Standing_Biceps_Stretch,Standing Biceps Stretch,stretching,isolation,biceps,"chest, shoulders",,,,,high,non_volume_category:stretching
+Standing_Elevated_Quad_Stretch,Standing Elevated Quad Stretch,stretching,,quadriceps,,,,,,high,non_volume_category:stretching
+Standing_Gastrocnemius_Calf_Stretch,Standing Gastrocnemius Calf Stretch,stretching,,calves,hamstrings,,,,,high,non_volume_category:stretching
+Standing_Hamstring_and_Calf_Stretch,Standing Hamstring and Calf Stretch,stretching,,hamstrings,,,,,,high,non_volume_category:stretching
+Standing_Hip_Circles,Standing Hip Circles,stretching,isolation,abductors,adductors,,,,,high,non_volume_category:stretching
+Standing_Hip_Flexors,Standing Hip Flexors,stretching,isolation,quadriceps,,,,,,high,non_volume_category:stretching
+Standing_Lateral_Stretch,Standing Lateral Stretch,stretching,,abdominals,,,,,,high,non_volume_category:stretching
+Standing_Long_Jump,Standing Long Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:plyometrics
+Standing_Pelvic_Tilt,Standing Pelvic Tilt,stretching,isolation,lower back,glutes,,,,,high,non_volume_category:stretching
+Standing_Soleus_And_Achilles_Stretch,Standing Soleus And Achilles Stretch,stretching,isolation,calves,,,,,,high,non_volume_category:stretching
+Standing_Toe_Touches,Standing Toe Touches,stretching,,hamstrings,calves,,,,,high,non_volume_category:stretching
+Standing_Two-Arm_Overhead_Throw,Standing Two-Arm Overhead Throw,plyometrics,compound,shoulders,"chest, lats",,,,,high,non_volume_category:plyometrics
+Star_Jump,Star Jump,plyometrics,compound,quadriceps,"calves, glutes, hamstrings, shoulders",,,,,high,non_volume_category:plyometrics
+Step_Mill,Step Mill,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Stomach_Vacuum,Stomach Vacuum,stretching,isolation,abdominals,,,,,,high,non_volume_category:stretching
+Stride_Jump_Crossover,Stride Jump Crossover,plyometrics,compound,quadriceps,"abductors, adductors, calves, hamstrings",,,,,high,non_volume_category:plyometrics
+Superman,Superman,stretching,compound,lower back,"glutes, hamstrings",,,,,high,non_volume_category:stretching
+Supine_Chest_Throw,Supine Chest Throw,plyometrics,compound,triceps,"chest, shoulders",,,,,high,non_volume_category:plyometrics
+Supine_One-Arm_Overhead_Throw,Supine One-Arm Overhead Throw,plyometrics,compound,abdominals,"chest, lats, shoulders",,,,,high,non_volume_category:plyometrics
+Supine_Two-Arm_Overhead_Throw,Supine Two-Arm Overhead Throw,plyometrics,compound,abdominals,"chest, lats, shoulders",,,,,high,non_volume_category:plyometrics
+The_Straddle,The Straddle,stretching,,hamstrings,"adductors, calves",,,,,high,non_volume_category:stretching
+Toe_Touchers,Toe Touchers,stretching,isolation,abdominals,,,,,,high,non_volume_category:stretching
+Torso_Rotation,Torso Rotation,stretching,,abdominals,,,,,,high,non_volume_category:stretching
+Trail_Running_Walking,Trail Running/Walking,cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Tricep_Side_Stretch,Tricep Side Stretch,stretching,,triceps,shoulders,,,,,high,non_volume_category:stretching
+Triceps_Stretch,Triceps Stretch,stretching,isolation,triceps,lats,,,,,high,non_volume_category:stretching
+Upper_Back_Stretch,Upper Back Stretch,stretching,,middle back,middle back,,,,,high,non_volume_category:stretching
+Upper_Back-Leg_Grab,Upper Back-Leg Grab,stretching,,hamstrings,"lower back, middle back",,,,,high,non_volume_category:stretching
+Upward_Stretch,Upward Stretch,stretching,,shoulders,"chest, lats",,,,,high,non_volume_category:stretching
+Vertical_Swing,Vertical Swing,plyometrics,compound,hamstrings,"glutes, quadriceps, shoulders",,,,,high,non_volume_category:plyometrics
+Walking_Treadmill,"Walking, Treadmill",cardio,,quadriceps,"calves, glutes, hamstrings",,,,,high,non_volume_category:cardio
+Windmills,Windmills,stretching,,abductors,"glutes, hamstrings, lower back",,,,,high,non_volume_category:stretching
+Worlds_Greatest_Stretch,World's Greatest Stretch,stretching,,hamstrings,"calves, glutes, quadriceps",,,,,high,non_volume_category:stretching
+Wrist_Circles,Wrist Circles,stretching,isolation,forearms,,,,,,high,non_volume_category:stretching
