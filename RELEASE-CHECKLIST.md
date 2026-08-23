@@ -1,13 +1,13 @@
 # Release checklist
 
-- [ ] CI green on release commit
-- [ ] JSON Schema validation passes
-- [ ] Release-contract tests pass
-- [ ] Reproducibility test is byte-identical
-- [ ] Needs-review count is zero
-- [ ] No used pattern is provisional
-- [ ] Remaining medium mappings are explained by audits
-- [ ] Upstream SHA-256 and count are embedded
-- [ ] README examples match current schema
-- [ ] Methodology/versioning docs are current
-- [ ] Generated outputs committed before tagging
+- [ ] GitHub Actions is green on the release commit.
+- [ ] `free-exercise-db-plusplus.json` validates against the JSON Schema.
+- [ ] Release-contract tests pass.
+- [ ] Reproducibility test produces byte-identical output.
+- [ ] `Needs review` is zero.
+- [ ] No used movement pattern has provisional evidence.
+- [ ] Remaining medium-confidence mappings are explained by audit output.
+- [ ] Upstream source count and SHA-256 are embedded in generated metadata.
+- [ ] README examples match the current schema.
+- [ ] `METHODOLOGY.md` and `VERSIONING.md` are current.
+- [ ] Generated outputs are committed before tagging a release.

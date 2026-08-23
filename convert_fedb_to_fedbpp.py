@@ -1099,7 +1099,14 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
         "metadata": {
             "schemaVersion": SCHEMA_VERSION,
             "converterVersion": CONVERTER_VERSION,
-            "generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "generatedAt": (
+                dt.datetime.fromtimestamp(
+                    int(os.environ["SOURCE_DATE_EPOCH"]),
+                    tz=dt.timezone.utc,
+                ).isoformat()
+                if os.environ.get("SOURCE_DATE_EPOCH")
+                else dt.datetime.now(dt.timezone.utc).isoformat()
+            ),
             "upstream": {
                 "project": "yuhonas/free-exercise-db",
                 "sourceUrl": UPSTREAM_URL,

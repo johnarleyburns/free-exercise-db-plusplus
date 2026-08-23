@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/free-exercise-db-plusplus.schema.json",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.schema.json",
   "title": "Free Exercise DB++",
   "type": "object",
   "additionalProperties": false,

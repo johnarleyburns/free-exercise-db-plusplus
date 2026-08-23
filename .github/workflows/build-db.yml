@@ -12,6 +12,11 @@ on:
       - "generate_mapping_audit.py"
       - "generate_fallback_audit.py"
       - "free-exercise-db-plusplus.schema.json"
+      - "verify_reproducible_build.py"
+      - "tests/**"
+      - "README.md"
+      - "METHODOLOGY.md"
+      - "VERSIONING.md"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
@@ -22,6 +27,11 @@ on:
       - "generate_mapping_audit.py"
       - "generate_fallback_audit.py"
       - "free-exercise-db-plusplus.schema.json"
+      - "verify_reproducible_build.py"
+      - "tests/**"
+      - "README.md"
+      - "METHODOLOGY.md"
+      - "VERSIONING.md"
       - ".github/workflows/build-db.yml"
   schedule:
     - cron: "23 9 * * 1"
@@ -69,6 +79,12 @@ jobs:
           assert db["metadata"]["setCredits"] == {"direct":1.0,"indirect":0.5,"stabilizer":0.0}
           print("embedded evidence and set-credit model valid")
           PY
+      - name: Verify reproducible build
+        run: |
+          python verify_reproducible_build.py exercises.json \
+            --schema free-exercise-db-plusplus.schema.json
+      - name: Verify release contract
+        run: python tests/test_release_contract.py free-exercise-db-plusplus.json
       - name: Generate review reports
         run: |
           python generate_review_report.py free-exercise-db-plusplus.json             --markdown REVIEW.md --csv review-queue.csv --json review-summary.json
