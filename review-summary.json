@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.2.0",
-    "converterVersion": "0.4.0",
-    "generatedAt": "2026-08-23T02:44:33.037743+00:00",
+    "converterVersion": "0.4.1",
+    "generatedAt": "2026-08-23T02:49:04.912960+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -39,43 +39,25 @@
     "outputExerciseCount": 873,
     "completeness": "full"
   },
-  "eligibleExercises": 675,
+  "eligibleExercises": 673,
   "confidenceCounts": {
-    "medium": 438,
-    "high": 420,
-    "low": 15
+    "medium": 451,
+    "high": 422
   },
   "reviewPriorityCounts": {
-    "rule_review": 438,
-    "excluded_verified": 198,
-    "reviewed": 222,
-    "needs_review": 15
+    "rule_review": 451,
+    "excluded_verified": 200,
+    "reviewed": 222
   },
   "reviewReasonCounts": {
-    "rule_based_compound_mapping": 337,
+    "rule_based_compound_mapping": 340,
     "non_volume_category:stretching": 123,
     "non_volume_category:plyometrics": 61,
     "isolation_primary_secondary_fallback": 37,
-    "compound_fallback_requires_review": 15,
-    "reviewed_complex_pattern_rule": 64,
+    "reviewed_complex_pattern_rule": 74,
+    "non_volume_named_override": 2,
     "non_volume_category:cardio": 14
   },
-  "reviewQueueSize": 453,
-  "lowConfidenceIds": [
-    "Alternating_Hang_Clean",
-    "Anti-Gravity_Press",
-    "Balance_Board",
-    "Bent_Press",
-    "Bottoms-Up_Clean_From_The_Hang_Position",
-    "Dumbbell_Clean",
-    "Forward_Drag_with_Press",
-    "Kettlebell_Figure_8",
-    "Kettlebell_Pass_Between_The_Legs",
-    "Kettlebell_Pirate_Ships",
-    "Landmine_180s",
-    "One-Arm_Kettlebell_Para_Press",
-    "One-Arm_Medicine_Ball_Slam",
-    "Spider_Crawl",
-    "Wind_Sprints"
-  ]
+  "reviewQueueSize": 451,
+  "lowConfidenceIds": []
 }
