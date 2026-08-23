@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.7.3",
-    "generatedAt": "2026-08-23T20:31:27.684961+00:00",
+    "converterVersion": "0.7.4",
+    "generatedAt": "2026-08-23T20:35:46.404310+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -372,6 +372,39 @@
           "type": "experimental",
           "pmid": "32940548",
           "url": "https://pubmed.ncbi.nlm.nih.gov/32940548/"
+        },
+        "neck_isometric_emg_2002": {
+          "title": "Electromyography of superficial cervical muscles with exertion in the sagittal, coronal and oblique planes",
+          "type": "experimental",
+          "pmid": "11931061",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11931061/"
+        },
+        "neck_conditioning_emg_2008": {
+          "title": "An electromyographic comparison of neck conditioning exercises in healthy controls",
+          "type": "experimental",
+          "pmid": "18550959",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18550959/"
+        },
+        "forearm_pronation_supination_emg_2026": {
+          "title": "An Electromyographic Study Comparing Muscle Function During Supination and Pronation of the Forearm",
+          "type": "experimental",
+          "pmid": "41674760",
+          "doi": "10.7759/cureus.101255",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41674760/"
+        },
+        "forearm_grip_emg_2019": {
+          "title": "The influence of simultaneous handgrip and wrist force on forearm muscle activity",
+          "type": "experimental",
+          "pmid": "30822679",
+          "doi": "10.1016/j.jelekin.2019.02.004",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30822679/"
+        },
+        "power_grip_emg_2015": {
+          "title": "Evaluating protocols for normalizing forearm electromyograms during power grip",
+          "type": "experimental",
+          "pmid": "26589588",
+          "doi": "10.1016/j.jelekin.2015.10.014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26589588/"
         }
       },
       "patterns": {
@@ -1030,14 +1063,49 @@
           ]
         },
         "neck_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Isometric cervical EMG studies directly support neck-flexor recruitment during resisted flexion.",
+          "references": [
+            "neck_isometric_emg_2002",
+            "neck_conditioning_emg_2008"
+          ]
         },
         "neck_extension": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Isometric cervical EMG studies directly support posterior neck-muscle recruitment during resisted extension.",
+          "references": [
+            "neck_isometric_emg_2002",
+            "neck_conditioning_emg_2008"
+          ]
+        },
+        "neck_lateral_flexion": {
+          "status": "supported",
+          "summary": "Cervical EMG studies directly measure direction-specific neck-muscle recruitment during resisted lateral flexion.",
+          "references": [
+            "neck_isometric_emg_2002"
+          ]
+        },
+        "forearm_pronation": {
+          "status": "supported",
+          "summary": "Direct EMG evidence supports pronator quadratus and pronator teres recruitment during resisted forearm pronation.",
+          "references": [
+            "forearm_pronation_supination_emg_2026"
+          ]
+        },
+        "forearm_supination": {
+          "status": "supported",
+          "summary": "Direct EMG evidence supports supinator and load-dependent biceps recruitment during resisted forearm supination.",
+          "references": [
+            "forearm_pronation_supination_emg_2026"
+          ]
+        },
+        "grip": {
+          "status": "supported",
+          "summary": "Direct handgrip EMG studies support substantial forearm flexor/extensor recruitment during loaded gripping and pinching tasks.",
+          "references": [
+            "forearm_grip_emg_2019",
+            "power_grip_emg_2015"
+          ]
         }
       }
     },
@@ -1069,28 +1137,28 @@
   },
   "eligibleExercises": 673,
   "confidenceCounts": {
-    "high": 764,
-    "medium": 109
+    "high": 785,
+    "medium": 88
   },
   "reviewPriorityCounts": {
-    "reviewed": 564,
+    "reviewed": 585,
     "excluded_verified": 200,
-    "rule_review": 109
+    "rule_review": 88
   },
   "reviewReasonCounts": {
     "non_volume_category:stretching": 123,
     "complex_pattern_bookkeeping": 72,
     "non_volume_category:plyometrics": 61,
-    "isolation_primary_secondary_fallback": 24,
     "indirect_evidence_pattern": 13,
     "non_volume_named_override": 2,
-    "non_volume_category:cardio": 14
+    "non_volume_category:cardio": 14,
+    "isolation_primary_secondary_fallback": 3
   },
   "evidenceStatusCounts": {
-    "supported": 564,
+    "supported": 586,
     "complex_supported": 72,
     "indirect_support": 13
   },
-  "reviewQueueSize": 109,
+  "reviewQueueSize": 88,
   "lowConfidenceIds": []
 }

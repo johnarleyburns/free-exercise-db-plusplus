@@ -1,7 +1,7 @@
 # DB++ Exercise-Specific Mapping Audit
 
-- Audited non-high volume mappings: **109**
-- Upstream primary/secondary fallbacks: **24**
+- Audited non-high volume mappings: **88**
+- Upstream primary/secondary fallbacks: **3**
 - Indirect-evidence pattern mappings: **13**
 - Complex-supported pattern mappings: **72**
 
@@ -9,30 +9,9 @@
 
 | Exercise | Mechanic | Source primary | Source secondary | DB++ direct | DB++ indirect |
 |---|---|---|---|---|---|
-| Alternating Deltoid Raise | isolation | shoulders |  | shoulders |  |
 | Car Drivers | isolation | shoulders | forearms | shoulders | forearms |
 | Crucifix | isolation | shoulders | forearms | shoulders | forearms |
 | Downward Facing Balance | isolation | glutes | abdominals, hamstrings | glutes | abdominals, hamstrings |
-| Dumbbell Lying Pronation | isolation | forearms |  | forearms |  |
-| Dumbbell Lying Supination | isolation | forearms |  | forearms |  |
-| Isometric Neck Exercise - Front And Back | isolation | neck |  | neck |  |
-| Isometric Neck Exercise - Sides | isolation | neck |  | neck |  |
-| Leg Lift | isolation | glutes | hamstrings | glutes | hamstrings |
-| Lying Face Down Plate Neck Resistance | isolation | neck |  | neck |  |
-| Lying Face Up Plate Neck Resistance | isolation | neck |  | neck |  |
-| One-Legged Cable Kickback | isolation | glutes | hamstrings | glutes | hamstrings |
-| Plate Pinch | isolation | forearms |  | forearms |  |
-| Power Partials | isolation | shoulders |  | shoulders |  |
-| Reverse Machine Flyes | isolation | shoulders |  | shoulders |  |
-| Seated Head Harness Neck Resistance | isolation | neck |  | neck |  |
-| Single Dumbbell Raise | isolation | shoulders | forearms, traps | shoulders | forearms, traps |
-| Smith Incline Shoulder Raise | isolation | shoulders | chest | shoulders | chest |
-| Standing Dumbbell Straight-Arm Front Delt Raise Above Head | isolation | shoulders |  | shoulders |  |
-| Standing Front Barbell Raise Over Head | isolation | shoulders |  | shoulders |  |
-| Standing Low-Pulley Deltoid Raise | isolation | shoulders | forearms | shoulders | forearms |
-| Standing Olympic Plate Hand Squeeze | isolation | forearms | biceps | forearms | biceps |
-| Wrist Roller | isolation | forearms | shoulders | forearms | shoulders |
-| Wrist Rotations with Straight Bar | isolation | forearms |  | forearms |  |
 
 ## Indirect-support mappings
 

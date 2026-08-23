@@ -1,7 +1,7 @@
 # DB++ Rule Quality Audit
 
-- Recognized pattern uses: **649**
-- High-confidence recognized uses: **564**
+- Recognized pattern uses: **671**
+- High-confidence recognized uses: **586**
 - Medium complex-supported uses: **72**
 - Medium indirect-support uses: **13**
 - Medium provisional uses: **0**
@@ -21,16 +21,16 @@
 | `conventional_deadlift` | supported | 17 | 17 | 0 | Axle Deadlift, Barbell Deadlift, Cable Deadlifts, Car Deadlift |
 | `chest_fly` | supported | 15 | 15 | 0 | Around The Worlds, Bodyweight Flyes, Butterfly, Cable Crossover |
 | `incline_press` | supported | 15 | 15 | 0 | Barbell Incline Bench Press - Medium Grip, Hammer Grip Incline DB Bench Press, Incline Bench Pull, Incline Cable Chest Press |
+| `shoulder_abduction` | supported | 15 | 15 | 0 | Alternating Deltoid Raise, Bent Over Low-Pulley Side Lateral, Cable Seated Lateral Raise, Dumbbell Lying One-Arm Rear Lateral Raise |
 | `horizontal_press_triceps_bias` | supported | 14 | 14 | 0 | Alternating Floor Press, Board Press, Chain Press, Close-Grip Dumbbell Press |
 | `lunge` | supported | 13 | 13 | 0 | Barbell Lunge, Barbell Side Split Squat, Barbell Walking Lunge, Bodyweight Walking Lunge |
-| `shoulder_abduction` | supported | 12 | 12 | 0 | Bent Over Low-Pulley Side Lateral, Cable Seated Lateral Raise, Dumbbell Lying One-Arm Rear Lateral Raise, Dumbbell Lying Rear Lateral Raise |
+| `shoulder_flexion` | supported | 12 | 12 | 0 | Barbell Incline Shoulder Raise, Dumbbell Incline Shoulder Raise, Dumbbell Raise, Front Cable Raise |
+| `hip_extension` | supported | 11 | 11 | 0 | Barbell Glute Bridge, Barbell Hip Thrust, Butt Lift (Bridge), Glute Kickback |
 | `hip_hinge` | supported | 11 | 11 | 0 | Band Good Morning, Band Good Morning (Pull Through), Good Morning, Good Morning off Pins |
 | `plantar_flexion_straight_knee` | supported | 11 | 11 | 0 | Calf Press, Calf Raise On A Dumbbell, Calf Raises - With Bands, Donkey Calf Raises |
+| `reverse_fly` | supported | 10 | 10 | 0 | Back Flyes - With Bands, Band Pull Apart, Bent Over Dumbbell Rear Delt Raise With Head On Bench, Cable Rear Delt Fly |
 | `shrug` | supported | 10 | 10 | 0 | Barbell Shrug, Barbell Shrug Behind The Back, Cable Shrugs, Calf-Machine Shoulder Shrug |
-| `hip_extension` | supported | 9 | 9 | 0 | Barbell Glute Bridge, Barbell Hip Thrust, Butt Lift (Bridge), Glute Kickback |
-| `reverse_fly` | supported | 9 | 9 | 0 | Back Flyes - With Bands, Band Pull Apart, Bent Over Dumbbell Rear Delt Raise With Head On Bench, Cable Rear Delt Fly |
 | `trunk_rotation` | supported | 9 | 9 | 0 | Cable Judo Flip, Cable Russian Twists, Landmine 180's, London Bridges |
-| `shoulder_flexion` | supported | 8 | 8 | 0 | Barbell Incline Shoulder Raise, Dumbbell Incline Shoulder Raise, Dumbbell Raise, Front Cable Raise |
 | `anti_extension` | supported | 7 | 7 | 0 | Ab Roller, Barbell Ab Rollout, Barbell Ab Rollout - On Knees, Barbell Rollout from Bench |
 | `decline_press` | supported | 7 | 7 | 0 | Decline Barbell Bench Press, Decline Dumbbell Bench Press, Decline Push-Up, Decline Smith Press |
 | `knee_flexion` | supported | 7 | 7 | 0 | Ball Leg Curl, Floor Glute-Ham Raise, Lying Leg Curls, Platform Hamstring Slides |
@@ -39,6 +39,7 @@
 | `pullover` | supported | 5 | 5 | 0 | Bent-Arm Barbell Pullover, Bent-Arm Dumbbell Pullover, Front Raise And Pullover, Straight-Arm Dumbbell Pullover |
 | `upright_row` | supported | 5 | 5 | 0 | Dumbbell One-Arm Upright Row, Smith Machine One-Arm Upright Row, Smith Machine Upright Row, Standing Dumbbell Upright Row |
 | `dip_triceps_bias` | supported | 4 | 4 | 0 | Bench Dips, Dip Machine, Dips - Triceps Version, Weighted Bench Dip |
+| `grip` | supported | 4 | 4 | 0 | Plate Pinch, Standing Olympic Plate Hand Squeeze, Wrist Roller, Wrist Rotations with Straight Bar |
 | `hip_flexion` | supported | 4 | 4 | 0 | Flat Bench Lying Leg Raise, Flutter Kicks, Hanging Leg Raise, Hip Flexion with Band |
 | `shoulder_external_rotation` | supported | 4 | 4 | 0 | Cuban Press, External Rotation, External Rotation with Band, External Rotation with Cable |
 | `squat_quad_bias` | supported | 4 | 4 | 0 | Barbell Hack Squat, Front Squat (Clean Grip), Front Squats With Two Kettlebells, Hack Squat |
@@ -47,14 +48,19 @@
 | `dip_chest_bias` | supported | 3 | 3 | 0 | Dips - Chest Version, Parallel Bar Dip, Ring Dips |
 | `hip_adduction` | supported | 3 | 3 | 0 | Band Hip Adductions, Cable Hip Adduction, Thigh Adductor |
 | `leg_press` | supported | 3 | 3 | 0 | Calf Press On The Leg Press Machine, Leg Press, Smith Machine Leg Press |
+| `neck_extension` | supported | 3 | 3 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Down Plate Neck Resistance, Seated Head Harness Neck Resistance |
 | `step_up` | supported | 3 | 3 | 0 | Barbell Step Ups, Dumbbell Step Ups, Step-up with Knee Raise |
 | `glute_ham_raise` | supported | 2 | 2 | 0 | Glute Ham Raise, Natural Glute Ham Raise |
 | `hip_abduction` | supported | 2 | 2 | 0 | Monster Walk, Thigh Abductor |
 | `knee_extension` | supported | 2 | 2 | 0 | Leg Extensions, Single-Leg Leg Extension |
+| `neck_flexion` | supported | 2 | 2 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Up Plate Neck Resistance |
 | `plantar_flexion_bent_knee` | supported | 2 | 2 | 0 | Barbell Seated Calf Raise, Seated Calf Raise |
 | `rack_pull` | supported | 2 | 2 | 0 | Rack Pull with Bands, Rack Pulls |
 | `shoulder_internal_rotation` | supported | 2 | 2 | 0 | Cable Internal Rotation, Internal Rotation with Band |
 | `battle_ropes` | supported | 1 | 1 | 0 | Battling Ropes |
+| `forearm_pronation` | supported | 1 | 1 | 0 | Dumbbell Lying Pronation |
+| `forearm_supination` | supported | 1 | 1 | 0 | Dumbbell Lying Supination |
+| `neck_lateral_flexion` | supported | 1 | 1 | 0 | Isometric Neck Exercise - Sides |
 | `sled_push` | supported | 1 | 1 | 0 | Sled Push |
 | `olympic_clean` | complex_supported | 10 | 0 | 10 | Alternating Hang Clean, Clean, Clean from Blocks, Dumbbell Clean |
 | `kettlebell_clean` | complex_supported | 8 | 0 | 8 | Bottoms-Up Clean From The Hang Position, Double Kettlebell Alternating Hang Clean, Kettlebell Dead Clean, Kettlebell Hang Clean |
