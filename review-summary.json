@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.5.1",
-    "generatedAt": "2026-08-23T03:13:30.912846+00:00",
+    "converterVersion": "0.6.0",
+    "generatedAt": "2026-08-23T04:10:52.876127+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -131,6 +131,58 @@
           "type": "meta_regression",
           "pmid": "41343037",
           "url": "https://pubmed.ncbi.nlm.nih.gov/41343037/"
+        },
+        "shoulder_press_emg_2013": {
+          "title": "Effects of body position and loading modality on muscle activity and strength in shoulder presses",
+          "type": "experimental",
+          "pmid": "23096062",
+          "doi": "10.1519/JSC.0b013e318276b873",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23096062/"
+        },
+        "shoulder_training_emg_2012": {
+          "title": "Evaluation of muscle activity during a standardized shoulder resistance training bout in novice individuals",
+          "type": "experimental",
+          "pmid": "22067242",
+          "doi": "10.1519/JSC.0b013e31823f29d9",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22067242/"
+        },
+        "lateral_raise_emg_2020": {
+          "title": "An Electromyographic Analysis of Lateral Raise Variations and Frontal Raise in Competitive Bodybuilders",
+          "type": "experimental",
+          "pmid": "32824894",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32824894/"
+        },
+        "biceps_curl_emg_2013": {
+          "title": "Effect of the shoulder position on the biceps brachii EMG in different dumbbell curls",
+          "type": "experimental",
+          "pmid": "24150552",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24150552/"
+        },
+        "curl_variants_emg_2018": {
+          "title": "Differences in electromyographic activity of biceps brachii and brachioradialis while performing three variants of curl",
+          "type": "experimental",
+          "pmid": "30013836",
+          "doi": "10.7717/peerj.5165",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30013836/"
+        },
+        "triceps_extension_emg_2017": {
+          "title": "Effect of shoulder position on triceps brachii heads activity in dumbbell elbow extension exercises",
+          "type": "experimental",
+          "pmid": "28677940",
+          "doi": "10.23736/S0022-4707.17.06849-9",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28677940/"
+        },
+        "leg_extension_hypertrophy_2021": {
+          "title": "Drop-Set Training Elicits Differential Increases in Non-Uniform Hypertrophy of the Quadriceps in Leg Extension Exercise",
+          "type": "training_intervention",
+          "pmid": "34564324",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34564324/"
+        },
+        "leg_extension_comparison_2026": {
+          "title": "Comparison of Muscle Hypertrophy and Strength Adaptations Induced by Back Squat and Leg Extension Resistance Exercises",
+          "type": "training_intervention",
+          "pmid": "41379528",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41379528/"
         }
       },
       "patterns": {
@@ -159,9 +211,11 @@
           ]
         },
         "vertical_press": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Shoulder-press EMG directly supports anterior/medial deltoid and triceps involvement across seated/standing and barbell/dumbbell variants.",
+          "references": [
+            "shoulder_press_emg_2013"
+          ]
         },
         "horizontal_press_triceps_bias": {
           "status": "supported",
@@ -202,19 +256,26 @@
           ]
         },
         "shrug": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "A standardized resistance-training EMG study directly measured reverse fly and shrug recruitment of deltoid/trapezius regions.",
+          "references": [
+            "shoulder_training_emg_2012"
+          ]
         },
         "reverse_fly": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "A standardized resistance-training EMG study directly measured reverse fly and shrug recruitment of deltoid/trapezius regions.",
+          "references": [
+            "shoulder_training_emg_2012"
+          ]
         },
         "shoulder_abduction": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Resistance-exercise EMG directly supports deltoid recruitment in lateral/front raise families; lateral raises emphasize shoulder musculature and front raises emphasize anterior deltoid.",
+          "references": [
+            "shoulder_training_emg_2012",
+            "lateral_raise_emg_2020"
+          ]
         },
         "shoulder_external_rotation": {
           "status": "provisional",
@@ -222,19 +283,26 @@
           "references": []
         },
         "elbow_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Curl studies directly support biceps brachii as a prime elbow flexor across dumbbell, straight-bar and EZ-bar variants.",
+          "references": [
+            "biceps_curl_emg_2013",
+            "curl_variants_emg_2018"
+          ]
         },
         "elbow_flexion_brachioradialis_bias": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Curl-variant EMG directly supports substantial brachioradialis involvement and grip-dependent changes in elbow-flexor recruitment.",
+          "references": [
+            "curl_variants_emg_2018"
+          ]
         },
         "elbow_extension": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Direct EMG evidence supports long- and lateral-head triceps recruitment during loaded elbow-extension exercises.",
+          "references": [
+            "triceps_extension_emg_2017"
+          ]
         },
         "wrist_flexion": {
           "status": "provisional",
@@ -275,9 +343,12 @@
           ]
         },
         "knee_extension": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Longitudinal resistance-training studies show knee-extension training produces quadriceps hypertrophy, directly supporting quadriceps as the target muscle group.",
+          "references": [
+            "leg_extension_hypertrophy_2021",
+            "leg_extension_comparison_2026"
+          ]
         },
         "knee_flexion": {
           "status": "supported",
@@ -385,9 +456,12 @@
           "references": []
         },
         "shoulder_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Resistance-exercise EMG directly supports deltoid recruitment in lateral/front raise families; lateral raises emphasize shoulder musculature and front raises emphasize anterior deltoid.",
+          "references": [
+            "shoulder_training_emg_2012",
+            "lateral_raise_emg_2020"
+          ]
         },
         "shoulder_internal_rotation": {
           "status": "provisional",
@@ -760,9 +834,9 @@
     "non_volume_category:cardio": 14
   },
   "evidenceStatusCounts": {
-    "provisional": 294,
+    "provisional": 123,
     "complex_supported": 69,
-    "supported": 210,
+    "supported": 381,
     "indirect_support": 63
   },
   "reviewQueueSize": 451,
