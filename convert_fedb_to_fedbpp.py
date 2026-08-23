@@ -18,12 +18,13 @@ import argparse
 import copy
 import datetime as dt
 import hashlib
+import os
 import json
 from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.3.0"
-CONVERTER_VERSION = "0.7.4"
+CONVERTER_VERSION = "0.8.0"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
