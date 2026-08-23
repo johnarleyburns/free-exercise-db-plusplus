@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.2.0"
-CONVERTER_VERSION = "0.3.1"
+CONVERTER_VERSION = "0.4.0"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -262,6 +262,122 @@ PATTERNS: dict[str, dict[str, list[str]]] = {
         "direct": ["glutes", "hamstrings"], "indirect": [],
         "stabilizers": ["lower_back", "forearms"],
     },
+    "olympic_clean_pull": {
+        "direct": ["quadriceps", "glutes", "traps"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["lower_back", "forearms", "abdominals"],
+    },
+    "olympic_clean": {
+        "direct": ["quadriceps", "glutes", "traps"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["lower_back", "forearms", "abdominals", "shoulders"],
+    },
+    "olympic_snatch_pull": {
+        "direct": ["quadriceps", "glutes", "traps"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["lower_back", "forearms", "abdominals"],
+    },
+    "olympic_snatch": {
+        "direct": ["quadriceps", "glutes", "traps"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["shoulders", "triceps", "lower_back", "forearms", "abdominals"],
+    },
+    "olympic_jerk": {
+        "direct": ["shoulders", "triceps", "quadriceps", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": ["abdominals", "traps"],
+    },
+    "olympic_clean_and_jerk": {
+        "direct": ["quadriceps", "glutes", "traps", "shoulders", "triceps"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["lower_back", "forearms", "abdominals"],
+    },
+    "snatch_balance": {
+        "direct": ["quadriceps", "glutes"],
+        "indirect": ["shoulders", "triceps"],
+        "stabilizers": ["traps", "abdominals"],
+    },
+    "push_press": {
+        "direct": ["shoulders", "triceps", "quadriceps", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": ["abdominals", "traps"],
+    },
+    "kettlebell_clean": {
+        "direct": ["glutes", "hamstrings"],
+        "indirect": ["quadriceps", "traps"],
+        "stabilizers": ["forearms", "lower_back", "abdominals"],
+    },
+    "kettlebell_snatch": {
+        "direct": ["glutes", "hamstrings"],
+        "indirect": ["quadriceps", "traps", "shoulders"],
+        "stabilizers": ["forearms", "lower_back", "abdominals"],
+    },
+    "kettlebell_jerk": {
+        "direct": ["shoulders", "triceps", "quadriceps", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": ["forearms", "abdominals", "traps"],
+    },
+    "kettlebell_windmill": {
+        "direct": ["abdominals"],
+        "indirect": ["glutes", "hamstrings"],
+        "stabilizers": ["shoulders", "triceps"],
+    },
+    "kettlebell_sumo_high_pull": {
+        "direct": ["glutes", "quadriceps", "traps", "shoulders"],
+        "indirect": ["hamstrings", "adductors", "biceps"],
+        "stabilizers": ["forearms", "abdominals"],
+    },
+    "thruster": {
+        "direct": ["quadriceps", "glutes", "shoulders", "triceps"],
+        "indirect": ["calves"],
+        "stabilizers": ["abdominals", "traps"],
+    },
+    "muscle_up": {
+        "direct": ["lats", "chest", "triceps"],
+        "indirect": ["biceps", "shoulders", "middle_back"],
+        "stabilizers": ["forearms", "abdominals"],
+    },
+    "rope_climb": {
+        "direct": ["lats", "biceps", "forearms"],
+        "indirect": ["middle_back"],
+        "stabilizers": ["abdominals"],
+    },
+    "atlas_stone_load": {
+        "direct": ["glutes", "quadriceps", "hamstrings"],
+        "indirect": ["biceps", "traps"],
+        "stabilizers": ["forearms", "lower_back", "abdominals"],
+    },
+    "loaded_object_load": {
+        "direct": ["glutes", "quadriceps", "hamstrings"],
+        "indirect": ["biceps", "traps"],
+        "stabilizers": ["forearms", "lower_back", "abdominals"],
+    },
+    "tire_flip": {
+        "direct": ["glutes", "quadriceps", "hamstrings"],
+        "indirect": ["chest", "triceps", "calves"],
+        "stabilizers": ["lower_back", "forearms", "abdominals"],
+    },
+    "strongman_overhead": {
+        "direct": ["shoulders", "triceps", "quadriceps", "glutes"],
+        "indirect": ["traps", "calves"],
+        "stabilizers": ["forearms", "lower_back", "abdominals"],
+    },
+    "strongman_carry": {
+        "direct": ["quadriceps", "glutes"],
+        "indirect": ["traps", "biceps"],
+        "stabilizers": ["abdominals", "lower_back"],
+    },
+    "power_stairs": {
+        "direct": ["quadriceps", "glutes"],
+        "indirect": ["hamstrings", "calves"],
+        "stabilizers": ["lower_back", "abdominals"],
+    },
+    "battle_ropes": {
+        "direct": ["shoulders"],
+        "indirect": ["forearms", "chest"],
+        "stabilizers": ["abdominals"],
+    },
+
     "trunk_flexion": {
         "direct": ["abdominals"], "indirect": [], "stabilizers": []
     },
@@ -358,6 +474,90 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
     primary = set(exercise.get("primaryMuscles", []))
 
     # Highly specific rules before generic ones.
+    # v0.4: Olympic weightlifting and related derivatives.
+    if name == "clean and jerk":
+        return "olympic_clean_and_jerk"
+    if name in {"clean pull"}:
+        return "olympic_clean_pull"
+    if name in {"snatch pull"}:
+        return "olympic_snatch_pull"
+    if "snatch balance" in name:
+        return "snatch_balance"
+    if name in {"clean", "power clean", "hang clean", "split clean", "clean from blocks",
+                "power clean from blocks", "hang clean - below the knees",
+                "smith machine hang power clean"}:
+        return "olympic_clean"
+    if name in {"snatch", "power snatch", "hang snatch", "split snatch", "muscle snatch",
+                "snatch from blocks", "power snatch from blocks", "hang snatch - below knees"}:
+        return "olympic_snatch"
+    if name in {"jerk balance", "power jerk", "split jerk"}:
+        return "olympic_jerk"
+    if name == "clean and press":
+        return "olympic_clean_and_jerk"
+
+    # Kettlebell ballistic families.
+    if "kettlebell" in name and "clean and jerk" in name:
+        return "olympic_clean_and_jerk"
+    if "kettlebell" in name and "push press" in name:
+        return "push_press"
+    if "kettlebell" in name and ("jerk" in name):
+        return "kettlebell_jerk"
+    if "kettlebell" in name and "snatch" in name:
+        return "kettlebell_snatch"
+    if "kettlebell" in name and ("clean" in name):
+        return "kettlebell_clean"
+    if "kettlebell" in name and "windmill" in name:
+        return "kettlebell_windmill"
+    if "kettlebell" in name and "sumo high pull" in name:
+        return "kettlebell_sumo_high_pull"
+    if "kettlebell" in name and "thruster" in name:
+        return "thruster"
+
+    # Strongman / loaded-object families.
+    if "atlas stone" in name:
+        return "atlas_stone_load"
+    if any(x in name for x in ["keg load", "sandbag load"]):
+        return "loaded_object_load"
+    if "tire flip" in name:
+        return "tire_flip"
+    if any(x in name for x in ["log lift", "circus bell", "rack delivery"]):
+        return "strongman_overhead"
+    if "conan" in name and "wheel" in name:
+        return "strongman_carry"
+    if "power stairs" in name:
+        return "power_stairs"
+
+    # Gymnastic / climbing / integrated.
+    if "muscle up" in name:
+        return "muscle_up"
+    if "rope climb" in name:
+        return "rope_climb"
+    if "battling ropes" in name:
+        return "battle_ropes"
+
+    # v0.3.2 exact conventional-name cleanup.
+    if name == "machine shoulder (military) press":
+        return "vertical_press"
+    if name in {"hip extension with bands", "hip lift with band", "physioball hip bridge"}:
+        return "hip_extension"
+    if name == "cuban press":
+        return "shoulder_external_rotation"
+    if name in {"air bike", "bottoms up", "otis-up"}:
+        return "trunk_flexion"
+    if name in {"plate twist", "standing cable lift", "cable judo flip"}:
+        return "trunk_rotation"
+    if name == "flutter kicks":
+        return "hip_flexion"
+    if name == "dumbbell raise":
+        return "shoulder_flexion"
+    if name == "barbell incline shoulder raise":
+        return "shoulder_flexion"
+    if name == "neck press":
+        return "horizontal_press"
+    if name in {"push press", "push press - behind the neck"}:
+        return "push_press"
+    if name in {"landmine linear jammer", "single-arm linear jammer"}:
+        return "push_press"
     if "incline" in name and ("press" in name or "push-up" in name or "push up" in name or "bench" in name):
         return "incline_press"
     if "decline" in name and ("press" in name or "push-up" in name or "push up" in name):
@@ -522,6 +722,14 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         if primary == {"abductors"}:
             return "hip_abduction"
 
+    # Other named integrated movements kept medium-confidence rather than fallback-low.
+    if name in {"iron cross", "isometric wipers"}:
+        return "anti_extension"
+    if name in {"landmine 180s", "spell caster"}:
+        return "trunk_rotation"
+    if name == "sled overhead backward walk":
+        return "sled_pull"
+
     return None
 
 def roles_from_pattern(pattern: str) -> tuple[list[str], list[str], list[str]]:
@@ -648,15 +856,31 @@ def annotate(exercise: dict[str, Any]) -> dict[str, Any]:
     if pattern is not None:
         direct, indirect, stabilizers = roles_from_pattern(pattern)
         direct, indirect, stabilizers = remove_role_overlap(direct, indirect, stabilizers)
+        complex_patterns = {
+            "olympic_clean_pull", "olympic_clean", "olympic_snatch_pull", "olympic_snatch",
+            "olympic_jerk", "olympic_clean_and_jerk", "snatch_balance", "push_press",
+            "kettlebell_clean", "kettlebell_snatch", "kettlebell_jerk", "kettlebell_windmill",
+            "kettlebell_sumo_high_pull", "thruster", "muscle_up", "rope_climb",
+            "atlas_stone_load", "loaded_object_load", "tire_flip", "strongman_overhead",
+            "strongman_carry", "power_stairs", "battle_ropes"
+        }
+        if exercise.get("mechanic") == "isolation":
+            confidence = "high"
+            reasons = []
+        elif pattern in complex_patterns:
+            confidence = "medium"
+            reasons = ["reviewed_complex_pattern_rule"]
+        else:
+            confidence = "medium"
+            reasons = ["rule_based_compound_mapping"]
         return {
             "patterns": [pattern],
             "direct": direct,
             "indirect": indirect,
             "stabilizers": stabilizers,
             "volumeEligible": True,
-            "confidence": "high" if exercise.get("mechanic") == "isolation" else "medium",
-            "reviewReasons": [] if exercise.get("mechanic") == "isolation"
-                else ["rule_based_compound_mapping"],
+            "confidence": confidence,
+            "reviewReasons": reasons,
         }
 
     primary = normalized_list(exercise.get("primaryMuscles", []))
