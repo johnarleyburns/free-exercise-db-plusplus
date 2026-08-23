@@ -23,11 +23,15 @@ def main():
     args=ap.parse_args()
 
     db=json.loads(args.db.read_text(encoding="utf-8"))
+    evidence=db.get("metadata",{}).get("evidence",{"patterns":{}})
+    evidence_counts=Counter()
     conf, reasons, prios = Counter(), Counter(), Counter()
     rows=[]; eligible=0
     for eid,r in db["exercises"].items():
         a=r["annotation"]; src=r["source"]; p=priority(a)
         conf[a["confidence"]]+=1; prios[p]+=1
+        for pat in a.get("patterns", []):
+            evidence_counts[evidence.get("patterns",{}).get(pat,{}).get("status","missing")] += 1
         if a["volumeEligible"]: eligible+=1
         for reason in a["reviewReasons"]: reasons[reason]+=1
         rows.append({
@@ -49,7 +53,7 @@ def main():
     summary={
         "metadata":db["metadata"],"eligibleExercises":eligible,
         "confidenceCounts":dict(conf),"reviewPriorityCounts":dict(prios),
-        "reviewReasonCounts":dict(reasons),"reviewQueueSize":len(queue),
+        "reviewReasonCounts":dict(reasons),"evidenceStatusCounts":dict(evidence_counts),"reviewQueueSize":len(queue),
         "lowConfidenceIds":[r["exerciseId"] for r in rows if r["reviewPriority"]=="needs_review"]
     }
     args.json_out.write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")

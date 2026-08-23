@@ -204,11 +204,13 @@
         "converterVersion",
         "generatedAt",
         "upstream",
-        "setCredits",
         "muscleOntology",
         "sourceExerciseCount",
         "outputExerciseCount",
-        "completeness"
+        "completeness",
+        "setCredits",
+        "setCreditEvidence",
+        "evidence"
       ],
       "properties": {
         "schemaVersion": {
@@ -246,26 +248,6 @@
             }
           }
         },
-        "setCredits": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "direct",
-            "indirect",
-            "stabilizer"
-          ],
-          "properties": {
-            "direct": {
-              "type": "number"
-            },
-            "indirect": {
-              "type": "number"
-            },
-            "stabilizer": {
-              "type": "number"
-            }
-          }
-        },
         "muscleOntology": {
           "type": "array",
           "uniqueItems": true,
@@ -288,6 +270,101 @@
             "fixture",
             "partial"
           ]
+        },
+        "setCredits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "direct",
+            "indirect",
+            "stabilizer"
+          ],
+          "properties": {
+            "direct": {
+              "type": "number",
+              "const": 1.0
+            },
+            "indirect": {
+              "type": "number",
+              "const": 0.5
+            },
+            "stabilizer": {
+              "type": "number",
+              "const": 0.0
+            }
+          }
+        },
+        "setCreditEvidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "interpretation",
+            "references"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "const": "supported_model"
+            },
+            "interpretation": {
+              "type": "string"
+            },
+            "references": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "references",
+            "patterns"
+          ],
+          "properties": {
+            "references": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            },
+            "patterns": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "required": [
+                  "status",
+                  "summary",
+                  "references"
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "supported",
+                      "indirect_support",
+                      "complex_supported",
+                      "provisional"
+                    ]
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "references": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
         }
       }
     },
@@ -316,7 +393,8 @@
               "stabilizers",
               "volumeEligible",
               "confidence",
-              "reviewReasons"
+              "reviewReasons",
+              "evidenceRefs"
             ],
             "properties": {
               "patterns": {
@@ -351,6 +429,14 @@
                 "uniqueItems": true,
                 "items": {
                   "type": "string"
+                }
+              },
+              "evidenceRefs": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^pattern:[a-z0-9_]+$"
                 }
               }
             }
