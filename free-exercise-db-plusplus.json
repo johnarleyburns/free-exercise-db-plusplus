@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.2.0",
-    "converterVersion": "0.3.1",
-    "generatedAt": "2026-08-23T02:27:07.615091+00:00",
+    "converterVersion": "0.4.0",
+    "generatedAt": "2026-08-23T02:44:33.037743+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -366,13 +366,19 @@
       },
       "annotation": {
         "patterns": [
-          "trunk_flexion"
+          "kettlebell_windmill"
         ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [],
-        "stabilizers": [],
+        "indirect": [
+          "glutes",
+          "hamstrings"
+        ],
+        "stabilizers": [
+          "shoulders",
+          "triceps"
+        ],
         "volumeEligible": true,
         "confidence": "high",
         "reviewReasons": []
@@ -420,16 +426,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_flexion"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -1529,22 +1537,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "atlas_stone_load"
+        ],
         "direct": [
-          "lower_back"
+          "glutes",
+          "quadriceps",
+          "hamstrings"
         ],
         "indirect": [
           "biceps",
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "quadriceps"
+          "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -1595,27 +1608,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "atlas_stone_load"
+        ],
         "direct": [
-          "lower_back"
+          "glutes",
+          "quadriceps",
+          "hamstrings"
         ],
         "indirect": [
-          "abdominals",
-          "adductors",
           "biceps",
-          "calves",
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "middle_back",
-          "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -3094,18 +3107,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
-        "indirect": [
-          "chest"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -3938,19 +3951,23 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "battle_ropes"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
-          "chest",
-          "forearms"
+          "forearms",
+          "chest"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -5770,16 +5787,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_flexion"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -6959,16 +6978,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_rotation"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -9223,23 +9244,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "strongman_overhead"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "lower_back",
           "traps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -9290,24 +9316,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "hamstrings"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
+        "direct": [
           "quadriceps",
-          "shoulders",
+          "glutes",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -9430,22 +9460,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "quadriceps"
+        "patterns": [
+          "olympic_clean_pull"
         ],
-        "indirect": [
-          "forearms",
+        "direct": [
+          "quadriceps",
           "glutes",
-          "hamstrings",
-          "lower_back",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -9554,24 +9589,29 @@
         ]
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "shoulders"
+        "patterns": [
+          "olympic_clean_and_jerk"
         ],
-        "indirect": [
-          "abdominals",
-          "glutes",
-          "hamstrings",
-          "lower_back",
+        "direct": [
           "quadriceps",
+          "glutes",
           "traps",
+          "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -9625,26 +9665,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "shoulders"
+        "patterns": [
+          "olympic_clean_and_jerk"
         ],
-        "indirect": [
-          "abdominals",
-          "calves",
-          "glutes",
-          "hamstrings",
-          "lower_back",
-          "middle_back",
+        "direct": [
           "quadriceps",
+          "glutes",
           "traps",
+          "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -9702,22 +9745,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "quadriceps"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "calves",
+        "direct": [
+          "quadriceps",
           "glutes",
-          "hamstrings",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -10353,24 +10402,25 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "strongman_carry"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "abdominals",
-          "biceps",
-          "calves",
-          "forearms",
-          "lower_back",
-          "shoulders",
-          "traps"
+          "traps",
+          "biceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "lower_back"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -10910,18 +10960,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_external_rotation"
+        ],
         "direct": [
-          "shoulders"
+          "rotator_cuff"
         ],
-        "indirect": [
-          "traps"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -12185,24 +12235,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "biceps",
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
           "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -12251,20 +12303,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_jerk"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -12313,20 +12372,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -12371,20 +12436,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_snatch"
+        ],
         "direct": [
-          "shoulders"
+          "glutes",
+          "hamstrings"
         ],
         "indirect": [
-          "glutes",
-          "hamstrings",
-          "quadriceps"
+          "quadriceps",
+          "traps",
+          "shoulders"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -12429,21 +12501,24 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_windmill"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [
           "glutes",
-          "hamstrings",
+          "hamstrings"
+        ],
+        "stabilizers": [
           "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -13751,18 +13826,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
-        "indirect": [
-          "biceps"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -15916,18 +15991,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_flexion"
+        ],
         "direct": [
-          "glutes"
+          "hip_flexors"
         ],
         "indirect": [
-          "hamstrings"
+          "abdominals"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -17971,24 +18048,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "quadriceps"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "calves",
-          "forearms",
+        "direct": [
+          "quadriceps",
           "glutes",
-          "hamstrings",
-          "lower_back",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -18039,24 +18120,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "quadriceps"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "calves",
-          "forearms",
+        "direct": [
+          "quadriceps",
           "glutes",
-          "hamstrings",
-          "lower_back",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -18108,25 +18193,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "hamstrings"
+        "patterns": [
+          "olympic_snatch"
         ],
-        "indirect": [
-          "abdominals",
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
+        "direct": [
           "quadriceps",
-          "shoulders",
+          "glutes",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -18179,25 +18268,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "hamstrings"
+        "patterns": [
+          "olympic_snatch"
         ],
-        "indirect": [
-          "abdominals",
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
+        "direct": [
           "quadriceps",
-          "shoulders",
+          "glutes",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -18420,23 +18513,25 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "snatch_balance"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "abdominals",
-          "forearms",
-          "glutes",
-          "hamstrings",
           "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "traps",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -18641,18 +18736,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_extension"
+        ],
         "direct": [
           "glutes"
         ],
         "indirect": [
           "hamstrings"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -18753,19 +18852,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_extension"
+        ],
         "direct": [
           "glutes"
         ],
         "indirect": [
-          "calves",
           "hamstrings"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -20484,23 +20586,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "anti_extension"
+        ],
         "direct": [
+          "abdominals"
+        ],
+        "indirect": [],
+        "stabilizers": [
           "shoulders"
         ],
-        "indirect": [
-          "chest",
-          "glutes",
-          "hamstrings",
-          "lower_back",
-          "quadriceps",
-          "traps"
-        ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -20750,20 +20849,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "anti_extension"
+        ],
         "direct": [
-          "chest"
+          "abdominals"
         ],
-        "indirect": [
-          "abdominals",
-          "shoulders",
-          "triceps"
+        "indirect": [],
+        "stabilizers": [
+          "shoulders"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -21044,21 +21143,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_jerk"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "glutes",
-          "hamstrings",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -21220,27 +21324,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "loaded_object_load"
+        ],
         "direct": [
-          "lower_back"
+          "glutes",
+          "quadriceps",
+          "hamstrings"
         ],
         "indirect": [
-          "abdominals",
           "biceps",
-          "calves",
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "middle_back",
-          "quadriceps",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -21351,22 +21455,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "lower_back",
           "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -21468,22 +21576,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "lower_back",
-          "shoulders",
+          "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -21886,22 +21998,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "traps"
+        "patterns": [
+          "kettlebell_sumo_high_pull"
         ],
-        "indirect": [
-          "adductors",
+        "direct": [
           "glutes",
-          "hamstrings",
           "quadriceps",
+          "traps",
           "shoulders"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "adductors",
+          "biceps"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -21948,19 +22066,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "shoulders"
+        "patterns": [
+          "thruster"
         ],
-        "indirect": [
+        "direct": [
           "quadriceps",
+          "glutes",
+          "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "calves"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -22133,21 +22258,24 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_windmill"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [
           "glutes",
-          "hamstrings",
+          "hamstrings"
+        ],
+        "stabilizers": [
           "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -22195,24 +22323,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "lats"
+        "patterns": [
+          "muscle_up"
         ],
-        "indirect": [
-          "abdominals",
-          "biceps",
-          "forearms",
-          "middle_back",
-          "shoulders",
-          "traps",
+        "direct": [
+          "lats",
+          "chest",
           "triceps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "biceps",
+          "shoulders",
+          "middle_back"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -23041,23 +23172,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "abdominals",
-          "calves",
-          "chest",
-          "hamstrings",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -24335,26 +24469,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "strongman_overhead"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "abdominals",
-          "chest",
-          "glutes",
-          "hamstrings",
-          "lower_back",
-          "middle_back",
-          "quadriceps",
           "traps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -26201,18 +26337,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_press"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -26788,22 +26928,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "glutes",
-          "lower_back",
-          "quadriceps",
-          "shoulders",
-          "triceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -26852,24 +26999,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "lats"
+        "patterns": [
+          "muscle_up"
         ],
-        "indirect": [
-          "abdominals",
-          "biceps",
-          "forearms",
-          "middle_back",
-          "shoulders",
-          "traps",
+        "direct": [
+          "lats",
+          "chest",
           "triceps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "biceps",
+          "shoulders",
+          "middle_back"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -27220,19 +27370,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "horizontal_press"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [
-          "shoulders",
-          "triceps"
+          "triceps",
+          "shoulders"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -27776,21 +27928,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "glutes",
-          "lower_back",
-          "shoulders",
+          "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -27836,16 +27993,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "shoulders"
+        "patterns": [
+          "olympic_clean_and_jerk"
         ],
-        "indirect": [],
-        "stabilizers": [],
+        "direct": [
+          "quadriceps",
+          "glutes",
+          "traps",
+          "shoulders",
+          "triceps"
+        ],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -27946,20 +28116,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_jerk"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -28117,20 +28294,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -28234,23 +28417,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_snatch"
+        ],
         "direct": [
-          "shoulders"
+          "glutes",
+          "hamstrings"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "hamstrings",
-          "lower_back",
+          "quadriceps",
           "traps",
-          "triceps"
+          "shoulders"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -28298,21 +28485,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_jerk"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "glutes",
-          "hamstrings",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -28360,19 +28553,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_snatch"
+        ],
         "direct": [
-          "shoulders"
+          "glutes",
+          "hamstrings"
         ],
         "indirect": [
-          "hamstrings",
-          "quadriceps"
+          "quadriceps",
+          "traps",
+          "shoulders"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -28594,22 +28795,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "forearms",
-          "glutes",
-          "lower_back",
           "quadriceps",
-          "shoulders"
+          "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -29581,21 +29786,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
+          "glutes",
           "hamstrings"
         ],
         "indirect": [
-          "glutes",
-          "lower_back",
           "quadriceps",
-          "shoulders"
+          "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -29641,20 +29851,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_flexion"
+        ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [
-          "chest",
-          "shoulders",
-          "triceps"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -30572,18 +30780,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_extension"
+        ],
         "direct": [
           "glutes"
         ],
         "indirect": [
           "hamstrings"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -31176,26 +31388,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_clean"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
-          "middle_back",
-          "quadriceps",
-          "shoulders",
-          "traps",
-          "triceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -31269,18 +31483,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_clean"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "quadriceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -31327,23 +31551,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_jerk"
+        ],
         "direct": [
-          "quadriceps"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "abdominals",
-          "calves",
-          "glutes",
-          "hamstrings",
-          "shoulders",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -31447,24 +31674,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "lower_back",
-          "quadriceps",
-          "shoulders",
-          "traps",
-          "triceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -31517,25 +31749,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "calves",
-          "forearms",
-          "glutes",
           "hamstrings",
-          "lower_back",
-          "shoulders",
-          "traps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -31589,24 +31825,25 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "power_stairs"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "adductors",
-          "calves",
-          "glutes",
-          "lower_back",
-          "quadriceps",
-          "shoulders",
-          "traps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -32288,19 +32525,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -32342,20 +32586,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -32776,19 +33026,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "strongman_overhead"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "forearms",
-          "traps"
+          "traps",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -34676,21 +34935,24 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "rope_climb"
+        ],
         "direct": [
-          "lats"
+          "lats",
+          "biceps",
+          "forearms"
         ],
         "indirect": [
-          "biceps",
-          "forearms",
-          "middle_back",
-          "shoulders"
+          "middle_back"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -35165,27 +35427,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "loaded_object_load"
+        ],
         "direct": [
-          "quadriceps"
+          "glutes",
+          "quadriceps",
+          "hamstrings"
         ],
         "indirect": [
-          "abdominals",
           "biceps",
-          "calves",
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "lower_back",
-          "middle_back",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -38408,19 +38670,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "push_press"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "chest",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -39288,20 +39557,24 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "sled_pull"
+        ],
         "direct": [
-          "shoulders"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "middle_back",
-          "quadriceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -40047,22 +40320,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "hamstrings"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "glutes",
-          "lower_back",
+        "direct": [
           "quadriceps",
-          "shoulders",
+          "glutes",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -40783,24 +41062,29 @@
         ]
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "biceps",
-          "glutes",
           "hamstrings",
-          "lower_back",
-          "shoulders",
-          "traps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -40855,22 +41139,25 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "snatch_balance"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "hamstrings",
           "shoulders",
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "traps",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -40987,22 +41274,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "hamstrings"
+        "patterns": [
+          "olympic_snatch_pull"
         ],
-        "indirect": [
-          "calves",
-          "glutes",
-          "lower_back",
+        "direct": [
           "quadriceps",
+          "glutes",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -41110,25 +41402,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "quadriceps"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "calves",
-          "forearms",
-          "glutes",
           "hamstrings",
-          "lower_back",
-          "shoulders",
-          "traps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -41365,19 +41661,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_rotation"
+        ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [
-          "glutes",
-          "shoulders"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -41592,24 +41887,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
-        "direct": [
-          "quadriceps"
+        "patterns": [
+          "olympic_clean"
         ],
-        "indirect": [
-          "calves",
-          "forearms",
+        "direct": [
+          "quadriceps",
           "glutes",
-          "hamstrings",
-          "lower_back",
-          "shoulders",
           "traps"
         ],
-        "stabilizers": [],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "shoulders"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -41663,21 +41962,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_jerk"
+        ],
         "direct": [
-          "quadriceps"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "glutes",
-          "hamstrings",
-          "shoulders",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -41780,25 +42084,29 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "olympic_snatch"
+        ],
         "direct": [
-          "hamstrings"
+          "quadriceps",
+          "glutes",
+          "traps"
         ],
         "indirect": [
-          "calves",
-          "forearms",
-          "glutes",
-          "lower_back",
-          "quadriceps",
-          "shoulders",
-          "traps",
-          "triceps"
+          "hamstrings",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "shoulders",
+          "triceps",
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -46596,26 +46904,28 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "tire_flip"
+        ],
         "direct": [
-          "quadriceps"
+          "glutes",
+          "quadriceps",
+          "hamstrings"
         ],
         "indirect": [
-          "calves",
           "chest",
-          "forearms",
-          "glutes",
-          "hamstrings",
-          "lower_back",
-          "shoulders",
-          "traps",
-          "triceps"
+          "triceps",
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -47341,22 +47651,26 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_clean"
+        ],
         "direct": [
-          "shoulders"
+          "glutes",
+          "hamstrings"
         ],
         "indirect": [
-          "calves",
-          "glutes",
-          "hamstrings",
-          "lower_back",
+          "quadriceps",
           "traps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
@@ -47403,20 +47717,27 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "kettlebell_jerk"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "triceps",
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "calves",
-          "quadriceps",
-          "triceps"
+          "calves"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms",
+          "abdominals",
+          "traps"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "reviewed_complex_pattern_rule"
         ]
       },
       "source": {
