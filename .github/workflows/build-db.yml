@@ -8,6 +8,7 @@ on:
       - "convert_fedb_to_fedbpp.py"
       - "generate_review_report.py"
       - "generate_evidence_audit.py"
+      - "generate_rule_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   pull_request:
@@ -15,6 +16,7 @@ on:
       - "convert_fedb_to_fedbpp.py"
       - "generate_review_report.py"
       - "generate_evidence_audit.py"
+      - "generate_rule_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   schedule:
@@ -68,6 +70,24 @@ jobs:
           python generate_review_report.py free-exercise-db-plusplus.json             --markdown REVIEW.md --csv review-queue.csv --json review-summary.json
       - name: Generate evidence audit
         run: python generate_evidence_audit.py free-exercise-db-plusplus.json --out EVIDENCE-AUDIT.md
+      - name: Assert evidence-confidence consistency
+        run: |
+          python - <<'PY'
+          import json
+          db=json.load(open("free-exercise-db-plusplus.json"))
+          evidence=db["metadata"]["evidence"]["patterns"]
+          errors=[]
+          for rec in db["exercises"].values():
+              ann=rec["annotation"]
+              for p in ann.get("patterns", []):
+                  status=evidence[p]["status"]
+                  if status=="supported" and ann["confidence"]!="high":
+                      errors.append((rec["exerciseId"],p,status,ann["confidence"]))
+                  if status in {"complex_supported","indirect_support"} and ann["confidence"]=="high":
+                      errors.append((rec["exerciseId"],p,status,ann["confidence"]))
+          assert not errors, f"Evidence/confidence mismatches: {errors[:20]}"
+          print("evidence/confidence policy consistent")
+          PY
       - name: Assert all used patterns have evidence
         run: |
           python - <<'PY'
@@ -81,6 +101,8 @@ jobs:
           assert not provisional, f"Used provisional patterns remain: {provisional}"
           print(f"all {len(used)} used patterns have non-provisional evidence")
           PY
+      - name: Generate rule audit
+        run: python generate_rule_audit.py free-exercise-db-plusplus.json --out RULE-AUDIT.md
       - name: Assert full build
         run: |
           python - <<'PY'
@@ -109,12 +131,13 @@ jobs:
             review-queue.csv
             review-summary.json
             EVIDENCE-AUDIT.md
+            RULE-AUDIT.md
       - name: Commit generated public outputs
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json EVIDENCE-AUDIT.md
+          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json EVIDENCE-AUDIT.md RULE-AUDIT.md
           if git diff --cached --quiet; then
             echo "Generated outputs are unchanged; nothing to commit."
             exit 0

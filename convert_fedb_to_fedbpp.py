@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.3.0"
-CONVERTER_VERSION = "0.6.1"
+CONVERTER_VERSION = "0.7.0"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -944,15 +944,21 @@ def annotate(exercise: dict[str, Any]) -> dict[str, Any]:
             "kettlebell_figure8", "kettlebell_pirate_ships", "drag_with_press",
             "spider_crawl", "medicine_ball_slam"
         }
-        if exercise.get("mechanic") == "isolation":
+        evidence_status = PATTERN_EVIDENCE.get(pattern, {}).get("status", "provisional")
+
+        # v0.7 evidence-driven confidence policy.
+        if evidence_status == "supported":
             confidence = "high"
             reasons = []
-        elif pattern in complex_patterns:
+        elif evidence_status == "complex_supported":
             confidence = "medium"
-            reasons = ["reviewed_complex_pattern_rule"]
+            reasons = ["complex_pattern_bookkeeping"]
+        elif evidence_status == "indirect_support":
+            confidence = "medium"
+            reasons = ["indirect_evidence_pattern"]
         else:
             confidence = "medium"
-            reasons = ["rule_based_compound_mapping"]
+            reasons = ["provisional_pattern_evidence"]
         return {
             "patterns": [pattern],
             "direct": direct,
