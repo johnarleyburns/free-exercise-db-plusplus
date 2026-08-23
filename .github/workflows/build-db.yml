@@ -7,12 +7,14 @@ on:
     paths:
       - "convert_fedb_to_fedbpp.py"
       - "generate_review_report.py"
+      - "generate_evidence_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
       - "convert_fedb_to_fedbpp.py"
       - "generate_review_report.py"
+      - "generate_evidence_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   schedule:
@@ -64,6 +66,8 @@ jobs:
       - name: Generate review reports
         run: |
           python generate_review_report.py free-exercise-db-plusplus.json             --markdown REVIEW.md --csv review-queue.csv --json review-summary.json
+      - name: Generate evidence audit
+        run: python generate_evidence_audit.py free-exercise-db-plusplus.json --out EVIDENCE-AUDIT.md
       - name: Assert full build
         run: |
           python - <<'PY'
@@ -91,12 +95,13 @@ jobs:
             REVIEW.md
             review-queue.csv
             review-summary.json
+            EVIDENCE-AUDIT.md
       - name: Commit generated public outputs
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json
+          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json EVIDENCE-AUDIT.md
           if git diff --cached --quiet; then
             echo "Generated outputs are unchanged; nothing to commit."
             exit 0
