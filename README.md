@@ -379,3 +379,10 @@ The GitHub Actions build now generates the full DB++ from the current upstream d
 
 The review queue is intentional: rule-based compound mappings remain medium confidence, while unrecognized compound movements are low confidence. Development should prioritize the low-confidence queue and convert recurring families into reviewed rules/overrides.
 
+## Classification layer (schema 0.2.0)
+
+Each exercise includes a normalized `classification` object with `trainingTypes`, `modalities`, `sportContexts`, and `competitionMovements`. Swift 6 consumers should add a matching `Classification: Codable, Sendable` model and a `classification` property to `ExerciseRecord`.
+
+## Workout interchange
+
+This repository now includes `workout.schema.json` and `workout.example.json`. Exercise observations reference DB++ exercise definitions by stable `exerciseId`. Units should use UCUM codes where practical. The `mappings/` directory contains non-normative interoperability placeholders for Google Fit, Garmin FIT, FHIR, and Open mHealth / IEEE 1752.1.

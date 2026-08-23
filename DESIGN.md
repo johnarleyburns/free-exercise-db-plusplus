@@ -268,3 +268,83 @@ It cannot prove semantic biomechanics. That remains subject to design rules and 
 ## Design principle
 
 Prefer transparent, reproducible assumptions and explicit uncertainty over hidden heuristics or false precision.
+
+## Classification layer (schema 0.2.0)
+
+Each exercise now includes `classification.trainingTypes`, `classification.modalities`, `classification.sportContexts`, and `classification.competitionMovements`. Arrays are multi-valued by design. The original upstream `source.category` and `source.equipment` remain preserved.
+
+
+## Workout-observation interchange
+
+DB++ deliberately separates **exercise definitions** from **workout observations**.
+
+`free-exercise-db-plusplus.schema.json` defines relatively static exercise concepts and taxonomy.
+
+`workout.schema.json` defines session-level observations:
+
+```text
+Athlete
+  -> Training Session
+      -> Exercise observation
+          -> Set observation
+              -> Rep observation (optional)
+```
+
+The relationship is a foreign key:
+
+```json
+{
+  "exerciseId": "Barbell_Full_Squat"
+}
+```
+
+`exerciseId` MUST resolve to an exercise definition in the DB++ exercise vocabulary.
+
+### Set-level fields
+
+The workout schema can represent:
+
+- reps
+- load/resistance
+- duration
+- distance
+- RPE
+- RIR
+- tempo
+- post-set rest
+- failure status
+- assistance
+- completion state
+- notes
+- optional per-repetition observations
+
+Quantities carry explicit units. UCUM codes should be used where practical (`kg`, `lb`, `s`, `m`, etc.).
+
+This design is intentionally closer to consumer set-level models while remaining suitable for later export mappings to standards such as FIT, FHIR physical-activity observations, and IEEE/Open mHealth-style metadata.
+
+### Derived analytics
+
+The schema contains observations, not precomputed analytics. Applications may derive:
+
+- volume load / tonnage
+- direct and indirect hard sets per muscle
+- reps per muscle
+- frequency
+- estimated 1RM
+- RPE/RIR trends
+- exercise-specific PRs
+- proximity-to-failure adjusted volume
+- progression and fatigue/load models
+
+Keeping raw observations separate from derived metrics avoids locking the interchange format to one analysis methodology.
+
+### Interoperability mappings
+
+The `mappings/` directory contains placeholders for:
+
+- Google Fit
+- Garmin FIT
+- HL7 FHIR
+- Open mHealth / IEEE 1752.1
+
+These are explicitly non-normative until field-level mappings are researched and reviewed.

@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/workout.schema.json",
+  "title": "Free Exercise DB++ Workout Interchange",
+  "description": "Set-level resistance-training workout interchange schema. Exercise definitions are referenced by stable exerciseId values from Free Exercise DB++.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sessionId",
+    "startTime",
+    "exercises"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "athleteId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "programId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "coachId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exercises": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exerciseObservation"
+      }
+    }
+  },
+  "$defs": {
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "description": "UCUM code where practical, e.g. kg, lb, s, m."
+        }
+      }
+    },
+    "exerciseObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exerciseId",
+        "order",
+        "sets"
+      ],
+      "properties": {
+        "exerciseId": {
+          "type": "string",
+          "description": "Foreign key to Free Exercise DB++ exercises object key / exerciseId."
+        },
+        "variation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "equipment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/setObservation"
+          }
+        }
+      }
+    },
+    "setObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setNumber",
+        "setType",
+        "completed"
+      ],
+      "properties": {
+        "setNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "setType": {
+          "type": "string",
+          "enum": [
+            "warmup",
+            "working",
+            "backoff",
+            "drop",
+            "amrap",
+            "technique",
+            "test",
+            "other"
+          ]
+        },
+        "reps": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "load": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "distance": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rpe": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "rir": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "tempo": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Human-readable tempo notation such as 3-1-X-0."
+        },
+        "restAfter": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "toFailure": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "assistance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "repetitions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Optional per-repetition detail when available.",
+          "items": {
+            "$ref": "#/$defs/repObservation"
+          }
+        }
+      }
+    },
+    "repObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repNumber"
+      ],
+      "properties": {
+        "repNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "duration": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rangeOfMotion": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "velocity": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "completed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

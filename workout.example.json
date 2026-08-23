@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "0.1.0",
+  "sessionId": "2026-08-22-session-001",
+  "athleteId": "athlete-001",
+  "programId": null,
+  "coachId": null,
+  "startTime": "2026-08-22T18:00:00-05:00",
+  "endTime": null,
+  "notes": null,
+  "exercises": [
+    {
+      "exerciseId": "Barbell_Full_Squat",
+      "variation": null,
+      "equipment": "barbell",
+      "order": 1,
+      "notes": null,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "reps": 8,
+          "load": {
+            "value": 100,
+            "unit": "kg"
+          },
+          "duration": null,
+          "distance": null,
+          "rpe": 8,
+          "rir": 2,
+          "tempo": "3-1-X-0",
+          "restAfter": {
+            "value": 180,
+            "unit": "s"
+          },
+          "toFailure": false,
+          "assistance": null,
+          "completed": true,
+          "notes": null,
+          "repetitions": null
+        }
+      ]
+    }
+  ]
+}

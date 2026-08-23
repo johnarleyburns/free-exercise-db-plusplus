@@ -486,6 +486,18 @@
     },
     "Alternate_Incline_Dumbbell_Curl": {
       "exerciseId": "Alternate_Incline_Dumbbell_Curl",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "free_weight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
       "annotation": {
         "patterns": [
           "elbow_flexion"
@@ -1928,6 +1940,18 @@
     },
     "Barbell_Bench_Press_-_Medium_Grip": {
       "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "free_weight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
       "annotation": {
         "patterns": [
           "horizontal_press"
@@ -2118,6 +2142,18 @@
     },
     "Barbell_Full_Squat": {
       "exerciseId": "Barbell_Full_Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "free_weight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
       "annotation": {
         "patterns": [
           "squat"
@@ -33603,6 +33639,18 @@
     },
     "Standing_Calf_Raises": {
       "exerciseId": "Standing_Calf_Raises",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
       "annotation": {
         "patterns": [
           "plantar_flexion_straight_knee"

@@ -22,8 +22,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-SCHEMA_VERSION = "0.1.0"
-CONVERTER_VERSION = "0.2.0"
+SCHEMA_VERSION = "0.2.0"
+CONVERTER_VERSION = "0.3.0"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -62,6 +62,21 @@ PATTERNS: dict[str, dict[str, list[str]]] = {
         "direct": ["shoulders"],
         "indirect": ["triceps"],
         "stabilizers": ["abdominals"],
+    },
+    "horizontal_press_triceps_bias": {
+        "direct": ["triceps", "chest"],
+        "indirect": ["shoulders"],
+        "stabilizers": [],
+    },
+    "dip_chest_bias": {
+        "direct": ["chest", "triceps"],
+        "indirect": ["shoulders"],
+        "stabilizers": [],
+    },
+    "dip_triceps_bias": {
+        "direct": ["triceps", "chest"],
+        "indirect": ["shoulders"],
+        "stabilizers": [],
     },
     "horizontal_pull": {
         "direct": ["middle_back", "lats"],
@@ -149,6 +164,21 @@ PATTERNS: dict[str, dict[str, list[str]]] = {
         "direct": ["glutes"],
         "indirect": ["hamstrings"],
         "stabilizers": ["lower_back"],
+    },
+    "glute_ham_raise": {
+        "direct": ["hamstrings", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": [],
+    },
+    "rack_pull": {
+        "direct": ["glutes", "hamstrings"],
+        "indirect": [],
+        "stabilizers": ["lower_back", "traps", "forearms", "lats"],
+    },
+    "anti_rotation": {
+        "direct": ["abdominals"],
+        "indirect": [],
+        "stabilizers": [],
     },
     "hip_abduction": {
         "direct": ["abductors"], "indirect": ["glutes"], "stabilizers": []
@@ -270,6 +300,48 @@ OVERRIDES: dict[str, dict[str, Any]] = {
         "confidence": "high",
         "reviewReasons": [],
     },
+
+    "Pullups": {
+        "patterns": ["vertical_pull"],
+        "direct": ["lats"],
+        "indirect": ["biceps", "middle_back"],
+        "stabilizers": ["forearms"],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Dips_-_Chest_Version": {
+        "patterns": ["dip_chest_bias"],
+        "direct": ["chest", "triceps"],
+        "indirect": ["shoulders"],
+        "stabilizers": [],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Dips_-_Triceps_Version": {
+        "patterns": ["dip_triceps_bias"],
+        "direct": ["triceps", "chest"],
+        "indirect": ["shoulders"],
+        "stabilizers": [],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Glute_Ham_Raise": {
+        "patterns": ["glute_ham_raise"],
+        "direct": ["hamstrings", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": [],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Natural_Glute_Ham_Raise": {
+        "patterns": ["glute_ham_raise"],
+        "direct": ["hamstrings", "glutes"],
+        "indirect": ["calves"],
+        "stabilizers": [],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+
 }
 
 def normalize_muscle(label: str) -> str:
@@ -290,12 +362,30 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "incline_press"
     if "decline" in name and ("press" in name or "push-up" in name or "push up" in name):
         return "decline_press"
-    if "bench press" in name or "chest press" in name or "push-up" in name or "push up" in name:
+    if any(x in name for x in ["floor press", "board press", "pin press", "chain press"]):
+        return "horizontal_press_triceps_bias"
+    if any(x in name for x in ["close-grip dumbbell press", "close grip dumbbell press",
+                               "close-grip ez-bar press", "close grip ez-bar press",
+                               "jm press"]):
+        return "horizontal_press_triceps_bias"
+    if ("bench press" in name or "chest press" in name or "push-up" in name or "push up" in name
+            or "floor press" in name):
         return "horizontal_press"
     if ("military press" in name or "overhead press" in name or "shoulder press" in name
-            or "arnold press" in name):
+            or "arnold press" in name or "arnold dumbbell press" in name
+            or "seated dumbbell press" in name or "standing dumbbell press" in name
+            or "kettlebell press" in name or "bradford" in name
+            or "press behind neck" in name or "press behind the neck" in name
+            or "palms-in dumbbell press" in name or "palm-in one-arm dumbbell press" in name):
         return "vertical_press"
-    if "pull-up" in name or "pull up" in name or "chin-up" in name or "chin up" in name or "pulldown" in name:
+    if any(x in name for x in ["dips - chest version", "parallel bar dip", "ring dips"]):
+        return "dip_chest_bias"
+    if any(x in name for x in ["dips - triceps version", "bench dips", "bench dip",
+                               "weighted bench dip", "dip machine"]):
+        return "dip_triceps_bias"
+    if ("pull-up" in name or "pull up" in name or "pullup" in name or "pullups" in name
+            or "chin-up" in name or "chin up" in name or "chins" in name
+            or "pulldown" in name or "v-bar pullup" in name):
         return "vertical_pull"
     if "face pull" in name:
         return "face_pull"
@@ -308,9 +398,10 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
     if "pullover" in name or "pull-over" in name:
         return "pullover"
     if any(x in name for x in ["pec deck", "butterfly", "chest fly", "chest flye",
-                               "dumbbell fly", "dumbbell flye", "cable crossover"]):
+                               "dumbbell fly", "dumbbell flye", "cable crossover",
+                               "cross over - with bands", "around the worlds"]):
         return "chest_fly"
-    if "reverse fly" in name or "rear delt" in name:
+    if "reverse fly" in name or "back fly" in name or "rear delt" in name:
         return "reverse_fly"
     if "lateral raise" in name or "side lateral" in name:
         return "shoulder_abduction"
@@ -326,10 +417,10 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "elbow_flexion"
     if any(x in name for x in ["triceps extension", "tricep extension", "pushdown", "pressdown", "skull crusher"]):
         return "elbow_extension"
-    if "wrist curl" in name:
-        return "wrist_flexion"
     if "reverse wrist curl" in name or "wrist extension" in name:
         return "wrist_extension"
+    if "wrist curl" in name:
+        return "wrist_flexion"
     if "leg press" in name:
         return "leg_press"
     if "leg extension" in name:
@@ -344,6 +435,8 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "squat_quad_bias"
     if "squat" in name:
         return "squat"
+    if "rack pull" in name:
+        return "rack_pull"
     if "sumo deadlift" in name:
         return "sumo_deadlift"
     if any(x in name for x in ["romanian deadlift", "stiff-legged deadlift", "stiff legged deadlift",
@@ -356,6 +449,8 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "hip_extension"
     if any(x in name for x in ["hip flexion", "knee raise", "leg raise"]):
         return "hip_flexion"
+    if "monster walk" in name:
+        return "hip_abduction"
     if "abduction" in name:
         return "hip_abduction"
     if "adduction" in name:
@@ -370,6 +465,15 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "anti_extension"
     if "side bend" in name or "side plank" in name:
         return "lateral_flexion"
+    if "pallof press" in name:
+        return "anti_rotation"
+    if any(x in name for x in ["side bridge", "side jackknife"]):
+        return "lateral_flexion"
+    if any(x in name for x in ["dead bug", "butt-ups", "cocoons", "elbow to knee",
+                               "leg pull-in", "leg pull in", "hanging pike",
+                               "bent-knee hip raise", "bent knee hip raise",
+                               "exercise ball pull-in", "exercise ball pull in"]):
+        return "trunk_flexion"
     if any(x in name for x in ["crunch", "sit-up", "sit up"]):
         return "trunk_flexion"
     if "plank" in name:
@@ -384,6 +488,8 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "loaded_carry"
     if "sled push" in name or "prowler" in name:
         return "sled_push"
+    if "backward drag" in name:
+        return "sled_pull"
     if "sled" in name and ("pull" in name or "drag" in name):
         return "sled_pull"
     if "kettlebell swing" in name:
@@ -426,6 +532,88 @@ def remove_role_overlap(direct: list[str], indirect: list[str], stabilizers: lis
         if x not in direct and x not in indirect
     ]
     return direct, indirect, stabilizers
+
+
+def classify_exercise(exercise: dict[str, Any]) -> dict[str, list[str]]:
+    category = (exercise.get("category") or "").lower()
+    equipment = (exercise.get("equipment") or "").lower()
+    name = (exercise.get("name") or "").lower().strip()
+
+    training = []
+    category_map = {
+        "strength": "strength",
+        "powerlifting": "powerlifting",
+        "olympic weightlifting": "olympic_weightlifting",
+        "strongman": "strongman",
+        "plyometrics": "plyometrics",
+        "cardio": "cardio",
+        "stretching": "stretching",
+    }
+    if category in category_map:
+        training.append(category_map[category])
+    if category in {"powerlifting", "olympic weightlifting", "strongman"}:
+        training.insert(0, "strength")
+
+    modalities = []
+    equipment_map = {
+        "body only": "bodyweight",
+        "barbell": "free_weight",
+        "dumbbell": "free_weight",
+        "e-z curl bar": "free_weight",
+        "machine": "machine",
+        "cable": "cable",
+        "bands": "band",
+        "kettlebells": "kettlebell",
+        "medicine ball": "medicine_ball",
+        "foam roll": "foam_roll",
+    }
+    if equipment in equipment_map:
+        modalities.append(equipment_map[equipment])
+    elif equipment:
+        modalities.append("other")
+    if "kettlebell" in name:
+        modalities.append("kettlebell")
+    if "sled" in name or "prowler" in name or "drag" in name:
+        modalities.append("sled")
+    if "rope" in name:
+        modalities.append("rope")
+    if category == "strongman" and any(x in name for x in ["stone", "keg", "log", "tire", "sandbag", "yoke", "conan"]):
+        modalities.append("loaded_object")
+    if not modalities:
+        modalities = ["other"]
+
+    contexts = ["general_fitness"]
+    if category == "powerlifting":
+        contexts.append("powerlifting")
+    if category == "olympic weightlifting":
+        contexts.append("weightlifting")
+    if category == "strongman":
+        contexts.append("strongman")
+    if any(x in name for x in ["kipping muscle up", "muscle up", "thruster", "wall ball", "double under", "toes to bar"]):
+        contexts.append("crossfit")
+    if any(x in name for x in ["muscle up", "ring dip", "iron cross"]):
+        contexts.append("gymnastics")
+
+    competition = []
+    if category == "powerlifting":
+        if name in {"squat", "barbell full squat"}:
+            competition.append("powerlifting_squat")
+        if "bench press" in name and all(x not in name for x in ["incline", "decline", "close-grip", "close grip"]):
+            competition.append("powerlifting_bench_press")
+        if name in {"deadlift", "barbell deadlift"}:
+            competition.append("powerlifting_deadlift")
+    if category == "olympic weightlifting":
+        if name == "snatch":
+            competition.append("weightlifting_snatch")
+        if name == "clean and jerk":
+            competition.append("weightlifting_clean_and_jerk")
+
+    return {
+        "trainingTypes": dedupe(training),
+        "modalities": dedupe(modalities),
+        "sportContexts": dedupe(contexts),
+        "competitionMovements": dedupe(competition),
+    }
 
 def annotate(exercise: dict[str, Any]) -> dict[str, Any]:
     category = exercise.get("category")
@@ -512,6 +700,7 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
         exercise_id = item["id"]
         exercises[exercise_id] = {
             "exerciseId": exercise_id,
+            "classification": classify_exercise(item),
             "annotation": annotate(item),
             "source": item,
         }

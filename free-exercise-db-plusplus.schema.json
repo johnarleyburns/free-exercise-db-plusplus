@@ -113,6 +113,86 @@
         }
       },
       "additionalProperties": true
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trainingTypes",
+        "modalities",
+        "sportContexts",
+        "competitionMovements"
+      ],
+      "properties": {
+        "trainingTypes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "strength",
+              "powerlifting",
+              "olympic_weightlifting",
+              "strongman",
+              "plyometrics",
+              "cardio",
+              "stretching",
+              "mobility"
+            ]
+          }
+        },
+        "modalities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "bodyweight",
+              "free_weight",
+              "machine",
+              "cable",
+              "band",
+              "kettlebell",
+              "medicine_ball",
+              "loaded_object",
+              "sled",
+              "rope",
+              "foam_roll",
+              "other"
+            ]
+          }
+        },
+        "sportContexts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "powerlifting",
+              "weightlifting",
+              "strongman",
+              "crossfit",
+              "gymnastics",
+              "general_fitness"
+            ]
+          }
+        },
+        "competitionMovements": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "powerlifting_squat",
+              "powerlifting_bench_press",
+              "powerlifting_deadlift",
+              "weightlifting_snatch",
+              "weightlifting_clean_and_jerk"
+            ]
+          }
+        }
+      }
     }
   },
   "properties": {
@@ -218,6 +298,7 @@
         "additionalProperties": false,
         "required": [
           "exerciseId",
+          "classification",
           "annotation",
           "source"
         ],
@@ -276,6 +357,9 @@
           },
           "source": {
             "$ref": "#/$defs/sourceExercise"
+          },
+          "classification": {
+            "$ref": "#/$defs/classification"
           }
         }
       }
