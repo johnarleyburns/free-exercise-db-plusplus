@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.2.0"
-CONVERTER_VERSION = "0.3.0"
+CONVERTER_VERSION = "0.3.1"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -358,7 +358,7 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
     primary = set(exercise.get("primaryMuscles", []))
 
     # Highly specific rules before generic ones.
-    if "incline" in name and ("press" in name or "push-up" in name or "push up" in name):
+    if "incline" in name and ("press" in name or "push-up" in name or "push up" in name or "bench" in name):
         return "incline_press"
     if "decline" in name and ("press" in name or "push-up" in name or "push up" in name):
         return "decline_press"
@@ -369,12 +369,16 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
                                "jm press"]):
         return "horizontal_press_triceps_bias"
     if ("bench press" in name or "chest press" in name or "push-up" in name or "push up" in name
-            or "floor press" in name):
+            or "pushups" in name or "floor press" in name):
         return "horizontal_press"
     if ("military press" in name or "overhead press" in name or "shoulder press" in name
             or "arnold press" in name or "arnold dumbbell press" in name
             or "seated dumbbell press" in name or "standing dumbbell press" in name
             or "kettlebell press" in name or "bradford" in name
+            or "machine shoulder military press" in name
+            or "standing alternating dumbbell press" in name
+            or "kettlebell seated press" in name or "kettlebell seesaw press" in name
+            or "see-saw press" in name or "seesaw press" in name
             or "press behind neck" in name or "press behind the neck" in name
             or "palms-in dumbbell press" in name or "palm-in one-arm dumbbell press" in name):
         return "vertical_press"
@@ -385,7 +389,7 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "dip_triceps_bias"
     if ("pull-up" in name or "pull up" in name or "pullup" in name or "pullups" in name
             or "chin-up" in name or "chin up" in name or "chins" in name
-            or "pulldown" in name or "v-bar pullup" in name):
+            or "mixed grip chin" in name or "pulldown" in name or "v-bar pullup" in name):
         return "vertical_pull"
     if "face pull" in name:
         return "face_pull"
@@ -397,6 +401,8 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "shrug"
     if "pullover" in name or "pull-over" in name:
         return "pullover"
+    if "svend press" in name:
+        return "horizontal_press"
     if any(x in name for x in ["pec deck", "butterfly", "chest fly", "chest flye",
                                "dumbbell fly", "dumbbell flye", "cable crossover",
                                "cross over - with bands", "around the worlds"]):
@@ -440,7 +446,7 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
     if "sumo deadlift" in name:
         return "sumo_deadlift"
     if any(x in name for x in ["romanian deadlift", "stiff-legged deadlift", "stiff legged deadlift",
-                               "stiff-leg deadlift", "good morning"]):
+                               "stiff-leg deadlift", "wide stance stiff legs", "good morning"]):
         return "hip_hinge"
     if "deadlift" in name:
         return "conventional_deadlift"
@@ -480,7 +486,9 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
         return "anti_extension"
     if "back extension" in name or "hyperextension" in name:
         return "trunk_extension"
-    if "russian twist" in name or "wood chop" in name or "woodchop" in name or "torso rotation" in name:
+    if ("russian twist" in name or "wood chop" in name or "woodchop" in name
+            or "torso rotation" in name or "plate twist" in name
+            or "standing cable lift" in name or "london bridges" in name):
         return "trunk_rotation"
     if "farmer" in name and "walk" in name:
         return "farmer_carry"
