@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.6.0",
-    "generatedAt": "2026-08-23T04:10:52.876127+00:00",
+    "converterVersion": "0.6.1",
+    "generatedAt": "2026-08-23T04:21:57.590210+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -183,6 +183,176 @@
           "type": "training_intervention",
           "pmid": "41379528",
           "url": "https://pubmed.ncbi.nlm.nih.gov/41379528/"
+        },
+        "crunch_loaded_emg_2009": {
+          "title": "EMG activation of abdominal muscles in the crunch exercise performed with different external loads",
+          "type": "experimental",
+          "pmid": "19376473",
+          "doi": "10.1016/j.ptsp.2009.01.001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19376473/"
+        },
+        "situp_curlup_emg_2008": {
+          "title": "The effects of different sit- and curl-up positions on activation of abdominal and hip flexor musculature",
+          "type": "experimental",
+          "pmid": "18923563",
+          "doi": "10.1139/H08-061",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18923563/"
+        },
+        "trunk_rotation_rct_2021": {
+          "title": "The influence of rotational movement exercise on the abdominal muscle thickness and trunk mobility",
+          "type": "randomized_controlled_trial",
+          "pmid": "34391272",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34391272/"
+        },
+        "flexion_rotation_emg_2020": {
+          "title": "Electromyographic and Kinematic Analysis of the Flexion-Rotation Trunk Test",
+          "type": "experimental",
+          "pmid": "28796125",
+          "doi": "10.1519/JSC.0000000000002168",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28796125/"
+        },
+        "bridge_stabilization_emg_2012": {
+          "title": "Trunk muscle activation during stabilization exercises with single and double leg support",
+          "type": "experimental",
+          "pmid": "22436839",
+          "doi": "10.1016/j.jelekin.2012.02.017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22436839/"
+        },
+        "bridge_surface_emg_2013": {
+          "title": "Abdominal muscle EMG-activity during bridge exercises on stable and unstable surfaces",
+          "type": "experimental",
+          "pmid": "24268641",
+          "doi": "10.1016/j.ptsp.2013.09.003",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24268641/"
+        },
+        "side_bridge_oblique_emg_2020": {
+          "title": "Surface Electromyography of the Internal and External Oblique Muscles During Isometric Tasks Targeting the Lateral Trunk",
+          "type": "experimental",
+          "pmid": "32369764",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32369764/"
+        },
+        "side_bridge_asymmetry_2022": {
+          "title": "Side-To-Side Difference in Electromyographic Activity of Abdominal Muscles during Asymmetric Exercises",
+          "type": "experimental",
+          "pmid": "36523892",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36523892/"
+        },
+        "pullover_emg_2011": {
+          "title": "Effects of the pullover exercise on the pectoralis major and latissimus dorsi muscles as evaluated by EMG",
+          "type": "experimental",
+          "pmid": "21975179",
+          "doi": "10.1123/jab.27.4.380",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21975179/"
+        },
+        "upright_row_grip_emg_2012": {
+          "title": "Effect of grip width on electromyographic activity during the upright row",
+          "type": "experimental",
+          "pmid": "22362088",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22362088/"
+        },
+        "hip_flexor_systematic_review_2024": {
+          "title": "Hip Flexor Muscle Activation During Common Rehabilitation and Strength Exercises",
+          "type": "systematic_review",
+          "pmid": "39518756",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39518756/"
+        },
+        "psoas_aslr_emg_2010": {
+          "title": "Is the psoas a hip flexor in the active straight leg raise?",
+          "type": "experimental",
+          "pmid": "20625774",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20625774/"
+        },
+        "external_rotation_emg_2004": {
+          "title": "Electromyographic analysis of the rotator cuff and deltoid musculature during common shoulder external rotation exercises",
+          "type": "experimental",
+          "pmid": "15296366",
+          "doi": "10.2519/jospt.2004.34.7.385",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15296366/"
+        },
+        "external_rotation_roles_2012": {
+          "title": "Rotator cuff muscles perform different functional roles during shoulder external rotation exercises",
+          "type": "experimental",
+          "pmid": "22836526",
+          "doi": "10.1002/ca.22128",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22836526/"
+        },
+        "internal_rotation_emg_2003": {
+          "title": "Electromyographic analysis of internal rotational motion of the shoulder in various arm positions",
+          "type": "experimental",
+          "pmid": "14564277",
+          "doi": "10.1016/S1058-2746(03)00169-1",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/14564277/"
+        },
+        "subscapularis_exercise_2003": {
+          "title": "Subscapularis muscle activity during selected rehabilitation exercises",
+          "type": "experimental",
+          "pmid": "12531769",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12531769/"
+        },
+        "back_extension_roman_chair_2014": {
+          "title": "Effects of hand and knee positions on muscular activity during trunk extension exercise with the Roman chair",
+          "type": "experimental",
+          "pmid": "25245250",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25245250/"
+        },
+        "back_extension_comparison_2021": {
+          "title": "Comparison of Muscle Activity in Three Single-Joint, Hip Extension Exercises in Resistance-Trained Women",
+          "type": "experimental",
+          "pmid": "33948095",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33948095/"
+        },
+        "calf_raise_hypertrophy_2023": {
+          "title": "Triceps surae muscle hypertrophy is greater after standing versus seated calf-raise training",
+          "type": "training_intervention",
+          "pmid": "38156065",
+          "doi": "10.3389/fphys.2023.1272106",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38156065/"
+        },
+        "calf_raise_swelling_2023": {
+          "title": "Muscle Swelling of the Triceps Surae in Response to Straight-Leg and Bent-Leg Calf Raise Exercises in Young Women",
+          "type": "experimental",
+          "pmid": "37015022",
+          "doi": "10.1519/JSC.0000000000004491",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37015022/"
+        },
+        "calf_raise_emg_2021": {
+          "title": "Myoelectric activity of the gastrocnemius during plantar flexion in a standing versus seated position",
+          "type": "experimental",
+          "pmid": "33992275",
+          "doi": "10.1016/j.jbmt.2020.09.003",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33992275/"
+        },
+        "strongman_trunk_events_2009": {
+          "title": "Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness",
+          "type": "experimental",
+          "pmid": "19528856",
+          "doi": "10.1519/JSC.0b013e318198f8f7",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19528856/"
+        },
+        "sled_push_emg_2021": {
+          "title": "Electromyography, Stiffness and Kinematics of Resisted Sprint Training Using Different Load Conditions",
+          "type": "experimental",
+          "pmid": "34833557",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34833557/"
+        },
+        "battle_rope_emg_2015": {
+          "title": "Muscle Activity During Unilateral vs. Bilateral Battle Rope Exercises",
+          "type": "experimental",
+          "pmid": "25853917",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25853917/"
+        },
+        "battle_rope_wbv_emg_2015": {
+          "title": "The addition of synchronous whole-body vibration to battling rope exercise increases skeletal muscle activity",
+          "type": "experimental",
+          "pmid": "26350942",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26350942/"
+        },
+        "pallof_press_postural_2025": {
+          "title": "Effect of Body Position and Support Surface on the Postural Control Challenge During the Pallof Press Exercise",
+          "type": "experimental",
+          "pmid": "40005429",
+          "doi": "10.3390/medicina61020312",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40005429/"
         }
       },
       "patterns": {
@@ -278,9 +448,12 @@
           ]
         },
         "shoulder_external_rotation": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Intramuscular/surface EMG directly supports infraspinatus and teres-minor as principal external rotators, with deltoid/scapular muscles contributing by position.",
+          "references": [
+            "external_rotation_emg_2004",
+            "external_rotation_roles_2012"
+          ]
         },
         "elbow_flexion": {
           "status": "supported",
@@ -388,9 +561,12 @@
           ]
         },
         "anti_rotation": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "Pallof-press research directly establishes a laterally loaded lumbopelvic postural-control task; related trunk-stabilization literature supports abdominal recruitment, but exact direct/indirect set roles remain an extrapolation.",
+          "references": [
+            "pallof_press_postural_2025",
+            "bridge_stabilization_emg_2012"
+          ]
         },
         "hip_abduction": {
           "status": "supported",
@@ -407,9 +583,12 @@
           ]
         },
         "plantar_flexion_straight_knee": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Standing/knee-extended calf-raise training produces gastrocnemius and soleus hypertrophy; EMG studies confirm triceps-surae recruitment during plantar flexion.",
+          "references": [
+            "calf_raise_hypertrophy_2023",
+            "calf_raise_emg_2021"
+          ]
         },
         "leg_press": {
           "status": "supported",
@@ -441,19 +620,26 @@
           ]
         },
         "pullover": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Direct barbell-pullover EMG demonstrates pectoralis-major and latissimus-dorsi recruitment, with pectoralis activation exceeding latissimus in the tested setup.",
+          "references": [
+            "pullover_emg_2011"
+          ]
         },
         "upright_row": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Direct upright-row EMG demonstrates deltoid and trapezius recruitment, with grip width altering relative activation.",
+          "references": [
+            "upright_row_grip_emg_2012"
+          ]
         },
         "face_pull": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "No exact face-pull study was located in this pass; the mapping is supported indirectly by closely related external-rotation, reverse-fly and upper-back/shoulder EMG evidence.",
+          "references": [
+            "external_rotation_emg_2004",
+            "shoulder_training_emg_2012"
+          ]
         },
         "shoulder_flexion": {
           "status": "supported",
@@ -464,19 +650,29 @@
           ]
         },
         "shoulder_internal_rotation": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "EMG directly supports subscapularis as a major internal rotator, with arm position strongly affecting selective activation.",
+          "references": [
+            "internal_rotation_emg_2003",
+            "subscapularis_exercise_2003"
+          ]
         },
         "hip_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "A systematic review and fine-wire EMG evidence directly support iliopsoas and related hip-flexor recruitment during leg raises and loaded hip-flexion tasks.",
+          "references": [
+            "hip_flexor_systematic_review_2024",
+            "psoas_aslr_emg_2010"
+          ]
         },
         "plantar_flexion_bent_knee": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Seated/bent-knee calf raises directly load the triceps surae, with comparatively greater soleus emphasis than straight-leg calf raising.",
+          "references": [
+            "calf_raise_hypertrophy_2023",
+            "calf_raise_swelling_2023",
+            "calf_raise_emg_2021"
+          ]
         },
         "dorsiflexion": {
           "status": "provisional",
@@ -484,34 +680,49 @@
           "references": []
         },
         "anti_extension": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Prone bridge/plank and rollout-style stabilization studies directly demonstrate substantial rectus-abdominis and oblique activation under anti-extension demands.",
+          "references": [
+            "bridge_stabilization_emg_2012",
+            "bridge_surface_emg_2013"
+          ]
         },
         "lateral_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Side-bridge/lateral-trunk EMG studies directly demonstrate high internal/external oblique and abdominal recruitment.",
+          "references": [
+            "side_bridge_oblique_emg_2020",
+            "side_bridge_asymmetry_2022"
+          ]
         },
         "farmer_carry": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "complex_supported",
+          "summary": "Strongman EMG/biomechanics directly included the farmer's walk and documents substantial whole-body, hip and trunk loading; DB++ role labels summarize the event.",
+          "references": [
+            "strongman_trunk_events_2009"
+          ]
         },
         "loaded_carry": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "complex_supported",
+          "summary": "Strongman EMG/biomechanics directly studied farmer, suitcase, keg and yoke-style carries and demonstrates large torso/hip stabilization demands.",
+          "references": [
+            "strongman_trunk_events_2009"
+          ]
         },
         "sled_push": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Direct sled-push EMG shows lower-limb loading, with increasing resistance increasing vastus-lateralis and gastrocnemius activity.",
+          "references": [
+            "sled_push_emg_2021"
+          ]
         },
         "sled_pull": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "Direct sled-push evidence supports resisted locomotor lower-limb loading, while strongman carry/drag biomechanics support the whole-body loading context; exact backward-pull muscle weighting remains extrapolated.",
+          "references": [
+            "sled_push_emg_2021",
+            "strongman_trunk_events_2009"
+          ]
         },
         "kettlebell_swing": {
           "status": "complex_supported",
@@ -716,14 +927,20 @@
           ]
         },
         "battle_ropes": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Direct battle-rope EMG demonstrates moderate-to-high anterior-deltoid, oblique and lumbar-extensor activation, with additional studies confirming whole-body recruitment.",
+          "references": [
+            "battle_rope_emg_2015",
+            "battle_rope_wbv_emg_2015"
+          ]
         },
         "bent_press": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "No targeted peer-reviewed bent-press EMG study was located; DB++ retains indirect support from strongman whole-body/trunk loading and lateral-trunk evidence.",
+          "references": [
+            "strongman_trunk_events_2009",
+            "side_bridge_oblique_emg_2020"
+          ]
         },
         "kettlebell_figure8": {
           "status": "complex_supported",
@@ -752,29 +969,44 @@
           ]
         },
         "spider_crawl": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "No exact spider-crawl EMG study was located in this pass; quadruped/plank stabilization evidence supports trunk involvement while upper-body roles remain movement-mechanics extrapolations.",
+          "references": [
+            "bridge_stabilization_emg_2012",
+            "bridge_surface_emg_2013"
+          ]
         },
         "medicine_ball_slam": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "indirect_support",
+          "summary": "No exact medicine-ball-slam muscle-role trial was located in this pass; the mapping is supported indirectly by ballistic whole-body/trunk and shoulder activation evidence.",
+          "references": [
+            "battle_rope_emg_2015",
+            "bridge_stabilization_emg_2012"
+          ]
         },
         "trunk_flexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Loaded crunch and sit/curl-up EMG studies directly support rectus abdominis and oblique recruitment during trunk-flexion exercise.",
+          "references": [
+            "crunch_loaded_emg_2009",
+            "situp_curlup_emg_2008"
+          ]
         },
         "trunk_extension": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Roman-chair and machine back-extension EMG directly supports erector-spinae loading with meaningful gluteal and hamstring contribution depending on technique.",
+          "references": [
+            "back_extension_roman_chair_2014",
+            "back_extension_comparison_2021"
+          ]
         },
         "trunk_rotation": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Rotational training increases internal/external oblique thickness, and flexion-rotation EMG directly demonstrates rectus-abdominis and internal-oblique loading.",
+          "references": [
+            "trunk_rotation_rct_2021",
+            "flexion_rotation_emg_2020"
+          ]
         },
         "neck_flexion": {
           "status": "provisional",
@@ -834,10 +1066,9 @@
     "non_volume_category:cardio": 14
   },
   "evidenceStatusCounts": {
-    "provisional": 123,
-    "complex_supported": 69,
-    "supported": 381,
-    "indirect_support": 63
+    "supported": 491,
+    "complex_supported": 72,
+    "indirect_support": 73
   },
   "reviewQueueSize": 451,
   "lowConfidenceIds": []
