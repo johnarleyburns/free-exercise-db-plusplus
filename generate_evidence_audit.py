@@ -23,3 +23,9 @@ lines=["# DB++ Evidence Audit","",
        "| Pattern | Exercise uses |","|---|---:|"]
 lines += [f"| `{p}` | {n} |" for n,p,_,_ in prov]
 a.out.write_text("\n".join(lines)+"\n")
+
+
+used_provisional = [(p, usage[p]) for p, e in ev.items()
+                    if e["status"] == "provisional" and usage[p] > 0]
+if used_provisional:
+    raise SystemExit("Used provisional patterns remain: " + repr(used_provisional))

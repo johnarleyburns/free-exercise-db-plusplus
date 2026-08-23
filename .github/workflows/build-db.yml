@@ -68,6 +68,19 @@ jobs:
           python generate_review_report.py free-exercise-db-plusplus.json             --markdown REVIEW.md --csv review-queue.csv --json review-summary.json
       - name: Generate evidence audit
         run: python generate_evidence_audit.py free-exercise-db-plusplus.json --out EVIDENCE-AUDIT.md
+      - name: Assert all used patterns have evidence
+        run: |
+          python - <<'PY'
+          import json
+          db=json.load(open("free-exercise-db-plusplus.json"))
+          evidence=db["metadata"]["evidence"]["patterns"]
+          used=set()
+          for rec in db["exercises"].values():
+              used.update(rec["annotation"].get("patterns", []))
+          provisional=sorted(p for p in used if evidence[p]["status"]=="provisional")
+          assert not provisional, f"Used provisional patterns remain: {provisional}"
+          print(f"all {len(used)} used patterns have non-provisional evidence")
+          PY
       - name: Assert full build
         run: |
           python - <<'PY'
