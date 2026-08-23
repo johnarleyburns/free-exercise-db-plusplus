@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "0.2.0"
-CONVERTER_VERSION = "0.4.0"
+CONVERTER_VERSION = "0.4.1"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 
 MUSCLES = [
@@ -377,6 +377,36 @@ PATTERNS: dict[str, dict[str, list[str]]] = {
         "indirect": ["forearms", "chest"],
         "stabilizers": ["abdominals"],
     },
+    "bent_press": {
+        "direct": ["abdominals", "shoulders"],
+        "indirect": ["glutes", "hamstrings", "triceps"],
+        "stabilizers": ["lower_back", "quadriceps"],
+    },
+    "kettlebell_figure8": {
+        "direct": ["abdominals"],
+        "indirect": ["glutes", "hamstrings", "shoulders"],
+        "stabilizers": ["forearms", "lower_back"],
+    },
+    "kettlebell_pirate_ships": {
+        "direct": ["shoulders", "abdominals"],
+        "indirect": ["lats"],
+        "stabilizers": ["forearms", "lower_back"],
+    },
+    "drag_with_press": {
+        "direct": ["quadriceps", "glutes", "chest", "triceps"],
+        "indirect": ["calves", "hamstrings", "shoulders"],
+        "stabilizers": ["abdominals", "forearms"],
+    },
+    "spider_crawl": {
+        "direct": ["abdominals"],
+        "indirect": ["shoulders", "chest", "triceps"],
+        "stabilizers": ["glutes"],
+    },
+    "medicine_ball_slam": {
+        "direct": ["abdominals", "lats"],
+        "indirect": ["shoulders"],
+        "stabilizers": ["glutes", "quadriceps"],
+    },
 
     "trunk_flexion": {
         "direct": ["abdominals"], "indirect": [], "stabilizers": []
@@ -474,6 +504,32 @@ def infer_pattern(exercise: dict[str, Any]) -> str | None:
     primary = set(exercise.get("primaryMuscles", []))
 
     # Highly specific rules before generic ones.
+    # v0.4.1: resolve the remaining known named movements.
+    if name == "alternating hang clean":
+        return "olympic_clean"
+    if name == "dumbbell clean":
+        return "olympic_clean"
+    if name == "bottoms-up clean from the hang position":
+        return "kettlebell_clean"
+    if name == "anti-gravity press":
+        return "vertical_press"
+    if name == "bent press":
+        return "bent_press"
+    if name == "forward drag with press":
+        return "drag_with_press"
+    if name in {"kettlebell figure 8", "kettlebell pass between the legs"}:
+        return "kettlebell_figure8"
+    if name == "kettlebell pirate ships":
+        return "kettlebell_pirate_ships"
+    if name == "landmine 180's":
+        return "trunk_rotation"
+    if name == "one-arm kettlebell para press":
+        return "vertical_press"
+    if name == "one-arm medicine ball slam":
+        return "medicine_ball_slam"
+    if name == "spider crawl":
+        return "spider_crawl"
+
     # v0.4: Olympic weightlifting and related derivatives.
     if name == "clean and jerk":
         return "olympic_clean_and_jerk"
@@ -833,6 +889,19 @@ def classify_exercise(exercise: dict[str, Any]) -> dict[str, list[str]]:
 
 def annotate(exercise: dict[str, Any]) -> dict[str, Any]:
     category = exercise.get("category")
+    name = (exercise.get("name") or "").lower().strip()
+
+    # Some upstream "strength" records are not resistance-set exercises for DB++.
+    if name in {"wind sprints", "balance board"}:
+        return {
+            "patterns": [],
+            "direct": [],
+            "indirect": [],
+            "stabilizers": [],
+            "volumeEligible": False,
+            "confidence": "high",
+            "reviewReasons": ["non_volume_named_override"],
+        }
     eligible = category not in NON_VOLUME_CATEGORIES
 
     if not eligible:
@@ -862,7 +931,9 @@ def annotate(exercise: dict[str, Any]) -> dict[str, Any]:
             "kettlebell_clean", "kettlebell_snatch", "kettlebell_jerk", "kettlebell_windmill",
             "kettlebell_sumo_high_pull", "thruster", "muscle_up", "rope_climb",
             "atlas_stone_load", "loaded_object_load", "tire_flip", "strongman_overhead",
-            "strongman_carry", "power_stairs", "battle_ropes"
+            "strongman_carry", "power_stairs", "battle_ropes", "bent_press",
+            "kettlebell_figure8", "kettlebell_pirate_ships", "drag_with_press",
+            "spider_crawl", "medicine_ball_slam"
         }
         if exercise.get("mechanic") == "isolation":
             confidence = "high"
