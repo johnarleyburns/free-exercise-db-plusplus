@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.6.1",
-    "generatedAt": "2026-08-23T04:21:57.590210+00:00",
+    "converterVersion": "0.7.1",
+    "generatedAt": "2026-08-23T19:42:10.007165+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -413,14 +413,14 @@
         },
         "horizontal_pull": {
           "status": "indirect_support",
-          "summary": "Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.",
+          "summary": "Row-family roles remain supported indirectly by related pulling EMG and established anatomy; DB++ has not yet attached a targeted horizontal-row study to this pattern.",
           "references": [
             "pullup_emg_2017"
           ]
         },
         "vertical_pull": {
-          "status": "indirect_support",
-          "summary": "Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.",
+          "status": "supported",
+          "summary": "Direct pull-up EMG evidence supports latissimus dorsi and biceps as major contributors, with posterior shoulder and mid-trapezius involvement; this directly supports the vertical-pull family.",
           "references": [
             "pullup_emg_2017"
           ]
@@ -1048,28 +1048,28 @@
   },
   "eligibleExercises": 673,
   "confidenceCounts": {
-    "medium": 451,
-    "high": 422
+    "high": 712,
+    "medium": 161
   },
   "reviewPriorityCounts": {
-    "rule_review": 451,
+    "reviewed": 512,
     "excluded_verified": 200,
-    "reviewed": 222
+    "rule_review": 161
   },
   "reviewReasonCounts": {
-    "rule_based_compound_mapping": 340,
     "non_volume_category:stretching": 123,
+    "complex_pattern_bookkeeping": 72,
     "non_volume_category:plyometrics": 61,
     "isolation_primary_secondary_fallback": 37,
-    "reviewed_complex_pattern_rule": 74,
+    "indirect_evidence_pattern": 52,
     "non_volume_named_override": 2,
     "non_volume_category:cardio": 14
   },
   "evidenceStatusCounts": {
-    "supported": 491,
+    "supported": 512,
     "complex_supported": 72,
-    "indirect_support": 73
+    "indirect_support": 52
   },
-  "reviewQueueSize": 451,
+  "reviewQueueSize": 161,
   "lowConfidenceIds": []
 }

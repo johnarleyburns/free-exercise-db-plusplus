@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.6.1",
-    "generatedAt": "2026-08-23T04:21:57.590210+00:00",
+    "converterVersion": "0.7.1",
+    "generatedAt": "2026-08-23T19:42:10.007165+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -413,14 +413,14 @@
         },
         "horizontal_pull": {
           "status": "indirect_support",
-          "summary": "Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.",
+          "summary": "Row-family roles remain supported indirectly by related pulling EMG and established anatomy; DB++ has not yet attached a targeted horizontal-row study to this pattern.",
           "references": [
             "pullup_emg_2017"
           ]
         },
         "vertical_pull": {
-          "status": "indirect_support",
-          "summary": "Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.",
+          "status": "supported",
+          "summary": "Direct pull-up EMG evidence supports latissimus dorsi and biceps as major contributors, with posterior shoulder and mid-trapezius involvement; this directly supports the vertical-pull family.",
           "references": [
             "pullup_emg_2017"
           ]
@@ -1071,10 +1071,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -1236,10 +1234,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -1399,8 +1395,10 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "complex_pattern_bookkeeping"
+        ],
         "evidenceRefs": [
           "pattern:kettlebell_windmill"
         ]
@@ -1457,10 +1455,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -1799,10 +1795,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -1913,10 +1907,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -1985,7 +1977,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -2049,10 +2041,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -2112,8 +2102,10 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -2176,7 +2168,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -2385,10 +2377,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -2500,10 +2490,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -2561,10 +2549,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:chest_fly"
         ]
@@ -2632,7 +2618,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:atlas_stone_load"
@@ -2706,7 +2692,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:atlas_stone_load"
@@ -2781,10 +2767,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -2847,10 +2831,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:reverse_fly"
         ]
@@ -2919,7 +2901,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:sled_pull"
@@ -3144,10 +3126,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -3210,10 +3190,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -3274,10 +3252,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -3501,10 +3477,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -3562,10 +3536,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -3805,10 +3777,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -3945,10 +3915,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -4006,10 +3974,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -4071,10 +4037,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat_quad_bias"
         ]
@@ -4137,10 +4101,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -4198,10 +4160,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -4258,10 +4218,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shoulder_flexion"
         ]
@@ -4322,10 +4280,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -4391,7 +4347,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -4452,10 +4408,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -4572,10 +4526,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -4809,10 +4761,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -4876,10 +4826,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -4946,10 +4894,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -5016,10 +4962,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:step_up"
         ]
@@ -5083,10 +5027,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -5149,10 +5091,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "reviewed_complex_pattern_rule"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:battle_ropes"
         ]
@@ -5219,7 +5159,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:sled_pull"
@@ -5330,10 +5270,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:dip_triceps_bias"
         ]
@@ -5451,10 +5389,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -5515,10 +5451,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -5584,10 +5518,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -5702,10 +5634,8 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:pullover"
         ]
@@ -5768,10 +5698,8 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:pullover"
         ]
@@ -5830,10 +5758,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -5895,7 +5821,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6080,7 +6006,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6149,7 +6075,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6216,7 +6142,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6282,7 +6208,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6349,7 +6275,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:bent_press"
@@ -6517,10 +6443,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -6759,7 +6683,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -6822,10 +6746,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -6886,10 +6808,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -7016,7 +6936,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -7071,10 +6991,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -7247,10 +7165,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -7318,10 +7234,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -7388,10 +7302,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -7504,10 +7416,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -7564,10 +7474,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -7736,10 +7644,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -7918,10 +7824,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -8204,10 +8108,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shoulder_internal_rotation"
         ]
@@ -8315,10 +8217,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -8722,7 +8622,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -8781,10 +8681,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -8961,10 +8859,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -9568,10 +9464,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -9907,10 +9801,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -10075,10 +9967,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -10558,10 +10448,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -10683,7 +10571,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:strongman_overhead"
@@ -10758,7 +10646,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -10832,10 +10720,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -10907,7 +10793,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean_pull"
@@ -10970,10 +10856,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shrug"
         ]
@@ -11044,7 +10928,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean_and_jerk"
@@ -11123,7 +11007,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean_and_jerk"
@@ -11205,7 +11089,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -11268,10 +11152,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -11332,10 +11214,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -11395,10 +11275,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -11517,10 +11395,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -11641,10 +11517,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -11706,10 +11580,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -11825,10 +11697,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -11892,7 +11762,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:strongman_carry"
@@ -12011,10 +11881,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -12127,10 +11995,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:chest_fly"
         ]
@@ -12467,10 +12333,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shoulder_external_rotation"
         ]
@@ -12579,10 +12443,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -12648,10 +12510,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -12720,10 +12580,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -12786,10 +12644,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -12847,10 +12703,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:elbow_extension"
         ]
@@ -12968,10 +12822,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -13031,10 +12883,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:chest_fly"
         ]
@@ -13198,10 +13048,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -13259,10 +13107,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -13318,10 +13164,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -13378,10 +13222,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -13448,10 +13290,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -13569,10 +13409,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:dip_triceps_bias"
         ]
@@ -13814,7 +13652,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -13886,7 +13724,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_jerk"
@@ -13957,7 +13795,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -14025,7 +13863,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_snatch"
@@ -14090,7 +13928,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_windmill"
@@ -14264,10 +14102,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:elbow_flexion"
         ]
@@ -14436,10 +14272,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -14499,10 +14333,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -14628,7 +14460,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -14696,10 +14528,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -14819,7 +14649,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -14941,10 +14771,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -15229,10 +15057,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -15350,10 +15176,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:upright_row"
         ]
@@ -15468,10 +15292,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shoulder_flexion"
         ]
@@ -15532,10 +15354,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -15761,10 +15581,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -15938,10 +15756,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -16007,10 +15823,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -16074,10 +15888,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:step_up"
         ]
@@ -16450,10 +16262,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -16562,10 +16372,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -16629,7 +16437,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -16796,10 +16604,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -16856,10 +16662,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -16969,10 +16773,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shoulder_external_rotation"
         ]
@@ -17088,7 +16890,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:face_pull"
@@ -17149,7 +16951,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:farmer_carry"
@@ -17375,10 +17177,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -17610,10 +17410,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -17673,10 +17471,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -17734,10 +17530,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_flexion"
         ]
@@ -17856,7 +17650,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:drag_with_press"
@@ -17924,10 +17718,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -17992,10 +17784,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -18170,10 +17960,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -18239,10 +18027,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -18676,10 +18462,8 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:pullover"
         ]
@@ -18742,10 +18526,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat_quad_bias"
         ]
@@ -18807,10 +18589,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat_quad_bias"
         ]
@@ -18922,10 +18702,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -18985,10 +18763,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -19111,10 +18887,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -19176,10 +18950,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -19242,10 +19014,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -19307,10 +19077,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -19365,10 +19133,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -19528,10 +19294,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat_quad_bias"
         ]
@@ -19650,10 +19414,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -19813,10 +19575,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -19886,7 +19646,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -19961,7 +19721,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -20038,7 +19798,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -20116,7 +19876,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -20185,10 +19945,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -20301,10 +20059,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -20369,7 +20125,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:snatch_balance"
@@ -20484,10 +20240,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:elbow_flexion"
         ]
@@ -20595,10 +20349,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -20655,10 +20407,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_flexion"
         ]
@@ -20717,10 +20467,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -21000,10 +20748,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_extension"
         ]
@@ -21332,10 +21078,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -21451,10 +21195,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -21571,10 +21313,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:chest_fly"
         ]
@@ -21633,10 +21373,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:chest_fly"
         ]
@@ -21696,10 +21434,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -21872,10 +21608,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -21933,10 +21667,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -22049,10 +21781,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -22113,10 +21843,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -22177,10 +21905,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -22397,7 +22123,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -22462,7 +22188,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -22522,10 +22248,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -22792,10 +22516,8 @@
           "shoulders"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:anti_extension"
         ]
@@ -22855,10 +22577,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -22915,10 +22635,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -23032,10 +22750,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -23109,7 +22825,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_jerk"
@@ -23176,10 +22892,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -23298,7 +23012,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:loaded_object_load"
@@ -23367,10 +23081,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -23434,7 +23146,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -23502,7 +23214,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_figure8"
@@ -23567,7 +23279,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -23634,10 +23346,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -23701,7 +23411,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_figure8"
@@ -23765,7 +23475,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_pirate_ships"
@@ -23828,10 +23538,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -23893,10 +23601,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -23954,10 +23660,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -24023,7 +23727,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_sumo_high_pull"
@@ -24092,7 +23796,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:thruster"
@@ -24155,10 +23859,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -24222,10 +23924,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -24291,7 +23991,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_windmill"
@@ -24362,7 +24062,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:muscle_up"
@@ -24862,7 +24562,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -24977,10 +24677,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -25045,7 +24743,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -25111,10 +24809,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -25170,10 +24866,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -25241,7 +24935,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -25580,10 +25274,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -25801,10 +25493,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:leg_press"
         ]
@@ -25862,10 +25552,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -25921,10 +25609,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -25988,10 +25674,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -26048,10 +25732,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -26114,7 +25796,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -26173,10 +25855,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -26239,7 +25919,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -26299,10 +25979,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -26591,7 +26269,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:strongman_overhead"
@@ -26654,10 +26332,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -26884,7 +26560,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -27045,10 +26721,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -27112,10 +26786,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -27285,8 +26957,10 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -27945,10 +27619,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -28237,7 +27909,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -28354,10 +28026,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -28533,10 +28203,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -28918,10 +28586,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -28980,10 +28646,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_abduction"
         ]
@@ -29154,7 +28818,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -29226,7 +28890,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:muscle_up"
@@ -29296,7 +28960,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -29365,7 +29029,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -29432,7 +29096,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -29605,10 +29269,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -29786,10 +29448,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -29951,7 +29611,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -30196,7 +29856,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -30267,7 +29927,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean_and_jerk"
@@ -30326,10 +29986,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -30394,7 +30052,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_jerk"
@@ -30456,10 +30114,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -30517,10 +30173,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -30584,7 +30238,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -30649,7 +30303,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -30714,7 +30368,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_snatch"
@@ -30785,7 +30439,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_jerk"
@@ -30856,7 +30510,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_snatch"
@@ -30919,7 +30573,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_swing"
@@ -30981,7 +30635,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -31047,7 +30701,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:medicine_ball_slam"
@@ -31114,7 +30768,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -31181,10 +30835,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -31249,10 +30901,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -31483,10 +31133,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -31549,10 +31197,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -31671,10 +31317,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -31738,10 +31382,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -32073,10 +31715,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -32146,7 +31786,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -32204,10 +31844,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -32432,10 +32070,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -32602,8 +32238,10 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "evidenceRefs": [
           "pattern:anti_rotation"
         ]
@@ -32664,7 +32302,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:anti_rotation"
@@ -32966,10 +32604,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:dip_chest_bias"
         ]
@@ -33174,10 +32810,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -33236,10 +32870,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press_triceps_bias"
         ]
@@ -33455,10 +33087,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -33577,10 +33207,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -33642,10 +33270,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -33815,7 +33441,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -33913,7 +33539,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -33982,7 +33608,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_jerk"
@@ -34112,7 +33738,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -34190,7 +33816,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -34265,7 +33891,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:power_stairs"
@@ -34442,10 +34068,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -34617,10 +34241,8 @@
           "lower_back"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_extension"
         ]
@@ -34740,10 +34362,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -34803,10 +34423,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -34865,10 +34483,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -34928,10 +34544,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -35000,7 +34614,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -35064,7 +34678,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -35124,10 +34738,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -35188,10 +34800,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -35250,10 +34860,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -35522,7 +35130,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:strongman_overhead"
@@ -35586,10 +35194,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:rack_pull"
         ]
@@ -35655,10 +35261,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:rack_pull"
         ]
@@ -35877,10 +35481,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -35948,10 +35550,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -36022,10 +35622,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -36095,10 +35693,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -36167,10 +35763,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:sumo_deadlift"
         ]
@@ -36590,7 +36184,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -36707,10 +36301,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_extension"
         ]
@@ -36881,10 +36473,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -37000,7 +36590,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:loaded_carry"
@@ -37070,10 +36660,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -37135,10 +36723,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:dip_chest_bias"
         ]
@@ -37309,10 +36895,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -37375,10 +36959,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -37442,10 +37024,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -37511,7 +37091,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:rope_climb"
@@ -37950,10 +37530,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -38023,7 +37601,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:loaded_object_load"
@@ -38313,10 +37891,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -38660,7 +38236,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -38723,10 +38299,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -39184,10 +38758,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -39244,10 +38816,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_flexion"
         ]
@@ -39458,10 +39028,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -39906,7 +39474,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -40305,10 +39873,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -40373,7 +39939,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -40484,10 +40050,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -40685,10 +40249,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lateral_flexion"
         ]
@@ -40792,10 +40354,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lateral_flexion"
         ]
@@ -41165,10 +40725,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -41401,7 +40959,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:push_press"
@@ -41461,10 +41019,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -41580,10 +41136,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -42251,7 +41805,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:sled_pull"
@@ -42316,7 +41870,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:sled_pull"
@@ -42436,10 +41990,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:sled_push"
         ]
@@ -42563,7 +42115,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -42797,10 +42349,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -42865,7 +42415,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -42983,10 +42533,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -43046,10 +42594,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -43118,7 +42664,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -43237,10 +42783,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:incline_press"
         ]
@@ -43300,10 +42844,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:leg_press"
         ]
@@ -43364,10 +42906,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:upright_row"
         ]
@@ -43428,10 +42968,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -43494,10 +43032,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -43618,10 +43154,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -43685,10 +43219,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -43750,10 +43282,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:upright_row"
         ]
@@ -43817,10 +43347,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -43897,7 +43425,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -43973,7 +43501,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:snatch_balance"
@@ -44043,10 +43571,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -44116,7 +43642,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch_pull"
@@ -44180,10 +43706,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:shrug"
         ]
@@ -44252,7 +43776,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -44379,10 +43903,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -44447,10 +43969,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -44510,10 +44030,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -44577,7 +44095,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:spider_crawl"
@@ -44762,7 +44280,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_clean"
@@ -44838,7 +44356,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_jerk"
@@ -44967,7 +44485,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:olympic_snatch"
@@ -45039,10 +44557,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -45157,10 +44673,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -45227,10 +44741,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -45298,10 +44810,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -45367,10 +44877,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -45440,10 +44948,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -45559,10 +45065,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -45677,10 +45181,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -45960,10 +45462,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -46023,10 +45523,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -46082,10 +45580,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -46144,10 +45640,8 @@
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_rotation"
         ]
@@ -46377,10 +45871,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -46604,10 +46096,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:upright_row"
         ]
@@ -47305,10 +46795,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -47658,10 +47146,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -47723,10 +47209,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -48208,10 +47692,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:step_up"
         ]
@@ -48326,10 +47808,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -48394,10 +47874,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -48458,10 +47936,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -48574,10 +48050,8 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:pullover"
         ]
@@ -48704,7 +48178,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -48884,10 +48358,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:sumo_deadlift"
         ]
@@ -48958,10 +48430,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:sumo_deadlift"
         ]
@@ -49033,10 +48503,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:sumo_deadlift"
         ]
@@ -49374,10 +48842,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -49495,7 +48961,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -49557,10 +49023,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:lunge"
         ]
@@ -49622,10 +49086,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -49690,7 +49152,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -49987,7 +49449,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:tire_flip"
@@ -50210,10 +49672,8 @@
           "lats"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:conventional_deadlift"
         ]
@@ -50764,7 +50224,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_clean"
@@ -50834,7 +50294,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "reviewed_complex_pattern_rule"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:kettlebell_jerk"
@@ -50893,10 +50353,8 @@
           "abdominals"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_press"
         ]
@@ -50957,7 +50415,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -51017,10 +50475,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -51187,7 +50643,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -51251,7 +50707,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "indirect_evidence_pattern"
         ],
         "evidenceRefs": [
           "pattern:horizontal_pull"
@@ -51312,10 +50768,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:upright_row"
         ]
@@ -51426,10 +50880,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -51493,10 +50945,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -51663,10 +51113,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:trunk_extension"
         ]
@@ -51783,10 +51231,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:dip_triceps_bias"
         ]
@@ -51905,10 +51351,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -51971,10 +51415,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -52037,10 +51479,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -52158,10 +51598,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -52222,10 +51660,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_press"
         ]
@@ -52284,10 +51720,8 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:decline_press"
         ]
@@ -52347,10 +51781,8 @@
           "triceps"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:pullover"
         ]
@@ -52413,10 +51845,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -52480,10 +51910,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -52547,10 +51975,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:vertical_pull"
         ]
@@ -52672,10 +52098,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
@@ -52741,10 +52165,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:hip_hinge"
         ]
@@ -53122,7 +52544,7 @@
         "volumeEligible": true,
         "confidence": "medium",
         "reviewReasons": [
-          "rule_based_compound_mapping"
+          "complex_pattern_bookkeeping"
         ],
         "evidenceRefs": [
           "pattern:loaded_carry"
@@ -53190,10 +52612,8 @@
           "calves"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "rule_based_compound_mapping"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:squat"
         ]
