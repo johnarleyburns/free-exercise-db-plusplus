@@ -3,9 +3,9 @@
 - Source exercises: **873**
 - Volume eligible: **673**
 - Needs review: **0**
-- Rule review: **161**
+- Rule review: **109**
 - Excluded / verified: **200**
-- Reviewed / high: **512**
+- Reviewed / high: **564**
 
 ## Needs review
 

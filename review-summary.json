@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.7.1",
-    "generatedAt": "2026-08-23T19:42:10.007165+00:00",
+    "converterVersion": "0.7.3",
+    "generatedAt": "2026-08-23T20:31:27.684961+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -353,6 +353,25 @@
           "pmid": "40005429",
           "doi": "10.3390/medicina61020312",
           "url": "https://pubmed.ncbi.nlm.nih.gov/40005429/"
+        },
+        "inverted_row_emg_2015": {
+          "title": "Activation of Spinal Stabilizers and Shoulder Complex Muscles During an Inverted Row Using a Portable Pull-up Device and Body Weight Resistance",
+          "type": "experimental",
+          "pmid": "26422610",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26422610/"
+        },
+        "prone_barbell_row_emg_2025": {
+          "title": "Impact of different ranges of motion in the prone barbell row on muscle excitation",
+          "type": "experimental",
+          "pmid": "40513198",
+          "doi": "10.1016/j.jelekin.2025.103025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40513198/"
+        },
+        "suspension_row_emg_2020": {
+          "title": "Recruitment of Shoulder Complex and Torso Stabilizer Muscles With Rowing Exercises Using a Suspension Strap Training System",
+          "type": "experimental",
+          "pmid": "32940548",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32940548/"
         }
       },
       "patterns": {
@@ -412,10 +431,12 @@
           ]
         },
         "horizontal_pull": {
-          "status": "indirect_support",
-          "summary": "Row-family roles remain supported indirectly by related pulling EMG and established anatomy; DB++ has not yet attached a targeted horizontal-row study to this pattern.",
+          "status": "supported",
+          "summary": "Direct row-family EMG evidence across inverted, prone/barbell and suspension rows supports latissimus dorsi and mid/lower trapezius as major back contributors, with biceps and posterior deltoid also substantially recruited. DB++ retains biceps and shoulders as indirect because their relative contribution varies materially by row variant.",
           "references": [
-            "pullup_emg_2017"
+            "inverted_row_emg_2015",
+            "prone_barbell_row_emg_2025",
+            "suspension_row_emg_2020"
           ]
         },
         "vertical_pull": {
@@ -1048,28 +1069,28 @@
   },
   "eligibleExercises": 673,
   "confidenceCounts": {
-    "high": 712,
-    "medium": 161
+    "high": 764,
+    "medium": 109
   },
   "reviewPriorityCounts": {
-    "reviewed": 512,
+    "reviewed": 564,
     "excluded_verified": 200,
-    "rule_review": 161
+    "rule_review": 109
   },
   "reviewReasonCounts": {
     "non_volume_category:stretching": 123,
     "complex_pattern_bookkeeping": 72,
     "non_volume_category:plyometrics": 61,
-    "isolation_primary_secondary_fallback": 37,
-    "indirect_evidence_pattern": 52,
+    "isolation_primary_secondary_fallback": 24,
+    "indirect_evidence_pattern": 13,
     "non_volume_named_override": 2,
     "non_volume_category:cardio": 14
   },
   "evidenceStatusCounts": {
-    "supported": 512,
+    "supported": 564,
     "complex_supported": 72,
-    "indirect_support": 52
+    "indirect_support": 13
   },
-  "reviewQueueSize": 161,
+  "reviewQueueSize": 109,
   "lowConfidenceIds": []
 }

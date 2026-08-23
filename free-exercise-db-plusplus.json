@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.7.1",
-    "generatedAt": "2026-08-23T19:42:10.007165+00:00",
+    "converterVersion": "0.7.3",
+    "generatedAt": "2026-08-23T20:31:27.684961+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -353,6 +353,25 @@
           "pmid": "40005429",
           "doi": "10.3390/medicina61020312",
           "url": "https://pubmed.ncbi.nlm.nih.gov/40005429/"
+        },
+        "inverted_row_emg_2015": {
+          "title": "Activation of Spinal Stabilizers and Shoulder Complex Muscles During an Inverted Row Using a Portable Pull-up Device and Body Weight Resistance",
+          "type": "experimental",
+          "pmid": "26422610",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26422610/"
+        },
+        "prone_barbell_row_emg_2025": {
+          "title": "Impact of different ranges of motion in the prone barbell row on muscle excitation",
+          "type": "experimental",
+          "pmid": "40513198",
+          "doi": "10.1016/j.jelekin.2025.103025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40513198/"
+        },
+        "suspension_row_emg_2020": {
+          "title": "Recruitment of Shoulder Complex and Torso Stabilizer Muscles With Rowing Exercises Using a Suspension Strap Training System",
+          "type": "experimental",
+          "pmid": "32940548",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32940548/"
         }
       },
       "patterns": {
@@ -412,10 +431,12 @@
           ]
         },
         "horizontal_pull": {
-          "status": "indirect_support",
-          "summary": "Row-family roles remain supported indirectly by related pulling EMG and established anatomy; DB++ has not yet attached a targeted horizontal-row study to this pattern.",
+          "status": "supported",
+          "summary": "Direct row-family EMG evidence across inverted, prone/barbell and suspension rows supports latissimus dorsi and mid/lower trapezius as major back contributors, with biceps and posterior deltoid also substantially recruited. DB++ retains biceps and shoulders as indirect because their relative contribution varies materially by row variant.",
           "references": [
-            "pullup_emg_2017"
+            "inverted_row_emg_2015",
+            "prone_barbell_row_emg_2025",
+            "suspension_row_emg_2020"
           ]
         },
         "vertical_pull": {
@@ -2102,10 +2123,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -2166,10 +2185,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -3355,21 +3372,23 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "reverse_fly"
+        ],
         "direct": [
-          "shoulders"
+          "shoulders",
+          "middle_back"
         ],
         "indirect": [
-          "middle_back",
           "traps"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:reverse_fly"
+        ]
       },
       "source": {
         "name": "Band Pull Apart",
@@ -4345,10 +4364,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -5819,10 +5836,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -6004,10 +6019,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -6073,10 +6086,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -6140,10 +6151,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -6206,10 +6215,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -6605,22 +6612,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "chest_fly"
+        ],
         "direct": [
           "chest"
         ],
-        "indirect": [
-          "abdominals",
-          "shoulders",
-          "triceps"
+        "indirect": [],
+        "stabilizers": [
+          "shoulders"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:chest_fly"
+        ]
       },
       "source": {
         "name": "Bodyweight Flyes",
@@ -6681,10 +6688,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -7520,20 +7525,24 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_extension"
+        ],
         "direct": [
           "glutes"
         ],
         "indirect": [
           "hamstrings"
         ],
-        "stabilizers": [],
-        "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
+        "stabilizers": [
+          "lower_back"
         ],
-        "evidenceRefs": []
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_extension"
+        ]
       },
       "source": {
         "name": "Butt Lift (Bridge)",
@@ -8155,18 +8164,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "chest_fly"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [],
-        "stabilizers": [],
-        "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
+        "stabilizers": [
+          "shoulders"
         ],
-        "evidenceRefs": []
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:chest_fly"
+        ]
       },
       "source": {
         "name": "Cable Iron Cross",
@@ -8620,10 +8633,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -14647,10 +14658,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -14699,20 +14708,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
-        "indirect": [
-          "triceps"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Dumbbell Incline Shoulder Raise",
@@ -15403,7 +15412,9 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_abduction"
+        ],
         "direct": [
           "shoulders"
         ],
@@ -15412,11 +15423,11 @@
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_abduction"
+        ]
       },
       "source": {
         "name": "Dumbbell Scaption",
@@ -16435,10 +16446,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -17113,18 +17122,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "chest_fly"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [],
-        "stabilizers": [],
-        "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
+        "stabilizers": [
+          "shoulders"
         ],
-        "evidenceRefs": []
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:chest_fly"
+        ]
       },
       "source": {
         "name": "Flat Bench Cable Flyes",
@@ -18134,18 +18147,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Front Cable Raise",
@@ -18244,18 +18259,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Front Dumbbell Raise",
@@ -18296,18 +18313,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Front Incline Dumbbell Raise",
@@ -18397,18 +18416,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Front Plate Raise",
@@ -18636,18 +18657,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "shoulder_flexion"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_flexion"
+        ]
       },
       "source": {
         "name": "Front Two-Dumbbell Raise",
@@ -21125,20 +21148,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "chest_fly"
+        ],
         "direct": [
           "chest"
         ],
-        "indirect": [
+        "indirect": [],
+        "stabilizers": [
           "shoulders"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ],
-        "evidenceRefs": []
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:chest_fly"
+        ]
       },
       "source": {
         "name": "Incline Cable Flye",
@@ -22121,10 +22146,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -22186,10 +22209,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -24560,10 +24581,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -24741,10 +24760,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -25794,10 +25811,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -25917,10 +25932,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -26558,10 +26571,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -26957,10 +26968,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -27907,10 +27916,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -28958,10 +28965,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -29027,10 +29032,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -29094,10 +29097,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -29609,10 +29610,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -30301,10 +30300,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -30633,10 +30630,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -36182,10 +36177,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -38234,10 +38227,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -39472,10 +39463,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -39937,10 +39926,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -42113,10 +42100,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -42413,10 +42398,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -48176,10 +48159,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -48959,10 +48940,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -49150,10 +49129,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -50413,10 +50390,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -50641,10 +50616,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
@@ -50705,10 +50678,8 @@
           "forearms"
         ],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "indirect_evidence_pattern"
-        ],
+        "confidence": "high",
+        "reviewReasons": [],
         "evidenceRefs": [
           "pattern:horizontal_pull"
         ]
