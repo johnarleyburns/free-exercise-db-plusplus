@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.2.0",
-    "converterVersion": "0.3.0",
-    "generatedAt": "2026-08-23T02:12:57.020510+00:00",
+    "converterVersion": "0.3.1",
+    "generatedAt": "2026-08-23T02:27:07.615091+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -41,19 +41,25 @@
   },
   "eligibleExercises": 675,
   "confidenceCounts": {
-    "medium": 345,
-    "high": 418,
-    "low": 110
+    "medium": 357,
+    "high": 420,
+    "low": 96
+  },
+  "reviewPriorityCounts": {
+    "rule_review": 357,
+    "excluded_verified": 198,
+    "reviewed": 222,
+    "needs_review": 96
   },
   "reviewReasonCounts": {
-    "rule_based_compound_mapping": 306,
+    "rule_based_compound_mapping": 320,
     "non_volume_category:stretching": 123,
-    "compound_fallback_requires_review": 110,
+    "compound_fallback_requires_review": 96,
     "non_volume_category:plyometrics": 61,
-    "isolation_primary_secondary_fallback": 39,
+    "isolation_primary_secondary_fallback": 37,
     "non_volume_category:cardio": 14
   },
-  "reviewQueueSize": 653,
+  "reviewQueueSize": 453,
   "lowConfidenceIds": [
     "Air_Bike",
     "Alternating_Hang_Clean",
@@ -91,7 +97,6 @@
     "Heaving_Snatch_Balance",
     "Hip_Extension_with_Bands",
     "Hip_Lift_with_Band",
-    "Incline_Dumbbell_Bench_With_Palms_Facing_In",
     "Iron_Cross",
     "Isometric_Wipers",
     "Jerk_Balance",
@@ -101,8 +106,6 @@
     "Kettlebell_Hang_Clean",
     "Kettlebell_Pass_Between_The_Legs",
     "Kettlebell_Pirate_Ships",
-    "Kettlebell_Seated_Press",
-    "Kettlebell_Seesaw_Press",
     "Kettlebell_Sumo_High_Pull",
     "Kettlebell_Thruster",
     "Kettlebell_Windmill",
@@ -110,9 +113,7 @@
     "Landmine_180s",
     "Landmine_Linear_Jammer",
     "Log_Lift",
-    "London_Bridges",
     "Machine_Shoulder_Military_Press",
-    "Mixed_Grip_Chin",
     "Muscle_Snatch",
     "Muscle_Up",
     "Neck_Press",
@@ -129,8 +130,6 @@
     "Open_Palm_Kettlebell_Clean",
     "Otis-Up",
     "Physioball_Hip_Bridge",
-    "Plate_Twist",
-    "Plyo_Kettlebell_Pushups",
     "Power_Clean",
     "Power_Clean_from_Blocks",
     "Power_Jerk",
@@ -139,12 +138,9 @@
     "Power_Stairs",
     "Push_Press",
     "Push_Press_-_Behind_the_Neck",
-    "Pushups",
-    "Pushups_Close_and_Wide_Hand_Positions",
     "Rack_Delivery",
     "Rope_Climb",
     "Sandbag_Load",
-    "See-Saw_Press_Alternating_Side_Press",
     "Single-Arm_Linear_Jammer",
     "Sled_Overhead_Backward_Walk",
     "Smith_Machine_Hang_Power_Clean",
@@ -157,13 +153,9 @@
     "Split_Clean",
     "Split_Jerk",
     "Split_Snatch",
-    "Standing_Alternating_Dumbbell_Press",
-    "Standing_Cable_Lift",
-    "Svend_Press",
     "Tire_Flip",
     "Two-Arm_Kettlebell_Clean",
     "Two-Arm_Kettlebell_Jerk",
-    "Wide_Stance_Stiff_Legs",
     "Wind_Sprints"
   ]
 }

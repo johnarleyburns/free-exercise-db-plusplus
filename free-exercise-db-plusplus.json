@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.2.0",
-    "converterVersion": "0.3.0",
-    "generatedAt": "2026-08-23T02:12:57.020510+00:00",
+    "converterVersion": "0.3.1",
+    "generatedAt": "2026-08-23T02:27:07.615091+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -19285,20 +19285,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "incline_press"
+        ],
         "direct": [
-          "middle_back"
+          "chest",
+          "shoulders"
         ],
         "indirect": [
-          "lats",
-          "shoulders"
+          "triceps"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ]
+        "confidence": "high",
+        "reviewReasons": []
       },
       "source": {
         "name": "Incline Bench Pull",
@@ -19460,19 +19460,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "incline_press"
+        ],
         "direct": [
-          "chest"
+          "chest",
+          "shoulders"
         ],
         "indirect": [
-          "shoulders",
           "triceps"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -21768,18 +21770,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_press"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -21822,18 +21828,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_press"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -24395,20 +24405,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_rotation"
+        ],
         "direct": [
-          "lats"
+          "abdominals"
         ],
-        "indirect": [
-          "biceps",
-          "forearms",
-          "middle_back"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -26560,19 +26568,23 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_pull"
+        ],
         "direct": [
-          "middle_back"
+          "lats"
         ],
         "indirect": [
           "biceps",
-          "lats"
+          "middle_back"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "forearms"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -30830,16 +30842,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_rotation"
+        ],
         "direct": [
           "abdominals"
         ],
         "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -31003,19 +31017,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "horizontal_press"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [
-          "shoulders",
-          "triceps"
+          "triceps",
+          "shoulders"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -32445,19 +32461,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "horizontal_press"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [
-          "shoulders",
-          "triceps"
+          "triceps",
+          "shoulders"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -32502,19 +32520,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "horizontal_press"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [
-          "shoulders",
-          "triceps"
+          "triceps",
+          "shoulders"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -37336,19 +37356,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_press"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
-          "abdominals",
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -42331,18 +42354,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "vertical_press"
+        ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
           "triceps"
         ],
-        "stabilizers": [],
+        "stabilizers": [
+          "abdominals"
+        ],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -42829,18 +42856,18 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "trunk_rotation"
+        ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [
-          "shoulders"
-        ],
+        "indirect": [],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -44174,13 +44201,14 @@
       },
       "annotation": {
         "patterns": [
-          "elbow_flexion"
+          "incline_press"
         ],
         "direct": [
-          "biceps"
+          "chest",
+          "shoulders"
         ],
         "indirect": [
-          "forearms"
+          "triceps"
         ],
         "stabilizers": [],
         "volumeEligible": true,
@@ -45401,19 +45429,20 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "incline_press"
+        ],
         "direct": [
+          "chest",
           "shoulders"
         ],
         "indirect": [
-          "traps"
+          "triceps"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "medium",
-        "reviewReasons": [
-          "isolation_primary_secondary_fallback"
-        ]
+        "confidence": "high",
+        "reviewReasons": []
       },
       "source": {
         "name": "Straight Raises on Incline Bench",
@@ -46227,20 +46256,21 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "horizontal_press"
+        ],
         "direct": [
           "chest"
         ],
         "indirect": [
-          "forearms",
-          "shoulders",
-          "triceps"
+          "triceps",
+          "shoulders"
         ],
         "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {
@@ -49197,20 +49227,22 @@
         "competitionMovements": []
       },
       "annotation": {
-        "patterns": [],
+        "patterns": [
+          "hip_hinge"
+        ],
         "direct": [
-          "hamstrings"
+          "hamstrings",
+          "glutes"
         ],
-        "indirect": [
-          "adductors",
-          "glutes",
-          "lower_back"
+        "indirect": [],
+        "stabilizers": [
+          "lower_back",
+          "forearms"
         ],
-        "stabilizers": [],
         "volumeEligible": true,
-        "confidence": "low",
+        "confidence": "medium",
         "reviewReasons": [
-          "compound_fallback_requires_review"
+          "rule_based_compound_mapping"
         ]
       },
       "source": {

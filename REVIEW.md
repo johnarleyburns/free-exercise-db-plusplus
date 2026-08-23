@@ -2,12 +2,12 @@
 
 - Source exercises: **873**
 - Volume eligible: **675**
-- High confidence: **418**
-- Medium confidence: **345**
-- Low confidence: **110**
-- Review queue: **653**
+- Needs review: **96**
+- Rule review: **357**
+- Excluded / verified: **198**
+- Reviewed / high: **222**
 
-## Low-confidence exercises
+## Needs review
 
 | Exercise | Category | Primary | Secondary | Direct | Indirect | Reason |
 |---|---|---|---|---|---|---|
@@ -47,7 +47,6 @@
 | Heaving Snatch Balance | olympic weightlifting | quadriceps | abdominals, forearms, glutes, hamstrings, shoulders, triceps | quadriceps | abdominals, forearms, glutes, hamstrings, shoulders, triceps | compound_fallback_requires_review |
 | Hip Extension with Bands | strength | glutes | hamstrings | glutes | hamstrings | compound_fallback_requires_review |
 | Hip Lift with Band | powerlifting | glutes | calves, hamstrings | glutes | calves, hamstrings | compound_fallback_requires_review |
-| Incline Dumbbell Bench With Palms Facing In | strength | chest | shoulders, triceps | chest | shoulders, triceps | compound_fallback_requires_review |
 | Iron Cross | strength | shoulders | chest, glutes, hamstrings, lower back, quadriceps, traps | shoulders | chest, glutes, hamstrings, lower_back, quadriceps, traps | compound_fallback_requires_review |
 | Isometric Wipers | strength | chest | abdominals, shoulders, triceps | chest | abdominals, shoulders, triceps | compound_fallback_requires_review |
 | Jerk Balance | olympic weightlifting | shoulders | glutes, hamstrings, quadriceps, triceps | shoulders | glutes, hamstrings, quadriceps, triceps | compound_fallback_requires_review |
@@ -57,8 +56,6 @@
 | Kettlebell Hang Clean | strength | hamstrings | calves, glutes, lower back, shoulders, traps | hamstrings | calves, glutes, lower_back, shoulders, traps | compound_fallback_requires_review |
 | Kettlebell Pass Between The Legs | strength | abdominals | glutes, hamstrings, shoulders | abdominals | glutes, hamstrings, shoulders | compound_fallback_requires_review |
 | Kettlebell Pirate Ships | strength | shoulders | abdominals | shoulders | abdominals | compound_fallback_requires_review |
-| Kettlebell Seated Press | strength | shoulders | triceps | shoulders | triceps | compound_fallback_requires_review |
-| Kettlebell Seesaw Press | strength | shoulders | triceps | shoulders | triceps | compound_fallback_requires_review |
 | Kettlebell Sumo High Pull | strength | traps | adductors, glutes, hamstrings, quadriceps, shoulders | traps | adductors, glutes, hamstrings, quadriceps, shoulders | compound_fallback_requires_review |
 | Kettlebell Thruster | strength | shoulders | quadriceps, triceps | shoulders | quadriceps, triceps | compound_fallback_requires_review |
 | Kettlebell Windmill | strength | abdominals | glutes, hamstrings, shoulders, triceps | abdominals | glutes, hamstrings, shoulders, triceps | compound_fallback_requires_review |
@@ -66,9 +63,7 @@
 | Landmine 180's | strength | abdominals | glutes, lower back, shoulders | abdominals | glutes, lower_back, shoulders | compound_fallback_requires_review |
 | Landmine Linear Jammer | strength | shoulders | abdominals, calves, chest, hamstrings, quadriceps, triceps | shoulders | abdominals, calves, chest, hamstrings, quadriceps, triceps | compound_fallback_requires_review |
 | Log Lift | strongman | shoulders | abdominals, chest, glutes, hamstrings, lower back, middle back, quadriceps, traps, triceps | shoulders | abdominals, chest, glutes, hamstrings, lower_back, middle_back, quadriceps, traps, triceps | compound_fallback_requires_review |
-| London Bridges | strength | lats | biceps, forearms, middle back | lats | biceps, forearms, middle_back | compound_fallback_requires_review |
 | Machine Shoulder (Military) Press | strength | shoulders | triceps | shoulders | triceps | compound_fallback_requires_review |
-| Mixed Grip Chin | strength | middle back | biceps, lats | middle_back | biceps, lats | compound_fallback_requires_review |
 | Muscle Snatch | olympic weightlifting | hamstrings | glutes, lower back, quadriceps, shoulders, triceps | hamstrings | glutes, lower_back, quadriceps, shoulders, triceps | compound_fallback_requires_review |
 | Muscle Up | strength | lats | abdominals, biceps, forearms, middle back, shoulders, traps, triceps | lats | abdominals, biceps, forearms, middle_back, shoulders, traps, triceps | compound_fallback_requires_review |
 | Neck Press | strength | chest | shoulders, triceps | chest | shoulders, triceps | compound_fallback_requires_review |
@@ -85,8 +80,6 @@
 | Open Palm Kettlebell Clean | strength | hamstrings | glutes, lower back, quadriceps, shoulders | hamstrings | glutes, lower_back, quadriceps, shoulders | compound_fallback_requires_review |
 | Otis-Up | strength | abdominals | chest, shoulders, triceps | abdominals | chest, shoulders, triceps | compound_fallback_requires_review |
 | Physioball Hip Bridge | strength | glutes | hamstrings | glutes | hamstrings | compound_fallback_requires_review |
-| Plate Twist | strength | abdominals |  | abdominals |  | compound_fallback_requires_review |
-| Plyo Kettlebell Pushups | strength | chest | shoulders, triceps | chest | shoulders, triceps | compound_fallback_requires_review |
 | Power Clean | strength | hamstrings | calves, forearms, glutes, lower back, middle back, quadriceps, shoulders, traps, triceps | hamstrings | calves, forearms, glutes, lower_back, middle_back, quadriceps, shoulders, traps, triceps | compound_fallback_requires_review |
 | Power Clean from Blocks | olympic weightlifting | hamstrings | quadriceps | hamstrings | quadriceps | compound_fallback_requires_review |
 | Power Jerk | olympic weightlifting | quadriceps | abdominals, calves, glutes, hamstrings, shoulders, triceps | quadriceps | abdominals, calves, glutes, hamstrings, shoulders, triceps | compound_fallback_requires_review |
@@ -95,12 +88,9 @@
 | Power Stairs | strongman | hamstrings | adductors, calves, glutes, lower back, quadriceps, shoulders, traps | hamstrings | adductors, calves, glutes, lower_back, quadriceps, shoulders, traps | compound_fallback_requires_review |
 | Push Press | olympic weightlifting | shoulders | quadriceps, triceps | shoulders | quadriceps, triceps | compound_fallback_requires_review |
 | Push Press - Behind the Neck | olympic weightlifting | shoulders | calves, quadriceps, triceps | shoulders | calves, quadriceps, triceps | compound_fallback_requires_review |
-| Pushups | strength | chest | shoulders, triceps | chest | shoulders, triceps | compound_fallback_requires_review |
-| Pushups (Close and Wide Hand Positions) | strength | chest | shoulders, triceps | chest | shoulders, triceps | compound_fallback_requires_review |
 | Rack Delivery | olympic weightlifting | shoulders | forearms, traps | shoulders | forearms, traps | compound_fallback_requires_review |
 | Rope Climb | strength | lats | biceps, forearms, middle back, shoulders | lats | biceps, forearms, middle_back, shoulders | compound_fallback_requires_review |
 | Sandbag Load | strongman | quadriceps | abdominals, biceps, calves, forearms, glutes, hamstrings, lower back, middle back, shoulders, traps | quadriceps | abdominals, biceps, calves, forearms, glutes, hamstrings, lower_back, middle_back, shoulders, traps | compound_fallback_requires_review |
-| See-Saw Press (Alternating Side Press) | strength | shoulders | abdominals, triceps | shoulders | abdominals, triceps | compound_fallback_requires_review |
 | Single-Arm Linear Jammer | strength | shoulders | chest, triceps | shoulders | chest, triceps | compound_fallback_requires_review |
 | Sled Overhead Backward Walk | strength | shoulders | calves, middle back, quadriceps | shoulders | calves, middle_back, quadriceps | compound_fallback_requires_review |
 | Smith Machine Hang Power Clean | strength | hamstrings | glutes, lower back, quadriceps, shoulders, traps | hamstrings | glutes, lower_back, quadriceps, shoulders, traps | compound_fallback_requires_review |
@@ -113,11 +103,7 @@
 | Split Clean | olympic weightlifting | quadriceps | calves, forearms, glutes, hamstrings, lower back, shoulders, traps | quadriceps | calves, forearms, glutes, hamstrings, lower_back, shoulders, traps | compound_fallback_requires_review |
 | Split Jerk | olympic weightlifting | quadriceps | glutes, hamstrings, shoulders, triceps | quadriceps | glutes, hamstrings, shoulders, triceps | compound_fallback_requires_review |
 | Split Snatch | olympic weightlifting | hamstrings | calves, forearms, glutes, hamstrings, lower back, quadriceps, shoulders, traps, triceps | hamstrings | calves, forearms, glutes, lower_back, quadriceps, shoulders, traps, triceps | compound_fallback_requires_review |
-| Standing Alternating Dumbbell Press | strength | shoulders | triceps | shoulders | triceps | compound_fallback_requires_review |
-| Standing Cable Lift | strength | abdominals | shoulders | abdominals | shoulders | compound_fallback_requires_review |
-| Svend Press | strength | chest | forearms, shoulders, triceps | chest | forearms, shoulders, triceps | compound_fallback_requires_review |
 | Tire Flip | strongman | quadriceps | calves, chest, forearms, glutes, hamstrings, lower back, shoulders, traps, triceps | quadriceps | calves, chest, forearms, glutes, hamstrings, lower_back, shoulders, traps, triceps | compound_fallback_requires_review |
 | Two-Arm Kettlebell Clean | strength | shoulders | calves, glutes, hamstrings, lower back, traps | shoulders | calves, glutes, hamstrings, lower_back, traps | compound_fallback_requires_review |
 | Two-Arm Kettlebell Jerk | strength | shoulders | calves, quadriceps, triceps | shoulders | calves, quadriceps, triceps | compound_fallback_requires_review |
-| Wide Stance Stiff Legs | olympic weightlifting | hamstrings | adductors, glutes, lower back | hamstrings | adductors, glutes, lower_back | compound_fallback_requires_review |
 | Wind Sprints | strength | abdominals |  | abdominals |  | compound_fallback_requires_review |
