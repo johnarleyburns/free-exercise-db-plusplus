@@ -9,6 +9,7 @@ on:
       - "generate_review_report.py"
       - "generate_evidence_audit.py"
       - "generate_rule_audit.py"
+      - "generate_mapping_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   pull_request:
@@ -17,6 +18,7 @@ on:
       - "generate_review_report.py"
       - "generate_evidence_audit.py"
       - "generate_rule_audit.py"
+      - "generate_mapping_audit.py"
       - "free-exercise-db-plusplus.schema.json"
       - ".github/workflows/build-db.yml"
   schedule:
@@ -103,6 +105,9 @@ jobs:
           PY
       - name: Generate rule audit
         run: python generate_rule_audit.py free-exercise-db-plusplus.json --out RULE-AUDIT.md
+      - name: Generate exercise-specific mapping audit
+        run: |
+          python generate_mapping_audit.py free-exercise-db-plusplus.json             --markdown MAPPING-AUDIT.md --csv mapping-audit.csv
       - name: Assert full build
         run: |
           python - <<'PY'
@@ -132,12 +137,14 @@ jobs:
             review-summary.json
             EVIDENCE-AUDIT.md
             RULE-AUDIT.md
+            MAPPING-AUDIT.md
+            mapping-audit.csv
       - name: Commit generated public outputs
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json EVIDENCE-AUDIT.md RULE-AUDIT.md
+          git add free-exercise-db-plusplus.json REVIEW.md review-queue.csv review-summary.json EVIDENCE-AUDIT.md RULE-AUDIT.md MAPPING-AUDIT.md mapping-audit.csv
           if git diff --cached --quiet; then
             echo "Generated outputs are unchanged; nothing to commit."
             exit 0
