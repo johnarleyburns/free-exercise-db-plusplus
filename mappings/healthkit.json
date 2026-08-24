@@ -1,0 +1,133 @@
+{
+  "target": "apple-healthkit",
+  "mappingVersion": "0.1.0",
+  "status": "draft-reviewed",
+  "targetSpecification": "Apple HealthKit HKWorkout and HKQuantitySample APIs",
+  "entries": [
+    {
+      "sourcePath": "startTime",
+      "targetType": "HKWorkout",
+      "targetField": "startDate",
+      "quality": "exact",
+      "transform": "ISO-8601 to Date"
+    },
+    {
+      "sourcePath": "endTime",
+      "targetType": "HKWorkout",
+      "targetField": "endDate",
+      "quality": "compatible",
+      "transform": "ISO-8601 to Date",
+      "notes": "If endTime is null, an exporter must choose an explicit policy; it must not invent a completed end time silently."
+    },
+    {
+      "sourcePath": "sessionId",
+      "targetType": "HKWorkout",
+      "targetField": "HKMetadataKeyExternalUUID",
+      "quality": "compatible",
+      "transform": "string UUID or stable metadata value",
+      "notes": "Preserve the DB++ session identifier for linkage when the platform accepts it."
+    },
+    {
+      "sourcePath": "sessionId",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.sessionId]",
+      "quality": "extension_required",
+      "transform": "custom metadata string",
+      "notes": "Use a namespaced key when the identifier is not a UUID."
+    },
+    {
+      "sourcePath": "exercises[].exerciseId",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.exerciseIds]",
+      "quality": "extension_required",
+      "transform": "JSON array of stable IDs",
+      "notes": "HealthKit has no general set-level exercise identity field."
+    },
+    {
+      "sourcePath": "exercises[].exerciseName",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.exerciseNames]",
+      "quality": "extension_required",
+      "transform": "JSON array of names"
+    },
+    {
+      "sourcePath": "exercises[].sets[].duration",
+      "targetType": "HKWorkout",
+      "targetField": "duration/workoutEvents",
+      "quality": "lossy",
+      "transform": "aggregate active seconds",
+      "notes": "HealthKit stores workout duration and pause/resume events, not a portable set-duration collection."
+    },
+    {
+      "sourcePath": "exercises[].sets[].distance",
+      "targetType": "HKQuantitySample",
+      "targetField": "HKQuantityTypeIdentifier.distanceWalkingRunning or activity-specific distance",
+      "quality": "compatible",
+      "transform": "quantity to HKUnit length",
+      "notes": "Only use an activity-appropriate HealthKit distance type; preserve the native workout distance in DB++."
+    },
+    {
+      "sourcePath": "session.totalEnergyBurned",
+      "targetType": "HKWorkout",
+      "targetField": "totalEnergyBurned / activeEnergyBurned samples",
+      "quality": "unsupported",
+      "transform": null,
+      "notes": "Workout 0.2 has no normative total-energy field; do not derive energy from load, reps, or duration."
+    },
+    {
+      "sourcePath": "session.activityType",
+      "targetType": "HKWorkout",
+      "targetField": "workoutActivityType",
+      "quality": "unsupported",
+      "transform": null,
+      "notes": "Workout 0.2 does not define a session activity type; an exporter may require an explicit app policy."
+    },
+    {
+      "sourcePath": "exercises[].sets[].reps",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.sets]",
+      "quality": "extension_required",
+      "transform": "JSON set observations",
+      "notes": "HealthKit does not provide a universal strength-set/repetition field on HKWorkout."
+    },
+    {
+      "sourcePath": "exercises[].sets[].load",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.sets]",
+      "quality": "extension_required",
+      "transform": "JSON quantity objects",
+      "notes": "Do not encode external load as body mass or energy."
+    },
+    {
+      "sourcePath": "exercises[].sets[].rpe",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.sets]",
+      "quality": "extension_required",
+      "transform": "JSON set observations"
+    },
+    {
+      "sourcePath": "exercises[].sets[].segments",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[com.free-exercise-db-plusplus.sets]",
+      "quality": "extension_required",
+      "transform": "JSON macro-segments",
+      "notes": "Drop, rest-pause, and cluster semantics are retained only in namespaced metadata or a sidecar."
+    },
+    {
+      "sourcePath": "source.device",
+      "targetType": "HKWorkout",
+      "targetField": "HKDevice / metadata",
+      "quality": "compatible",
+      "transform": "map manufacturer and model",
+      "notes": "Never export serial numbers unless explicitly authorized."
+    },
+    {
+      "sourcePath": "notes",
+      "targetType": "HKWorkout",
+      "targetField": "metadata[HKMetadataKeyWorkoutBrandName or custom]",
+      "quality": "lossy",
+      "transform": "string metadata",
+      "notes": "Metadata keys and visibility vary by consumer; preserve the original notes in DB++."
+    }
+  ]
+}

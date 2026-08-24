@@ -134,6 +134,21 @@ jobs:
           print(f"Garmin FIT mapping valid: {len(entries)} entries")
           PY
 
+      - name: Validate Apple HealthKit mapping registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          mapping = json.loads(Path("mappings/healthkit.json").read_text())
+          assert mapping["target"] == "apple-healthkit"
+          assert mapping["mappingVersion"] == "0.1.0"
+          entries = mapping["entries"]
+          assert len(entries) >= 10
+          assert len({(e["sourcePath"], e["targetField"]) for e in entries}) == len(entries)
+          assert {e["quality"] for e in entries} <= {"exact", "compatible", "lossy", "extension_required", "unsupported"}
+          print(f"Apple HealthKit mapping valid: {len(entries)} entries")
+          PY
+
       - name: Prepare reports directory
         run: mkdir -p reports
 
