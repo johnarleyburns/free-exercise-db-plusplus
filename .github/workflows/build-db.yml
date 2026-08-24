@@ -11,6 +11,9 @@ on:
       - "workout.schema.json"
       - "README.md"
       - "docs/**"
+      - "packages/swift/**"
+      - "packages/python/**"
+      - "packages/kotlin/**"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
@@ -20,6 +23,9 @@ on:
       - "workout.schema.json"
       - "README.md"
       - "docs/**"
+      - "packages/swift/**"
+      - "packages/python/**"
+      - "packages/kotlin/**"
       - ".github/workflows/build-db.yml"
   schedule:
     - cron: "23 9 * * 1"
@@ -203,6 +209,10 @@ jobs:
       - name: Test Swift 6 consumer package
         run: |
           swift test --package-path packages/swift/FreeExerciseDBPlusPlus
+
+      - name: Test Kotlin consumer package
+        run: |
+          gradle --no-daemon test --project-dir packages/kotlin/fedbpp
 
       - name: Prepare reports directory
         run: mkdir -p reports
