@@ -1,16 +1,42 @@
 # Versioning and compatibility
 
-Free Exercise DB++ tracks two independent versions:
+Free Exercise DB++ tracks three related but independent versions:
 
-- `converterVersion` — mapping rules, evidence, classifications, and generator implementation.
-- `schemaVersion` — the consumer-facing JSON contract.
+- **Git release version** — the public project release, e.g. `v1.0.0`.
+- **`converterVersion`** — mapping rules, evidence, classifications, and generator implementation.
+- **`schemaVersion`** — the consumer-facing JSON contract revision.
 
-Before 1.0, schema minor releases may add fields or enum values. Consumers should ignore unknown fields where practical.
+## Project releases
 
-An incompatible removal, rename, type change, or semantic change to a required field requires a schema major-version change.
+Free Exercise DB++ uses semantic versioning for Git releases.
 
-Changes to exercise mappings, evidence, or classifications normally increment `converterVersion` without changing `schemaVersion`.
+After v1.0.0:
 
-`exerciseId` values inherit the upstream Free Exercise DB IDs. If upstream removes or changes an ID, that is an upstream compatibility event and should be surfaced by CI and reviewed before release.
+- **major** releases contain incompatible changes to the stable consumer contract;
+- **minor** releases may add compatible capabilities, fields, classifications, or reviewed upstream coverage;
+- **patch** releases contain compatible corrections to mappings, evidence, documentation, tooling, or release infrastructure.
 
-A release should publish the generated JSON, JSON Schema, converter version, upstream SHA-256, upstream exercise count, and audit summaries together.
+The converter and schema versions do not need to numerically match the Git release version.
+
+## Schema compatibility
+
+An incompatible removal, rename, type change, or semantic change to a required consumer field
+requires both an appropriate schema-contract revision and a new major project release.
+
+Compatible additive fields may be introduced in a non-major release. Consumers should ignore
+unknown fields where practical.
+
+## Mapping and evidence changes
+
+Changes to exercise mappings, evidence, or classifications normally increment
+`converterVersion` without requiring a `schemaVersion` change when the JSON contract is unchanged.
+
+## Exercise IDs
+
+`exerciseId` values inherit upstream Free Exercise DB IDs. If upstream removes or changes an ID,
+that is a compatibility event and must be surfaced by CI and reviewed before release.
+
+## Release artifacts
+
+A release publishes the generated JSON, JSON Schema, workout schema, SHA-256 checksums, and the
+methodology/compatibility/evidence documentation together.

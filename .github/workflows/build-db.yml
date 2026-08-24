@@ -9,6 +9,8 @@ on:
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
+      - "README.md"
+      - "docs/**"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
@@ -16,6 +18,8 @@ on:
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
+      - "README.md"
+      - "docs/**"
       - ".github/workflows/build-db.yml"
   schedule:
     - cron: "23 9 * * 1"

@@ -51,9 +51,7 @@ is literally linear. See [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 Download the current database:
 
 ```bash
-curl -L \
-  https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.json \
-  -o free-exercise-db-plusplus.json
+curl -L   https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.json   -o free-exercise-db-plusplus.json
 ```
 
 ### Python
@@ -69,30 +67,6 @@ bench = db["exercises"]["Barbell_Bench_Press_-_Medium_Grip"]
 print(bench["annotation"]["direct"])
 print(bench["annotation"]["indirect"])
 print(db["metadata"]["setCredits"])
-```
-
-Example set accounting:
-
-```python
-from collections import defaultdict
-
-effective = defaultdict(float)
-credits = db["metadata"]["setCredits"]
-
-for exercise_id, performed_sets in {
-    "Barbell_Bench_Press_-_Medium_Grip": 4,
-}.items():
-    ann = db["exercises"][exercise_id]["annotation"]
-    if not ann["volumeEligible"]:
-        continue
-
-    for muscle in ann["direct"]:
-        effective[muscle] += performed_sets * credits["direct"]
-
-    for muscle in ann["indirect"]:
-        effective[muscle] += performed_sets * credits["indirect"]
-
-print(dict(effective))
 ```
 
 ### Swift 6 / iOS
@@ -135,17 +109,6 @@ struct Annotation: Decodable, Sendable {
 }
 ```
 
-Load a bundled copy:
-
-```swift
-let url = Bundle.main.url(
-    forResource: "free-exercise-db-plusplus",
-    withExtension: "json"
-)!
-let data = try Data(contentsOf: url)
-let database = try JSONDecoder().decode(Database.self, from: data)
-```
-
 ## Build from upstream
 
 Requires Python 3.12+. The converter itself uses the standard library; JSON Schema
@@ -154,15 +117,9 @@ validation requires `jsonschema`.
 ```bash
 python -m pip install jsonschema
 
-curl -L \
-  https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json \
-  -o exercises.json
+curl -L   https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json   -o exercises.json
 
-python src/convert_fedb_to_fedbpp.py \
-  exercises.json \
-  free-exercise-db-plusplus.json \
-  --schema free-exercise-db-plusplus.schema.json \
-  --completeness full
+python src/convert_fedb_to_fedbpp.py   exercises.json   free-exercise-db-plusplus.json   --schema free-exercise-db-plusplus.schema.json   --completeness full
 ```
 
 ## Repository layout
@@ -174,32 +131,41 @@ python src/convert_fedb_to_fedbpp.py \
 ├── free-exercise-db-plusplus.json
 ├── free-exercise-db-plusplus.schema.json
 ├── workout.schema.json
-├── src/                    # converter, audit generators, verification tools
-├── tests/                  # contract and regression tests
-├── docs/                   # methodology, design, evidence, compatibility
-│   └── history/            # pre-1.0 development notes
-├── reports/                # generated review/audit reports
-├── examples/               # workout interchange example
-├── fixtures/               # compact verification fixtures
-├── mappings/               # external-standard mapping stubs
-└── .github/workflows/      # CI and release automation
+├── src/
+├── tests/
+├── docs/
+│   └── history/
+├── reports/
+├── examples/
+├── fixtures/
+├── mappings/
+└── .github/workflows/
 ```
 
-The main JSON and schemas intentionally remain at the repository root so that raw GitHub URLs
-stay short and stable for consumers.
+The main JSON and schemas intentionally remain at the repository root so raw GitHub URLs stay
+short and stable for consumers.
 
 ## Documentation
 
 - [Methodology](docs/METHODOLOGY.md)
 - [Design](docs/DESIGN.md)
 - [Evidence policy](docs/EVIDENCE.md)
-- [Compatibility / intended 1.0 contract](docs/COMPATIBILITY.md)
+- [1.0 compatibility contract](docs/COMPATIBILITY.md)
 - [Versioning](docs/VERSIONING.md)
 - [Release checklist](docs/RELEASE-CHECKLIST.md)
 - [Current review report](reports/REVIEW.md)
 - [Current rule audit](reports/RULE-AUDIT.md)
 - [Current mapping audit](reports/MAPPING-AUDIT.md)
 - [Current evidence audit](reports/EVIDENCE-AUDIT.md)
+
+## Version 1.0 contract
+
+Free Exercise DB++ v1.0.0 freezes the public consumer contract described in
+[`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
+
+The Git release version, `converterVersion`, and `schemaVersion` are intentionally independent:
+they identify the project release, generator implementation, and JSON contract revision
+respectively. Breaking changes to the 1.0 consumer contract require a new major project release.
 
 ## Confidence and evidence
 
