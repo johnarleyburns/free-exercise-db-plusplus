@@ -1,0 +1,149 @@
+{
+  "target": "android-health-connect",
+  "mappingVersion": "0.1.0",
+  "status": "draft-reviewed",
+  "targetSpecification": "Android Health Connect ExerciseSessionRecord and associated records",
+  "entries": [
+    {
+      "sourcePath": "startTime",
+      "targetType": "ExerciseSessionRecord",
+      "targetField": "startTime/startZoneOffset",
+      "quality": "exact",
+      "transform": "ISO-8601 to Instant plus ZoneOffset"
+    },
+    {
+      "sourcePath": "endTime",
+      "targetType": "ExerciseSessionRecord",
+      "targetField": "endTime/endZoneOffset",
+      "quality": "exact",
+      "transform": "ISO-8601 to Instant plus ZoneOffset",
+      "notes": "Health Connect requires both start and end times."
+    },
+    {
+      "sourcePath": "sessionId",
+      "targetType": "Record.metadata",
+      "targetField": "clientRecordId",
+      "quality": "compatible",
+      "transform": "stable string identifier",
+      "notes": "Use clientRecordVersion for deterministic sync updates."
+    },
+    {
+      "sourcePath": "exercises[].exerciseId",
+      "targetType": "ExerciseSegment",
+      "targetField": "metadata.clientRecordId/custom metadata",
+      "quality": "extension_required",
+      "transform": "namespaced stable ID",
+      "notes": "Use the Health Connect exercise type only as a target hint; preserve DB++ identity."
+    },
+    {
+      "sourcePath": "exercises[].exerciseName",
+      "targetType": "ExerciseSegment",
+      "targetField": "metadata/title or custom metadata",
+      "quality": "compatible",
+      "transform": "string",
+      "notes": "Health Connect segment types cover common exercises but not every DB++ exercise."
+    },
+    {
+      "sourcePath": "exercises[].sets[].reps",
+      "targetType": "ExerciseSegment",
+      "targetField": "repetitions",
+      "quality": "compatible",
+      "transform": "integer repetitions",
+      "notes": "ExerciseSegment provides an optional repetition count."
+    },
+    {
+      "sourcePath": "exercises[].sets[].load",
+      "targetType": "ExerciseSegment",
+      "targetField": "weight",
+      "quality": "compatible",
+      "transform": "quantity to Mass kilograms",
+      "notes": "Do not convert bodyweight or assistance into external weight without explicit semantics."
+    },
+    {
+      "sourcePath": "exercises[].sets[].setNumber",
+      "targetType": "ExerciseSegment",
+      "targetField": "setNumber",
+      "quality": "compatible",
+      "transform": "positive integer"
+    },
+    {
+      "sourcePath": "exercises[].sets[].rpe",
+      "targetType": "ExerciseSegment",
+      "targetField": "perceivedExertion",
+      "quality": "compatible",
+      "transform": "number 0-10 to RPE",
+      "notes": "Keep RIR and failure independent; do not infer them."
+    },
+    {
+      "sourcePath": "exercises[].sets[].duration",
+      "targetType": "ExerciseSegment",
+      "targetField": "startTime/endTime",
+      "quality": "compatible",
+      "transform": "duration quantity to interval",
+      "notes": "A source set without a timestamp needs an exporter policy for segment placement."
+    },
+    {
+      "sourcePath": "exercises[].sets[].distance",
+      "targetType": "DistanceRecord",
+      "targetField": "distance",
+      "quality": "compatible",
+      "transform": "quantity to Length",
+      "notes": "Associate the record with the session time range; use only for activity-appropriate distance."
+    },
+    {
+      "sourcePath": "exercises[].sets[].repetitions[]",
+      "targetType": "ExerciseSegment",
+      "targetField": "metadata[dbpp.repTelemetry]",
+      "quality": "extension_required",
+      "transform": "JSON rep observations",
+      "notes": "Health Connect has segment-level repetitions, not a universal per-rep telemetry record."
+    },
+    {
+      "sourcePath": "exercises[].sets[].segments",
+      "targetType": "ExerciseSegment",
+      "targetField": "metadata[dbpp.macroSegments]",
+      "quality": "extension_required",
+      "transform": "JSON macro-segments",
+      "notes": "Drop, rest-pause, and cluster structure needs namespaced metadata or sidecar."
+    },
+    {
+      "sourcePath": "exercises[].laterality",
+      "targetType": "ExerciseSegment",
+      "targetField": "metadata[dbpp.laterality]",
+      "quality": "extension_required",
+      "transform": "namespaced enum",
+      "notes": "No universal laterality field is assumed."
+    },
+    {
+      "sourcePath": "source.device",
+      "targetType": "Record.metadata",
+      "targetField": "device",
+      "quality": "compatible",
+      "transform": "map manufacturer/model to Device",
+      "notes": "Avoid exporting serial numbers by default."
+    },
+    {
+      "sourcePath": "notes",
+      "targetType": "ExerciseSessionRecord",
+      "targetField": "notes",
+      "quality": "compatible",
+      "transform": "string"
+    },
+    {
+      "sourcePath": "session.activeEnergyBurned",
+      "targetType": "ActiveCaloriesBurnedRecord",
+      "targetField": "energy",
+      "quality": "unsupported",
+      "transform": null,
+      "notes": "Workout 0.2 has no normative energy field; never derive energy from reps/load."
+    },
+    {
+      "sourcePath": "session.activityType",
+      "targetType": "ExerciseSessionRecord",
+      "targetField": "exerciseType",
+      "quality": "unsupported",
+      "transform": null,
+      "notes": "Workout 0.2 does not define a normative session activity type; do not guess one."
+    }
+  ]
+}
