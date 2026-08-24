@@ -186,6 +186,20 @@ jobs:
           print(f"mapping registries valid: {len(files)} files")
           PY
 
+      - name: Test Python consumer package
+        run: |
+          PYTHONPATH=packages/python python - <<'PY'
+          import importlib.util
+          path = "packages/python/tests/test_package.py"
+          spec = importlib.util.spec_from_file_location("fedbpp_tests", path)
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith("test_"):
+                  getattr(module, name)()
+          print("Python consumer package valid")
+          PY
+
       - name: Prepare reports directory
         run: mkdir -p reports
 
