@@ -119,6 +119,21 @@ jobs:
           print(f"workout schema valid; {len(valid)} valid and {len(invalid)} invalid fixtures checked")
           PY
 
+      - name: Validate Garmin FIT mapping registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          mapping = json.loads(Path("mappings/garmin-fit.json").read_text())
+          assert mapping["target"] == "garmin-fit"
+          assert mapping["mappingVersion"] == "0.1.0"
+          entries = mapping["entries"]
+          assert len(entries) >= 10
+          assert len({entry["sourcePath"] for entry in entries}) == len(entries)
+          assert {entry["quality"] for entry in entries} <= {"exact", "compatible", "lossy", "extension_required", "unsupported"}
+          print(f"Garmin FIT mapping valid: {len(entries)} entries")
+          PY
+
       - name: Prepare reports directory
         run: mkdir -p reports
 

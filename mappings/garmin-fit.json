@@ -1,7 +1,152 @@
 {
-  "status": "placeholder",
-  "description": "Conceptual mapping stub only. Full field-level interoperability mapping has not yet been specified.",
-  "exerciseId": "Map DB++ exercise identifiers to the nearest target exercise/activity code where available.",
-  "setLevel": "Map repetitions, resistance/load, duration, and timestamps where the target standard supports them.",
-  "notes": "Do not treat this file as a normative complete mapping."
+  "target": "garmin-fit",
+  "mappingVersion": "0.1.0",
+  "status": "draft-reviewed",
+  "targetSpecification": "Garmin FIT SDK activity/workout file profiles",
+  "entries": [
+    {
+      "sourcePath": "schemaVersion",
+      "targetMessage": "file_id",
+      "targetField": "type",
+      "quality": "compatible",
+      "transform": "activity_file",
+      "notes": "Workout observations are exported as FIT Activity files; FIT Workout files are for prescribed steps."
+    },
+    {
+      "sourcePath": "sessionId",
+      "targetMessage": "session",
+      "targetField": "name",
+      "quality": "lossy",
+      "transform": "string",
+      "notes": "FIT has no required stable DB++ session identifier; retain the original ID in an application linkage field when available."
+    },
+    {
+      "sourcePath": "startTime",
+      "targetMessage": "session",
+      "targetField": "start_time",
+      "quality": "exact",
+      "transform": "ISO-8601 to FIT date_time",
+      "notes": "FIT date_time is UTC seconds; preserve the source offset during conversion."
+    },
+    {
+      "sourcePath": "endTime",
+      "targetMessage": "session",
+      "targetField": "timestamp/total_elapsed_time",
+      "quality": "compatible",
+      "transform": "derive elapsed milliseconds",
+      "notes": "FIT summary messages require timestamps and duration fields; null source values remain absent."
+    },
+    {
+      "sourcePath": "exercises[].exerciseId",
+      "targetMessage": "developer_data",
+      "targetField": "dbpp_exercise_id",
+      "quality": "extension_required",
+      "transform": "UTF-8 string developer field",
+      "notes": "Never replace the DB++ identity with a Garmin enum or display name."
+    },
+    {
+      "sourcePath": "exercises[].exerciseName",
+      "targetMessage": "lap",
+      "targetField": "name",
+      "quality": "lossy",
+      "transform": "UTF-8 string",
+      "notes": "Use only when exerciseId is unavailable; FIT consumers may truncate or omit names."
+    },
+    {
+      "sourcePath": "exercises[].sets[].setNumber",
+      "targetMessage": "lap",
+      "targetField": "message_index",
+      "quality": "compatible",
+      "transform": "integer index",
+      "notes": "A lap is the closest portable FIT grouping for one observed set."
+    },
+    {
+      "sourcePath": "exercises[].sets[].reps",
+      "targetMessage": "lap",
+      "targetField": "total_cycles",
+      "quality": "compatible",
+      "transform": "integer reps",
+      "notes": "Availability and interpretation depend on the target FIT profile/device."
+    },
+    {
+      "sourcePath": "exercises[].sets[].load",
+      "targetMessage": "lap",
+      "targetField": "total_weight",
+      "quality": "compatible",
+      "transform": "quantity to FIT kilograms",
+      "notes": "Convert lb and other units to kg; do not infer body mass."
+    },
+    {
+      "sourcePath": "exercises[].sets[].duration",
+      "targetMessage": "lap",
+      "targetField": "total_timer_time",
+      "quality": "compatible",
+      "transform": "quantity to milliseconds",
+      "notes": "FIT summary durations are integer milliseconds."
+    },
+    {
+      "sourcePath": "exercises[].sets[].distance",
+      "targetMessage": "lap",
+      "targetField": "total_distance",
+      "quality": "compatible",
+      "transform": "quantity to meters",
+      "notes": "Convert supported units to metres."
+    },
+    {
+      "sourcePath": "exercises[].sets[].completed",
+      "targetMessage": "event",
+      "targetField": "event_type",
+      "quality": "lossy",
+      "transform": "completed=true -> stop; false -> marker",
+      "notes": "FIT has no universal set-completion boolean."
+    },
+    {
+      "sourcePath": "exercises[].sets[].rpe",
+      "targetMessage": "lap",
+      "targetField": "rating",
+      "quality": "compatible",
+      "transform": "number 0-10 to FIT rating",
+      "notes": "Do not derive RPE from RIR or failure flags."
+    },
+    {
+      "sourcePath": "exercises[].sets[].rir",
+      "targetMessage": null,
+      "targetField": null,
+      "quality": "unsupported",
+      "transform": null,
+      "notes": "No portable standard FIT field is assumed for reps in reserve."
+    },
+    {
+      "sourcePath": "exercises[].sets[].segments",
+      "targetMessage": "developer_data",
+      "targetField": "dbpp_set_segments",
+      "quality": "extension_required",
+      "transform": "JSON developer field",
+      "notes": "Drop, rest-pause, and cluster macro-structure has no guaranteed standard FIT representation."
+    },
+    {
+      "sourcePath": "exercises[].sets[].repetitions[]",
+      "targetMessage": "record",
+      "targetField": "developer_data",
+      "quality": "extension_required",
+      "transform": "developer fields",
+      "notes": "Rep telemetry is retained only through developer data unless a product profile provides equivalent fields."
+    },
+    {
+      "sourcePath": "exercises[].structure",
+      "targetMessage": "lap",
+      "targetField": "lap_trigger/group",
+      "quality": "lossy",
+      "transform": "group consecutive laps",
+      "notes": "Superset/circuit structure can be grouped during export but is not a universal FIT semantic."
+    },
+    {
+      "sourcePath": "source",
+      "targetMessage": "device_info/developer_data",
+      "targetField": "manufacturer/model",
+      "quality": "compatible",
+      "transform": "map known metadata",
+      "notes": "Avoid exporting device serial numbers by default."
+    }
+  ]
 }
