@@ -148,5 +148,6 @@
       "transform": "map known metadata",
       "notes": "Avoid exporting device serial numbers by default."
     }
-  ]
+  ],
+  "sourceArtifact": "workout-actual"
 }

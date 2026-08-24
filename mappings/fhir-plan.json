@@ -1,0 +1,89 @@
+{
+  "target": "hl7-fhir-plan",
+  "mappingVersion": "0.1.0",
+  "status": "draft-reviewed",
+  "sourceArtifact": "workout-plan",
+  "targetSpecification": "HL7 FHIR R5 NutritionOrder/ServiceRequest-style activity intent mapping profile",
+  "entries": [
+    {
+      "sourcePath": "planId",
+      "targetMessage": "PlanDefinition",
+      "targetField": "id",
+      "quality": "compatible",
+      "transform": "stable plan identifier",
+      "notes": "Keep revision identity in extension data."
+    },
+    {
+      "sourcePath": "revisionId",
+      "targetMessage": "PlanDefinition",
+      "targetField": "version",
+      "quality": "compatible",
+      "transform": "string revision",
+      "notes": "Immutable DB++ revision identifier."
+    },
+    {
+      "sourcePath": "name",
+      "targetMessage": "PlanDefinition",
+      "targetField": "title",
+      "quality": "compatible",
+      "transform": "string",
+      "notes": "Prescription title."
+    },
+    {
+      "sourcePath": "cycle.lengthDays",
+      "targetMessage": "PlanDefinition",
+      "targetField": "extension[cycle-length-days]",
+      "quality": "extension_required",
+      "transform": "integer extension",
+      "notes": "FHIR does not provide this DB++ native cycle field directly."
+    },
+    {
+      "sourcePath": "sessions[].planSessionId",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "id",
+      "quality": "compatible",
+      "transform": "stable session identifier",
+      "notes": "One planned session definition."
+    },
+    {
+      "sourcePath": "sessions[].dayOffset",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "timing",
+      "quality": "lossy",
+      "transform": "relative cycle offset",
+      "notes": "Preserve native cycle offset in an extension for exact round trip."
+    },
+    {
+      "sourcePath": "sessions[].exercises[].exerciseId",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "code",
+      "quality": "extension_required",
+      "transform": "DB++ exercise identifier extension",
+      "notes": "FHIR coding systems may not contain DB++ IDs."
+    },
+    {
+      "sourcePath": "sessions[].exercises[].sets",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "dosage.doseAndRate",
+      "quality": "compatible",
+      "transform": "exact or ranged set count",
+      "notes": "Ranges require a profile extension when multiple bounds are present."
+    },
+    {
+      "sourcePath": "sessions[].exercises[].reps",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "dosage.doseAndRate",
+      "quality": "compatible",
+      "transform": "exact or ranged repetitions",
+      "notes": "Retain min/target/max semantics."
+    },
+    {
+      "sourcePath": "sessions[].exercises[].progression",
+      "targetMessage": "ActivityDefinition",
+      "targetField": "extension[progression]",
+      "quality": "extension_required",
+      "transform": "controlled progression metadata",
+      "notes": "Do not translate descriptive progression into executable clinical logic."
+    }
+  ]
+}

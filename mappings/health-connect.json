@@ -148,5 +148,6 @@
       "transform": null,
       "notes": "Workout 0.2 does not define a normative session activity type; do not guess one."
     }
-  ]
+  ],
+  "sourceArtifact": "workout-actual"
 }

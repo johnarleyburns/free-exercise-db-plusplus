@@ -3,5 +3,6 @@
   "mappingVersion": "0.1.0",
   "status": "placeholder",
   "targetSpecification": "Not yet specified; conceptual placeholder only.",
-  "entries": []
+  "entries": [],
+  "sourceArtifact": "workout-actual"
 }

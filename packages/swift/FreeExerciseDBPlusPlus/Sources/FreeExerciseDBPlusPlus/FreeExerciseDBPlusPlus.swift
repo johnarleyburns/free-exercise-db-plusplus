@@ -67,3 +67,13 @@ public struct Workout: Codable, Sendable, Equatable {
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> Workout { do { return try decoder.decode(Workout.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode workout: \(error)") } }
     public func effectiveSets(using database: FEDatabase) -> [String: Double] { var totals: [String: Double] = [:]; for observation in exercises { guard let id = observation.exerciseId, let exercise = try? database.getExercise(id), exercise.annotation.volumeEligible else { continue }; let sets = Double(observation.sets.filter(\.completed).count); for muscle in exercise.annotation.direct { totals[muscle, default: 0] += sets }; for muscle in exercise.annotation.indirect { totals[muscle, default: 0] += sets * 0.5 } }; return totals }
 }
+
+public struct PlanCycle: Codable, Sendable, Equatable { public let lengthDays: Int }
+public struct PlanPhase: Codable, Sendable, Equatable { public let phaseId: String; public let durationCycles: Int; public let cycle: PlanCycle? }
+public struct PlannedSet: Codable, Sendable, Equatable { public let setPrescriptionId: String; public let setType: String; public let reps: JSONValue; public let load: JSONValue? }
+public struct PlanExercisePrescription: Codable, Sendable, Equatable { public let prescriptionId: String; public let exerciseId: String?; public let exerciseName: String?; public let order: Int; public let sets: JSONValue?; public let reps: JSONValue?; public let plannedSets: [PlannedSet]?; public let progression: JSONValue?; public let optional: Bool?; public let condition: String? }
+public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public let exercises: [PlanExercisePrescription] }
+public struct WorkoutPlan: Codable, Sendable, Equatable {
+    public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String; public let cycle: PlanCycle; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
+    public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> WorkoutPlan { do { return try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode PLAN: \(error)") } }
+}

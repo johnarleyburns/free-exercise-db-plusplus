@@ -132,5 +132,6 @@
       "transform": "string metadata",
       "notes": "Metadata keys and visibility vary by consumer; preserve the original notes in DB++."
     }
-  ]
+  ],
+  "sourceArtifact": "workout-actual"
 }

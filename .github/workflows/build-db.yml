@@ -157,7 +157,7 @@ jobs:
         run: |
           PYTHONPATH=. python - <<'PY'
           import importlib.util
-          for path in ("tests/target/test_schema.py", "tests/analysis/test_coverage.py", "tests/analysis/test_plan_compare.py"):
+          for path in ("tests/target/test_schema.py", "tests/analysis/test_coverage.py", "tests/analysis/test_plan_compare.py", "tests/analysis/test_export.py", "tests/analysis/test_plan_actual.py"):
               spec = importlib.util.spec_from_file_location(path.replace("/", "_"), path)
               module = importlib.util.module_from_spec(spec)
               spec.loader.exec_module(module)
@@ -266,13 +266,13 @@ jobs:
         run: |
           PYTHONPATH=packages/python python - <<'PY'
           import importlib.util
-          path = "packages/python/tests/test_package.py"
-          spec = importlib.util.spec_from_file_location("fedbpp_tests", path)
-          module = importlib.util.module_from_spec(spec)
-          spec.loader.exec_module(module)
-          for name in dir(module):
-              if name.startswith("test_"):
-                  getattr(module, name)()
+          for path in ("packages/python/tests/test_package.py", "packages/python/tests/test_plan.py"):
+              spec = importlib.util.spec_from_file_location("fedbpp_tests", path)
+              module = importlib.util.module_from_spec(spec)
+              spec.loader.exec_module(module)
+              for name in dir(module):
+                  if name.startswith("test_"):
+                      getattr(module, name)()
           print("Python consumer package valid")
           PY
 

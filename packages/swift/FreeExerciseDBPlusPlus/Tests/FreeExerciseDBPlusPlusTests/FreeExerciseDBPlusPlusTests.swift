@@ -16,4 +16,12 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
         XCTAssertEqual(workout.effectiveSets(using: db)["chest"], 1)
         XCTAssertEqual(workout.effectiveSets(using: db)["triceps"], 0.5)
     }
+    func testPlanConsumerDecodesPeriodizedPlan() throws {
+        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        let plan = try WorkoutPlan.load(url: root.appendingPathComponent("examples/plans/periodized-0.2.json"))
+        XCTAssertEqual(plan.schemaVersion, "0.2.0")
+        XCTAssertEqual(plan.phases?.count, 2)
+        XCTAssertEqual(plan.sessions.first?.exercises.first?.plannedSets?.count, 3)
+    }
+
 }

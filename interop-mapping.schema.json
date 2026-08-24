@@ -36,6 +36,14 @@
       "items": {
         "$ref": "#/$defs/entry"
       }
+    },
+    "sourceArtifact": {
+      "type": "string",
+      "enum": [
+        "exercise-db",
+        "workout-actual",
+        "workout-plan"
+      ]
     }
   },
   "$defs": {
