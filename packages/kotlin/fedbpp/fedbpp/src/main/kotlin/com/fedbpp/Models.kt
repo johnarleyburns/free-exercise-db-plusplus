@@ -25,4 +25,3 @@ import kotlinx.serialization.Serializable
     val endTime: String? = null, val athleteId: String? = null,
     val notes: String? = null, val exercises: List<ExerciseObservation> = emptyList()
 ) { companion object }
-
