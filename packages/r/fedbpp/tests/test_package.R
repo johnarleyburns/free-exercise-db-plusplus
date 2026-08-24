@@ -1,4 +1,4 @@
-pkg <- file.path("..", "R", "fedbpp.R")
+pkg <- file.path("R", "fedbpp.R")
 source(pkg)
 root <- normalizePath(file.path("..", "..", ".."), mustWork = TRUE)
 db <- load_database(file.path(root, "free-exercise-db-plusplus.json"))
