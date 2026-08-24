@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "superset-a",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
@@ -17,7 +17,12 @@
           },
           "completed": true
         }
-      ]
+      ],
+      "structure": {
+        "groupId": "A",
+        "groupType": "superset",
+        "round": 1
+      }
     }
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "drop-set",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Dumbbell_Bench_Press",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "drop",
+          "segments": [
+            {
+              "reps": 8,
+              "load": {
+                "value": 30,
+                "unit": "kg"
+              }
+            },
+            {
+              "reps": 6,
+              "load": {
+                "value": 25,
+                "unit": "kg"
+              }
+            },
+            {
+              "reps": 5,
+              "load": {
+                "value": 20,
+                "unit": "kg"
+              }
+            }
+          ],
+          "completed": true
+        }
+      ]
+    }
+  ]
+}

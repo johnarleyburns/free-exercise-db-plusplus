@@ -1,19 +1,18 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "timed-isometric",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": "Plank",
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
-          "setType": "working",
-          "reps": 8,
-          "load": {
-            "value": 80,
-            "unit": "kg"
+          "setType": "isometric",
+          "duration": {
+            "value": 45,
+            "unit": "s"
           },
           "completed": true
         }

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "unilateral-left-right",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Dumbbell_Bicep_Curl",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "laterality": "left",
+          "reps": 10,
+          "load": {
+            "value": 12,
+            "unit": "kg"
+          },
+          "completed": true
+        },
+        {
+          "setNumber": 2,
+          "setType": "working",
+          "laterality": "right",
+          "reps": 10,
+          "load": {
+            "value": 12,
+            "unit": "kg"
+          },
+          "completed": true
+        }
+      ],
+      "laterality": "left"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "assisted",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Pullups",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "assisted",
+          "reps": 6,
+          "resistance": {
+            "mode": "assisted_bodyweight",
+            "assistance": {
+              "value": 25,
+              "unit": "kg"
+            }
+          },
+          "completed": true
+        }
+      ]
+    }
+  ]
+}

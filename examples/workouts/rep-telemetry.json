@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "rep-telemetry",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Barbell_Back_Squat",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "reps": 3,
+          "load": {
+            "value": 120,
+            "unit": "kg"
+          },
+          "completed": true,
+          "repetitions": [
+            {
+              "repNumber": 1,
+              "duration": {
+                "value": 2.1,
+                "unit": "s"
+              },
+              "rangeOfMotion": {
+                "value": 0.54,
+                "unit": "m"
+              },
+              "meanVelocity": {
+                "value": 0.55,
+                "unit": "m/s"
+              },
+              "completed": true
+            },
+            {
+              "repNumber": 2,
+              "duration": {
+                "value": 2.3,
+                "unit": "s"
+              },
+              "meanVelocity": {
+                "value": 0.49,
+                "unit": "m/s"
+              },
+              "completed": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

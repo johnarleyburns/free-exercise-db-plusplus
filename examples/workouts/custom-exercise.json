@@ -1,23 +1,28 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "custom",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": null,
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
           "setType": "working",
-          "reps": 8,
+          "reps": 12,
           "load": {
-            "value": 80,
+            "value": 20,
             "unit": "kg"
           },
           "completed": true
         }
-      ]
+      ],
+      "exerciseName": "Custom Cable Press",
+      "externalExerciseId": {
+        "system": "com.example.trainingapp",
+        "value": "exercise-998"
+      }
     }
   ]
 }

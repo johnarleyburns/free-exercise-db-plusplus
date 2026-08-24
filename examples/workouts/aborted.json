@@ -1,21 +1,22 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "aborted",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": "Deadlift",
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
           "setType": "working",
-          "reps": 8,
+          "reps": 2,
           "load": {
-            "value": 80,
+            "value": 150,
             "unit": "kg"
           },
-          "completed": true
+          "completed": false,
+          "notes": "Stopped due to grip"
         }
       ]
     }

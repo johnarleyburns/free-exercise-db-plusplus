@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "bad",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
@@ -9,12 +9,7 @@
       "sets": [
         {
           "setNumber": 1,
-          "setType": "working",
-          "reps": 8,
-          "load": {
-            "value": 80,
-            "unit": "kg"
-          },
+          "setType": "drop_set",
           "completed": true
         }
       ]

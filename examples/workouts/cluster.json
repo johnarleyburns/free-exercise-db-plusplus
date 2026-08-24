@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "cluster",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Front_Squat",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "cluster",
+          "segments": [
+            {
+              "reps": 2,
+              "load": {
+                "value": 90,
+                "unit": "kg"
+              },
+              "restAfter": {
+                "value": 15,
+                "unit": "s"
+              }
+            },
+            {
+              "reps": 2,
+              "load": {
+                "value": 90,
+                "unit": "kg"
+              }
+            }
+          ],
+          "completed": true
+        }
+      ]
+    }
+  ]
+}

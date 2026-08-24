@@ -1,23 +1,25 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "alternating",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": "Dumbbell_Lunge",
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
           "setType": "working",
-          "reps": 8,
+          "laterality": "alternating",
+          "reps": 12,
           "load": {
-            "value": 80,
+            "value": 16,
             "unit": "kg"
           },
           "completed": true
         }
-      ]
+      ],
+      "laterality": "alternating"
     }
   ]
 }

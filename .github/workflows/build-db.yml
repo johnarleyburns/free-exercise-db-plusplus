@@ -99,13 +99,24 @@ jobs:
       - name: Verify medium-confidence policy
         run: python tests/test_medium_policy.py free-exercise-db-plusplus.json
 
-      - name: Validate workout interchange schema
+      - name: Validate workout schema and fixture contract
         run: |
           python - <<'PY'
           import json
-          from jsonschema import Draft202012Validator
-          Draft202012Validator.check_schema(json.load(open("workout.schema.json")))
-          print("workout schema valid")
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema = json.loads(Path("workout.schema.json").read_text())
+          Draft202012Validator.check_schema(schema)
+          validator = Draft202012Validator(schema, format_checker=FormatChecker())
+          valid = sorted(Path("examples/workouts").glob("*.json"))
+          invalid = sorted(Path("fixtures/workout").glob("*.json"))
+          assert len(valid) >= 10 and len(invalid) >= 3
+          for path in valid:
+              errors = list(validator.iter_errors(json.loads(path.read_text())))
+              assert not errors, f"{path}: {errors}"
+          for path in invalid:
+              assert list(validator.iter_errors(json.loads(path.read_text()))), path
+          print(f"workout schema valid; {len(valid)} valid and {len(invalid)} invalid fixtures checked")
           PY
 
       - name: Prepare reports directory

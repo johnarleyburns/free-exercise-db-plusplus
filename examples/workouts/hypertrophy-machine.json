@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "hypertrophy-machine",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Leg_Press",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "reps": 12,
+          "load": {
+            "value": 140,
+            "unit": "kg"
+          },
+          "restAfter": {
+            "value": 90,
+            "unit": "s"
+          },
+          "completed": true
+        },
+        {
+          "setNumber": 2,
+          "setType": "working",
+          "reps": 10,
+          "load": {
+            "value": 140,
+            "unit": "kg"
+          },
+          "completed": true
+        }
+      ],
+      "equipment": "machine"
+    }
+  ]
+}

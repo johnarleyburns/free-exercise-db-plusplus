@@ -1,19 +1,27 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "mixed-cardio",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": "Barbell_Full_Squat",
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
           "setType": "working",
-          "reps": 8,
+          "reps": 5,
           "load": {
-            "value": 80,
+            "value": 100,
             "unit": "kg"
+          },
+          "duration": {
+            "value": 30,
+            "unit": "s"
+          },
+          "distance": {
+            "value": 0.1,
+            "unit": "km"
           },
           "completed": true
         }

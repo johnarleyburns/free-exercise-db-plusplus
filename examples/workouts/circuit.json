@@ -1,23 +1,28 @@
 {
   "schemaVersion": "0.2.0",
-  "sessionId": "basic-barbell",
+  "sessionId": "circuit-a",
   "startTime": "2026-08-24T14:00:00-04:00",
   "exercises": [
     {
-      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exerciseId": "Kettlebell_Swing",
       "order": 1,
       "sets": [
         {
           "setNumber": 1,
           "setType": "working",
-          "reps": 8,
+          "reps": 15,
           "load": {
-            "value": 80,
+            "value": 20,
             "unit": "kg"
           },
           "completed": true
         }
-      ]
+      ],
+      "structure": {
+        "groupId": "C",
+        "groupType": "circuit",
+        "round": 3
+      }
     }
   ]
 }

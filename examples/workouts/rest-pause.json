@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "rest-pause",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Cable_Row",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "rest_pause",
+          "segments": [
+            {
+              "reps": 10,
+              "load": {
+                "value": 60,
+                "unit": "kg"
+              },
+              "restAfter": {
+                "value": 20,
+                "unit": "s"
+              }
+            },
+            {
+              "reps": 4,
+              "load": {
+                "value": 60,
+                "unit": "kg"
+              }
+            }
+          ],
+          "completed": true
+        }
+      ]
+    }
+  ]
+}

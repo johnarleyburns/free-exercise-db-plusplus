@@ -179,10 +179,11 @@ Evidence provenance is embedded in `metadata.evidence` in the main JSON.
 
 ## Workout interchange
 
-`workout.schema.json` defines a separate set-level training-session interchange format.
-Workout observations reference DB++ exercise definitions using `exerciseId`.
+`workout.schema.json` defines Workout interchange schema 0.2.0: sessions, custom exercises, laterality, structures, macro-segments, and consistent quantity objects. Workout observations reference DB++ exercise definitions using `exerciseId` when available.
 
-Example: [examples/workout.example.json](examples/workout.example.json)
+Documentation: [Workout interchange guide](docs/WORKOUT-INTERCHANGE.md)
+
+Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 
 ## CI and releases
 

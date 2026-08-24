@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "0.2.0",
+  "sessionId": "velocity",
+  "startTime": "2026-08-24T14:00:00-04:00",
+  "exercises": [
+    {
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "reps": 5,
+          "load": {
+            "value": 70,
+            "unit": "kg"
+          },
+          "meanVelocity": {
+            "value": 0.62,
+            "unit": "m/s"
+          },
+          "peakVelocity": {
+            "value": 1.03,
+            "unit": "m/s"
+          },
+          "repetitions": [
+            {
+              "repNumber": 1,
+              "meanVelocity": {
+                "value": 0.65,
+                "unit": "m/s"
+              },
+              "rangeOfMotion": {
+                "value": 0.5,
+                "unit": "m"
+              },
+              "completed": true
+            }
+          ],
+          "completed": true
+        }
+      ]
+    }
+  ]
+}
