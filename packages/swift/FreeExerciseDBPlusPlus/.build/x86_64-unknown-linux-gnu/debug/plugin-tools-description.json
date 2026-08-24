@@ -1,0 +1,711 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.xctest",
+      "packagePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus",
+      "productName" : "FreeExerciseDBPlusPlusPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+    "FreeExerciseDBPlusPlusPackageDiscoveredTests"
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.FreeExerciseDBPlusPlus-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "fileList" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/sources",
+      "importPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/FreeExerciseDBPlusPlus.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FreeExerciseDBPlusPlus",
+      "moduleOutputPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlus.swiftmodule",
+      "objects" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/FreeExerciseDBPlusPlus.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j22",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/include/FreeExerciseDBPlusPlus-Swift.h",
+        "-swift-version",
+        "6",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "freeexercisedbplusplus",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/FreeExerciseDBPlusPlus.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlus.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/FreeExerciseDBPlusPlus.swift"
+      ],
+      "tempsPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FreeExerciseDBPlusPlusPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "fileList" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/sources",
+      "importPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/FreeExerciseDBPlusPlusTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FreeExerciseDBPlusPlusPackageDiscoveredTests",
+      "moduleOutputPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageDiscoveredTests.swiftmodule",
+      "objects" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/FreeExerciseDBPlusPlusTests.swift.o",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/all-discovered-tests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j22",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/include/FreeExerciseDBPlusPlusPackageDiscoveredTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "freeexercisedbplusplus",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/FreeExerciseDBPlusPlusTests.swift",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift"
+      ],
+      "tempsPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FreeExerciseDBPlusPlusPackageTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "fileList" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/sources",
+      "importPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageDiscoveredTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FreeExerciseDBPlusPlusPackageTests",
+      "moduleOutputPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageTests.swiftmodule",
+      "objects" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j22",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/include/FreeExerciseDBPlusPlusPackageTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "freeexercisedbplusplus",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FreeExerciseDBPlusPlusTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "fileList" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/sources",
+      "importPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Tests/FreeExerciseDBPlusPlusTests/FreeExerciseDBPlusPlusTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlus.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FreeExerciseDBPlusPlusTests",
+      "moduleOutputPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusTests.swiftmodule",
+      "objects" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j22",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "6",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "freeexercisedbplusplus",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Tests/FreeExerciseDBPlusPlusTests/FreeExerciseDBPlusPlusTests.swift"
+      ],
+      "tempsPath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "FreeExerciseDBPlusPlus" : [
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "-module-name",
+      "FreeExerciseDBPlusPlus",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-c",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/FreeExerciseDBPlusPlus.swift",
+      "-I",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j22",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/include/FreeExerciseDBPlusPlus-Swift.h",
+      "-swift-version",
+      "6",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc"
+    ],
+    "FreeExerciseDBPlusPlusPackageDiscoveredTests" : [
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "-module-name",
+      "FreeExerciseDBPlusPlusPackageDiscoveredTests",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-c",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/FreeExerciseDBPlusPlusTests.swift",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift",
+      "-I",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j22",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/include/FreeExerciseDBPlusPlusPackageDiscoveredTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc"
+    ],
+    "FreeExerciseDBPlusPlusPackageTests" : [
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "-module-name",
+      "FreeExerciseDBPlusPlusPackageTests",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-c",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift",
+      "-I",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j22",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/include/FreeExerciseDBPlusPlusPackageTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc"
+    ],
+    "FreeExerciseDBPlusPlusTests" : [
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc",
+      "-module-name",
+      "FreeExerciseDBPlusPlusTests",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-c",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Tests/FreeExerciseDBPlusPlusTests/FreeExerciseDBPlusPlusTests.swift",
+      "-I",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j22",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "6",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "freeexercisedbplusplus",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "FreeExerciseDBPlusPlus" : [
+
+    ],
+    "FreeExerciseDBPlusPlusPackageDiscoveredTests" : [
+      "FreeExerciseDBPlusPlusTests",
+      "FreeExerciseDBPlusPlus"
+    ],
+    "FreeExerciseDBPlusPlusPackageTests" : [
+      "FreeExerciseDBPlusPlusPackageDiscoveredTests",
+      "FreeExerciseDBPlusPlusTests",
+      "FreeExerciseDBPlusPlus"
+    ],
+    "FreeExerciseDBPlusPlusTests" : [
+      "FreeExerciseDBPlusPlus"
+    ]
+  },
+  "testDiscoveryCommands" : {
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/FreeExerciseDBPlusPlusTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ]
+    }
+  },
+  "testEntryPointCommands" : {
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/Modules/FreeExerciseDBPlusPlusPackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/FreeExerciseDBPlusPlus.swift"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/sources"
+    },
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/FreeExerciseDBPlusPlusTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/sources"
+    },
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/sources"
+    },
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/FreeExerciseDBPlusPlus.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlus.build/FreeExerciseDBPlusPlus.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/FreeExerciseDBPlusPlusPackageDiscoveredTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/FreeExerciseDBPlusPlusPackageTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/FreeExerciseDBPlusPlusTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/FreeExerciseDBPlusPlusTests.swiftmodule.o"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusPackageTests.product/Objects.LinkFileList"
+    },
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/Tests/FreeExerciseDBPlusPlusTests/FreeExerciseDBPlusPlusTests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/FreeExerciseDBPlusPlusTests.build/sources"
+    },
+    "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/jburns/.local/share/swiftly/toolchains/6.3.0/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/home/jburns/github/free-exercise-db-plusplus/packages/swift/FreeExerciseDBPlusPlus/.build/x86_64-unknown-linux-gnu/debug/swift-version-24D28461E8A980FA.txt"
+    }
+  }
+}

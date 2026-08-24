@@ -200,6 +200,10 @@ jobs:
           print("Python consumer package valid")
           PY
 
+      - name: Test Swift 6 consumer package
+        run: |
+          swift test --package-path packages/swift/FreeExerciseDBPlusPlus
+
       - name: Prepare reports directory
         run: mkdir -p reports
 
