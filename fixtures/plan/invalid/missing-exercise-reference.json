@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "bad",
+  "revisionId": "r1",
+  "name": "Bad",
+  "cycle": {
+    "lengthDays": 7
+  },
+  "sessions": [
+    {
+      "planSessionId": "s1",
+      "dayOffset": 0,
+      "exercises": [
+        {
+          "prescriptionId": "p1",
+          "order": 1,
+          "sets": 3,
+          "reps": 8
+        }
+      ]
+    }
+  ]
+}

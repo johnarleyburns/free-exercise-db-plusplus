@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "eight-day-rotation",
+  "revisionId": "eight-day-rotation-r2",
+  "name": "Eight-Day Push Pull Legs Rotation",
+  "cycle": {
+    "lengthDays": 8
+  },
+  "sessions": [
+    {
+      "planSessionId": "push",
+      "dayOffset": 0,
+      "exercises": [
+        {
+          "prescriptionId": "push-press",
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "order": 1,
+          "sets": {
+            "min": 3,
+            "target": 4,
+            "max": 5
+          },
+          "reps": {
+            "min": 5,
+            "target": 8,
+            "max": 10
+          },
+          "load": {
+            "value": 75,
+            "unit": "%1RM"
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "pull",
+      "dayOffset": 2,
+      "exercises": [
+        {
+          "prescriptionId": "pull-row",
+          "exerciseId": "Barbell_Bent_Over_Row",
+          "order": 1,
+          "sets": 4,
+          "reps": {
+            "min": 6,
+            "target": 8,
+            "max": 10
+          },
+          "effort": {
+            "rpe": {
+              "min": 7,
+              "target": 8,
+              "max": 9
+            }
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "legs",
+      "dayOffset": 4,
+      "exercises": [
+        {
+          "prescriptionId": "legs-squat",
+          "exerciseId": "Barbell_Squat",
+          "order": 1,
+          "sets": 4,
+          "reps": 6,
+          "load": {
+            "value": 80,
+            "unit": "%1RM"
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "conditioning",
+      "dayOffset": 6,
+      "exercises": [
+        {
+          "prescriptionId": "conditioning-custom",
+          "exerciseName": "Custom Sled Push",
+          "externalExerciseId": {
+            "system": "coach.app",
+            "value": "sled-push"
+          },
+          "order": 1,
+          "sets": 3,
+          "reps": {
+            "min": 20,
+            "max": 30
+          },
+          "load": {
+            "value": 40,
+            "unit": "kg"
+          },
+          "notes": "Distance is prescribed by the facility lane."
+        }
+      ]
+    }
+  ]
+}

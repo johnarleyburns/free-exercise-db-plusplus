@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "client-opaque-042",
+  "periodDays": 10,
+  "muscles": {
+    "chest": {
+      "min": 6,
+      "target": 8,
+      "max": 12
+    },
+    "shoulders": {
+      "target": 8
+    },
+    "triceps": {
+      "min": 4,
+      "max": 10
+    }
+  },
+  "provenance": {
+    "system": "coach.app",
+    "recordId": "client-opaque-042-targets"
+  }
+}

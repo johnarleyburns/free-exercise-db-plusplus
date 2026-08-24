@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "study-arm-a",
+  "revisionId": "study-arm-a-protocol-v1",
+  "name": "Resistance Training Intervention \u2014 Arm A",
+  "description": "A reproducible prescription for a 14-day study cycle.",
+  "provenance": {
+    "system": "university-irb-study",
+    "version": "protocol-v1",
+    "recordId": "arm-a"
+  },
+  "cycle": {
+    "lengthDays": 14
+  },
+  "sessions": [
+    {
+      "planSessionId": "study-week-1-day-1",
+      "dayOffset": 0,
+      "name": "Supervised session",
+      "notes": "Opaque participant IDs are carried by ACTUAL records.",
+      "exercises": [
+        {
+          "prescriptionId": "arm-a-press-01",
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "order": 1,
+          "sets": 4,
+          "reps": {
+            "min": 8,
+            "target": 10,
+            "max": 12
+          },
+          "load": {
+            "value": 70,
+            "unit": "%1RM"
+          },
+          "effort": {
+            "rir": {
+              "target": 2
+            }
+          },
+          "setType": "working"
+        },
+        {
+          "prescriptionId": "arm-a-custom-02",
+          "exerciseName": "Protocol-Specified Cable Row",
+          "externalExerciseId": {
+            "system": "study-arm-a",
+            "value": "cable-row-v1"
+          },
+          "order": 2,
+          "sets": 3,
+          "reps": 12,
+          "effort": {
+            "rpe": {
+              "min": 7,
+              "target": 8,
+              "max": 9
+            }
+          },
+          "notes": "Custom exercise retained without inferred DB++ mappings."
+        }
+      ]
+    },
+    {
+      "planSessionId": "study-week-1-day-4",
+      "dayOffset": 3,
+      "name": "Supervised session",
+      "exercises": [
+        {
+          "prescriptionId": "arm-a-squat-01",
+          "exerciseId": "Barbell_Squat",
+          "order": 1,
+          "sets": 4,
+          "reps": 8,
+          "load": {
+            "value": 65,
+            "unit": "%1RM"
+          },
+          "effort": {
+            "rir": {
+              "min": 2,
+              "target": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "notes": "This prescription is immutable once ACTUAL observations reference revision study-arm-a-protocol-v1."
+}

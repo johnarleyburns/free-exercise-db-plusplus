@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "0.2.0",
+  "planId": "periodized-strength",
+  "revisionId": "periodized-strength-r1",
+  "name": "Accumulation and Deload",
+  "description": "A two-phase plan with heterogeneous planned sets.",
+  "cycle": {
+    "lengthDays": 7
+  },
+  "phases": [
+    {
+      "phaseId": "accumulation",
+      "durationCycles": 3,
+      "cycle": {
+        "lengthDays": 7
+      }
+    },
+    {
+      "phaseId": "deload",
+      "durationCycles": 1,
+      "cycle": {
+        "lengthDays": 7
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "planSessionId": "upper-accumulation",
+      "phaseId": "accumulation",
+      "dayOffset": 0,
+      "name": "Upper accumulation",
+      "exercises": [
+        {
+          "prescriptionId": "bench-accumulation",
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "order": 1,
+          "plannedSets": [
+            {
+              "setPrescriptionId": "bench-a-s1",
+              "setType": "working",
+              "reps": {
+                "target": 8
+              },
+              "load": {
+                "value": 75,
+                "unit": "%1RM"
+              }
+            },
+            {
+              "setPrescriptionId": "bench-a-s2",
+              "setType": "working",
+              "reps": {
+                "target": 8
+              },
+              "load": {
+                "value": 75,
+                "unit": "%1RM"
+              }
+            },
+            {
+              "setPrescriptionId": "bench-a-s3",
+              "setType": "working",
+              "reps": {
+                "target": 6
+              },
+              "load": {
+                "value": 80,
+                "unit": "%1RM"
+              }
+            }
+          ],
+          "progression": {
+            "type": "double_progression",
+            "description": "Add reps within the range before increasing load.",
+            "parameters": {
+              "repRange": "6-8"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "upper-deload",
+      "phaseId": "deload",
+      "dayOffset": 0,
+      "name": "Upper deload",
+      "exercises": [
+        {
+          "prescriptionId": "bench-deload",
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "order": 1,
+          "sets": 2,
+          "reps": 8,
+          "optional": false,
+          "condition": "Keep two repetitions in reserve."
+        }
+      ]
+    }
+  ]
+}

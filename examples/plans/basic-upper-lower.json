@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "basic-upper-lower",
+  "revisionId": "basic-upper-lower-r1",
+  "name": "Basic Upper / Lower",
+  "description": "A simple four-session plan on a seven-day cycle.",
+  "provenance": {
+    "system": "fedbpp-example",
+    "version": "0.1",
+    "recordId": "example"
+  },
+  "cycle": {
+    "lengthDays": 7
+  },
+  "sessions": [
+    {
+      "planSessionId": "upper-a",
+      "dayOffset": 0,
+      "name": "Upper A",
+      "exercises": [
+        {
+          "prescriptionId": "upper-a-bench",
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "order": 1,
+          "sets": 4,
+          "reps": {
+            "min": 6,
+            "target": 8,
+            "max": 10
+          },
+          "load": {
+            "value": 80,
+            "unit": "kg"
+          },
+          "effort": {
+            "rir": {
+              "target": 2
+            }
+          },
+          "setType": "working"
+        },
+        {
+          "prescriptionId": "upper-a-row",
+          "exerciseName": "Custom Chest-Supported Row",
+          "order": 2,
+          "sets": 3,
+          "reps": 10,
+          "load": {
+            "value": 60,
+            "unit": "kg"
+          },
+          "effort": {
+            "rpe": {
+              "min": 7,
+              "target": 8,
+              "max": 9
+            }
+          },
+          "notes": "Use the same machine each cycle."
+        }
+      ]
+    },
+    {
+      "planSessionId": "lower-a",
+      "dayOffset": 1,
+      "name": "Lower A",
+      "exercises": [
+        {
+          "prescriptionId": "lower-a-squat",
+          "exerciseId": "Barbell_Squat",
+          "order": 1,
+          "sets": 4,
+          "reps": {
+            "min": 5,
+            "target": 6,
+            "max": 8
+          },
+          "load": {
+            "value": 100,
+            "unit": "kg"
+          },
+          "effort": {
+            "rir": {
+              "min": 1,
+              "target": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "upper-b",
+      "dayOffset": 3,
+      "name": "Upper B",
+      "exercises": [
+        {
+          "prescriptionId": "upper-b-press",
+          "exerciseId": "Dumbbell_Bench_Press",
+          "order": 1,
+          "sets": 3,
+          "reps": {
+            "min": 8,
+            "target": 10,
+            "max": 12
+          },
+          "load": {
+            "min": 24,
+            "target": 26,
+            "max": 28,
+            "unit": "kg"
+          },
+          "laterality": "bilateral"
+        }
+      ]
+    },
+    {
+      "planSessionId": "lower-b",
+      "dayOffset": 4,
+      "name": "Lower B",
+      "exercises": [
+        {
+          "prescriptionId": "lower-b-deadlift",
+          "exerciseId": "Barbell_Deadlift",
+          "order": 1,
+          "sets": 3,
+          "reps": 5,
+          "load": {
+            "value": 140,
+            "unit": "kg"
+          },
+          "effort": {
+            "rir": 2
+          }
+        }
+      ]
+    }
+  ]
+}

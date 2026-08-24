@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "study-arm-a-targets",
+  "periodDays": 14,
+  "muscles": {
+    "chest": {
+      "min": 12,
+      "target": 16,
+      "max": 20
+    },
+    "back": {
+      "min": 12,
+      "target": 16,
+      "max": 20
+    },
+    "quadriceps": {
+      "min": 10,
+      "target": 14,
+      "max": 18
+    }
+  },
+  "provenance": {
+    "system": "university-irb-study",
+    "version": "protocol-v1",
+    "recordId": "arm-a-targets"
+  },
+  "notes": "Native study-cycle targets; do not silently treat as weekly."
+}

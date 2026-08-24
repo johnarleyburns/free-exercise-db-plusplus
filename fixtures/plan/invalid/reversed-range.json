@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "bad",
+  "revisionId": "r1",
+  "name": "Bad",
+  "cycle": {
+    "lengthDays": 7
+  },
+  "sessions": [
+    {
+      "planSessionId": "s1",
+      "dayOffset": 0,
+      "exercises": [
+        {
+          "prescriptionId": "p1",
+          "order": 1,
+          "sets": {
+            "min": 5,
+            "target": 4,
+            "max": 3
+          },
+          "reps": 8,
+          "exerciseId": "Barbell_Squat"
+        }
+      ]
+    }
+  ]
+}

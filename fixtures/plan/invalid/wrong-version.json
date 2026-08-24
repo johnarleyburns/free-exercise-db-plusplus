@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "0.2.0",
+  "planId": "bad",
+  "revisionId": "r1",
+  "name": "Bad",
+  "cycle": {
+    "lengthDays": 7
+  },
+  "sessions": []
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "0.1.0",
+  "periodDays": 7,
+  "muscles": {
+    "chest": {
+      "target": 10
+    }
+  }
+}

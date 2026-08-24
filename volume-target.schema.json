@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/volume-target.schema.json",
+  "title": "Free Exercise DB++ Volume Target Profile",
+  "description": "Periodized muscle-volume criteria kept separate from Workout PLAN prescriptions and derived analysis.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "targetId",
+    "periodDays",
+    "muscles"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "targetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "periodDays": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "muscles": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z][a-z0-9_ -]*$": {
+          "$ref": "#/$defs/targetRange"
+        }
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "system",
+        "recordId"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recordId": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "targetRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    }
+  }
+}

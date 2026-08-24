@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "hypertrophy-general",
+  "periodDays": 7,
+  "provenance": {
+    "system": "fedbpp-example",
+    "version": "0.1",
+    "recordId": "target-example"
+  },
+  "muscles": {
+    "chest": {
+      "min": 8,
+      "target": 12,
+      "max": 20
+    },
+    "back": {
+      "min": 10,
+      "target": 14,
+      "max": 22
+    },
+    "quadriceps": {
+      "min": 8,
+      "target": 12,
+      "max": 18
+    },
+    "hamstrings": {
+      "min": 6,
+      "target": 10,
+      "max": 16
+    }
+  },
+  "notes": "Effective-set criteria per seven-day period."
+}

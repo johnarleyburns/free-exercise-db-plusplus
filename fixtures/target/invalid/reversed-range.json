@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "bad",
+  "periodDays": 7,
+  "muscles": {
+    "chest": {
+      "min": 12,
+      "target": 8,
+      "max": 4
+    }
+  }
+}

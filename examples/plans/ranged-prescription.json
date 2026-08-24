@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "0.1.0",
+  "planId": "ranged-prescription",
+  "revisionId": "ranged-prescription-r1",
+  "name": "Autoregulated Hypertrophy Block",
+  "cycle": {
+    "lengthDays": 10
+  },
+  "sessions": [
+    {
+      "planSessionId": "full-body-a",
+      "dayOffset": 0,
+      "exercises": [
+        {
+          "prescriptionId": "fba-leg-press",
+          "exerciseId": "Leg_Press",
+          "order": 1,
+          "sets": {
+            "min": 3,
+            "target": 4,
+            "max": 5
+          },
+          "reps": {
+            "min": 10,
+            "target": 12,
+            "max": 15
+          },
+          "load": {
+            "min": 120,
+            "target": 140,
+            "max": 160,
+            "unit": "kg"
+          },
+          "effort": {
+            "rir": {
+              "min": 1,
+              "target": 2,
+              "max": 3
+            }
+          }
+        },
+        {
+          "prescriptionId": "fba-calf",
+          "exerciseId": "Seated_Calf_Raise",
+          "order": 2,
+          "sets": 3,
+          "reps": {
+            "min": 12,
+            "max": 20
+          },
+          "effort": {
+            "rpe": {
+              "target": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "planSessionId": "full-body-b",
+      "dayOffset": 5,
+      "exercises": [
+        {
+          "prescriptionId": "fbb-pullup",
+          "exerciseId": "Pullups",
+          "order": 1,
+          "sets": {
+            "min": 3,
+            "max": 4
+          },
+          "reps": {
+            "min": 5,
+            "target": 8
+          },
+          "effort": {
+            "rir": {
+              "min": 1,
+              "max": 3
+            }
+          },
+          "laterality": "bilateral"
+        }
+      ]
+    }
+  ]
+}

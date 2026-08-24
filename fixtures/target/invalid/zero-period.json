@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "bad",
+  "periodDays": 0,
+  "muscles": {
+    "chest": {
+      "target": 10
+    }
+  }
+}

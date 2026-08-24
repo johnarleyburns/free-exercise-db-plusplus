@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.3.0",
+  "sessionId": "plan-linked-actual",
+  "athleteId": "opaque-athlete-7",
+  "startTime": "2026-08-24T14:00:00Z",
+  "planReference": {
+    "planId": "basic-upper-lower",
+    "revisionId": "basic-upper-lower-r1",
+    "planSessionId": "upper-a"
+  },
+  "exercises": [
+    {
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "exercisePrescriptionId": "upper-a-bench",
+      "order": 1,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "setPrescriptionId": "upper-a-bench-set-1",
+          "reps": 8,
+          "completed": true
+        }
+      ]
+    },
+    {
+      "exerciseId": "Dumbbell_Bench_Press",
+      "exercisePrescriptionId": "upper-a-row",
+      "substitution": {
+        "reason": "equipment unavailable",
+        "plannedExerciseId": "Custom_Chest_Supported_Row",
+        "plannedPrescriptionId": "upper-a-row",
+        "notes": "Used dumbbells instead."
+      },
+      "order": 2,
+      "sets": [
+        {
+          "setNumber": 1,
+          "setType": "working",
+          "completed": true,
+          "reps": 10
+        }
+      ]
+    }
+  ]
+}

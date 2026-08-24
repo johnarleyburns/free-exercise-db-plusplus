@@ -18,6 +18,9 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **Workout interchange schema:**  
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout.schema.json
 
+**Workout PLAN schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-plan.schema.json
+
 **Versioned releases:**  
 https://github.com/johnarleyburns/free-exercise-db-plusplus/releases
 
@@ -179,9 +182,16 @@ Evidence provenance is embedded in `metadata.evidence` in the main JSON.
 
 ## Workout interchange
 
-`workout.schema.json` defines Workout interchange schema 0.2.0: sessions, custom exercises, laterality, structures, macro-segments, and consistent quantity objects. Workout observations reference DB++ exercise definitions using `exerciseId` when available.
+`workout.schema.json` defines Workout ACTUAL interchange schemas 0.2.0 and 0.3.0: sessions, custom exercises, laterality, structures, macro-segments, and consistent quantity objects. Workout observations reference DB++ exercise definitions using `exerciseId` when available.
 
 Documentation: [Workout interchange guide](docs/WORKOUT-INTERCHANGE.md)
+
+Workout PLAN prescriptions: [PLAN guide](docs/WORKOUT-PLAN.md), [PLAN examples](examples/plans/)
+
+Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [target examples](examples/targets/)
+
+PLAN comparison: [PLAN-vs-PLAN guide](docs/PLAN-COMPARISON.md)
+PLAN adherence: [PLAN-vs-ACTUAL guide](docs/PLAN-ACTUAL.md)
 
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 

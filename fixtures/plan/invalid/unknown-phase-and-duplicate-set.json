@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.2.0",
+  "planId": "bad",
+  "revisionId": "r1",
+  "name": "Bad",
+  "cycle": {
+    "lengthDays": 7
+  },
+  "phases": [
+    {
+      "phaseId": "p",
+      "durationCycles": 1
+    }
+  ],
+  "sessions": [
+    {
+      "planSessionId": "s",
+      "phaseId": "missing",
+      "dayOffset": 0,
+      "exercises": [
+        {
+          "prescriptionId": "x",
+          "exerciseId": "Barbell_Squat",
+          "order": 1,
+          "plannedSets": [
+            {
+              "setPrescriptionId": "same",
+              "setType": "working",
+              "reps": 8
+            },
+            {
+              "setPrescriptionId": "same",
+              "setType": "working",
+              "reps": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

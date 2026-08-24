@@ -9,6 +9,8 @@ on:
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
+      - "workout-plan.schema.json"
+      - "volume-target.schema.json"
       - "README.md"
       - "docs/**"
       - "packages/swift/**"
@@ -22,6 +24,8 @@ on:
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
+      - "workout-plan.schema.json"
+      - "volume-target.schema.json"
       - "README.md"
       - "docs/**"
       - "packages/swift/**"
@@ -125,6 +129,70 @@ jobs:
           for path in invalid:
               assert list(validator.iter_errors(json.loads(path.read_text()))), path
           print(f"workout schema valid; {len(valid)} valid and {len(invalid)} invalid fixtures checked")
+          PY
+
+      - name: Validate Workout PLAN schema and examples
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          path = "tests/plan/test_schema.py"
+          spec = importlib.util.spec_from_file_location("plan_schema_tests", path)
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith("test_"):
+                  getattr(module, name)()
+          path = "tests/plan/test_examples.py"
+          spec = importlib.util.spec_from_file_location("plan_example_tests", path)
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith("test_"):
+                  getattr(module, name)()
+          print("Workout PLAN schema and examples valid")
+          PY
+
+      - name: Validate TARGET schema and coverage analysis
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import importlib.util
+          for path in ("tests/target/test_schema.py", "tests/analysis/test_coverage.py", "tests/analysis/test_plan_compare.py"):
+              spec = importlib.util.spec_from_file_location(path.replace("/", "_"), path)
+              module = importlib.util.module_from_spec(spec)
+              spec.loader.exec_module(module)
+              for name in dir(module):
+                  if name.startswith("test_"):
+                      getattr(module, name)()
+          print("TARGET schema and coverage analysis valid")
+          PY
+
+      - name: Test ACTUAL 0.2 to 0.3 migration
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import importlib.util
+          path = "tests/workout/test_migration.py"
+          spec = importlib.util.spec_from_file_location("workout_migration_tests", path)
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith("test_"):
+                  getattr(module, name)()
+          print("ACTUAL migration and optional PLAN linkage valid")
+          PY
+
+      - name: Test PLAN versus ACTUAL adherence
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import importlib.util
+          path = "tests/analysis/test_plan_actual.py"
+          spec = importlib.util.spec_from_file_location("plan_actual_tests", path)
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith("test_"):
+                  getattr(module, name)()
+          print("PLAN versus ACTUAL matching and adherence valid")
           PY
 
       - name: Validate Garmin FIT mapping registry
@@ -318,6 +386,8 @@ jobs:
             free-exercise-db-plusplus.json
             free-exercise-db-plusplus.schema.json
             workout.schema.json
+            workout-plan.schema.json
+            volume-target.schema.json
             reports/**
 
       - name: Commit generated public outputs
