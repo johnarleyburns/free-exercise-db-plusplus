@@ -1,7 +1,0 @@
-Change `$id` in free-exercise-db-plusplus.schema.json:
-
-FROM:
-https://example.invalid/free-exercise-db-plusplus.schema.json
-
-TO:
-https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.schema.json

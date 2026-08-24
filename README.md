@@ -1,70 +1,62 @@
 # Free Exercise DB++
 
-Free Exercise DB++ is a reproducible, evidence-audited annotation layer over
+Free Exercise DB++ is a self-contained, evidence-audited annotation layer over
 [yuhonas/free-exercise-db](https://github.com/yuhonas/free-exercise-db).
 
-It preserves every upstream exercise record and adds normalized classification plus resistance-training volume annotations suitable for apps, training logs, and research-oriented analysis.
+It preserves every upstream exercise record and adds normalized movement classification,
+muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
+provenance for training apps, coaches, researchers, and fitness software.
 
-## Runtime artifact
+## Download
 
-Consumers need only one data file:
+**Database:**  
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.json
 
-```text
-free-exercise-db-plusplus.json
-```
+**Database JSON Schema:**  
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.schema.json
 
-The JSON Schema is optional validation tooling.
+**Workout interchange schema:**  
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout.schema.json
 
-Each exercise adds:
+**Versioned releases:**  
+https://github.com/johnarleyburns/free-exercise-db-plusplus/releases
 
-- `classification.trainingTypes`
-- `classification.modalities`
-- `classification.sportContexts`
-- `classification.competitionMovements`
-- `annotation.patterns`
-- `annotation.direct`
-- `annotation.indirect`
-- `annotation.stabilizers`
-- `annotation.volumeEligible`
-- `annotation.confidence`
-- `annotation.reviewReasons`
-- `annotation.evidenceRefs`
+Consumers need only `free-exercise-db-plusplus.json` at runtime. The schemas are optional
+validation tools; evidence provenance is embedded directly in the database.
 
-The complete original Free Exercise DB record remains under `source`.
+## What DB++ adds
 
-## Set accounting
+Each exercise preserves the complete upstream record under `source` and adds:
 
-DB++ uses one set-credit model:
+- training type, modality, sport context, and competition-movement classification;
+- canonical movement patterns;
+- `direct`, `indirect`, and `stabilizers` muscle roles;
+- `volumeEligible`;
+- mapping confidence and review reasons;
+- evidence references.
 
-```json
-{
-  "direct": 1.0,
-  "indirect": 0.5,
-  "stabilizer": 0.0
-}
-```
+DB++ uses one effective-set convention:
 
-See `METHODOLOGY.md` for definitions and interpretation.
+| Muscle role | Set credit |
+|---|---:|
+| Direct | 1.0 |
+| Indirect | 0.5 |
+| Stabilizer | 0.0 |
 
-## Generate DB++
+These are analytical credits for volume accounting, not a claim that hypertrophy or fatigue
+is literally linear. See [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
-```bash
-python3 convert_fedb_to_fedbpp.py   exercises.json   free-exercise-db-plusplus.json   --schema free-exercise-db-plusplus.schema.json   --completeness full
-```
+## Quick start
 
-The converter itself uses the Python standard library. Schema validation requires:
+Download the current database:
 
 ```bash
-python3 -m pip install jsonschema
+curl -L \
+  https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.json \
+  -o free-exercise-db-plusplus.json
 ```
 
-Upstream combined JSON:
-
-```text
-https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json
-```
-
-## Python ingestion
+### Python
 
 ```python
 import json
@@ -79,36 +71,34 @@ print(bench["annotation"]["indirect"])
 print(db["metadata"]["setCredits"])
 ```
 
-Example effective-set calculation:
+Example set accounting:
 
 ```python
 from collections import defaultdict
 
-performed_sets = {
-    "Barbell_Bench_Press_-_Medium_Grip": 4,
-}
-
-credits = db["metadata"]["setCredits"]
 effective = defaultdict(float)
+credits = db["metadata"]["setCredits"]
 
-for exercise_id, sets in performed_sets.items():
+for exercise_id, performed_sets in {
+    "Barbell_Bench_Press_-_Medium_Grip": 4,
+}.items():
     ann = db["exercises"][exercise_id]["annotation"]
-
     if not ann["volumeEligible"]:
         continue
 
     for muscle in ann["direct"]:
-        effective[muscle] += sets * credits["direct"]
+        effective[muscle] += performed_sets * credits["direct"]
 
     for muscle in ann["indirect"]:
-        effective[muscle] += sets * credits["indirect"]
+        effective[muscle] += performed_sets * credits["indirect"]
 
 print(dict(effective))
 ```
 
-## Swift 6 / iOS ingestion
+### Swift 6 / iOS
 
-A minimal model can decode only the fields your app needs; Swift `Codable` ignores unknown JSON keys by default.
+Swift `Codable` can decode only the fields your app needs; unknown DB++ fields are ignored
+by default.
 
 ```swift
 import Foundation
@@ -132,15 +122,7 @@ struct SetCredits: Decodable, Sendable {
 
 struct Exercise: Decodable, Sendable {
     let exerciseId: String
-    let classification: Classification
     let annotation: Annotation
-}
-
-struct Classification: Decodable, Sendable {
-    let trainingTypes: [String]
-    let modalities: [String]
-    let sportContexts: [String]
-    let competitionMovements: [String]
 }
 
 struct Annotation: Decodable, Sendable {
@@ -150,12 +132,10 @@ struct Annotation: Decodable, Sendable {
     let stabilizers: [String]
     let volumeEligible: Bool
     let confidence: String
-    let reviewReasons: [String]
-    let evidenceRefs: [String]
 }
 ```
 
-Load a bundled asset:
+Load a bundled copy:
 
 ```swift
 let url = Bundle.main.url(
@@ -166,49 +146,94 @@ let data = try Data(contentsOf: url)
 let database = try JSONDecoder().decode(Database.self, from: data)
 ```
 
-## Evidence and confidence
+## Build from upstream
 
-Evidence provenance is embedded directly into the generated JSON under:
+Requires Python 3.12+. The converter itself uses the standard library; JSON Schema
+validation requires `jsonschema`.
 
-```text
-metadata.evidence.references
-metadata.evidence.patterns
+```bash
+python -m pip install jsonschema
+
+curl -L \
+  https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json \
+  -o exercises.json
+
+python src/convert_fedb_to_fedbpp.py \
+  exercises.json \
+  free-exercise-db-plusplus.json \
+  --schema free-exercise-db-plusplus.schema.json \
+  --completeness full
 ```
 
-Used patterns must not remain `provisional`.
+## Repository layout
 
-Confidence values:
+```text
+.
+├── README.md
+├── LICENSE
+├── free-exercise-db-plusplus.json
+├── free-exercise-db-plusplus.schema.json
+├── workout.schema.json
+├── src/                    # converter, audit generators, verification tools
+├── tests/                  # contract and regression tests
+├── docs/                   # methodology, design, evidence, compatibility
+│   └── history/            # pre-1.0 development notes
+├── reports/                # generated review/audit reports
+├── examples/               # workout interchange example
+├── fixtures/               # compact verification fixtures
+├── mappings/               # external-standard mapping stubs
+└── .github/workflows/      # CI and release automation
+```
 
-- `high` — deterministic/evidence-backed or explicitly reviewed mapping
-- `medium` — complex-event bookkeeping, indirect evidence, or retained ambiguity
-- `low` — unresolved; release CI is intended to keep this at zero
+The main JSON and schemas intentionally remain at the repository root so that raw GitHub URLs
+stay short and stable for consumers.
 
-See `METHODOLOGY.md`.
+## Documentation
 
-## CI and reproducibility
+- [Methodology](docs/METHODOLOGY.md)
+- [Design](docs/DESIGN.md)
+- [Evidence policy](docs/EVIDENCE.md)
+- [Compatibility / intended 1.0 contract](docs/COMPATIBILITY.md)
+- [Versioning](docs/VERSIONING.md)
+- [Release checklist](docs/RELEASE-CHECKLIST.md)
+- [Current review report](reports/REVIEW.md)
+- [Current rule audit](reports/RULE-AUDIT.md)
+- [Current mapping audit](reports/MAPPING-AUDIT.md)
+- [Current evidence audit](reports/EVIDENCE-AUDIT.md)
 
-GitHub Actions:
+## Confidence and evidence
 
-1. downloads current upstream Free Exercise DB;
-2. builds DB++;
-3. validates it against JSON Schema;
-4. verifies evidence references and confidence rules;
-5. runs release-contract invariants;
-6. builds twice with a fixed `SOURCE_DATE_EPOCH` and requires byte-identical output;
-7. generates review/evidence/rule/mapping/fallback audits;
-8. commits generated public outputs on non-PR builds.
+- `high` — deterministic and evidence-backed or explicitly reviewed.
+- `medium` — intentional uncertainty from complex-event bookkeeping, indirect evidence, or a
+  small number of retained ambiguous mappings.
+- `low` — unresolved; release CI is designed to keep used unresolved mappings at zero.
 
-The generated metadata includes the upstream SHA-256 for traceability.
+Every used canonical pattern must have non-provisional evidence before CI can pass.
+Evidence provenance is embedded in `metadata.evidence` in the main JSON.
 
 ## Workout interchange
 
-`workout.schema.json` defines a separate set-level workout/session interchange format that references exercises by stable `exerciseId`.
+`workout.schema.json` defines a separate set-level training-session interchange format.
+Workout observations reference DB++ exercise definitions using `exerciseId`.
 
-Exercise definitions and workout observations intentionally remain separate.
+Example: [examples/workout.example.json](examples/workout.example.json)
 
-## Versioning
+## CI and releases
 
-See `VERSIONING.md`.
+The build workflow:
 
-Current data schema: **0.3.0**  
-Current converter: **0.8.0**
+1. downloads current upstream Free Exercise DB;
+2. checks upstream ID compatibility;
+3. builds and validates DB++;
+4. verifies reproducibility;
+5. runs release-contract, golden-mapping, and medium-confidence policy tests;
+6. validates evidence/confidence invariants;
+7. generates reports under `reports/`;
+8. commits generated public outputs.
+
+The release workflow verifies that the tagged commit matches the reviewed upstream snapshot
+before publishing release assets and SHA-256 checksums.
+
+## License
+
+Released under the [Unlicense](LICENSE).
