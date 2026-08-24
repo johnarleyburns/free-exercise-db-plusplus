@@ -15,3 +15,4 @@ dist/
 .idea/
 .DS_Store
 exercises.json
+packages/swift/FreeExerciseDBPlusPlus/.build/
