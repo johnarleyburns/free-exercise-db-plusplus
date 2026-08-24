@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/workout.schema.json",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout.schema.json",
   "title": "Free Exercise DB++ Workout Interchange",
   "description": "Set-level resistance-training workout interchange schema. Exercise definitions are referenced by stable exerciseId values from Free Exercise DB++.",
   "type": "object",
@@ -90,8 +90,7 @@
       ],
       "properties": {
         "exerciseId": {
-          "type": "string",
-          "description": "Foreign key to Free Exercise DB++ exercises object key / exerciseId."
+          "type": "string"
         },
         "variation": {
           "type": [
@@ -205,8 +204,7 @@
           "type": [
             "string",
             "null"
-          ],
-          "description": "Human-readable tempo notation such as 3-1-X-0."
+          ]
         },
         "restAfter": {
           "oneOf": [
@@ -244,7 +242,6 @@
             "array",
             "null"
           ],
-          "description": "Optional per-repetition detail when available.",
           "items": {
             "$ref": "#/$defs/repObservation"
           }

@@ -1,0 +1,66 @@
+name: Release Free Exercise DB++
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install validator
+        run: python -m pip install --disable-pip-version-check jsonschema
+      - name: Download pinned release input
+        run: |
+          curl --fail --location --retry 3 \
+            https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json \
+            --output exercises.json
+      - name: Build and validate
+        env:
+          SOURCE_DATE_EPOCH: "0"
+        run: |
+          python convert_fedb_to_fedbpp.py exercises.json release-free-exercise-db-plusplus.json \
+            --schema free-exercise-db-plusplus.schema.json --completeness full
+          python tests/test_release_contract.py release-free-exercise-db-plusplus.json
+          python tests/test_golden_mappings.py release-free-exercise-db-plusplus.json
+          python tests/test_medium_policy.py release-free-exercise-db-plusplus.json
+      - name: Require release input to match committed upstream snapshot
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          generated=json.load(open("release-free-exercise-db-plusplus.json"))
+          committed=json.load(open("free-exercise-db-plusplus.json"))
+          assert generated["metadata"]["upstream"]["sha256"] == committed["metadata"]["upstream"]["sha256"], \
+              "Upstream changed since the release commit. Run the normal build/review workflow and commit outputs before tagging."
+          print("release input matches committed upstream SHA-256")
+          PY
+      - name: Create checksums
+        run: |
+          sha256sum \
+            release-free-exercise-db-plusplus.json \
+            free-exercise-db-plusplus.schema.json \
+            workout.schema.json > SHA256SUMS
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "Free Exercise DB++ ${GITHUB_REF_NAME}" \
+            --generate-notes \
+            release-free-exercise-db-plusplus.json \
+            free-exercise-db-plusplus.schema.json \
+            workout.schema.json \
+            SHA256SUMS \
+            METHODOLOGY.md \
+            COMPATIBILITY.md \
+            EVIDENCE.md

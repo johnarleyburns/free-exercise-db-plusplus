@@ -17,6 +17,12 @@ on:
       - "README.md"
       - "METHODOLOGY.md"
       - "VERSIONING.md"
+      - "workout.schema.json"
+      - "EVIDENCE.md"
+      - "COMPATIBILITY.md"
+      - "tests/test_medium_policy.py"
+      - "tests/test_golden_mappings.py"
+      - "check_upstream_compatibility.py"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
@@ -32,6 +38,12 @@ on:
       - "README.md"
       - "METHODOLOGY.md"
       - "VERSIONING.md"
+      - "workout.schema.json"
+      - "EVIDENCE.md"
+      - "COMPATIBILITY.md"
+      - "tests/test_medium_policy.py"
+      - "tests/test_golden_mappings.py"
+      - "check_upstream_compatibility.py"
       - ".github/workflows/build-db.yml"
   schedule:
     - cron: "23 9 * * 1"
@@ -61,6 +73,8 @@ jobs:
           assert isinstance(x,list) and len(x)>500
           print("upstream exercises:",len(x))
           PY
+      - name: Check upstream ID compatibility
+        run: python check_upstream_compatibility.py exercises.json free-exercise-db-plusplus.json
       - name: Build and validate DB++
         run: |
           python convert_fedb_to_fedbpp.py exercises.json free-exercise-db-plusplus.json             --schema free-exercise-db-plusplus.schema.json --completeness full
@@ -85,6 +99,12 @@ jobs:
             --schema free-exercise-db-plusplus.schema.json
       - name: Verify release contract
         run: python tests/test_release_contract.py free-exercise-db-plusplus.json
+      - name: Verify golden mappings
+        run: python tests/test_golden_mappings.py free-exercise-db-plusplus.json
+      - name: Verify medium-confidence policy
+        run: python tests/test_medium_policy.py free-exercise-db-plusplus.json
+      - name: Validate workout interchange schema
+        run: python -c 'import json; from jsonschema import Draft202012Validator; Draft202012Validator.check_schema(json.load(open("workout.schema.json"))); print("workout schema valid")'
       - name: Generate review reports
         run: |
           python generate_review_report.py free-exercise-db-plusplus.json             --markdown REVIEW.md --csv review-queue.csv --json review-summary.json
