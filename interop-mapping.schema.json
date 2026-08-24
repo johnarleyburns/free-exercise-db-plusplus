@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/interop-mapping.schema.json",
+  "title": "Free Exercise DB++ Interoperability Mapping Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "target",
+    "mappingVersion",
+    "status",
+    "entries"
+  ],
+  "properties": {
+    "target": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "mappingVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "placeholder",
+        "draft-reviewed",
+        "stable"
+      ]
+    },
+    "targetSpecification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourcePath",
+        "targetField",
+        "quality",
+        "transform",
+        "notes"
+      ],
+      "properties": {
+        "sourcePath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetMessage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetField": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quality": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "compatible",
+            "lossy",
+            "extension_required",
+            "unsupported"
+          ]
+        },
+        "transform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "targetMessage"
+          ]
+        },
+        {
+          "required": [
+            "targetType"
+          ]
+        }
+      ]
+    }
+  }
+}

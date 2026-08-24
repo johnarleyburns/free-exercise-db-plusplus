@@ -1,7 +1,7 @@
 {
+  "target": "google-fit",
+  "mappingVersion": "0.1.0",
   "status": "placeholder",
-  "description": "Conceptual mapping stub only. Full field-level interoperability mapping has not yet been specified.",
-  "exerciseId": "Map DB++ exercise identifiers to the nearest target exercise/activity code where available.",
-  "setLevel": "Map repetitions, resistance/load, duration, and timestamps where the target standard supports them.",
-  "notes": "Do not treat this file as a normative complete mapping."
+  "targetSpecification": "Not yet specified; conceptual placeholder only.",
+  "entries": []
 }

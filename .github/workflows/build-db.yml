@@ -164,6 +164,28 @@ jobs:
           print(f"Android Health Connect mapping valid: {len(entries)} entries")
           PY
 
+      - name: Validate interoperability mapping registries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+          schema = json.loads(Path("interop-mapping.schema.json").read_text())
+          Draft202012Validator.check_schema(schema)
+          validator = Draft202012Validator(schema)
+          files = sorted(Path("mappings").glob("*.json"))
+          assert files
+          for path in files:
+              mapping = json.loads(path.read_text())
+              errors = list(validator.iter_errors(mapping))
+              assert not errors, f"{path}: {[e.message for e in errors]}"
+              pairs = [(e["sourcePath"], e["targetField"]) for e in mapping["entries"]]
+              assert len(pairs) == len(set(pairs)), path
+              if mapping["status"] != "placeholder":
+                  assert mapping["entries"], path
+          print(f"mapping registries valid: {len(files)} files")
+          PY
+
       - name: Prepare reports directory
         run: mkdir -p reports
 

@@ -9,7 +9,8 @@
       "targetType": "HKWorkout",
       "targetField": "startDate",
       "quality": "exact",
-      "transform": "ISO-8601 to Date"
+      "transform": "ISO-8601 to Date",
+      "notes": null
     },
     {
       "sourcePath": "endTime",
@@ -48,7 +49,8 @@
       "targetType": "HKWorkout",
       "targetField": "metadata[com.free-exercise-db-plusplus.exerciseNames]",
       "quality": "extension_required",
-      "transform": "JSON array of names"
+      "transform": "JSON array of names",
+      "notes": null
     },
     {
       "sourcePath": "exercises[].sets[].duration",
@@ -103,7 +105,8 @@
       "targetType": "HKWorkout",
       "targetField": "metadata[com.free-exercise-db-plusplus.sets]",
       "quality": "extension_required",
-      "transform": "JSON set observations"
+      "transform": "JSON set observations",
+      "notes": null
     },
     {
       "sourcePath": "exercises[].sets[].segments",

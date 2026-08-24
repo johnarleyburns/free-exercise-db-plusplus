@@ -9,7 +9,8 @@
       "targetType": "ExerciseSessionRecord",
       "targetField": "startTime/startZoneOffset",
       "quality": "exact",
-      "transform": "ISO-8601 to Instant plus ZoneOffset"
+      "transform": "ISO-8601 to Instant plus ZoneOffset",
+      "notes": null
     },
     {
       "sourcePath": "endTime",
@@ -64,7 +65,8 @@
       "targetType": "ExerciseSegment",
       "targetField": "setNumber",
       "quality": "compatible",
-      "transform": "positive integer"
+      "transform": "positive integer",
+      "notes": null
     },
     {
       "sourcePath": "exercises[].sets[].rpe",
@@ -127,7 +129,8 @@
       "targetType": "ExerciseSessionRecord",
       "targetField": "notes",
       "quality": "compatible",
-      "transform": "string"
+      "transform": "string",
+      "notes": null
     },
     {
       "sourcePath": "session.activeEnergyBurned",
