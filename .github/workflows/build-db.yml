@@ -14,6 +14,7 @@ on:
       - "packages/swift/**"
       - "packages/python/**"
       - "packages/kotlin/**"
+      - "packages/r/**"
       - ".github/workflows/build-db.yml"
   pull_request:
     paths:
@@ -26,6 +27,7 @@ on:
       - "packages/swift/**"
       - "packages/python/**"
       - "packages/kotlin/**"
+      - "packages/r/**"
       - ".github/workflows/build-db.yml"
   schedule:
     - cron: "23 9 * * 1"
@@ -213,6 +215,17 @@ jobs:
       - name: Test Kotlin consumer package
         run: |
           gradle --no-daemon test --project-dir packages/kotlin/fedbpp
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+
+      - name: Test R research package
+        run: |
+          Rscript -e 'install.packages("jsonlite", repos="https://cloud.r-project.org")'
+          cd packages/r/fedbpp
+          Rscript tests/test_package.R
 
       - name: Prepare reports directory
         run: mkdir -p reports
