@@ -130,7 +130,10 @@ jobs:
             mappings/garmin-fit-exercises.json \
             mappings/health-connect-exercises.json \
             mappings/garmin-fit.json \
+            mappings/fhir-exercises.json \
             reports/interop/android-health-connect.json \
+            docs/interop/IMPORT-EXPORT.md \
+            docs/interop/CLI.md \
             SHA256SUMS \
             docs/METHODOLOGY.md \
             docs/COMPATIBILITY.md \

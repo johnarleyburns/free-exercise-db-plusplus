@@ -315,6 +315,22 @@ jobs:
           cd "${RUNNER_TEMP}"
           PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual' "${RUNNER_TEMP}/fedbpp-site"
 
+      - name: Test v1.3 conversion and CLI from isolated wheel
+        run: |
+          cd "${RUNNER_TEMP}"
+          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, "${RUNNER_TEMP}/fedbpp-site")
+          from fedbpp import import_workout, export_workout
+          source = json.load(open(os.path.join(os.environ["GITHUB_WORKSPACE"], "examples/interop/python/fhir-input.json")))
+          actual = import_workout("fhir", source)
+          exported = export_workout("fhir", actual.document)
+          assert actual.status == "lossless" and exported.status == "lossless"
+          assert exported.document == export_workout("fhir", actual.document).document
+          print("isolated wheel conversion passed")
+          PY
+          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -m fedbpp.cli --help >/dev/null
+
       - name: Test Swift 6 consumer package
         run: |
           swift test --package-path packages/swift/FreeExerciseDBPlusPlus
