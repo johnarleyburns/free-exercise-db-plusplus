@@ -170,7 +170,6 @@ jobs:
             docs/PLAN-ACTUAL.md \
             docs/PLAN-COMPARISON.md \
             docs/VOLUME-TARGETS.md \
-            training-profile.schema.json \
             docs/TRAINING-PROFILE.md \
             docs/PLAN-EVALUATION.md
           )
