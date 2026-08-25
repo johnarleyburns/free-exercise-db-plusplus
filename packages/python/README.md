@@ -17,4 +17,11 @@ bench = db.get_exercise("Barbell_Bench_Press_-_Medium_Grip")
 The helper never mutates source documents and does not infer energy, body mass, or muscle credits beyond DB++ direct/indirect/stabilizer semantics.
 
 
-The installed wheel is standalone. Its PLAN analysis follows `dbpp-default-volume-v1`, reads credits from database metadata, preserves ranged coverage, excludes volume-ineligible exercises from resistance-volume totals, and exposes conservative PLAN/ACTUAL load and effort comparisons. Advanced adherence is currently a Python reference capability; Swift, Kotlin, and R documentation only claims the functions each package implements.
+The installed wheel is standalone. Its PLAN analysis follows
+`dbpp-default-volume-v1`, requires complete finite non-negative direct, indirect,
+and stabilizer credits in database metadata, preserves absent range bounds, excludes
+volume-ineligible exercises from resistance-volume totals, and exposes conservative
+PLAN/ACTUAL load and effort comparisons. Scalar views use target, then min, then max
+only when a representative is required. Advanced adherence is currently a Python
+reference capability; Swift, Kotlin, and R documentation only claims the functions
+each package implements.

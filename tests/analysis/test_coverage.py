@@ -6,7 +6,7 @@ sys.path.insert(0, str(ROOT))
 from src.analysis.coverage import analyze_plan
 from src.analysis.targets import compare_to_targets, validate_target
 
-DB = {"metadata": {"schemaVersion": "1.0.0"}, "exercises": {
+DB = {"metadata": {"schemaVersion": "1.0.0", "setCredits":{"direct":1.0,"indirect":0.5,"stabilizer":0.0}}, "exercises": {
     "press": {"annotation": {"patterns": ["horizontal_push"], "direct": ["chest"], "indirect": ["triceps"], "stabilizers": ["shoulders"], "volumeEligible": True}},
     "row": {"annotation": {"patterns": ["horizontal_pull"], "direct": ["back"], "indirect": ["biceps"], "stabilizers": [], "volumeEligible": True}},
     "stretch": {"annotation": {"patterns": ["shoulder_mobility"], "direct": [], "indirect": [], "stabilizers": [], "volumeEligible": False}},

@@ -25,7 +25,20 @@ def _range_metric_rows(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
         result[metric]={}
         for key in sorted(set(a.get(metric,{}))|set(b.get(metric,{}))):
             ar=a.get(metric,{}).get(key,{"min":0,"target":0,"max":0}); br=b.get(metric,{}).get(key,{"min":0,"target":0,"max":0})
-            result[metric][key]={bound:{"planA":ar.get(bound,0),"planB":br.get(bound,0),"delta":round(br.get(bound,0)-ar.get(bound,0),6)} for bound in ("min","target","max")}
+            result[metric][key]={bound:_optional_metric(ar.get(bound),br.get(bound)) for bound in ("min","target","max")}
+    return result
+
+def _optional_metric(a: float | None, b: float | None) -> dict[str, float | None]:
+    return {"planA":a,"planB":b,"delta":round(b-a,6) if a is not None and b is not None else None}
+
+def _exposure_rows(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
+    result={}
+    for key in sorted(set(a)|set(b)):
+        av=a.get(key,{}); bv=b.get(key,{})
+        result[key]={
+            "exposuresPerNativeCycle":_optional_metric(av.get("exposuresPerNativeCycle",0),bv.get("exposuresPerNativeCycle",0)),
+            "normalizedExposuresPer7Days":_optional_metric(av.get("normalizedExposuresPer7Days",0),bv.get("normalizedExposuresPer7Days",0)),
+        }
     return result
 
 def _frequency(plan: dict[str, Any]) -> dict[str, Any]:
@@ -49,23 +62,26 @@ def compare_plans(plan_a: dict[str, Any], plan_b: dict[str, Any], db: Any) -> di
     normalized["ranges"] = _range_metric_rows(normalized_a, normalized_b)
     freq_a, freq_b = _frequency(plan_a), _frequency(plan_b)
     exercise_frequency = _metric_rows(freq_a["exercises"], freq_b["exercises"])
+    exposure_a, exposure_b = analysis_a["exposureFrequency"], analysis_b["exposureFrequency"]
+    metadata_a, metadata_b = analysis_a["analysisMetadata"], analysis_b["analysisMetadata"]
+    common_fields=("analysisVersion","analysisPolicy","dbSchemaVersion","dbConverterVersion","dbUpstreamSha256","setCredits","rangePolicy","unitPolicy")
+    metadata={field:metadata_a.get(field) if metadata_a.get(field)==metadata_b.get(field) else {"planA":metadata_a.get(field),"planB":metadata_b.get(field)} for field in common_fields}
+    metadata.update({"planSchemaVersions":{"planA":metadata_a.get("planSchemaVersion"),"planB":metadata_b.get("planSchemaVersion")},"normalizedPeriodDays":7,"nativePeriodDays":{"planA":native_a["periodDays"],"planB":native_b["periodDays"]}})
     return {
         "comparisonVersion": "0.1.0",
         "plans": {
             "planA": {"planId": plan_a.get("planId"), "revisionId": plan_a.get("revisionId")},
             "planB": {"planId": plan_b.get("planId"), "revisionId": plan_b.get("revisionId")},
         },
-        "analysisMetadata": {
-            "dbSchemaVersion": analysis_a["analysisMetadata"].get("dbSchemaVersion"),
-            "analysisPolicy": analysis_a.get("analysisPolicy"), "setCredits": analysis_a["analysisMetadata"].get("setCredits"), "planSchemaVersions": {"planA": plan_a.get("schemaVersion"), "planB": plan_b.get("schemaVersion")},
-            "normalizedPeriodDays": 7, "nativePeriodDays": {"planA": native_a["periodDays"], "planB": native_b["periodDays"]},
-        },
+        "analysisMetadata": metadata,
         "nativeCycle": native,
         "normalized7Day": normalized,
         "frequency": {
             "sessions": {"planA": freq_a["sessions"], "planB": freq_b["sessions"], "delta": freq_b["sessions"] - freq_a["sessions"]},
             "exercisePrescriptions": {"planA": freq_a["exercisePrescriptions"], "planB": freq_b["exercisePrescriptions"], "delta": freq_b["exercisePrescriptions"] - freq_a["exercisePrescriptions"]},
             "exercises": exercise_frequency,
+            "muscles": _exposure_rows(exposure_a.get("muscles",{}),exposure_b.get("muscles",{})),
+            "movementPatterns": _exposure_rows(exposure_a.get("movementPatterns",{}),exposure_b.get("movementPatterns",{})),
         },
         "coverageCompleteness": {"planA": analysis_a["coverageCompleteness"], "planB": analysis_b["coverageCompleteness"]},
     }
@@ -82,6 +98,10 @@ def tidy_rows(comparison: dict[str, Any]) -> list[dict[str, Any]]:
         rows.append({"kind": "frequency", "period": "native", "metric": metric, "key": "", **values})
     for key, values in comparison["frequency"]["exercises"].items():
         rows.append({"kind": "frequency", "period": "native", "metric": "exercisePrescriptions", "key": key, **values})
+    for metric in ("muscles","movementPatterns"):
+        for key, periods in comparison["frequency"][metric].items():
+            for period, values in periods.items():
+                rows.append({"kind":"frequency","period":period,"metric":metric,"key":key,**values})
     return rows
 
 def write_json(comparison: dict[str, Any], path: str | Path) -> None:

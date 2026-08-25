@@ -67,3 +67,22 @@ def test_phase_specific_cycle_and_duration_weighting():
  plan={"schemaVersion":"0.2.0","planId":"p","revisionId":"r","cycle":{"lengthDays":7},"phases":[{"phaseId":"a","durationCycles":3,"cycle":{"lengthDays":8}},{"phaseId":"b","durationCycles":1,"cycle":{"lengthDays":6}}],"sessions":[{"planSessionId":"a1","phaseId":"a","dayOffset":0,"exercises":[{"prescriptionId":"a","exerciseId":"bench","order":1,"sets":6.857142857,"reps":8}]},{"planSessionId":"b1","phaseId":"b","dayOffset":0,"exercises":[{"prescriptionId":"b","exerciseId":"bench","order":1,"sets":1.714285714,"reps":8}]}]}
  a=analyze_plan(plan,DB); phases=a["periodization"]["phases"]; assert [p["nativeCycle"]["periodDays"] for p in phases]==[8,6]
  assert round(a["periodization"]["normalizedEffectiveSetRangesDurationWeightedAverage"]["chest"]["target"],6)==10
+
+def test_partial_plan_ranges_survive_coverage_targets_and_adherence():
+ forms=({"min":3},{"target":4},{"max":5},{"min":3,"max":5},{"min":3,"target":4,"max":5})
+ expected=(
+  {"min":6.0,"target":None,"max":None},
+  {"min":None,"target":8.0,"max":None},
+  {"min":None,"target":None,"max":10.0},
+  {"min":6.0,"target":None,"max":10.0},
+  {"min":6.0,"target":8.0,"max":10.0},
+ )
+ for sets,want in zip(forms,expected):
+  plan={**PLAN,"sessions":[{"planSessionId":"s1","dayOffset":0,"exercises":[{"prescriptionId":"rx","exerciseId":"bench","order":1,"sets":sets,"reps":8}]}]}
+  analysis=analyze_plan(plan,DB)
+  assert analysis["nativeCycle"]["effectiveSetRanges"]["chest"] == want
+  target={"schemaVersion":"0.1.0","targetId":"t","periodDays":8,"muscles":{"chest":{"min":5,"max":11}}}
+  assert compare_to_targets(plan,target,DB)["muscles"]["chest"]["planEffectiveSetRange"] == want
+  actual={**ACTUAL,"exercises":[{"exerciseId":"bench","exercisePrescriptionId":"rx","sets":[{"setNumber":1,"setType":"working","reps":8,"completed":True}]}]}
+  row=analyze_plan_actual(plan,actual,DB)["matching"]["exercises"][0]
+  assert row["plannedSetRange"] == {k:(float(v) if v is not None else None) for k,v in {"min":sets.get("min"),"target":sets.get("target"),"max":sets.get("max")}.items()}

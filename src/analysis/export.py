@@ -39,6 +39,10 @@ def muscle_research_rows(result: dict[str, Any], subject_id: str = "") -> list[d
         for label,key in (("direct","direct"),("indirect","indirect"),("stabilizer","stabilizerParticipation"),("effective","effective")):
             metric=values.get(key,{})
             row[f"planned_{label}_sets"]=metric.get("planned",""); row[f"actual_{label}_sets"]=metric.get("actual","")
+            planned_range=metric.get("plannedRange",values.get("plannedRanges",{}).get(key,{}))
+            for bound in ("min","target","max"):
+                value=planned_range.get(bound)
+                row[f"planned_{label}_sets_{bound}"]="" if value is None else value
         row["effective_adherence_fraction"]=values.get("effective",values).get("fraction",""); rows.append(row)
     return rows
 

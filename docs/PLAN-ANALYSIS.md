@@ -33,9 +33,12 @@ the explicitly labelled seven-day normalized view. Custom or unknown exercises
 remain visible but do not receive inferred muscle roles.
 
 Every analysis result identifies its DB/schema versions and set-credit policy.
-Credits are read from the analyzed database’s `metadata.setCredits`; the shipped
-database currently declares direct `1.0`, indirect `0.5`, and stabilizer `0.0`. Ranged prescriptions use the target value, then minimum, then maximum
-as the documented count policy.
+Credits are authoritatively read from the analyzed database’s
+`metadata.setCredits`; normal analysis fails clearly if any direct, indirect, or
+stabilizer credit is missing, invalid, non-finite, or negative. The shipped
+database currently declares direct `1.0`, indirect `0.5`, and stabilizer `0.0`.
+The low-level `set_credits(..., allow_legacy_defaults=True)` option is the only
+explicit compatibility path for legacy synthetic databases.
 
 ## Units and counting
 
@@ -51,7 +54,14 @@ RPE/RIR and compatible volume-load adherence are reported separately; they never
 
 All results name `dbpp-default-volume-v1` and read direct, indirect, and stabilizer credits from the analyzed database's `metadata.setCredits`. Completed warmup, technique, test, isometric, and other sets are excluded; working, backoff, AMRAP, drop, cluster, rest-pause, and assisted parent sets count once. Macro-segments and unilateral labels never multiply a parent observation.
 
-`volumeEligible=false` prescriptions remain mapped and appear in completeness diagnostics, but contribute no resistance-volume muscle, stabilizer, effective-set, or movement-pattern totals. Coverage preserves `min`/`target`/`max` ranges under the `*SetRanges` keys; scalar keys remain target convenience views. Muscle and movement-pattern exposure frequency is reported separately.
+`volumeEligible=false` prescriptions remain mapped and appear in completeness diagnostics, but contribute no resistance-volume muscle, stabilizer, effective-set, or movement-pattern totals. Coverage preserves `min`/`target`/`max` ranges under the `*SetRanges` keys. Unspecified bounds remain null: minimum-only, target-only, maximum-only, and min/max prescriptions are not converted to exact values. Scalar convenience views use the explicit target, then minimum, then maximum representative policy only where a scalar is required.
+
+PLAN-vs-PLAN frequency includes deterministic session, exercise-prescription,
+exercise, muscle-exposure, and movement-pattern-exposure comparisons. Muscle and
+pattern exposures report both native-cycle and normalized seven-day values.
+Muscle-level research CSV rows retain separate planned min, target, and max
+columns for direct, indirect, stabilizer, and effective sets; absent bounds stay
+empty.
 
 Phase-specific cycle lengths are normalized independently. Cross-phase normalized averages are weighted by `durationCycles`. Provenance records analysis/policy versions, database provenance, document schema versions, credits, periods, range policy, and unit policy.
 

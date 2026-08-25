@@ -4,7 +4,7 @@ from collections import defaultdict
 from typing import Any
 from .coverage import analyze_plan, _annotation, _exercise, _metadata
 from .matching import match_plan_actual
-from .policies import ANALYSIS_POLICY, ANALYSIS_VERSION, COUNTED_SET_TYPES, RANGE_POLICY, UNIT_POLICY, completed_exercise_sets, normalize_range, planned_set_range, set_credits, set_is_counted
+from .policies import ANALYSIS_POLICY, ANALYSIS_VERSION, COUNTED_SET_TYPES, RANGE_POLICY, UNIT_POLICY, completed_exercise_sets, normalize_range, planned_set_range, representative_scalar, set_credits, set_is_counted
 from .units import UnitError, normalize_quantity
 
 def _adherence(planned, actual):
@@ -31,12 +31,14 @@ def _metric_coverage(exercises, db):
 
 def _range_check(planned, actual):
     r=normalize_range(planned); a=float(actual)
-    return {"plannedRange":r,"actual":a,"meetsMinimum":a>=r["min"],"meetsTarget":a>=r["target"],"withinMaximum":a<=r["max"],"differenceFromTarget":round(a-r["target"],6)}
+    return {"plannedRange":r,"actual":a,"meetsMinimum":a>=r["min"] if r["min"] is not None else None,"meetsTarget":a>=r["target"] if r["target"] is not None else None,"withinMaximum":a<=r["max"] if r["max"] is not None else None,"differenceFromTarget":round(a-r["target"],6) if r["target"] is not None else None}
 
 def _value_check(planned, actual):
     if planned is None or actual is None: return {"planned":planned,"actual":actual,"delta":None,"withinRange":None,"comparable":False,"reason":"missing planned or actual value"}
     r=normalize_range(planned); a=float(actual)
-    return {"planned":planned,"actual":a,"delta":round(a-r["target"],6),"withinRange":r["min"]<=a<=r["max"],"comparable":True}
+    scalar=representative_scalar(r)
+    within=(r["min"] is None or r["min"]<=a) and (r["max"] is None or a<=r["max"])
+    return {"planned":planned,"actual":a,"delta":round(a-scalar,6),"withinRange":within,"comparable":True}
 
 def _load_check(planned, actual):
     if not planned or not actual: return {"planned":planned,"actual":actual,"delta":None,"withinRange":None,"comparable":False,"reason":"missing planned or actual load"}
@@ -51,14 +53,14 @@ def _planned_volume_load(rx):
     specs=rx.get("plannedSets")
     if specs is not None: specs=[item for item in specs if item.get("setType") in COUNTED_SET_TYPES]
     if specs is None:
-        specs=[rx] * int(planned_set_range(rx)["target"])
+        specs=[rx] * int(representative_scalar(planned_set_range(rx)))
     total=0.0
     for spec in specs:
         load=spec.get("load"); reps=spec.get("reps")
         if not load or reps is None or load.get("unit","").lower() not in {"kg","lb","g"}: return None, "planned load is not a comparable mass quantity"
         try: mass=normalize_quantity({"value":load.get("value",load.get("target")),"unit":load["unit"]},"kg")
         except (UnitError,TypeError,ValueError): return None, "planned load is not a comparable mass quantity"
-        total += normalize_range(reps)["target"] * mass
+        total += representative_scalar(reps) * mass
     return total, None
 
 def _planned_for_actual(rx, item, index, by_id, consumed):
@@ -107,13 +109,21 @@ def analyze_plan_actual(plan:dict[str,Any], workout:dict[str,Any], db:Any)->dict
       actual_count=len(counted); set_range=_range_check(prange,actual_count)
       vl={"planned":round(planned_vl,6) if vl_comparable else None,"actual":round(actual_vl,6) if vl_comparable else None,"delta":round(actual_vl-planned_vl,6) if vl_comparable else None,"fraction":round(actual_vl/planned_vl,6) if vl_comparable and planned_vl else None,"comparable":vl_comparable}
       if vl_reason: vl["reason"]=vl_reason
-      exercise_rows.append({"actualExerciseIndex":match["actualExerciseIndex"],"prescriptionId":match.get("prescriptionId"),"plannedExerciseId":rx.get("exerciseId") if rx else None,"actualExerciseId":actual.get("exerciseId"),"status":match["status"],"plannedSets":prange["target"],"plannedSetRange":prange,"actualCompletedSets":actual_count,"setDelta":round(actual_count-prange["target"],6),"setRangeAdherence":set_range,"repsAdherentSets":reps_ok,"strictPrescriptionAdherence":match["status"]=="matched","substitutionAdjustedCompletion":match["status"] in {"matched","substitution"},"volumeLoad":vl})
+      pscalar=representative_scalar(prange)
+      exercise_rows.append({"actualExerciseIndex":match["actualExerciseIndex"],"prescriptionId":match.get("prescriptionId"),"plannedExerciseId":rx.get("exerciseId") if rx else None,"actualExerciseId":actual.get("exerciseId"),"status":match["status"],"plannedSets":pscalar,"plannedSetRange":prange,"actualCompletedSets":actual_count,"setDelta":round(actual_count-pscalar,6),"setRangeAdherence":set_range,"repsAdherentSets":reps_ok,"strictPrescriptionAdherence":match["status"]=="matched","substitutionAdjustedCompletion":match["status"] in {"matched","substitution"},"volumeLoad":vl})
     pn=planned["nativeCycle"] if planned else {}; ac=coverages["matched"]; sub=coverages["substitution"]
     muscle_rows={}
     metrics=(("direct","directSets"),("indirect","indirectSets"),("stabilizerParticipation","stabilizerParticipationSets"),("effective","effectiveSets"))
     muscles=set().union(*(set(pn.get(key,{}))|set(ac.get(key,{}))|set(sub.get(key,{})) for _,key in metrics))
     for m in sorted(muscles):
-      detail={name:_adherence(pn.get(key,{}).get(m,0),ac.get(key,{}).get(m,0)+sub.get(key,{}).get(m,0)) for name,key in metrics}; detail.update(detail["effective"]); muscle_rows[m]=detail
+      detail={}
+      planned_ranges={}
+      for name,key in metrics:
+        metric=_adherence(pn.get(key,{}).get(m,0),ac.get(key,{}).get(m,0)+sub.get(key,{}).get(m,0))
+        planned_ranges[name]=normalize_range(pn.get(key.replace("Sets","SetRanges"),{}).get(m,0))
+        detail[name]=metric
+      detail["plannedRanges"]=planned_ranges
+      detail.update(detail["effective"]); muscle_rows[m]=detail
     patterns={p:_adherence(pn.get("movementPatternSets",{}).get(p,0),ac["movementPatternSets"].get(p,0)+sub["movementPatternSets"].get(p,0)) for p in sorted(set(pn.get("movementPatternSets",{}))|set(ac["movementPatternSets"])|set(sub["movementPatternSets"]))}
     statuses=defaultdict(int)
     for row in exercise_rows: statuses[row["status"]]+=1

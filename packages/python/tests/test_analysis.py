@@ -3,7 +3,7 @@ from fedbpp.analysis import analyze
 
 
 def test_public_analysis_api():
-    db = Database({"metadata": {"schemaVersion": "1.0.0"}, "exercises": {}})
+    db = Database({"metadata": {"schemaVersion": "1.0.0", "setCredits":{"direct":1.0,"indirect":0.5,"stabilizer":0.0}}, "exercises": {}})
     plan = Plan.from_dict({
         "schemaVersion": "0.1.0", "planId": "p", "revisionId": "r", "name": "P",
         "cycle": {"lengthDays": 7}, "sessions": [{

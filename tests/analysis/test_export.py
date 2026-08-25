@@ -14,9 +14,11 @@ def test_research_exports_are_tidy_and_deterministic():
 
 
 def test_muscle_and_exercise_research_exports_preserve_identifiers_and_ranges():
- result={"analysisPolicy":"dbpp-default-volume-v1","analysisMetadata":{"analysisPolicy":"dbpp-default-volume-v1","dbSchemaVersion":"0.3.0","dbConverterVersion":"0.8.0","planSchemaVersion":"0.2.0","workoutSchemaVersion":"0.3.0"},"plan":{"planId":"p","revisionId":"r"},"actual":{"sessionId":"a"},"matching":{"planSessionId":"s","exercises":[{"prescriptionId":"rx","plannedExerciseId":"bench","actualExerciseId":"bench","status":"matched","plannedSetRange":{"min":3,"target":4,"max":5},"actualCompletedSets":4}]},"adherence":{"muscles":{"chest":{"direct":{"planned":4,"actual":4},"indirect":{"planned":0,"actual":0},"stabilizerParticipation":{"planned":0,"actual":0},"effective":{"planned":4,"actual":4,"fraction":1}}}}}
+ result={"analysisPolicy":"dbpp-default-volume-v1","analysisMetadata":{"analysisPolicy":"dbpp-default-volume-v1","dbSchemaVersion":"0.3.0","dbConverterVersion":"0.8.0","planSchemaVersion":"0.2.0","workoutSchemaVersion":"0.3.0"},"plan":{"planId":"p","revisionId":"r"},"actual":{"sessionId":"a"},"matching":{"planSessionId":"s","exercises":[{"prescriptionId":"rx","plannedExerciseId":"bench","actualExerciseId":"bench","status":"matched","plannedSetRange":{"min":3,"target":4,"max":5},"actualCompletedSets":4}]},"adherence":{"muscles":{"chest":{"direct":{"planned":3,"actual":4},"indirect":{"planned":0,"actual":0},"stabilizerParticipation":{"planned":0,"actual":0},"effective":{"planned":3,"actual":4,"fraction":1},"plannedRanges":{"direct":{"min":3,"target":None,"max":None},"indirect":{"min":None,"target":None,"max":None},"stabilizerParticipation":{"min":0,"target":None,"max":2},"effective":{"min":3,"target":None,"max":5}}}}}}
  muscles=muscle_research_rows(result,"athlete"); exercises=exercise_research_rows(result,"athlete")
- assert muscles[0]["subject_id"]=="athlete" and muscles[0]["planned_direct_sets"]==4
+ assert muscles[0]["subject_id"]=="athlete" and muscles[0]["planned_direct_sets"]==3
+ assert muscles[0]["planned_direct_sets_min"]==3 and muscles[0]["planned_direct_sets_target"]=="" and muscles[0]["planned_direct_sets_max"]==""
+ assert muscles[0]["planned_effective_sets_min"]==3 and muscles[0]["planned_effective_sets_target"]=="" and muscles[0]["planned_effective_sets_max"]==5
  assert exercises[0]["planned_sets_min"]==3 and exercises[0]["planned_sets_max"]==5
  with tempfile.TemporaryDirectory() as directory:
   a=Path(directory)/"muscle.csv"; b=Path(directory)/"exercise.csv"

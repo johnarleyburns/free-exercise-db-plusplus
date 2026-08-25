@@ -3,12 +3,13 @@
 `compare_plans(plan_a, plan_b, db)` compares two immutable PLAN revisions without
 linking either document to ACTUAL observations. It reports direct, indirect,
 stabilizer participation, effective sets, movement-pattern sets, and session/exercise
-frequencies.
+frequencies. Muscle and movement-pattern exposure comparisons include native-cycle
+counts and normalized exposures per seven days.
 
 Both native-cycle totals and explicit seven-day normalized totals are included. The
 metadata retains each plan’s native cycle length; normalization never overwrites the
-source prescription. DB++ credits remain direct `1.0`, indirect `0.5`, and stabilizer
-`0.0`.
+source prescription. Credits come from authoritative `metadata.setCredits`; malformed
+or incomplete credit metadata causes analysis to fail.
 
 ```python
 from src.analysis import compare_plans, write_json, write_tidy_csv
@@ -24,4 +25,10 @@ research and review workflows. PLAN-vs-ACTUAL matching is documented separately 
 
 ## Ranges and provenance
 
-Comparisons preserve min/target/max deltas in `nativeCycle.ranges` and `normalized7Day.ranges`; existing scalar comparisons are target convenience views. Metadata identifies both PLAN schema versions and the authoritative DB set credits. Periodized coverage honors phase-specific cycles and duration weighting before comparison.
+Comparisons preserve min/target/max deltas in `nativeCycle.ranges` and
+`normalized7Day.ranges`; absent bounds remain null and their deltas remain null.
+Existing scalar comparisons use target, then min, then max only when a representative
+value is required. Metadata identifies both PLAN schema versions, complete DB
+provenance and policies, authoritative set credits, and both native periods.
+Periodized coverage honors phase-specific cycles and duration weighting before
+comparison.

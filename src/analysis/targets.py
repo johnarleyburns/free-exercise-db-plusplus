@@ -61,7 +61,7 @@ def compare_to_targets(plan: dict[str, Any], target_profile: dict[str, Any], db:
             "actualEffectiveSets": actual,
             "minimum": minimum, "target": desired, "maximum": maximum,
             "min": minimum, "max": maximum, "differenceFromTarget": round(actual - desired, 6) if desired is not None else None,
-            "planEffectiveSetRange": {key: round(value * scale, 6) for key, value in effective_ranges.get(muscle, {"min": actual / scale if scale else 0, "target": actual / scale if scale else 0, "max": actual / scale if scale else 0}).items()},
+            "planEffectiveSetRange": {key: round(value * scale, 6) if value is not None else None for key, value in effective_ranges.get(muscle, {"min": actual / scale if scale else 0, "target": actual / scale if scale else 0, "max": actual / scale if scale else 0}).items()},
             "state": state,
             "periodDays": period_days,
         }
