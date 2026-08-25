@@ -74,6 +74,23 @@ def _quantity(value: Any, unit: str | None = None) -> dict[str, Any] | None:
     return {"value": value["value"], "unit": unit or value.get("unit", "")}
 
 
+def _validate_actual(document: dict[str, Any]) -> None:
+    """Validate conversion-critical ACTUAL structure without a heavy dependency."""
+    required = ("schemaVersion", "sessionId", "startTime", "exercises")
+    if not isinstance(document, dict) or any(key not in document for key in required):
+        raise ValidationError("ACTUAL requires schemaVersion, sessionId, startTime, and exercises")
+    if document["schemaVersion"] not in {"0.2.0", "0.3.0"} or not isinstance(document["exercises"], list):
+        raise ValidationError("unsupported ACTUAL version or exercises shape")
+    for index, exercise in enumerate(document["exercises"]):
+        if not isinstance(exercise, dict) or not isinstance(exercise.get("sets"), list):
+            raise ValidationError(f"exercises[{index}] must contain sets")
+        if not exercise.get("exerciseId") and not exercise.get("exerciseName"):
+            raise ValidationError(f"exercises[{index}] needs exerciseId or exerciseName")
+        for set_index, item in enumerate(exercise["sets"]):
+            if not isinstance(item, dict) or not isinstance(item.get("setNumber"), int) or not isinstance(item.get("setType"), str) or not isinstance(item.get("completed"), bool):
+                raise ValidationError(f"exercises[{index}].sets[{set_index}] has invalid required fields")
+
+
 def _fhir_input(document: dict[str, Any], mode: str, registry: MappingRegistry) -> ConversionResult:
     if document.get("resourceType") != "Bundle" or document.get("type") not in {"collection", "transaction"}:
         raise ConversionError("FHIR input must be a collection or transaction Bundle")
@@ -163,7 +180,12 @@ def _fhir_input(document: dict[str, Any], mode: str, registry: MappingRegistry) 
     if losses and mode == "strict":
         raise ConversionError("strict import refused information loss", result=result)
     try:
-        Workout.from_dict(output).validate()
+        try:
+            Workout.from_dict(output).validate()
+        except ValidationError as exc:
+            if "requires the jsonschema package" not in str(exc):
+                raise
+            _validate_actual(output)
     except (ValidationError, KeyError) as exc:
         raise ConversionError(f"generated DB++ ACTUAL is invalid: {exc}", result=result) from exc
     return result
@@ -172,7 +194,12 @@ def _fhir_input(document: dict[str, Any], mode: str, registry: MappingRegistry) 
 def _fhir_output(workout: Any, mode: str, registry: MappingRegistry) -> ConversionResult:
     document = workout.document if isinstance(workout, Workout) else workout
     try:
-        Workout.from_dict(document).validate()
+        try:
+            Workout.from_dict(document).validate()
+        except ValidationError as exc:
+            if "requires the jsonschema package" not in str(exc):
+                raise
+            _validate_actual(document)
     except Exception as exc:
         raise ConversionError(f"invalid DB++ ACTUAL: {exc}") from exc
     losses: list[dict[str, str]] = []
