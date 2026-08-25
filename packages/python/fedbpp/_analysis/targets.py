@@ -3,7 +3,6 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 import json
-from jsonschema import Draft202012Validator
 from .coverage import analyze_plan
 
 ROOT = Path(__file__).resolve().parents[1] / "schemas"
@@ -16,6 +15,7 @@ def _range(target: Any) -> tuple[float | None, float | None, float | None]:
 
 
 def validate_target(target: dict[str, Any], schema_path: str | Path | None = None, *, db: Any | None = None) -> list[str]:
+    from jsonschema import Draft202012Validator
     schema_file = Path(schema_path) if schema_path else ROOT / "volume-target.schema.json"
     schema = json.loads(schema_file.read_text(encoding="utf-8"))
     errors = [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(target)]
