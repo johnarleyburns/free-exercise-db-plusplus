@@ -51,11 +51,14 @@ effective_sets <- function(workout, database) {
     exercise <- database$exercises[[id]]
     annotation <- exercise$annotation %||% list()
     if (!isTRUE(annotation$volumeEligible)) next
-    completed <- vapply(observation$sets %||% list(), function(set) isTRUE(set$completed), logical(1))
+    counted_types <- c("working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted")
+    completed <- vapply(observation$sets %||% list(), function(set) isTRUE(set$completed) && (set$setType %||% "working") %in% counted_types, logical(1))
     n <- sum(completed)
+    credits <- database$metadata$setCredits %||% list(direct = 1, indirect = 0.5, stabilizer = 0)
     confidence <- annotation$confidence %||% NA_character_
-    for (muscle in unlist(annotation$direct %||% list(), use.names = FALSE)) rows[[length(rows) + 1L]] <- data.frame(muscle = muscle, effective_sets = n, credit = 1, exercise_id = id, confidence = confidence, stringsAsFactors = FALSE)
-    for (muscle in unlist(annotation$indirect %||% list(), use.names = FALSE)) rows[[length(rows) + 1L]] <- data.frame(muscle = muscle, effective_sets = n * 0.5, credit = 0.5, exercise_id = id, confidence = confidence, stringsAsFactors = FALSE)
+    for (muscle in unlist(annotation$direct %||% list(), use.names = FALSE)) rows[[length(rows) + 1L]] <- data.frame(muscle = muscle, effective_sets = n * credits$direct, credit = credits$direct, exercise_id = id, confidence = confidence, stringsAsFactors = FALSE)
+    for (muscle in unlist(annotation$indirect %||% list(), use.names = FALSE)) rows[[length(rows) + 1L]] <- data.frame(muscle = muscle, effective_sets = n * credits$indirect, credit = credits$indirect, exercise_id = id, confidence = confidence, stringsAsFactors = FALSE)
+    for (muscle in unlist(annotation$stabilizers %||% list(), use.names = FALSE)) rows[[length(rows) + 1L]] <- data.frame(muscle = muscle, effective_sets = n * credits$stabilizer, credit = credits$stabilizer, exercise_id = id, confidence = confidence, stringsAsFactors = FALSE)
   }
   if (!length(rows)) return(data.frame(muscle = character(), effective_sets = numeric(), credit = numeric(), exercise_id = character(), confidence = character(), stringsAsFactors = FALSE))
   do.call(rbind, rows)

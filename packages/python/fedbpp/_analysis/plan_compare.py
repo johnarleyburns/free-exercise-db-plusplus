@@ -19,6 +19,15 @@ def _metric_rows(a: dict[str, float], b: dict[str, float]) -> dict[str, dict[str
         for key in sorted(set(a) | set(b))
     }
 
+def _range_metric_rows(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
+    result={}
+    for metric in ("directSetRanges","indirectSetRanges","stabilizerParticipationSetRanges","effectiveSetRanges","movementPatternSetRanges"):
+        result[metric]={}
+        for key in sorted(set(a.get(metric,{}))|set(b.get(metric,{}))):
+            ar=a.get(metric,{}).get(key,{"min":0,"target":0,"max":0}); br=b.get(metric,{}).get(key,{"min":0,"target":0,"max":0})
+            result[metric][key]={bound:{"planA":ar.get(bound,0),"planB":br.get(bound,0),"delta":round(br.get(bound,0)-ar.get(bound,0),6)} for bound in ("min","target","max")}
+    return result
+
 def _frequency(plan: dict[str, Any]) -> dict[str, Any]:
     sessions = plan.get("sessions", [])
     exercise_counts: dict[str, int] = {}
@@ -35,7 +44,9 @@ def compare_plans(plan_a: dict[str, Any], plan_b: dict[str, Any], db: Any) -> di
     native_a, native_b = analysis_a["nativeCycle"], analysis_b["nativeCycle"]
     normalized_a, normalized_b = analysis_a["normalized7Day"], analysis_b["normalized7Day"]
     native = {metric: _metric_rows(native_a[metric], native_b[metric]) for metric in ("directSets", "indirectSets", "stabilizerParticipationSets", "effectiveSets", "movementPatternSets")}
+    native["ranges"] = _range_metric_rows(native_a, native_b)
     normalized = {metric: _metric_rows(normalized_a[metric], normalized_b[metric]) for metric in ("directSets", "indirectSets", "stabilizerParticipationSets", "effectiveSets", "movementPatternSets")}
+    normalized["ranges"] = _range_metric_rows(normalized_a, normalized_b)
     freq_a, freq_b = _frequency(plan_a), _frequency(plan_b)
     exercise_frequency = _metric_rows(freq_a["exercises"], freq_b["exercises"])
     return {
@@ -46,7 +57,7 @@ def compare_plans(plan_a: dict[str, Any], plan_b: dict[str, Any], db: Any) -> di
         },
         "analysisMetadata": {
             "dbSchemaVersion": analysis_a["analysisMetadata"].get("dbSchemaVersion"),
-            "setCreditPolicy": "dbpp-default", "directCredit": 1.0, "indirectCredit": 0.5, "stabilizerCredit": 0.0,
+            "analysisPolicy": analysis_a.get("analysisPolicy"), "setCredits": analysis_a["analysisMetadata"].get("setCredits"), "planSchemaVersions": {"planA": plan_a.get("schemaVersion"), "planB": plan_b.get("schemaVersion")},
             "normalizedPeriodDays": 7, "nativePeriodDays": {"planA": native_a["periodDays"], "planB": native_b["periodDays"]},
         },
         "nativeCycle": native,

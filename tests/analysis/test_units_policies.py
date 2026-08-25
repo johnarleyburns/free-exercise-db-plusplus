@@ -14,11 +14,11 @@ def test_units_are_explicit_and_conservative():
 
 def test_counting_policies_are_reusable():
     assert planned_set_count({"sets": {"min": 3, "target": 4, "max": 5}}) == 4
-    assert planned_set_count({"plannedSets": [{}, {}]}) == 2
+    assert planned_set_count({"plannedSets": [{"setType": "working"}, {"setType": "working"}]}) == 2
     workout = {"exercises": [{"sets": [
         {"completed": True, "setType": "working"},
         {"completed": False, "setType": "working"},
         {"completed": True, "setType": "warmup"},
     ]}]}
-    assert completed_set_count(workout) == 2
+    assert completed_set_count(workout) == 1
     assert completed_set_count(workout, include_types={"working"}) == 1

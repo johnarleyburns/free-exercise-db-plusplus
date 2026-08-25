@@ -15,7 +15,8 @@ validation = ["jsonschema>=4.20"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["fedbpp*"]
-exclude = ["tests*", "build*"]
+exclude = ["tests*", "build*", "fedbpp.__pycache__*", "fedbpp.*.__pycache__*"]
+namespaces = false
 
 [tool.setuptools.package-data]
 fedbpp = ["schemas/*.json"]

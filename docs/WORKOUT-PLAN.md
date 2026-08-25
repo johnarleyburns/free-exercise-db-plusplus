@@ -47,3 +47,7 @@ duplicate session, prescription, phase, and planned-set IDs; phase references; a
 Once ACTUAL observations reference a plan revision, do not mutate that revision in
 place. Create a new `revisionId` so historical adherence analysis can recover the
 exact prescription that was in force.
+
+## Version and prescription-style rules
+
+PLAN 0.1 documents cannot use 0.2-only phases, phase links, planned sets, progression, or optional/conditional fields. PLAN 0.2 supports them. Each exercise uses exactly one prescription style: aggregate `sets` plus `reps` (with optional aggregate load/effort), or explicit `plannedSets`; mixing the styles is invalid.

@@ -39,6 +39,11 @@ def semantic_errors(plan: dict[str, Any]) -> list[str]:
     prescription_ids: set[str] = set()
     set_prescription_ids: set[str] = set()
     phase_ids = {phase.get("phaseId") for phase in plan.get("phases", [])}
+    if plan.get("schemaVersion") == "0.1.0":
+        forbidden_root = ("phases", "progression")
+        for field in forbidden_root:
+            if field in plan:
+                errors.append(f"{field}: requires PLAN schemaVersion 0.2.0")
     if len(phase_ids) != len(plan.get("phases", [])):
         errors.append("phases.phaseId: duplicate ID")
     for si, session in enumerate(sessions):
@@ -50,6 +55,12 @@ def semantic_errors(plan: dict[str, Any]) -> list[str]:
         session_ids.add(sid)
         for ei, exercise in enumerate(session.get("exercises", [])):
             prefix = f"sessions[{si}].exercises[{ei}]"
+            if plan.get("schemaVersion") == "0.1.0":
+                for field in ("plannedSets", "progression", "optional", "condition"):
+                    if field in exercise:
+                        errors.append(f"{prefix}.{field}: requires PLAN schemaVersion 0.2.0")
+            if "plannedSets" in exercise and any(field in exercise for field in ("sets", "reps", "load", "effort")):
+                errors.append(f"{prefix}: aggregate sets/reps/load/effort and plannedSets are mutually exclusive")
             pid = exercise.get("prescriptionId")
             if pid in prescription_ids:
                 errors.append(f"{prefix}.prescriptionId: duplicate ID {pid!r}")

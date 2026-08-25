@@ -30,8 +30,8 @@ def test_explicit_matching_statuses_and_missing_prescription():
 def test_adherence_calculates_sets_reps_muscles_and_patterns():
  result=analyze_plan_actual(PLAN,WORKOUT,DB); rows=result["matching"]["exercises"]
  assert rows[0]["actualCompletedSets"]==2 and rows[0]["repsAdherentSets"]==1
- assert result["adherence"]["muscles"]["chest"]=={"planned":3.0,"actual":2.0,"delta":-1.0,"fraction":round(2/3,6)}
- assert result["adherence"]["muscles"]["back"]=={"planned":2.0,"actual":1.0,"delta":-1.0,"fraction":0.5}
+ assert result["adherence"]["muscles"]["chest"]["effective"]=={"planned":3.0,"actual":2.0,"delta":-1.0,"fraction":round(2/3,6)}
+ assert result["adherence"]["muscles"]["back"]["effective"]=={"planned":2.0,"actual":1.0,"delta":-1.0,"fraction":0.5}
  assert result["adherence"]["movementPatterns"]["horizontal_push"]["actual"]==2.0
 
 def test_missing_plan_reference_is_unable_without_fuzzy_matching():

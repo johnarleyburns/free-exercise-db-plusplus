@@ -1,134 +1,63 @@
-"""Deterministic PLAN coverage analysis using DB++ set-credit semantics."""
+"""Deterministic, range-aware PLAN coverage analysis."""
 from __future__ import annotations
-
 from collections import defaultdict
 from typing import Any
+from .policies import ANALYSIS_POLICY, ANALYSIS_VERSION, RANGE_POLICY, UNIT_POLICY, add_ranges, normalize_range, planned_set_range, scale_range, set_credits
 
-from .policies import planned_set_count
+def _exercise(db, exercise_id): return db.get_exercise(exercise_id) if hasattr(db, "get_exercise") else db["exercises"][exercise_id]
+def _annotation(exercise): return exercise.annotation if hasattr(exercise, "annotation") else exercise.get("annotation", {})
+def _metadata(db): return db.metadata if hasattr(db, "metadata") else db.get("metadata", {})
+def _clean_range(value): return {k: round(v, 6) for k,v in normalize_range(value).items()}
+def _clean_ranges(values): return {k:_clean_range(v) for k,v in sorted(values.items()) if any(normalize_range(v).values())}
+def _targets(values): return {k:round(normalize_range(v)["target"],6) for k,v in sorted(values.items()) if normalize_range(v)["target"] != 0}
+def _add(table, key, value): table[key] = add_ranges(table.get(key, 0), value)
 
+def _provenance(plan, db, days):
+    md=_metadata(db); upstream=md.get("upstream", {})
+    return {"analysisVersion":ANALYSIS_VERSION,"analysisPolicy":ANALYSIS_POLICY,"dbSchemaVersion":md.get("schemaVersion"),"dbConverterVersion":md.get("converterVersion"),"dbUpstreamSha256":upstream.get("sha256"),"planSchemaVersion":plan.get("schemaVersion"),"setCredits":set_credits(db),"nativePeriodDays":days,"normalizedPeriodDays":7,"rangePolicy":RANGE_POLICY,"unitPolicy":UNIT_POLICY}
 
-def _number(value: Any) -> float:
-    if isinstance(value, (int, float)):
-        return float(value)
-    if isinstance(value, dict):
-        for key in ("target", "min", "max"):
-            if key in value:
-                return float(value[key])
-    raise ValueError(f"cannot determine numeric prescription value from {value!r}")
-
-
-
-def _exercise(db: Any, exercise_id: str) -> Any:
-    if hasattr(db, "get_exercise"):
-        return db.get_exercise(exercise_id)
-    record = db["exercises"][exercise_id]
-    return record
-
-
-def _annotation(exercise: Any) -> dict[str, Any]:
-    if hasattr(exercise, "annotation"):
-        return exercise.annotation
-    return exercise.get("annotation", {})
-
-
-def _db_schema_version(db: Any) -> str | None:
-    metadata = db.metadata if hasattr(db, "metadata") else db.get("metadata", {})
-    return metadata.get("schemaVersion")
-
-
-def analyze_plan(plan: dict[str, Any], db: Any) -> dict[str, Any]:
-    """Expand planned set counts into native and explicit 7-day coverage views.
-
-    Ranged set counts use target, then min, then max. Reps do not multiply set
-    coverage. Unknown/custom exercises are retained as unmapped and contribute no
-    inferred muscle or movement-pattern coverage.
-    """
-    cycle_days = int(plan["cycle"]["lengthDays"])
-    direct = defaultdict(float)
-    indirect = defaultdict(float)
-    stabilizers = defaultdict(float)
-    patterns = defaultdict(float)
-    planned_sets = mapped_sets = unmapped_sets = ineligible_sets = 0.0
-    unmapped_prescriptions: list[str] = []
-    ineligible_prescriptions: list[str] = []
+def _single(plan, db, cycle_days):
+    roles=[defaultdict(lambda:normalize_range(0)) for _ in range(4)]; direct,indirect,stabilizers,patterns=roles
+    planned=mapped=unmapped=ineligible=normalize_range(0); unmapped_ids=[]; ineligible_ids=[]
+    muscle_sessions=defaultdict(set); pattern_sessions=defaultdict(set)
     for session in plan.get("sessions", []):
-        for prescription in session.get("exercises", []):
-            sets = planned_set_count(prescription)
-            planned_sets += sets
-            exercise_id = prescription.get("exerciseId")
-            if not exercise_id:
-                unmapped_sets += sets
-                unmapped_prescriptions.append(prescription["prescriptionId"])
-                continue
-            try:
-                exercise = _exercise(db, exercise_id)
-            except (KeyError, TypeError):
-                unmapped_sets += sets
-                unmapped_prescriptions.append(prescription["prescriptionId"])
-                continue
-            mapped_sets += sets
-            ann = _annotation(exercise)
-            if not bool(ann.get("volumeEligible", False)):
-                ineligible_sets += sets
-                ineligible_prescriptions.append(prescription["prescriptionId"])
-            for muscle in ann.get("direct", []):
-                direct[muscle] += sets
-            for muscle in ann.get("indirect", []):
-                indirect[muscle] += sets
-            for muscle in ann.get("stabilizers", []):
-                stabilizers[muscle] += sets
-            for pattern in ann.get("patterns", []):
-                patterns[pattern] += sets
-    effective = defaultdict(float)
-    for muscle in set(direct) | set(indirect) | set(stabilizers):
-        effective[muscle] = direct[muscle] + indirect[muscle] * 0.5 + stabilizers[muscle] * 0.0
-    def clean(values: dict[str, float]) -> dict[str, float]:
-        return {key: round(values[key], 6) for key in sorted(values) if values[key] != 0}
-    def view(scale: float = 1.0) -> dict[str, Any]:
-        return {
-            "directSets": clean({key: value * scale for key, value in direct.items()}),
-            "indirectSets": clean({key: value * scale for key, value in indirect.items()}),
-            "stabilizerParticipationSets": clean({key: value * scale for key, value in stabilizers.items()}),
-            "effectiveSets": clean({key: value * scale for key, value in effective.items()}),
-            "movementPatternSets": clean({key: value * scale for key, value in patterns.items()}),
-        }
-    scale = 7.0 / cycle_days
-    result = {
-        "analysisVersion": "0.2.0" if plan.get("phases") or plan.get("schemaVersion") == "0.2.0" else "0.1.0",
-        "plan": {"planId": plan.get("planId"), "revisionId": plan.get("revisionId")},
-        "analysisMetadata": {
-            "dbSchemaVersion": _db_schema_version(db),
-            "planSchemaVersion": plan.get("schemaVersion"),
-            "setCreditPolicy": "dbpp-default",
-            "directCredit": 1.0, "indirectCredit": 0.5, "stabilizerCredit": 0.0,
-            "nativePeriodDays": cycle_days, "normalizedPeriodDays": 7,
-            "setCountPolicy": "target-then-min-then-max",
-        },
-        "coverageCompleteness": {
-            "plannedSets": round(planned_sets, 6), "mappedSets": round(mapped_sets, 6),
-            "unmappedSets": round(unmapped_sets, 6), "ineligibleSets": round(ineligible_sets, 6),
-            "mappedFraction": round(mapped_sets / planned_sets, 6) if planned_sets else 1.0,
-            "unmappedPrescriptions": sorted(unmapped_prescriptions),
-            "ineligiblePrescriptions": sorted(ineligible_prescriptions),
-        },
-        "nativeCycle": {"periodDays": cycle_days, **view()},
-        "normalized7Day": {"periodDays": 7, **view(scale)},
-    }
-    phases = plan.get("phases", [])
+      sid=session.get("planSessionId")
+      for rx in session.get("exercises", []):
+        sets=planned_set_range(rx); planned=add_ranges(planned,sets); eid=rx.get("exerciseId")
+        try: ex=_exercise(db,eid) if eid else None
+        except (KeyError,TypeError): ex=None
+        if ex is None: unmapped=add_ranges(unmapped,sets); unmapped_ids.append(rx.get("prescriptionId")); continue
+        mapped=add_ranges(mapped,sets); ann=_annotation(ex)
+        if not ann.get("volumeEligible",False): ineligible=add_ranges(ineligible,sets); ineligible_ids.append(rx.get("prescriptionId")); continue
+        for muscle in ann.get("direct",[]): _add(direct,muscle,sets); muscle_sessions[muscle].add(sid)
+        for muscle in ann.get("indirect",[]): _add(indirect,muscle,sets); muscle_sessions[muscle].add(sid)
+        for muscle in ann.get("stabilizers",[]): _add(stabilizers,muscle,sets)
+        for pattern in ann.get("patterns",[]): _add(patterns,pattern,sets); pattern_sessions[pattern].add(sid)
+    credits=set_credits(db); effective={}
+    for m in set(direct)|set(indirect)|set(stabilizers):
+      effective[m]=add_ranges(add_ranges(scale_range(direct[m],credits["direct"]),scale_range(indirect[m],credits["indirect"])),scale_range(stabilizers[m],credits["stabilizer"]))
+    def view(scale=1):
+      tables=(direct,indirect,stabilizers,effective,patterns); names=("directSetRanges","indirectSetRanges","stabilizerParticipationSetRanges","effectiveSetRanges","movementPatternSetRanges")
+      out={name:_clean_ranges({k:scale_range(v,scale) for k,v in table.items()}) for name,table in zip(names,tables)}
+      out.update({"directSets":_targets(out["directSetRanges"]),"indirectSets":_targets(out["indirectSetRanges"]),"stabilizerParticipationSets":_targets(out["stabilizerParticipationSetRanges"]),"effectiveSets":_targets(out["effectiveSetRanges"]),"movementPatternSets":_targets(out["movementPatternSetRanges"])})
+      return out
+    scale=7/cycle_days
+    completeness={"plannedSets":round(planned["target"],6),"plannedSetRange":_clean_range(planned),"mappedSets":round(mapped["target"],6),"mappedSetRange":_clean_range(mapped),"unmappedSets":round(unmapped["target"],6),"unmappedSetRange":_clean_range(unmapped),"ineligibleSets":round(ineligible["target"],6),"ineligibleSetRange":_clean_range(ineligible),"mappedFraction":round(mapped["target"]/planned["target"],6) if planned["target"] else 1.0,"unmappedPrescriptions":sorted(x for x in unmapped_ids if x),"ineligiblePrescriptions":sorted(x for x in ineligible_ids if x)}
+    frequency={"muscles":{m:{"exposuresPerNativeCycle":len(s),"normalizedExposuresPer7Days":round(len(s)*scale,6)} for m,s in sorted(muscle_sessions.items())},"movementPatterns":{p:{"exposuresPerNativeCycle":len(s),"normalizedExposuresPer7Days":round(len(s)*scale,6)} for p,s in sorted(pattern_sessions.items())}}
+    return completeness,{"periodDays":cycle_days,**view()},{"periodDays":7,**view(scale)},frequency
+
+def analyze_plan(plan: dict[str,Any], db: Any)->dict[str,Any]:
+    root_days=int(plan["cycle"]["lengthDays"]); completeness,native,normalized,frequency=_single(plan,db,root_days)
+    result={"analysisVersion":ANALYSIS_VERSION,"analysisPolicy":ANALYSIS_POLICY,"plan":{"planId":plan.get("planId"),"revisionId":plan.get("revisionId")},"analysisMetadata":_provenance(plan,db,root_days),"coverageCompleteness":completeness,"nativeCycle":native,"normalized7Day":normalized,"exposureFrequency":frequency}
+    phases=plan.get("phases",[])
     if phases:
-        phase_results = []
-        for phase in phases:
-            phase_sessions = [session for session in plan.get("sessions", []) if session.get("phaseId") == phase.get("phaseId")]
-            phase_plan = {**plan, "phases": [], "sessions": phase_sessions}
-            phase_result = analyze_plan(phase_plan, db)
-            phase_results.append({"phaseId": phase["phaseId"], "durationCycles": phase["durationCycles"], "nativeCycle": phase_result["nativeCycle"], "normalized7Day": phase_result["normalized7Day"]})
-        effective_by_phase = {item["phaseId"]: item["nativeCycle"]["effectiveSets"] for item in phase_results}
-        muscles = sorted({muscle for values in effective_by_phase.values() for muscle in values})
-        result["periodization"] = {
-            "phases": phase_results,
-            "effectiveSetsByPhase": effective_by_phase,
-            "effectiveSetsMinByMuscle": {muscle: round(min(values.get(muscle, 0.0) for values in effective_by_phase.values()), 6) for muscle in muscles},
-            "effectiveSetsMaxByMuscle": {muscle: round(max(values.get(muscle, 0.0) for values in effective_by_phase.values()), 6) for muscle in muscles},
-            "effectiveSetsAverageByMuscle": {muscle: round(sum(values.get(muscle, 0.0) for values in effective_by_phase.values()) / len(effective_by_phase), 6) for muscle in muscles},
-        }
+      phase_results=[]
+      for phase in phases:
+        days=int((phase.get("cycle") or {}).get("lengthDays",root_days)); sessions=[s for s in plan.get("sessions",[]) if s.get("phaseId")==phase.get("phaseId")]
+        sub={**plan,"phases":[],"sessions":sessions,"cycle":{"lengthDays":days}}; a=analyze_plan(sub,db)
+        phase_results.append({"phaseId":phase["phaseId"],"durationCycles":phase["durationCycles"],"nativeCycle":a["nativeCycle"],"normalized7Day":a["normalized7Day"],"coverageCompleteness":a["coverageCompleteness"]})
+      muscles=sorted({m for p in phase_results for m in p["normalized7Day"]["effectiveSetRanges"]}); weights=sum(p["durationCycles"] for p in phase_results)
+      def agg(m,key):
+        vals=[normalize_range(p["normalized7Day"]["effectiveSetRanges"].get(m,0))[key] for p in phase_results]; return round(sum(v*p["durationCycles"] for v,p in zip(vals,phase_results))/weights,6)
+      result["periodization"]={"phases":phase_results,"effectiveSetsByPhase":{p["phaseId"]:p["nativeCycle"]["effectiveSets"] for p in phase_results},"effectiveSetRangesByPhase":{p["phaseId"]:p["nativeCycle"]["effectiveSetRanges"] for p in phase_results},"normalizedEffectiveSetRangesDurationWeightedAverage":{m:{k:agg(m,k) for k in ("min","target","max")} for m in muscles},"effectiveSetsMinByMuscle":{m:min(p["nativeCycle"]["effectiveSets"].get(m,0) for p in phase_results) for m in muscles},"effectiveSetsMaxByMuscle":{m:max(p["nativeCycle"]["effectiveSets"].get(m,0) for p in phase_results) for m in muscles},"effectiveSetsAverageByMuscle":{m:agg(m,"target") for m in muscles}}
     return result

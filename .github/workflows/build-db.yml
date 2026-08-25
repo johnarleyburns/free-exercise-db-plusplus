@@ -157,7 +157,7 @@ jobs:
         run: |
           PYTHONPATH=. python - <<'PY'
           import importlib.util
-          for path in ("tests/target/test_schema.py", "tests/analysis/test_coverage.py", "tests/analysis/test_plan_compare.py", "tests/analysis/test_export.py", "tests/analysis/test_plan_actual.py"):
+          for path in ("tests/target/test_schema.py", "tests/analysis/test_coverage.py", "tests/analysis/test_plan_compare.py", "tests/analysis/test_export.py", "tests/analysis/test_plan_actual.py", "tests/analysis/test_semantic_hardening.py", "tests/analysis/test_units_policies.py"):
               spec = importlib.util.spec_from_file_location(path.replace("/", "_"), path)
               module = importlib.util.module_from_spec(spec)
               spec.loader.exec_module(module)

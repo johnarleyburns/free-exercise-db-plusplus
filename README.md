@@ -214,3 +214,8 @@ before publishing release assets and SHA-256 checksums.
 ## License
 
 Released under the [Unlicense](LICENSE).
+
+
+### Analysis semantic contract
+
+PLAN/ACTUAL/TARGET analysis uses the named `dbpp-default-volume-v1` counting policy and authoritative `metadata.setCredits`. It preserves prescription ranges, excludes `volumeEligible=false` exercises from resistance-volume totals while reporting them in completeness diagnostics, separates unplanned ACTUAL work, and records reproducibility provenance. See [PLAN analysis](docs/PLAN-ANALYSIS.md) and [PLAN-vs-ACTUAL adherence](docs/PLAN-ACTUAL.md).

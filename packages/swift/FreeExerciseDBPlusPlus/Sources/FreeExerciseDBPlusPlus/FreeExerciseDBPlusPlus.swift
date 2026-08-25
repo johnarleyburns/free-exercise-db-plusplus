@@ -54,6 +54,11 @@ public struct FEDatabase: Sendable {
     }
     public init(metadata: [String: JSONValue] = [:], exercises: [String: Exercise]) { self.metadata = metadata; self.exercises = exercises }
     public var count: Int { exercises.count }
+    public var setCredits: (direct: Double, indirect: Double, stabilizer: Double) {
+        guard case .object(let values)? = metadata["setCredits"] else { return (1, 0.5, 0) }
+        func number(_ key: String, _ fallback: Double) -> Double { if case .number(let value)? = values[key] { return value }; return fallback }
+        return (number("direct", 1), number("indirect", 0.5), number("stabilizer", 0))
+    }
     public func getExercise(_ id: String) throws -> Exercise { guard let e = exercises[id] else { throw FEDBError.exerciseNotFound(id) }; return e }
     public func findExercises(containing query: String) -> [Exercise] { let q = query.lowercased(); return exercises.values.filter { $0.exerciseId.lowercased().contains(q) }.sorted { $0.exerciseId < $1.exerciseId } }
     public func exercisesForMuscle(_ muscle: String) -> [Exercise] { exercises.values.filter { $0.annotation.direct.contains(muscle) || $0.annotation.indirect.contains(muscle) }.sorted { $0.exerciseId < $1.exerciseId } }
@@ -66,7 +71,7 @@ public struct Workout: Codable, Sendable, Equatable {
     public let schemaVersion: String; public let sessionId: String; public let startTime: String; public let endTime: String?; public let exercises: [ExerciseObservation]
     public init(schemaVersion: String, sessionId: String, startTime: String, endTime: String? = nil, exercises: [ExerciseObservation]) { self.schemaVersion = schemaVersion; self.sessionId = sessionId; self.startTime = startTime; self.endTime = endTime; self.exercises = exercises }
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> Workout { do { return try decoder.decode(Workout.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode workout: \(error)") } }
-    public func effectiveSets(using database: FEDatabase) -> [String: Double] { var totals: [String: Double] = [:]; for observation in exercises { guard let id = observation.exerciseId, let exercise = try? database.getExercise(id), exercise.annotation.volumeEligible else { continue }; let sets = Double(observation.sets.filter(\.completed).count); for muscle in exercise.annotation.direct { totals[muscle, default: 0] += sets }; for muscle in exercise.annotation.indirect { totals[muscle, default: 0] += sets * 0.5 } }; return totals }
+    public func effectiveSets(using database: FEDatabase) -> [String: Double] { var totals: [String: Double] = [:]; for observation in exercises { guard let id = observation.exerciseId, let exercise = try? database.getExercise(id), exercise.annotation.volumeEligible else { continue }; let credits = database.setCredits; let counted = Set(["working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted"]); let sets = Double(observation.sets.filter { $0.completed && counted.contains($0.setType) }.count); for muscle in exercise.annotation.direct { totals[muscle, default: 0] += sets * credits.direct }; for muscle in exercise.annotation.indirect { totals[muscle, default: 0] += sets * credits.indirect }; for muscle in exercise.annotation.stabilizers { totals[muscle, default: 0] += sets * credits.stabilizer } }; return totals }
 }
 
 public struct PlanCycle: Codable, Sendable, Equatable { public let lengthDays: Int }

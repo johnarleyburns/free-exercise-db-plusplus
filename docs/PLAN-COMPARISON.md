@@ -20,5 +20,8 @@ write_tidy_csv(comparison, "plan-comparison.csv")
 
 The CSV is deterministic tidy output with `kind`, `period`, `metric`, `key`, `planA`,
 `planB`, and `delta` columns. JSON keys and CSV rows are sorted for reproducible
-research and review workflows. PLAN-vs-ACTUAL matching is intentionally deferred to a
-later roadmap sprint.
+research and review workflows. PLAN-vs-ACTUAL matching is documented separately in `PLAN-ACTUAL.md`.
+
+## Ranges and provenance
+
+Comparisons preserve min/target/max deltas in `nativeCycle.ranges` and `normalized7Day.ranges`; existing scalar comparisons are target convenience views. Metadata identifies both PLAN schema versions and the authoritative DB set credits. Periodized coverage honors phase-specific cycles and duration weighting before comparison.

@@ -36,3 +36,7 @@ reported separately as `ineligibleSets`.
 The reference implementation uses DB++ credits exactly: direct `1.0`, indirect `0.5`,
 and stabilizer `0.0`. These are analytical accounting conventions, not physiological
 equivalence claims.
+
+## Comparison states
+
+The deterministic states are `below_minimum`, `within_range_below_target`, `at_target`, `within_range_above_target`, `above_maximum`, and `not_targeted`. Profiles without a target midpoint use `within_range`; no midpoint is invented. Results include the PLAN effective-set range, the target bounds, target delta, and period. `validate_target(target, db=db)` optionally rejects muscle IDs absent from the DB++ ontology while schema-only validation remains available.

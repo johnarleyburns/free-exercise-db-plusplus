@@ -33,8 +33,8 @@ the explicitly labelled seven-day normalized view. Custom or unknown exercises
 remain visible but do not receive inferred muscle roles.
 
 Every analysis result identifies its DB/schema versions and set-credit policy.
-The default DB++ credits are direct `1.0`, indirect `0.5`, and stabilizer
-`0.0`. Ranged prescriptions use the target value, then minimum, then maximum
+Credits are read from the analyzed database’s `metadata.setCredits`; the shipped
+database currently declares direct `1.0`, indirect `0.5`, and stabilizer `0.0`. Ranged prescriptions use the target value, then minimum, then maximum
 as the documented count policy.
 
 ## Units and counting
@@ -45,6 +45,14 @@ kilograms, metres, or seconds. `src.analysis.policies` contains reusable
 planned-set and completed-set counting policies so callers can choose and
 record policy explicitly.
 
-RPE/RIR, tonnage, and estimated-1RM calculations remain separate future
-analysis models; raw observations are preserved and are not silently weighted
-into the DB++ effective-set model.
+RPE/RIR and compatible volume-load adherence are reported separately; they never weight the DB++ effective-set model. Estimated-1RM remains out of scope.
+
+## Hardened volume semantics
+
+All results name `dbpp-default-volume-v1` and read direct, indirect, and stabilizer credits from the analyzed database's `metadata.setCredits`. Completed warmup, technique, test, isometric, and other sets are excluded; working, backoff, AMRAP, drop, cluster, rest-pause, and assisted parent sets count once. Macro-segments and unilateral labels never multiply a parent observation.
+
+`volumeEligible=false` prescriptions remain mapped and appear in completeness diagnostics, but contribute no resistance-volume muscle, stabilizer, effective-set, or movement-pattern totals. Coverage preserves `min`/`target`/`max` ranges under the `*SetRanges` keys; scalar keys remain target convenience views. Muscle and movement-pattern exposure frequency is reported separately.
+
+Phase-specific cycle lengths are normalized independently. Cross-phase normalized averages are weighted by `durationCycles`. Provenance records analysis/policy versions, database provenance, document schema versions, credits, periods, range policy, and unit policy.
+
+Load, RPE, RIR, and volume-load adherence remain separate from effective sets. Only known compatible mass units are compared; RPE and RIR are never inferred from each other.

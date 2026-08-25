@@ -27,3 +27,9 @@ result = analyze_plan_actual(plan, actual, database)
 
 PLAN-vs-ACTUAL matching does not modify either source document and does not implement
 fuzzy matching by default.
+
+## Coverage and set semantics
+
+ACTUAL resistance-volume coverage is separated into `matched`, `substitution`, `unplanned`, and `total` views. Known unplanned work contributes to total work but never satisfies an unrelated prescription; unknown/custom work remains visible in ACTUAL completeness diagnostics. Muscle adherence reports direct, indirect, stabilizer participation, and effective metrics independently.
+
+For explicit PLAN 0.2 sets, `setPrescriptionId` wins. An invalid explicit ID is never positionally rematched, each planned set can be consumed only once, and positional fallback is used only for an unreferenced unambiguous correspondence. Set rows retain incomplete, extra, missing, substituted, and unable-to-match observations. Ranged prescriptions report minimum/target/maximum adherence rather than one percentage.

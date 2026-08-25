@@ -55,14 +55,15 @@ public extension WorkoutPlan {
             planned += count
             guard let id = prescription.exerciseId, let exercise = try? database.getExercise(id) else { unmapped += count; continue }
             mapped += count
-            if !exercise.annotation.volumeEligible { ineligible += count }
+            if !exercise.annotation.volumeEligible { ineligible += count; continue }
             for muscle in exercise.annotation.direct { direct[muscle, default: 0] += count }
             for muscle in exercise.annotation.indirect { indirect[muscle, default: 0] += count }
             for muscle in exercise.annotation.stabilizers { stabilizers[muscle, default: 0] += count }
             for pattern in exercise.annotation.patterns { patterns[pattern, default: 0] += count }
         }}
         let muscles = Set(direct.keys).union(indirect.keys).union(stabilizers.keys)
-        let effective = muscles.reduce(into: [String: Double]()) { $0[$1] = (direct[$1] ?? 0) + (indirect[$1] ?? 0) * 0.5 }
+        let credits = database.setCredits
+        let effective = muscles.reduce(into: [String: Double]()) { $0[$1] = (direct[$1] ?? 0) * credits.direct + (indirect[$1] ?? 0) * credits.indirect + (stabilizers[$1] ?? 0) * credits.stabilizer }
         return (PlanCoverageView(periodDays: periodDays, directSets: direct, indirectSets: indirect, stabilizerParticipationSets: stabilizers, effectiveSets: effective, movementPatternSets: patterns), PlanCoverageCompleteness(plannedSets: planned, mappedSets: mapped, unmappedSets: unmapped, ineligibleSets: ineligible))
     }
 }

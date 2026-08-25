@@ -3,6 +3,9 @@ package com.fedbpp
 import java.io.File
 import java.io.InputStream
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.doubleOrNull
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
@@ -46,9 +49,13 @@ fun Workout.effectiveSets(database: Database): Map<String, Double> {
     exercises.forEach { observation ->
         val exercise = observation.exerciseId?.let { runCatching { database.getExercise(it) }.getOrNull() } ?: return@forEach
         if (!exercise.annotation.volumeEligible) return@forEach
-        val sets = observation.sets.count { it.completed }.toDouble()
-        exercise.annotation.direct.forEach { totals[it] = (totals[it] ?: 0.0) + sets }
-        exercise.annotation.indirect.forEach { totals[it] = (totals[it] ?: 0.0) + sets * 0.5 }
+        val countedTypes = setOf("working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted")
+        val sets = observation.sets.count { it.completed && it.setType in countedTypes }.toDouble()
+        val credits = database.metadata["setCredits"]?.jsonObject
+        fun credit(role: String, fallback: Double) = credits?.get(role)?.jsonPrimitive?.doubleOrNull ?: fallback
+        exercise.annotation.direct.forEach { totals[it] = (totals[it] ?: 0.0) + sets * credit("direct", 1.0) }
+        exercise.annotation.indirect.forEach { totals[it] = (totals[it] ?: 0.0) + sets * credit("indirect", 0.5) }
+        exercise.annotation.stabilizers.forEach { totals[it] = (totals[it] ?: 0.0) + sets * credit("stabilizer", 0.0) }
     }
     return totals.toSortedMap()
 }

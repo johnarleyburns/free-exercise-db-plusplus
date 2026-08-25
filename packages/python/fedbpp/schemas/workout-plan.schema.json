@@ -532,17 +532,46 @@
           ]
         },
         {
-          "anyOf": [
+          "oneOf": [
             {
               "required": [
                 "sets",
                 "reps"
-              ]
+              ],
+              "not": {
+                "required": [
+                  "plannedSets"
+                ]
+              }
             },
             {
               "required": [
                 "plannedSets"
-              ]
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sets"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "reps"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "load"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "effort"
+                    ]
+                  }
+                ]
+              }
             }
           ]
         }
@@ -686,5 +715,73 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": {
+            "const": "0.1.0"
+          }
+        },
+        "required": [
+          "schemaVersion"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "phases"
+          ]
+        },
+        "properties": {
+          "sessions": {
+            "items": {
+              "allOf": [
+                {
+                  "not": {
+                    "required": [
+                      "phaseId"
+                    ]
+                  }
+                },
+                {
+                  "properties": {
+                    "exercises": {
+                      "items": {
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "plannedSets"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "progression"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "optional"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "condition"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
 }

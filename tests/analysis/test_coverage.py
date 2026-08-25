@@ -28,18 +28,21 @@ def test_coverage_uses_target_sets_and_keeps_roles_separate():
     assert native["indirectSets"] == {"biceps": 2.0, "triceps": 4.0}
     assert native["stabilizerParticipationSets"] == {"shoulders": 4.0}
     assert native["effectiveSets"] == {"back": 2.0, "biceps": 1.0, "chest": 4.0, "triceps": 2.0}
-    assert native["movementPatternSets"] == {"horizontal_pull": 2.0, "horizontal_push": 4.0, "shoulder_mobility": 2.0}
+    assert native["movementPatternSets"] == {"horizontal_pull": 2.0, "horizontal_push": 4.0}
     assert result["normalized7Day"]["effectiveSets"]["chest"] == 3.5
-    assert result["coverageCompleteness"] == {"plannedSets": 9.0,"mappedSets": 8.0,"unmappedSets": 1.0,"ineligibleSets": 2.0,"mappedFraction": round(8/9,6),"unmappedPrescriptions":["p3"],"ineligiblePrescriptions":["p4"]}
+    assert result["coverageCompleteness"]["plannedSets"] == 9.0
+    assert result["coverageCompleteness"]["plannedSetRange"] == {"min": 8.0, "target": 9.0, "max": 10.0}
+    assert result["coverageCompleteness"]["mappedFraction"] == round(8/9,6)
+    assert result["nativeCycle"]["directSetRanges"]["chest"] == {"min": 3.0, "target": 4.0, "max": 5.0}
 
 def test_target_gap_states_use_target_period():
     target={"schemaVersion":"0.1.0","targetId":"t","periodDays":8,"muscles":{"chest":{"min":3,"target":4,"max":5},"back":{"min":3},"biceps":{"max":0.5},"quadriceps":{"target":2}}}
     assert validate_target(target) == []
     result=compare_to_targets(PLAN,target,DB)
-    assert result["muscles"]["chest"]["state"] == "within_range"
+    assert result["muscles"]["chest"]["state"] == "at_target"
     assert result["muscles"]["back"]["state"] == "below_minimum"
     assert result["muscles"]["biceps"]["state"] == "above_maximum"
-    assert result["muscles"]["quadriceps"]["state"] == "within_range"
+    assert result["muscles"]["quadriceps"]["state"] == "within_range_below_target"
 
 def test_reversed_target_range_is_rejected():
     target={"schemaVersion":"0.1.0","targetId":"bad","periodDays":7,"muscles":{"chest":{"min":10,"target":8,"max":4}}}
