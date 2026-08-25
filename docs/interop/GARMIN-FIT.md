@@ -14,6 +14,11 @@ Authoritative reference: [https://developer.garmin.com/fit/overview/](https://de
 
 The official FIT SDK publishes strength exercise-name enums (for example, bench-press and squat exercise names). v1.2 uses the reviewed exact subset in [`mappings/garmin-fit-exercises.json`](../../mappings/garmin-fit-exercises.json) as its first production exercise identity crosswalk. The artifact is published under the Garmin FIT Protocol License; this release does not claim mappings for enum values not reviewed against DB++.
 
+The v1.5 family audit preserves all sixteen reviewed exact mappings. No identifier
+in that subset was verified as a broader family concept, so family mappings
+remain zero rather than inventing a Garmin identifier. See
+[`reports/interop/garmin-fit-families.json`](../../reports/interop/garmin-fit-families.json).
+
 | DB++ concept | Assessment |
 |---|---|
 | identity/name/custom exercise | lossy or extension_required |

@@ -24,6 +24,13 @@ class Database private constructor(private val document: DatabaseDocument) {
     }
 }
 
+fun loadRelationships(file: File): ExerciseRelationships = file.inputStream().use { input ->
+    try { fedbppJson.decodeFromString(ExerciseRelationships.serializer(), input.reader().readText()) }
+    catch (e: Exception) { throw ValidationException("Unable to decode relationships: ${e.message}") }
+}
+fun ExerciseRelationships.familyFor(exerciseId: String): ExerciseFamily? = relationships.firstOrNull { it.sourceExerciseId == exerciseId && it.relationship == "member_of_family" }?.let { families[it.familyId] }
+fun ExerciseRelationships.members(familyId: String): List<String> = relationships.filter { it.familyId == familyId && it.relationship == "member_of_family" }.map { it.sourceExerciseId }.sorted()
+
 fun Workout.validate() {
     if (schemaVersion != "0.2.0") throw ValidationException("unsupported workout schema: $schemaVersion")
     if (sessionId.isBlank()) throw ValidationException("sessionId must not be blank")

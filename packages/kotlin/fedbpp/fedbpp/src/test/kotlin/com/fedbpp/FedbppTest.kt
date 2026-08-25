@@ -20,4 +20,10 @@ class FedbppTest {
         assertEquals("Bench_Dips", workout.toHealthConnect().segments.single().dbppExerciseId)
     }
     @Test fun invalidWorkoutRejected() { assertFailsWith<ValidationException> { Workout("0.1.0", "", "", exercises = emptyList()).validate() } }
+    @Test fun relationshipArtifactLookup() {
+        val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "exercise-relationships.json").exists() }
+        val relationships = loadRelationships(File(root, "exercise-relationships.json"))
+        assertEquals("bench_press", relationships.familyFor("Dumbbell_Bench_Press")?.familyId)
+        assert("Barbell_Bench_Press_-_Medium_Grip" in relationships.members("bench_press"))
+    }
 }

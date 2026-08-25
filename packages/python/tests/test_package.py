@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
-from fedbpp import Database, Workout, ValidationError
+from fedbpp import Database, RelationshipRegistry, Workout, ValidationError
 ROOT=Path(__file__).parents[3]
 def test_database_lookup_and_search():
     db=Database.load(ROOT/"free-exercise-db-plusplus.json")
@@ -21,3 +21,7 @@ def test_invalid_workout_rejected():
     try: Workout.load(ROOT/"fixtures/workout/wrong-version.json")
     except ValidationError: pass
     else: raise AssertionError("invalid fixture must fail")
+def test_packaged_relationship_artifact():
+    registry=RelationshipRegistry.load()
+    assert registry.family_for("Dumbbell_Bench_Press").family_id=="bench_press"
+    assert "Barbell_Bench_Press_-_Medium_Grip" in registry.members("bench_press")

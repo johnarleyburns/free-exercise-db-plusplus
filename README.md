@@ -15,6 +15,12 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **Database JSON Schema:**  
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/free-exercise-db-plusplus.schema.json
 
+**Exercise relationships:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/exercise-relationships.json
+
+**Exercise relationship schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/exercise-relationships.schema.json
+
 **Workout interchange schema:**  
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout.schema.json
 
@@ -209,6 +215,21 @@ period="calendar_week", timezone="America/New_York")` produces deterministic
 subject-period-muscle rows without requiring pandas.
 
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
+
+## Exercise families and relationships (v1.5)
+
+The optional `exercise-relationships.json` artifact groups stable exercise IDs
+into curated families and records descriptive variation dimensions:
+
+```text
+Barbell_Bench_Press_-_Medium_Grip → bench_press → Dumbbell_Bench_Press
+```
+
+Family membership is taxonomic/descriptive. It does not mean physiological
+equivalence, valid substitution, or automatic replacement of a planned
+exercise. Existing explicit PLAN/ACTUAL substitution semantics remain
+authoritative. Load it with `fedbpp.RelationshipRegistry`; the artifact has
+its own independent schema version and is not required by existing analysis.
 
 ## Interoperability (v1.3)
 

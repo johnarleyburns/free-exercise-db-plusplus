@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.5.0 - 2026-08-25
+
+- Added the optional, independently versioned exercise-family and relationship
+  artifact with curated deterministic assignments, variation dimensions,
+  provenance, validation, and coverage reports.
+- Added `RelationshipRegistry`, family-level PLAN comparison helpers,
+  descriptive PLAN/ACTUAL relationship context, exercise coverage comparison,
+  and `fedbpp family`, `family-members`, `related`, and `compare-exercises`
+  commands.
+- Family membership remains taxonomic/descriptive; no equivalence or automatic
+  substitution semantics were added.
+
 ## 1.4.1 - 2026-08-25
 
 - Fixed longitudinal repeated-occurrence matching, revision-boundary clipping,

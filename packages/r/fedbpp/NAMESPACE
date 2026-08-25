@@ -1,2 +1,3 @@
 export(load_database, load_workout, validate_workout, migrate_workout,
-       effective_sets, longitudinal_volume, workout_observations)
+       effective_sets, longitudinal_volume, workout_observations,
+       load_relationships, family_for, family_members)

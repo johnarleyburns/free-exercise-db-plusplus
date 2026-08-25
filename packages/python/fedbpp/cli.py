@@ -13,6 +13,7 @@ from . import (Database, Plan, VolumeTarget, Workout, TrainingHistory,
                export_exercise_csv)
 from .conversion import ConversionError, export_workout, import_workout
 from .interop import MappingRegistry
+from .relationships import RelationshipRegistry
 
 
 def _load_json(path: str) -> dict[str, Any]:
@@ -51,9 +52,10 @@ def _validate(kind: str, path: str) -> None:
 
 def _analysis(args: argparse.Namespace) -> Any:
     db = Database.load(args.db)
-    if args.command == "analyze-plan": return analyze_plan(Plan.load(args.plan), db)
-    if args.command == "compare-plans": return compare_plans(Plan.load(args.plan_a), Plan.load(args.plan_b), db)
-    if args.command == "compare-actual": return compare_plan_actual(Plan.load(args.plan), Workout.load(args.workout), db)
+    relationships = RelationshipRegistry.load(args.relationships, db=db) if getattr(args,"relationships",None) else None
+    if args.command == "analyze-plan": return analyze_plan(Plan.load(args.plan), db, relationships)
+    if args.command == "compare-plans": return compare_plans(Plan.load(args.plan_a), Plan.load(args.plan_b), db, relationships)
+    if args.command == "compare-actual": return compare_plan_actual(Plan.load(args.plan), Workout.load(args.workout), db, relationships)
     return compare_to_targets(Plan.load(args.plan), VolumeTarget.load(args.target), db)
 
 
@@ -69,9 +71,9 @@ def main(argv: list[str] | None = None) -> int:
     validate = sub.add_parser("validate"); vs = validate.add_subparsers(dest="kind", required=True)
     for kind in ("db", "workout", "plan", "target"):
         p = vs.add_parser(kind); p.add_argument("file")
-    p = sub.add_parser("analyze-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
-    p = sub.add_parser("compare-plans"); p.add_argument("plan_a"); p.add_argument("plan_b"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
-    p = sub.add_parser("compare-actual"); p.add_argument("plan"); p.add_argument("workout"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("analyze-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("compare-plans"); p.add_argument("plan_a"); p.add_argument("plan_b"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("compare-actual"); p.add_argument("plan"); p.add_argument("workout"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("research-export"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output", required=True); p.add_argument("--table", choices=("muscle", "session", "exercise"), default="muscle")
@@ -80,6 +82,10 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("mapping"); ms = p.add_subparsers(dest="mapping_kind", required=True)
     p = ms.add_parser("external"); p.add_argument("system"); p.add_argument("external_id")
     p = ms.add_parser("dbpp"); p.add_argument("exercise_id"); p.add_argument("--system")
+    p = sub.add_parser("family"); p.add_argument("exercise_id"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("family-members"); p.add_argument("family_id"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("related"); p.add_argument("exercise_id"); p.add_argument("--relationships"); p.add_argument("--same-family", action="store_true"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("compare-exercises"); p.add_argument("exercise_a"); p.add_argument("exercise_b"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     try:
         if args.command == "validate": _validate(args.kind, args.file); return 0
@@ -113,6 +119,15 @@ def main(argv: list[str] | None = None) -> int:
             registry = MappingRegistry.load()
             result = registry.lookup_external(args.system, args.external_id) if args.mapping_kind == "external" else registry.lookup_dbpp(args.exercise_id, args.system)
             _dump([m.__dict__ | {"is_ambiguous": m.is_ambiguous} for m in result]); return 0
+        if args.command in {"family", "family-members", "related", "compare-exercises"}:
+            registry = RelationshipRegistry.load(args.relationships)
+            if args.command == "family":
+                family = registry.family_for(args.exercise_id); result = None if family is None else family.__dict__
+            elif args.command == "family-members": result = registry.exercises_in_family(args.family_id)
+            elif args.command == "related": result = [r.__dict__ for r in registry.related_exercises(args.exercise_id, same_family=True)]
+            else:
+                registry.db = Database.load(args.db); result = registry.compare_exercise_coverage(args.exercise_a, args.exercise_b)
+            _dump(result); return 0
         mode = "allow-lossy" if args.allow_lossy else "strict"
         if args.command == "import": result = import_workout(args.format, args.input, mode=mode)
         else: result = export_workout(args.format, _load_json(args.input), mode=mode)

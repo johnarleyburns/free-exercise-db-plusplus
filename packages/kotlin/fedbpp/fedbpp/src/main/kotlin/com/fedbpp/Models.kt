@@ -9,6 +9,9 @@ import kotlinx.serialization.Serializable
 )
 @Serializable data class Exercise(val exerciseId: String, val annotation: ExerciseAnnotation = ExerciseAnnotation())
 @Serializable internal data class DatabaseDocument(val metadata: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap(), val exercises: Map<String, Exercise> = emptyMap())
+@Serializable data class ExerciseFamily(val familyId: String, val name: String, val aliases: List<String> = emptyList())
+@Serializable data class ExerciseRelationship(val sourceExerciseId: String, val targetExerciseId: String? = null, val familyId: String, val relationship: String, val dimensions: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap(), val confidence: String)
+@Serializable data class ExerciseRelationships(val schemaVersion: String, val families: Map<String, ExerciseFamily>, val relationships: List<ExerciseRelationship>)
 
 @Serializable data class Quantity(val value: Double, val unit: String)
 @Serializable data class SetObservation(

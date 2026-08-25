@@ -2,6 +2,11 @@
 
 Standalone helpers for DB++, Workout ACTUAL, Workout PLAN 0.1/0.2, Volume TARGET, and derived analysis. Install from this directory with `pip install .` or use `pip install -e .` during development. Built wheels include their schemas and reference analysis implementation; they never import repository-level `src.*`. JSON Schema validation uses the optional `jsonschema` dependency.
 
+The v1.5 wheel embeds `exercise-relationships.json`. Load it outside a
+repository checkout with `RelationshipRegistry.load()`. Family lookup,
+members, related candidates, structural comparison, and DB++ coverage
+differences are descriptive and never substitution advice.
+
 ```python
 from fedbpp import (Database, Workout, Plan, VolumeTarget, analyze_plan,
                     compare_plans, compare_to_targets, compare_plan_actual)

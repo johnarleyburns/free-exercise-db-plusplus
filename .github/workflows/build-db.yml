@@ -14,7 +14,12 @@ on:
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
+      - "exercise-relationships.schema.json"
+      - "family-interop-mapping.schema.json"
+      - "exercise-relationships.json"
+      - "mappings/*-families.json"
       - "mappings/**"
+      - "fixtures/interop/**"
       - "src/interop/**"
       - "reports/interop/**"
       - "README.md"
@@ -35,7 +40,12 @@ on:
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
+      - "exercise-relationships.schema.json"
+      - "family-interop-mapping.schema.json"
+      - "exercise-relationships.json"
+      - "mappings/*-families.json"
       - "mappings/**"
+      - "fixtures/interop/**"
       - "src/interop/**"
       - "reports/interop/**"
       - "README.md"
@@ -122,6 +132,38 @@ jobs:
 
       - name: Verify medium-confidence policy
         run: python tests/test_medium_policy.py free-exercise-db-plusplus.json
+
+      - name: Validate and report exercise relationships
+        run: |
+          PYTHONPATH=. python -m src.relationships.build free-exercise-db-plusplus.json exercise-relationships.json
+          PYTHONPATH=. python -m src.relationships.report free-exercise-db-plusplus.json exercise-relationships.json reports/relationships/summary.json
+          python - <<'PY'
+          import json
+          from jsonschema import Draft202012Validator, FormatChecker
+          from src.relationships.validate import validate_relationship_document
+          db=json.load(open('free-exercise-db-plusplus.json')); rel=json.load(open('exercise-relationships.json'))
+          assert not validate_relationship_document(rel, db)
+          schema=json.load(open('exercise-relationships.schema.json'))
+          assert not list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(rel))
+          print('relationship artifact valid:', len(rel['families']), 'families')
+          PY
+          cmp exercise-relationships.json packages/python/fedbpp/data/exercise-relationships.json
+
+      - name: Run relationship schema, golden, API, PLAN, ACTUAL, and interop tests
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, inspect
+          from pathlib import Path
+          total=0
+          for index,path in enumerate(sorted(Path('tests/relationships').glob('test_*.py'))):
+              spec=importlib.util.spec_from_file_location(f'relationships_{index}',path)
+              module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+              for name in sorted(dir(module)):
+                  function=getattr(module,name)
+                  if name.startswith('test_') and callable(function) and not inspect.signature(function).parameters:
+                      function(); total+=1
+          print(f'v1.5 relationship contracts valid: {total} tests')
+          PY
 
       - name: Validate workout schema and fixture contract
         run: |
@@ -329,7 +371,7 @@ jobs:
           python3 -m pip wheel --no-deps packages/python --wheel-dir "${RUNNER_TEMP}/fedbpp-dist"
           python3 -m pip install --no-deps --target "${RUNNER_TEMP}/fedbpp-site" "${RUNNER_TEMP}"/fedbpp-dist/fedbpp-*.whl
           cd "${RUNNER_TEMP}"
-          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual, TrainingHistory, analyze_periods, export_muscle_period_csv' "${RUNNER_TEMP}/fedbpp-site"
+          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, RelationshipRegistry, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual, TrainingHistory, analyze_periods, export_muscle_period_csv; r=RelationshipRegistry.load(); assert r.family_for("Dumbbell_Bench_Press").family_id=="bench_press"' "${RUNNER_TEMP}/fedbpp-site"
 
       - name: Test isolated wheel longitudinal API and CLI
         run: |

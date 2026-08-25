@@ -1,0 +1,572 @@
+{
+  "candidates": [
+    {
+      "exerciseId": "Alternating_Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Kettlebell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Renegade_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Anti-Gravity_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Arnold_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Around_The_Worlds",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Axle_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Full_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Hack_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Rear_Delt_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Barbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_One-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Dumbbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Dumbbell_Row_With_Palms_In",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Mid_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bradford_Rocky_Presses",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Butterfly",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Deadlifts",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Iron_Cross",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Rope_Rear-Delt_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Car_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Chair_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Clean_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cross_Over_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deadlift_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deadlift_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Decline_Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deficit_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Incline_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_One-Arm_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Elevated_Cable_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Flat_Bench_Cable_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Frankenstein_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Freehand_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Barbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Squat_Clean_Grip",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Squats_With_Two_Kettlebells",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Goblet_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Hack_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Cable_Flye",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Dumbbell_Flyes_-_With_A_Twist",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Inverted_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Inverted_Row_with_Straps",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Jefferson_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Arnold_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_One-Legged_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Pistol_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Seated_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Seesaw_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_High_Pulley_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Single-Arm_High_Pulley_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_High_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Iso_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Low_Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Low_Pulley_Row_To_Neck",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_Cambered_Barbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_Machine_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_T-Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Machine_Shoulder_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Olympic_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Dumbbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Flat_Bench_Dumbbell_Flye",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Military_Press_To_The_Side",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Para_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Overhead_Kettlebell_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Side_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One_Leg_Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Overhead_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Plie_Dumbbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Power_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Sumo_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Grip_Bent-Over_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Rickshaw_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Barbell_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Cable_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_One-arm_Cable_Pulley_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "See-Saw_Press_Alternating_Side_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Shotgun_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Shoulder_Press_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Single-Arm_Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Single-Leg_High_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sled_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Bent_Over_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Overhead_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Pistol_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Snatch_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Speed_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Speed_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Plate_Movers",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squats_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Alternating_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Barbell_Press_Behind_Neck",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Bradford_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Palm-In_One-Arm_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Palms-In_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Straight_Bar_Bench_Mid_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Suspended_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "T-Bar_Row_with_Handle",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Trap_Bar_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Two-Arm_Kettlebell_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Two-Arm_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Sissy_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Wide_Stance_Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Zercher_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    }
+  ],
+  "emptyFamilies": [],
+  "singleMemberFamilies": [
+    "hip_thrust"
+  ]
+}

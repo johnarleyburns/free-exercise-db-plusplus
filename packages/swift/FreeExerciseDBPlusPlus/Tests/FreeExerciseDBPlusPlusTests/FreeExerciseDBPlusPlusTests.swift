@@ -16,6 +16,12 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
         XCTAssertEqual(workout.effectiveSets(using: db)["chest"], 1)
         XCTAssertEqual(workout.effectiveSets(using: db)["triceps"], 0.5)
     }
+    func testRelationshipArtifactLookup() throws {
+        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        let relationships = try ExerciseRelationships.load(url: root.appendingPathComponent("exercise-relationships.json"))
+        XCTAssertEqual(relationships.family(for: "Dumbbell_Bench_Press")?.familyId, "bench_press")
+        XCTAssertTrue(relationships.members(of: "bench_press").contains("Barbell_Bench_Press_-_Medium_Grip"))
+    }
     func testPlanConsumerDecodesPeriodizedPlan() throws {
         let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
         let plan = try WorkoutPlan.load(url: root.appendingPathComponent("examples/plans/periodized-0.2.json"))

@@ -42,3 +42,28 @@ class MappingRegistry:
     def is_ambiguous(self,system,external_id):
         matches=self.lookup_external(system,external_id)
         return len(matches) > 1 or any(match.is_ambiguous for match in matches)
+
+@dataclass(frozen=True)
+class FamilyMappingMatch:
+    system: str
+    external_id: str
+    family_id: str
+    external_name: str
+    relation: str
+    direction: str
+    confidence: str
+    provenance: dict
+
+class FamilyMappingRegistry:
+    """Explicit broad external-to-family mappings; never exact exercise identity."""
+    def __init__(self, records): self._records=tuple(sorted(records,key=lambda x:(x.system,x.external_id,x.family_id)))
+    @classmethod
+    def load(cls,path=None):
+        p=Path(path) if path is not None else Path(files("fedbpp").joinpath("interop_data"))
+        fs=[p] if p.is_file() else sorted(p.glob("*-families.json")); out=[]
+        for f in fs:
+            d=json.loads(f.read_text(encoding="utf-8"))
+            if d.get("mappingKind") != "family": continue
+            for e in d.get("entries",[]): out.append(FamilyMappingMatch(d["target"],e["externalId"],e["familyId"],e["externalName"],e["relation"],e["direction"],e["confidence"],{**e["provenance"],"mappingVersion":d.get("mappingVersion")}))
+        return cls(out)
+    def lookup_external(self,system,external_id): return [x for x in self._records if x.system==system and x.external_id==external_id]

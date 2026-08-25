@@ -1,0 +1,10 @@
+{
+  "target": "garmin-fit",
+  "reviewedMapping": "mappings/garmin-fit-exercises.json",
+  "exactExerciseMappings": 16,
+  "familyLevelMappings": 0,
+  "approximateMappings": 0,
+  "unmappedEntries": 0,
+  "decision": "No reviewed Garmin FIT identifier in the published subset is broader than its exact DB++ exercise target. Existing exact mappings remain exact; no unverified family identifier is invented.",
+  "provenance": "https://developer.garmin.com/fit/overview/"
+}

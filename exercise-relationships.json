@@ -1,0 +1,4893 @@
+{
+  "families": {
+    "bench_press": {
+      "aliases": [
+        "bench press"
+      ],
+      "familyId": "bench_press",
+      "name": "Bench Press"
+    },
+    "biceps_curl": {
+      "aliases": [
+        "barbell curl"
+      ],
+      "familyId": "biceps_curl",
+      "name": "Biceps Curl"
+    },
+    "calf_raise": {
+      "aliases": [],
+      "familyId": "calf_raise",
+      "name": "Calf Raise"
+    },
+    "chest_fly": {
+      "aliases": [
+        "flye",
+        "flyes"
+      ],
+      "familyId": "chest_fly",
+      "name": "Chest Fly"
+    },
+    "chin_up": {
+      "aliases": [
+        "chinup",
+        "chin up"
+      ],
+      "familyId": "chin_up",
+      "name": "Chin-Up"
+    },
+    "deadlift": {
+      "aliases": [],
+      "familyId": "deadlift",
+      "name": "Deadlift"
+    },
+    "glute_bridge": {
+      "aliases": [],
+      "familyId": "glute_bridge",
+      "name": "Glute Bridge"
+    },
+    "hip_thrust": {
+      "aliases": [],
+      "familyId": "hip_thrust",
+      "name": "Hip Thrust"
+    },
+    "leg_extension": {
+      "aliases": [],
+      "familyId": "leg_extension",
+      "name": "Leg Extension"
+    },
+    "leg_press": {
+      "aliases": [],
+      "familyId": "leg_press",
+      "name": "Leg Press"
+    },
+    "pull_up": {
+      "aliases": [
+        "pullup",
+        "pull up"
+      ],
+      "familyId": "pull_up",
+      "name": "Pull-Up"
+    },
+    "romanian_deadlift": {
+      "aliases": [
+        "RDL"
+      ],
+      "familyId": "romanian_deadlift",
+      "name": "Romanian Deadlift"
+    },
+    "row": {
+      "aliases": [],
+      "familyId": "row",
+      "name": "Row"
+    },
+    "shoulder_press": {
+      "aliases": [
+        "overhead press",
+        "military press"
+      ],
+      "familyId": "shoulder_press",
+      "name": "Shoulder Press"
+    },
+    "squat": {
+      "aliases": [],
+      "familyId": "squat",
+      "name": "Squat"
+    },
+    "triceps_extension": {
+      "aliases": [
+        "skull crusher",
+        "pushdown"
+      ],
+      "familyId": "triceps_extension",
+      "name": "Triceps Extension"
+    }
+  },
+  "metadata": {
+    "artifact": "exercise-relationships",
+    "dimensionVocabulary": [
+      "equipment",
+      "grip",
+      "stance",
+      "angle",
+      "laterality",
+      "body_position",
+      "load_position",
+      "assistance",
+      "resistance_type"
+    ],
+    "generator": "src/relationships/build.py",
+    "projectRelease": "1.5.0",
+    "relationshipVocabulary": [
+      "member_of_family",
+      "variation_of",
+      "equipment_variant_of",
+      "grip_variant_of",
+      "stance_variant_of",
+      "angle_variant_of",
+      "laterality_variant_of"
+    ],
+    "semanticNotice": "Taxonomic/descriptive relationships do not imply physiological equivalence or substitution advice.",
+    "sourceDatabaseSchemaVersion": "0.3.0",
+    "sourceExerciseCount": 873,
+    "sourceSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4"
+  },
+  "relationships": [
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Bench_Press_-_Medium_Grip"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Guillotine_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Incline_Bench_Press_-_Medium_Grip"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bench_Press_-_Powerlifting"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bench_Press_-_With_Bands"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "chains"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bench_Press_with_Chains"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Close-Grip_Barbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_Barbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_Dumbbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "grip": "neutral"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Bench_Press_with_Neutral_Grip"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell",
+        "grip": "neutral"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Hammer_Grip_Incline_DB_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Arm_Dumbbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "assistance": "reverse_band",
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Band_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Triceps_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine",
+        "grip": "close"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Close-Grip_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "machine"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Incline_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell",
+        "grip": "wide"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Wide-Grip_Barbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "barbell",
+        "grip": "wide"
+      },
+      "familyId": "bench_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Wide-Grip_Decline_Barbell_Bench_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternate_Hammer_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternate_Incline_Dumbbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "body_position": "lying",
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Curls_Lying_Against_An_Incline"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Hammer_Curls_-_Rope_Attachment"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Preacher_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "ez_bar",
+        "grip": "close",
+        "resistance_type": "bands"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Close-Grip_EZ-Bar_Curl_with_Band"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Close-Grip_EZ_Bar_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Close-Grip_Standing_Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Concentration_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cross_Body_Hammer_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Drag_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Alternate_Bicep_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Bicep_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Prone_Incline_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "ez_bar"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "EZ-Bar_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Flexor_Incline_Dumbbell_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Hammer_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "High_Cable_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Dumbbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Hammer_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Inner_Biceps_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Cable_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "cable",
+        "grip": "close"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Close-Grip_Bar_Curl_On_High_Pulley"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_High_Bench_Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Supine_Dumbbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Bicep_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Preacher_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Arm_Dumbbell_Preacher_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Overhead_Cable_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Preacher_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Preacher_Hammer_Dumbbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "ez_bar"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Barbell_Preacher_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Cable_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Plate_Curls"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Close-Grip_Concentration_Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Dumbbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Dumbbell_Inner_Biceps_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "ez_bar"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Spider_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Biceps_Cable_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Concentration_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Dumbbell_Reverse_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Inner-Biceps_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_One-Arm_Cable_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "bilateral"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Two-Arm_Dumbbell_Preacher_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell",
+        "grip": "wide"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Wide-Grip_Standing_Barbell_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Zottman_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "biceps_curl",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Zottman_Preacher_Curl"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "barbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Seated_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Calf_Raise_On_A_Dumbbell"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Calf_Raises_-_With_Bands"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Donkey_Calf_Raises"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Seated_One-Leg_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Rocking_Standing_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "machine"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Reverse_Calf_Raises"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Barbell_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "machine"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Calf_Raises"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Dumbbell_Calf_Raise"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Around_The_Worlds"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "ez_bar"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bodyweight_Flyes"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Butterfly"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Crossover"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Iron_Cross"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cross_Over_-_With_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_Dumbbell_Flyes"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Flyes"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "flat",
+        "equipment": "cable"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Flat_Bench_Cable_Flyes"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "cable"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Cable_Flye"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Dumbbell_Flyes"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Dumbbell_Flyes_-_With_A_Twist"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Low_Cable_Crossover"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "flat",
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Flat_Bench_Dumbbell_Flye"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "chest_fly",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single-Arm_Cable_Crossover"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Chin-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Gironda_Sternum_Chins"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other",
+        "grip": "mixed"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Mixed_Grip_Chin"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other",
+        "laterality": "unilateral"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Arm_Chin-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Side_To_Side_Chins"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Axle_Deadlift"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Deadlifts"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Car_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Clean_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Deadlift_with_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "chains"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Deadlift_with_Chains"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Deficit_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "unilateral"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kettlebell_One-Legged_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leverage_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Side_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "assistance": "reverse_band",
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Band_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "assistance": "reverse_band",
+        "equipment": "barbell",
+        "resistance_type": "bands",
+        "stance": "sumo"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Band_Sumo_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Rickshaw_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Snatch_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "stance": "sumo"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Sumo_Deadlift"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "bands",
+        "stance": "sumo"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Sumo_Deadlift_with_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "chains",
+        "stance": "sumo"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Sumo_Deadlift_with_Chains"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Trap_Bar_Deadlift"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "glute_bridge",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Glute_Bridge"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "glute_bridge",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single_Leg_Glute_Bridge"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "hip_thrust",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Hip_Thrust"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "leg_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leg_Extensions"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "leg_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single-Leg_Leg_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "leg_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leg_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine",
+        "stance": "narrow"
+      },
+      "familyId": "leg_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Narrow_Stance_Leg_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "leg_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Leg_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "assistance": "assisted",
+        "equipment": "other",
+        "resistance_type": "bands"
+      },
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Band_Assisted_Pull-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Pullups"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {},
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Scapular_Pull-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "V-Bar_Pullup"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Weighted_Pull_Ups"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight",
+        "grip": "wide"
+      },
+      "familyId": "pull_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Wide-Grip_Rear_Pull-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "romanian_deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Romanian_Deadlift"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "romanian_deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Romanian_Deadlift_from_Deficit"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Kettlebell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Renegade_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Rear_Delt_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bent_Over_Barbell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bent_Over_One-Arm_Long_Bar_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "laterality": "bilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bent_Over_Two-Arm_Long_Bar_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "bilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bent_Over_Two-Dumbbell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "grip": "neutral",
+        "laterality": "bilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bent_Over_Two-Dumbbell_Row_With_Palms_In"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bodyweight_Mid_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Rope_Rear-Delt_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Incline_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Elevated_Cable_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {},
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Inverted_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Inverted_Row_with_Straps"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_High_Pulley_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Single-Arm_High_Pulley_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leverage_High_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leverage_Iso_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Low_Pulley_Row_To_Neck"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "barbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Cambered_Barbell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_T-Bar_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Dumbbell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Kettlebell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Long_Bar_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "grip": "reverse"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Grip_Bent-Over_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Cable_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_One-arm_Cable_Pulley_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Shotgun_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Sled_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Bent_Over_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Straight_Bar_Bench_Mid_Rows"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Suspended_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "T-Bar_Row_with_Handle"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "bilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Two-Arm_Kettlebell_Row"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Cable_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Kettlebell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Anti-Gravity_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Arnold_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bradford_Rocky_Presses"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_One-Arm_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kettlebell_Arnold_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "kettlebell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kettlebell_Seated_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kettlebell_Seesaw_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Leverage_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Shoulder_Military_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "unilateral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Kettlebell_Military_Press_To_The_Side"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "unilateral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Kettlebell_Para_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Barbell_Military_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Cable_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "See-Saw_Press_Alternating_Side_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Shoulder_Press_-_With_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Overhead_Shoulder_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Alternating_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Barbell_Press_Behind_Neck"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Bradford_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Military_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Palm-In_One-Arm_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell",
+        "grip": "neutral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Palms-In_Dumbbell_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "bilateral"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Two-Arm_Kettlebell_Military_Press"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Full_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Hack_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Barbell_Squat_To_A_Bench"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Bodyweight_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Box_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Box_Squat_with_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "chains"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Box_Squat_with_Chains"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Chair_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Squat_To_A_Bench"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Frankenstein_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Freehand_Jump_Squat"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "barbell",
+        "load_position": "front"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Front_Barbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "load_position": "front"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Front_Barbell_Squat_To_A_Bench"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "load_position": "front"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Front_Squat_Clean_Grip"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "load_position": "front"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Front_Squats_With_Two_Kettlebells"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "load_position": "goblet"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Goblet_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Hack_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Jefferson_Squats"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kettlebell_Pistol_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Jump_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Machine_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Olympic_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "kettlebell",
+        "laterality": "unilateral",
+        "load_position": "overhead"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Overhead_Kettlebell_Squats"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Leg_Barbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "load_position": "overhead"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Overhead_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Plie_Dumbbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "assistance": "reverse_band",
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Band_Box_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "assistance": "reverse_band",
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Band_Power_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single-Leg_High_Box_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Pistol_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Smith_Machine_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Speed_Box_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Speed_Squats"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "bands"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squat_with_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "resistance_type": "chains"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squat_with_Chains"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squat_with_Plate_Movers"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squats_-_With_Bands"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Weighted_Jump_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Weighted_Sissy_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Weighted_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "stance": "wide"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Wide_Stance_Barbell_Squat"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
+        "equipment": "barbell",
+        "load_position": "zercher"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Zercher_Squats"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Band_Skull_Crusher"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Body_Tricep_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Incline_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Lying_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_One_Arm_Tricep_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Rope_Overhead_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_Close-Grip_Bench_To_Skull_Crusher"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "dumbbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "decline",
+        "equipment": "barbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Decline_EZ_Bar_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_One-Arm_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "grip": "pronated"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Dumbbell_Tricep_Extension_-Pronated_Grip"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "ez_bar"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "EZ-Bar_Skullcrusher"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "barbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Incline_Barbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Cable_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Low_Cable_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "barbell",
+        "grip": "close"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "ez_bar",
+        "grip": "close"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "dumbbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Dumbbell_Tricep_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "ez_bar"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Lying_Triceps_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Arm_Pronated_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One_Arm_Supinated_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable",
+        "grip": "reverse"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Reverse_Grip_Triceps_Pushdown"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell",
+        "laterality": "bilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "dumbbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Triceps_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Sled_Overhead_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Speed_Band_Overhead_Triceps"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell",
+        "laterality": "bilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Low-Pulley_One-Arm_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "dumbbell",
+        "laterality": "unilateral"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_One-Arm_Dumbbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "barbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Overhead_Barbell_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "bodyweight"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Towel_Triceps_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Tricep_Dumbbell_Kickback"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Triceps_Overhead_Extension_with_Rope"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Triceps_Pushdown"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Triceps_Pushdown_-_Rope_Attachment"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "triceps_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Triceps_Pushdown_-_V-Bar_Attachment"
+    }
+  ],
+  "schemaVersion": "0.1.0"
+}

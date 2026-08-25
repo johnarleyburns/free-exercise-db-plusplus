@@ -83,3 +83,12 @@ public struct WorkoutPlan: Codable, Sendable, Equatable {
     public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String; public var description: String? = nil; public var provenance: JSONValue? = nil; public let cycle: PlanCycle; public var notes: String? = nil; public var tags: [String]? = nil; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> WorkoutPlan { do { return try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode PLAN: \(error)") } }
 }
+
+public struct ExerciseFamily: Codable, Sendable, Equatable { public let familyId: String; public let name: String; public let aliases: [String] }
+public struct ExerciseRelationship: Codable, Sendable, Equatable { public let sourceExerciseId: String; public let targetExerciseId: String?; public let familyId: String; public let relationship: String; public let dimensions: [String: JSONValue]; public let confidence: String }
+public struct ExerciseRelationships: Codable, Sendable, Equatable {
+    public let schemaVersion: String; public let families: [String: ExerciseFamily]; public let relationships: [ExerciseRelationship]
+    public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> ExerciseRelationships { do { return try decoder.decode(ExerciseRelationships.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode relationships: \(error)") } }
+    public func family(for exerciseId: String) -> ExerciseFamily? { guard let row = relationships.first(where: { $0.sourceExerciseId == exerciseId && $0.relationship == "member_of_family" }) else { return nil }; return families[row.familyId] }
+    public func members(of familyId: String) -> [String] { relationships.filter { $0.familyId == familyId && $0.relationship == "member_of_family" }.map(\.sourceExerciseId).sorted() }
+}

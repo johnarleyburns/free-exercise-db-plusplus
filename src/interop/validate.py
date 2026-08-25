@@ -44,10 +44,24 @@ def validate_identity_semantics(document,ids,*,source="mapping"):
 def validate_loss(document,loss_schema,*,source="loss"):
     return [f"{source}: {e.message}" for e in _validator(loss_schema).iter_errors(document)]
 
+def validate_family_mapping(document,family_schema,relationship_document,*,source="family mapping"):
+    errors=[f"{source}: {e.message}" for e in _validator(family_schema).iter_errors(document)]
+    families=set(relationship_document.get("families",{})); seen=set()
+    for entry in document.get("entries",[]):
+        key=(entry.get("externalId"),entry.get("familyId"),entry.get("direction"))
+        if key in seen: errors.append(f"{source}: duplicate family mapping {key}")
+        seen.add(key)
+        if entry.get("familyId") not in families: errors.append(f"{source}: unknown familyId {entry.get('familyId')}")
+    return errors
+
 def validate_all(mapping_dir,db_path,schema_path,crosswalk_schema_path,loss_schema_path=None):
     ids=set(json.loads(Path(db_path).read_text())["exercises"]); errors=[]; warnings=[]
     for path in sorted(Path(mapping_dir).glob("*.json")):
         document=json.loads(path.read_text())
+        # Family mappings use their independent schema and are validated by
+        # the v1.5 relationship CI step; preserve v1.2 dispatch semantics.
+        if document.get("mappingKind") == "family":
+            continue
         errors.extend(validate_document(document,schema_path,crosswalk_schema_path,loss_schema_path or schema_path,source=str(path)))
         if document.get("mappingKind")=="identity":
             e,w=validate_identity_semantics(document,ids,source=str(path)); errors.extend(e); warnings.extend(w)

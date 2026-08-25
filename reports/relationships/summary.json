@@ -1,0 +1,2223 @@
+{
+  "ambiguousCandidates": [],
+  "assignedExercises": 286,
+  "coverageByCategory": {
+    "cardio": {
+      "assigned": 0,
+      "total": 14,
+      "unassigned": 14
+    },
+    "olympic weightlifting": {
+      "assigned": 7,
+      "total": 35,
+      "unassigned": 28
+    },
+    "plyometrics": {
+      "assigned": 0,
+      "total": 61,
+      "unassigned": 61
+    },
+    "powerlifting": {
+      "assigned": 21,
+      "total": 38,
+      "unassigned": 17
+    },
+    "strength": {
+      "assigned": 255,
+      "total": 581,
+      "unassigned": 326
+    },
+    "stretching": {
+      "assigned": 0,
+      "total": 123,
+      "unassigned": 123
+    },
+    "strongman": {
+      "assigned": 3,
+      "total": 21,
+      "unassigned": 18
+    }
+  },
+  "coverageByEquipment": {
+    "bands": {
+      "assigned": 7,
+      "total": 20,
+      "unassigned": 13
+    },
+    "barbell": {
+      "assigned": 89,
+      "total": 170,
+      "unassigned": 81
+    },
+    "body only": {
+      "assigned": 9,
+      "total": 111,
+      "unassigned": 102
+    },
+    "cable": {
+      "assigned": 39,
+      "total": 81,
+      "unassigned": 42
+    },
+    "dumbbell": {
+      "assigned": 67,
+      "total": 123,
+      "unassigned": 56
+    },
+    "e-z curl bar": {
+      "assigned": 8,
+      "total": 9,
+      "unassigned": 1
+    },
+    "exercise ball": {
+      "assigned": 0,
+      "total": 12,
+      "unassigned": 12
+    },
+    "foam roll": {
+      "assigned": 0,
+      "total": 11,
+      "unassigned": 11
+    },
+    "kettlebells": {
+      "assigned": 16,
+      "total": 53,
+      "unassigned": 37
+    },
+    "machine": {
+      "assigned": 30,
+      "total": 67,
+      "unassigned": 37
+    },
+    "medicine ball": {
+      "assigned": 0,
+      "total": 17,
+      "unassigned": 17
+    },
+    "other": {
+      "assigned": 19,
+      "total": 122,
+      "unassigned": 103
+    },
+    "unknown": {
+      "assigned": 2,
+      "total": 77,
+      "unassigned": 75
+    }
+  },
+  "coverageByGenre": {
+    "cardio": {
+      "assigned": 0,
+      "total": 14,
+      "unassigned": 14
+    },
+    "olympic weightlifting": {
+      "assigned": 7,
+      "total": 35,
+      "unassigned": 28
+    },
+    "plyometrics": {
+      "assigned": 0,
+      "total": 61,
+      "unassigned": 61
+    },
+    "powerlifting": {
+      "assigned": 21,
+      "total": 38,
+      "unassigned": 17
+    },
+    "strength": {
+      "assigned": 255,
+      "total": 581,
+      "unassigned": 326
+    },
+    "stretching": {
+      "assigned": 0,
+      "total": 123,
+      "unassigned": 123
+    },
+    "strongman": {
+      "assigned": 3,
+      "total": 21,
+      "unassigned": 18
+    }
+  },
+  "coverageByMovementPattern": {
+    "anti_extension": {
+      "assigned": 0,
+      "total": 7,
+      "unassigned": 7
+    },
+    "anti_rotation": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "atlas_stone_load": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "battle_ropes": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "bent_press": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "chest_fly": {
+      "assigned": 15,
+      "total": 15,
+      "unassigned": 0
+    },
+    "conventional_deadlift": {
+      "assigned": 15,
+      "total": 17,
+      "unassigned": 2
+    },
+    "decline_press": {
+      "assigned": 3,
+      "total": 7,
+      "unassigned": 4
+    },
+    "dip_chest_bias": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "dip_triceps_bias": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "drag_with_press": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "elbow_extension": {
+      "assigned": 40,
+      "total": 44,
+      "unassigned": 4
+    },
+    "elbow_flexion": {
+      "assigned": 43,
+      "total": 58,
+      "unassigned": 15
+    },
+    "elbow_flexion_brachioradialis_bias": {
+      "assigned": 6,
+      "total": 6,
+      "unassigned": 0
+    },
+    "face_pull": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "farmer_carry": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "forearm_pronation": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "forearm_supination": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "glute_ham_raise": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "grip": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "hip_abduction": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "hip_adduction": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "hip_extension": {
+      "assigned": 3,
+      "total": 11,
+      "unassigned": 8
+    },
+    "hip_flexion": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "hip_hinge": {
+      "assigned": 2,
+      "total": 11,
+      "unassigned": 9
+    },
+    "horizontal_press": {
+      "assigned": 15,
+      "total": 33,
+      "unassigned": 18
+    },
+    "horizontal_press_triceps_bias": {
+      "assigned": 0,
+      "total": 14,
+      "unassigned": 14
+    },
+    "horizontal_pull": {
+      "assigned": 35,
+      "total": 39,
+      "unassigned": 4
+    },
+    "incline_press": {
+      "assigned": 3,
+      "total": 15,
+      "unassigned": 12
+    },
+    "kettlebell_clean": {
+      "assigned": 0,
+      "total": 8,
+      "unassigned": 8
+    },
+    "kettlebell_figure8": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "kettlebell_jerk": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "kettlebell_pirate_ships": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "kettlebell_snatch": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "kettlebell_sumo_high_pull": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "kettlebell_swing": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "kettlebell_windmill": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "knee_extension": {
+      "assigned": 2,
+      "total": 2,
+      "unassigned": 0
+    },
+    "knee_flexion": {
+      "assigned": 0,
+      "total": 7,
+      "unassigned": 7
+    },
+    "lateral_flexion": {
+      "assigned": 0,
+      "total": 7,
+      "unassigned": 7
+    },
+    "leg_press": {
+      "assigned": 2,
+      "total": 3,
+      "unassigned": 1
+    },
+    "loaded_carry": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "loaded_object_load": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "lunge": {
+      "assigned": 0,
+      "total": 13,
+      "unassigned": 13
+    },
+    "medicine_ball_slam": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "muscle_up": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "neck_extension": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "neck_flexion": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "neck_lateral_flexion": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "olympic_clean": {
+      "assigned": 0,
+      "total": 10,
+      "unassigned": 10
+    },
+    "olympic_clean_and_jerk": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "olympic_clean_pull": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "olympic_jerk": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "olympic_snatch": {
+      "assigned": 0,
+      "total": 8,
+      "unassigned": 8
+    },
+    "olympic_snatch_pull": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "plantar_flexion_bent_knee": {
+      "assigned": 2,
+      "total": 2,
+      "unassigned": 0
+    },
+    "plantar_flexion_straight_knee": {
+      "assigned": 10,
+      "total": 11,
+      "unassigned": 1
+    },
+    "power_stairs": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "pullover": {
+      "assigned": 0,
+      "total": 5,
+      "unassigned": 5
+    },
+    "push_press": {
+      "assigned": 0,
+      "total": 6,
+      "unassigned": 6
+    },
+    "rack_pull": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "reverse_fly": {
+      "assigned": 0,
+      "total": 10,
+      "unassigned": 10
+    },
+    "rope_climb": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "shoulder_abduction": {
+      "assigned": 0,
+      "total": 15,
+      "unassigned": 15
+    },
+    "shoulder_external_rotation": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "shoulder_flexion": {
+      "assigned": 0,
+      "total": 12,
+      "unassigned": 12
+    },
+    "shoulder_internal_rotation": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "shrug": {
+      "assigned": 0,
+      "total": 10,
+      "unassigned": 10
+    },
+    "sled_pull": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "sled_push": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "snatch_balance": {
+      "assigned": 0,
+      "total": 2,
+      "unassigned": 2
+    },
+    "spider_crawl": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "squat": {
+      "assigned": 41,
+      "total": 44,
+      "unassigned": 3
+    },
+    "squat_quad_bias": {
+      "assigned": 4,
+      "total": 4,
+      "unassigned": 0
+    },
+    "step_up": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "strongman_carry": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "strongman_overhead": {
+      "assigned": 0,
+      "total": 3,
+      "unassigned": 3
+    },
+    "sumo_deadlift": {
+      "assigned": 4,
+      "total": 4,
+      "unassigned": 0
+    },
+    "thruster": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "tire_flip": {
+      "assigned": 0,
+      "total": 1,
+      "unassigned": 1
+    },
+    "trunk_extension": {
+      "assigned": 0,
+      "total": 4,
+      "unassigned": 4
+    },
+    "trunk_flexion": {
+      "assigned": 0,
+      "total": 48,
+      "unassigned": 48
+    },
+    "trunk_rotation": {
+      "assigned": 0,
+      "total": 9,
+      "unassigned": 9
+    },
+    "unclassified": {
+      "assigned": 0,
+      "total": 203,
+      "unassigned": 203
+    },
+    "upright_row": {
+      "assigned": 0,
+      "total": 5,
+      "unassigned": 5
+    },
+    "vertical_press": {
+      "assigned": 30,
+      "total": 30,
+      "unassigned": 0
+    },
+    "vertical_pull": {
+      "assigned": 11,
+      "total": 21,
+      "unassigned": 10
+    }
+  },
+  "emptyFamilies": [],
+  "familyCount": 16,
+  "familyQuality": {
+    "bench_press": {
+      "categories": {
+        "powerlifting": 3,
+        "strength": 18
+      },
+      "equipment": {
+        "bands": 1,
+        "barbell": 11,
+        "dumbbell": 5,
+        "machine": 4
+      },
+      "movementPatterns": {
+        "decline_press": 3,
+        "horizontal_press": 15,
+        "incline_press": 3
+      }
+    },
+    "biceps_curl": {
+      "categories": {
+        "strength": 49
+      },
+      "equipment": {
+        "barbell": 10,
+        "cable": 9,
+        "dumbbell": 23,
+        "e-z curl bar": 4,
+        "machine": 2,
+        "other": 1
+      },
+      "movementPatterns": {
+        "elbow_flexion": 43,
+        "elbow_flexion_brachioradialis_bias": 6
+      }
+    },
+    "calf_raise": {
+      "categories": {
+        "strength": 12
+      },
+      "equipment": {
+        "bands": 1,
+        "barbell": 3,
+        "dumbbell": 3,
+        "machine": 4,
+        "other": 1
+      },
+      "movementPatterns": {
+        "plantar_flexion_bent_knee": 2,
+        "plantar_flexion_straight_knee": 10
+      }
+    },
+    "chest_fly": {
+      "categories": {
+        "strength": 15
+      },
+      "equipment": {
+        "bands": 1,
+        "cable": 6,
+        "dumbbell": 6,
+        "e-z curl bar": 1,
+        "machine": 1
+      },
+      "movementPatterns": {
+        "chest_fly": 15
+      }
+    },
+    "chin_up": {
+      "categories": {
+        "strength": 5
+      },
+      "equipment": {
+        "body only": 1,
+        "other": 4
+      },
+      "movementPatterns": {
+        "vertical_pull": 5
+      }
+    },
+    "deadlift": {
+      "categories": {
+        "olympic weightlifting": 2,
+        "powerlifting": 8,
+        "strength": 6,
+        "strongman": 3
+      },
+      "equipment": {
+        "barbell": 12,
+        "cable": 1,
+        "kettlebells": 1,
+        "machine": 1,
+        "other": 4
+      },
+      "movementPatterns": {
+        "conventional_deadlift": 15,
+        "sumo_deadlift": 4
+      }
+    },
+    "glute_bridge": {
+      "categories": {
+        "powerlifting": 1,
+        "strength": 1
+      },
+      "equipment": {
+        "barbell": 1,
+        "body only": 1
+      },
+      "movementPatterns": {
+        "hip_extension": 2
+      }
+    },
+    "hip_thrust": {
+      "categories": {
+        "powerlifting": 1
+      },
+      "equipment": {
+        "barbell": 1
+      },
+      "movementPatterns": {
+        "hip_extension": 1
+      }
+    },
+    "leg_extension": {
+      "categories": {
+        "strength": 2
+      },
+      "equipment": {
+        "machine": 2
+      },
+      "movementPatterns": {
+        "knee_extension": 2
+      }
+    },
+    "leg_press": {
+      "categories": {
+        "strength": 3
+      },
+      "equipment": {
+        "machine": 3
+      },
+      "movementPatterns": {
+        "horizontal_pull": 1,
+        "leg_press": 2
+      }
+    },
+    "pull_up": {
+      "categories": {
+        "strength": 6
+      },
+      "equipment": {
+        "body only": 3,
+        "other": 2,
+        "unknown": 1
+      },
+      "movementPatterns": {
+        "vertical_pull": 6
+      }
+    },
+    "romanian_deadlift": {
+      "categories": {
+        "olympic weightlifting": 1,
+        "strength": 1
+      },
+      "equipment": {
+        "barbell": 2
+      },
+      "movementPatterns": {
+        "hip_hinge": 2
+      }
+    },
+    "row": {
+      "categories": {
+        "strength": 34
+      },
+      "equipment": {
+        "barbell": 9,
+        "cable": 8,
+        "dumbbell": 4,
+        "kettlebells": 4,
+        "machine": 4,
+        "other": 4,
+        "unknown": 1
+      },
+      "movementPatterns": {
+        "horizontal_pull": 34
+      }
+    },
+    "shoulder_press": {
+      "categories": {
+        "strength": 30
+      },
+      "equipment": {
+        "bands": 1,
+        "barbell": 7,
+        "cable": 3,
+        "dumbbell": 9,
+        "kettlebells": 7,
+        "machine": 3
+      },
+      "movementPatterns": {
+        "vertical_press": 30
+      }
+    },
+    "squat": {
+      "categories": {
+        "olympic weightlifting": 4,
+        "powerlifting": 8,
+        "strength": 33
+      },
+      "equipment": {
+        "bands": 1,
+        "barbell": 28,
+        "body only": 2,
+        "dumbbell": 3,
+        "kettlebells": 4,
+        "machine": 5,
+        "other": 2
+      },
+      "movementPatterns": {
+        "squat": 41,
+        "squat_quad_bias": 4
+      }
+    },
+    "triceps_extension": {
+      "categories": {
+        "strength": 40
+      },
+      "equipment": {
+        "bands": 2,
+        "barbell": 5,
+        "body only": 2,
+        "cable": 12,
+        "dumbbell": 14,
+        "e-z curl bar": 3,
+        "machine": 1,
+        "other": 1
+      },
+      "movementPatterns": {
+        "elbow_extension": 40
+      }
+    }
+  },
+  "familySizes": {
+    "bench_press": 21,
+    "biceps_curl": 49,
+    "calf_raise": 12,
+    "chest_fly": 15,
+    "chin_up": 5,
+    "deadlift": 19,
+    "glute_bridge": 2,
+    "hip_thrust": 1,
+    "leg_extension": 2,
+    "leg_press": 3,
+    "pull_up": 6,
+    "romanian_deadlift": 2,
+    "row": 34,
+    "shoulder_press": 30,
+    "squat": 45,
+    "triceps_extension": 40
+  },
+  "largestFamilies": [
+    {
+      "familyId": "biceps_curl",
+      "size": 49
+    },
+    {
+      "familyId": "squat",
+      "size": 45
+    },
+    {
+      "familyId": "triceps_extension",
+      "size": 40
+    },
+    {
+      "familyId": "row",
+      "size": 34
+    },
+    {
+      "familyId": "shoulder_press",
+      "size": 30
+    },
+    {
+      "familyId": "bench_press",
+      "size": 21
+    },
+    {
+      "familyId": "deadlift",
+      "size": 19
+    },
+    {
+      "familyId": "chest_fly",
+      "size": 15
+    },
+    {
+      "familyId": "calf_raise",
+      "size": 12
+    },
+    {
+      "familyId": "pull_up",
+      "size": 6
+    },
+    {
+      "familyId": "chin_up",
+      "size": 5
+    },
+    {
+      "familyId": "leg_press",
+      "size": 3
+    },
+    {
+      "familyId": "glute_bridge",
+      "size": 2
+    },
+    {
+      "familyId": "leg_extension",
+      "size": 2
+    },
+    {
+      "familyId": "romanian_deadlift",
+      "size": 2
+    },
+    {
+      "familyId": "hip_thrust",
+      "size": 1
+    }
+  ],
+  "manualOverrides": {
+    "Barbell_Bench_Press_-_Medium_Grip": "bench_press",
+    "Barbell_Curl": "biceps_curl",
+    "Barbell_Deadlift": "deadlift",
+    "Chin-Up": "chin_up",
+    "Dumbbell_Bench_Press": "bench_press",
+    "Front_Barbell_Squat": "squat",
+    "Pullups": "pull_up",
+    "Romanian_Deadlift": "romanian_deadlift",
+    "Triceps_Pushdown": "triceps_extension"
+  },
+  "mediumConfidenceAssignments": [
+    "Alternating_Cable_Shoulder_Press",
+    "Alternating_Kettlebell_Press",
+    "Alternating_Kettlebell_Row",
+    "Alternating_Renegade_Row",
+    "Anti-Gravity_Press",
+    "Arnold_Dumbbell_Press",
+    "Around_The_Worlds",
+    "Axle_Deadlift",
+    "Barbell_Full_Squat",
+    "Barbell_Hack_Squat",
+    "Barbell_Rear_Delt_Row",
+    "Barbell_Shoulder_Press",
+    "Barbell_Squat",
+    "Barbell_Squat_To_A_Bench",
+    "Bent_Over_Barbell_Row",
+    "Bent_Over_One-Arm_Long_Bar_Row",
+    "Bent_Over_Two-Arm_Long_Bar_Row",
+    "Bent_Over_Two-Dumbbell_Row",
+    "Bent_Over_Two-Dumbbell_Row_With_Palms_In",
+    "Bodyweight_Flyes",
+    "Bodyweight_Mid_Row",
+    "Bodyweight_Squat",
+    "Box_Squat",
+    "Box_Squat_with_Bands",
+    "Box_Squat_with_Chains",
+    "Bradford_Rocky_Presses",
+    "Butterfly",
+    "Cable_Crossover",
+    "Cable_Deadlifts",
+    "Cable_Iron_Cross",
+    "Cable_Rope_Rear-Delt_Rows",
+    "Cable_Shoulder_Press",
+    "Car_Deadlift",
+    "Chair_Squat",
+    "Clean_Deadlift",
+    "Cross_Over_-_With_Bands",
+    "Deadlift_with_Bands",
+    "Deadlift_with_Chains",
+    "Decline_Dumbbell_Flyes",
+    "Deficit_Deadlift",
+    "Dumbbell_Flyes",
+    "Dumbbell_Incline_Row",
+    "Dumbbell_One-Arm_Shoulder_Press",
+    "Dumbbell_Shoulder_Press",
+    "Dumbbell_Squat",
+    "Dumbbell_Squat_To_A_Bench",
+    "Elevated_Cable_Rows",
+    "Flat_Bench_Cable_Flyes",
+    "Frankenstein_Squat",
+    "Freehand_Jump_Squat",
+    "Front_Barbell_Squat_To_A_Bench",
+    "Front_Squat_Clean_Grip",
+    "Front_Squats_With_Two_Kettlebells",
+    "Goblet_Squat",
+    "Hack_Squat",
+    "Incline_Cable_Flye",
+    "Incline_Dumbbell_Flyes",
+    "Incline_Dumbbell_Flyes_-_With_A_Twist",
+    "Inverted_Row",
+    "Inverted_Row_with_Straps",
+    "Jefferson_Squats",
+    "Kettlebell_Arnold_Press",
+    "Kettlebell_One-Legged_Deadlift",
+    "Kettlebell_Pistol_Squat",
+    "Kettlebell_Seated_Press",
+    "Kettlebell_Seesaw_Press",
+    "Kneeling_High_Pulley_Row",
+    "Kneeling_Jump_Squat",
+    "Kneeling_Single-Arm_High_Pulley_Row",
+    "Kneeling_Squat",
+    "Leverage_Deadlift",
+    "Leverage_High_Row",
+    "Leverage_Iso_Row",
+    "Leverage_Shoulder_Press",
+    "Low_Cable_Crossover",
+    "Low_Pulley_Row_To_Neck",
+    "Lying_Cambered_Barbell_Row",
+    "Lying_Machine_Squat",
+    "Lying_T-Bar_Row",
+    "Machine_Shoulder_Military_Press",
+    "Olympic_Squat",
+    "One-Arm_Dumbbell_Row",
+    "One-Arm_Flat_Bench_Dumbbell_Flye",
+    "One-Arm_Kettlebell_Military_Press_To_The_Side",
+    "One-Arm_Kettlebell_Para_Press",
+    "One-Arm_Kettlebell_Row",
+    "One-Arm_Long_Bar_Row",
+    "One-Arm_Overhead_Kettlebell_Squats",
+    "One-Arm_Side_Deadlift",
+    "One_Leg_Barbell_Squat",
+    "Overhead_Squat",
+    "Plie_Dumbbell_Squat",
+    "Reverse_Band_Box_Squat",
+    "Reverse_Band_Deadlift",
+    "Reverse_Band_Power_Squat",
+    "Reverse_Band_Sumo_Deadlift",
+    "Reverse_Grip_Bent-Over_Rows",
+    "Rickshaw_Deadlift",
+    "Seated_Barbell_Military_Press",
+    "Seated_Cable_Rows",
+    "Seated_Cable_Shoulder_Press",
+    "Seated_Dumbbell_Press",
+    "Seated_One-arm_Cable_Pulley_Rows",
+    "See-Saw_Press_Alternating_Side_Press",
+    "Shotgun_Row",
+    "Shoulder_Press_-_With_Bands",
+    "Single-Arm_Cable_Crossover",
+    "Single-Leg_High_Box_Squat",
+    "Sled_Row",
+    "Smith_Machine_Bent_Over_Row",
+    "Smith_Machine_Overhead_Shoulder_Press",
+    "Smith_Machine_Pistol_Squat",
+    "Smith_Machine_Squat",
+    "Snatch_Deadlift",
+    "Speed_Box_Squat",
+    "Speed_Squats",
+    "Squat_with_Bands",
+    "Squat_with_Chains",
+    "Squat_with_Plate_Movers",
+    "Squats_-_With_Bands",
+    "Standing_Alternating_Dumbbell_Press",
+    "Standing_Barbell_Press_Behind_Neck",
+    "Standing_Bradford_Press",
+    "Standing_Dumbbell_Press",
+    "Standing_Military_Press",
+    "Standing_Palm-In_One-Arm_Dumbbell_Press",
+    "Standing_Palms-In_Dumbbell_Press",
+    "Straight_Bar_Bench_Mid_Rows",
+    "Sumo_Deadlift",
+    "Sumo_Deadlift_with_Bands",
+    "Sumo_Deadlift_with_Chains",
+    "Suspended_Row",
+    "T-Bar_Row_with_Handle",
+    "Trap_Bar_Deadlift",
+    "Two-Arm_Kettlebell_Military_Press",
+    "Two-Arm_Kettlebell_Row",
+    "Weighted_Jump_Squat",
+    "Weighted_Sissy_Squat",
+    "Weighted_Squat",
+    "Wide_Stance_Barbell_Squat",
+    "Zercher_Squats"
+  ],
+  "reviewCandidates": [
+    {
+      "exerciseId": "Alternating_Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Kettlebell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Alternating_Renegade_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Anti-Gravity_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Arnold_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Around_The_Worlds",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Axle_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Full_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Hack_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Rear_Delt_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Barbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Barbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_One-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Dumbbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bent_Over_Two-Dumbbell_Row_With_Palms_In",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Mid_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bodyweight_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Box_Squat_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Bradford_Rocky_Presses",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Butterfly",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Deadlifts",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Iron_Cross",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Rope_Rear-Delt_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Car_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Chair_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Clean_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Cross_Over_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deadlift_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deadlift_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Decline_Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Deficit_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Incline_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_One-Arm_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Dumbbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Elevated_Cable_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Flat_Bench_Cable_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Frankenstein_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Freehand_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Barbell_Squat_To_A_Bench",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Squat_Clean_Grip",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Front_Squats_With_Two_Kettlebells",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Goblet_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Hack_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Cable_Flye",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Dumbbell_Flyes",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Incline_Dumbbell_Flyes_-_With_A_Twist",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Inverted_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Inverted_Row_with_Straps",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Jefferson_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Arnold_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_One-Legged_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Pistol_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Seated_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kettlebell_Seesaw_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_High_Pulley_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Single-Arm_High_Pulley_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Kneeling_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_High_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Iso_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Leverage_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Low_Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Low_Pulley_Row_To_Neck",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_Cambered_Barbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_Machine_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Lying_T-Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Machine_Shoulder_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Olympic_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Dumbbell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Flat_Bench_Dumbbell_Flye",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Military_Press_To_The_Side",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Para_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Long_Bar_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Overhead_Kettlebell_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One-Arm_Side_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "One_Leg_Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Overhead_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Plie_Dumbbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Power_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Band_Sumo_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Reverse_Grip_Bent-Over_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Rickshaw_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Barbell_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Cable_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Cable_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Seated_One-arm_Cable_Pulley_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "See-Saw_Press_Alternating_Side_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Shotgun_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Shoulder_Press_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Single-Arm_Cable_Crossover",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Single-Leg_High_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sled_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Bent_Over_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Overhead_Shoulder_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Pistol_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Smith_Machine_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Snatch_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Speed_Box_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Speed_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squat_with_Plate_Movers",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Squats_-_With_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Alternating_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Barbell_Press_Behind_Neck",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Bradford_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Palm-In_One-Arm_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Standing_Palms-In_Dumbbell_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Straight_Bar_Bench_Mid_Rows",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift_with_Bands",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Sumo_Deadlift_with_Chains",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Suspended_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "T-Bar_Row_with_Handle",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Trap_Bar_Deadlift",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Two-Arm_Kettlebell_Military_Press",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Two-Arm_Kettlebell_Row",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Jump_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Sissy_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Weighted_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Wide_Stance_Barbell_Squat",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
+      "exerciseId": "Zercher_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    }
+  ],
+  "singleMemberFamilies": [
+    "hip_thrust"
+  ],
+  "totalExercises": 873,
+  "unassigned": [
+    "3_4_Sit-Up",
+    "90_90_Hamstring",
+    "Ab_Crunch_Machine",
+    "Ab_Roller",
+    "Adductor",
+    "Adductor_Groin",
+    "Advanced_Kettlebell_Windmill",
+    "Air_Bike",
+    "All_Fours_Quad_Stretch",
+    "Alternate_Heel_Touchers",
+    "Alternate_Leg_Diagonal_Bound",
+    "Alternating_Deltoid_Raise",
+    "Alternating_Floor_Press",
+    "Alternating_Hang_Clean",
+    "Ankle_Circles",
+    "Ankle_On_The_Knee",
+    "Anterior_Tibialis-SMR",
+    "Arm_Circles",
+    "Atlas_Stone_Trainer",
+    "Atlas_Stones",
+    "Back_Flyes_-_With_Bands",
+    "Backward_Drag",
+    "Backward_Medicine_Ball_Throw",
+    "Balance_Board",
+    "Ball_Leg_Curl",
+    "Band_Good_Morning",
+    "Band_Good_Morning_Pull_Through",
+    "Band_Hip_Adductions",
+    "Band_Pull_Apart",
+    "Barbell_Ab_Rollout",
+    "Barbell_Ab_Rollout_-_On_Knees",
+    "Barbell_Incline_Shoulder_Raise",
+    "Barbell_Lunge",
+    "Barbell_Rollout_from_Bench",
+    "Barbell_Shrug",
+    "Barbell_Shrug_Behind_The_Back",
+    "Barbell_Side_Bend",
+    "Barbell_Side_Split_Squat",
+    "Barbell_Step_Ups",
+    "Barbell_Walking_Lunge",
+    "Battling_Ropes",
+    "Bear_Crawl_Sled_Drags",
+    "Behind_Head_Chest_Stretch",
+    "Bench_Dips",
+    "Bench_Jump",
+    "Bench_Sprint",
+    "Bent-Arm_Barbell_Pullover",
+    "Bent-Arm_Dumbbell_Pullover",
+    "Bent-Knee_Hip_Raise",
+    "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
+    "Bent_Over_Low-Pulley_Side_Lateral",
+    "Bent_Press",
+    "Bicycling",
+    "Bicycling_Stationary",
+    "Board_Press",
+    "Body-Up",
+    "Bodyweight_Walking_Lunge",
+    "Bosu_Ball_Cable_Crunch_With_Side_Bends",
+    "Bottoms-Up_Clean_From_The_Hang_Position",
+    "Bottoms_Up",
+    "Box_Jump_Multiple_Response",
+    "Box_Skip",
+    "Brachialis-SMR",
+    "Butt-Ups",
+    "Butt_Lift_Bridge",
+    "Cable_Chest_Press",
+    "Cable_Crunch",
+    "Cable_Hip_Adduction",
+    "Cable_Incline_Pushdown",
+    "Cable_Internal_Rotation",
+    "Cable_Judo_Flip",
+    "Cable_Rear_Delt_Fly",
+    "Cable_Reverse_Crunch",
+    "Cable_Russian_Twists",
+    "Cable_Seated_Crunch",
+    "Cable_Seated_Lateral_Raise",
+    "Cable_Shrugs",
+    "Cable_Wrist_Curl",
+    "Calf-Machine_Shoulder_Shrug",
+    "Calf_Press",
+    "Calf_Press_On_The_Leg_Press_Machine",
+    "Calf_Stretch_Elbows_Against_Wall",
+    "Calf_Stretch_Hands_Against_Wall",
+    "Calves-SMR",
+    "Car_Drivers",
+    "Carioca_Quick_Step",
+    "Cat_Stretch",
+    "Catch_and_Overhead_Throw",
+    "Chain_Handle_Extension",
+    "Chain_Press",
+    "Chair_Leg_Extended_Stretch",
+    "Chair_Lower_Back_Stretch",
+    "Chair_Upper_Body_Stretch",
+    "Chest_And_Front_Of_Shoulder_Stretch",
+    "Chest_Push_from_3_point_stance",
+    "Chest_Push_multiple_response",
+    "Chest_Push_single_response",
+    "Chest_Push_with_Run_Release",
+    "Chest_Stretch_on_Stability_Ball",
+    "Childs_Pose",
+    "Chin_To_Chest_Stretch",
+    "Circus_Bell",
+    "Clean",
+    "Clean_Pull",
+    "Clean_Shrug",
+    "Clean_and_Jerk",
+    "Clean_and_Press",
+    "Clean_from_Blocks",
+    "Clock_Push-Up",
+    "Close-Grip_Dumbbell_Press",
+    "Close-Grip_EZ-Bar_Press",
+    "Close-Grip_Front_Lat_Pulldown",
+    "Close-Grip_Push-Up_off_of_a_Dumbbell",
+    "Cocoons",
+    "Conans_Wheel",
+    "Cross-Body_Crunch",
+    "Crossover_Reverse_Lunge",
+    "Crucifix",
+    "Crunch_-_Hands_Overhead",
+    "Crunch_-_Legs_On_Exercise_Ball",
+    "Crunches",
+    "Cuban_Press",
+    "Dancers_Stretch",
+    "Dead_Bug",
+    "Decline_Crunch",
+    "Decline_Oblique_Crunch",
+    "Decline_Push-Up",
+    "Decline_Reverse_Crunch",
+    "Decline_Smith_Press",
+    "Depth_Jump_Leap",
+    "Dip_Machine",
+    "Dips_-_Chest_Version",
+    "Dips_-_Triceps_Version",
+    "Double_Kettlebell_Alternating_Hang_Clean",
+    "Double_Kettlebell_Jerk",
+    "Double_Kettlebell_Push_Press",
+    "Double_Kettlebell_Snatch",
+    "Double_Kettlebell_Windmill",
+    "Double_Leg_Butt_Kick",
+    "Downward_Facing_Balance",
+    "Drop_Push",
+    "Dumbbell_Clean",
+    "Dumbbell_Floor_Press",
+    "Dumbbell_Incline_Shoulder_Raise",
+    "Dumbbell_Lunges",
+    "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise",
+    "Dumbbell_Lying_Pronation",
+    "Dumbbell_Lying_Rear_Lateral_Raise",
+    "Dumbbell_Lying_Supination",
+    "Dumbbell_One-Arm_Upright_Row",
+    "Dumbbell_Raise",
+    "Dumbbell_Rear_Lunge",
+    "Dumbbell_Scaption",
+    "Dumbbell_Seated_Box_Jump",
+    "Dumbbell_Shrug",
+    "Dumbbell_Side_Bend",
+    "Dumbbell_Step_Ups",
+    "Dynamic_Back_Stretch",
+    "Dynamic_Chest_Stretch",
+    "Elbow_Circles",
+    "Elbow_to_Knee",
+    "Elbows_Back",
+    "Elevated_Back_Lunge",
+    "Elliptical_Trainer",
+    "Exercise_Ball_Crunch",
+    "Exercise_Ball_Pull-In",
+    "Extended_Range_One-Arm_Kettlebell_Floor_Press",
+    "External_Rotation",
+    "External_Rotation_with_Band",
+    "External_Rotation_with_Cable",
+    "Face_Pull",
+    "Farmers_Walk",
+    "Fast_Skipping",
+    "Finger_Curls",
+    "Flat_Bench_Leg_Pull-In",
+    "Flat_Bench_Lying_Leg_Raise",
+    "Floor_Glute-Ham_Raise",
+    "Floor_Press",
+    "Floor_Press_with_Chains",
+    "Flutter_Kicks",
+    "Foot-SMR",
+    "Forward_Drag_with_Press",
+    "Frog_Hops",
+    "Frog_Sit-Ups",
+    "Front_Box_Jump",
+    "Front_Cable_Raise",
+    "Front_Cone_Hops_or_hurdle_hops",
+    "Front_Dumbbell_Raise",
+    "Front_Incline_Dumbbell_Raise",
+    "Front_Leg_Raises",
+    "Front_Plate_Raise",
+    "Front_Raise_And_Pullover",
+    "Front_Two-Dumbbell_Raise",
+    "Full_Range-Of-Motion_Lat_Pulldown",
+    "Glute_Ham_Raise",
+    "Glute_Kickback",
+    "Good_Morning",
+    "Good_Morning_off_Pins",
+    "Gorilla_Chin_Crunch",
+    "Groin_and_Back_Stretch",
+    "Groiners",
+    "Hamstring-SMR",
+    "Hamstring_Stretch",
+    "Handstand_Push-Ups",
+    "Hang_Clean",
+    "Hang_Clean_-_Below_the_Knees",
+    "Hang_Snatch",
+    "Hang_Snatch_-_Below_Knees",
+    "Hanging_Bar_Good_Morning",
+    "Hanging_Leg_Raise",
+    "Hanging_Pike",
+    "Heaving_Snatch_Balance",
+    "Heavy_Bag_Thrust",
+    "Hip_Circles_prone",
+    "Hip_Extension_with_Bands",
+    "Hip_Flexion_with_Band",
+    "Hip_Lift_with_Band",
+    "Hug_A_Ball",
+    "Hug_Knees_To_Chest",
+    "Hurdle_Hops",
+    "Hyperextensions_Back_Extensions",
+    "Hyperextensions_With_No_Hyperextension_Bench",
+    "IT_Band_and_Glute_Stretch",
+    "Iliotibial_Tract-SMR",
+    "Inchworm",
+    "Incline_Bench_Pull",
+    "Incline_Cable_Chest_Press",
+    "Incline_Dumbbell_Bench_With_Palms_Facing_In",
+    "Incline_Dumbbell_Press",
+    "Incline_Push-Up",
+    "Incline_Push-Up_Close-Grip",
+    "Incline_Push-Up_Depth_Jump",
+    "Incline_Push-Up_Medium",
+    "Incline_Push-Up_Reverse_Grip",
+    "Incline_Push-Up_Wide",
+    "Intermediate_Groin_Stretch",
+    "Intermediate_Hip_Flexor_and_Quad_Stretch",
+    "Internal_Rotation_with_Band",
+    "Iron_Cross",
+    "Iron_Crosses_stretch",
+    "Isometric_Chest_Squeezes",
+    "Isometric_Neck_Exercise_-_Front_And_Back",
+    "Isometric_Neck_Exercise_-_Sides",
+    "Isometric_Wipers",
+    "JM_Press",
+    "Jackknife_Sit-Up",
+    "Janda_Sit-Up",
+    "Jerk_Balance",
+    "Jerk_Dip_Squat",
+    "Jogging_Treadmill",
+    "Keg_Load",
+    "Kettlebell_Dead_Clean",
+    "Kettlebell_Figure_8",
+    "Kettlebell_Hang_Clean",
+    "Kettlebell_Pass_Between_The_Legs",
+    "Kettlebell_Pirate_Ships",
+    "Kettlebell_Sumo_High_Pull",
+    "Kettlebell_Thruster",
+    "Kettlebell_Turkish_Get-Up_Lunge_style",
+    "Kettlebell_Turkish_Get-Up_Squat_style",
+    "Kettlebell_Windmill",
+    "Kipping_Muscle_Up",
+    "Knee_Across_The_Body",
+    "Knee_Circles",
+    "Knee_Hip_Raise_On_Parallel_Bars",
+    "Knee_Tuck_Jump",
+    "Kneeling_Arm_Drill",
+    "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists",
+    "Kneeling_Forearm_Stretch",
+    "Kneeling_Hip_Flexor",
+    "Landmine_180s",
+    "Landmine_Linear_Jammer",
+    "Lateral_Bound",
+    "Lateral_Box_Jump",
+    "Lateral_Cone_Hops",
+    "Lateral_Raise_-_With_Bands",
+    "Latissimus_Dorsi-SMR",
+    "Leg-Over_Floor_Press",
+    "Leg-Up_Hamstring_Stretch",
+    "Leg_Lift",
+    "Leg_Pull-In",
+    "Leverage_Chest_Press",
+    "Leverage_Decline_Chest_Press",
+    "Leverage_Incline_Chest_Press",
+    "Leverage_Shrug",
+    "Linear_3-Part_Start_Technique",
+    "Linear_Acceleration_Wall_Drill",
+    "Linear_Depth_Jump",
+    "Log_Lift",
+    "London_Bridges",
+    "Looking_At_Ceiling",
+    "Lower_Back-SMR",
+    "Lower_Back_Curl",
+    "Lunge_Pass_Through",
+    "Lunge_Sprint",
+    "Lying_Bent_Leg_Groin",
+    "Lying_Crossover",
+    "Lying_Face_Down_Plate_Neck_Resistance",
+    "Lying_Face_Up_Plate_Neck_Resistance",
+    "Lying_Glute",
+    "Lying_Hamstring",
+    "Lying_Leg_Curls",
+    "Lying_One-Arm_Lateral_Raise",
+    "Lying_Prone_Quadriceps",
+    "Lying_Rear_Delt_Raise",
+    "Medicine_Ball_Chest_Pass",
+    "Medicine_Ball_Full_Twist",
+    "Medicine_Ball_Scoop_Throw",
+    "Middle_Back_Shrug",
+    "Middle_Back_Stretch",
+    "Monster_Walk",
+    "Mountain_Climbers",
+    "Moving_Claw_Series",
+    "Muscle_Snatch",
+    "Muscle_Up",
+    "Narrow_Stance_Hack_Squats",
+    "Narrow_Stance_Squats",
+    "Natural_Glute_Ham_Raise",
+    "Neck-SMR",
+    "Neck_Press",
+    "Oblique_Crunches",
+    "Oblique_Crunches_-_On_The_Floor",
+    "On-Your-Back_Quad_Stretch",
+    "On_Your_Side_Quad_Stretch",
+    "One-Arm_High-Pulley_Cable_Side_Bends",
+    "One-Arm_Incline_Lateral_Raise",
+    "One-Arm_Kettlebell_Clean",
+    "One-Arm_Kettlebell_Clean_and_Jerk",
+    "One-Arm_Kettlebell_Floor_Press",
+    "One-Arm_Kettlebell_Jerk",
+    "One-Arm_Kettlebell_Push_Press",
+    "One-Arm_Kettlebell_Snatch",
+    "One-Arm_Kettlebell_Split_Jerk",
+    "One-Arm_Kettlebell_Split_Snatch",
+    "One-Arm_Kettlebell_Swings",
+    "One-Arm_Medicine_Ball_Slam",
+    "One-Arm_Open_Palm_Kettlebell_Clean",
+    "One-Arm_Side_Laterals",
+    "One-Legged_Cable_Kickback",
+    "One_Arm_Against_Wall",
+    "One_Arm_Floor_Press",
+    "One_Arm_Lat_Pulldown",
+    "One_Half_Locust",
+    "One_Handed_Hang",
+    "One_Knee_To_Chest",
+    "Open_Palm_Kettlebell_Clean",
+    "Otis-Up",
+    "Overhead_Lat",
+    "Overhead_Slam",
+    "Overhead_Stretch",
+    "Overhead_Triceps",
+    "Pallof_Press",
+    "Pallof_Press_With_Rotation",
+    "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench",
+    "Palms-Down_Wrist_Curl_Over_A_Bench",
+    "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench",
+    "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench",
+    "Parallel_Bar_Dip",
+    "Pelvic_Tilt_Into_Bridge",
+    "Peroneals-SMR",
+    "Peroneals_Stretch",
+    "Physioball_Hip_Bridge",
+    "Pin_Presses",
+    "Piriformis-SMR",
+    "Plank",
+    "Plate_Pinch",
+    "Plate_Twist",
+    "Platform_Hamstring_Slides",
+    "Plyo_Kettlebell_Pushups",
+    "Plyo_Push-up",
+    "Posterior_Tibialis_Stretch",
+    "Power_Clean",
+    "Power_Clean_from_Blocks",
+    "Power_Jerk",
+    "Power_Partials",
+    "Power_Snatch",
+    "Power_Snatch_from_Blocks",
+    "Power_Stairs",
+    "Press_Sit-Up",
+    "Prone_Manual_Hamstring",
+    "Prowler_Sprint",
+    "Pull_Through",
+    "Push-Up_Wide",
+    "Push-Ups_-_Close_Triceps_Position",
+    "Push-Ups_With_Feet_Elevated",
+    "Push-Ups_With_Feet_On_An_Exercise_Ball",
+    "Push_Press",
+    "Push_Press_-_Behind_the_Neck",
+    "Push_Up_to_Side_Plank",
+    "Pushups",
+    "Pushups_Close_and_Wide_Hand_Positions",
+    "Pyramid",
+    "Quad_Stretch",
+    "Quadriceps-SMR",
+    "Quick_Leap",
+    "Rack_Delivery",
+    "Rack_Pull_with_Bands",
+    "Rack_Pulls",
+    "Rear_Leg_Raises",
+    "Recumbent_Bike",
+    "Return_Push_from_Stance",
+    "Reverse_Crunch",
+    "Reverse_Flyes",
+    "Reverse_Flyes_With_External_Rotation",
+    "Reverse_Hyperextension",
+    "Reverse_Machine_Flyes",
+    "Rhomboids-SMR",
+    "Rickshaw_Carry",
+    "Ring_Dips",
+    "Rocket_Jump",
+    "Rocky_Pull-Ups_Pulldowns",
+    "Rope_Climb",
+    "Rope_Crunch",
+    "Rope_Jumping",
+    "Rope_Straight-Arm_Pulldown",
+    "Round_The_World_Shoulder_Stretch",
+    "Rowing_Stationary",
+    "Runners_Stretch",
+    "Running_Treadmill",
+    "Russian_Twist",
+    "Sandbag_Load",
+    "Scissor_Kick",
+    "Scissors_Jump",
+    "Seated_Band_Hamstring_Curl",
+    "Seated_Barbell_Twist",
+    "Seated_Bent-Over_Rear_Delt_Raise",
+    "Seated_Biceps",
+    "Seated_Calf_Stretch",
+    "Seated_Dumbbell_Palms-Down_Wrist_Curl",
+    "Seated_Dumbbell_Palms-Up_Wrist_Curl",
+    "Seated_Flat_Bench_Leg_Pull-In",
+    "Seated_Floor_Hamstring_Stretch",
+    "Seated_Front_Deltoid",
+    "Seated_Glute",
+    "Seated_Good_Mornings",
+    "Seated_Hamstring",
+    "Seated_Hamstring_and_Calf_Stretch",
+    "Seated_Head_Harness_Neck_Resistance",
+    "Seated_Leg_Curl",
+    "Seated_Leg_Tucks",
+    "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl",
+    "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl",
+    "Seated_Overhead_Stretch",
+    "Seated_Palm-Up_Barbell_Wrist_Curl",
+    "Seated_Palms-Down_Barbell_Wrist_Curl",
+    "Seated_Side_Lateral_Raise",
+    "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl",
+    "Shoulder_Circles",
+    "Shoulder_Raise",
+    "Shoulder_Stretch",
+    "Side-Lying_Floor_Stretch",
+    "Side_Bridge",
+    "Side_Hop-Sprint",
+    "Side_Jackknife",
+    "Side_Lateral_Raise",
+    "Side_Laterals_to_Front_Raise",
+    "Side_Leg_Raises",
+    "Side_Lying_Groin_Stretch",
+    "Side_Neck_Stretch",
+    "Side_Standing_Long_Jump",
+    "Side_Wrist_Pull",
+    "Side_to_Side_Box_Shuffle",
+    "Single-Arm_Linear_Jammer",
+    "Single-Arm_Push-Up",
+    "Single-Cone_Sprint_Drill",
+    "Single-Leg_Hop_Progression",
+    "Single-Leg_Lateral_Hop",
+    "Single-Leg_Stride_Jump",
+    "Single_Dumbbell_Raise",
+    "Single_Leg_Butt_Kick",
+    "Single_Leg_Push-off",
+    "Sit-Up",
+    "Sit_Squats",
+    "Skating",
+    "Sled_Drag_-_Harness",
+    "Sled_Overhead_Backward_Walk",
+    "Sled_Push",
+    "Sled_Reverse_Flye",
+    "Sledgehammer_Swings",
+    "Smith_Incline_Shoulder_Raise",
+    "Smith_Machine_Behind_the_Back_Shrug",
+    "Smith_Machine_Decline_Press",
+    "Smith_Machine_Hang_Power_Clean",
+    "Smith_Machine_Hip_Raise",
+    "Smith_Machine_One-Arm_Upright_Row",
+    "Smith_Machine_Stiff-Legged_Deadlift",
+    "Smith_Machine_Upright_Row",
+    "Smith_Single-Leg_Split_Squat",
+    "Snatch",
+    "Snatch_Balance",
+    "Snatch_Pull",
+    "Snatch_Shrug",
+    "Snatch_from_Blocks",
+    "Spell_Caster",
+    "Spider_Crawl",
+    "Spinal_Stretch",
+    "Split_Clean",
+    "Split_Jerk",
+    "Split_Jump",
+    "Split_Snatch",
+    "Split_Squat_with_Dumbbells",
+    "Split_Squats",
+    "Squat_Jerk",
+    "Stairmaster",
+    "Standing_Biceps_Stretch",
+    "Standing_Cable_Chest_Press",
+    "Standing_Cable_Lift",
+    "Standing_Cable_Wood_Chop",
+    "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head",
+    "Standing_Dumbbell_Upright_Row",
+    "Standing_Elevated_Quad_Stretch",
+    "Standing_Front_Barbell_Raise_Over_Head",
+    "Standing_Gastrocnemius_Calf_Stretch",
+    "Standing_Hamstring_and_Calf_Stretch",
+    "Standing_Hip_Circles",
+    "Standing_Hip_Flexors",
+    "Standing_Lateral_Stretch",
+    "Standing_Leg_Curl",
+    "Standing_Long_Jump",
+    "Standing_Low-Pulley_Deltoid_Raise",
+    "Standing_Olympic_Plate_Hand_Squeeze",
+    "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench",
+    "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl",
+    "Standing_Pelvic_Tilt",
+    "Standing_Rope_Crunch",
+    "Standing_Soleus_And_Achilles_Stretch",
+    "Standing_Toe_Touches",
+    "Standing_Two-Arm_Overhead_Throw",
+    "Star_Jump",
+    "Step-up_with_Knee_Raise",
+    "Step_Mill",
+    "Stiff-Legged_Barbell_Deadlift",
+    "Stiff-Legged_Dumbbell_Deadlift",
+    "Stiff_Leg_Barbell_Good_Morning",
+    "Stomach_Vacuum",
+    "Straight-Arm_Dumbbell_Pullover",
+    "Straight-Arm_Pulldown",
+    "Straight_Raises_on_Incline_Bench",
+    "Stride_Jump_Crossover",
+    "Superman",
+    "Supine_Chest_Throw",
+    "Supine_One-Arm_Overhead_Throw",
+    "Supine_Two-Arm_Overhead_Throw",
+    "Suspended_Fallout",
+    "Suspended_Push-Up",
+    "Suspended_Reverse_Crunch",
+    "Suspended_Split_Squat",
+    "Svend_Press",
+    "Tate_Press",
+    "The_Straddle",
+    "Thigh_Abductor",
+    "Thigh_Adductor",
+    "Tire_Flip",
+    "Toe_Touchers",
+    "Torso_Rotation",
+    "Trail_Running_Walking",
+    "Tricep_Side_Stretch",
+    "Triceps_Stretch",
+    "Tuck_Crunch",
+    "Two-Arm_Kettlebell_Clean",
+    "Two-Arm_Kettlebell_Jerk",
+    "Underhand_Cable_Pulldowns",
+    "Upper_Back-Leg_Grab",
+    "Upper_Back_Stretch",
+    "Upright_Barbell_Row",
+    "Upright_Cable_Row",
+    "Upright_Row_-_With_Bands",
+    "Upward_Stretch",
+    "V-Bar_Pulldown",
+    "Vertical_Swing",
+    "Walking_Treadmill",
+    "Weighted_Ball_Hyperextension",
+    "Weighted_Ball_Side_Bend",
+    "Weighted_Bench_Dip",
+    "Weighted_Crunches",
+    "Weighted_Sit-Ups_-_With_Bands",
+    "Wide-Grip_Decline_Barbell_Pullover",
+    "Wide-Grip_Lat_Pulldown",
+    "Wide-Grip_Pulldown_Behind_The_Neck",
+    "Wide_Stance_Stiff_Legs",
+    "Wind_Sprints",
+    "Windmills",
+    "Worlds_Greatest_Stretch",
+    "Wrist_Circles",
+    "Wrist_Roller",
+    "Wrist_Rotations_with_Straight_Bar",
+    "Yoke_Walk"
+  ],
+  "unassignedExercises": 587
+}

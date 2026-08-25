@@ -1,0 +1,24 @@
+{
+  "mappingKind": "family",
+  "target": "example-broad-vocabulary",
+  "mappingVersion": "0.1.0",
+  "status": "draft-reviewed",
+  "targetSpecification": {
+    "name": "Illustrative broad exercise vocabulary",
+    "version": "example-1",
+    "reviewedOn": "2026-08-25",
+    "references": ["https://github.com/johnarleyburns/free-exercise-db-plusplus/blob/main/docs/EXERCISE-RELATIONSHIPS.md"]
+  },
+  "entries": [{
+    "externalId": "BENCH_PRESS",
+    "externalName": "Bench Press",
+    "familyId": "bench_press",
+    "relation": "broader",
+    "direction": "external_to_dbpp",
+    "confidence": "high",
+    "provenance": {
+      "source": "https://github.com/johnarleyburns/free-exercise-db-plusplus/blob/main/docs/EXERCISE-RELATIONSHIPS.md",
+      "rationale": "Example broad concept intentionally omits equipment, grip, and angle and therefore maps to a family rather than one exercise."
+    }
+  }]
+}

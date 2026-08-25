@@ -1,8 +1,16 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.4.1 released**
+Status: **v1.5.0 release preparation**
 Current stable release: **v1.4.1**
-Next milestone: maintenance only; v1.5 exercise-family work is out of scope
+Next milestone: v1.5 exercise relationships, families, and variations
+
+## v1.5 implementation status
+
+The separate relationship artifact, schema, deterministic generator, curated
+family rules/overrides, validation, reports, Python API, CLI, optional plan
+family views, substitution context, honest family-level interop contract,
+isolated-wheel support, and Swift/Kotlin/R readers are implemented. The stable
+v1.0-v1.4.1 contracts remain unchanged.
 
 ## v1.3 implementation status
 

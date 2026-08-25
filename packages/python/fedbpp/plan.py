@@ -20,12 +20,16 @@ class Plan:
     def validate(self) -> None:
         errors=validate_plan(self.document)
         if errors: raise ValidationError("; ".join(errors))
-    def coverage(self, database: Any) -> dict[str, Any]:
+    def coverage(self, database: Any, relationships: Any = None) -> dict[str, Any]:
         from ._analysis.coverage import analyze_plan
-        return analyze_plan(self.document, database)
-    def compare(self, other: "Plan", database: Any) -> dict[str, Any]:
+        result=analyze_plan(self.document, database)
+        if relationships is not None:
+            from .relationships import family_coverage
+            result["familyCoverage"]=family_coverage(self.document,relationships)
+        return result
+    def compare(self, other: "Plan", database: Any, relationships: Any = None) -> dict[str, Any]:
         from ._analysis.plan_compare import compare_plans
-        return compare_plans(self.document, other.document, database)
+        return compare_plans(self.document, other.document, database, relationships)
     def compare_actual(self, workout: Any, database: Any) -> dict[str, Any]:
         from ._analysis.plan_actual import analyze_plan_actual
         document=workout.document if hasattr(workout, "document") else workout

@@ -9,6 +9,23 @@ load_database <- function(path) {
   structure(list(metadata = document$metadata %||% list(), exercises = document$exercises), class = "fedbpp_database")
 }
 
+load_relationships <- function(path) {
+  stopifnot(length(path) == 1L)
+  document <- jsonlite::fromJSON(path, simplifyVector = FALSE)
+  if (is.null(document$families) || is.null(document$relationships)) stop("relationship artifact is missing families or relationships")
+  structure(document, class = "fedbpp_relationships")
+}
+
+family_for <- function(relationships, exercise_id) {
+  rows <- Filter(function(x) identical(x$sourceExerciseId, exercise_id) && identical(x$relationship, "member_of_family"), relationships$relationships)
+  if (!length(rows)) return(NULL)
+  relationships$families[[rows[[1L]]$familyId]]
+}
+
+family_members <- function(relationships, family_id) {
+  sort(unique(vapply(Filter(function(x) identical(x$familyId, family_id) && identical(x$relationship, "member_of_family"), relationships$relationships), `[[`, character(1), "sourceExerciseId")))
+}
+
 load_workout <- function(path, validate = TRUE) {
   workout <- jsonlite::fromJSON(path, simplifyVector = FALSE)
   if (validate) validate_workout(workout)
