@@ -331,6 +331,31 @@ jobs:
           cd "${RUNNER_TEMP}"
           PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual, TrainingHistory, analyze_periods, export_muscle_period_csv' "${RUNNER_TEMP}/fedbpp-site"
 
+      - name: Test isolated wheel longitudinal API and CLI
+        run: |
+          cd "${RUNNER_TEMP}"
+          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S - <<'PY'
+          import json, os, subprocess, sys, tempfile
+          site = os.environ["RUNNER_TEMP"] + "/fedbpp-site"
+          sys.path.insert(0, site)
+          from fedbpp import Database, TrainingHistory, analyze_periods
+          db = {"metadata": {"schemaVersion": "test", "setCredits": {"direct": 1, "indirect": .5, "stabilizer": 0}}, "exercises": {"press": {"exerciseId": "press", "annotation": {"direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["push"], "volumeEligible": True}}}}
+          plan = {"schemaVersion": "0.2.0", "planId": "p", "revisionId": "r", "cycle": {"lengthDays": 7}, "sessions": [{"planSessionId": "s", "dayOffset": 0, "exercises": [{"prescriptionId": "rx", "exerciseId": "press", "sets": 1}]}]}
+          workout = {"schemaVersion": "0.3.0", "sessionId": "w", "startTime": "2026-01-05T12:00:00Z", "planReference": {"planId": "p", "revisionId": "r", "planSessionId": "s"}, "exercises": [{"exerciseId": "press", "exercisePrescriptionId": "rx", "sets": [{"completed": True, "setType": "working"}]}]}
+          with tempfile.TemporaryDirectory() as d:
+              paths = {}
+              for name, value in (("db.json", db), ("plan.json", plan), ("workout.json", workout), ("history.json", {"subjectId": "S001", "plans": ["plan.json"], "workouts": ["workout.json"]})):
+                  path = os.path.join(d, name); json.dump(value, open(path, "w")); paths[name] = path
+              api = analyze_periods(TrainingHistory("S001", [plan], [workout]), Database(db), start="2026-01-05", end="2026-01-11", timezone="UTC")
+              assert api["periods"][0]["completedPlannedSessions"] == 1
+              cli = subprocess.run([sys.executable, "-S", "-c", "import sys; sys.path.insert(0, sys.argv[1]); from fedbpp.cli import main; raise SystemExit(main(sys.argv[2:]))", site, "analyze-history", paths["history.json"], "--db", paths["db.json"], "--start", "2026-01-05", "--end", "2026-01-11", "--timezone", "UTC"], capture_output=True, text=True)
+              assert cli.returncode == 0, cli.stderr
+              csv_path = os.path.join(d, "muscle.csv")
+              export = subprocess.run([sys.executable, "-S", "-c", "import sys; sys.path.insert(0, sys.argv[1]); from fedbpp.cli import main; raise SystemExit(main(sys.argv[2:]))", site, "research-export", paths["history.json"], "--db", paths["db.json"], "--output", csv_path, "--table", "muscle", "--start", "2026-01-05", "--end", "2026-01-11", "--timezone", "UTC"], capture_output=True, text=True)
+              assert export.returncode == 0 and "subject_id" in open(csv_path).read(), export.stderr
+          print("isolated wheel longitudinal API and CLI passed")
+          PY
+
       - name: Test v1.3 conversion and CLI from isolated wheel
         run: |
           cd "${RUNNER_TEMP}"

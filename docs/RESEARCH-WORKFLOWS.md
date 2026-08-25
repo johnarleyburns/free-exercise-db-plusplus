@@ -17,3 +17,7 @@ Python can read the CSV with `pandas.read_csv`; R can use
 `read.csv("subject-week-muscle.csv")`. The library supplies descriptive rows
 only. It does not calculate p-values, confidence intervals, effect sizes,
 regressions, or statistical conclusions.
+
+Retain `plan_revisions_used`, `plan_ids_used`, and `phase_ids_used` when
+exporting rows. Repeated PLAN sessions are occurrence-based, and mixed TARGET
+periods are reported explicitly rather than silently averaged.

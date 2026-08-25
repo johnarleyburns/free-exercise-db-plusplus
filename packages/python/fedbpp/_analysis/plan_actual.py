@@ -10,6 +10,21 @@ from .units import UnitError, normalize_quantity
 def _adherence(planned, actual):
     p=float(planned); a=float(actual); return {"planned":round(p,6),"actual":round(a,6),"delta":round(a-p,6),"fraction":round(a/p,6) if p else None}
 
+def _comparison_adherence(comparisons, name):
+    """Summarize the canonical per-set comparisons without inventing a formula."""
+    values = [row[name] for row in comparisons if row.get("counted") and row.get(name, {}).get("comparable")]
+    if not values:
+        return None
+    def number(value, *, actual=False):
+        if isinstance(value, dict):
+            if actual and value.get("value") is not None: return float(value["value"])
+            if value.get("value") is not None: return float(value["value"])
+            return float(representative_scalar(value))
+        return float(value or 0)
+    planned = sum(number(value.get("planned")) for value in values)
+    actual = sum(number(value.get("normalizedActual") if name == "load" and value.get("normalizedActual") else value.get("actual"), actual=True) for value in values)
+    return _adherence(planned, actual) | {"comparable": True, "comparedSets": len(values)}
+
 def _metric_coverage(exercises, db):
     direct,indirect,stabilizers,patterns=(defaultdict(float) for _ in range(4)); counted=mapped=unmapped=ineligible=0
     credits=set_credits(db)
@@ -110,7 +125,7 @@ def analyze_plan_actual(plan:dict[str,Any], workout:dict[str,Any], db:Any)->dict
       vl={"planned":round(planned_vl,6) if vl_comparable else None,"actual":round(actual_vl,6) if vl_comparable else None,"delta":round(actual_vl-planned_vl,6) if vl_comparable else None,"fraction":round(actual_vl/planned_vl,6) if vl_comparable and planned_vl else None,"comparable":vl_comparable}
       if vl_reason: vl["reason"]=vl_reason
       pscalar=representative_scalar(prange)
-      exercise_rows.append({"actualExerciseIndex":match["actualExerciseIndex"],"prescriptionId":match.get("prescriptionId"),"plannedExerciseId":rx.get("exerciseId") if rx else None,"actualExerciseId":actual.get("exerciseId"),"status":match["status"],"plannedSets":pscalar,"plannedSetRange":prange,"actualCompletedSets":actual_count,"setDelta":round(actual_count-pscalar,6),"setRangeAdherence":set_range,"repsAdherentSets":reps_ok,"strictPrescriptionAdherence":match["status"]=="matched","substitutionAdjustedCompletion":match["status"] in {"matched","substitution"},"volumeLoad":vl})
+      exercise_rows.append({"actualExerciseIndex":match["actualExerciseIndex"],"prescriptionId":match.get("prescriptionId"),"plannedExerciseId":rx.get("exerciseId") if rx else None,"actualExerciseId":actual.get("exerciseId"),"status":match["status"],"reason":match.get("reason"),"plannedSets":pscalar,"plannedSetRange":prange,"actualCompletedSets":actual_count,"setDelta":round(actual_count-pscalar,6),"setRangeAdherence":set_range,"set_adherence":set_range,"repsAdherentSets":reps_ok,"reps_adherence":_comparison_adherence(comparisons, "reps"),"load_adherence":_comparison_adherence(comparisons, "load"),"rpe_adherence":_comparison_adherence(comparisons, "rpe"),"rir_adherence":_comparison_adherence(comparisons, "rir"),"strictPrescriptionAdherence":match["status"]=="matched","substitutionAdjustedCompletion":match["status"] in {"matched","substitution"},"volumeLoad":vl,"volume_load_adherence":vl})
     pn=planned["nativeCycle"] if planned else {}; ac=coverages["matched"]; sub=coverages["substitution"]
     muscle_rows={}
     metrics=(("direct","directSets"),("indirect","indirectSets"),("stabilizerParticipation","stabilizerParticipationSets"),("effective","effectiveSets"))
@@ -130,6 +145,6 @@ def analyze_plan_actual(plan:dict[str,Any], workout:dict[str,Any], db:Any)->dict
     statuses["missing_prescription"]=len(matching["missingPrescriptions"])
     md=_metadata(db)
     metadata={"analysisVersion":ANALYSIS_VERSION,"analysisPolicy":ANALYSIS_POLICY,"dbSchemaVersion":md.get("schemaVersion"),"dbConverterVersion":md.get("converterVersion"),"dbUpstreamSha256":md.get("upstream",{}).get("sha256"),"planSchemaVersion":plan.get("schemaVersion"),"workoutSchemaVersion":workout.get("schemaVersion"),"setCredits":set_credits(db),"nativePeriodDays":plan.get("cycle",{}).get("lengthDays"),"normalizedPeriodDays":7,"rangePolicy":RANGE_POLICY,"unitPolicy":UNIT_POLICY}
-    return {"analysisVersion":ANALYSIS_VERSION,"analysisPolicy":ANALYSIS_POLICY,"analysisMetadata":metadata,"plan":{"planId":plan.get("planId"),"revisionId":plan.get("revisionId")},"actual":{"sessionId":workout.get("sessionId"),"schemaVersion":workout.get("schemaVersion")},"matching":{"sessionStatus":matching["sessionStatus"],"planSessionId":sid,"exerciseStatuses":dict(sorted(statuses.items())),"exercises":exercise_rows,"sets":set_rows,"missingPrescriptions":[x["prescriptionId"] for x in matching["missingPrescriptions"]]},"plannedCoverage":pn,"matchedActualCoverage":coverages["matched"],"unplannedActualCoverage":coverages["unplanned"],"totalActualCoverage":coverages["total"],"actualCoverage":coverages,"coverageCompleteness":{"plan":planned["coverageCompleteness"] if planned else {},"actual":coverages["total"]["coverageCompleteness"]},"adherence":{"muscles":muscle_rows,"movementPatterns":patterns}}
+    return {"analysisVersion":ANALYSIS_VERSION,"analysisPolicy":ANALYSIS_POLICY,"analysisMetadata":metadata,"plan":{"planId":plan.get("planId"),"revisionId":plan.get("revisionId")},"actual":{"sessionId":workout.get("sessionId"),"schemaVersion":workout.get("schemaVersion")},"matching":{"sessionStatus":matching["sessionStatus"],"planSessionId":sid,"exerciseStatuses":dict(sorted(statuses.items())),"exercises":exercise_rows,"sets":set_rows,"missingPrescriptions":[x["prescriptionId"] for x in matching["missingPrescriptions"]],"missingPrescriptionDetails":[x["prescription"] for x in matching["missingPrescriptions"]]},"plannedCoverage":pn,"matchedActualCoverage":coverages["matched"],"unplannedActualCoverage":coverages["unplanned"],"totalActualCoverage":coverages["total"],"actualCoverage":coverages,"coverageCompleteness":{"plan":planned["coverageCompleteness"] if planned else {},"actual":coverages["total"]["coverageCompleteness"]},"adherence":{"muscles":muscle_rows,"movementPatterns":patterns}}
 
 __all__=["analyze_plan_actual"]

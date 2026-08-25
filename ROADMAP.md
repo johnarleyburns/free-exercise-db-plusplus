@@ -1,8 +1,8 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.3.0 released**
-Current stable release: **v1.3.0**
-Next milestone: v1.4 longitudinal subject analysis (not started)
+Status: **v1.4.1 released**
+Current stable release: **v1.4.1**
+Next milestone: maintenance only; v1.5 exercise-family work is out of scope
 
 ## v1.3 implementation status
 

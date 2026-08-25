@@ -11,3 +11,8 @@ the requested inclusive range.
 Explicit timestamp offsets are honored. Naive timestamps require an analyzer
 timezone; an override intentionally converts all timestamps before grouping.
 The result records period type, dates, timezone, revision, and phase.
+
+Rolling windows are emitted only when the complete seven-day window is inside
+the requested range. Calendar weeks retain full Monday–Sunday bounds while
+work is clipped to the requested query range. Phase expansion is finite and
+does not repeat after declared phases end.

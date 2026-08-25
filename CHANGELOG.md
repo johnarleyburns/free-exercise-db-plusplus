@@ -16,6 +16,13 @@
 
 # Changelog
 
+## 1.4.1 - 2026-08-25
+
+- Fixed longitudinal repeated-occurrence matching, revision-boundary clipping,
+  missed-set ranges, canonical exercise adherence, substitution reasons,
+  unplanned coverage, exposure frequency, target transitions, and period semantics.
+- Added longitudinal regression, cohort, wheel, and CLI coverage.
+
 ## 1.4.0 - 2026-08-25
 
 - Added longitudinal PLAN-vs-ACTUAL analysis across calendar, rolling, native

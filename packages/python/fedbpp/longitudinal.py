@@ -20,9 +20,9 @@ from zoneinfo import ZoneInfo
 
 from ._analysis.coverage import analyze_plan
 from ._analysis.plan_actual import analyze_plan_actual
-from ._analysis.policies import add_ranges, normalize_range, scale_range, set_credits
+from ._analysis.policies import add_ranges, normalize_range, planned_set_range, scale_range, set_credits
 
-ANALYSIS_VERSION = "1.4.0"
+ANALYSIS_VERSION = "1.4.1"
 ANALYSIS_POLICY = "dbpp-default-volume-v1"
 PERIOD_TYPES = {"calendar_week", "rolling_7_days", "plan_cycle", "phase", "custom_date_range"}
 MISSING_STATES = {"zero", "not_prescribed", "not_recorded", "unknown", "unmapped", "volume_ineligible", "not_applicable", "unable_to_match"}
@@ -52,6 +52,22 @@ class TrainingHistory:
 
 
 SubjectTrainingHistory = TrainingHistory
+
+
+@dataclass(frozen=True)
+class ScheduledOccurrence:
+    """Internal identity for one scheduled plan-session occurrence."""
+
+    plan_id: str | None
+    revision_id: str | None
+    plan_session_id: str | None
+    scheduled_date: date
+    session: dict[str, Any]
+    plan: dict[str, Any]
+
+    @property
+    def key(self) -> tuple[Any, ...]:
+        return (self.plan_id, self.revision_id, self.plan_session_id, self.scheduled_date)
 
 
 def _parse_timestamp(value: str | datetime, analyzer_timezone: str | timezone | None = None) -> datetime:
@@ -165,7 +181,7 @@ def _bounds(start: date, end: date, period: str, tz: timezone, history: Training
             cursor += timedelta(days=7)
         return result
     if period == "rolling_7_days":
-        return [(cursor, cursor + timedelta(days=6)) for cursor in (start + timedelta(days=i) for i in range((end - start).days + 1)) if cursor <= end]
+        return [(cursor, cursor + timedelta(days=6)) for cursor in (start + timedelta(days=i) for i in range((end - start).days + 1)) if cursor + timedelta(days=6) <= end]
     if period == "plan_cycle":
         length = int((plan or {}).get("cycle", {}).get("lengthDays", 7))
         anchor = _activation(history, plan or {}) if plan else None
@@ -185,13 +201,14 @@ def _bounds(start: date, end: date, period: str, tz: timezone, history: Training
     anchor = _activation(history, plan or {})
     cursor = _day(anchor["effectiveFrom"], tz) if anchor and anchor.get("effectiveFrom") else start
     out = []
-    while cursor <= end:
-        for phase in phases:
+    for phase in phases:
             length = int((phase.get("cycle") or (plan or {}).get("cycle") or {"lengthDays": 7}).get("lengthDays", 7)) * int(phase.get("durationCycles", 1))
             finish = cursor + timedelta(days=length - 1)
             if finish >= start:
                 out.append((max(cursor, start), min(finish, end)))
             cursor = finish + timedelta(days=1)
+            if cursor > end:
+                break
     return out
 
 
@@ -209,30 +226,37 @@ def _periods(history: TrainingHistory, period: str, start: date, end: date, anal
                 active_end = _day(active["effectiveTo"], tz) if active.get("effectiveTo") else None
                 if pend < active_start or (active_end is not None and pstart >= active_end):
                     continue
-            result.append({"periodType": period, "start": _iso(pstart), "end": _iso(pend), "timezone": str(analyzer_timezone or "UTC"), "planId": plan.get("planId") if plan else None, "revisionId": plan.get("revisionId") if plan else None, "plan": plan})
-    # Avoid duplicate windows when several revisions are present but no plan is date-active.
-    seen = set()
-    unique = []
-    for item in sorted(result, key=lambda x: (x["start"], x["end"], x.get("revisionId") or "")):
-        key = (item["start"], item["end"], item.get("revisionId"))
-        if key not in seen:
-            seen.add(key); unique.append(item)
-    return unique
+            result.append({"periodType": period, "start": _iso(pstart), "end": _iso(pend), "queryStart": _iso(start), "queryEnd": _iso(end), "timezone": str(analyzer_timezone or "UTC"), "planId": plan.get("planId") if plan else None, "revisionId": plan.get("revisionId") if plan else None, "plan": plan})
+    # Revisions share the requested calendar window. Their scheduled contributions
+    # are clipped later, so a week crossing a boundary is not double-counted.
+    grouped = {}
+    for item in result:
+        key = (item["start"], item["end"])
+        grouped.setdefault(key, []).append(item)
+    out = []
+    for (pstart, pend), items in sorted(grouped.items()):
+        active = [x for x in items if x.get("plan") is not None]
+        plans_used = [x["plan"] for x in active]
+        first = active[0] if active else items[0]
+        out.append({**first, "plan": plans_used[0] if len(plans_used) == 1 else None, "plans": plans_used, "planId": plans_used[0].get("planId") if len(plans_used) == 1 else None, "revisionId": plans_used[0].get("revisionId") if len(plans_used) == 1 else None})
+    return out
 
 
-def _scheduled(plan: dict[str, Any], pstart: date, pend: date, history: TrainingHistory, period: str, tz: timezone) -> list[tuple[date, dict[str, Any]]]:
+def _scheduled(plan: dict[str, Any], pstart: date, pend: date, history: TrainingHistory, period: str, tz: timezone) -> list[ScheduledOccurrence]:
     activation = _activation(history, plan)
     anchor = _day(activation["effectiveFrom"], tz) if activation and activation.get("effectiveFrom") else pstart
     cycle = int(plan.get("cycle", {}).get("lengthDays", 7))
-    result = []
+    active_start = _day(activation["effectiveFrom"], tz) if activation and activation.get("effectiveFrom") else None
+    active_end = _day(activation["effectiveTo"], tz) if activation and activation.get("effectiveTo") else None
+    result: list[ScheduledOccurrence] = []
     cursor = anchor
     while cursor <= pend:
         for session in plan.get("sessions", []):
             candidate = cursor + timedelta(days=int(session.get("dayOffset", 0)))
-            if pstart <= candidate <= pend:
-                result.append((candidate, session))
+            if pstart <= candidate <= pend and (active_start is None or candidate >= active_start) and (active_end is None or candidate < active_end):
+                result.append(ScheduledOccurrence(plan.get("planId"), plan.get("revisionId"), session.get("planSessionId"), candidate, session, plan))
         cursor += timedelta(days=cycle)
-    return sorted(result, key=lambda x: (x[0], x[1].get("planSessionId", "")))
+    return sorted(result, key=lambda x: (x.scheduled_date, x.plan_session_id or "", x.revision_id or ""))
 
 
 def _target_for(history: TrainingHistory, at: date, period_days: int) -> dict[str, Any] | None:
@@ -241,14 +265,25 @@ def _target_for(history: TrainingHistory, at: date, period_days: int) -> dict[st
         if target.get("effectiveFrom"):
             start = date.fromisoformat(str(target["effectiveFrom"])[:10])
             end = date.fromisoformat(str(target["effectiveTo"])[:10]) if target.get("effectiveTo") else None
-            if start <= at and (end is None or at <= end): matches.append(target)
+            if start <= at and (end is None or at < end): matches.append(target)
         elif not matches:
             matches.append(target)
     if not matches:
         return None
-    target = matches[-1]
+    if len(matches) > 1:
+        raise ValueError(f"overlapping target windows at {at.isoformat()}")
+    target = matches[0]
     source_days = int(target.get("periodDays", period_days)); scale = period_days / source_days
     return {"targetId": target.get("targetId"), "periodDays": period_days, "muscles": {m: scale_range(r, scale) for m, r in target.get("muscles", {}).items()}}
+
+
+def _target_profiles_for(history: TrainingHistory, start: date, end: date, period_days: int) -> list[dict[str, Any]]:
+    profiles = []
+    for day in (start + timedelta(days=i) for i in range((end - start).days + 1)):
+        profile = _target_for(history, day, period_days)
+        if profile and profile.get("targetId") not in {x.get("targetId") for x in profiles}:
+            profiles.append(profile)
+    return profiles
 
 
 def _phase_id(plan: dict[str, Any] | None, day: date, history: TrainingHistory, tz: timezone) -> str | None:
@@ -259,69 +294,76 @@ def _phase_id(plan: dict[str, Any] | None, day: date, history: TrainingHistory, 
         length = int((phase.get("cycle") or plan.get("cycle") or {"lengthDays": 7}).get("lengthDays", 7)) * int(phase.get("durationCycles", 1))
         if elapsed < cursor + length: return phase.get("phaseId")
         cursor += length
-    return plan["phases"][-1].get("phaseId")
+    return None
 
 
 def _rows_for_period(history: TrainingHistory, item: dict[str, Any], db: Any, analyzer_timezone: str | timezone | None, fallback_revision_id: str | None) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
-    tz = _tz(analyzer_timezone or "UTC"); pstart = date.fromisoformat(item["start"]); pend = date.fromisoformat(item["end"]); plan = item.get("plan")
-    period_days = (pend - pstart).days + 1
+    tz = _tz(analyzer_timezone or "UTC"); pstart = date.fromisoformat(item["start"]); pend = date.fromisoformat(item["end"])
+    qstart = max(pstart, date.fromisoformat(item.get("queryStart", item["start"]))); qend = min(pend, date.fromisoformat(item.get("queryEnd", item["end"])))
+    plans = item.get("plans") or ([item["plan"]] if item.get("plan") else [])
     planned = {r: {} for r in ("direct", "indirect", "stabilizer", "effective")}; actual = {r: defaultdict(float) for r in planned}; planned_exposure = defaultdict(float); actual_exposure = defaultdict(float)
-    scheduled = _scheduled(plan, pstart, pend, history, item["periodType"], tz) if plan else []
-    session_rows: list[dict[str, Any]] = []; exercise_rows: list[dict[str, Any]] = []; matched_workouts: set[str] = set(); planned_mapped = planned_unmapped = 0.0
-    actual_counted = actual_mapped = actual_unmapped = 0.0
-    plan_by_session = {s.get("planSessionId"): s for _, s in scheduled}
-    all_plan_sessions = {s.get("planSessionId"): s for s in plan.get("sessions", [])} if plan else {}
-    for scheduled_day, session in scheduled:
-        one_plan = {**plan, "sessions": [session], "phases": []}
-        pc = analyze_plan(one_plan, db); cov = pc["nativeCycle"]
+    occurrences = [o for plan in plans for o in _scheduled(plan, pstart, pend, history, item["periodType"], tz)]
+    session_rows: list[dict[str, Any]] = []; exercise_rows: list[dict[str, Any]] = []; consumed_workouts: set[str] = set(); matched_occurrences: set[tuple[Any, ...]] = set(); planned_mapped = planned_unmapped = 0.0; actual_counted = actual_mapped = actual_unmapped = 0.0
+    for occurrence in sorted(occurrences, key=lambda x: x.key):
+        one_plan = {**occurrence.plan, "sessions": [occurrence.session], "phases": []}; pc = analyze_plan(one_plan, db); cov = pc["nativeCycle"]
         for role in planned:
             for muscle, value in cov.get({"direct":"directSetRanges", "indirect":"indirectSetRanges", "stabilizer":"stabilizerParticipationSetRanges", "effective":"effectiveSetRanges"}[role], {}).items(): _range_add(planned[role], muscle, value)
         planned_mapped += float(pc["coverageCompleteness"].get("mappedSets", 0)); planned_unmapped += float(pc["coverageCompleteness"].get("unmappedSets", 0))
-        for muscle, val in cov.get("effectiveSetRanges", {}).items(): planned_exposure[muscle] += 1
+        for muscle in cov.get("effectiveSetRanges", {}): planned_exposure[muscle] += 1
+        selected_workout = None
         for workout in history.workouts:
-            if workout.get("sessionId") in matched_workouts: continue
-            stamp = _parse_timestamp(workout["startTime"], analyzer_timezone)
-            ref = workout.get("planReference") or {}
-            explicit_match = ref.get("planId") == plan.get("planId") and ref.get("revisionId") == plan.get("revisionId") and ref.get("planSessionId") == session.get("planSessionId")
-            if (not explicit_match and stamp.date() != scheduled_day) or (ref.get("planSessionId") and ref.get("planSessionId") != session.get("planSessionId")): continue
+            sid = workout.get("sessionId")
+            if sid in consumed_workouts or not workout.get("startTime"): continue
+            stamp = _parse_timestamp(workout["startTime"], analyzer_timezone); ref = workout.get("planReference") or {}
+            if stamp.date() != occurrence.scheduled_date or not (qstart <= stamp.date() <= qend): continue
+            if ref.get("planSessionId") and ref.get("planSessionId") != occurrence.plan_session_id: continue
+            if ref.get("planId") and ref.get("planId") != occurrence.plan_id: continue
+            if ref.get("revisionId") and ref.get("revisionId") != occurrence.revision_id: continue
             selected, linkage = _revision_for(workout, history, stamp, fallback_revision_id)
-            if selected and selected.get("revisionId") == plan.get("revisionId"):
-                linked = {**workout, "planReference": {**ref, "planId": plan.get("planId"), "revisionId": plan.get("revisionId"), "planSessionId": session.get("planSessionId")}}
-                analysis = analyze_plan_actual(plan, linked, db); matched_workouts.add(workout.get("sessionId")); session_rows.append(_session_row(history, item, workout, plan, session, analysis, "matched"))
-                completeness = analysis.get("totalActualCoverage", {}).get("coverageCompleteness", {}); actual_counted += completeness.get("actualCountedSets", 0); actual_mapped += completeness.get("mappedActualSets", 0); actual_unmapped += completeness.get("unmappedActualSets", 0)
-                _add_actual(analysis, actual, actual_exposure, exercise_rows, history, item, workout, plan, session)
+            if selected and selected.get("revisionId") == occurrence.revision_id and selected.get("planId") == occurrence.plan_id:
+                selected_workout = workout; break
+        if selected_workout is not None:
+            ref = selected_workout.get("planReference") or {}; linked = {**selected_workout, "planReference": {**ref, "planId": occurrence.plan_id, "revisionId": occurrence.revision_id, "planSessionId": occurrence.plan_session_id}}
+            analysis = analyze_plan_actual(occurrence.plan, linked, db); consumed_workouts.add(selected_workout.get("sessionId")); matched_occurrences.add(occurrence.key)
+            session_rows.append(_session_row(history, item, selected_workout, occurrence.plan, occurrence.session, analysis, "matched", occurrence.scheduled_date))
+            completeness = analysis.get("totalActualCoverage", {}).get("coverageCompleteness", {}); actual_counted += completeness.get("actualCountedSets", 0); actual_mapped += completeness.get("mappedActualSets", 0); actual_unmapped += completeness.get("unmappedActualSets", 0); _add_actual(analysis, actual, actual_exposure, exercise_rows, history, item, selected_workout, occurrence.plan, occurrence.session)
+        else:
+            session_rows.append(_session_row(history, item, None, occurrence.plan, occurrence.session, None, "missed_planned_session", occurrence.scheduled_date))
+    all_sessions = { (plan.get("planId"), plan.get("revisionId"), s.get("planSessionId")): s for plan in plans for s in plan.get("sessions", []) }
     for workout in history.workouts:
-        if workout.get("sessionId") in matched_workouts: continue
-        stamp = _parse_timestamp(workout["startTime"], analyzer_timezone)
-        if not (pstart <= stamp.date() <= pend): continue
-        selected, linkage = _revision_for(workout, history, stamp, fallback_revision_id)
-        status = "unable_to_match" if linkage == "unable_to_match" else "unplanned_session"
-        analysis = None
-        if selected and selected.get("revisionId") == item.get("revisionId") and (workout.get("planReference") or {}).get("planSessionId") in all_plan_sessions:
-            session = all_plan_sessions[(workout.get("planReference") or {}).get("planSessionId")]; linked = {**workout, "planReference": {**(workout.get("planReference") or {}), "planId": plan.get("planId"), "revisionId": plan.get("revisionId"), "planSessionId": session.get("planSessionId")}}; analysis = analyze_plan_actual(plan, linked, db); status = "matched"; matched_workouts.add(workout.get("sessionId"))
-        session_rows.append(_session_row(history, item, workout, plan if analysis else None, session if analysis else None, analysis, status)); _add_actual(analysis, actual, actual_exposure, exercise_rows, history, item, workout, plan, session) if analysis else _add_unplanned(workout, actual, actual_exposure, db)
-        if analysis:
-            completeness = analysis.get("totalActualCoverage", {}).get("coverageCompleteness", {}); actual_counted += completeness.get("actualCountedSets", 0); actual_mapped += completeness.get("mappedActualSets", 0); actual_unmapped += completeness.get("unmappedActualSets", 0)
-    completed_plan_sessions = {row["plan_session_id"] for row in session_rows if row["session_status"] == "matched"}
-    for scheduled_day, session in scheduled:
-        if session.get("planSessionId") not in completed_plan_sessions:
-            session_rows.append(_session_row(history, item, None, plan, session, None, "missed_planned_session"))
-    muscles = sorted(set().union(*(set(planned[r]) for r in planned), *(set(actual[r]) for r in actual), *(set((_target_for(history, pstart, period_days) or {}).get("muscles", {}))))); target = _target_for(history, pstart, period_days); muscle_rows = []
+        sid = workout.get("sessionId"); stamp = _parse_timestamp(workout["startTime"], analyzer_timezone) if workout.get("startTime") else None
+        if sid in consumed_workouts or stamp is None or not (qstart <= stamp.date() <= qend): continue
+        selected, linkage = _revision_for(workout, history, stamp, fallback_revision_id); ref = workout.get("planReference") or {}; status = "unable_to_match" if linkage == "unable_to_match" else "unplanned_session"
+        session = all_sessions.get(((selected or {}).get("planId"), (selected or {}).get("revisionId"), ref.get("planSessionId")))
+        session_rows.append(_session_row(history, item, workout, selected if session else None, session, None, status, None)); counts = _add_unplanned(workout, actual, actual_exposure, db, exercise_rows, history, item); actual_counted += counts["counted"]; actual_mapped += counts["mapped"]; actual_unmapped += counts["unmapped"]; consumed_workouts.add(sid)
+    target_profiles = _target_profiles_for(history, qstart, qend, (pend-pstart).days + 1)
+    target = target_profiles[0] if len(target_profiles) == 1 else None
+    target_ids = [x.get("targetId") for x in target_profiles]
+    plan = plans[0] if len(plans) == 1 else None
+    muscles = sorted(set().union(*(set(planned[r]) for r in planned), *(set(actual[r]) for r in actual), *(set((target or {}).get("muscles", {}))), *(set().union(*(set(x.get("muscles", {})) for x in target_profiles)) if target_profiles else set()))); muscle_rows = []
     for muscle in muscles:
-        row = {"subject_id": history.subject_id, "period_type": item["periodType"], "period_start": item["start"], "period_end": item["end"], "plan_id": item.get("planId"), "revision_id": item.get("revisionId"), "phase_id": _phase_id(plan, pstart, history, tz), "muscle": muscle}
+        row = {"subject_id": history.subject_id, "period_type": item["periodType"], "period_start": item["start"], "period_end": item["end"], "plan_id": item.get("planId"), "revision_id": item.get("revisionId"), "phase_id": _phase_id(plan, pstart, history, tz), "muscle": muscle, "plan_revisions_used": sorted({x.get("revisionId") for x in plans if x.get("revisionId")}), "plan_ids_used": sorted({x.get("planId") for x in plans if x.get("planId")}), "phase_ids_used": sorted({phase.get("phaseId") for plan_doc in plans for phase in plan_doc.get("phases", []) if phase.get("phaseId")})}
         for role in ("direct", "indirect", "stabilizer", "effective"):
             prescribed = muscle in planned[role]; pr = planned[role].get(muscle, normalize_range(0)); row[f"planned_{role}_min"], row[f"planned_{role}_target"], row[f"planned_{role}_max"] = pr["min"], pr["target"], pr["max"]; row[f"planned_{role}_state"] = "prescribed" if prescribed else "not_prescribed"; av = round(actual[role].get(muscle, 0), 6); row[f"actual_{role}"] = av; row[f"actual_{role}_state"] = "not_recorded" if actual_counted == 0 else "zero" if av == 0 else "recorded"; row[f"{role}_adherence"] = _fraction(av, pr["target"] if pr["target"] is not None else next((pr[k] for k in ("min", "max") if pr[k] is not None), None))
-        tr = (target or {}).get("muscles", {}).get(muscle); row.update({"target_min": tr.get("min") if tr else None, "target_target": tr.get("target") if tr else None, "target_max": tr.get("max") if tr else None, "target_state": _target_state(row["actual_effective"], tr)})
+        tr = (target or {}).get("muscles", {}).get(muscle); row.update({"target_min": tr.get("min") if tr else None, "target_target": tr.get("target") if tr else None, "target_max": tr.get("max") if tr else None, "target_state": _target_state(row["actual_effective"], tr) if target else ("mixed_target" if len(target_profiles) > 1 else "not_targeted"), "target_profiles_used": target_ids})
         row.update({"planned_exposures": round(planned_exposure[muscle], 6), "actual_exposures": round(actual_exposure[muscle], 6), "planned_mapped_sets": planned_mapped, "planned_unmapped_sets": planned_unmapped, "actual_mapped_sets": actual_mapped, "actual_unmapped_sets": actual_unmapped, "mapped_fraction": round(actual_mapped / actual_counted, 6) if actual_counted else None, "unplanned_sets": sum(x.get("unplanned_sets", 0) for x in session_rows), "analysis_policy": ANALYSIS_POLICY, "analysis_version": ANALYSIS_VERSION})
         muscle_rows.append(row)
-    summary = {"scheduledPlannedSessions": len(scheduled), "completedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "matched"), "missedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "missed_planned_session"), "unplannedActualSessions": sum(1 for x in session_rows if x["session_status"] == "unplanned_session"), "sessionAdherenceFraction": round(sum(1 for x in session_rows if x["session_status"] == "matched") / len(scheduled), 6) if scheduled else None}
+    summary = {"scheduledPlannedSessions": len(occurrences), "completedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "matched"), "missedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "missed_planned_session"), "unplannedActualSessions": sum(1 for x in session_rows if x["session_status"] == "unplanned_session"), "sessionAdherenceFraction": round(sum(1 for x in session_rows if x["session_status"] == "matched") / len(occurrences), 6) if occurrences else None, "targetProfilesUsed": target_ids}
     return muscle_rows, sorted(session_rows, key=lambda x: (x["timestamp"] or "", x["session_id"] or "")), sorted(exercise_rows, key=lambda x: (x["session_id"], x["prescription_id"] or "", x["actual_exercise_id"] or "")), summary
 
 
-def _session_row(history: TrainingHistory, item: dict[str, Any], workout: dict[str, Any] | None, plan: dict[str, Any] | None, session: dict[str, Any] | None, analysis: dict[str, Any] | None, status: str) -> dict[str, Any]:
+def _session_row(history: TrainingHistory, item: dict[str, Any], workout: dict[str, Any] | None, plan: dict[str, Any] | None, session: dict[str, Any] | None, analysis: dict[str, Any] | None, status: str, scheduled_date: date | None = None) -> dict[str, Any]:
     matching = (analysis or {}).get("matching", {}); exercises = matching.get("exercises", [])
     counted = sum(1 for exercise in (workout or {}).get("exercises", []) for item_set in exercise.get("sets", []) if item_set.get("completed") is True and (item_set.get("setType") is None or item_set.get("setType") in {"working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted"}))
-    return {"subject_id": history.subject_id, "period_type": item["periodType"], "period_start": item["start"], "period_end": item["end"], "session_id": workout.get("sessionId") if workout else None, "timestamp": workout.get("startTime") if workout else None, "plan_id": plan.get("planId") if plan else item.get("planId"), "revision_id": plan.get("revisionId") if plan else item.get("revisionId"), "plan_session_id": session.get("planSessionId") if session else None, "session_status": status, "planned_exercises": len(session.get("exercises", [])) if session else 0, "matched_exercises": sum(1 for x in exercises if x.get("status") == "matched"), "substitutions": sum(1 for x in exercises if x.get("status") == "substitution"), "unplanned_exercises": sum(1 for x in exercises if x.get("status") == "unplanned_addition") if analysis else len((workout or {}).get("exercises", [])), "planned_sets": sum(float(x.get("plannedSets", 0)) for x in exercises), "actual_counted_sets": sum(float(x.get("actualCompletedSets", 0)) for x in exercises) if analysis else counted, "missed_sets": len(matching.get("missingPrescriptions", [])), "unplanned_sets": sum(float(x.get("actualCompletedSets", 0)) for x in exercises if x.get("status") == "unplanned_addition") if analysis else counted, "session_adherence": 1.0 if status == "matched" else 0.0 if status == "missed_planned_session" else None}
+    planned_ranges = [planned_set_range(x) for x in (session or {}).get("exercises", [])]
+    missing = matching.get("missingPrescriptionDetails", [])
+    missed_range = normalize_range(0)
+    for rx in missing or ((session or {}).get("exercises", []) if status == "missed_planned_session" else []): missed_range = add_ranges(missed_range, planned_set_range(rx))
+    planned_range = normalize_range(0)
+    for value in planned_ranges: planned_range = add_ranges(planned_range, value)
+    actual_sets = sum(float(x.get("actualCompletedSets", 0)) for x in exercises) if analysis else counted
+    target_missed = missed_range.get("target")
+    return {"subject_id": history.subject_id, "period_type": item["periodType"], "period_start": item["start"], "period_end": item["end"], "scheduled_date": scheduled_date.isoformat() if scheduled_date else None, "session_id": workout.get("sessionId") if workout else None, "timestamp": workout.get("startTime") if workout else None, "plan_id": plan.get("planId") if plan else item.get("planId"), "revision_id": plan.get("revisionId") if plan else item.get("revisionId"), "plan_session_id": session.get("planSessionId") if session else None, "session_status": status, "planned_exercises": len(session.get("exercises", [])) if session else 0, "matched_exercises": sum(1 for x in exercises if x.get("status") == "matched"), "substitutions": sum(1 for x in exercises if x.get("status") == "substitution"), "unplanned_exercises": sum(1 for x in exercises if x.get("status") == "unplanned_addition") if analysis else len((workout or {}).get("exercises", [])), "planned_sets": planned_range.get("target"), "planned_set_min": planned_range.get("min"), "planned_set_max": planned_range.get("max"), "actual_counted_sets": actual_sets, "missing_prescriptions": len(matching.get("missingPrescriptions", [])) if analysis else len((session or {}).get("exercises", [])), "missed_sets": target_missed, "missed_sets_min": missed_range.get("min"), "missed_sets_target": missed_range.get("target"), "missed_sets_max": missed_range.get("max"), "unplanned_sets": sum(float(x.get("actualCompletedSets", 0)) for x in exercises if x.get("status") == "unplanned_addition") if analysis else (counted if status == "unplanned_session" else 0), "session_adherence": 1.0 if status == "matched" else 0.0 if status == "missed_planned_session" else None}
 
 
 def _add_actual(analysis: dict[str, Any] | None, actual: dict[str, defaultdict[str, float]], exposure: defaultdict[str, float], exercise_rows: list[dict[str, Any]], history: TrainingHistory, item: dict[str, Any], workout: dict[str, Any], plan: dict[str, Any] | None, session: dict[str, Any] | None) -> None:
@@ -329,24 +371,33 @@ def _add_actual(analysis: dict[str, Any] | None, actual: dict[str, defaultdict[s
     for role in actual:
         for muscle, value in analysis.get("totalActualCoverage", {}).get({"direct":"directSets", "indirect":"indirectSets", "stabilizer":"stabilizerParticipationSets", "effective":"effectiveSets"}[role], {}).items(): actual[role][muscle] += float(value)
     for muscle in analysis.get("totalActualCoverage", {}).get("effectiveSets", {}): exposure[muscle] += 1
-    for row in analysis.get("matching", {}).get("exercises", []): exercise_rows.append({"subject_id": history.subject_id, "period": item["start"], "session_id": workout.get("sessionId"), "prescription_id": row.get("prescriptionId"), "planned_exercise_id": row.get("plannedExerciseId"), "actual_exercise_id": row.get("actualExerciseId"), "match_status": row.get("status"), "planned_sets_min": row.get("plannedSetRange", {}).get("min"), "planned_sets_target": row.get("plannedSetRange", {}).get("target"), "planned_sets_max": row.get("plannedSetRange", {}).get("max"), "actual_sets": row.get("actualCompletedSets"), "reps_adherence": None, "load_adherence": None, "rpe_adherence": None, "rir_adherence": None, "substitution_reason": next((m.get("reason") for m in analysis.get("matching", {}).get("exercises", []) if m.get("prescriptionId") == row.get("prescriptionId")), None)})
+    for row in analysis.get("matching", {}).get("exercises", []): exercise_rows.append({"subject_id": history.subject_id, "period": item["start"], "session_id": workout.get("sessionId"), "prescription_id": row.get("prescriptionId"), "planned_exercise_id": row.get("plannedExerciseId"), "actual_exercise_id": row.get("actualExerciseId"), "match_status": row.get("status"), "planned_sets_min": row.get("plannedSetRange", {}).get("min"), "planned_sets_target": row.get("plannedSetRange", {}).get("target"), "planned_sets_max": row.get("plannedSetRange", {}).get("max"), "actual_sets": row.get("actualCompletedSets"), "reps_adherence": row.get("reps_adherence"), "load_adherence": row.get("load_adherence"), "rpe_adherence": row.get("rpe_adherence"), "rir_adherence": row.get("rir_adherence"), "set_adherence": row.get("set_adherence"), "volume_load_adherence": row.get("volume_load_adherence"), "substitution_reason": row.get("reason")})
 
 
-def _add_unplanned(workout: dict[str, Any], actual: dict[str, defaultdict[str, float]], exposure: defaultdict[str, float], db: Any) -> None:
+def _add_unplanned(workout: dict[str, Any], actual: dict[str, defaultdict[str, float]], exposure: defaultdict[str, float], db: Any, exercise_rows: list[dict[str, Any]] | None = None, history: TrainingHistory | None = None, item: dict[str, Any] | None = None) -> dict[str, int]:
     # Keep the work recorded without assigning it to a prescription.  Known DB++
     # annotations may contribute to actual totals; unmapped work contributes only
     # to the session-level record.
-    before = {role: dict(actual[role]) for role in ("direct", "indirect", "stabilizer")}
+    before = {role: dict(actual[role]) for role in ("direct", "indirect", "stabilizer")}; counts = {"counted": 0, "mapped": 0, "unmapped": 0}; session_muscles = set()
     for exercise in workout.get("exercises", []):
         try: annotation = db.get_exercise(exercise.get("exerciseId")).annotation
-        except (KeyError, AttributeError): continue
+        except (KeyError, AttributeError): annotation = None
         count = sum(1 for s in exercise.get("sets", []) if s.get("completed") is True and (s.get("setType") is None or s.get("setType") in {"working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted"}))
+        counts["counted"] += count
+        if annotation is None:
+            counts["unmapped"] += count
+            if exercise_rows is not None: exercise_rows.append({"subject_id": history.subject_id if history else None, "period": item.get("start") if item else None, "session_id": workout.get("sessionId"), "prescription_id": None, "planned_exercise_id": None, "actual_exercise_id": exercise.get("exerciseId"), "match_status": "unplanned_addition", "actual_sets": count, "unmapped": True})
+            continue
+        counts["mapped"] += count
         for role, key in (("direct", "direct"), ("indirect", "indirect"), ("stabilizer", "stabilizers")):
             for muscle in annotation.get(key, []): actual[role][muscle] += count
-        for muscle in set(annotation.get("direct", [])) | set(annotation.get("indirect", [])): exposure[muscle] += 1
+        session_muscles.update(annotation.get("direct", [])); session_muscles.update(annotation.get("indirect", []))
+        if exercise_rows is not None: exercise_rows.append({"subject_id": history.subject_id if history else None, "period": item.get("start") if item else None, "session_id": workout.get("sessionId"), "prescription_id": None, "planned_exercise_id": None, "actual_exercise_id": exercise.get("exerciseId"), "match_status": "unplanned_addition", "actual_sets": count, "unmapped": False})
+    for muscle in session_muscles: exposure[muscle] += 1
     credits = set_credits(db)
     for muscle in set(actual["direct"]) | set(actual["indirect"]) | set(actual["stabilizer"]):
         actual["effective"][muscle] += ((actual["direct"].get(muscle, 0) - before["direct"].get(muscle, 0)) * credits["direct"] + (actual["indirect"].get(muscle, 0) - before["indirect"].get(muscle, 0)) * credits["indirect"] + (actual["stabilizer"].get(muscle, 0) - before["stabilizer"].get(muscle, 0)) * credits["stabilizer"])
+    return counts
 
 
 def analyze_periods(history: TrainingHistory, db: Any, period: str = "calendar_week", *, start: str | date | None = None, end: str | date | None = None, timezone: str | timezone | None = None, fallback_revision_id: str | None = None) -> dict[str, Any]:
@@ -358,7 +409,7 @@ def analyze_periods(history: TrainingHistory, db: Any, period: str = "calendar_w
     if end is None: end = max((x.date() for x in stamps), default=start)
     rows: list[dict[str, Any]] = []; sessions: list[dict[str, Any]] = []; exercises: list[dict[str, Any]] = []; summaries = []
     for item in _periods(history, period, start, end, timezone):
-        mr, sr, er, summary = _rows_for_period(history, item, db, timezone, fallback_revision_id); rows.extend(mr); sessions.extend(sr); exercises.extend(er); summaries.append({k: v for k, v in item.items() if k != "plan"} | summary)
+        mr, sr, er, summary = _rows_for_period(history, item, db, timezone, fallback_revision_id); rows.extend(mr); sessions.extend(sr); exercises.extend(er); used = item.get("plans") or ([item["plan"]] if item.get("plan") else []); summaries.append({k: v for k, v in item.items() if k not in {"plan", "plans"}} | {"planRevisionsUsed": sorted({x.get("revisionId") for x in used if x.get("revisionId")}), "planIdsUsed": sorted({x.get("planId") for x in used if x.get("planId")})} | summary)
     metadata = db.metadata if hasattr(db, "metadata") else db.get("metadata", {}); sources = sorted({(w.get("source") or {}).get("system") for w in history.workouts if (w.get("source") or {}).get("system")}); versions = sorted({w.get("schemaVersion") for w in history.workouts if w.get("schemaVersion")})
     provenance = {"analysisVersion": ANALYSIS_VERSION, "analysisPolicy": ANALYSIS_POLICY, "dbSchemaVersion": metadata.get("schemaVersion"), "dbConverterVersion": metadata.get("converterVersion"), "dbSourceSha": (metadata.get("upstream") or {}).get("sha256"), "planSchemaVersions": sorted({p.get("schemaVersion") for p in history.plans if p.get("schemaVersion")}), "workoutSchemaVersions": versions, "targetSchemaVersions": sorted({t.get("schemaVersion") for t in history.targets if t.get("schemaVersion")}), "periodDefinition": period, "timezonePolicy": str(timezone or "UTC; explicit offsets honored"), "setCredits": set_credits(db), "sourceSystemsUsed": sources, "mappingCompleteness": "reported per period"}
     return {"analysisVersion": ANALYSIS_VERSION, "analysisPolicy": ANALYSIS_POLICY, "subjectId": history.subject_id, "periodType": period, "provenance": provenance, "periods": summaries, "musclePeriodRows": sorted(rows, key=lambda x: (x["subject_id"], x["period_start"], x["muscle"])), "sessionRows": sessions, "exerciseRows": exercises}

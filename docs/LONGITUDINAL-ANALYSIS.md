@@ -32,3 +32,23 @@ match linkage remain distinguishable in session and coverage outputs.
 Non-goals are inferential statistics, causal or hypertrophy claims, fatigue or
 injury prediction, recommendations, automatic substitutions, and a canonical
 combined workout file.
+
+Each scheduled session has an internal occurrence identity consisting of
+`planId`, `revisionId`, `planSessionId`, and scheduled local date. Matching is
+strict by default: linkage and local date must agree, and an ACTUAL or
+occurrence is consumed at most once. Revision windows are half-open
+(`effectiveFrom` inclusive, `effectiveTo` exclusive) and scheduled work is
+clipped to them. Mixed-revision periods expose revision, plan, and phase
+provenance rather than pretending one revision was used.
+
+`missed_sets` is the representative target value; `missed_sets_min`,
+`missed_sets_target`, and `missed_sets_max` preserve ranges. Exercise rows reuse
+canonical PLAN-vs-ACTUAL comparisons for set, reps, load, RPE, RIR, and
+comparable volume-load adherence. Known unplanned DB++ exercises contribute
+mapped coverage; custom or unknown exercises remain represented and increase
+unmapped sets without receiving fabricated muscle roles. `calendar_week` keeps
+full Monday–Sunday bounds but clips work to the query range; rolling windows
+are full seven-day windows only; declared phase sequences are finite. Naive
+timestamps require an analyzer timezone. Mixed TARGET periods expose
+`target_profiles_used` and `mixed_target`, while overlapping target windows
+raise an error.

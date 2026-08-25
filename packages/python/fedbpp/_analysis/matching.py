@@ -39,6 +39,7 @@ def match_plan_actual(plan: dict[str, Any], workout: dict[str, Any]) -> dict[str
         reason = None
         if prescription is not None:
             status = "substitution" if substitution else "matched"
+            reason = substitution.get("reason") if substitution else None
             matched_ids.add(candidate)
         elif candidate and candidate in all_prescriptions:
             status = "unable_to_match"

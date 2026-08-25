@@ -9,3 +9,6 @@ is still recorded as zero. Unlinked sessions are `unplanned_session` or
 recorded-work completeness, but have no DB++ muscle totals and are reported as
 `unmapped`. Other analysis states are `not_prescribed`, `not_recorded`,
 `unknown`, `volume_ineligible`, and `not_applicable` where applicable.
+
+Missed planned sessions report their full planned set range as derived summary
+metrics; no synthetic ACTUAL sets are generated.
