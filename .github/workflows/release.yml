@@ -57,12 +57,42 @@ jobs:
           python src/verify_reproducible_build.py exercises.json \
             --schema free-exercise-db-plusplus.schema.json
 
+      - name: Validate public JSON artifacts and schemas
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          def load(name):
+              return json.loads(Path(name).read_text())
+          schemas = {
+              'database': load('free-exercise-db-plusplus.schema.json'),
+              'workout': load('workout.schema.json'),
+              'plan': load('workout-plan.schema.json'),
+              'target': load('volume-target.schema.json'),
+              'interop': load('interop-mapping.schema.json'),
+          }
+          for schema in schemas.values():
+              Draft202012Validator.check_schema(schema)
+          checks = [('database', 'free-exercise-db-plusplus.json')]
+          for schema_name, directory in [('workout', 'examples/workouts'), ('plan', 'examples/plans'), ('target', 'examples/targets')]:
+              checks.extend((schema_name, str(path)) for path in sorted(Path(directory).glob('*.json')))
+          for schema_name, filename in checks:
+              validator = Draft202012Validator(schemas[schema_name], format_checker=FormatChecker())
+              errors = list(validator.iter_errors(load(filename)))
+              assert not errors, f'{filename}: {[error.message for error in errors]}'
+          print(f'validated {len(checks)} public JSON artifacts against their schemas')
+          PY
+
       - name: Create checksums
         run: |
           sha256sum \
             free-exercise-db-plusplus.json \
             free-exercise-db-plusplus.schema.json \
-            workout.schema.json > SHA256SUMS
+            workout.schema.json \
+            workout-plan.schema.json \
+            volume-target.schema.json \
+            interop-mapping.schema.json > SHA256SUMS
 
       - name: Publish GitHub release
         env:
@@ -70,11 +100,20 @@ jobs:
         run: |
           gh release create "${GITHUB_REF_NAME}" \
             --title "Free Exercise DB++ ${GITHUB_REF_NAME}" \
-            --generate-notes \
+            --notes-file docs/releases/v1.1.0.md \
             free-exercise-db-plusplus.json \
             free-exercise-db-plusplus.schema.json \
             workout.schema.json \
+            workout-plan.schema.json \
+            volume-target.schema.json \
+            interop-mapping.schema.json \
             SHA256SUMS \
             docs/METHODOLOGY.md \
             docs/COMPATIBILITY.md \
-            docs/EVIDENCE.md
+            docs/ANALYSIS-SEMANTICS.md \
+            docs/WORKOUT-INTERCHANGE.md \
+            docs/WORKOUT-PLAN.md \
+            docs/PLAN-ANALYSIS.md \
+            docs/PLAN-ACTUAL.md \
+            docs/PLAN-COMPARISON.md \
+            docs/VOLUME-TARGETS.md

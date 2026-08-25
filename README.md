@@ -21,6 +21,12 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **Workout PLAN schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-plan.schema.json
 
+**Volume TARGET schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/volume-target.schema.json
+
+**Interop mapping schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/interop-mapping.schema.json
+
 **Versioned releases:**  
 https://github.com/johnarleyburns/free-exercise-db-plusplus/releases
 
@@ -71,6 +77,8 @@ print(bench["annotation"]["direct"])
 print(bench["annotation"]["indirect"])
 print(db["metadata"]["setCredits"])
 ```
+
+The public fedbpp package provides runnable examples under [examples/python](examples/python/): load a DB++ database and PLAN, calculate effective muscle sets, compare a PLAN with a TARGET, compare PLAN vs ACTUAL, and compare two PLANs. Analysis uses dbpp-default-volume-v1 and reads direct/indirect/stabilizer credits from metadata.setCredits; the shipped defaults are 1.0 / 0.5 / 0.0.
 
 ### Swift 6 / iOS
 
@@ -192,6 +200,7 @@ Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [t
 
 PLAN comparison: [PLAN-vs-PLAN guide](docs/PLAN-COMPARISON.md)
 PLAN adherence: [PLAN-vs-ACTUAL guide](docs/PLAN-ACTUAL.md)
+Normative semantics: [analysis contract](docs/ANALYSIS-SEMANTICS.md)
 
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 
@@ -218,4 +227,4 @@ Released under the [Unlicense](LICENSE).
 
 ### Analysis semantic contract
 
-PLAN/ACTUAL/TARGET analysis uses the named `dbpp-default-volume-v1` counting policy and authoritative `metadata.setCredits`. It preserves prescription ranges, excludes `volumeEligible=false` exercises from resistance-volume totals while reporting them in completeness diagnostics, separates unplanned ACTUAL work, and records reproducibility provenance. See [PLAN analysis](docs/PLAN-ANALYSIS.md) and [PLAN-vs-ACTUAL adherence](docs/PLAN-ACTUAL.md).
+PLAN/ACTUAL/TARGET analysis uses the named `dbpp-default-volume-v1` counting policy and authoritative `metadata.setCredits`. It preserves prescription ranges—including unspecified bounds—excludes `volumeEligible=false` exercises from resistance-volume totals while reporting them in completeness diagnostics, separates unplanned ACTUAL work, and records reproducibility provenance. See the [normative analysis semantics](docs/ANALYSIS-SEMANTICS.md).

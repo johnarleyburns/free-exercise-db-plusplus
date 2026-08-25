@@ -1,17 +1,28 @@
 # Release checklist
 
-- [ ] GitHub Actions is green on the release-preparation commit.
-- [ ] `free-exercise-db-plusplus.json` validates against the JSON Schema.
-- [ ] Release-contract tests pass.
-- [ ] Golden-mapping tests pass.
-- [ ] Medium-confidence policy tests pass.
-- [ ] Reproducibility test produces byte-identical output.
-- [ ] `Needs review` is zero.
-- [ ] No used movement pattern has provisional evidence.
-- [ ] Remaining medium-confidence mappings are explained by audit output.
-- [ ] Upstream source count and SHA-256 are embedded in generated metadata.
-- [ ] README examples match the current schema.
-- [ ] `METHODOLOGY.md`, `COMPATIBILITY.md`, and `VERSIONING.md` are current.
-- [ ] Generated outputs are committed before tagging a release.
-- [ ] Tag a human release-preparation commit, not a bot commit containing `[skip ci]`.
-- [ ] Verify the tag-triggered release workflow succeeds and publishes all expected assets.
+## Build and contracts
+
+- [ ] Full generated DB build is reproducible and matches the reviewed upstream source SHA-256.
+- [ ] Generated DB validates against free-exercise-db-plusplus.schema.json.
+- [ ] Workout, Workout PLAN, TARGET, and interop mapping schemas validate.
+- [ ] Reports are regenerated and generated outputs are committed.
+- [ ] Needs review is zero; no used pattern has provisional evidence; medium mappings are explained.
+
+## Semantic and package gates
+
+- [ ] Release-contract, golden-mapping, medium-policy, semantic-hardening, PLAN coverage, PLAN-vs-PLAN, PLAN-vs-ACTUAL, and research-export tests pass.
+- [ ] Full root Python suite and Python consumer package tests pass.
+- [ ] An isolated Python wheel installs/imports and runs a real PLAN analysis outside the checkout.
+- [ ] Swift, Kotlin, and R package tests pass.
+- [ ] Interop mapping registry validation passes.
+- [ ] Canonical PLAN, ACTUAL, and TARGET examples validate.
+
+## Release execution
+
+- [ ] README, methodology, compatibility, versioning, analysis semantics, and release notes are current.
+- [ ] Human commit release: prepare v1.1.0 is identified separately from any build: regenerate Free Exercise DB++ [skip ci] commit.
+- [ ] Working tree is clean before tagging.
+- [ ] Annotated v1.1.0 points directly to the human release-preparation commit, not a bot commit.
+- [ ] Tag-triggered release workflow validates the reviewed upstream snapshot.
+- [ ] Release contains the DB, all public schemas, SHA256SUMS, and release documentation.
+- [ ] Published assets, checksums, release body, tag target, raw main URLs, release URLs, and a released-artifact Python quick start are verified.
