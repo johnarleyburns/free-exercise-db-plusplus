@@ -24,6 +24,7 @@
   provenance sections.
 - Added `fedbpp validate profile` and `fedbpp evaluate-plan` plus examples,
   ADRs, and a golden evaluator fixture.
+- Release assets include the TrainingProfile schema and PlanEvaluation guides.
 - TARGET remains backward compatible; plan generation and coaching remain out
   of scope.
 
