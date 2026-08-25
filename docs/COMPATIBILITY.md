@@ -37,3 +37,8 @@ An upstream removal or ID rename is a compatibility event and fails CI until exp
 Medium confidence is a supported part of the 1.0 contract. It means uncertainty is explicit,
 not unresolved. Permitted reasons are complex movement bookkeeping, indirect evidence, or a
 deliberately retained named fallback.
+
+
+## Interoperability
+
+v1.2 mapping compatibility is documented in [docs/interop](interop/README.md). It is additive to the stable v1.0 exercise-definition contract and does not change exercise IDs or analysis semantics.

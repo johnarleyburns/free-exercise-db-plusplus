@@ -1,0 +1,39 @@
+{
+  "target": "android-health-connect",
+  "mappingVersion": "1.0.0",
+  "status": "stable",
+  "targetSpecification": {
+    "name": "Android Health Connect ExerciseSessionType",
+    "version": "Jetpack Health Connect 1.1.0 / Android API reference reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord"
+    ]
+  },
+  "entries": [
+    {
+      "externalId": "EXERCISE_SESSION_TYPE_STRENGTH_TRAINING",
+      "externalName": "Strength training",
+      "dbppExerciseIds": [],
+      "relation": "unmapped",
+      "direction": "external_to_dbpp",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord",
+        "rationale": "The official session category is broader than an individual DB++ exercise; no identity is inferred."
+      }
+    },
+    {
+      "externalId": "EXERCISE_SESSION_TYPE_WEIGHTLIFTING",
+      "externalName": "Weightlifting",
+      "dbppExerciseIds": [],
+      "relation": "unmapped",
+      "direction": "external_to_dbpp",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord",
+        "rationale": "The official session category does not identify an exercise, load, or variant."
+      }
+    }
+  ]
+}

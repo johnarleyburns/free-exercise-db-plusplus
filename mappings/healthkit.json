@@ -2,7 +2,14 @@
   "target": "apple-healthkit",
   "mappingVersion": "0.1.0",
   "status": "draft-reviewed",
-  "targetSpecification": "Apple HealthKit HKWorkout and HKQuantitySample APIs",
+  "targetSpecification": {
+    "name": "Apple HealthKit HKWorkout and HKQuantitySample APIs",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://developer.apple.com/documentation/healthkit/hkworkout"
+    ]
+  },
   "entries": [
     {
       "sourcePath": "startTime",
@@ -133,5 +140,6 @@
       "notes": "Metadata keys and visibility vary by consumer; preserve the original notes in DB++."
     }
   ],
-  "sourceArtifact": "workout-actual"
+  "sourceArtifact": "workout-actual",
+  "mappingKind": "field"
 }

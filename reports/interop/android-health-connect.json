@@ -1,0 +1,16 @@
+{
+  "target": "android-health-connect",
+  "externalVocabularyCount": 2,
+  "dbppExerciseCount": 873,
+  "exact": 0,
+  "close": 0,
+  "broader": 2,
+  "narrower": 0,
+  "approximate": 0,
+  "unmappedExternal": 0,
+  "unmappedDbpp": 292,
+  "externalCoveragePercent": 100.0,
+  "dbppCoveragePercent": 66.5521,
+  "bidirectionalCoveragePercent": 0.0,
+  "method": "explicit reviewed broad candidate set; no fuzzy runtime matching"
+}

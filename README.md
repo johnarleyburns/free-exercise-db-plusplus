@@ -204,6 +204,12 @@ Normative semantics: [analysis contract](docs/ANALYSIS-SEMANTICS.md)
 
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 
+## Interoperability (v1.2)
+
+v1.2 provides mapping and capability infrastructure: audited standards documents, structural ACTUAL mappings, the Health Connect exercise crosswalk, JSON schemas, loss semantics, and deterministic coverage reports. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`. Identity relations are exact/close/broader/narrower/approximate/unmapped; every result also retains direction, confidence, and provenance.
+
+Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("android-health-connect", "EXERCISE_SESSION_TYPE_WEIGHTLIFTING")`. The result may contain many candidates; callers must handle ambiguity. v1.2 does not convert FIT, HealthKit, Health Connect, FHIR, or Google Fit files. Operational import/export is deferred to v1.3.
+
 ## CI and releases
 
 The build workflow:

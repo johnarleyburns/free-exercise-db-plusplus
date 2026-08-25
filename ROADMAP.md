@@ -4,6 +4,10 @@ Status: **post-v1.1.0 planning**
 Current stable release: **v1.1.0**  
 Primary next milestone: **v1.2.0 — Exercise and Workout Interoperability Mapping**
 
+## v1.2 implementation status
+
+The interoperability audit, schemas, structural mappings, Health Connect crosswalk, coverage report, validator/registry, Python API, and documentation are implemented. Binary/API import/export remains explicitly deferred to v1.3.
+
 ## 1. Direction
 
 Free Exercise DB++ now has a stable three-layer foundation:

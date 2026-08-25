@@ -2,7 +2,15 @@
   "target": "open-mhealth-ieee-1752-1",
   "mappingVersion": "0.1.0",
   "status": "placeholder",
-  "targetSpecification": "Not yet specified; conceptual placeholder only.",
+  "targetSpecification": {
+    "name": "Not yet specified; conceptual placeholder only.",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://standards.ieee.org/standard/1752_1-2021.html"
+    ]
+  },
   "entries": [],
-  "sourceArtifact": "workout-actual"
+  "sourceArtifact": "workout-actual",
+  "mappingKind": "field"
 }

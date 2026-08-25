@@ -3,7 +3,14 @@
   "mappingVersion": "0.1.0",
   "status": "draft-reviewed",
   "sourceArtifact": "workout-plan",
-  "targetSpecification": "HL7 FHIR R5 NutritionOrder/ServiceRequest-style activity intent mapping profile",
+  "targetSpecification": {
+    "name": "HL7 FHIR R5 NutritionOrder/ServiceRequest-style activity intent mapping profile",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://example.invalid/unknown"
+    ]
+  },
   "entries": [
     {
       "sourcePath": "planId",
@@ -85,5 +92,6 @@
       "transform": "controlled progression metadata",
       "notes": "Do not translate descriptive progression into executable clinical logic."
     }
-  ]
+  ],
+  "mappingKind": "field"
 }

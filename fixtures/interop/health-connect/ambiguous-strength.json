@@ -1,0 +1,7 @@
+{
+  "roundTripClass": "expected_lossy",
+  "externalId": "EXERCISE_SESSION_TYPE_STRENGTH_TRAINING",
+  "expectedRelation": "broader",
+  "expectedDirection": "external_to_dbpp",
+  "mustNotSelectSingleCandidate": true
+}

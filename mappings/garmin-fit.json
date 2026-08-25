@@ -2,7 +2,14 @@
   "target": "garmin-fit",
   "mappingVersion": "0.1.0",
   "status": "draft-reviewed",
-  "targetSpecification": "Garmin FIT SDK activity/workout file profiles",
+  "targetSpecification": {
+    "name": "Garmin FIT SDK activity/workout file profiles",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://developer.garmin.com/fit/overview/"
+    ]
+  },
   "entries": [
     {
       "sourcePath": "schemaVersion",
@@ -149,5 +156,6 @@
       "notes": "Avoid exporting device serial numbers by default."
     }
   ],
-  "sourceArtifact": "workout-actual"
+  "sourceArtifact": "workout-actual",
+  "mappingKind": "field"
 }

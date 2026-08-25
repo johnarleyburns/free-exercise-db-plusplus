@@ -11,6 +11,12 @@ on:
       - "workout.schema.json"
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
+      - "interop-mapping.schema.json"
+      - "exercise-interop-mapping.schema.json"
+      - "mapping-loss.schema.json"
+      - "mappings/**"
+      - "src/interop/**"
+      - "reports/interop/**"
       - "README.md"
       - "docs/**"
       - "packages/swift/**"
@@ -26,6 +32,12 @@ on:
       - "workout.schema.json"
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
+      - "interop-mapping.schema.json"
+      - "exercise-interop-mapping.schema.json"
+      - "mapping-loss.schema.json"
+      - "mappings/**"
+      - "src/interop/**"
+      - "reports/interop/**"
       - "README.md"
       - "docs/**"
       - "packages/swift/**"
@@ -238,6 +250,28 @@ jobs:
           assert len({(e["sourcePath"], e["targetField"]) for e in entries}) == len(entries)
           assert {e["quality"] for e in entries} <= {"exact", "compatible", "lossy", "extension_required", "unsupported"}
           print(f"Android Health Connect mapping valid: {len(entries)} entries")
+          PY
+
+      - name: Validate v1.2 identity crosswalk and loss schema
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          db=json.loads(Path("free-exercise-db-plusplus.json").read_text())
+          schema=json.loads(Path("exercise-interop-mapping.schema.json").read_text())
+          cw=json.loads(Path("mappings/health-connect-exercises.json").read_text())
+          errors=list(Draft202012Validator(schema,format_checker=FormatChecker()).iter_errors(cw))
+          assert not errors, errors
+          ids=set(db["exercises"])
+          for e in cw["entries"]:
+              assert all(x in ids for x in e["dbppExerciseIds"])
+          loss=json.loads(Path("mapping-loss.schema.json").read_text())
+          Draft202012Validator.check_schema(loss)
+          from src.interop.registry import MappingRegistry
+          r=MappingRegistry.load("mappings/health-connect-exercises.json")
+          assert len(r.lookup_external("android-health-connect", "EXERCISE_SESSION_TYPE_WEIGHTLIFTING")) > 1
+          print("v1.2 identity crosswalk, loss schema, and ambiguity behavior valid")
           PY
 
       - name: Validate interoperability mapping registries

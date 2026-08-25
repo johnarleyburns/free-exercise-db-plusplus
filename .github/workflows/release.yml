@@ -71,6 +71,8 @@ jobs:
               'plan': load('workout-plan.schema.json'),
               'target': load('volume-target.schema.json'),
               'interop': load('interop-mapping.schema.json'),
+              'exercise_interop': load('exercise-interop-mapping.schema.json'),
+              'loss': load('mapping-loss.schema.json'),
           }
           for schema in schemas.values():
               Draft202012Validator.check_schema(schema)
@@ -92,7 +94,9 @@ jobs:
             workout.schema.json \
             workout-plan.schema.json \
             volume-target.schema.json \
-            interop-mapping.schema.json > SHA256SUMS
+            interop-mapping.schema.json \
+            exercise-interop-mapping.schema.json \
+            mapping-loss.schema.json > SHA256SUMS
 
       - name: Publish GitHub release
         env:
@@ -107,6 +111,10 @@ jobs:
             workout-plan.schema.json \
             volume-target.schema.json \
             interop-mapping.schema.json \
+            exercise-interop-mapping.schema.json \
+            mapping-loss.schema.json \
+            mappings/health-connect-exercises.json \
+            reports/interop/android-health-connect.json \
             SHA256SUMS \
             docs/METHODOLOGY.md \
             docs/COMPATIBILITY.md \

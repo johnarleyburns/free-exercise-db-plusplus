@@ -19,4 +19,4 @@ exclude = ["tests*", "build*", "fedbpp.__pycache__*", "fedbpp.*.__pycache__*"]
 namespaces = false
 
 [tool.setuptools.package-data]
-fedbpp = ["schemas/*.json"]
+fedbpp = ["schemas/*.json", "interop_data/*.json"]

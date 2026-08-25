@@ -1,0 +1,16 @@
+{
+  "target": "apple-healthkit",
+  "externalVocabularyCount": null,
+  "dbppExerciseCount": 873,
+  "exact": 0,
+  "close": 0,
+  "broader": 0,
+  "narrower": 0,
+  "approximate": 0,
+  "unmappedExternal": null,
+  "unmappedDbpp": null,
+  "externalCoveragePercent": null,
+  "dbppCoveragePercent": null,
+  "bidirectionalCoveragePercent": null,
+  "method": "No identity vocabulary published in v1.2; structural capability mapping is documented separately."
+}

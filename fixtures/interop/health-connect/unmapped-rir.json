@@ -1,0 +1,8 @@
+{
+  "roundTripClass": "expected_lossy",
+  "sourcePath": "exercises[0].sets[0].rir",
+  "loss": {
+    "status": "unsupported",
+    "reason": "Health Connect has no standard RIR field"
+  }
+}

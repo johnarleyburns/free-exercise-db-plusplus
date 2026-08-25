@@ -5,10 +5,13 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "target",
+    "entries",
+    "mappingKind",
     "mappingVersion",
+    "sourceArtifact",
     "status",
-    "entries"
+    "target",
+    "targetSpecification"
   ],
   "properties": {
     "target": {
@@ -28,8 +31,34 @@
       ]
     },
     "targetSpecification": {
-      "type": "string",
-      "minLength": 1
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "reviewedOn",
+        "references"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "reviewedOn": {
+          "type": "string",
+          "format": "date"
+        },
+        "references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
     },
     "entries": {
       "type": "array",
@@ -43,6 +72,13 @@
         "exercise-db",
         "workout-actual",
         "workout-plan"
+      ]
+    },
+    "mappingKind": {
+      "type": "string",
+      "enum": [
+        "field",
+        "structural"
       ]
     }
   },
@@ -100,6 +136,23 @@
           "type": [
             "string",
             "null"
+          ]
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "external_to_dbpp",
+            "dbpp_to_external",
+            "bidirectional"
+          ]
+        },
+        "lossStatus": {
+          "type": "string",
+          "enum": [
+            "informational",
+            "lossy",
+            "unsupported",
+            "invalid"
           ]
         }
       },

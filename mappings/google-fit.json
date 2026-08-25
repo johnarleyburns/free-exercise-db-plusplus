@@ -2,7 +2,15 @@
   "target": "google-fit",
   "mappingVersion": "0.1.0",
   "status": "placeholder",
-  "targetSpecification": "Not yet specified; conceptual placeholder only.",
+  "targetSpecification": {
+    "name": "Not yet specified; conceptual placeholder only.",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://developers.google.com/fit/rest/v1/reference/activity-types"
+    ]
+  },
   "entries": [],
-  "sourceArtifact": "workout-actual"
+  "sourceArtifact": "workout-actual",
+  "mappingKind": "field"
 }

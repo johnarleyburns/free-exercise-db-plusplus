@@ -2,7 +2,14 @@
   "target": "android-health-connect",
   "mappingVersion": "0.1.0",
   "status": "draft-reviewed",
-  "targetSpecification": "Android Health Connect ExerciseSessionRecord and associated records",
+  "targetSpecification": {
+    "name": "Android Health Connect ExerciseSessionRecord and associated records",
+    "version": "reviewed 2026-08-25",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord"
+    ]
+  },
   "entries": [
     {
       "sourcePath": "startTime",
@@ -149,5 +156,6 @@
       "notes": "Workout 0.2 does not define a normative session activity type; do not guess one."
     }
   ],
-  "sourceArtifact": "workout-actual"
+  "sourceArtifact": "workout-actual",
+  "mappingKind": "field"
 }
