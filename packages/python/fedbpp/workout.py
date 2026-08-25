@@ -25,7 +25,7 @@ class Workout:
         try:
             import jsonschema
         except ImportError as exc: raise ValidationError("validation requires the jsonschema package") from exc
-        schema_file=Path(schema_path) if schema_path else Path(__file__).resolve().parents[3] / "workout.schema.json"
+        schema_file=Path(schema_path) if schema_path else Path(__file__).with_name("schemas") / "workout.schema.json"
         schema=json.loads(schema_file.read_text(encoding="utf-8"))
         errors=sorted(jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).iter_errors(self.document), key=lambda e: list(e.path))
         if errors: raise ValidationError("; ".join(e.message for e in errors))
@@ -45,5 +45,5 @@ class Workout:
         return dict(sorted(totals.items()))
 
     def migrate(self) -> "Workout":
-        from src.workout.migrate_workout import migrate
+        from ._workout.migrate_workout import migrate
         return Workout(migrate(self.document))

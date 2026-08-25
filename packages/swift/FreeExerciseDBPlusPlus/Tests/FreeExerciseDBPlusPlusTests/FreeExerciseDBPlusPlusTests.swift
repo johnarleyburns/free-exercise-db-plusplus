@@ -22,6 +22,22 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
         XCTAssertEqual(plan.schemaVersion, "0.2.0")
         XCTAssertEqual(plan.phases?.count, 2)
         XCTAssertEqual(plan.sessions.first?.exercises.first?.plannedSets?.count, 3)
+        let prescription = try XCTUnwrap(plan.sessions.first?.exercises.first)
+        XCTAssertNotNil(prescription.load)
+        XCTAssertNotNil(prescription.effort)
+        XCTAssertEqual(prescription.setType, "working")
+        XCTAssertEqual(prescription.laterality, "bilateral")
+        XCTAssertEqual(prescription.notes, "Preserve bar path.")
+        XCTAssertNotNil(prescription.progression)
+        XCTAssertNotNil(prescription.plannedSets?.first?.effort)
+        XCTAssertEqual(prescription.plannedSets?.first?.notes, "Controlled eccentric")
+        let roundTrip = try JSONDecoder().decode(WorkoutPlan.self, from: JSONEncoder().encode(plan))
+        XCTAssertEqual(roundTrip, plan)
+        let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+        let coverage = plan.coverage(using: database)
+        XCTAssertEqual(coverage.nativeCycle.effectiveSets["chest"], 5)
+        XCTAssertEqual(coverage.normalized7Day.periodDays, 7)
+        XCTAssertEqual(Set(coverage.phaseSpecific.keys), Set(["accumulation", "deload"]))
     }
 
 }

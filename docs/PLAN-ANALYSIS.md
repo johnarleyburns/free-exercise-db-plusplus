@@ -19,11 +19,12 @@ gaps = compare_to_targets(plan, target, db)
 The Python consumer exposes the same operations through `fedbpp.analysis`:
 
 ```python
-from fedbpp.analysis import analyze, compare_plan_actual, compare_plan_revisions
+from fedbpp import analyze_plan, compare_plan_actual, compare_plans, compare_to_targets
 
-coverage = analyze(plan, db)
+coverage = analyze_plan(plan, db)
 adherence = compare_plan_actual(plan, actual, db)
-delta = compare_plan_revisions(plan_a, plan_b, db)
+delta = compare_plans(plan_a, plan_b, db)
+gaps = compare_to_targets(plan, target, db)
 ```
 
 Coverage keeps direct, indirect, stabilizer participation, effective-set, and

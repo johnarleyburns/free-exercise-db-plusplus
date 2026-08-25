@@ -14,3 +14,8 @@ validation = ["jsonschema>=4.20"]
 
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["fedbpp*"]
+exclude = ["tests*", "build*"]
+
+[tool.setuptools.package-data]
+fedbpp = ["schemas/*.json"]

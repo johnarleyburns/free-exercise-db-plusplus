@@ -1,6 +1,7 @@
 # Free Exercise DB++ — Post-1.0 Roadmap
 
 Status: **post-v1.0.0**  
+Implementation status: **Sprints 1-9 complete; overall success criterion 14 remains partial pending a validated ACTUAL exporter.**
 Primary focus: **Workout PLAN + ACTUAL + TARGET + ANALYSIS**, followed by external interoperability mappings  
 Audience: maintainers and implementation agents, including Codex CLI
 

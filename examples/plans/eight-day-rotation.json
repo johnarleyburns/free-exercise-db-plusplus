@@ -38,7 +38,7 @@
       "exercises": [
         {
           "prescriptionId": "pull-row",
-          "exerciseId": "Barbell_Bent_Over_Row",
+          "exerciseId": "Bent_Over_Barbell_Row",
           "order": 1,
           "sets": 4,
           "reps": {

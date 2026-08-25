@@ -1,7 +1,7 @@
-# Workout PLAN 0.1
+# Workout PLAN 0.1 and 0.2
 
 `workout-plan.schema.json` is the prescription counterpart to the Workout ACTUAL
-`workout.schema.json` 0.2.0 contract. PLAN describes what is intended; ACTUAL records
+`workout.schema.json` 0.2.0/0.3.0 contract. PLAN describes what is intended; ACTUAL records
 what happened. They are separate artifacts and must not be merged.
 
 ## Identity and cycle
@@ -27,9 +27,7 @@ of `min`, `target`, and `max`. The deterministic validator rejects ranges where
 quantity with a shared unit. `effort` may prescribe RPE (0–10) or non-negative RIR,
 exactly or as ranges. These fields describe intent, not measured outcomes.
 
-PLAN 0.1 deliberately does not contain DB++ muscle roles, effective-set totals, or
-other derived coverage. It also does not include PLAN-vs-ACTUAL links, progression
-scripting, or external exporters. Those belong to later roadmap phases.
+Neither PLAN version stores DB++ muscle roles, effective-set totals, or other derived coverage. PLAN 0.2 adds ordered phases with `durationCycles`, optional phase-specific cycles, heterogeneous `plannedSets` with stable `setPrescriptionId` values, declarative progression metadata, and optional or conditional prescriptions. Progression remains descriptive metadata, not executable scripting. PLAN-vs-ACTUAL links remain in ACTUAL 0.3, and external exporters remain separate interoperability tooling.
 
 ## Validation
 
@@ -40,7 +38,7 @@ python src/plan/validate_plan.py examples/plans/basic-upper-lower.json
 ```
 
 It performs Draft 2020-12 schema validation plus deterministic semantic checks for
-duplicate session/prescription IDs and range ordering. Valid examples are under
+duplicate session, prescription, phase, and planned-set IDs; phase references; and range ordering. Valid examples are under
 `examples/plans/`; deliberately invalid fixtures are under
 `fixtures/plan/invalid/`.
 

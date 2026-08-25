@@ -38,3 +38,13 @@ def test_missing_plan_reference_is_unable_without_fuzzy_matching():
  workout={**WORKOUT}; workout.pop("planReference")
  result=analyze_plan_actual(PLAN,workout,DB)
  assert result["matching"]["sessionStatus"]=="unable_to_match"
+
+def test_plan_02_heterogeneous_sets_phase_linkage_and_substitution():
+ plan={"schemaVersion":"0.2.0","planId":"p2","revisionId":"r2","cycle":{"lengthDays":7},"phases":[{"phaseId":"build","durationCycles":1}],"sessions":[{"planSessionId":"build-upper","phaseId":"build","dayOffset":0,"exercises":[{"prescriptionId":"press-2","exerciseId":"press","order":1,"plannedSets":[{"setPrescriptionId":"s1","setType":"working","reps":{"target":8}},{"setPrescriptionId":"s2","setType":"backoff","reps":{"min":10,"max":12}}]}]}]}
+ workout={"schemaVersion":"0.3.0","sessionId":"a2","startTime":"2026-01-01T00:00:00Z","planReference":{"planId":"p2","revisionId":"r2","planSessionId":"build-upper"},"exercises":[{"exerciseId":"row","exercisePrescriptionId":"press-2","substitution":{"reason":"equipment","plannedPrescriptionId":"press-2"},"order":1,"sets":[{"setNumber":1,"setPrescriptionId":"s1","setType":"working","reps":8,"completed":True},{"setNumber":2,"setPrescriptionId":"s2","setType":"backoff","reps":9,"completed":False},{"setNumber":3,"setType":"working","reps":5,"completed":True}]}]}
+ result=analyze_plan_actual(plan,workout,DB)
+ row=result["matching"]["exercises"][0]
+ assert row["status"]=="substitution" and row["plannedSets"]==2.0 and row["actualCompletedSets"]==2 and row["repsAdherentSets"]==1
+ sets=result["matching"]["sets"]
+ assert any(item["setPrescriptionId"]=="s2" and item["status"]=="incomplete" for item in sets)
+ assert any(item["setPrescriptionId"] is None and item["status"]=="unplanned_addition" for item in sets)

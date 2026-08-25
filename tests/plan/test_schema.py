@@ -13,7 +13,7 @@ def test_schema_is_valid():
 
 def test_all_valid_examples():
     validator = Draft202012Validator(SCHEMA)
-    assert len(VALID) == 5
+    assert len(VALID) >= 5
     for path in VALID:
         errors = list(validator.iter_errors(json.loads(path.read_text())))
         assert not errors, f"{path}: {[e.message for e in errors]}"

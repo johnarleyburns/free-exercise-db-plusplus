@@ -34,6 +34,11 @@
           "prescriptionId": "bench-accumulation",
           "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
           "order": 1,
+          "load": {"target": 75, "unit": "%1RM"},
+          "effort": {"rir": {"target": 2}},
+          "setType": "working",
+          "laterality": "bilateral",
+          "notes": "Preserve bar path.",
           "plannedSets": [
             {
               "setPrescriptionId": "bench-a-s1",
@@ -41,6 +46,8 @@
               "reps": {
                 "target": 8
               },
+              "effort": {"rpe": {"target": 8}},
+              "notes": "Controlled eccentric",
               "load": {
                 "value": 75,
                 "unit": "%1RM"

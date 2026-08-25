@@ -16,5 +16,8 @@ final class PlanAnalysisTests: XCTestCase {
         XCTAssertEqual(report.effectiveSets["triceps"], 1)
         XCTAssertEqual(report.mappedSets, 2)
         XCTAssertEqual(report.unmappedSets, 0)
+        XCTAssertEqual(report.normalized7Day.periodDays, 7)
+        XCTAssertEqual(report.normalized7Day.directSets["chest"], 1.75)
+        XCTAssertEqual(report.coverageCompleteness.mappedFraction, 1)
     }
 }

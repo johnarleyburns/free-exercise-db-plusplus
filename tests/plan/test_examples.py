@@ -7,6 +7,17 @@ ROOT = Path(__file__).parents[2]
 sys.path.insert(0, str(ROOT))
 from src.plan.validate_plan import semantic_errors, validate_plan
 
+def test_all_dbpp_exercise_references_resolve():
+    database = json.loads((ROOT / "free-exercise-db-plusplus.json").read_text())["exercises"]
+    for path in sorted((ROOT / "examples/plans").glob("*.json")):
+        plan = json.loads(path.read_text())
+        for session in plan.get("sessions", []):
+            for prescription in session.get("exercises", []):
+                exercise_id = prescription.get("exerciseId")
+                if exercise_id is not None:
+                    assert exercise_id in database, f"{path}: {exercise_id}"
+
+
 def test_valid_examples_pass_deterministic_validation():
     for path in sorted((ROOT / "examples/plans").glob("*.json")):
         plan = json.loads(path.read_text())

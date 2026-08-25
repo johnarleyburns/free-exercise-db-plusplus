@@ -12,3 +12,10 @@ def test_public_analysis_api():
         }],
     })
     assert analyze(plan, db)["plan"]["planId"] == "p"
+
+
+def test_required_public_analysis_names():
+    from fedbpp import VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual
+    target = VolumeTarget.from_dict({"schemaVersion":"0.1.0","targetId":"t","periodDays":7,"muscles":{"chest":{"min":1}}}, validate=False)
+    assert target.document["targetId"] == "t"
+    assert all(callable(value) for value in (analyze_plan, compare_plans, compare_to_targets, compare_plan_actual))

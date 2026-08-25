@@ -10,7 +10,7 @@
       {"prescriptionId": "push-bench", "exerciseId": "Barbell_Bench_Press_-_Medium_Grip", "order": 1, "sets": 4, "reps": {"min": 6, "target": 8, "max": 10}}
     ]},
     {"planSessionId": "pull", "dayOffset": 2, "name": "Pull", "exercises": [
-      {"prescriptionId": "pull-row", "exerciseId": "Barbell_Bent_Over_Row", "order": 1, "sets": 4, "reps": 8}
+      {"prescriptionId": "pull-row", "exerciseId": "Bent_Over_Barbell_Row", "order": 1, "sets": 4, "reps": 8}
     ]},
     {"planSessionId": "legs", "dayOffset": 4, "name": "Legs", "exercises": [
       {"prescriptionId": "legs-squat", "exerciseId": "Barbell_Squat", "order": 1, "sets": 4, "reps": {"target": 6}}

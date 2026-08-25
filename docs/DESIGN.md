@@ -274,13 +274,38 @@ Prefer transparent, reproducible assumptions and explicit uncertainty over hidde
 Each exercise now includes `classification.trainingTypes`, `classification.modalities`, `classification.sportContexts`, and `classification.competitionMovements`. Arrays are multi-valued by design. The original upstream `source.category` and `source.equipment` remain preserved.
 
 
-## Workout-observation interchange
+## Workout ecosystem architecture
 
-DB++ deliberately separates **exercise definitions** from **workout observations**.
+DB++ separates six independently versioned layers:
 
-`free-exercise-db-plusplus.schema.json` defines relatively static exercise concepts and taxonomy.
+```text
+exercise vocabulary  free-exercise-db-plusplus.json
+PLAN prescription    workout-plan.schema.json
+ACTUAL observation   workout.schema.json
+TARGET criteria      volume-target.schema.json
+ANALYSIS views        src/analysis/*
+interop translation  mappings/* and src/interop/*
+```
 
-`workout.schema.json` defines session-level observations:
+Exercise definitions remain the stable vocabulary. PLAN records intent, ACTUAL records
+what happened, TARGET records comparison criteria, and ANALYSIS derives results without
+mutating any source document. External-system fields belong in mapping or exporter layers,
+not in the native schemas.
+
+### PLAN prescriptions
+
+PLAN 0.1 supports immutable `planId`/`revisionId` identity, arbitrary native cycle
+lengths, stable session and exercise-prescription IDs, DB++ or custom exercises, and
+exact or ranged sets, reps, load, and effort.
+
+PLAN 0.2 adds ordered phases, phase duration in cycles, optional phase-specific cycles,
+heterogeneous `plannedSets` with stable `setPrescriptionId` values, declarative
+progression metadata, and optional or conditional prescriptions. Progression metadata is
+descriptive; it is not executable scripting. PLAN never stores derived muscle coverage.
+
+### ACTUAL observations and PLAN linkage
+
+ACTUAL retains the observation hierarchy:
 
 ```text
 Athlete
@@ -290,61 +315,74 @@ Athlete
               -> Rep observation (optional)
 ```
 
-The relationship is a foreign key:
+ACTUAL 0.3 may link to an immutable PLAN revision with `planReference`,
+`exercisePrescriptionId`, `setPrescriptionId`, and explicit `substitution` metadata.
+Every linkage field is optional, so standalone ACTUAL 0.2 documents remain valid during
+the compatibility window. Migration never invents PLAN links.
 
-```json
-{
-  "exerciseId": "Barbell_Full_Squat"
-}
+Matching is explicit-reference-first. An unambiguous exact exercise-ID fallback is
+allowed only for an unconsumed prescription in the linked session. Names are not fuzzy
+matched, and substitutions are never inferred.
+
+### Quantity and set-count policies
+
+Quantities always retain explicit units. Derived code converts only known compatible
+units; unknown units or dimension changes fail rather than being guessed.
+
+Ranged PLAN set counts use `target`, then `min`, then `max`. Explicit `plannedSets` use
+their array length. Completed ACTUAL-set counting is a shared policy, not an independent
+reimplementation in each analyzer.
+
+The canonical DB++ set-credit policy remains:
+
+```text
+direct      1.0
+indirect    0.5
+stabilizer  0.0
 ```
 
-`exerciseId` MUST resolve to an exercise definition in the DB++ exercise vocabulary.
+Stabilizer participation is reported separately even though it contributes zero default
+effective-set credit. These bookkeeping defaults are not universal physiological claims.
 
-### Set-level fields
+### Derived analysis
 
-The workout schema can represent:
+Analysis is deterministic and read-only. Coverage reports preserve:
 
-- reps
-- load/resistance
-- duration
-- distance
-- RPE
-- RIR
-- tempo
-- post-set rest
-- failure status
-- assistance
-- completion state
-- notes
-- optional per-repetition observations
+- direct, indirect, and stabilizer participation sets;
+- effective sets;
+- movement-pattern sets;
+- native-cycle totals and an explicitly labelled seven-day normalization;
+- mapped, unmapped, and volume-ineligible completeness diagnostics;
+- phase-specific and time-varying PLAN 0.2 results.
 
-Quantities carry explicit units. UCUM codes should be used where practical (`kg`, `lb`, `s`, `m`, etc.).
+Additional reference analyses compare PLAN revisions, compare PLAN coverage with TARGET
+ranges, and compare linked ACTUAL sessions with PLAN prescriptions. Missing,
+unplanned, incomplete, substituted, and unmatched work remains visible. Deterministic
+JSON and tidy CSV are derived research outputs, never authoritative source records.
 
-This design is intentionally closer to consumer set-level models while remaining suitable for later export mappings to standards such as FIT, FHIR physical-activity observations, and IEEE/Open mHealth-style metadata.
+### Consumer libraries
 
-### Derived analytics
+The Python package is standalone: wheels bundle their schemas and reference logic and do
+not import repository-level `src.*`. It exposes PLAN, TARGET, comparison, coverage, and
+adherence helpers alongside DB and ACTUAL loading.
 
-The schema contains observations, not precomputed analytics. Applications may derive:
+The Swift package provides Codable PLAN 0.1/0.2 parity for prescription fields and
+coverage parity for native/normalized, completeness, muscle-role, movement-pattern, and
+phase-specific results. Kotlin and R retain their existing ACTUAL/research scopes; the
+documentation does not claim unimplemented TARGET or adherence parity.
 
-- volume load / tonnage
-- direct and indirect hard sets per muscle
-- reps per muscle
-- frequency
-- estimated 1RM
-- RPE/RIR trends
-- exercise-specific PRs
-- proximity-to-failure adjusted volume
-- progression and fatigue/load models
+### Interoperability status
 
-Keeping raw observations separate from derived metrics avoids locking the interchange format to one analysis methodology.
+Mapping registries classify each field as `exact`, `compatible`, `lossy`,
+`extension_required`, or `unsupported`, and identify their source artifact as
+`exercise-db`, `workout-actual`, or `workout-plan`.
 
-### Interoperability mappings
+These levels are distinct:
 
-The `mappings/` directory contains placeholders for:
+1. JSON registries are declarative field classifications.
+2. Interoperability guides are documented mapping profiles.
+3. A mapping is an executable exporter only when implementation and validation tests exist.
 
-- Google Fit
-- Garmin FIT
-- HL7 FHIR
-- Open mHealth / IEEE 1752.1
-
-These are explicitly non-normative until field-level mappings are researched and reviewed.
+Garmin FIT, HealthKit, and Health Connect remain primarily ACTUAL-oriented. The FHIR PLAN
+profile is documented and declarative, not an executable exporter. No validated ACTUAL
+exporter currently exists, so roadmap success criterion 14 remains partial.

@@ -29,9 +29,10 @@ public struct ExerciseAnnotation: Codable, Sendable, Equatable {
     public let direct: [String]
     public let indirect: [String]
     public let stabilizers: [String]
+    public var patterns: [String] = []
     public let volumeEligible: Bool
     public let confidence: String?
-    public init(direct: [String] = [], indirect: [String] = [], stabilizers: [String] = [], volumeEligible: Bool = false, confidence: String? = nil) { self.direct = direct; self.indirect = indirect; self.stabilizers = stabilizers; self.volumeEligible = volumeEligible; self.confidence = confidence }
+    public init(direct: [String] = [], indirect: [String] = [], stabilizers: [String] = [], volumeEligible: Bool = false, confidence: String? = nil) { self.direct = direct; self.indirect = indirect; self.stabilizers = stabilizers; self.patterns = []; self.volumeEligible = volumeEligible; self.confidence = confidence }
 }
 
 public struct Exercise: Codable, Sendable, Equatable, Identifiable {
@@ -70,10 +71,10 @@ public struct Workout: Codable, Sendable, Equatable {
 
 public struct PlanCycle: Codable, Sendable, Equatable { public let lengthDays: Int }
 public struct PlanPhase: Codable, Sendable, Equatable { public let phaseId: String; public let durationCycles: Int; public let cycle: PlanCycle? }
-public struct PlannedSet: Codable, Sendable, Equatable { public let setPrescriptionId: String; public let setType: String; public let reps: JSONValue; public let load: JSONValue? }
-public struct PlanExercisePrescription: Codable, Sendable, Equatable { public let prescriptionId: String; public let exerciseId: String?; public let exerciseName: String?; public let order: Int; public let sets: JSONValue?; public let reps: JSONValue?; public let plannedSets: [PlannedSet]?; public let progression: JSONValue?; public let optional: Bool?; public let condition: String? }
-public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public let exercises: [PlanExercisePrescription] }
+public struct PlannedSet: Codable, Sendable, Equatable { public let setPrescriptionId: String; public let setType: String; public let reps: JSONValue; public let load: JSONValue?; public var effort: JSONValue? = nil; public var notes: String? = nil }
+public struct PlanExercisePrescription: Codable, Sendable, Equatable { public let prescriptionId: String; public let exerciseId: String?; public let exerciseName: String?; public var externalExerciseId: JSONValue? = nil; public let order: Int; public let sets: JSONValue?; public let reps: JSONValue?; public var load: JSONValue? = nil; public var effort: JSONValue? = nil; public var setType: String? = nil; public var laterality: String? = nil; public var notes: String? = nil; public let plannedSets: [PlannedSet]?; public let progression: JSONValue?; public let optional: Bool?; public let condition: String? }
+public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public var name: String? = nil; public var notes: String? = nil; public let exercises: [PlanExercisePrescription] }
 public struct WorkoutPlan: Codable, Sendable, Equatable {
-    public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String; public let cycle: PlanCycle; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
+    public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String; public var description: String? = nil; public var provenance: JSONValue? = nil; public let cycle: PlanCycle; public var notes: String? = nil; public var tags: [String]? = nil; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> WorkoutPlan { do { return try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode PLAN: \(error)") } }
 }

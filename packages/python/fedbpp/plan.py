@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Any
-from src.plan.validate_plan import validate_plan, PlanValidationError
+from .validation import validate_plan, PlanValidationError as ValidationError
 
 class Plan:
     def __init__(self, document: dict[str, Any]): self.document=document
@@ -19,14 +19,14 @@ class Plan:
         return result
     def validate(self) -> None:
         errors=validate_plan(self.document)
-        if errors: raise PlanValidationError("; ".join(errors))
+        if errors: raise ValidationError("; ".join(errors))
     def coverage(self, database: Any) -> dict[str, Any]:
-        from src.analysis.coverage import analyze_plan
+        from ._analysis.coverage import analyze_plan
         return analyze_plan(self.document, database)
     def compare(self, other: "Plan", database: Any) -> dict[str, Any]:
-        from src.analysis.plan_compare import compare_plans
+        from ._analysis.plan_compare import compare_plans
         return compare_plans(self.document, other.document, database)
     def compare_actual(self, workout: Any, database: Any) -> dict[str, Any]:
-        from src.analysis.plan_actual import analyze_plan_actual
+        from ._analysis.plan_actual import analyze_plan_actual
         document=workout.document if hasattr(workout, "document") else workout
         return analyze_plan_actual(self.document, document, database)
