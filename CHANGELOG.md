@@ -16,6 +16,12 @@
 
 # Changelog
 
+## 1.3.1 - 2026-08-25
+
+- Fixed conversion validation so strict and lossy conversion validation works
+  when the optional `jsonschema` dependency is not installed.
+- No v1.4 features are included in this patch release.
+
 ## v1.1.0
 
 ### Added

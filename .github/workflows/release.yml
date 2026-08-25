@@ -118,7 +118,7 @@ jobs:
         run: |
           gh release create "${GITHUB_REF_NAME}" \
             --title "Free Exercise DB++ ${GITHUB_REF_NAME}" \
-            --notes-file docs/releases/v1.2.0.md \
+            --notes-file "docs/releases/${GITHUB_REF_NAME}.md" \
             free-exercise-db-plusplus.json \
             free-exercise-db-plusplus.schema.json \
             workout.schema.json \
