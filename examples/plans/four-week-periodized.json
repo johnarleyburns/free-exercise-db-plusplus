@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "0.2.0",
+  "planId": "four-week-periodized",
+  "revisionId": "four-week-periodized-r1",
+  "name": "Four-Week Periodized Strength",
+  "description": "Three accumulation cycles followed by a deload cycle.",
+  "cycle": {"lengthDays": 7},
+  "phases": [
+    {"phaseId": "build", "durationCycles": 3, "cycle": {"lengthDays": 7}},
+    {"phaseId": "deload", "durationCycles": 1, "cycle": {"lengthDays": 7}}
+  ],
+  "sessions": [
+    {"planSessionId": "build-upper", "phaseId": "build", "dayOffset": 0, "name": "Build upper", "exercises": [
+      {"prescriptionId": "build-bench", "exerciseId": "Barbell_Bench_Press_-_Medium_Grip", "order": 1, "plannedSets": [
+        {"setPrescriptionId": "build-bench-1", "setType": "working", "reps": {"target": 8}},
+        {"setPrescriptionId": "build-bench-2", "setType": "working", "reps": {"target": 8}},
+        {"setPrescriptionId": "build-bench-3", "setType": "working", "reps": {"target": 6}}
+      ]}
+    ]},
+    {"planSessionId": "deload-upper", "phaseId": "deload", "dayOffset": 0, "name": "Deload upper", "exercises": [
+      {"prescriptionId": "deload-bench", "exerciseId": "Barbell_Bench_Press_-_Medium_Grip", "order": 1, "sets": 2, "reps": 8}
+    ]}
+  ]
+}
