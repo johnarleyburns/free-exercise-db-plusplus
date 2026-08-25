@@ -16,6 +16,17 @@
 
 # Changelog
 
+## 1.6.0 - 2026-08-25
+
+- Added portable TrainingProfile schema and DB-aware profile validation.
+- Added deterministic Python PlanEvaluation with target, frequency,
+  movement-pattern, family, equipment, availability, completeness, and
+  provenance sections.
+- Added `fedbpp validate profile` and `fedbpp evaluate-plan` plus examples,
+  ADRs, and a golden evaluator fixture.
+- TARGET remains backward compatible; plan generation and coaching remain out
+  of scope.
+
 ## 1.5.1 - 2026-08-25
 
 - Fixed relationship coverage comparison to use authoritative

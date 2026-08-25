@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/training-profile.schema.json",
+  "title": "Free Exercise DB++ Training Profile",
+  "description": "Portable subject, environment, constraint, and preference context. It is not a training target and contains no required PII.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "profileId"],
+  "properties": {
+    "schemaVersion": {"type": "string", "const": "0.1.0"},
+    "profileId": {"type": "string", "minLength": 1},
+    "subjectId": {"type": ["string", "null"], "minLength": 1},
+    "goals": {"type": "array", "items": {"$ref": "#/$defs/goal"}, "uniqueItems": true},
+    "experience": {"type": ["string", "null"], "enum": ["novice", "intermediate", "advanced", "unknown", null]},
+    "availability": {"$ref": "#/$defs/availability"},
+    "equipment": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "exercisePreferences": {"$ref": "#/$defs/preferences"},
+    "constraints": {"$ref": "#/$defs/constraints"}
+  },
+  "$defs": {
+    "goal": {
+      "type": "object", "additionalProperties": false, "required": ["type"],
+      "properties": {
+        "type": {"type": "string", "enum": ["hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"]},
+        "priority": {"type": "integer", "minimum": 1}
+      }
+    },
+    "range": {
+      "type": "object", "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {"min": {"type": "integer", "minimum": 0}, "target": {"type": "integer", "minimum": 0}, "max": {"type": "integer", "minimum": 0}},
+      "anyOf": [{"required": ["min"]}, {"required": ["target"]}, {"required": ["max"]}]
+    },
+    "availability": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "cycleLengthDays": {"type": "integer", "minimum": 1},
+        "sessionsPerCycle": {"$ref": "#/$defs/range"},
+        "minutesPerSession": {"$ref": "#/$defs/range"},
+        "preferredDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true},
+        "excludedDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true}
+      }
+    },
+    "preferences": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "preferredExerciseIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "avoidedExerciseIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "preferredFamilyIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "avoidedFamilyIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    },
+    "constraints": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "excludedExerciseIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "excludedFamilyIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    }
+  }
+}

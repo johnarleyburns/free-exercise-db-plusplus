@@ -30,6 +30,9 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **Volume TARGET schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/volume-target.schema.json
 
+**TrainingProfile schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/training-profile.schema.json
+
 **Interop mapping schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/interop-mapping.schema.json
 
@@ -203,6 +206,8 @@ Documentation: [Workout interchange guide](docs/WORKOUT-INTERCHANGE.md)
 Workout PLAN prescriptions: [PLAN guide](docs/WORKOUT-PLAN.md), [PLAN examples](examples/plans/)
 
 Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [target examples](examples/targets/)
+
+Training context and deterministic plan evaluation: [TrainingProfile](docs/TRAINING-PROFILE.md), [PlanEvaluation](docs/PLAN-EVALUATION.md)
 
 PLAN comparison: [PLAN-vs-PLAN guide](docs/PLAN-COMPARISON.md)
 PLAN adherence: [PLAN-vs-ACTUAL guide](docs/PLAN-ACTUAL.md)

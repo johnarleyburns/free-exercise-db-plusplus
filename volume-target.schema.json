@@ -37,6 +37,15 @@
         }
       }
     },
+    "frequency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "muscles": {"$ref": "#/$defs/rangeMap"}
+      }
+    },
+    "movementPatterns": {"$ref": "#/$defs/coverageMap"},
+    "families": {"$ref": "#/$defs/coverageMap"},
     "notes": {
       "type": [
         "string",
@@ -107,6 +116,23 @@
           ]
         }
       ]
+    },
+    "coverageRange": {
+      "type": "object", "additionalProperties": false, "minProperties": 1,
+      "properties": {
+        "minimumSets": {"type": "number", "minimum": 0},
+        "targetSets": {"type": "number", "minimum": 0},
+        "maximumSets": {"type": "number", "minimum": 0}
+      },
+      "anyOf": [{"required": ["minimumSets"]}, {"required": ["targetSets"]}, {"required": ["maximumSets"]}]
+    },
+    "rangeMap": {
+      "type": "object", "additionalProperties": false,
+      "patternProperties": {"^[a-z][a-z0-9_ -]*$": {"$ref": "#/$defs/targetRange"}}
+    },
+    "coverageMap": {
+      "type": "object", "additionalProperties": false,
+      "patternProperties": {"^[a-z][a-z0-9_ -]*$": {"$ref": "#/$defs/coverageRange"}}
     }
   }
 }

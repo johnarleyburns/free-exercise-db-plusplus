@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "golden-v16-profile",
+  "availability": {"cycleLengthDays": 7, "sessionsPerCycle": {"max": 4}, "minutesPerSession": {"max": 60}},
+  "equipment": ["barbell", "dumbbell"],
+  "exercisePreferences": {"preferredFamilyIds": ["bench_press"]},
+  "constraints": {"excludedExerciseIds": ["Barbell_Squat"]}
+}

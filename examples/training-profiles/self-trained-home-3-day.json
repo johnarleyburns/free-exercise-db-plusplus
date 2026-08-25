@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "self-trained-home-3-day",
+  "goals": [{"type": "general_fitness"}],
+  "experience": "unknown",
+  "availability": {"cycleLengthDays": 7, "sessionsPerCycle": {"target": 3}, "minutesPerSession": {"max": 40}},
+  "equipment": ["body only", "dumbbell"],
+  "exercisePreferences": {"preferredExerciseIds": ["Bodyweight_Squat"], "avoidedExerciseIds": []},
+  "constraints": {"excludedFamilyIds": []}
+}

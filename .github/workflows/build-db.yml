@@ -221,6 +221,27 @@ jobs:
           print("TARGET schema and coverage analysis valid")
           PY
 
+      - name: Validate TrainingProfile and PlanEvaluation fixtures
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+          schema=json.loads(Path('training-profile.schema.json').read_text())
+          Draft202012Validator.check_schema(schema)
+          validator=Draft202012Validator(schema)
+          profiles=sorted(Path('examples/training-profiles').glob('*.json'))
+          assert profiles
+          for path in profiles:
+              errors=list(validator.iter_errors(json.loads(path.read_text())))
+              assert not errors, (path, errors)
+          spec=importlib.util.spec_from_file_location('v16_tests','tests/training/test_v16.py')
+          module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith('test_'): getattr(module,name)()
+          print(f'TrainingProfile schema and {len(profiles)} examples valid; evaluator tests passed')
+          PY
+
       - name: Test ACTUAL 0.2 to 0.3 migration
         run: |
           PYTHONPATH=. python - <<'PY'

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "golden-v16",
+  "periodDays": 7,
+  "muscles": {"chest": {"min": 10, "target": 12, "max": 14}, "back": {"min": 10}},
+  "frequency": {"muscles": {"chest": {"min": 2}}},
+  "movementPatterns": {"hinge": {"minimumSets": 4}}
+}

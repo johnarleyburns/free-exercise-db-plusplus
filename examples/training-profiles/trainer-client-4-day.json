@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "trainer-client-4-day",
+  "subjectId": "client-opaque-042",
+  "goals": [{"type": "hypertrophy", "priority": 1}],
+  "experience": "intermediate",
+  "availability": {"cycleLengthDays": 7, "sessionsPerCycle": {"min": 3, "target": 4, "max": 4}, "minutesPerSession": {"max": 60}},
+  "equipment": ["barbell", "dumbbell", "machine", "body only"],
+  "exercisePreferences": {"preferredFamilyIds": ["bench_press"]},
+  "constraints": {"excludedExerciseIds": []}
+}

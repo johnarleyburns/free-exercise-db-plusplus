@@ -7,6 +7,7 @@ from ._analysis.coverage import analyze_plan as _analyze_plan
 from ._analysis.plan_actual import analyze_plan_actual
 from ._analysis.plan_compare import compare_plans as _compare_plans
 from ._analysis.targets import compare_to_targets as _compare_to_targets
+from .plan_evaluation import evaluate_plan
 
 
 def _document(value: Any) -> dict[str, Any]:
@@ -66,4 +67,4 @@ analyze = analyze_plan
 compare_plan_revisions = compare_plans
 compare_target = compare_to_targets
 
-__all__ = ["analyze_plan", "compare_plan_actual", "compare_plans", "compare_to_targets"]
+__all__ = ["analyze_plan", "compare_plan_actual", "compare_plans", "compare_to_targets", "evaluate_plan"]

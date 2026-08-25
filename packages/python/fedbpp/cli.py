@@ -9,6 +9,7 @@ from typing import Any
 
 from . import (Database, Plan, VolumeTarget, Workout, TrainingHistory,
                analyze_plan, compare_plan_actual, compare_plans, compare_to_targets,
+               TrainingProfile, validate_training_profile, evaluate_plan,
                analyze_periods, analyze_cohort, export_muscle_period_csv, export_session_csv,
                export_exercise_csv)
 from .conversion import ConversionError, export_workout, import_workout
@@ -48,6 +49,10 @@ def _validate(kind: str, path: str) -> None:
     elif kind == "workout": Workout.from_dict(value).validate(); print(f"valid workout: {path}")
     elif kind == "plan": Plan.from_dict(value).validate(); print(f"valid plan: {path}")
     elif kind == "target": VolumeTarget.from_dict(value).validate(); print(f"valid target: {path}")
+    elif kind == "profile":
+        errors = validate_training_profile(value)
+        if errors: raise ValueError("; ".join(errors))
+        print(f"valid profile: {path}")
 
 
 def _analysis(args: argparse.Namespace) -> Any:
@@ -57,6 +62,16 @@ def _analysis(args: argparse.Namespace) -> Any:
     if args.command == "compare-plans": return compare_plans(Plan.load(args.plan_a), Plan.load(args.plan_b), db, relationships)
     if args.command == "compare-actual": return compare_plan_actual(Plan.load(args.plan), Workout.load(args.workout), db, relationships)
     return compare_to_targets(Plan.load(args.plan), VolumeTarget.load(args.target), db)
+
+def _evaluate(args: argparse.Namespace) -> Any:
+    db = Database.load(args.db)
+    profile = TrainingProfile.load(args.profile).document if args.profile else None
+    target = VolumeTarget.load(args.target).document if args.target else None
+    relationships = RelationshipRegistry.load(args.relationships, db=db) if args.relationships else None
+    if profile:
+        errors = validate_training_profile(profile, db, relationships)
+        if errors: raise ValueError("; ".join(errors))
+    return evaluate_plan(Plan.load(args.plan), db, profile, target, relationships)
 
 
 def _conversion_report(result: Any, path: str | None) -> None:
@@ -69,12 +84,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="fedbpp", description="Free Exercise DB++ validation, analysis, and interoperability")
     sub = parser.add_subparsers(dest="command", required=True)
     validate = sub.add_parser("validate"); vs = validate.add_subparsers(dest="kind", required=True)
-    for kind in ("db", "workout", "plan", "target"):
+    for kind in ("db", "workout", "plan", "target", "profile"):
         p = vs.add_parser(kind); p.add_argument("file")
     p = sub.add_parser("analyze-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-plans"); p.add_argument("plan_a"); p.add_argument("plan_b"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-actual"); p.add_argument("plan"); p.add_argument("workout"); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("evaluate-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true"); p.add_argument("--output")
     p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("research-export"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output", required=True); p.add_argument("--table", choices=("muscle", "session", "exercise"), default="muscle")
     p = sub.add_parser("import"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
@@ -93,6 +109,27 @@ def main(argv: list[str] | None = None) -> int:
             result = _analysis(args)
             if getattr(args, "json", False): _dump(result)
             else: print(json.dumps(result, sort_keys=True, indent=2))
+            return 0
+        if args.command == "evaluate-plan":
+            result = _evaluate(args)
+            if args.json: _dump(result, args.output)
+            else:
+                print("PLAN EVALUATION")
+                print("\nHard constraints:")
+                print(f"  {'PASS' if result['summary']['satisfiesHardConstraints'] else 'FAIL'} ({result['summary']['hardConstraintViolations']} violations)")
+                for row in result["constraints"]["violations"]:
+                    print(f"  {row['type']}: {row.get('exerciseId') or row.get('familyId') or row.get('sessionId')}")
+                print("\nTargets:")
+                for muscle_id, row in result["muscleCoverage"].items():
+                    if row.get("state") != "not_targeted": print(f"  {muscle_id}: {row['actualEffectiveSets']} / minimum {row.get('minimum')} {row['state']}")
+                print(f"  Overall: {'PASS' if result['summary']['meetsTargetMinimums'] else 'GAPS'} ({result['summary']['targetGaps']} gaps)")
+                print("\nFrequency:")
+                for muscle_id, row in result["frequency"].items(): print(f"  {muscle_id}: {row['normalizedExposuresPer7Days']} / minimum {row.get('minimum')} {row['state']}")
+                print("\nMovement patterns:")
+                for pattern_id, row in result["movementPatterns"].items(): print(f"  {pattern_id}: {row['plannedSets']} / minimum {row.get('minimum')} {row['state']}")
+                print(f"\nPreferences: {len(result['preferences'].get('findings', []))} findings")
+                print(f"Overall: {result['summary']['evaluationStatus']}")
+                if args.output: _dump(result, args.output)
             return 0
         if args.command in {"analyze-history", "research-export"}:
             manifest = _load_json(args.history)

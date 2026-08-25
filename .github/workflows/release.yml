@@ -78,6 +78,7 @@ jobs:
               'exercise_interop': load('exercise-interop-mapping.schema.json'),
               'loss': load('mapping-loss.schema.json'),
               'relationships': load('exercise-relationships.schema.json'),
+              'profile': load('training-profile.schema.json'),
               'family_mapping': load('family-interop-mapping.schema.json'),
           }
           for schema in schemas.values():
@@ -88,6 +89,10 @@ jobs:
           for schema_name, filename in checks:
               validator = Draft202012Validator(schemas[schema_name], format_checker=FormatChecker())
               errors = list(validator.iter_errors(load(filename)))
+              assert not errors, f'{filename}: {[error.message for error in errors]}'
+          profile_validator = Draft202012Validator(schemas['profile'], format_checker=FormatChecker())
+          for filename in sorted(Path('examples/training-profiles').glob('*.json')):
+              errors = list(profile_validator.iter_errors(load(str(filename))))
               assert not errors, f'{filename}: {[error.message for error in errors]}'
           print(f'validated {len(checks)} public JSON artifacts against their schemas')
           for filename, schema_name in [('exercise-relationships.json','relationships'), ('fixtures/interop/family-mapping-example.json','family_mapping')]:
@@ -117,6 +122,7 @@ jobs:
             workout.schema.json \
             workout-plan.schema.json \
             volume-target.schema.json \
+            training-profile.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
             mapping-loss.schema.json \
@@ -136,6 +142,7 @@ jobs:
             workout.schema.json \
             workout-plan.schema.json \
             volume-target.schema.json \
+            training-profile.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
             mapping-loss.schema.json \
@@ -162,7 +169,10 @@ jobs:
             docs/PLAN-ANALYSIS.md \
             docs/PLAN-ACTUAL.md \
             docs/PLAN-COMPARISON.md \
-            docs/VOLUME-TARGETS.md
+            docs/VOLUME-TARGETS.md \
+            training-profile.schema.json \
+            docs/TRAINING-PROFILE.md \
+            docs/PLAN-EVALUATION.md
           )
           if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
             gh release edit "${GITHUB_REF_NAME}" \
