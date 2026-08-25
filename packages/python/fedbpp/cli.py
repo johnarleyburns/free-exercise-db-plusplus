@@ -7,13 +7,28 @@ from pathlib import Path
 import sys
 from typing import Any
 
-from . import Database, Plan, VolumeTarget, Workout, analyze_plan, compare_plan_actual, compare_plans, compare_to_targets
+from . import (Database, Plan, VolumeTarget, Workout, TrainingHistory,
+               analyze_plan, compare_plan_actual, compare_plans, compare_to_targets,
+               analyze_periods, analyze_cohort, export_muscle_period_csv, export_session_csv,
+               export_exercise_csv)
 from .conversion import ConversionError, export_workout, import_workout
 from .interop import MappingRegistry
 
 
 def _load_json(path: str) -> dict[str, Any]:
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def _load_history(path: str, *, plans: list[str] | None = None, workouts: list[str] | None = None, targets: list[str] | None = None) -> TrainingHistory:
+    value = _load_json(path)
+    base = Path(path).resolve().parent
+    def load_ref(name: str) -> dict[str, Any]:
+        ref = Path(name)
+        return _load_json(str(ref if ref.is_absolute() else base / ref))
+    def docs(names: list[str] | None, key: str) -> list[dict[str, Any]]:
+        if names: return [load_ref(name) for name in names]
+        return [(load_ref(name) if isinstance(name, str) else name) for name in value.get(key, [])]
+    return TrainingHistory(value.get("subjectId", value.get("subject_id", "")), plans=docs(plans, "plans"), workouts=docs(workouts, "workouts"), targets=docs(targets, "targets"), plan_activations=value.get("planActivations", value.get("plan_activations", [])))
 
 
 def _dump(value: Any, path: str | None = None) -> None:
@@ -58,6 +73,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("compare-plans"); p.add_argument("plan_a"); p.add_argument("plan_b"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-actual"); p.add_argument("plan"); p.add_argument("workout"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("research-export"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output", required=True); p.add_argument("--table", choices=("muscle", "session", "exercise"), default="muscle")
     p = sub.add_parser("import"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
     p = sub.add_parser("export"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
     p = sub.add_parser("mapping"); ms = p.add_subparsers(dest="mapping_kind", required=True)
@@ -70,6 +87,27 @@ def main(argv: list[str] | None = None) -> int:
             result = _analysis(args)
             if getattr(args, "json", False): _dump(result)
             else: print(json.dumps(result, sort_keys=True, indent=2))
+            return 0
+        if args.command in {"analyze-history", "research-export"}:
+            manifest = _load_json(args.history)
+            db = Database.load(args.db)
+            if isinstance(manifest, list):
+                histories = []
+                manifest_base = Path(args.history).resolve().parent
+                def manifest_doc(name: Any) -> Any:
+                    if not isinstance(name, str): return name
+                    ref = Path(name); return _load_json(str(ref if ref.is_absolute() else manifest_base / ref))
+                for entry in manifest:
+                    # Reuse the manifest loader without requiring a second file.
+                    histories.append(TrainingHistory(entry.get("subjectId", entry.get("subject_id", "")), plans=[manifest_doc(x) for x in entry.get("plans", [])], workouts=[manifest_doc(x) for x in entry.get("workouts", [])], targets=[manifest_doc(x) for x in entry.get("targets", [])], plan_activations=entry.get("planActivations", [])))
+                result = analyze_cohort(histories, db, args.period, start=args.start, end=args.end, timezone=args.timezone)
+            else:
+                result = analyze_periods(_load_history(args.history), db, args.period, start=args.start, end=args.end, timezone=args.timezone)
+            if args.command == "analyze-history":
+                _dump(result, args.output if not getattr(args, "json", False) else None)
+            else:
+                exporters = {"muscle": export_muscle_period_csv, "session": export_session_csv, "exercise": export_exercise_csv}
+                exporters[args.table](result, args.output)
             return 0
         if args.command == "mapping":
             registry = MappingRegistry.load()

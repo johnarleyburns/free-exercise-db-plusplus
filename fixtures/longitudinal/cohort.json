@@ -1,0 +1,5 @@
+[
+  {"subjectId": "S001", "plans": ["../../examples/plans/basic-upper-lower.json"], "workouts": ["../../examples/workouts/plan-linked.json"]},
+  {"subjectId": "S002", "plans": ["../../examples/plans/basic-upper-lower.json"], "workouts": []},
+  {"subjectId": "S003", "plans": ["../../examples/plans/eight-day-rotation.json"], "workouts": []}
+]

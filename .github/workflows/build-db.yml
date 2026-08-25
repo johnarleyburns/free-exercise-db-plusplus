@@ -308,12 +308,28 @@ jobs:
           print(f"Python consumer package valid: {total} tests")
           PY
 
+      - name: Test v1.4 longitudinal analysis and CSV exports
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, inspect
+          from pathlib import Path
+          total = 0
+          for index, path in enumerate(sorted(Path("tests/longitudinal").glob("test_*.py"))):
+              spec = importlib.util.spec_from_file_location(f"longitudinal_{index}", path)
+              module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+              for name in sorted(dir(module)):
+                  function = getattr(module, name)
+                  if name.startswith("test_") and callable(function) and not inspect.signature(function).parameters:
+                      function(); total += 1
+          print(f"v1.4 longitudinal analysis valid: {total} tests")
+          PY
+
       - name: Test isolated Python wheel
         run: |
           python3 -m pip wheel --no-deps packages/python --wheel-dir "${RUNNER_TEMP}/fedbpp-dist"
           python3 -m pip install --no-deps --target "${RUNNER_TEMP}/fedbpp-site" "${RUNNER_TEMP}"/fedbpp-dist/fedbpp-*.whl
           cd "${RUNNER_TEMP}"
-          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual' "${RUNNER_TEMP}/fedbpp-site"
+          PYTHONPATH="${RUNNER_TEMP}/fedbpp-site" python3 -S -c 'import sys; sys.path.insert(0, sys.argv[1]); from fedbpp import Plan, VolumeTarget, analyze_plan, compare_plans, compare_to_targets, compare_plan_actual, TrainingHistory, analyze_periods, export_muscle_period_csv' "${RUNNER_TEMP}/fedbpp-site"
 
       - name: Test v1.3 conversion and CLI from isolated wheel
         run: |

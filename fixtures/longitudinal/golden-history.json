@@ -1,0 +1,11 @@
+{
+  "subjectId": "S001",
+  "plans": ["../../examples/plans/basic-upper-lower.json"],
+  "workouts": ["../../examples/workouts/plan-linked.json"],
+  "targets": ["../../examples/targets/example-hypertrophy.json"],
+  "expected": {
+    "period": "calendar_week",
+    "requiredStatuses": ["matched", "missed_planned_session"],
+    "opaqueIdentity": true
+  }
+}

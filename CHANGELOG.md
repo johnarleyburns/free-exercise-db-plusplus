@@ -16,6 +16,20 @@
 
 # Changelog
 
+## 1.4.0 - 2026-08-25
+
+- Added longitudinal PLAN-vs-ACTUAL analysis across calendar, rolling, native
+  cycle, phase, and custom periods.
+- Added plan revision activation/linkage, missed and unplanned session reports,
+  target aggregation, substitutions, exposure frequency, coverage completeness,
+  and explicit missing-data states.
+- Added deterministic subject-period-muscle, subject-session, and
+  subject-session-exercise CSV exports plus descriptive cohort support.
+- Added the public `fedbpp.longitudinal` API and `fedbpp analyze-history` /
+  `fedbpp research-export` commands.
+- No inferential statistics, recommendations, physiological equivalence claims,
+  or exercise-family graph are included.
+
 ## 1.3.1 - 2026-08-25
 
 - Fixed conversion validation so strict and lossy conversion validation works

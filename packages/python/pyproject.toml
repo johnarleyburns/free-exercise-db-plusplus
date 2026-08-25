@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fedbpp"
-version = "1.3.1"
+version = "1.4.0"
 description = "Python helpers for Free Exercise DB++"
 requires-python = ">=3.12"
 dependencies = []

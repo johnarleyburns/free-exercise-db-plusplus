@@ -202,6 +202,12 @@ PLAN comparison: [PLAN-vs-PLAN guide](docs/PLAN-COMPARISON.md)
 PLAN adherence: [PLAN-vs-ACTUAL guide](docs/PLAN-ACTUAL.md)
 Normative semantics: [analysis contract](docs/ANALYSIS-SEMANTICS.md)
 
+Longitudinal trainer/research analysis: [longitudinal guide](docs/LONGITUDINAL-ANALYSIS.md)
+and [research workflows](docs/RESEARCH-WORKFLOWS.md). For example,
+`analyze_periods(TrainingHistory("S001", plans, workouts), db,
+period="calendar_week", timezone="America/New_York")` produces deterministic
+subject-period-muscle rows without requiring pandas.
+
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 
 ## Interoperability (v1.3)
