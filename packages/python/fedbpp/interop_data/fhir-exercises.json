@@ -1,0 +1,12 @@
+{
+  "target": "fhir",
+  "mappingVersion": "0.1.0",
+  "status": "stable",
+  "mappingKind": "identity",
+  "targetSpecification": {"name": "FHIR R4 US Physical Activity IG exercise coding", "version": "R4 / US Physical Activity IG 1.0.0 STU1", "reviewedOn": "2026-08-25", "references": ["https://hl7.org/fhir/us/physical-activity/STU1/"]},
+  "entries": [
+    {"externalId": "Dumbbell_Bench_Press", "externalName": "Dumbbell bench press", "dbppExerciseIds": ["Dumbbell_Bench_Press"], "relation": "exact", "direction": "bidirectional", "confidence": "high", "provenance": {"source": "https://hl7.org/fhir/us/physical-activity/STU1/", "rationale": "DB++ canonical code carried in a FHIR coding system; no identity inference."}},
+    {"externalId": "Barbell_Deadlift", "externalName": "Barbell deadlift", "dbppExerciseIds": ["Barbell_Deadlift"], "relation": "exact", "direction": "bidirectional", "confidence": "high", "provenance": {"source": "https://hl7.org/fhir/us/physical-activity/STU1/", "rationale": "DB++ canonical code carried in a FHIR coding system; no identity inference."}},
+    {"externalId": "Barbell_Bench_Press_-_Medium_Grip", "externalName": "Barbell bench press medium grip", "dbppExerciseIds": ["Barbell_Bench_Press_-_Medium_Grip"], "relation": "exact", "direction": "bidirectional", "confidence": "high", "provenance": {"source": "https://hl7.org/fhir/us/physical-activity/STU1/", "rationale": "DB++ canonical code carried in a FHIR coding system; no identity inference."}}
+  ]
+}

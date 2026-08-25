@@ -32,9 +32,9 @@ class MappingRegistry:
             if d.get("mappingKind") not in {"identity", "category"}: continue
             for e in d.get("entries",[]):
                 if d["mappingKind"] == "category":
-                    out.append(MappingMatch(d["target"],e["sourcePath"],None,e["sourcePath"],"category",e.get("direction","external_to_dbpp"),"high",{"source":d["targetSpecification"]["references"][0],"rationale":e["notes"]},d["mappingKind"]))
+                    out.append(MappingMatch(d["target"],e["sourcePath"],None,e["sourcePath"],"category",e.get("direction","external_to_dbpp"),"high",{"source":d["targetSpecification"]["references"][0],"rationale":e["notes"],"mappingVersion":d.get("mappingVersion")},d["mappingKind"]))
                 else:
-                    for x in (e.get("dbppExerciseIds") or [None]): out.append(MappingMatch(d["target"],e["externalId"],x,e["externalName"],e["relation"],e["direction"],e["confidence"],e["provenance"],d["mappingKind"]))
+                    for x in (e.get("dbppExerciseIds") or [None]): out.append(MappingMatch(d["target"],e["externalId"],x,e["externalName"],e["relation"],e["direction"],e["confidence"],{**e["provenance"], "mappingVersion":d.get("mappingVersion")},d["mappingKind"]))
         return cls(out)
     def lookup_external(self,system,external_id): return [x for x in self._records if x.system==system and x.external_id==external_id]
     def lookup_dbpp(self,exercise_id,system=None): return [x for x in self._records if x.dbpp_exercise_id==exercise_id and (system is None or x.system==system)]

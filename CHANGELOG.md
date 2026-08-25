@@ -5,6 +5,15 @@
 - Added reviewed Garmin FIT exercise identity crosswalk, Health Connect category compatibility metadata, deterministic coverage reports, type-aware validation/registry modules, loss fixtures, and packaged Python lookup API.
 - Import/export serializers remain v1.3 work.
 
+## 1.3.0 - 2026-08-25
+
+- Added a strict-by-default conversion API with deterministic results, provenance, normalization, and machine-readable loss reporting.
+- Added operational FHIR R4 Physical Activity Bundle import/export using the reviewed mapping registry and exact identity crosswalk.
+- Added custom/unknown exercise preservation and explicit ambiguous/unmapped identity failures.
+- Added the `fedbpp` CLI for validation, PLAN/ACTUAL/TARGET analysis, mapping lookup, and import/export.
+- Added packaged conversion examples, fixtures, documentation, and wheel console-script support.
+- Garmin FIT binary, Health Connect file, and HealthKit file support remain intentionally bounded by licensing and platform API constraints.
+
 # Changelog
 
 ## v1.1.0

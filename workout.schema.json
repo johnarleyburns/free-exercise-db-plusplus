@@ -168,7 +168,29 @@
         "recordId": {
           "type": "string",
           "minLength": 1
+        },
+        "mappingVersion": {
+          "type": ["string", "null"]
+        },
+        "adapterVersion": {
+          "type": ["string", "null"]
+        },
+        "mappings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/mappingProvenance" }
         }
+      }
+    },
+    "mappingProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["externalId", "relation", "direction", "confidence"],
+      "properties": {
+        "externalId": { "type": "string", "minLength": 1 },
+        "relation": { "type": "string", "minLength": 1 },
+        "direction": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "string", "minLength": 1 },
+        "mappingVersion": { "type": ["string", "null"] }
       }
     },
     "device": {
@@ -345,6 +367,17 @@
               "type": "null"
             }
           ]
+        },
+        "interop": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "mappingVersion": { "type": ["string", "null"] },
+            "adapterVersion": { "type": ["string", "null"] },
+            "relation": { "type": ["string", "null"] },
+            "direction": { "type": ["string", "null"] },
+            "confidence": { "type": ["string", "null"] }
+          }
         },
         "variation": {
           "type": [

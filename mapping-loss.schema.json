@@ -11,6 +11,8 @@
     "status": {
       "enum": [
         "informational",
+        "lossless",
+        "normalized",
         "lossy",
         "unsupported",
         "invalid"
@@ -38,6 +40,18 @@
             "type": "string",
             "minLength": 1
           }
+        }
+      }
+    },
+    "normalizations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "reason"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
         }
       }
     }

@@ -204,11 +204,11 @@ Normative semantics: [analysis contract](docs/ANALYSIS-SEMANTICS.md)
 
 Examples: [workout example matrix](examples/workouts/) and [examples/workout.example.json](examples/workout.example.json)
 
-## Interoperability (v1.2)
+## Interoperability (v1.3)
 
 v1.2 provides mapping and capability infrastructure: audited standards documents, structural ACTUAL/category mappings, the reviewed Garmin FIT exercise identity crosswalk, JSON schemas, loss semantics, and deterministic coverage reports. Health Connect session categories are not advertised as exercise identities. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`. Operational import/export serializers remain deferred to v1.3.
 
-Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("garmin-fit", "exercise_name.bench_press.DUMBBELL_BENCH_PRESS")`. Every result exposes `mapping_kind`, `relation`, `direction`, and `is_ambiguous`; category, broader, approximate, and one-to-many results are never silently treated as exact identity matches.
+Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("garmin-fit", "exercise_name.bench_press.DUMBBELL_BENCH_PRESS")`. Operational FHIR conversion is available with `from fedbpp import import_workout, export_workout`; strict mode is the default. See [import/export](docs/interop/IMPORT-EXPORT.md) and the [CLI](docs/interop/CLI.md). FIT binary, Health Connect, and HealthKit remain explicitly bounded by their API/licensing limitations.
 
 ## CI and releases
 

@@ -1,8 +1,15 @@
 # Free Exercise DB++ Roadmap
 
-Status: **post-v1.1.0 planning**  
-Current stable release: **v1.1.0**  
-Primary next milestone: **v1.2.0 — Exercise and Workout Interoperability Mapping**
+Status: **v1.3.0 released**
+Current stable release: **v1.3.0**
+Next milestone: v1.4 longitudinal subject analysis (not started)
+
+## v1.3 implementation status
+
+Operational conversion is implemented for FHIR R4 Physical Activity Bundle JSON,
+including strict/lossy modes, provenance, deterministic output, custom exercise
+preservation, the installed Python API, and the `fedbpp` CLI. Garmin FIT binary
+and platform API integrations remain bounded/optional as documented.
 
 ## v1.2 implementation status
 
