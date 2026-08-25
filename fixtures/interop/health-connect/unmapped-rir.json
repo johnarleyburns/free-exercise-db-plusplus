@@ -3,6 +3,11 @@
   "sourcePath": "exercises[0].sets[0].rir",
   "loss": {
     "status": "unsupported",
-    "reason": "Health Connect has no standard RIR field"
+    "losses": [
+      {
+        "path": "exercises[0].sets[0].rir",
+        "reason": "Health Connect has no standard RIR field"
+      }
+    ]
   }
 }

@@ -2,38 +2,32 @@
   "target": "android-health-connect",
   "mappingVersion": "1.0.0",
   "status": "stable",
+  "sourceArtifact": "exercise-db",
+  "mappingKind": "category",
   "targetSpecification": {
     "name": "Android Health Connect ExerciseSessionType",
     "version": "Jetpack Health Connect 1.1.0 / Android API reference reviewed 2026-08-25",
     "reviewedOn": "2026-08-25",
     "references": [
-      "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord"
+      "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionType"
     ]
   },
   "entries": [
     {
-      "externalId": "EXERCISE_SESSION_TYPE_STRENGTH_TRAINING",
-      "externalName": "Strength training",
-      "dbppExerciseIds": [],
-      "relation": "unmapped",
-      "direction": "external_to_dbpp",
-      "confidence": "high",
-      "provenance": {
-        "source": "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord",
-        "rationale": "The official session category is broader than an individual DB++ exercise; no identity is inferred."
-      }
+      "sourcePath": "EXERCISE_SESSION_TYPE_STRENGTH_TRAINING",
+      "targetType": "ExerciseSessionType",
+      "targetField": "categoryCompatibility",
+      "quality": "compatible",
+      "transform": "session category hint only; preserve DB++ exerciseId",
+      "notes": "Health Connect defines a session/activity category, not an individual exercise vocabulary. This must not be used as an exercise identity match."
     },
     {
-      "externalId": "EXERCISE_SESSION_TYPE_WEIGHTLIFTING",
-      "externalName": "Weightlifting",
-      "dbppExerciseIds": [],
-      "relation": "unmapped",
-      "direction": "external_to_dbpp",
-      "confidence": "high",
-      "provenance": {
-        "source": "https://developer.android.com/reference/android/health/connect/datatypes/ExerciseSessionRecord",
-        "rationale": "The official session category does not identify an exercise, load, or variant."
-      }
+      "sourcePath": "EXERCISE_SESSION_TYPE_WEIGHTLIFTING",
+      "targetType": "ExerciseSessionType",
+      "targetField": "categoryCompatibility",
+      "quality": "compatible",
+      "transform": "session category hint only; preserve DB++ exerciseId",
+      "notes": "Health Connect defines a session/activity category, not an individual exercise vocabulary. This must not be used as an exercise identity match."
     }
   ]
 }

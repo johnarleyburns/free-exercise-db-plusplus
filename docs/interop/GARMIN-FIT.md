@@ -12,6 +12,8 @@ FIT has Activity sessions and Workout/Workout Step prescriptions; set-like stren
 
 Authoritative reference: [https://developer.garmin.com/fit/overview/](https://developer.garmin.com/fit/overview/)
 
+The official FIT SDK publishes strength exercise-name enums (for example, bench-press and squat exercise names). v1.2 uses the reviewed exact subset in [`mappings/garmin-fit-exercises.json`](../../mappings/garmin-fit-exercises.json) as its first production exercise identity crosswalk. The artifact is published under the Garmin FIT Protocol License; this release does not claim mappings for enum values not reviewed against DB++.
+
 | DB++ concept | Assessment |
 |---|---|
 | identity/name/custom exercise | lossy or extension_required |

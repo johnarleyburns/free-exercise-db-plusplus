@@ -1,0 +1,241 @@
+{
+  "target": "garmin-fit",
+  "mappingVersion": "1.0.0",
+  "status": "stable",
+  "mappingKind": "identity",
+  "targetSpecification": {
+    "name": "Garmin FIT Profile strength exercise-name enums",
+    "version": "FIT SDK profile 21.212.0",
+    "reviewedOn": "2026-08-25",
+    "references": [
+      "https://github.com/garmin/fit-java-sdk/tree/main/src/main/java/com/garmin/fit",
+      "https://developer.garmin.com/fit/overview/"
+    ]
+  },
+  "entries": [
+    {
+      "externalId": "exercise_name.bench_press.DUMBBELL_BENCH_PRESS",
+      "externalName": "Dumbbell bench press",
+      "dbppExerciseIds": [
+        "Dumbbell_Bench_Press"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.bench_press.CLOSE_GRIP_BARBELL_BENCH_PRESS",
+      "externalName": "Close-grip barbell bench press",
+      "dbppExerciseIds": [
+        "Close-Grip_Barbell_Bench_Press"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.bench_press.DECLINE_DUMBBELL_BENCH_PRESS",
+      "externalName": "Decline dumbbell bench press",
+      "dbppExerciseIds": [
+        "Decline_Dumbbell_Bench_Press"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.deadlift.BARBELL_DEADLIFT",
+      "externalName": "Barbell deadlift",
+      "dbppExerciseIds": [
+        "Barbell_Deadlift"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.deadlift.SUMO_DEADLIFT",
+      "externalName": "Sumo deadlift",
+      "dbppExerciseIds": [
+        "Sumo_Deadlift"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.squat.DUMBBELL_SQUAT",
+      "externalName": "Dumbbell squat",
+      "dbppExerciseIds": [
+        "Dumbbell_Squat"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.squat.GOBLET_SQUAT",
+      "externalName": "Goblet squat",
+      "dbppExerciseIds": [
+        "Goblet_Squat"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.squat.OVERHEAD_SQUAT",
+      "externalName": "Overhead squat",
+      "dbppExerciseIds": [
+        "Overhead_Squat"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.shoulder_press.DUMBBELL_SHOULDER_PRESS",
+      "externalName": "Dumbbell shoulder press",
+      "dbppExerciseIds": [
+        "Dumbbell_Shoulder_Press"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.shoulder_press.BARBELL_SHOULDER_PRESS",
+      "externalName": "Barbell shoulder press",
+      "dbppExerciseIds": [
+        "Barbell_Shoulder_Press"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.pull_up.CHIN_UP",
+      "externalName": "Chin-up",
+      "dbppExerciseIds": [
+        "Chin-Up"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.push_up.DECLINE_PUSH_UP",
+      "externalName": "Decline push-up",
+      "dbppExerciseIds": [
+        "Decline_Push-Up"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.row.INVERTED_ROW",
+      "externalName": "Inverted row",
+      "dbppExerciseIds": [
+        "Inverted_Row"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.sit_up.SIT_UP",
+      "externalName": "Sit-up",
+      "dbppExerciseIds": [
+        "Sit-Up"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.calf_raise.SEATED_CALF_RAISE",
+      "externalName": "Seated calf raise",
+      "dbppExerciseIds": [
+        "Seated_Calf_Raise"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    },
+    {
+      "externalId": "exercise_name.carry.FARMERS_WALK",
+      "externalName": "Farmer's walk",
+      "dbppExerciseIds": [
+        "Farmers_Walk"
+      ],
+      "relation": "exact",
+      "direction": "bidirectional",
+      "confidence": "high",
+      "provenance": {
+        "source": "https://github.com/garmin/fit-java-sdk",
+        "rationale": "Official FIT exercise-name enum identifier and display concept match the DB++ exercise identifier after punctuation/case normalization; no semantic synonym was inferred."
+      }
+    }
+  ]
+}

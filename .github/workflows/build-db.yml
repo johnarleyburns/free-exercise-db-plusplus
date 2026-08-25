@@ -252,48 +252,42 @@ jobs:
           print(f"Android Health Connect mapping valid: {len(entries)} entries")
           PY
 
-      - name: Validate v1.2 identity crosswalk and loss schema
+      - name: Validate typed interoperability artifacts
         run: |
           PYTHONPATH=. python - <<'PY'
           import json
           from pathlib import Path
-          from jsonschema import Draft202012Validator, FormatChecker
-          db=json.loads(Path("free-exercise-db-plusplus.json").read_text())
-          schema=json.loads(Path("exercise-interop-mapping.schema.json").read_text())
-          cw=json.loads(Path("mappings/health-connect-exercises.json").read_text())
-          errors=list(Draft202012Validator(schema,format_checker=FormatChecker()).iter_errors(cw))
+          from src.interop.validate import validate_all
+          errors, warnings = validate_all("mappings", "free-exercise-db-plusplus.json", "interop-mapping.schema.json", "exercise-interop-mapping.schema.json", "mapping-loss.schema.json")
           assert not errors, errors
-          ids=set(db["exercises"])
-          for e in cw["entries"]:
-              assert all(x in ids for x in e["dbppExerciseIds"])
-          loss=json.loads(Path("mapping-loss.schema.json").read_text())
-          Draft202012Validator.check_schema(loss)
-          from src.interop.registry import MappingRegistry
-          r=MappingRegistry.load("mappings/health-connect-exercises.json")
-          assert len(r.lookup_external("android-health-connect", "EXERCISE_SESSION_TYPE_WEIGHTLIFTING")) > 1
-          print("v1.2 identity crosswalk, loss schema, and ambiguity behavior valid")
+          print(f"typed mapping artifacts valid; review warnings: {len(warnings)}")
+          loss=json.loads(Path("fixtures/interop/health-connect/unmapped-rir.json").read_text())["loss"]
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema=json.loads(Path("mapping-loss.schema.json").read_text())
+          assert not list(Draft202012Validator(schema,format_checker=FormatChecker()).iter_errors(loss))
           PY
 
-      - name: Validate interoperability mapping registries
+      - name: Verify canonical identity mapping package parity
         run: |
-          python - <<'PY'
-          import json
+          cmp mappings/garmin-fit-exercises.json packages/python/fedbpp/interop_data/garmin-fit-exercises.json
+          cmp mappings/health-connect-exercises.json packages/python/fedbpp/interop_data/health-connect-exercises.json
+
+      - name: Run v1.2 interoperability contract tests
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import importlib.util, inspect
           from pathlib import Path
-          from jsonschema import Draft202012Validator
-          schema = json.loads(Path("interop-mapping.schema.json").read_text())
-          Draft202012Validator.check_schema(schema)
-          validator = Draft202012Validator(schema)
-          files = sorted(Path("mappings").glob("*.json"))
-          assert files
-          for path in files:
-              mapping = json.loads(path.read_text())
-              errors = list(validator.iter_errors(mapping))
-              assert not errors, f"{path}: {[e.message for e in errors]}"
-              pairs = [(e["sourcePath"], e["targetField"]) for e in mapping["entries"]]
-              assert len(pairs) == len(set(pairs)), path
-              if mapping["status"] != "placeholder":
-                  assert mapping["entries"], path
-          print(f"mapping registries valid: {len(files)} files")
+          total = 0
+          for index, path in enumerate(sorted(Path("tests/interop").glob("test_*.py"))):
+              spec = importlib.util.spec_from_file_location(f"interop_contract_{index}", path)
+              module = importlib.util.module_from_spec(spec)
+              spec.loader.exec_module(module)
+              for name in sorted(dir(module)):
+                  function = getattr(module, name)
+                  if name.startswith("test_") and callable(function) and not inspect.signature(function).parameters:
+                      function()
+                      total += 1
+          print(f"v1.2 interoperability contract valid: {total} tests")
           PY
 
       - name: Test Python consumer package

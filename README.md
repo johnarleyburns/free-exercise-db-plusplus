@@ -206,9 +206,9 @@ Examples: [workout example matrix](examples/workouts/) and [examples/workout.exa
 
 ## Interoperability (v1.2)
 
-v1.2 provides mapping and capability infrastructure: audited standards documents, structural ACTUAL mappings, the Health Connect exercise crosswalk, JSON schemas, loss semantics, and deterministic coverage reports. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`. Identity relations are exact/close/broader/narrower/approximate/unmapped; every result also retains direction, confidence, and provenance.
+v1.2 provides mapping and capability infrastructure: audited standards documents, structural ACTUAL/category mappings, the reviewed Garmin FIT exercise identity crosswalk, JSON schemas, loss semantics, and deterministic coverage reports. Health Connect session categories are not advertised as exercise identities. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`. Operational import/export serializers remain deferred to v1.3.
 
-Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("android-health-connect", "EXERCISE_SESSION_TYPE_WEIGHTLIFTING")`. The result may contain many candidates; callers must handle ambiguity. v1.2 does not convert FIT, HealthKit, Health Connect, FHIR, or Google Fit files. Operational import/export is deferred to v1.3.
+Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("garmin-fit", "exercise_name.bench_press.DUMBBELL_BENCH_PRESS")`. Every result exposes `mapping_kind`, `relation`, `direction`, and `is_ambiguous`; category, broader, approximate, and one-to-many results are never silently treated as exact identity matches.
 
 ## CI and releases
 

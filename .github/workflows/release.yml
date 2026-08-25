@@ -86,6 +86,20 @@ jobs:
           print(f'validated {len(checks)} public JSON artifacts against their schemas')
           PY
 
+      - name: Validate typed interoperability artifacts and loss fixtures
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import json
+          from pathlib import Path
+          from src.interop.validate import validate_all, validate_loss
+          errors, warnings = validate_all("mappings", "free-exercise-db-plusplus.json", "interop-mapping.schema.json", "exercise-interop-mapping.schema.json", "mapping-loss.schema.json")
+          assert not errors, errors
+          loss = json.loads(Path("fixtures/interop/health-connect/unmapped-rir.json").read_text())["loss"]
+          assert not validate_loss(loss, Path("mapping-loss.schema.json"))
+          assert Path("mappings/garmin-fit-exercises.json").read_bytes() == Path("packages/python/fedbpp/interop_data/garmin-fit-exercises.json").read_bytes()
+          print(f"typed interoperability artifacts valid; review warnings: {len(warnings)}")
+          PY
+
       - name: Create checksums
         run: |
           sha256sum \
@@ -104,7 +118,7 @@ jobs:
         run: |
           gh release create "${GITHUB_REF_NAME}" \
             --title "Free Exercise DB++ ${GITHUB_REF_NAME}" \
-            --notes-file docs/releases/v1.1.0.md \
+            --notes-file docs/releases/v1.2.0.md \
             free-exercise-db-plusplus.json \
             free-exercise-db-plusplus.schema.json \
             workout.schema.json \
@@ -113,7 +127,9 @@ jobs:
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
             mapping-loss.schema.json \
+            mappings/garmin-fit-exercises.json \
             mappings/health-connect-exercises.json \
+            mappings/garmin-fit.json \
             reports/interop/android-health-connect.json \
             SHA256SUMS \
             docs/METHODOLOGY.md \

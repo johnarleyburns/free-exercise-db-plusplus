@@ -1,16 +1,18 @@
 {
   "target": "android-health-connect",
-  "externalVocabularyCount": 2,
+  "reportType": "category_compatibility",
+  "externalCategoryCount": 2,
+  "exerciseIdentityExternalVocabularyCount": 0,
   "dbppExerciseCount": 873,
-  "exact": 0,
-  "close": 0,
-  "broader": 2,
-  "narrower": 0,
-  "approximate": 0,
-  "unmappedExternal": 0,
-  "unmappedDbpp": 292,
-  "externalCoveragePercent": 100.0,
-  "dbppCoveragePercent": 66.5521,
-  "bidirectionalCoveragePercent": 0.0,
-  "method": "explicit reviewed broad candidate set; no fuzzy runtime matching"
+  "categoryCompatibility": {
+    "externalCovered": 2,
+    "externalDenominator": 2,
+    "coveragePercent": 100.0
+  },
+  "exerciseIdentityCoverage": {
+    "externalToDbpp": {"covered": 0, "denominator": 0, "coveragePercent": null},
+    "dbppToExternal": {"covered": 0, "denominator": 873, "coveragePercent": 0.0},
+    "bidirectionalExactOrClose": {"covered": 0, "denominator": 0, "coveragePercent": null}
+  },
+  "method": "Health Connect ExerciseSessionType is a broad session vocabulary; no individual exercise identity coverage is claimed."
 }

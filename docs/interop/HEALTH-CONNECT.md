@@ -6,6 +6,8 @@ Capability labels: `lossless`, `representable_with_conversion`, `representable_w
 
 ## Android Health Connect
 
+`ExerciseSessionType` values such as strength training and weightlifting are session/activity categories, not individual exercise identities. The canonical artifact is [`mappings/health-connect-exercises.json`](../../mappings/health-connect-exercises.json) with `mappingKind: category`; it intentionally contains category compatibility metadata only. It must not be used to return DB++ exercise identity candidates. Health Connect has no reviewed individual strength-exercise vocabulary in this release, so it is not an identity crosswalk.
+
 Specification/API: Jetpack Health Connect 1.1.0 workout guide; Android API reference reviewed 2026-08-25.
 
 ExerciseSessionRecord provides timestamps, session type, segments, laps, metadata, device and zone offsets. PlannedExerciseSessionRecord supports PLAN-like planned blocks where feature availability permits. Repetitions, load, RPE/RIR, set order, laterality, substitutions and DB++ exercise identity are not guaranteed standard fields; use an extension only where permitted.

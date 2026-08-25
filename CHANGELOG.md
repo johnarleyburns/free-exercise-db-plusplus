@@ -1,8 +1,8 @@
-## 1.2.0 (planned)
+## 1.2.0 - 2026-08-25
 
 - Added authoritative interoperability audits and compatibility matrix for FIT, Health Connect, HealthKit, FHIR Physical Activity, IEEE 1752.1/Open mHealth, and legacy Google Fit.
 - Added structural mapping metadata, exercise identity crosswalk and loss-report schemas.
-- Added reviewed Health Connect broad exercise crosswalk, deterministic coverage report, validation/registry modules, fixtures foundation, and packaged Python lookup API.
+- Added reviewed Garmin FIT exercise identity crosswalk, Health Connect category compatibility metadata, deterministic coverage reports, type-aware validation/registry modules, loss fixtures, and packaged Python lookup API.
 - Import/export serializers remain v1.3 work.
 
 # Changelog
