@@ -5,6 +5,7 @@ import json
 from importlib.resources import files
 from pathlib import Path
 from typing import Any
+from ._analysis.policies import set_credits
 
 @dataclass(frozen=True)
 class Family:
@@ -108,10 +109,10 @@ class RelationshipRegistry:
     def compare_exercise_coverage(self, exercise_a: str, exercise_b: str, db: Any | None = None) -> dict[str, Any]:
         db = db or self.db
         if db is None: raise ValueError("compare_exercise_coverage requires db")
+        credits = set_credits(db)
         def read(eid):
             ex = db.get_exercise(eid) if hasattr(db, "get_exercise") else db["exercises"][eid]
             ann = ex.annotation if hasattr(ex, "annotation") else ex.get("annotation", {})
-            credits = db.metadata.get("setCredits", {"direct":1.0,"indirect":.5,"stabilizer":0.0}) if hasattr(db, "metadata") else db.get("metadata", {}).get("setCredits", {"direct":1.0,"indirect":.5,"stabilizer":0.0})
             roles = {k: sorted(set(ann.get(k, ()))) for k in ("direct", "indirect", "stabilizers")}
             effective = {m: (m in roles["direct"])*credits["direct"] + (m in roles["indirect"])*credits["indirect"] + (m in roles["stabilizers"])*credits["stabilizer"] for m in sorted(set().union(*map(set, roles.values())))}
             return roles | {"effectiveSets": effective}

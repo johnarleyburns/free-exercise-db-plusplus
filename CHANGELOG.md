@@ -16,6 +16,14 @@
 
 # Changelog
 
+## 1.5.1 - 2026-08-25
+
+- Fixed relationship coverage comparison to use authoritative
+  `metadata.setCredits` through the canonical analysis policy.
+- Removed the silent hard-coded effective-set-credit fallback.
+- No exercise-family memberships, relationship schema, or other public
+  analysis semantics changed.
+
 ## 1.5.0 - 2026-08-25
 
 - Added the optional, independently versioned exercise-family and relationship

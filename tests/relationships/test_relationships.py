@@ -92,6 +92,35 @@ def test_related_candidates_and_structural_coverage_are_descriptive():
     assert "effectiveSetDelta" in result["coverageDifference"]
     assert "equivalent" not in json.dumps(result).casefold() and "substitute" not in json.dumps(result).casefold()
 
+def test_relationship_coverage_uses_authoritative_set_credits():
+    db_document=copy.deepcopy(DB_DOCUMENT)
+    db=Database(db_document); registry=RelationshipRegistry.from_dict(RELATIONSHIPS,db=db)
+    result=registry.compare_exercise_coverage("Barbell_Bench_Press_-_Medium_Grip","Dumbbell_Bench_Press")
+    assert result["structural"]["sameFamily"] is True
+    assert "coverageDifference" in result and "effectiveSetDelta" in result["coverageDifference"]
+
+    custom_document=copy.deepcopy(DB_DOCUMENT)
+    custom_document["metadata"]["setCredits"]={"direct":2.0,"indirect":0.25,"stabilizer":0.1}
+    custom=Database(custom_document)
+    custom_result=registry.compare_exercise_coverage("Barbell_Bench_Press_-_Medium_Grip","Dumbbell_Bench_Press",custom)
+    left=custom.get_exercise("Barbell_Bench_Press_-_Medium_Grip").annotation
+    right=custom.get_exercise("Dumbbell_Bench_Press").annotation
+    expected={}
+    for muscle in sorted(set(left.get("direct",())) | set(left.get("indirect",())) | set(left.get("stabilizers",())) | set(right.get("direct",())) | set(right.get("indirect",())) | set(right.get("stabilizers",()))):
+        left_value=(muscle in left.get("direct",()))*2.0+(muscle in left.get("indirect",()))*0.25+(muscle in left.get("stabilizers",()))*0.1
+        right_value=(muscle in right.get("direct",()))*2.0+(muscle in right.get("indirect",()))*0.25+(muscle in right.get("stabilizers",()))*0.1
+        if right_value != left_value: expected[muscle]=round(right_value-left_value,6)
+    assert custom_result["coverageDifference"]["effectiveSetDelta"]==expected
+
+    missing_document=copy.deepcopy(DB_DOCUMENT)
+    del missing_document["metadata"]["setCredits"]
+    try:
+        registry.compare_exercise_coverage("Barbell_Bench_Press_-_Medium_Grip","Dumbbell_Bench_Press",Database(missing_document))
+    except ValueError as exc:
+        assert str(exc)=="database metadata.setCredits must define direct, indirect, and stabilizer"
+    else:
+        raise AssertionError("relationship coverage must reject a database without authoritative set credits")
+
 def test_plan_family_coverage_ranges_and_comparison():
     registry=RelationshipRegistry.from_dict(RELATIONSHIPS)
     plan_a={"schemaVersion":"0.1.0","planId":"p","revisionId":"a","cycle":{"lengthDays":7},"sessions":[{"planSessionId":"s","dayOffset":0,"exercises":[{"prescriptionId":"x","exerciseId":"Barbell_Bench_Press_-_Medium_Grip","order":1,"sets":{"min":3,"target":4,"max":5},"reps":8}]}]}

@@ -116,7 +116,7 @@
       "resistance_type"
     ],
     "generator": "src/relationships/build.py",
-    "projectRelease": "1.5.0",
+    "projectRelease": "1.5.1",
     "relationshipVocabulary": [
       "member_of_family",
       "variation_of",
