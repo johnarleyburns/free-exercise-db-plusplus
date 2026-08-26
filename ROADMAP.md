@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.10.1 release preparation**
-Current stable release: **v1.10.0**
+Status: **v1.10.1 released**
+Current stable release: **v1.10.1**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Swift, Kotlin, Python, and R packages**
 
 ---
