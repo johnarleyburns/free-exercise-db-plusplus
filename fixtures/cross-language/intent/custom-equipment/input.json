@@ -1,0 +1,1 @@
+{"schemaVersion":"0.1.0","goal":"strength","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"target":3}},"environment":"custom","equipmentOverrides":{"addEquipment":["body only","dumbbell"]}}

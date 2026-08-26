@@ -1,0 +1,103 @@
+{
+  "conflicts": [],
+  "defaultsApplied": [
+    "goalPolicy",
+    "planningPolicy",
+    "environmentPolicy"
+  ],
+  "environmentPolicy": "commercial-gym-general-v1",
+  "generationOptions": {
+    "continuity": "neutral",
+    "effortDefaults": {
+      "rir": 2
+    },
+    "repDefaults": {
+      "max": 12,
+      "min": 6,
+      "target": 8
+    },
+    "requiredFamilyIds": []
+  },
+  "goalPolicy": {
+    "description": "General, conservative coverage defaults; not an optimal prescription.",
+    "policyId": "general-hypertrophy-v1",
+    "policyVersion": "1"
+  },
+  "missingInformation": [],
+  "planningPolicy": "full-body-general-v1",
+  "provenance": {
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "environmentPolicy": {
+      "policyId": "commercial-gym-general-v1",
+      "policyVersion": "1"
+    },
+    "goalPolicy": {
+      "policyId": "general-hypertrophy-v1",
+      "policyVersion": "1"
+    },
+    "intentSchemaVersion": "0.1.0",
+    "relationshipSchemaVersion": null
+  },
+  "resolvedProfile": {
+    "availability": {
+      "cycleLengthDays": 7,
+      "excludedDayOffsets": [],
+      "exercisesPerSession": {
+        "max": 4,
+        "min": 3
+      },
+      "preferredDayOffsets": [],
+      "sessionsPerCycle": {
+        "target": 3
+      }
+    },
+    "constraints": {
+      "excludedExerciseIds": [],
+      "excludedFamilyIds": []
+    },
+    "equipment": [
+      "bands",
+      "barbell",
+      "body only",
+      "cable",
+      "dumbbell",
+      "e-z curl bar",
+      "exercise ball",
+      "kettlebells",
+      "machine",
+      "medicine ball"
+    ],
+    "exercisePreferences": {},
+    "goals": [
+      {
+        "type": "hypertrophy"
+      }
+    ],
+    "profileId": "resolved-profile",
+    "schemaVersion": "0.1.0",
+    "subjectId": null
+  },
+  "resolvedTarget": {
+    "muscles": {
+      "chest": {
+        "target": 6
+      },
+      "hamstrings": {
+        "target": 4
+      },
+      "lats": {
+        "target": 6
+      },
+      "quadriceps": {
+        "target": 6
+      }
+    },
+    "notes": "General, conservative coverage defaults; not an optimal prescription.",
+    "periodDays": 7,
+    "schemaVersion": "0.1.0",
+    "targetId": "general-hypertrophy-v1-default"
+  },
+  "status": "resolved_with_defaults",
+  "warnings": []
+}

@@ -1,0 +1,1 @@
+{"schemaVersion":"0.1.0","intentId":"flagship-5day-hypertrophy","goal":"hypertrophy","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"min":5,"target":5,"max":5},"preferredWeekdays":["monday","tuesday","wednesday","thursday","saturday"]},"sessionConstraints":{"exercisesPerSession":{"min":3,"max":4}},"environment":"commercial_gym"}

@@ -263,6 +263,19 @@ def _add(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], po
     rationale.setdefault(candidate["exerciseId"], set()).add(reason)
 
 
+def _exercise_count_limits(profile: dict[str, Any]) -> dict[str, int | None]:
+    """Hard per-session bounds are owned by TrainingProfile availability."""
+    return _range((profile.get("availability", {}) or {}).get("exercisesPerSession", {}))
+
+
+def _can_add_exercise(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], limits: dict[str, int | None]) -> bool:
+    session = plan["sessions"][session_index]
+    if any(rx.get("exerciseId") == candidate["exerciseId"] for rx in session["exercises"]):
+        return True  # adding sets does not change exercise count
+    maximum = limits.get("max")
+    return maximum is None or len(session["exercises"]) < maximum
+
+
 def _above_max(evaluation: dict[str, Any]) -> bool:
     for section in (evaluation["muscleCoverage"], evaluation["frequency"], evaluation["movementPatterns"], evaluation["families"]["targets"]):
         if any(row.get("state") == "above_maximum" for row in section.values()):
@@ -299,7 +312,7 @@ def _contributes(candidate: dict[str, Any], kind: str, key: str, credits: dict[s
     return 1.0 if key in set(ann.get("direct", [])) | set(ann.get("indirect", [])) else 0.0
 
 
-def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningPolicy = "full-body-general-v1", training_state: Any | None = None, relationships: Any | None = None, current_plan: Any | None = None, requiredExerciseIds: list[str] | tuple[str, ...] | None = None, lockedExerciseIds: list[str] | tuple[str, ...] | None = None, additionalExclusions: list[str] | tuple[str, ...] | None = None, options: dict[str, Any] | None = None) -> dict[str, Any]:
+def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningPolicy = "full-body-general-v1", training_state: Any | None = None, relationships: Any | None = None, current_plan: Any | None = None, requiredExerciseIds: list[str] | tuple[str, ...] | None = None, lockedExerciseIds: list[str] | tuple[str, ...] | None = None, requiredFamilyIds: list[str] | tuple[str, ...] | None = None, additionalExclusions: list[str] | tuple[str, ...] | None = None, options: dict[str, Any] | None = None) -> dict[str, Any]:
     """Return a deterministic PLAN proposal and unchanged canonical evaluation."""
     profile, target = _doc(profile), _doc(target); state = _doc(training_state) if training_state is not None else None
     current = _doc(current_plan) if current_plan is not None else None; options = dict(options or {})
@@ -328,6 +341,9 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
             return {"status": "invalid_input", "plan": None, "evaluation": None, "policy": policy_obj.document(), "selectionRationale": [], "unsatisfiedConstraints": [{"code": "INVALID_INPUT", "detail": f"current_plan: {exc}"}], "unsatisfiedTargets": [], "unsatisfiedSoftPreferences": [], "provenance": {"generatorVersion": GENERATOR_VERSION}}
     locked = set(lockedExerciseIds or ())
     required = set(requiredExerciseIds or ()) | locked
+    required_families = set(requiredFamilyIds or ())
+    if required_families and relationships is None:
+        return _result("invalid_input", None, None, policy_obj, {}, [{"code": "INVALID_INPUT", "detail": "required family constraints require exercise relationships"}], [], [], db, profile, target, state, relationships, current)
     locked_locations, lock_conflicts = _locked_locations(current, locked)
     if lock_conflicts:
         return _result("unsatisfiable", None, None, policy_obj, {}, lock_conflicts, [], [], db, profile, target, state, relationships, current)
@@ -349,14 +365,19 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
     if feasible is None:
         return _result("unsatisfiable", None, None, policy_obj, {}, [{"code": "SESSION_COUNT_CONFLICT", "detail": "not enough permitted day offsets"}], [], [], db, profile, target, state, relationships, current)
     plan = _new_plan(cycle_days, offsets_cache[feasible] or [], policy_obj, options); rationale: dict[str, set[str]] = {}
+    exercise_limits = _exercise_count_limits(profile)
     credits = set_credits(db); existing = _ids(current); prefs = profile.get("exercisePreferences", {}) or {}; preferred = set(prefs.get("preferredExerciseIds", []) or []); avoided = set(prefs.get("avoidedExerciseIds", []) or [])
     preferred_families = set(prefs.get("preferredFamilyIds", []) or []); avoided_families = set(prefs.get("avoidedFamilyIds", []) or [])
     history = (state or {}).get("exerciseState", {}) or {}
+    continuity = options.get("continuity", "preserve")
+    if continuity not in {"preserve", "neutral", "vary"}:
+        return _result("invalid_input", None, None, policy_obj, {}, [{"code": "INVALID_INPUT", "detail": "options.continuity must be preserve, neutral, or vary"}], [], [], db, profile, target, state, relationships, current)
 
     def rank(candidate: dict[str, Any], kind: str, key: str) -> tuple[Any, ...]:
         h = history.get(candidate["exerciseId"], {}) or {}; adherence = (h.get("prescriptionAdherence") or {}).get("setAdherence")
         good_history = candidate["exerciseId"] in history and (adherence is None or adherence >= 0.5)
-        return (-int(candidate["exerciseId"] in required), -int(candidate["exerciseId"] in existing), -int(good_history), -int(candidate["exerciseId"] in preferred), -int(candidate.get("familyId") in preferred_families), -_contributes(candidate, kind, key, credits), int(candidate["exerciseId"] in avoided) + int(candidate.get("familyId") in avoided_families), candidate["exerciseId"])
+        continuity_rank = (-int(candidate["exerciseId"] in existing), -int(good_history)) if continuity == "preserve" else ((0, 0) if continuity == "neutral" else (int(candidate["exerciseId"] in existing), int(good_history)))
+        return (-int(candidate["exerciseId"] in required), *continuity_rank, -int(candidate["exerciseId"] in preferred), -int(candidate.get("familyId") in preferred_families), -_contributes(candidate, kind, key, credits), int(candidate["exerciseId"] in avoided) + int(candidate.get("familyId") in avoided_families), candidate["exerciseId"])
 
     # Locked exercises retain their current-plan day offset. Required exercises
     # have only a presence constraint and therefore use deterministic placement.
@@ -366,12 +387,26 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         for offset in locked_locations[eid]:
             if not _compatible(candidate, session_by_offset[offset], policy_obj):
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": eid, "dayOffset": offset, "detail": "locked exercise is incompatible with generated split role"}], [], [], db, profile, target, state, relationships, current)
+            if not _can_add_exercise(plan, session_by_offset[offset], candidate, exercise_limits):
+                return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "exerciseId": eid}], [], [], db, profile, target, state, relationships, current)
             _add(plan, session_by_offset[offset], candidate, policy_obj, "LOCKED_EXERCISE", rationale)
+    for family_id in sorted(required_families):
+        choices = sorted((candidate for candidate in candidates if candidate.get("familyId") == family_id), key=lambda candidate: rank(candidate, "muscle", ""))
+        if not choices:
+            return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_FAMILY_EXERCISE", "familyId": family_id}], [], [], db, profile, target, state, relationships, current)
+        candidate = choices[0]
+        sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj) and _can_add_exercise(plan, index, candidate, exercise_limits)]
+        if not sessions:
+            return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "familyId": family_id}], [], [], db, profile, target, state, relationships, current)
+        _add(plan, sessions[0], candidate, policy_obj, "REQUIRED_FAMILY", rationale)
     for i, eid in enumerate(sorted(required - locked)):
         candidate = next(c for c in candidates if c["exerciseId"] == eid)
         sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj)]
         if not sessions:
             return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_EXERCISE", "exerciseId": eid, "detail": "required exercise incompatible with split"}], [], [], db, profile, target, state, relationships, current)
+        sessions = [si for si in sessions if _can_add_exercise(plan, si, candidate, exercise_limits)]
+        if not sessions:
+            return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "exerciseId": eid}], [], [], db, profile, target, state, relationships, current)
         _add(plan, sessions[i % len(sessions)], candidate, policy_obj, "REQUIRED_EXERCISE", rationale)
     evaluation = evaluate_plan(plan, db, profile, target, relationships)
     # Canonical evaluation is intentionally invoked after every allocation block.
@@ -388,6 +423,8 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
                     sessions.sort(key=lambda i: (int(any(key in (rx.get("exerciseId") and (_exercise_data(db, rx["exerciseId"]) or {}).get("annotation", {}).get("direct", []) + (_exercise_data(db, rx["exerciseId"]) or {}).get("annotation", {}).get("indirect", [])) for rx in plan["sessions"][i]["exercises"])), len(plan["sessions"][i]["exercises"]), i))
                 else: sessions.sort(key=lambda i: (len(plan["sessions"][i]["exercises"]), i))
                 for si in sessions:
+                    if not _can_add_exercise(plan, si, candidate, exercise_limits):
+                        continue
                     draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "TARGET_COVERAGE", {k: set(v) for k, v in rationale.items()})
                     evaluated = evaluate_plan(draft, db, profile, target, relationships)
                     if not _above_max(evaluated):
@@ -402,8 +439,10 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
     # A PLAN schema requires a prescription in each constructed session.  A failure to
     # populate one without breaching target maxima is an explicit hard construction failure.
     for si, session in enumerate(plan["sessions"]):
-        if not session["exercises"]:
+        minimum = exercise_limits.get("min") or 1
+        while len(session["exercises"]) < minimum:
             compatible = [candidate for candidate in candidates if _compatible(candidate, si, policy_obj)]
+            compatible = [candidate for candidate in compatible if _can_add_exercise(plan, si, candidate, exercise_limits)]
             if not compatible:
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_EXERCISE", "detail": f"no eligible {_session_kind(policy_obj, si)} exercise"}], [], [], db, profile, target, state, relationships, current)
             candidate = sorted(compatible, key=lambda c: rank(c, "muscle", ""))[0]

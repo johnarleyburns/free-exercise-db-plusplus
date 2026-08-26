@@ -23,7 +23,7 @@ def validate_training_profile(profile: dict[str, Any], db: Any = None, relations
     goal_types = [goal.get("type") for goal in profile.get("goals", []) or []]
     if len(goal_types) != len(set(goal_types)): errors.append("goals: duplicate goal types are not allowed")
     availability = profile.get("availability", {}) or {}
-    for field in ("sessionsPerCycle", "minutesPerSession"):
+    for field in ("sessionsPerCycle", "minutesPerSession", "exercisesPerSession"):
         value = availability.get(field)
         if value:
             if value.get("min") is not None and value.get("max") is not None and value["min"] > value["max"]: errors.append(f"availability.{field}: min must not exceed max")

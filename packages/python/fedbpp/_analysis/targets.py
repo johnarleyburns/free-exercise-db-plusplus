@@ -15,10 +15,23 @@ def _range(target: Any) -> tuple[float | None, float | None, float | None]:
 
 
 def validate_target(target: dict[str, Any], schema_path: str | Path | None = None, *, db: Any | None = None) -> list[str]:
-    from jsonschema import Draft202012Validator
-    schema_file = Path(schema_path) if schema_path else ROOT / "volume-target.schema.json"
-    schema = json.loads(schema_file.read_text(encoding="utf-8"))
-    errors = [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(target)]
+    # jsonschema is an optional package dependency.  Keep generator/CLI use
+    # operational in an isolated wheel by retaining the semantic checks below.
+    try:
+        from jsonschema import Draft202012Validator
+    except ImportError:
+        errors = []
+        if not isinstance(target, dict): errors.append("<root>: must be an object")
+        elif target.get("schemaVersion") != "0.1.0": errors.append("schemaVersion: must be 0.1.0")
+        else:
+            for key in ("targetId", "periodDays", "muscles"):
+                if key not in target: errors.append(f"{key}: is required")
+            if not isinstance(target.get("periodDays"), int) or isinstance(target.get("periodDays"), bool) or target.get("periodDays", 0) < 1: errors.append("periodDays: must be a positive integer")
+            if not isinstance(target.get("muscles"), dict) or not target.get("muscles"): errors.append("muscles: must be a non-empty object")
+    else:
+        schema_file = Path(schema_path) if schema_path else ROOT / "volume-target.schema.json"
+        schema = json.loads(schema_file.read_text(encoding="utf-8"))
+        errors = [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(target)]
     if not errors and isinstance(target, dict):
         for muscle, value in target.get("muscles", {}).items():
             if "min" in value and "max" in value and value["min"] > value["max"]:

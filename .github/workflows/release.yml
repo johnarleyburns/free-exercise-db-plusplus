@@ -79,6 +79,7 @@ jobs:
               'loss': load('mapping-loss.schema.json'),
               'relationships': load('exercise-relationships.schema.json'),
               'profile': load('training-profile.schema.json'),
+              'intent': load('workout-intent.schema.json'),
               'family_mapping': load('family-interop-mapping.schema.json'),
           }
           for schema in schemas.values():
@@ -98,6 +99,17 @@ jobs:
           for filename, schema_name in [('exercise-relationships.json','relationships'), ('fixtures/interop/family-mapping-example.json','family_mapping')]:
               errors=list(Draft202012Validator(schemas[schema_name], format_checker=FormatChecker()).iter_errors(load(filename)))
               assert not errors, (filename, errors)
+          PY
+
+      - name: Validate v1.10 WorkoutIntent fixtures
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util
+          spec=importlib.util.spec_from_file_location('v110_tests','tests/training/test_v110.py')
+          module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith('test_'): getattr(module,name)()
+          print('v1.10 WorkoutIntent fixtures passed')
           PY
 
       - name: Validate typed interoperability artifacts and loss fixtures
@@ -123,6 +135,7 @@ jobs:
             workout-plan.schema.json \
             volume-target.schema.json \
             training-profile.schema.json \
+            workout-intent.schema.json \
             coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
@@ -144,6 +157,7 @@ jobs:
             workout-plan.schema.json \
             volume-target.schema.json \
             training-profile.schema.json \
+            workout-intent.schema.json \
             coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
@@ -173,6 +187,10 @@ jobs:
             docs/PLAN-COMPARISON.md \
             docs/VOLUME-TARGETS.md \
             docs/TRAINING-PROFILE.md \
+            docs/WORKOUT-INTENT.md \
+            docs/GOAL-RESOLUTION.md \
+            docs/ENVIRONMENT-PROFILES.md \
+            docs/LANGUAGE-CAPABILITIES.md \
             docs/PLAN-EVALUATION.md \
             docs/TRAINING-STATE.md \
             docs/PROGRESSION-POLICIES.md \

@@ -11,6 +11,7 @@ on:
       - "workout.schema.json"
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
+      - "workout-intent.schema.json"
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
@@ -20,6 +21,7 @@ on:
       - "mappings/*-families.json"
       - "mappings/**"
       - "fixtures/interop/**"
+      - "fixtures/cross-language/intent/**"
       - "src/interop/**"
       - "reports/interop/**"
       - "README.md"
@@ -37,6 +39,7 @@ on:
       - "workout.schema.json"
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
+      - "workout-intent.schema.json"
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
@@ -46,6 +49,7 @@ on:
       - "mappings/*-families.json"
       - "mappings/**"
       - "fixtures/interop/**"
+      - "fixtures/cross-language/intent/**"
       - "src/interop/**"
       - "reports/interop/**"
       - "README.md"
@@ -266,6 +270,22 @@ jobs:
           for name in dir(module):
               if name.startswith('test_'): getattr(module,name)()
           print('v1.9 adaptive coaching tests passed')
+          PY
+
+      - name: Validate v1.10 WorkoutIntent resolution
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+          schema=json.loads(Path('workout-intent.schema.json').read_text())
+          Draft202012Validator.check_schema(schema)
+          assert schema == json.loads(Path('packages/python/fedbpp/schemas/workout-intent.schema.json').read_text())
+          spec=importlib.util.spec_from_file_location('v110_tests','tests/training/test_v110.py')
+          module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith('test_'): getattr(module,name)()
+          print('v1.10 WorkoutIntent tests passed')
           PY
 
       - name: Test ACTUAL 0.2 to 0.3 migration

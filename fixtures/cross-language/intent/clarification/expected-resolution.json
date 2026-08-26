@@ -1,0 +1,29 @@
+{
+  "conflicts": [],
+  "defaultsApplied": [],
+  "environmentPolicy": null,
+  "generationOptions": {},
+  "goalPolicy": null,
+  "missingInformation": [
+    {
+      "field": "goal",
+      "reason": "required_for_goal_policy_resolution"
+    },
+    {
+      "field": "schedule.cycleLengthDays",
+      "reason": "required_for_schedule_resolution"
+    },
+    {
+      "field": "schedule.sessionsPerCycle",
+      "reason": "required_for_schedule_resolution"
+    }
+  ],
+  "planningPolicy": null,
+  "provenance": {
+    "intentSchemaVersion": "0.1.0"
+  },
+  "resolvedProfile": null,
+  "resolvedTarget": null,
+  "status": "needs_clarification",
+  "warnings": []
+}

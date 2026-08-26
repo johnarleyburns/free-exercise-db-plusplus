@@ -91,6 +91,15 @@ def evaluate_plan(plan: Any, db: Any, profile: Any = None, target: Any = None, r
         av = profile["availability"]; limits = av.get("sessionsPerCycle", {}) or {}; planned = len(plan.get("sessions", [])); availability.update({"min": limits.get("min"), "target": limits.get("target"), "max": limits.get("max"), "state": _state(planned, _range_value(limits))})
         excluded_days = set(av.get("excludedDayOffsets", [])); hard.extend(_finding("excluded_day_offset", sessionId=s.get("planSessionId"), dayOffset=s.get("dayOffset")) for s in plan.get("sessions", []) if s.get("dayOffset") in excluded_days)
     else: availability["state"] = "not_evaluated"
+    exercise_counts = {}
+    if profile is not None:
+        limits = _range_value((profile.get("availability", {}) or {}).get("exercisesPerSession", {}))
+        if any(value is not None for value in limits.values()):
+            for session in plan.get("sessions", []):
+                count = len(session.get("exercises", [])); state = _state(count, limits)
+                exercise_counts[session.get("planSessionId")] = {"exerciseCount": count, "minimum": limits["min"], "target": limits["target"], "maximum": limits["max"], "state": state}
+                if state in {"below_minimum", "above_maximum"}: hard.append(_finding("exercise_count", sessionId=session.get("planSessionId"), exerciseCount=count, minimum=limits["min"], maximum=limits["max"]))
+                elif limits["target"] is not None and count != limits["target"]: preferences.setdefault("findings", []).append(_finding("exercise_count_target_miss", sessionId=session.get("planSessionId"), exerciseCount=count, target=limits["target"]))
     target_gaps = [x for x in muscle.values() if x.get("state") == "below_minimum"] + [x for x in frequency.values() if x.get("state") == "below_minimum"] + [x for x in patterns.values() if x.get("state") == "below_minimum"] + [x for x in families.values() if x.get("state") == "below_minimum"]
     completeness = coverage["coverageCompleteness"]
     warnings = []
@@ -105,6 +114,6 @@ def evaluate_plan(plan: Any, db: Any, profile: Any = None, target: Any = None, r
     if prov["dbUpstreamSha256"] is None: prov["dbUpstreamSha256"] = dbmd.get("upstream", {}).get("sha256")
     hard = sorted(hard, key=lambda x: (x["type"], x.get("exerciseId") or x.get("familyId") or x.get("sessionId") or "", x.get("sessionId") or "", x.get("prescriptionId") or ""))
     status = "hard_constraint_violation" if hard else ("incomplete_coverage" if completeness.get("mappedFraction", 1) < 1 or (target and target.get("families") and relationships is None) else ("valid_with_target_gaps" if target_gaps else "valid"))
-    return {"summary": {"hardConstraintViolations": len(hard), "targetGaps": len(target_gaps), "softPreferenceWarnings": len(preferences.get("findings", [])), "satisfiesHardConstraints": not hard, "meetsTargetMinimums": not target_gaps, "evaluationStatus": status}, "muscleCoverage": muscle, "frequency": frequency, "movementPatterns": patterns, "families": {"coverage": family_section, "targets": families}, "equipment": equipment, "availability": availability, "preferences": preferences, "constraints": {"violations": hard}, "coverageCompleteness": completeness, "warnings": sorted(set(warnings)), "provenance": prov}
+    return {"summary": {"hardConstraintViolations": len(hard), "targetGaps": len(target_gaps), "softPreferenceWarnings": len(preferences.get("findings", [])), "satisfiesHardConstraints": not hard, "meetsTargetMinimums": not target_gaps, "evaluationStatus": status}, "muscleCoverage": muscle, "frequency": frequency, "movementPatterns": patterns, "families": {"coverage": family_section, "targets": families}, "equipment": equipment, "availability": availability, "exerciseCounts": exercise_counts, "preferences": preferences, "constraints": {"violations": hard}, "coverageCompleteness": completeness, "warnings": sorted(set(warnings)), "provenance": prov}
 
 __all__ = ["evaluate_plan"]

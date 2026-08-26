@@ -36,6 +36,9 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **CoachDecision schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/coach-decision.schema.json
 
+**WorkoutIntent schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-intent.schema.json
+
 **Interop mapping schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/interop-mapping.schema.json
 
@@ -211,6 +214,12 @@ Workout PLAN prescriptions: [PLAN guide](docs/WORKOUT-PLAN.md), [PLAN examples](
 Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [target examples](examples/targets/)
 
 Training context and deterministic plan evaluation: [TrainingProfile](docs/TRAINING-PROFILE.md), [PlanEvaluation](docs/PLAN-EVALUATION.md)
+
+Structured request resolution: [WorkoutIntent](docs/WORKOUT-INTENT.md),
+[goal resolution](docs/GOAL-RESOLUTION.md), and
+[environment profiles](docs/ENVIRONMENT-PROFILES.md). WorkoutIntent is a
+portable structured artifact; natural-language/LLM integration belongs in the
+consuming application, not DB++.
 
 Deterministic PLAN proposals: [Plan generation](docs/PLAN-GENERATION.md),
 [Planning policies](docs/PLANNING-POLICIES.md).

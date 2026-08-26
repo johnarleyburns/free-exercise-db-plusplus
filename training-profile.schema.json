@@ -36,6 +36,7 @@
       "properties": {
         "cycleLengthDays": {"type": "integer", "minimum": 1},
         "sessionsPerCycle": {"$ref": "#/$defs/range"},
+        "exercisesPerSession": {"$ref": "#/$defs/range"},
         "minutesPerSession": {"$ref": "#/$defs/range"},
         "preferredDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true},
         "excludedDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true}

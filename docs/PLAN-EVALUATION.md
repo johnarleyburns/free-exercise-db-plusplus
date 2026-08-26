@@ -18,6 +18,12 @@ provenance.
 profile violation, and soft preferences never become failures. Unknown DB
 exercise IDs and unknown equipment remain visible as incomplete evaluation.
 
+When `profile.availability.exercisesPerSession` is present, `exerciseCounts`
+contains one deterministic entry per session with `exerciseCount`, `minimum`,
+`target`, `maximum`, and `state`. Below-minimum and above-maximum are hard
+constraint violations. A target miss inside the hard range is a soft
+preference finding only.
+
 Duration estimation is intentionally deferred; no exact minutes are invented.
 Plan generation, recommendations, progression, and adaptive coaching are not
 part of v1.6.

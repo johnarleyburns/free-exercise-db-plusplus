@@ -1,0 +1,1024 @@
+{
+  "conflicts": [],
+  "defaultsApplied": [
+    "goalPolicy",
+    "planningPolicy",
+    "environmentPolicy"
+  ],
+  "environmentPolicy": "commercial-gym-general-v1",
+  "generationOptions": {
+    "continuity": "preserve",
+    "effortDefaults": {
+      "rir": 2
+    },
+    "repDefaults": {
+      "max": 12,
+      "min": 6,
+      "target": 8
+    },
+    "requiredFamilyIds": [],
+    "trainingState": {
+      "activePlan": {
+        "cyclePosition": 4,
+        "nextScheduledOccurrence": {
+          "planSessionId": "history-session",
+          "scheduledDate": "2026-08-29"
+        },
+        "phaseId": null,
+        "planId": "history-plan",
+        "revisionId": "r1"
+      },
+      "adherenceState": {
+        "exercisePrescriptionAdherence": [
+          {
+            "actual_exercise_id": null,
+            "actual_sets": 0,
+            "load_adherence": null,
+            "match_status": "missing_prescription",
+            "period": "2026-07-29",
+            "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "planned_sets_max": 1.0,
+            "planned_sets_min": 1.0,
+            "planned_sets_target": 1.0,
+            "prescription_id": "history-rx",
+            "reps_adherence": null,
+            "rir_adherence": null,
+            "rpe_adherence": null,
+            "session_id": null,
+            "set_adherence": null,
+            "subject_id": "fixture-subject",
+            "substitution_reason": null,
+            "volume_load_adherence": null
+          },
+          {
+            "actual_exercise_id": null,
+            "actual_sets": 0,
+            "load_adherence": null,
+            "match_status": "missing_prescription",
+            "period": "2026-07-29",
+            "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "planned_sets_max": 1.0,
+            "planned_sets_min": 1.0,
+            "planned_sets_target": 1.0,
+            "prescription_id": "history-rx",
+            "reps_adherence": null,
+            "rir_adherence": null,
+            "rpe_adherence": null,
+            "session_id": null,
+            "set_adherence": null,
+            "subject_id": "fixture-subject",
+            "substitution_reason": null,
+            "volume_load_adherence": null
+          },
+          {
+            "actual_exercise_id": null,
+            "actual_sets": 0,
+            "load_adherence": null,
+            "match_status": "missing_prescription",
+            "period": "2026-07-29",
+            "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "planned_sets_max": 1.0,
+            "planned_sets_min": 1.0,
+            "planned_sets_target": 1.0,
+            "prescription_id": "history-rx",
+            "reps_adherence": null,
+            "rir_adherence": null,
+            "rpe_adherence": null,
+            "session_id": null,
+            "set_adherence": null,
+            "subject_id": "fixture-subject",
+            "substitution_reason": null,
+            "volume_load_adherence": null
+          },
+          {
+            "actual_exercise_id": null,
+            "actual_sets": 0,
+            "load_adherence": null,
+            "match_status": "missing_prescription",
+            "period": "2026-07-29",
+            "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "planned_sets_max": 1.0,
+            "planned_sets_min": 1.0,
+            "planned_sets_target": 1.0,
+            "prescription_id": "history-rx",
+            "reps_adherence": null,
+            "rir_adherence": null,
+            "rpe_adherence": null,
+            "session_id": null,
+            "set_adherence": null,
+            "subject_id": "fixture-subject",
+            "substitution_reason": null,
+            "volume_load_adherence": null
+          },
+          {
+            "actual_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "actual_sets": 1,
+            "match_status": "unplanned_addition",
+            "period": "2026-07-29",
+            "planned_exercise_id": null,
+            "prescription_id": null,
+            "session_id": "history-workout",
+            "subject_id": "fixture-subject",
+            "unmapped": false
+          }
+        ],
+        "missedScheduledOccurrences": [
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-01",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-08",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-15",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-22",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          }
+        ],
+        "repeatedSkippedExercises": [
+          "history-rx"
+        ],
+        "repeatedSubstitutions": [],
+        "sessionAdherence": [
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-01",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-08",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-15",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 0,
+            "matched_exercises": 0,
+            "missed_sets": 1.0,
+            "missed_sets_max": 1.0,
+            "missed_sets_min": 1.0,
+            "missed_sets_target": 1.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": "2026-08-22",
+            "session_adherence": 0.0,
+            "session_id": null,
+            "session_status": "missed_planned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": null,
+            "unplanned_exercises": 0,
+            "unplanned_sets": 0
+          },
+          {
+            "actual_counted_sets": 1,
+            "matched_exercises": 0,
+            "missed_sets": 0.0,
+            "missed_sets_max": 0.0,
+            "missed_sets_min": 0.0,
+            "missed_sets_target": 0.0,
+            "missing_prescriptions": 1,
+            "period_end": "2026-08-25",
+            "period_start": "2026-07-29",
+            "period_type": "custom_date_range",
+            "plan_id": "history-plan",
+            "plan_session_id": "history-session",
+            "planned_exercises": 1,
+            "planned_set_max": 1.0,
+            "planned_set_min": 1.0,
+            "planned_sets": 1.0,
+            "revision_id": "r1",
+            "scheduled_date": null,
+            "session_adherence": null,
+            "session_id": "history-workout",
+            "session_status": "unplanned_session",
+            "subject_id": "fixture-subject",
+            "substitutions": 0,
+            "timestamp": "2026-08-24T12:00:00Z",
+            "unplanned_exercises": 1,
+            "unplanned_sets": 1
+          }
+        ],
+        "skippedPrescriptionCounts": {
+          "history-rx": 4
+        },
+        "substitutionAdjustedCompletion": 0,
+        "substitutionCountsByPrescription": {},
+        "substitutionHistoryByPrescription": {},
+        "unplannedExercises": [
+          {
+            "actual_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+            "actual_sets": 1,
+            "match_status": "unplanned_addition",
+            "period": "2026-07-29",
+            "planned_exercise_id": null,
+            "prescription_id": null,
+            "session_id": "history-workout",
+            "subject_id": "fixture-subject",
+            "unmapped": false
+          }
+        ],
+        "unplannedSets": 1
+      },
+      "asOf": "2026-08-25T12:00:00+00:00",
+      "exerciseState": {
+        "Barbell_Bench_Press_-_Medium_Grip": {
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "lastActual": {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 8,
+                "setType": "working"
+              }
+            ]
+          },
+          "lastPerformedAt": "2026-08-24T12:00:00Z",
+          "lastPrescription": {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "prescriptionId": "history-rx",
+            "reps": 8,
+            "sets": 1
+          },
+          "latestPerformance": {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exercisePrescriptionId": "history-rx",
+            "sessionId": "history-workout",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 8,
+                "setType": "working"
+              }
+            ],
+            "timestamp": "2026-08-24T12:00:00Z"
+          },
+          "prescriptionAdherence": {
+            "actualSets": 1.0,
+            "loadAdherence": null,
+            "matchedOccurrences": 0,
+            "missingOccurrences": 4,
+            "plannedSets": 4.0,
+            "repsAdherence": null,
+            "rirAdherence": null,
+            "rpeAdherence": null,
+            "setAdherence": null,
+            "substitutionOccurrences": 0
+          },
+          "prescriptionAdherenceByPrescriptionId": {
+            "history-rx": {
+              "actualSets": 0.0,
+              "loadAdherence": null,
+              "matchedOccurrences": 0,
+              "missingOccurrences": 4,
+              "plannedSets": 4.0,
+              "repsAdherence": null,
+              "rirAdherence": null,
+              "rpeAdherence": null,
+              "setAdherence": null,
+              "substitutionOccurrences": 0
+            }
+          },
+          "recentCompletedSetCount": 1,
+          "recentLoads": [],
+          "recentPerformances": [
+            {
+              "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+              "exercisePrescriptionId": "history-rx",
+              "sessionId": "history-workout",
+              "sets": [
+                {
+                  "completed": true,
+                  "reps": 8,
+                  "setType": "working"
+                }
+              ],
+              "timestamp": "2026-08-24T12:00:00Z"
+            }
+          ],
+          "recentRIR": [],
+          "recentRPE": [],
+          "recentReps": [
+            8
+          ],
+          "recentSessionCount": 1,
+          "recentSetTypes": [
+            "working"
+          ],
+          "substitutionCount": 0,
+          "unplannedCount": 0
+        }
+      },
+      "familyState": {},
+      "historyWindow": {
+        "end": "2026-08-25",
+        "start": "2026-07-29",
+        "type": "last_28_days"
+      },
+      "muscleState": {
+        "a": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "a",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "c": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "c",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "chest": {
+          "directSets": 1.0,
+          "effectiveSets": 1.0,
+          "exposures": 1.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "chest",
+          "plannedVsActual": {
+            "actual": 1.0,
+            "planned": 4.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "within_range_below_target"
+        },
+        "d": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "d",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "e": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "e",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "g": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "g",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "h": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "h",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "i": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "i",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "l": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "l",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "m": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "m",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "n": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "n",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "p": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "p",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "q": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "q",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "r": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "r",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "s": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "s",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "shoulders": {
+          "directSets": 0,
+          "effectiveSets": 0.5,
+          "exposures": 1.0,
+          "indirectSets": 1.0,
+          "mappedFraction": 1.0,
+          "muscleId": "shoulders",
+          "plannedVsActual": {
+            "actual": 0.5,
+            "planned": 2.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "t": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "t",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "triceps": {
+          "directSets": 0,
+          "effectiveSets": 0.5,
+          "exposures": 1.0,
+          "indirectSets": 1.0,
+          "mappedFraction": 1.0,
+          "muscleId": "triceps",
+          "plannedVsActual": {
+            "actual": 0.5,
+            "planned": 2.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        },
+        "u": {
+          "directSets": 0,
+          "effectiveSets": 0,
+          "exposures": 0.0,
+          "indirectSets": 0,
+          "mappedFraction": 1.0,
+          "muscleId": "u",
+          "plannedVsActual": {
+            "actual": 0,
+            "planned": 0.0
+          },
+          "stabilizerSets": 0,
+          "targetState": "not_targeted"
+        }
+      },
+      "provenance": {
+        "analysisPolicy": "dbpp-default-volume-v1",
+        "analysisVersion": "1.4.1",
+        "asOf": "2026-08-25T12:00:00+00:00",
+        "dbConverterVersion": "0.8.0",
+        "dbSchemaVersion": "0.3.0",
+        "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+        "historyWindow": {
+          "end": "2026-08-25",
+          "start": "2026-07-29",
+          "type": "last_28_days"
+        },
+        "mappedFraction": null,
+        "planSchemaVersions": [
+          "0.2.0"
+        ],
+        "relationshipSchemaVersion": null,
+        "setCredits": {
+          "direct": 1.0,
+          "indirect": 0.5,
+          "stabilizer": 0.0
+        },
+        "stateVersion": "0.1.0",
+        "targetSchemaVersion": "0.1.0",
+        "timezone": "UTC",
+        "workoutCount": 1,
+        "workoutSchemaVersions": [
+          "0.3.0"
+        ]
+      },
+      "sessionState": [
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 1.0,
+          "missed_sets_max": 1.0,
+          "missed_sets_min": 1.0,
+          "missed_sets_target": 1.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-25",
+          "period_start": "2026-07-29",
+          "period_type": "custom_date_range",
+          "plan_id": "history-plan",
+          "plan_session_id": "history-session",
+          "planned_exercises": 1,
+          "planned_set_max": 1.0,
+          "planned_set_min": 1.0,
+          "planned_sets": 1.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-01",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "fixture-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 1.0,
+          "missed_sets_max": 1.0,
+          "missed_sets_min": 1.0,
+          "missed_sets_target": 1.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-25",
+          "period_start": "2026-07-29",
+          "period_type": "custom_date_range",
+          "plan_id": "history-plan",
+          "plan_session_id": "history-session",
+          "planned_exercises": 1,
+          "planned_set_max": 1.0,
+          "planned_set_min": 1.0,
+          "planned_sets": 1.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-08",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "fixture-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 1.0,
+          "missed_sets_max": 1.0,
+          "missed_sets_min": 1.0,
+          "missed_sets_target": 1.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-25",
+          "period_start": "2026-07-29",
+          "period_type": "custom_date_range",
+          "plan_id": "history-plan",
+          "plan_session_id": "history-session",
+          "planned_exercises": 1,
+          "planned_set_max": 1.0,
+          "planned_set_min": 1.0,
+          "planned_sets": 1.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-15",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "fixture-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 1.0,
+          "missed_sets_max": 1.0,
+          "missed_sets_min": 1.0,
+          "missed_sets_target": 1.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-25",
+          "period_start": "2026-07-29",
+          "period_type": "custom_date_range",
+          "plan_id": "history-plan",
+          "plan_session_id": "history-session",
+          "planned_exercises": 1,
+          "planned_set_max": 1.0,
+          "planned_set_min": 1.0,
+          "planned_sets": 1.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-22",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "fixture-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 1,
+          "matched_exercises": 0,
+          "missed_sets": 0.0,
+          "missed_sets_max": 0.0,
+          "missed_sets_min": 0.0,
+          "missed_sets_target": 0.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-25",
+          "period_start": "2026-07-29",
+          "period_type": "custom_date_range",
+          "plan_id": "history-plan",
+          "plan_session_id": "history-session",
+          "planned_exercises": 1,
+          "planned_set_max": 1.0,
+          "planned_set_min": 1.0,
+          "planned_sets": 1.0,
+          "revision_id": "r1",
+          "scheduled_date": null,
+          "session_adherence": null,
+          "session_id": "history-workout",
+          "session_status": "unplanned_session",
+          "subject_id": "fixture-subject",
+          "substitutions": 0,
+          "timestamp": "2026-08-24T12:00:00Z",
+          "unplanned_exercises": 1,
+          "unplanned_sets": 1
+        }
+      ],
+      "stateVersion": "0.1.0",
+      "subjectId": "fixture-subject"
+    }
+  },
+  "goalPolicy": {
+    "description": "General, conservative coverage defaults; not an optimal prescription.",
+    "policyId": "general-hypertrophy-v1",
+    "policyVersion": "1"
+  },
+  "missingInformation": [],
+  "planningPolicy": "full-body-general-v1",
+  "provenance": {
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "environmentPolicy": {
+      "policyId": "commercial-gym-general-v1",
+      "policyVersion": "1"
+    },
+    "goalPolicy": {
+      "policyId": "general-hypertrophy-v1",
+      "policyVersion": "1"
+    },
+    "intentSchemaVersion": "0.1.0",
+    "relationshipSchemaVersion": null
+  },
+  "resolvedProfile": {
+    "availability": {
+      "cycleLengthDays": 7,
+      "excludedDayOffsets": [],
+      "preferredDayOffsets": [],
+      "sessionsPerCycle": {
+        "target": 3
+      }
+    },
+    "constraints": {
+      "excludedExerciseIds": [],
+      "excludedFamilyIds": []
+    },
+    "equipment": [
+      "bands",
+      "barbell",
+      "body only",
+      "cable",
+      "dumbbell",
+      "e-z curl bar",
+      "exercise ball",
+      "kettlebells",
+      "machine",
+      "medicine ball"
+    ],
+    "exercisePreferences": {},
+    "goals": [
+      {
+        "type": "hypertrophy"
+      }
+    ],
+    "profileId": "resolved-profile",
+    "schemaVersion": "0.1.0",
+    "subjectId": null
+  },
+  "resolvedTarget": {
+    "muscles": {
+      "chest": {
+        "target": 6
+      },
+      "hamstrings": {
+        "target": 4
+      },
+      "lats": {
+        "target": 6
+      },
+      "quadriceps": {
+        "target": 6
+      }
+    },
+    "notes": "General, conservative coverage defaults; not an optimal prescription.",
+    "periodDays": 7,
+    "schemaVersion": "0.1.0",
+    "targetId": "general-hypertrophy-v1-default"
+  },
+  "status": "resolved_with_defaults",
+  "warnings": []
+}

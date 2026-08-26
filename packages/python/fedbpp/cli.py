@@ -13,6 +13,7 @@ from . import (Database, Plan, VolumeTarget, Workout, TrainingHistory,
                generate_plan,
                analyze_periods, analyze_cohort, export_muscle_period_csv, export_session_csv,
                export_exercise_csv)
+from .intent import resolve_intent, generate_plan_from_intent
 from .training_state import derive_training_state
 from .progression import suggest_progression
 from .conversion import ConversionError, export_workout, import_workout
@@ -43,6 +44,22 @@ def _dump(value: Any, path: str | None = None) -> None:
         Path(path).write_text(text, encoding="utf-8")
     else:
         sys.stdout.write(text)
+
+
+def _intent_human(intent: dict[str, Any], result: dict[str, Any]) -> None:
+    """Concise display; the JSON result remains the authoritative artifact."""
+    schedule = intent.get("schedule", {}) or {}; constraints = intent.get("sessionConstraints", {}) or {}
+    count = constraints.get("exercisesPerSession", {}) or {}
+    weekdays = " ".join(day.title() for day in schedule.get("preferredWeekdays", []) or [])
+    sessions = (schedule.get("sessionsPerCycle", {}) or {}).get("target")
+    print("WORKOUT INTENT")
+    print(f"\nGoal:\n  {intent.get('goal') or 'not provided'}")
+    print(f"\nSchedule:\n  {sessions if sessions is not None else 'unspecified'} sessions / {schedule.get('cycleLengthDays', 'unspecified')}-day cycle")
+    if weekdays: print(f"  {weekdays}")
+    if count: print(f"\nExercises/session:\n  {count.get('min', '')}{'–' if count.get('min') is not None and count.get('max') is not None else ''}{count.get('max', count.get('target', ''))}")
+    print(f"\nEnvironment:\n  {(intent.get('environment') or 'not provided').replace('_', ' ')}")
+    print(f"\nResolved:\n  goal policy: {(result.get('goalPolicy') or {}).get('policyId') or '—'}\n  environment policy: {result.get('environmentPolicy') or '—'}\n  planning policy: {result.get('planningPolicy') or '—'}")
+    print(f"\nStatus:\n  {result['status']}")
 
 
 def _validate(kind: str, path: str) -> None:
@@ -89,6 +106,23 @@ def _generate(args: argparse.Namespace) -> Any:
                          requiredExerciseIds=args.required_exercise or (), lockedExerciseIds=args.locked_exercise or (),
                          additionalExclusions=args.exclude_exercise or ())
 
+def _resolve_intent(args: argparse.Namespace) -> Any:
+    db = Database.load(args.db)
+    relationships = RelationshipRegistry.load(args.relationships, db=db) if args.relationships else None
+    profile = TrainingProfile.load(args.profile).document if args.profile else None
+    target = VolumeTarget.load(args.target).document if args.target else None
+    history = _load_history(args.history) if args.history else None
+    return resolve_intent(_load_json(args.intent), db, profile, target, relationships, history, as_of=args.as_of)
+
+def _generate_from_intent(args: argparse.Namespace) -> Any:
+    db = Database.load(args.db)
+    relationships = RelationshipRegistry.load(args.relationships, db=db) if args.relationships else None
+    profile = TrainingProfile.load(args.profile).document if args.profile else None
+    target = VolumeTarget.load(args.target).document if args.target else None
+    history = _load_history(args.history) if args.history else None
+    current = Plan.load(args.current_plan).document if args.current_plan else None
+    return generate_plan_from_intent(_load_json(args.intent), db, profile, target, relationships, history, as_of=args.as_of, current_plan=current)
+
 
 def _adapt(args: argparse.Namespace) -> Any:
     db = Database.load(args.db)
@@ -117,6 +151,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("evaluate-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true"); p.add_argument("--output")
     p = sub.add_parser("generate-plan"); p.add_argument("--profile", required=True); p.add_argument("--target", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--policy", default="full-body-general-v1"); p.add_argument("--training-state"); p.add_argument("--current-plan"); p.add_argument("--required-exercise", action="append"); p.add_argument("--locked-exercise", action="append"); p.add_argument("--exclude-exercise", action="append"); p.add_argument("--output", required=True); p.add_argument("--report")
+    p = sub.add_parser("resolve-intent"); p.add_argument("--intent", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--history"); p.add_argument("--as-of"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("generate-from-intent"); p.add_argument("--intent", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--history"); p.add_argument("--as-of"); p.add_argument("--current-plan"); p.add_argument("--output", required=True); p.add_argument("--report")
     p = sub.add_parser("adapt-plan"); p.add_argument("--profile", required=True); p.add_argument("--target", required=True); p.add_argument("--plan", required=True); p.add_argument("--history", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--policy", default="general-adaptive-v1"); p.add_argument("--planning-policy"); p.add_argument("--training-state"); p.add_argument("--as-of"); p.add_argument("--window"); p.add_argument("--timezone"); p.add_argument("--revision-id"); p.add_argument("--output"); p.add_argument("--report")
     p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("training-state"); p.add_argument("history", nargs="?"); p.add_argument("--history", dest="history_option"); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--relationships"); p.add_argument("--target"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
@@ -171,6 +207,16 @@ def main(argv: list[str] | None = None) -> int:
             print(f"\nHard constraints:\n  {'satisfied' if not result['unsatisfiedConstraints'] else 'unsatisfied'}")
             for row in result["selectionRationale"]: print(f"  {row['exerciseId']}: {', '.join(row['reasonCodes'])}")
             return 0 if result["status"] in {"generated", "generated_with_target_gaps"} else 2
+        if args.command == "resolve-intent":
+            result = _resolve_intent(args)
+            if args.output or args.json: _dump(result, args.output)
+            else: _intent_human(_load_json(args.intent), result)
+            return 0 if result["status"] in {"resolved", "resolved_with_defaults"} else 2
+        if args.command == "generate-from-intent":
+            result = _generate_from_intent(args)
+            if result["generation"] and result["generation"]["plan"] is not None: _dump(result["generation"]["plan"], args.output)
+            if args.report: _dump(result, args.report)
+            return 0 if result["generation"] and result["generation"]["status"] in {"generated", "generated_with_target_gaps"} else 2
         if args.command == "adapt-plan":
             result = _adapt(args)
             if result["proposedPlan"] is not None and args.output: _dump(result["proposedPlan"], args.output)

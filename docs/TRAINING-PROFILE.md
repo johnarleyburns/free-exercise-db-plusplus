@@ -15,6 +15,11 @@ avoid calendar assumptions. Equipment values follow DB++ source equipment
 values, including `body only`; `bodyweight`, `no equipment`, and `none` are
 accepted aliases for availability validation.
 
+`availability.exercisesPerSession` follows the same partial-range shape. Its
+minimum and maximum are hard construction/evaluation bounds; its target is a
+soft preference. This field was added in v1.10 and is also the canonical
+destination for a resolved WorkoutIntent session constraint.
+
 Preferences are soft: preferred and avoided exercises/families produce
 findings. Constraints are hard: excluded exercise/family IDs produce failures.
 Contradictory preference/exclusion entries are validation errors.

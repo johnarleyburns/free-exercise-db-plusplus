@@ -31,6 +31,13 @@ maximum. Frequency requirements select a session without that muscle exposure
 before adding repeated exposure. Movement patterns and family targets use the
 same evaluator sections.
 
+`profile.availability.exercisesPerSession.min` and `.max` are enforced during
+allocation, not just in final evaluation. The generator never adds a distinct
+exercise above the hard maximum, and deterministically fills each session to a
+hard minimum where feasible. Coverage blocked by a hard maximum is reported as
+`generated_with_target_gaps`; a plan that cannot satisfy hard construction
+requirements is `unsatisfiable`.
+
 Required exercise IDs must appear somewhere. Locked exercise IDs require a
 `current_plan` and retain every locked exercise at its existing day offset; an
 excluded, unavailable, absent, or now-unavailable day offset produces

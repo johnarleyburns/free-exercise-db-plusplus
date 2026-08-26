@@ -1,0 +1,21 @@
+{
+  "conflicts": [
+    {
+      "code": "INVALID_INTENT",
+      "detail": "schedule weekday fields require cycleLengthDays of 7"
+    }
+  ],
+  "defaultsApplied": [],
+  "environmentPolicy": null,
+  "generationOptions": {},
+  "goalPolicy": null,
+  "missingInformation": [],
+  "planningPolicy": null,
+  "provenance": {
+    "intentSchemaVersion": "0.1.0"
+  },
+  "resolvedProfile": null,
+  "resolvedTarget": null,
+  "status": "invalid",
+  "warnings": []
+}
