@@ -1182,3 +1182,8 @@ UI-independent
 ```
 
 That is the intended long-term identity of Free Exercise DB++.
+
+
+# 8. v1.9 — Adaptive Coaching / Plan Revision Engine
+
+Implementation status: complete in the Python reference package. `adapt_plan()` composes canonical TrainingState, progression policies, plan evaluation and (when structural correction is required) the v1.8 generator. It is advisory and deterministic; proposed revisions are never activated and historic PLAN/ACTUAL documents remain unchanged. See `docs/ADAPTIVE-COACHING.md`.

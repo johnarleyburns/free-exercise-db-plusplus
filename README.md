@@ -275,3 +275,8 @@ Released under the [Unlicense](LICENSE).
 ### Analysis semantic contract
 
 PLAN/ACTUAL/TARGET analysis uses the named `dbpp-default-volume-v1` counting policy and authoritative `metadata.setCredits`. It preserves prescription ranges—including unspecified bounds—excludes `volumeEligible=false` exercises from resistance-volume totals while reporting them in completeness diagnostics, separates unplanned ACTUAL work, and records reproducibility provenance. See the [normative analysis semantics](docs/ANALYSIS-SEMANTICS.md).
+
+
+## Adaptive coaching (v1.9)
+
+The packaged Python API exposes deterministic advisory coaching: `from fedbpp.coaching import adapt_plan, COACHING_POLICIES`. It derives or accepts canonical TrainingState, emits explainable CoachDecision records, and returns an immutable proposed PLAN only after canonical validation and evaluation. DB++ never assigns, activates, sends, persists, or accepts a proposal. See [Adaptive coaching](docs/ADAPTIVE-COACHING.md).

@@ -37,3 +37,12 @@ fedbpp mapping dbpp Dumbbell_Bench_Press --system fhir
 
 Conversion documents are written to `--output` (or stdout when omitted). Reports
 are deterministic JSON and contain status, loss entries, warnings, and provenance.
+
+
+## v1.9 CLI
+
+```bash
+fedbpp adapt-plan --profile profile.json --target target.json --plan current-plan.json --history history.json --db db.json --as-of 2026-08-25T12:00:00Z --output proposed-plan.json --report adaptive-report.json
+```
+
+The report is authoritative. If no proposal exists, `--output` is not created.

@@ -256,6 +256,18 @@ jobs:
           print('v1.7 TrainingState and progression tests passed')
           PY
 
+      - name: Validate v1.9 adaptive coaching
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util
+          path='tests/training/test_v19.py'
+          spec=importlib.util.spec_from_file_location('v19_tests',path)
+          module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith('test_'): getattr(module,name)()
+          print('v1.9 adaptive coaching tests passed')
+          PY
+
       - name: Test ACTUAL 0.2 to 0.3 migration
         run: |
           PYTHONPATH=. python - <<'PY'

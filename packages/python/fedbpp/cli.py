@@ -18,6 +18,7 @@ from .progression import suggest_progression
 from .conversion import ConversionError, export_workout, import_workout
 from .interop import MappingRegistry
 from .relationships import RelationshipRegistry
+from .coaching import adapt_plan
 
 
 def _load_json(path: str) -> dict[str, Any]:
@@ -89,6 +90,15 @@ def _generate(args: argparse.Namespace) -> Any:
                          additionalExclusions=args.exclude_exercise or ())
 
 
+def _adapt(args: argparse.Namespace) -> Any:
+    db = Database.load(args.db)
+    profile = TrainingProfile.load(args.profile).document
+    target = VolumeTarget.load(args.target).document
+    relationships = RelationshipRegistry.load(args.relationships, db=db) if args.relationships else None
+    state = _load_json(args.training_state) if args.training_state else None
+    options = {key: value for key, value in {"asOf": args.as_of, "window": args.window, "timezone": args.timezone, "revisionId": args.revision_id}.items() if value is not None}
+    return adapt_plan(profile, target, Plan.load(args.plan).document, _load_history(args.history), db, policy=args.policy, relationships=relationships, training_state=state, planning_policy=args.planning_policy, options=options)
+
 def _conversion_report(result: Any, path: str | None) -> None:
     if path: _dump(result.report(), path)
     if result.warnings: print("conversion warnings: " + "; ".join(result.warnings), file=sys.stderr)
@@ -107,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("evaluate-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true"); p.add_argument("--output")
     p = sub.add_parser("generate-plan"); p.add_argument("--profile", required=True); p.add_argument("--target", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--policy", default="full-body-general-v1"); p.add_argument("--training-state"); p.add_argument("--current-plan"); p.add_argument("--required-exercise", action="append"); p.add_argument("--locked-exercise", action="append"); p.add_argument("--exclude-exercise", action="append"); p.add_argument("--output", required=True); p.add_argument("--report")
+    p = sub.add_parser("adapt-plan"); p.add_argument("--profile", required=True); p.add_argument("--target", required=True); p.add_argument("--plan", required=True); p.add_argument("--history", required=True); p.add_argument("--db", required=True); p.add_argument("--relationships"); p.add_argument("--policy", default="general-adaptive-v1"); p.add_argument("--planning-policy"); p.add_argument("--training-state"); p.add_argument("--as-of"); p.add_argument("--window"); p.add_argument("--timezone"); p.add_argument("--revision-id"); p.add_argument("--output"); p.add_argument("--report")
     p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("training-state"); p.add_argument("history", nargs="?"); p.add_argument("--history", dest="history_option"); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--relationships"); p.add_argument("--target"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("progress"); p.add_argument("plan", nargs="?"); p.add_argument("--plan", dest="plan_option"); p.add_argument("--history", required=True); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--policy", default="double-progression-v1"); p.add_argument("--increment"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
@@ -160,6 +171,15 @@ def main(argv: list[str] | None = None) -> int:
             print(f"\nHard constraints:\n  {'satisfied' if not result['unsatisfiedConstraints'] else 'unsatisfied'}")
             for row in result["selectionRationale"]: print(f"  {row['exerciseId']}: {', '.join(row['reasonCodes'])}")
             return 0 if result["status"] in {"generated", "generated_with_target_gaps"} else 2
+        if args.command == "adapt-plan":
+            result = _adapt(args)
+            if result["proposedPlan"] is not None and args.output: _dump(result["proposedPlan"], args.output)
+            if args.report: _dump(result, args.report)
+            print("ADAPTIVE COACHING")
+            print("Policy: " + result["policy"]["policyId"])
+            print("Status: " + result["status"])
+            for decision in result["decisions"]: print("  {}: {} ({})".format(decision.get("exerciseId") or "PLAN", decision.get("decisionType"), ", ".join(decision.get("reasonCodes", []))))
+            return 0 if result["status"] in {"no_change", "revision_proposed", "regeneration_proposed", "insufficient_data"} else 2
         if args.command in {"training-state", "progress"}:
             history_path = getattr(args, "history_option", None) or args.history
             history = _load_history(history_path); db = Database.load(args.db)

@@ -143,3 +143,10 @@ No PLAN, ACTUAL, TARGET, or independent schema versions changed.
 - The Free Exercise DB++ v1 exercise-definition core contract remains compatible.
 - PLAN / ACTUAL / TARGET analysis stabilization is the main addition; independent schema versions remain unchanged.
 - Garmin FIT, FHIR, HealthKit, Health Connect, IEEE/Open mHealth, taxonomy, and fine-anatomy exporters remain future work.
+
+
+## 1.9.0 - 2026-08-25
+
+- Added deterministic, advisory adaptive coaching through `adapt_plan()` and the versioned `general-adaptive-v1` CoachingPolicy.
+- Added evaluator-gated immutable PLAN revision/regeneration proposals, machine-readable changes, decisions, and provenance; no proposal is activated automatically.
+- Added `fedbpp adapt-plan` and adaptive-coaching guidance.
