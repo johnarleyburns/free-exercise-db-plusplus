@@ -1,7 +1,7 @@
 export(load_database, load_workout, validate_workout, migrate_workout,
        effective_sets, longitudinal_volume, workout_observations,
        load_relationships, family_for, family_members,
-       read_workout_intent, validate_workout_intent, resolve_intent,
+       read_workout_intent, read_intent_policies, validate_workout_intent, resolve_intent,
        generate_plan_from_intent, merge_target, validate_target)
 importFrom(stats, aggregate)
 importFrom(utils, modifyList)

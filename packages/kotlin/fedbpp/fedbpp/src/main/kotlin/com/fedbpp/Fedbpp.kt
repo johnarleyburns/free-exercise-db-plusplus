@@ -6,15 +6,17 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
 
-private val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = false }
+internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = false }
 
 class Database private constructor(private val document: DatabaseDocument) {
     val metadata get() = document.metadata
     val size get() = document.exercises.size
+    val equipmentVocabulary get() = document.exercises.values.mapNotNull { it.source["equipment"]?.jsonPrimitive?.contentOrNull }.toSet()
     fun getExercise(id: String): Exercise = document.exercises[id] ?: throw ExerciseNotFoundException(id)
     fun findExercises(query: String): List<Exercise> = document.exercises.values.filter { it.exerciseId.contains(query, ignoreCase = true) }.sortedBy { it.exerciseId }
     fun exercisesForMuscle(muscle: String): List<Exercise> = document.exercises.values.filter { muscle in it.annotation.direct || muscle in it.annotation.indirect }.sortedBy { it.exerciseId }

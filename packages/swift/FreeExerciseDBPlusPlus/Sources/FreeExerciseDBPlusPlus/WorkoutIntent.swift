@@ -118,6 +118,17 @@ public struct WorkoutIntent: Codable, Sendable, Equatable {
     self.historyWindow = historyWindow
   }
 }
+extension WorkoutIntent {
+  private enum CodingKeys: String, CodingKey { case schemaVersion, intentId, subjectId, goal, requestedGoalPolicy, requestedPlanningPolicy, environment, schedule, sessionConstraints, exerciseConstraints, preferences, equipmentOverrides, continuity, useHistory, historyWindow }
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    guard c.contains(.schemaVersion) else { throw DecodingError.keyNotFound(CodingKeys.schemaVersion, .init(codingPath: decoder.codingPath, debugDescription: "schemaVersion is required")) }
+    schemaVersion = try c.decode(String.self, forKey: .schemaVersion)
+    intentId = try c.decodeIfPresent(String.self, forKey: .intentId); subjectId = try c.decodeIfPresent(String.self, forKey: .subjectId)
+    goal = try c.decodeIfPresent(String.self, forKey: .goal); requestedGoalPolicy = try c.decodeIfPresent(String.self, forKey: .requestedGoalPolicy); requestedPlanningPolicy = try c.decodeIfPresent(String.self, forKey: .requestedPlanningPolicy)
+    environment = try c.decodeIfPresent(String.self, forKey: .environment); schedule = try c.decodeIfPresent(WorkoutSchedule.self, forKey: .schedule); sessionConstraints = try c.decodeIfPresent(SessionConstraints.self, forKey: .sessionConstraints); exerciseConstraints = try c.decodeIfPresent(ExerciseConstraints.self, forKey: .exerciseConstraints); preferences = try c.decodeIfPresent(WorkoutPreferences.self, forKey: .preferences); equipmentOverrides = try c.decodeIfPresent(EquipmentOverrides.self, forKey: .equipmentOverrides); continuity = try c.decodeIfPresent(String.self, forKey: .continuity); useHistory = try c.decodeIfPresent(Bool.self, forKey: .useHistory); historyWindow = try c.decodeIfPresent(String.self, forKey: .historyWindow)
+  }
+}
 extension WorkoutSchedule {
   private enum CodingKeys: String, CodingKey {
     case cycleLengthDays, sessionsPerCycle, preferredDayOffsets, excludedDayOffsets,
@@ -182,8 +193,8 @@ public struct ExplicitOverrides: Codable, Sendable, Equatable {
     self.planningPolicy = planningPolicy
     self.target = target
     self.trainingProfile = trainingProfile
-    self.equipmentAdded = equipmentAdded.sorted()
-    self.equipmentRemoved = equipmentRemoved.sorted()
+    self.equipmentAdded = Array(Set(equipmentAdded)).sorted()
+    self.equipmentRemoved = Array(Set(equipmentRemoved)).sorted()
   }
 }
 public struct GoalPolicyReference: Codable, Sendable, Equatable {
@@ -262,6 +273,11 @@ public struct IntentResolutionResult: Codable, Sendable, Equatable {
     self.explicitOverrides = explicitOverrides
     self.provenance = provenance
   }
+  private enum CodingKeys: String, CodingKey { case status, resolvedProfile, resolvedTarget, planningPolicy, goalPolicy, environmentPolicy, generationOptions, missingInformation, warnings, conflicts, defaultsApplied, explicitOverrides, provenance }
+  public func encode(to encoder: Encoder) throws {
+    var c = encoder.container(keyedBy: CodingKeys.self)
+    try c.encode(status, forKey: .status); try c.encode(resolvedProfile, forKey: .resolvedProfile); try c.encode(resolvedTarget, forKey: .resolvedTarget); try c.encode(planningPolicy, forKey: .planningPolicy); try c.encode(goalPolicy, forKey: .goalPolicy); try c.encode(environmentPolicy, forKey: .environmentPolicy); try c.encode(generationOptions, forKey: .generationOptions); try c.encode(missingInformation, forKey: .missingInformation); try c.encode(warnings, forKey: .warnings); try c.encode(conflicts, forKey: .conflicts); try c.encode(defaultsApplied, forKey: .defaultsApplied); try c.encode(explicitOverrides, forKey: .explicitOverrides); try c.encode(provenance, forKey: .provenance)
+  }
 }
 
 extension JSONValue {
@@ -311,6 +327,13 @@ public enum IntentValidator {
     if let c = x.schedule?.cycleLengthDays, (pa + pb).contains(where: { $0 < 0 || $0 >= c }) {
       e += ["schedule day offsets must be within cycleLengthDays"]
     }
+    if let c = x.schedule?.cycleLengthDays, c < 1 { e += ["schedule.cycleLengthDays: must be at least 1"] }
+    if let r = x.schedule?.sessionsPerCycle, [r.min, r.target, r.max].compactMap({ $0 }).contains(where: { $0 < 0 }) { e += ["schedule.sessionsPerCycle: values must be non-negative"] }
+    if let r = x.sessionConstraints?.exercisesPerSession, [r.min, r.target, r.max].compactMap({ $0 }).contains(where: { $0 < 0 }) { e += ["sessionConstraints.exercisesPerSession: values must be non-negative"] }
+    if Set(x.schedule?.preferredWeekdays ?? []).count != (x.schedule?.preferredWeekdays ?? []).count { e += ["schedule.preferredWeekdays: duplicate values"] }
+    if Set(x.schedule?.excludedWeekdays ?? []).count != (x.schedule?.excludedWeekdays ?? []).count { e += ["schedule.excludedWeekdays: duplicate values"] }
+    if Set(x.schedule?.preferredDayOffsets ?? []).count != (x.schedule?.preferredDayOffsets ?? []).count { e += ["schedule.preferredDayOffsets: duplicate values"] }
+    if Set(x.schedule?.excludedDayOffsets ?? []).count != (x.schedule?.excludedDayOffsets ?? []).count { e += ["schedule.excludedDayOffsets: duplicate values"] }
     if let r = x.schedule?.sessionsPerCycle { e += ranges(r, "schedule.sessionsPerCycle") }
     if let r = x.sessionConstraints?.exercisesPerSession {
       e += ranges(r, "sessionConstraints.exercisesPerSession")
@@ -325,11 +348,20 @@ public enum IntentValidator {
     {
       e += ["exerciseConstraints: requiredFamilyIds conflicts with excludedFamilyIds"]
     }
+    if let p = x.preferences, let c = x.exerciseConstraints {
+      if !Set(p.preferredExerciseIds).isDisjoint(with: Set(c.excludedExerciseIds)) { e += ["preferences: preferredExerciseIds conflicts with excludedExerciseIds"] }
+      if !Set(p.avoidedExerciseIds).isDisjoint(with: Set(c.excludedExerciseIds)) { e += ["preferences: avoidedExerciseIds conflicts with excludedExerciseIds"] }
+      if !Set(p.preferredFamilyIds).isDisjoint(with: Set(c.excludedFamilyIds)) { e += ["preferences: preferredFamilyIds conflicts with excludedFamilyIds"] }
+      if !Set(p.avoidedFamilyIds).isDisjoint(with: Set(c.excludedFamilyIds)) { e += ["preferences: avoidedFamilyIds conflicts with excludedFamilyIds"] }
+    }
     if x.requestedGoalPolicy == "general-strength-v1" && x.goal == "hypertrophy"
       || x.requestedGoalPolicy == "general-hypertrophy-v1" && x.goal == "strength"
     {
       e += ["GOAL_POLICY_MISMATCH"]
     }
+    if let goal = x.goal, !["hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"].contains(goal) { e += ["goal: unsupported value"] }
+    if let environment = x.environment, !["commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom"].contains(environment) { e += ["environment: unsupported value"] }
+    if let continuity = x.continuity, !["preserve", "neutral", "vary"].contains(continuity) { e += ["continuity: unsupported value"] }
     if let policy = x.requestedPlanningPolicy,
       !["full-body-general-v1", "upper-lower-general-v1"].contains(policy)
     {
@@ -368,10 +400,14 @@ private func merge(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
 public struct IntentResolver: Sendable {
   public init() {}
   public func resolve(
-    _ x: WorkoutIntent, profile supplied: JSONValue? = nil, target explicitTarget: JSONValue? = nil
+    _ x: WorkoutIntent, database: FEDatabase? = nil, profile supplied: JSONValue? = nil, target explicitTarget: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil
   ) -> IntentResolutionResult {
     let errors = IntentValidator.validate(x)
     if !errors.isEmpty {
+      if errors == ["GOAL_POLICY_MISMATCH"] {
+        let policyGoal = x.requestedGoalPolicy == "general-strength-v1" ? "strength" : "hypertrophy"
+        return IntentResolutionResult(status: "invalid", conflicts: [IntentConflict(code: "GOAL_POLICY_MISMATCH", goal: x.goal, requestedGoalPolicy: x.requestedGoalPolicy, policyGoal: policyGoal)], provenance: ["intentSchemaVersion": s(x.schemaVersion)])
+      }
       return IntentResolutionResult(
         status: "invalid",
         conflicts: errors.map {
@@ -393,14 +429,17 @@ public struct IntentResolver: Sendable {
         .init(field: "schedule.sessionsPerCycle", reason: "required_for_schedule_resolution")
       ]
     }
-    if x.environment == nil && supplied == nil {
+    let suppliedEquipment: [String] = o(supplied)["equipment"]?.arrayValues.compactMap { $0.stringValue } ?? []
+    if x.environment == nil && suppliedEquipment.isEmpty {
       missing += [
         .init(field: "environmentOrEquipment", reason: "required_for_equipment_resolution")
       ]
     }
     if !missing.isEmpty {
-      return IntentResolutionResult(status: "needs_clarification", missingInformation: missing)
+      return IntentResolutionResult(status: "needs_clarification", missingInformation: missing, provenance: ["intentSchemaVersion": s(x.schemaVersion)])
     }
+    if x.environment == "home_gym" && suppliedEquipment.isEmpty && (x.equipmentOverrides?.addEquipment ?? []).isEmpty { return IntentResolutionResult(status: "needs_clarification", missingInformation: [.init(field: "equipmentOverrides.addEquipment", reason: "home_gym_has_no_v1_preset")], provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
+    if x.environment == "custom" && suppliedEquipment.isEmpty && (x.equipmentOverrides?.addEquipment ?? []).isEmpty { return IntentResolutionResult(status: "needs_clarification", missingInformation: [.init(field: "equipmentOverrides.addEquipment", reason: "required_for_custom_environment")], provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
     let goal = x.goal!
     let gid =
       x.requestedGoalPolicy
@@ -411,7 +450,7 @@ public struct IntentResolver: Sendable {
         status: "needs_clarification",
         missingInformation: [
           .init(field: "requestedGoalPolicy", reason: "no_default_goal_policy_for_goal")
-        ])
+        ], provenance: ["intentSchemaVersion": s(x.schemaVersion)])
     }
     if gid != "general-hypertrophy-v1" && gid != "general-strength-v1" {
       return IntentResolutionResult(
@@ -447,17 +486,20 @@ public struct IntentResolver: Sendable {
     ]
     let env = x.environment.flatMap { envMap[$0] }
     let input = o(supplied)
-    let equipment = Set(
-      input["equipment"]?.arrayValues.compactMap { $0.stringValue } ?? env?.1 ?? []
+    var equipment = Set(
+      suppliedEquipment.isEmpty ? (env?.1 ?? []) : suppliedEquipment
     ).union(x.equipmentOverrides?.addEquipment ?? []).subtracting(
       x.equipmentOverrides?.removeEquipment ?? []
     ).sorted()
+    if let database { equipment = equipment.filter { database.equipmentVocabulary.contains($0) || $0 == "body only" }.sorted() }
+    let resolvedEnvironmentPolicy = suppliedEquipment.isEmpty ? env?.0 : nil
     var p = input
     p["schemaVersion"] = p["schemaVersion"] ?? s("0.1.0")
     p["profileId"] = p["profileId"] ?? s("resolved-profile")
     p["subjectId"] = x.subjectId.map { s($0) } ?? p["subjectId"] ?? .null
     p["goals"] = .array([.object(["type": s(goal)])])
     p["equipment"] = .array(equipment.map(s))
+    p["exercisePreferences"] = p["exercisePreferences"] ?? .object([:])
     var av = o(p["availability"])
     av["cycleLengthDays"] = s(q!.cycleLengthDays!)
     av["sessionsPerCycle"] = rangeJSON(q!.sessionsPerCycle!)
@@ -475,9 +517,14 @@ public struct IntentResolver: Sendable {
       av["exercisesPerSession"] = rangeJSON(r)
     }
     p["availability"] = .object(av)
-    p["constraints"] =
-      p["constraints"]
-      ?? .object(["excludedExerciseIds": .array([]), "excludedFamilyIds": .array([])])
+    var constraints = o(p["constraints"])
+    let inputConstraints = x.exerciseConstraints
+    let excludedExercises = Set((constraints["excludedExerciseIds"]?.arrayValues.compactMap { $0.stringValue } ?? []) + (inputConstraints?.excludedExerciseIds ?? [])).sorted()
+    let excludedFamilies = Set((constraints["excludedFamilyIds"]?.arrayValues.compactMap { $0.stringValue } ?? []) + (inputConstraints?.excludedFamilyIds ?? [])).sorted()
+    constraints["excludedExerciseIds"] = .array(excludedExercises.map(s)); constraints["excludedFamilyIds"] = .array(excludedFamilies.map(s)); p["constraints"] = .object(constraints)
+    var preferences = o(p["exercisePreferences"])
+    if let inputPreferences = x.preferences { for (key, values) in [("preferredExerciseIds", inputPreferences.preferredExerciseIds), ("avoidedExerciseIds", inputPreferences.avoidedExerciseIds), ("preferredFamilyIds", inputPreferences.preferredFamilyIds), ("avoidedFamilyIds", inputPreferences.avoidedFamilyIds)] where !values.isEmpty { preferences[key] = .array(Set((preferences[key]?.arrayValues.compactMap { $0.stringValue } ?? []) + values).sorted().map(s)) } }
+    p["exercisePreferences"] = .object(preferences)
     let gMuscles: JSONValue =
       isStrength
       ? .object([
@@ -493,10 +540,15 @@ public struct IntentResolver: Sendable {
         "schemaVersion": s("0.1.0"), "targetId": s("\(gid)-default"),
         "periodDays": s(q!.cycleLengthDays!), "muscles": gMuscles, "notes": s(desc),
       ]), explicitTarget)
+    let targetErrors = validateTarget(target)
+    if !targetErrors.isEmpty { return IntentResolutionResult(status: "invalid", resolvedTarget: target, conflicts: targetErrors.map { IntentConflict(code: "TARGET_OVERRIDE_CONFLICT", detail: $0) }, provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
     let defaults =
       (x.requestedGoalPolicy == nil ? ["goalPolicy"] : [])
       + (x.requestedPlanningPolicy == nil ? ["planningPolicy"] : [])
-      + (env != nil && supplied == nil ? ["environmentPolicy"] : [])
+      + (resolvedEnvironmentPolicy != nil ? ["environmentPolicy"] : [])
+    var historyWarnings: [String] = []
+    if x.useHistory == true && history == nil { historyWarnings.append("useHistory was requested but no history was provided") }
+    if x.useHistory == true && history != nil && asOf == nil { historyWarnings.append("useHistory was requested but as_of is required to derive TrainingState") }
     let reps: JSONValue =
       isStrength
       ? .object(["min": s(3), "target": s(5), "max": s(6)])
@@ -504,11 +556,11 @@ public struct IntentResolver: Sendable {
     return IntentResolutionResult(
       status: defaults.isEmpty ? "resolved" : "resolved_with_defaults", resolvedProfile: .object(p),
       resolvedTarget: target, planningPolicy: x.requestedPlanningPolicy ?? "full-body-general-v1",
-      goalPolicy: GoalPolicyReference(policyId: gid, description: desc), environmentPolicy: env?.0,
+      goalPolicy: GoalPolicyReference(policyId: gid, policyVersion: "1", description: desc), environmentPolicy: resolvedEnvironmentPolicy,
       generationOptions: .object([
         "continuity": s(x.continuity ?? "neutral"), "repDefaults": reps,
-        "effortDefaults": .object(["rir": s(2)]), "requiredFamilyIds": .array([]),
-      ]), defaultsApplied: defaults,
+        "effortDefaults": .object(["rir": s(2)]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
+      ]), missingInformation: [], warnings: historyWarnings, defaultsApplied: defaults,
       explicitOverrides: ExplicitOverrides(
         goalPolicy: x.requestedGoalPolicy != nil, planningPolicy: x.requestedPlanningPolicy != nil,
         target: explicitTarget != nil, trainingProfile: supplied != nil,
@@ -517,15 +569,17 @@ public struct IntentResolver: Sendable {
       provenance: [
         "intentSchemaVersion": s(x.schemaVersion),
         "goalPolicy": .object(["policyId": s(gid), "policyVersion": s("1")]),
-        "environmentPolicy": env.map { .object(["policyId": s($0.0), "policyVersion": s("1")]) }
-          ?? .null,
+        "environmentPolicy": resolvedEnvironmentPolicy.map { .object(["policyId": s($0), "policyVersion": s("1")]) } ?? .null,
+        "dbSchemaVersion": o(database.map { .object($0.metadata) })["schemaVersion"] ?? .null,
+        "dbConverterVersion": o(database.map { .object($0.metadata) })["converterVersion"] ?? .null,
+        "relationshipSchemaVersion": relationships.map { s($0.schemaVersion) } ?? .null,
       ])
   }
 }
 public func validateWorkoutIntent(_ x: WorkoutIntent) -> [String] { IntentValidator.validate(x) }
-public func resolveIntent(_ x: WorkoutIntent, profile: JSONValue? = nil, target: JSONValue? = nil)
+public func resolveIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil)
   -> IntentResolutionResult
-{ IntentResolver().resolve(x, profile: profile, target: target) }
+{ IntentResolver().resolve(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf) }
 public func mergeTarget(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
   merge(base, explicit)
 }

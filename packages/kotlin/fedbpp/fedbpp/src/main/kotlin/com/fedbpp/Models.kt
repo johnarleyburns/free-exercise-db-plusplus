@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
     val stabilizers: List<String> = emptyList(), val volumeEligible: Boolean = false,
     val confidence: String? = null
 )
-@Serializable data class Exercise(val exerciseId: String, val annotation: ExerciseAnnotation = ExerciseAnnotation())
+@Serializable data class Exercise(val exerciseId: String, val annotation: ExerciseAnnotation = ExerciseAnnotation(), val source: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap())
 @Serializable internal data class DatabaseDocument(val metadata: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap(), val exercises: Map<String, Exercise> = emptyMap())
 @Serializable data class ExerciseFamily(val familyId: String, val name: String, val aliases: List<String> = emptyList())
 @Serializable data class ExerciseRelationship(val sourceExerciseId: String, val targetExerciseId: String? = null, val familyId: String, val relationship: String, val dimensions: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap(), val confidence: String)

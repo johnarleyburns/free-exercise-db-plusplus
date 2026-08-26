@@ -122,4 +122,24 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(result.explicitOverrides, ExplicitOverrides())
   }
 
+  func testAllCanonicalResolutionFixtures() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+    let decoder = JSONDecoder()
+    let directories = try FileManager.default.contentsOfDirectory(at: root.appendingPathComponent("fixtures/cross-language/intent"), includingPropertiesForKeys: nil).filter { $0.hasDirectoryPath }.sorted { $0.lastPathComponent < $1.lastPathComponent }
+    for directory in directories {
+      // TrainingState derivation remains a v1.12 native-package item; the
+      // history fixture is exercised by the Python oracle until then.
+      if FileManager.default.fileExists(atPath: directory.appendingPathComponent("history.json").path) { continue }
+      let intent = try decoder.decode(WorkoutIntent.self, from: Data(contentsOf: directory.appendingPathComponent("input.json")))
+      let explicit = directory.appendingPathComponent("target.json")
+      let target = FileManager.default.fileExists(atPath: explicit.path) ? try decoder.decode(JSONValue.self, from: Data(contentsOf: explicit)) : nil
+      let result = resolveIntent(intent, database: database, target: target)
+      let expected = try decoder.decode(JSONValue.self, from: Data(contentsOf: directory.appendingPathComponent("expected-resolution.json")))
+      let actual = try decoder.decode(JSONValue.self, from: JSONEncoder().encode(result))
+      XCTAssertEqual(actual, expected, directory.lastPathComponent)
+    }
+  }
+
 }

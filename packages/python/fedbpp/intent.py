@@ -18,15 +18,19 @@ from ._analysis.targets import validate_target
 
 INTENT_SCHEMA_VERSION = "0.1.0"
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+
+def _load_policy_resource() -> dict[str, Any]:
+    path = Path(__file__).with_name("data") / "intent-policies.json"
+    if not path.exists():
+        path = Path(__file__).resolve().parents[3] / "resources" / "intent-policies.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+_POLICIES = _load_policy_resource()
 ENVIRONMENT_POLICIES = {
-    "commercial-gym-general-v1": {"policyId": "commercial-gym-general-v1", "policyVersion": "1", "environment": "commercial_gym", "equipment": ("bands", "barbell", "body only", "cable", "dumbbell", "e-z curl bar", "exercise ball", "kettlebells", "machine", "medicine ball"), "description": "Common commercial-gym convenience default; it does not guarantee local availability."},
-    "bodyweight-only-v1": {"policyId": "bodyweight-only-v1", "policyVersion": "1", "environment": "bodyweight_only", "equipment": ("body only",), "description": "Exercises requiring no external equipment."},
-    "minimal-equipment-general-v1": {"policyId": "minimal-equipment-general-v1", "policyVersion": "1", "environment": "minimal_equipment", "equipment": ("bands", "body only", "dumbbell"), "description": "Conservative minimal-equipment convenience default."},
+    key: {**value, "equipment": tuple(value.get("equipment", []))}
+    for key, value in _POLICIES["environmentPolicies"].items()
 }
-GOAL_POLICIES = {
-    "general-hypertrophy-v1": {"goal": "hypertrophy", "policyVersion": "1", "planningPolicy": "full-body-general-v1", "reps": {"min": 6, "target": 8, "max": 12}, "effort": {"rir": 2}, "muscles": {"chest": {"target": 6}, "lats": {"target": 6}, "quadriceps": {"target": 6}, "hamstrings": {"target": 4}}, "description": "General, conservative coverage defaults; not an optimal prescription."},
-    "general-strength-v1": {"goal": "strength", "policyVersion": "1", "planningPolicy": "full-body-general-v1", "reps": {"min": 3, "target": 5, "max": 6}, "effort": {"rir": 2}, "muscles": {"chest": {"target": 3}, "quadriceps": {"target": 3}, "hamstrings": {"target": 2}}, "description": "Minimal generic strength defaults; exercise-specific strength programming remains out of scope."},
-}
+GOAL_POLICIES = _POLICIES["goalPolicies"]
 
 def _empty_overrides() -> dict[str, Any]:
     return {"goalPolicy": False, "planningPolicy": False, "target": False, "trainingProfile": False, "equipmentAdded": [], "equipmentRemoved": []}

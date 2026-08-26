@@ -65,6 +65,7 @@ public struct FEDatabase: Sendable {
     public func getExercise(_ id: String) throws -> Exercise { guard let e = exercises[id] else { throw FEDBError.exerciseNotFound(id) }; return e }
     public func findExercises(containing query: String) -> [Exercise] { let q = query.lowercased(); return exercises.values.filter { $0.exerciseId.lowercased().contains(q) }.sorted { $0.exerciseId < $1.exerciseId } }
     public func exercisesForMuscle(_ muscle: String) -> [Exercise] { exercises.values.filter { $0.annotation.direct.contains(muscle) || $0.annotation.indirect.contains(muscle) }.sorted { $0.exerciseId < $1.exerciseId } }
+    public var equipmentVocabulary: Set<String> { Set(exercises.values.compactMap { if case .string(let value)? = $0.source?["equipment"] { return value }; return nil }) }
 }
 
 public struct Quantity: Codable, Sendable, Equatable { public let value: Double; public let unit: String }
