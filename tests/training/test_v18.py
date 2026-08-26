@@ -1,7 +1,9 @@
 """v1.8 deterministic PLAN-generation regression tests."""
 from __future__ import annotations
 
-from fedbpp import Database, generate_plan, evaluate_plan
+import pytest
+
+from fedbpp import Database, PlanningPolicy, generate_plan, evaluate_plan
 
 
 def db(order=("alpha_press", "beta_press", "row")):
@@ -33,6 +35,14 @@ def test_generation_is_deterministic_schema_valid_and_evaluator_parity():
     assert len(result["plan"]["sessions"]) == 2
     assert result["plan"]["cycle"]["lengthDays"] == 8
     assert result["evaluation"] == evaluate_plan(result["plan"], db(), profile(), target())
+    assert result["plan"] == {
+        "schemaVersion": "0.2.0", "planId": "generated-plan", "revisionId": "r1",
+        "name": "Generated full-body-general-v1", "description": None, "cycle": {"lengthDays": 8},
+        "sessions": [
+            {"planSessionId": "session-1", "dayOffset": 0, "name": "Session 1", "exercises": [{"prescriptionId": "rx-01-01", "exerciseId": "alpha_press", "exerciseName": "Alpha Press", "order": 1, "sets": 1, "reps": {"min": 6, "target": 8, "max": 10}, "effort": {"rir": 2}, "setType": "working"}]},
+            {"planSessionId": "session-2", "dayOffset": 4, "name": "Session 2", "exercises": [{"prescriptionId": "rx-02-01", "exerciseId": "alpha_press", "exerciseName": "Alpha Press", "order": 1, "sets": 1, "reps": {"min": 6, "target": 8, "max": 10}, "effort": {"rir": 2}, "setType": "working"}]},
+        ],
+    }
 
 
 def test_db_order_and_preference_do_not_change_implicit_ordering():
@@ -54,3 +64,13 @@ def test_frequency_and_pattern_targets_are_distributed_and_satisfied():
     result = generate_plan(profile(), t, db())
     assert result["status"] == "generated"
     assert result["evaluation"]["movementPatterns"]["horizontal_push"]["state"] != "below_minimum"
+
+
+def test_zero_session_range_and_invalid_policy_are_explicit_failures():
+    p = profile(availability={"cycleLengthDays": 8, "sessionsPerCycle": {"max": 0}}, equipment=["body only"])
+    result = generate_plan(p, target(), db())
+    assert result["status"] == "unsatisfiable"
+    assert result["unsatisfiedConstraints"][0]["code"] == "SESSION_COUNT_CONFLICT"
+    policy = PlanningPolicy("bad", "1", "bad", "upper_lower", "x", "x", "x", "x", {})
+    with pytest.raises(ValueError, match="invalid planning policy configuration"):
+        generate_plan(profile(), target(), db(), policy=policy)

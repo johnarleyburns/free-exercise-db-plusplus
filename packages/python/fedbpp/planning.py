@@ -138,6 +138,11 @@ def _session_count(profile: dict[str, Any], policy: PlanningPolicy) -> tuple[lis
     av = profile.get("availability", {}) or {}; bounds = av.get("sessionsPerCycle", {}) or {}
     low, high = bounds.get("min", 1), bounds.get("max", None)
     desired = bounds.get("target", policy.parameters["defaultSessionsPerCycle"])
+    # A canonical PLAN needs at least one session even though an availability
+    # range may express zero training sessions for other application purposes.
+    if high == 0:
+        return [], [{"code": "SESSION_COUNT_CONFLICT", "detail": "canonical PLAN requires at least one session"}]
+    low = max(1, low)
     if high is not None and low > high:
         return [], [{"code": "SESSION_COUNT_CONFLICT", "minimum": low, "maximum": high}]
     if high is not None and desired > high: desired = high
@@ -145,6 +150,24 @@ def _session_count(profile: dict[str, Any], policy: PlanningPolicy) -> tuple[lis
     values = [n for n in range(low, (high + 1) if high is not None else max(desired, low) + 1)]
     # target, then nearer lower count, then nearer higher count; all explicitly bounded.
     return sorted(values, key=lambda n: (abs(n - desired), 0 if n <= desired else 1, n)), []
+
+
+def _validate_policy(policy: PlanningPolicy) -> list[str]:
+    required = ("defaultSessionsPerCycle", "setBlock", "reps", "allowUnverifiableEquipment")
+    errors = []
+    if not policy.policyId or not policy.policyVersion:
+        errors.append("policyId and policyVersion are required")
+    if policy.splitStrategy != "full_body_every_session":
+        errors.append("only full_body_every_session is implemented in v1.8")
+    for key in required:
+        if key not in policy.parameters:
+            errors.append(f"parameters.{key} is required")
+    if isinstance(policy.parameters.get("setBlock"), bool) or not isinstance(policy.parameters.get("setBlock"), int) or policy.parameters.get("setBlock", 0) < 1:
+        errors.append("parameters.setBlock must be a positive integer")
+    reps = policy.parameters.get("reps")
+    if not isinstance(reps, dict) or any(key not in reps for key in ("min", "target", "max")):
+        errors.append("parameters.reps must define min, target, and max")
+    return sorted(set(errors))
 
 
 def _day_offsets(cycle_days: int, count: int, preferred: list[int], excluded: set[int]) -> list[int] | None:
@@ -227,6 +250,9 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
     policy_obj = PLANNING_POLICIES.get(policy) if isinstance(policy, str) else policy
     if policy_obj is None:
         raise ValueError(f"unknown planning policy: {policy}")
+    policy_errors = _validate_policy(policy_obj)
+    if policy_errors:
+        raise ValueError("invalid planning policy configuration: " + "; ".join(policy_errors))
     if not isinstance(profile, dict) or not isinstance(target, dict):
         return {"status": "invalid_input", "plan": None, "evaluation": None, "policy": policy_obj.document(), "selectionRationale": [], "unsatisfiedConstraints": [{"code": "INVALID_INPUT"}], "unsatisfiedTargets": [], "unsatisfiedSoftPreferences": [], "provenance": {"generatorVersion": GENERATOR_VERSION}}
     # TARGET's portable vocabulary deliberately remains evaluator-compatible;
@@ -239,6 +265,11 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         errors.append("excluded family constraints require exercise relationships")
     if errors:
         return {"status": "invalid_input", "plan": None, "evaluation": None, "policy": policy_obj.document(), "selectionRationale": [], "unsatisfiedConstraints": [{"code": "INVALID_INPUT", "detail": x} for x in sorted(set(errors))], "unsatisfiedTargets": [], "unsatisfiedSoftPreferences": [], "provenance": {"generatorVersion": GENERATOR_VERSION}}
+    if current is not None:
+        try:
+            Plan.from_dict(current).validate()
+        except ValueError as exc:
+            return {"status": "invalid_input", "plan": None, "evaluation": None, "policy": policy_obj.document(), "selectionRationale": [], "unsatisfiedConstraints": [{"code": "INVALID_INPUT", "detail": f"current_plan: {exc}"}], "unsatisfiedTargets": [], "unsatisfiedSoftPreferences": [], "provenance": {"generatorVersion": GENERATOR_VERSION}}
     required = set(requiredExerciseIds or ()) | set(lockedExerciseIds or ())
     candidates, blockers = _candidate_pool(db, profile, relationships, required, set(additionalExclusions or ()), policy_obj)
     if blockers or not candidates:
@@ -310,7 +341,16 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         return _result("unsatisfiable", None, evaluation, policy_obj, rationale, [{"code": "EVALUATOR_HARD_CONSTRAINT", "detail": x} for x in evaluation["constraints"]["violations"]], [], [], db, profile, target, state, relationships, current)
     gaps = _deficits(evaluation, "minimum"); excesses = _excesses(evaluation); desired = _deficits(evaluation, "target")
     status = "generated" if not gaps and not excesses else "generated_with_target_gaps"
-    soft = sorted({code for codes in rationale.values() for code in codes if code.startswith("PREFERRED") is False and code == "DETERMINISTIC_TIE_BREAK"})
+    selected_ids = _ids(plan); selected_families = {_family_id(relationships, eid) for eid in selected_ids}
+    soft: list[dict[str, Any]] = []
+    if preferred and not selected_ids & preferred:
+        soft.append({"code": "PREFERRED_EXERCISE_UNSATISFIED", "exerciseIds": sorted(preferred)})
+    if preferred_families and not selected_families & preferred_families:
+        soft.append({"code": "PREFERRED_FAMILY_UNSATISFIED", "familyIds": sorted(preferred_families)})
+    if selected_ids & avoided:
+        soft.append({"code": "AVOIDED_EXERCISE_USED", "exerciseIds": sorted(selected_ids & avoided)})
+    if selected_families & avoided_families:
+        soft.append({"code": "AVOIDED_FAMILY_USED", "familyIds": sorted(selected_families & avoided_families)})
     target_reasons = [{"code": _reason_for(kind), "targetId": key, "deficit": deficit} for deficit, kind, key in gaps]
     target_reasons += [{"code": _reason_for(kind).replace("UNSATISFIED", "MAXIMUM_EXCEEDED"), "targetId": key, "excess": excess} for excess, kind, key in excesses]
     return _result(status, plan, evaluation, policy_obj, rationale, [], target_reasons, soft, db, profile, target, state, relationships, current, desired)
