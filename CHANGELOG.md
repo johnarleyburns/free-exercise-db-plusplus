@@ -16,6 +16,20 @@
 
 # Changelog
 
+## 1.7.1 - 2026-08-25
+
+- Corrected the direction-specific RPE/RIR effort reason codes without changing
+  double-progression hold or success semantics.
+- Populated TrainingState exercise prescription adherence from canonical
+  longitudinal exercise rows, preserving missingness and prescription identity.
+- Added deterministic per-prescription skip and substitution counts.
+- Clarified latest-performance compatibility fields and added deterministic
+  `latestPerformance` / `recentPerformances` structures.
+- Made policy-map progression evaluation direct and per-prescription while
+  preserving PLAN order and advisory, non-mutating behavior.
+
+No PLAN, ACTUAL, TARGET, or independent schema versions changed.
+
 ## 1.7.0 - 2026-08-25
 
 - Added deterministic derived `TrainingState` with explicit as-of timestamps,
