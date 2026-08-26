@@ -99,3 +99,84 @@ longitudinal_volume <- function(workouts, database) {
   if (!length(rows)) return(data.frame(session_id = character(), start_time = character(), muscle = character(), effective_sets = numeric(), stringsAsFactors = FALSE))
   result <- do.call(rbind, rows); names(result)[3:4] <- c("muscle", "effective_sets"); result
 }
+
+# WorkoutIntent 0.1.0 -------------------------------------------------------
+# These functions intentionally operate on lists, keeping JSON null versus
+# omission observable to research callers while matching the Python oracle's
+# resolution statuses and provenance fields.
+read_workout_intent <- function(path, validate = TRUE) {
+  intent <- jsonlite::fromJSON(path, simplifyVector = FALSE)
+  if (validate) validate_workout_intent(intent)
+  class(intent) <- c("fedbpp_workout_intent", "list"); intent
+}
+
+validate_workout_intent <- function(intent, database = NULL, relationships = NULL) {
+  if (!is.list(intent)) return("<root>: must be an object")
+  allowed <- c("schemaVersion","intentId","subjectId","goal","schedule","sessionConstraints","environment","equipmentOverrides","exerciseConstraints","preferences","continuity","useHistory","historyWindow","requestedPlanningPolicy","requestedGoalPolicy")
+  errors <- setdiff(names(intent), allowed); if (length(errors)) errors <- paste0("<root>: additional property ", errors)
+  if (!identical(intent$schemaVersion, "0.1.0")) errors <- c(errors, "schemaVersion: must be 0.1.0")
+  schedule <- intent$schedule %||% list(); days <- unique(c(schedule$preferredWeekdays %||% character(), schedule$excludedWeekdays %||% character()))
+  if (length(days) && (is.null(schedule$cycleLengthDays) || as.numeric(schedule$cycleLengthDays) != 7)) errors <- c(errors, "schedule weekday fields require cycleLengthDays of 7")
+  if (length(intersect(schedule$preferredWeekdays %||% character(), schedule$excludedWeekdays %||% character()))) errors <- c(errors, "schedule: preferredWeekdays and excludedWeekdays conflict")
+  if (length(intersect(schedule$preferredDayOffsets %||% integer(), schedule$excludedDayOffsets %||% integer()))) errors <- c(errors, "schedule: preferredDayOffsets and excludedDayOffsets conflict")
+  range_errors <- function(r, field) { if (is.null(r)) return(character()); e <- character(); if (!is.null(r$min) && !is.null(r$max) && r$min > r$max) e <- c(e, paste0(field, ": min must not exceed max")); if (!is.null(r$min) && !is.null(r$target) && r$target < r$min) e <- c(e, paste0(field, ": target must not be below min")); if (!is.null(r$max) && !is.null(r$target) && r$target > r$max) e <- c(e, paste0(field, ": target must not exceed max")); e }
+  errors <- c(errors, range_errors(schedule$sessionsPerCycle, "schedule.sessionsPerCycle"), range_errors((intent$sessionConstraints %||% list())$exercisesPerSession, "sessionConstraints.exercisesPerSession"))
+  constraints <- intent$exerciseConstraints %||% list(); if (length(intersect(unique(base::c(constraints$requiredExerciseIds %||% character(), constraints$lockedExerciseIds %||% character())), constraints$excludedExerciseIds %||% character()))) errors <- base::c(errors, "exerciseConstraints: requiredExerciseIds conflicts with excludedExerciseIds")
+  if (length(intersect(constraints$requiredFamilyIds %||% character(), constraints$excludedFamilyIds %||% character()))) errors <- c(errors, "exerciseConstraints: requiredFamilyIds conflicts with excludedFamilyIds")
+  if (identical(intent$goal, "hypertrophy") && identical(intent$requestedGoalPolicy, "general-strength-v1") || identical(intent$goal, "strength") && identical(intent$requestedGoalPolicy, "general-hypertrophy-v1")) errors <- c(errors, "GOAL_POLICY_MISMATCH")
+  if (!is.null(intent$requestedGoalPolicy) && !intent$requestedGoalPolicy %in% c("general-hypertrophy-v1", "general-strength-v1")) errors <- c(errors, "requestedGoalPolicy: unknown goal policy")
+  sort(unique(errors))
+}
+
+resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, relationships = NULL, history = NULL, as_of = NULL) {
+  doc <- if (inherits(intent, "fedbpp_workout_intent")) unclass(intent) else intent
+  equipment_overrides <- doc$equipmentOverrides %||% list()
+  empty_overrides <- list(goalPolicy = FALSE, planningPolicy = FALSE, target = FALSE, trainingProfile = FALSE, equipmentAdded = character(), equipmentRemoved = character())
+  empty <- list(status="invalid", resolvedProfile=NULL, resolvedTarget=NULL, planningPolicy=NULL, goalPolicy=NULL, environmentPolicy=NULL, generationOptions=list(), missingInformation=list(), warnings=character(), conflicts=list(), defaultsApplied=character(), explicitOverrides=empty_overrides, provenance=list(intentSchemaVersion=doc$schemaVersion %||% NULL))
+  errors <- validate_workout_intent(doc, db, relationships)
+  if (length(errors)) { empty$conflicts <- lapply(errors, function(x) list(code=if (identical(x,"GOAL_POLICY_MISMATCH")) x else "INVALID_INTENT", detail=x)); return(empty) }
+  s <- doc$schedule %||% list(); missing <- list()
+  if (is.null(doc$goal)) missing <- c(missing, list(list(field="goal", reason="required_for_goal_policy_resolution")))
+  if (is.null(s$cycleLengthDays)) missing <- c(missing, list(list(field="schedule.cycleLengthDays", reason="required_for_schedule_resolution")))
+  if (is.null(s$sessionsPerCycle)) missing <- c(missing, list(list(field="schedule.sessionsPerCycle", reason="required_for_schedule_resolution")))
+  if (is.null(doc$environment) && is.null(profile)) missing <- c(missing, list(list(field="environmentOrEquipment", reason="required_for_equipment_resolution")))
+  if (length(missing)) { empty$status <- "needs_clarification"; empty$missingInformation <- missing; return(empty) }
+  goal_id <- doc$requestedGoalPolicy
+  if (is.null(goal_id)) goal_id <- switch(doc$goal, hypertrophy="general-hypertrophy-v1", strength="general-strength-v1", NULL)
+  if (is.null(goal_id)) { empty$status <- "needs_clarification"; empty$missingInformation <- list(list(field="requestedGoalPolicy", reason="no_default_goal_policy_for_goal")); return(empty) }
+  is_strength <- identical(goal_id, "general-strength-v1"); policy_goal <- if (is_strength) "strength" else "hypertrophy"
+  if (!identical(doc$goal, policy_goal)) { empty$conflicts <- list(list(code="GOAL_POLICY_MISMATCH", goal=doc$goal, requestedGoalPolicy=goal_id, policyGoal=policy_goal)); return(empty) }
+  description <- if (is_strength) "Minimal generic strength defaults; exercise-specific strength programming remains out of scope." else "General, conservative coverage defaults; not an optimal prescription."
+  envs <- list(commercial_gym=list(id="commercial-gym-general-v1", equipment=c("bands","barbell","body only","cable","dumbbell","e-z curl bar","exercise ball","kettlebells","machine","medicine ball")), bodyweight_only=list(id="bodyweight-only-v1", equipment="body only"), minimal_equipment=list(id="minimal-equipment-general-v1", equipment=c("bands","body only","dumbbell")))
+  env <- envs[[doc$environment]]; additions <- sort(unique(equipment_overrides$addEquipment %||% character())); removals <- sort(unique(equipment_overrides$removeEquipment %||% character()))
+  base_equipment <- if (!is.null(profile$equipment)) profile$equipment else if (!is.null(env)) env$equipment else character(); resolved_equipment <- sort(setdiff(union(base_equipment, additions), removals))
+  resolved_profile <- profile %||% list(); resolved_profile$schemaVersion <- resolved_profile$schemaVersion %||% "0.1.0"; resolved_profile$profileId <- resolved_profile$profileId %||% "resolved-profile"; resolved_profile$subjectId <- doc$subjectId %||% resolved_profile$subjectId %||% NULL; resolved_profile$goals <- list(list(type=doc$goal)); resolved_profile$equipment <- resolved_equipment; resolved_profile$exercisePreferences <- resolved_profile$exercisePreferences %||% list()
+  av <- resolved_profile$availability %||% list(); av$cycleLengthDays <- s$cycleLengthDays; av$sessionsPerCycle <- s$sessionsPerCycle; av$preferredDayOffsets <- sort(unique(c(s$preferredDayOffsets %||% integer(), match(s$preferredWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$preferredDayOffsets <- av$preferredDayOffsets[!is.na(av$preferredDayOffsets)]; av$excludedDayOffsets <- sort(unique(c(s$excludedDayOffsets %||% integer(), match(s$excludedWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$excludedDayOffsets <- av$excludedDayOffsets[!is.na(av$excludedDayOffsets)]; if (!is.null(doc$sessionConstraints$exercisesPerSession)) av$exercisesPerSession <- doc$sessionConstraints$exercisesPerSession; resolved_profile$availability <- av; resolved_profile$constraints <- resolved_profile$constraints %||% list(); resolved_profile$constraints$excludedExerciseIds <- resolved_profile$constraints$excludedExerciseIds %||% character(); resolved_profile$constraints$excludedFamilyIds <- resolved_profile$constraints$excludedFamilyIds %||% character()
+  muscles <- if (is_strength) list(chest=list(target=3), quadriceps=list(target=3), hamstrings=list(target=2)) else list(chest=list(target=6), lats=list(target=6), quadriceps=list(target=6), hamstrings=list(target=4)); default_target <- list(schemaVersion="0.1.0", targetId=paste0(goal_id,"-default"), periodDays=s$cycleLengthDays, muscles=muscles, notes=description); resolved_target <- merge_target(default_target, target)
+  target_errors <- validate_target(resolved_target); if (length(target_errors)) { empty$resolvedTarget <- resolved_target; empty$conflicts <- lapply(target_errors, function(x) list(code="TARGET_OVERRIDE_CONFLICT", detail=x)); return(empty) }
+  defaults <- c(if (is.null(doc$requestedGoalPolicy)) "goalPolicy", if (is.null(doc$requestedPlanningPolicy)) "planningPolicy", if (!is.null(env) && is.null(profile)) "environmentPolicy")
+  options <- list(continuity=doc$continuity %||% "neutral", repDefaults=if (is_strength) list(min=3,target=5,max=6) else list(min=6,target=8,max=12), effortDefaults=list(rir=2), requiredFamilyIds=character())
+  warnings <- character(); if (isTRUE(doc$useHistory) && is.null(history)) warnings <- c(warnings, "useHistory was requested but no history was provided"); if (isTRUE(doc$useHistory) && !is.null(history) && is.null(as_of)) warnings <- c(warnings, "useHistory was requested but as_of is required to derive TrainingState")
+  dbmd <- db$metadata %||% list(); rel_version <- if (!is.null(relationships)) relationships$schemaVersion %||% NULL else NULL
+  list(status=if(length(defaults)) "resolved_with_defaults" else "resolved", resolvedProfile=resolved_profile, resolvedTarget=resolved_target, planningPolicy=doc$requestedPlanningPolicy %||% "full-body-general-v1", goalPolicy=list(policyId=goal_id, policyVersion="1", description=description), environmentPolicy=if(!is.null(env)) env$id else NULL, generationOptions=options, missingInformation=list(), warnings=warnings, conflicts=list(), defaultsApplied=defaults, explicitOverrides=list(goalPolicy=!is.null(doc$requestedGoalPolicy), planningPolicy=!is.null(doc$requestedPlanningPolicy), target=!is.null(target), trainingProfile=!is.null(profile), equipmentAdded=additions, equipmentRemoved=removals), provenance=list(intentSchemaVersion=doc$schemaVersion, goalPolicy=list(policyId=goal_id, policyVersion="1"), environmentPolicy=if(!is.null(env)) list(policyId=env$id, policyVersion="1") else NULL, dbSchemaVersion=dbmd$schemaVersion %||% NULL, dbConverterVersion=dbmd$converterVersion %||% NULL, relationshipSchemaVersion=rel_version))
+}
+
+generate_plan_from_intent <- function(intent, db, ...) stop("native R plan generation is deferred; use resolve_intent()")
+
+merge_target <- function(default, explicit = NULL) {
+  if (is.null(explicit)) return(default)
+  result <- default
+  merge_section <- function(left, right) { if (is.null(left)) left <- list(); for (key in names(right)) left[[key]] <- if (is.list(right[[key]]) && is.list(left[[key]])) modifyList(left[[key]], right[[key]]) else right[[key]]; left }
+  for (key in names(explicit)) {
+    if (key %in% c("muscles", "movementPatterns", "families")) result[[key]] <- merge_section(result[[key]], explicit[[key]])
+    else if (identical(key, "frequency")) { result$frequency <- result$frequency %||% list(); result$frequency$muscles <- merge_section(result$frequency$muscles, explicit[[key]]$muscles %||% list()) }
+    else result[[key]] <- explicit[[key]]
+  }
+  result
+}
+
+validate_target <- function(target) {
+  errors <- character(); check <- function(section, values, keys) { if (is.null(values)) return(character()); out <- character(); for (name in names(values)) { r <- values[[name]]; if (!is.null(r[[keys[1]]]) && !is.null(r[[keys[3]]]) && r[[keys[1]]] > r[[keys[3]]]) out <- c(out, paste0(section, ".", name, ": min must not exceed max")); if (!is.null(r[[keys[1]]]) && !is.null(r[[keys[2]]]) && r[[keys[2]]] < r[[keys[1]]]) out <- c(out, paste0(section, ".", name, ": target must not be below min")); if (!is.null(r[[keys[3]]]) && !is.null(r[[keys[2]]]) && r[[keys[2]]] > r[[keys[3]]]) out <- c(out, paste0(section, ".", name, ": target must not exceed max")) }; out }
+  errors <- c(errors, check("muscles", target$muscles, c("min", "target", "max")), check("frequency.muscles", (target$frequency %||% list())$muscles, c("min", "target", "max")), check("movementPatterns", target$movementPatterns, c("minimumSets", "targetSets", "maximumSets")), check("families", target$families, c("minimumSets", "targetSets", "maximumSets")))
+  sort(unique(errors))
+}

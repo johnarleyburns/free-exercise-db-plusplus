@@ -12,3 +12,12 @@ val healthConnect = workout.toHealthConnect() // preserves dbppExerciseId
 Run `gradle test` from `packages/kotlin/fedbpp`.
 
 Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting. Advanced PLAN/TARGET/adherence parity is not currently claimed.
+
+WorkoutIntent resolution is native and JVM-only:
+
+```kotlin
+val intent = WorkoutIntent(goal = "hypertrophy", environment = "commercial_gym",
+    schedule = WorkoutSchedule(7, IntRangeValue(target = 5),
+        preferredWeekdays = listOf("monday", "tuesday", "wednesday", "thursday", "saturday")))
+val resolution = resolveIntent(intent)
+```

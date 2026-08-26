@@ -36,6 +36,19 @@ Python / services, notebooks, automation
 R / research and statistical workflows
 ```
 
+## v1.11 implementation status (2026-08-26)
+
+The native WorkoutIntent model/validation/resolution boundary is implemented
+for Swift, Kotlin/JVM, and R against the frozen Python v1.10.1 contract.
+Complete DB-aware TARGET/profile/history parity and native intent-to-plan
+generation remain open v1.12 work; the capability matrix and audit document
+are authoritative and do not claim those features prematurely.
+
+v1.12 explicitly targets production-quality Swift SPM, the complete native
+intent-to-plan path required by an Apple app, a clean structured
+LLM-produced-WorkoutIntent boundary, and validation/clarification APIs for
+conversational hosts. DB++ will remain free of LLM vendor dependencies.
+
 The end goal by **v1.12** is:
 
 ```text

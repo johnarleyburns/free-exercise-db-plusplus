@@ -6,6 +6,21 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class FedbppTest {
+    @Test fun workoutIntentFlagshipResolvesNatively() {
+        val intent = WorkoutIntent(goal = "hypertrophy", environment = "commercial_gym", schedule = WorkoutSchedule(7, IntRangeValue(target = 5), preferredWeekdays = listOf("monday", "tuesday", "wednesday", "thursday", "saturday")))
+        val result = resolveIntent(intent)
+        assertEquals("resolved_with_defaults", result.status)
+        assertEquals("general-hypertrophy-v1", result.goalPolicy?.policyId)
+        assertEquals(listOf("goalPolicy", "planningPolicy", "environmentPolicy"), result.defaultsApplied)
+        val profile = result.resolvedProfile as kotlinx.serialization.json.JsonObject
+        assertEquals("commercial-gym-general-v1", result.environmentPolicy)
+        assertEquals("[0,1,2,3,5]", (profile["availability"] as kotlinx.serialization.json.JsonObject)["preferredDayOffsets"]?.toString())
+    }
+    @Test fun workoutIntentGoalMismatchIsStructured() {
+        val intent = WorkoutIntent(goal = "hypertrophy", requestedGoalPolicy = "general-strength-v1", environment = "commercial_gym", schedule = WorkoutSchedule(7, IntRangeValue(target = 3)))
+        val result = resolveIntent(intent)
+        assertEquals("invalid", result.status); assertEquals("GOAL_POLICY_MISMATCH", result.conflicts.single().code); assertEquals(ExplicitOverrides(), result.explicitOverrides)
+    }
     @Test fun databaseLoadsAndQueries() {
         val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "free-exercise-db-plusplus.json").exists() }
         val db = Database.load(File(root, "free-exercise-db-plusplus.json"))

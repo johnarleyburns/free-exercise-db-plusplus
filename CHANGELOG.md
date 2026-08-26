@@ -16,6 +16,15 @@
 
 # Changelog
 
+## 1.11.0 (unreleased)
+
+- Add native Swift, Kotlin/JVM, and R WorkoutIntent models, validation, and
+  deterministic resolution boundaries.
+- Add stable typed `explicitOverrides`/resolution result shapes and offline
+  policy resources.
+- Document cross-language parity status and defer native plan generation to
+  v1.12 rather than claiming unsupported parity.
+
 ## 1.10.1 - 2026-08-26
 
 - Stabilize `IntentResolutionResult.explicitOverrides` as a fixed typed object across all statuses.

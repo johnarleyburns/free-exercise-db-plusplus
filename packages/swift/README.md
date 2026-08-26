@@ -11,3 +11,14 @@ let coverage = plan.coverage(using: db)
 ```
 
 Run tests with `swift test` from `packages/swift/FreeExerciseDBPlusPlus`.
+
+WorkoutIntent resolution is native and Foundation-only. It is the boundary for
+an application's own structured LLM adapter; no model framework is included.
+
+```swift
+let intent = WorkoutIntent(goal: "hypertrophy", environment: "commercial_gym",
+    schedule: WorkoutSchedule(cycleLengthDays: 7,
+        sessionsPerCycle: IntRange(target: 5),
+        preferredWeekdays: ["monday", "tuesday", "wednesday", "thursday", "saturday"]))
+let resolution = resolveIntent(intent)
+```

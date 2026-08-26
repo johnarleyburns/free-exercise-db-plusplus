@@ -14,3 +14,10 @@ Analyses retain source exercise IDs and annotation confidence. Missing IDs, name
 Run `Rscript tests/test_package.R` from this directory.
 
 Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting. Advanced PLAN/TARGET/adherence parity is not currently claimed.
+
+WorkoutIntent resolution is available without a network service:
+
+```r
+intent <- read_workout_intent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")
+resolution <- resolve_intent(intent)
+```

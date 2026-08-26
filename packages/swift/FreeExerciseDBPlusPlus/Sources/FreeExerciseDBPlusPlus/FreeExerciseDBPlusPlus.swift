@@ -24,6 +24,9 @@ public indirect enum JSONValue: Codable, Sendable, Equatable {
         switch self { case .null: try c.encodeNil(); case .bool(let v): try c.encode(v); case .number(let v): try c.encode(v); case .string(let v): try c.encode(v); case .array(let v): try c.encode(v); case .object(let v): try c.encode(v) }
     }
 }
+public extension JSONValue {
+    var objectValue: [String: JSONValue]? { if case .object(let value) = self { return value }; return nil }
+}
 
 public struct ExerciseAnnotation: Codable, Sendable, Equatable {
     public let direct: [String]
