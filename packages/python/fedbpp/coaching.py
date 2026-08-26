@@ -110,10 +110,20 @@ def _hard_invalid(evaluation: dict[str, Any]) -> bool:
     return not evaluation["summary"]["satisfiesHardConstraints"]
 
 
-def _target_excess_count(evaluation: dict[str, Any]) -> int:
-    sections = (evaluation.get("muscleCoverage", {}), evaluation.get("frequency", {}),
-                evaluation.get("movementPatterns", {}), evaluation.get("families", {}).get("targets", {}))
-    return sum(1 for section in sections for value in section.values() if value.get("state") == "above_maximum")
+def _target_excesses(evaluation: dict[str, Any]) -> dict[tuple[str, str], float]:
+    """Read maximum excess directly from canonical evaluator fields."""
+    sections = (("muscle", evaluation.get("muscleCoverage", {}), "actualEffectiveSets"),
+                ("frequency", evaluation.get("frequency", {}), "normalizedExposuresPer7Days"),
+                ("movementPattern", evaluation.get("movementPatterns", {}), "plannedSets"),
+                ("family", evaluation.get("families", {}).get("targets", {}), "plannedSets"))
+    return {(kind, key): max(0.0, float(row[value]) - float(row["maximum"]))
+            for kind, rows, value in sections for key, row in rows.items()
+            if row.get("maximum") is not None and row.get(value) is not None}
+
+
+def _worsens_target_excess(current: dict[str, Any], proposed: dict[str, Any]) -> bool:
+    before, after = _target_excesses(current), _target_excesses(proposed)
+    return any(amount > before.get(key, 0.0) for key, amount in after.items())
 
 
 def _state_for_current(history: TrainingHistory, current: dict[str, Any]) -> TrainingHistory:
@@ -251,27 +261,18 @@ def _allowed_replacement(exercise_id: str, profile: dict[str, Any], db: Any, rel
     return equipment in available or (equipment in {"body only", "bodyweight", "no equipment", "none"} and available & {"body only", "bodyweight", "no equipment", "none"})
 
 
-def _substitution_changes(candidate: dict[str, Any], history: TrainingHistory | None, state: dict[str, Any], profile: dict[str, Any], db: Any, relationships: Any, policy: CoachingPolicy) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+def _substitution_changes(candidate: dict[str, Any], state: dict[str, Any], profile: dict[str, Any], db: Any, relationships: Any, policy: CoachingPolicy) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Only explicit ACTUAL substitutions can propose an exercise replacement."""
-    if history is None:
-        return [], []
-    observed: dict[str, dict[str, int]] = {}
-    for workout in history.workouts:
-        for actual in workout.get("exercises", []):
-            substitution = actual.get("substitution") or {}
-            rxid = actual.get("exercisePrescriptionId") or substitution.get("plannedPrescriptionId")
-            replacement_id = actual.get("exerciseId")
-            if rxid and replacement_id and substitution:
-                observed.setdefault(rxid, {})[replacement_id] = observed.setdefault(rxid, {}).get(replacement_id, 0) + 1
+    observed = state.get("adherenceState", {}).get("substitutionHistoryByPrescription", {})
     decisions: list[dict[str, Any]] = []; changes: list[dict[str, Any]] = []
     for session in candidate.get("sessions", []):
         for rx in session.get("exercises", []):
             rxid = rx.get("prescriptionId")
-            choices = [(count, eid) for eid, count in observed.get(rxid, {}).items()
-                       if eid != rx.get("exerciseId") and count >= policy.parameters["repeatedSubstitutionThreshold"] and _allowed_replacement(eid, profile, db, relationships)]
+            choices = [(int(detail.get("count", 0)), eid, detail) for eid, detail in observed.get(rxid, {}).items()
+                       if eid != rx.get("exerciseId") and int(detail.get("count", 0)) >= policy.parameters["repeatedSubstitutionThreshold"] and _allowed_replacement(eid, profile, db, relationships)]
             if not choices:
                 continue
-            _, replacement = sorted(choices, key=lambda x: (-x[0], x[1]))[0]
+            _, replacement, detail = sorted(choices, key=lambda x: (-x[0], x[1]))[0]
             before = deepcopy(rx); rx["exerciseId"] = replacement
             source = _exercise_data(db, replacement) or {}
             if source.get("source", {}).get("name"):
@@ -283,7 +284,7 @@ def _substitution_changes(candidate: dict[str, Any], history: TrainingHistory | 
                               "prescriptionId": rxid, "exerciseId": before.get("exerciseId"),
                               "before": {"exerciseId": before.get("exerciseId")}, "after": {"exerciseId": replacement},
                               "reasonCodes": ["REPEATED_SUBSTITUTION"],
-                              "evidence": {"substitutionCount": observed[rxid][replacement], "replacementExerciseId": replacement},
+                              "evidence": {"prescriptionId":rxid,"substitutionCount": detail["count"], "replacementExerciseId": replacement, "sessionIds":detail.get("sessionIds",[]), "timestamps":detail.get("timestamps",[])},
                               "provenance": state.get("provenance", {})})
             changes.append(_change("EXERCISE_SUBSTITUTED", before, rx, ["REPEATED_SUBSTITUTION"], did))
     return decisions, changes
@@ -340,12 +341,14 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
         if generated.get("plan") is None:
             return _result("unsatisfiable", current, None, current_eval, generated.get("evaluation"), state, [], [], generated.get("unsatisfiedConstraints", []), db, policy_obj, planning_policy or "full-body-general-v1")
         decision = {"schemaVersion": "0.1.0", "decisionId": "decision-regenerate", "decisionType": "regenerate_plan", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "evidence": {"violations": current_eval["constraints"]["violations"]}, "provenance": state.get("provenance", {})}
+        if _hard_invalid(generated["evaluation"]) or _worsens_target_excess(current_eval, generated["evaluation"]):
+            return _result("unsatisfiable", current, None, current_eval, generated["evaluation"], state, [decision], [], [{"code":"EVALUATOR_GATE_REJECTED"}], db, policy_obj, planning_policy or "full-body-general-v1")
         return _result("regeneration_proposed", current, generated["plan"], current_eval, generated["evaluation"], state, [decision], [{"type": "PLAN_REGENERATED", "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "decisionIds": ["decision-regenerate"]}], [], db, policy_obj, planning_policy or "full-body-general-v1")
     # Progression policies intentionally require the active revision.  Apply
     # their advisory deltas to a copy while it still identifies as current,
     # then assign the immutable proposal its new revision identity.
     candidate = deepcopy(current)
-    substitution_decisions, substitution_changes = _substitution_changes(candidate, history if isinstance(history, TrainingHistory) else None, state, profile, db, relationships, policy_obj)
+    substitution_decisions, substitution_changes = _substitution_changes(candidate, state, profile, db, relationships, policy_obj)
     decisions, changes = _exercise_changes(candidate, state, policy_obj)
     decisions = substitution_decisions + decisions; changes = substitution_changes + changes
     decisions += _adherence_decisions(current, state, policy_obj)
@@ -360,7 +363,8 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
             generated = generate_plan(profile, target, db, policy=planning_policy or "full-body-general-v1", training_state=state, relationships=relationships, current_plan=current, options={"planId": current.get("planId"), "revisionId": revision, "name": current.get("name")})
             if generated.get("plan") is not None:
                 decision = {"schemaVersion": "0.1.0", "decisionId": "decision-regenerate-target", "decisionType": "regenerate_plan", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "evidence": {"frequencyMuscles": frequency_gaps, "targetGaps": target_gaps}, "provenance": state.get("provenance", {})}
-                return _result("regeneration_proposed", current, generated["plan"], current_eval, generated["evaluation"], state, decisions + [decision], [], [], db, policy_obj, planning_policy or "full-body-general-v1")
+                if not _hard_invalid(generated["evaluation"]) and not _worsens_target_excess(current_eval, generated["evaluation"]):
+                    return _result("regeneration_proposed", current, generated["plan"], current_eval, generated["evaluation"], state, decisions + [decision], [], [], db, policy_obj, planning_policy or "full-body-general-v1")
         sparse = not any(x.get("recentSessionCount", 0) for x in state.get("exerciseState", {}).values())
         if sparse:
             decisions.append({"schemaVersion": "0.1.0", "decisionId": "decision-insufficient-history", "decisionType": "insufficient_data", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["INSUFFICIENT_HISTORY"], "evidence": {}, "provenance": state.get("provenance", {})})
@@ -372,7 +376,7 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
         return _result("unsatisfiable", current, None, current_eval, None, state, decisions, changes, [{"code": "INVALID_PROPOSAL", "detail": str(exc)}], db, policy_obj, planning_policy)
     proposed_eval = evaluate_plan(candidate, db, profile, target, relationships)
     if (_hard_invalid(proposed_eval) or proposed_eval["summary"]["targetGaps"] > current_eval["summary"]["targetGaps"]
-            or _target_excess_count(proposed_eval) > _target_excess_count(current_eval)):
+            or _worsens_target_excess(current_eval, proposed_eval)):
         return _result("unsatisfiable", current, None, current_eval, proposed_eval, state, decisions, changes, [{"code": "EVALUATOR_GATE_REJECTED"}], db, policy_obj, planning_policy)
     return _result("revision_proposed", current, candidate, current_eval, proposed_eval, state, decisions, changes, [], db, policy_obj, planning_policy)
 

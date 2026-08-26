@@ -95,10 +95,15 @@ def derive_training_state(history, db, *, as_of, window="last_28_days", relation
         plan_context["cyclePosition"] = ((end-date.fromisoformat(str((activation or {}).get("effectiveFrom", start))[:10])).days % int(active.get("cycle",{}).get("lengthDays",7))) + 1
         cycle_length=int(active.get("cycle",{}).get("lengthDays",7)); occ=[o for o in _scheduled(active,asof.date(),asof.date()+timedelta(days=cycle_length),history,"custom_date_range",_tz(tz)) if o.scheduled_date >= asof.date()]
         plan_context["nextScheduledOccurrence"] = next(({"scheduledDate":o.scheduled_date.isoformat(),"planSessionId":o.plan_session_id} for o in occ if o.scheduled_date >= asof.date()), None)
-    exids=set()
+    exids=set(); explicit_substitutions=[]
     if active: exids.update(rx.get("exerciseId") for s in active.get("sessions",[]) for rx in s.get("exercises",[]) if rx.get("exerciseId"))
     for w in history.workouts:
-        if w.get("startTime") and start <= _stamp(w["startTime"],tz).date() <= end and _stamp(w["startTime"],tz) <= asof: exids.update(e.get("exerciseId") for e in w.get("exercises",[]) if e.get("exerciseId"))
+        if w.get("startTime") and start <= _stamp(w["startTime"],tz).date() <= end and _stamp(w["startTime"],tz) <= asof:
+            exids.update(e.get("exerciseId") for e in w.get("exercises",[]) if e.get("exerciseId"))
+            for e in w.get("exercises", []):
+                substitution=e.get("substitution") or {}; rxid=e.get("exercisePrescriptionId") or substitution.get("plannedPrescriptionId")
+                if substitution and rxid and e.get("exerciseId"):
+                    explicit_substitutions.append({"prescriptionId":rxid,"replacementExerciseId":e["exerciseId"],"sessionId":w.get("sessionId"),"timestamp":w.get("startTime")})
     states={}
     exercises=analysis.get("exerciseRows",[])
     for eid in sorted(exids):
@@ -135,7 +140,11 @@ def derive_training_state(history, db, *, as_of, window="last_28_days", relation
     for row in exercises:
         if row.get("match_status")=="missing_prescription" and row.get("prescription_id"): skipped_counts[row["prescription_id"]]=skipped_counts.get(row["prescription_id"],0)+1
         if row.get("match_status")=="substitution" and row.get("prescription_id"): substitution_counts[row["prescription_id"]]=substitution_counts.get(row["prescription_id"],0)+1
-    adherence_state={"sessionAdherence":sessions,"exercisePrescriptionAdherence":exercises,"substitutionAdjustedCompletion":sum(1 for x in exercises if x.get("match_status") in {"matched","substitution"}),"missedScheduledOccurrences":[x for x in sessions if x.get("session_status")=="missed_planned_session"],"repeatedSkippedExercises":sorted(skipped_counts),"repeatedSubstitutions":sorted(substitution_counts),"skippedPrescriptionCounts":dict(sorted(skipped_counts.items())),"substitutionCountsByPrescription":dict(sorted(substitution_counts.items())),"unplannedExercises":[x for x in exercises if x.get("match_status")=="unplanned_addition"],"unplannedSets":sum(x.get("unplanned_sets",0) for x in sessions)}
+    substitution_history={}
+    for item in sorted(explicit_substitutions,key=lambda x:(x["prescriptionId"],x["replacementExerciseId"],x.get("timestamp") or "",x.get("sessionId") or "")):
+        row=substitution_history.setdefault(item["prescriptionId"],{}).setdefault(item["replacementExerciseId"],{"count":0,"sessionIds":[],"timestamps":[]})
+        row["count"]+=1; row["sessionIds"].append(item.get("sessionId")); row["timestamps"].append(item.get("timestamp"))
+    adherence_state={"sessionAdherence":sessions,"exercisePrescriptionAdherence":exercises,"substitutionAdjustedCompletion":sum(1 for x in exercises if x.get("match_status") in {"matched","substitution"}),"missedScheduledOccurrences":[x for x in sessions if x.get("session_status")=="missed_planned_session"],"repeatedSkippedExercises":sorted(skipped_counts),"repeatedSubstitutions":sorted(substitution_counts),"skippedPrescriptionCounts":dict(sorted(skipped_counts.items())),"substitutionCountsByPrescription":dict(sorted(substitution_counts.items())),"substitutionHistoryByPrescription":substitution_history,"unplannedExercises":[x for x in exercises if x.get("match_status")=="unplanned_addition"],"unplannedSets":sum(x.get("unplanned_sets",0) for x in sessions)}
     return {"stateVersion":STATE_VERSION,"subjectId":history.subject_id,"asOf":asof.isoformat(),"historyWindow":prov["historyWindow"],"activePlan":plan_context,"exerciseState":states,"familyState":families,"muscleState":muscle,"adherenceState":adherence_state,"sessionState":sessions,"provenance":prov}
 
 __all__=["derive_training_state","STATE_VERSION"]

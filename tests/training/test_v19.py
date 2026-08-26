@@ -4,6 +4,7 @@ from __future__ import annotations
 from copy import deepcopy
 
 from fedbpp import Database, TrainingHistory, adapt_plan, evaluate_plan
+from fedbpp.coaching import _worsens_target_excess
 
 
 DB = Database({"metadata": {"schemaVersion": "db", "converterVersion": "c", "upstream": {"sha256": "a" * 64},
@@ -73,6 +74,31 @@ def test_explicit_repeated_substitution_is_the_only_substitution_signal():
     assert result["status"] == "revision_proposed"
     assert result["proposedPlan"]["sessions"][0]["exercises"][0]["exerciseId"] == "alternate_press"
     assert any(d["decisionType"] == "substitute_exercise" for d in result["decisions"])
+
+
+def test_substitution_evidence_obeys_state_window_and_as_of():
+    def substituted(day, sid):
+        w = _actual(day, sid); actual = w["exercises"][0]
+        actual["exerciseId"] = "alternate_press"; actual["substitution"] = {"plannedPrescriptionId": "press-rx", "reason": "equipment"}
+        return w
+    valid = [substituted("2026-08-10", "a"), substituted("2026-08-18", "b")]
+    base = adapt_plan(PROFILE, TARGET, PLAN, _history(*valid), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
+    future = adapt_plan(PROFILE, TARGET, PLAN, _history(valid[0], substituted("2026-09-01", "future")), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
+    stale = adapt_plan(PROFILE, TARGET, PLAN, _history(valid[0], substituted("2026-06-01", "old")), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
+    assert base["status"] == "revision_proposed"
+    assert future["status"] != "revision_proposed" and stale["status"] != "revision_proposed"
+    evidence = next(d["evidence"] for d in base["decisions"] if d["decisionType"] == "substitute_exercise")
+    assert evidence["sessionIds"] == ["a", "b"]
+
+
+def test_target_maximum_gate_compares_excess_magnitude_and_ignores_missing_maximum():
+    def evaluation(chest, maximum):
+        return {"muscleCoverage": {"chest": {"actualEffectiveSets": chest, "maximum": maximum}},
+                "frequency": {}, "movementPatterns": {}, "families": {"targets": {}}}
+    assert _worsens_target_excess(evaluation(13, 12), evaluation(14, 12))
+    assert not _worsens_target_excess(evaluation(14, 12), evaluation(13, 12))
+    assert _worsens_target_excess(evaluation(12, 12), evaluation(13, 12))
+    assert not _worsens_target_excess(evaluation(13, None), evaluation(20, None))
 
 
 def test_unrepairable_target_drift_is_a_generator_backed_proposal_not_no_change():
