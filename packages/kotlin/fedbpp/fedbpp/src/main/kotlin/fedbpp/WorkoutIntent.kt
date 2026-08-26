@@ -4,9 +4,22 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
+
+private object IntentPolicyCatalog {
+    val root: JsonObject by lazy {
+        val stream = IntentPolicyCatalog::class.java.classLoader.getResourceAsStream("intent-policies.json")
+            ?: error("intent-policies.json is not packaged")
+        stream.use { Json.parseToJsonElement(it.bufferedReader().readText()).jsonObject }
+    }
+    val goals get() = root["goalPolicies"]!!.jsonObject
+    val environments get() = root["environmentPolicies"]!!.jsonObject
+}
 
 @Serializable data class IntRangeValue(val min: Int? = null, val target: Int? = null, val max: Int? = null)
 @Serializable data class WorkoutSchedule(val cycleLengthDays: Int? = null, val sessionsPerCycle: IntRangeValue? = null, val preferredDayOffsets: List<Int> = emptyList(), val excludedDayOffsets: List<Int> = emptyList(), val preferredWeekdays: List<String> = emptyList(), val excludedWeekdays: List<String> = emptyList())
@@ -58,10 +71,17 @@ object WorkoutIntentResolver {
         if (intent.environment == "custom" && suppliedEquipment.isEmpty() && intent.equipmentOverrides?.addEquipment.orEmpty().isEmpty()) return IntentResolutionResult("needs_clarification", missingInformation = listOf(MissingInformation("equipmentOverrides.addEquipment", "required_for_custom_environment")))
         val goalId = intent.requestedGoalPolicy ?: when (intent.goal) { "hypertrophy" -> "general-hypertrophy-v1"; "strength" -> "general-strength-v1"; else -> null }
         if (goalId == null) return IntentResolutionResult("needs_clarification", missingInformation = listOf(MissingInformation("requestedGoalPolicy", "no_default_goal_policy_for_goal")), explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
-        val description = if (goalId == "general-strength-v1") "Minimal generic strength defaults; exercise-specific strength programming remains out of scope." else "General, conservative coverage defaults; not an optimal prescription."
+        val goalPolicy = IntentPolicyCatalog.goals[goalId]?.jsonObject
+            ?: return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("INVALID_INTENT", "requestedGoalPolicy: unknown goal policy")))
+        val description = goalPolicy["description"]?.jsonPrimitive?.content
+        val policyVersion = goalPolicy["policyVersion"]?.jsonPrimitive?.content ?: "1"
         if (goalId == "general-strength-v1" && intent.goal != "strength" || goalId == "general-hypertrophy-v1" && intent.goal != "hypertrophy") return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("GOAL_POLICY_MISMATCH", goal = intent.goal, requestedGoalPolicy = goalId, policyGoal = if (goalId == "general-strength-v1") "strength" else "hypertrophy")), provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
-        val environment = mapOf("commercial_gym" to "commercial-gym-general-v1", "bodyweight_only" to "bodyweight-only-v1", "minimal_equipment" to "minimal-equipment-general-v1")[intent.environment]
-        val envEquipment = mapOf("commercial_gym" to listOf("bands", "barbell", "body only", "cable", "dumbbell", "e-z curl bar", "exercise ball", "kettlebells", "machine", "medicine ball"), "bodyweight_only" to listOf("body only"), "minimal_equipment" to listOf("bands", "body only", "dumbbell"))[intent.environment].orEmpty()
+        val environmentPolicy = IntentPolicyCatalog.environments.values
+            .map { it.jsonObject }
+            .firstOrNull { it["environment"]?.jsonPrimitive?.content == intent.environment }
+        val environment = environmentPolicy?.get("policyId")?.jsonPrimitive?.content
+        val envEquipment = environmentPolicy?.get("equipment")?.jsonArray?.map { it.jsonPrimitive.content }.orEmpty()
+        val environmentVersion = environmentPolicy?.get("policyVersion")?.jsonPrimitive?.content ?: "1"
         var resolvedEquipment = ((if (suppliedEquipment.isEmpty()) envEquipment else suppliedEquipment) + equipment.addEquipment).toSet().minus(equipment.removeEquipment).toList().sorted()
         if (database != null) resolvedEquipment = resolvedEquipment.filter { it in database.equipmentVocabulary || it == "body only" }.sorted()
         val resolvedEnvironment = if (suppliedEquipment.isEmpty()) environment else null
@@ -74,15 +94,33 @@ object WorkoutIntentResolver {
             put("subjectId", intent.subjectId?.let(::JsonPrimitive) ?: supplied?.get("subjectId") ?: kotlinx.serialization.json.JsonNull)
             put("goals", kotlinx.serialization.json.buildJsonArray { add(buildJsonObject { put("type", JsonPrimitive(intent.goal!!)) }) })
             put("equipment", kotlinx.serialization.json.buildJsonArray { resolvedEquipment.forEach { add(JsonPrimitive(it)) } })
-            put("exercisePreferences", supplied?.get("exercisePreferences") ?: JsonObject(emptyMap()))
+            val suppliedPreferences = supplied?.get("exercisePreferences") as? JsonObject
+            put("exercisePreferences", buildJsonObject {
+                suppliedPreferences?.forEach { (key, value) -> put(key, value) }
+                val input = intent.preferences
+                listOf(
+                    "preferredExerciseIds" to input?.preferredExerciseIds.orEmpty(),
+                    "avoidedExerciseIds" to input?.avoidedExerciseIds.orEmpty(),
+                    "preferredFamilyIds" to input?.preferredFamilyIds.orEmpty(),
+                    "avoidedFamilyIds" to input?.avoidedFamilyIds.orEmpty()
+                ).forEach { (key, values) ->
+                    if (values.isNotEmpty()) {
+                        val existing = (suppliedPreferences?.get(key) as? kotlinx.serialization.json.JsonArray)
+                            ?.map { it.jsonPrimitive.content }.orEmpty()
+                        put(key, kotlinx.serialization.json.buildJsonArray {
+                            (existing + values).toSet().sorted().forEach { add(JsonPrimitive(it)) }
+                        })
+                    }
+                }
+            })
             put("constraints", buildJsonObject { val suppliedConstraints = supplied?.get("constraints") as? JsonObject; put("excludedExerciseIds", kotlinx.serialization.json.buildJsonArray { ((suppliedConstraints?.get("excludedExerciseIds") as? kotlinx.serialization.json.JsonArray)?.map { it.jsonPrimitive.content }.orEmpty() + intent.exerciseConstraints?.excludedExerciseIds.orEmpty()).toSet().sorted().forEach { add(JsonPrimitive(it)) } }); put("excludedFamilyIds", kotlinx.serialization.json.buildJsonArray { ((suppliedConstraints?.get("excludedFamilyIds") as? kotlinx.serialization.json.JsonArray)?.map { it.jsonPrimitive.content }.orEmpty() + intent.exerciseConstraints?.excludedFamilyIds.orEmpty()).toSet().sorted().forEach { add(JsonPrimitive(it)) } }) })
             put("availability", buildJsonObject { put("cycleLengthDays", JsonPrimitive(intent.schedule!!.cycleLengthDays!!)); put("sessionsPerCycle", buildJsonObject { val r = intent.schedule.sessionsPerCycle!!; r.min?.let { put("min", JsonPrimitive(it)) }; r.target?.let { put("target", JsonPrimitive(it)) }; r.max?.let { put("max", JsonPrimitive(it)) } }); put("preferredDayOffsets", kotlinx.serialization.json.buildJsonArray { (intent.schedule.preferredDayOffsets + intent.schedule.preferredWeekdays.mapNotNull { WorkoutIntentValidator.weekdays.indexOf(it).takeIf { n -> n >= 0 } }).toSet().sorted().forEach { add(JsonPrimitive(it)) } }); put("excludedDayOffsets", kotlinx.serialization.json.buildJsonArray { (intent.schedule.excludedDayOffsets + intent.schedule.excludedWeekdays.mapNotNull { WorkoutIntentValidator.weekdays.indexOf(it).takeIf { n -> n >= 0 } }).toSet().sorted().forEach { add(JsonPrimitive(it)) } }); intent.sessionConstraints?.exercisesPerSession?.let { r -> put("exercisesPerSession", buildJsonObject { r.min?.let { put("min", JsonPrimitive(it)) }; r.target?.let { put("target", JsonPrimitive(it)) }; r.max?.let { put("max", JsonPrimitive(it)) } }) } })
         }
-        val defaultTarget = buildJsonObject { put("schemaVersion", "0.1.0"); put("targetId", "$goalId-default"); put("periodDays", intent.schedule!!.cycleLengthDays!!); put("muscles", buildJsonObject { if (goalId == "general-strength-v1") { put("chest", buildJsonObject { put("target", 3) }); put("quadriceps", buildJsonObject { put("target", 3) }); put("hamstrings", buildJsonObject { put("target", 2) }) } else { put("chest", buildJsonObject { put("target", 6) }); put("lats", buildJsonObject { put("target", 6) }); put("quadriceps", buildJsonObject { put("target", 6) }); put("hamstrings", buildJsonObject { put("target", 4) }) } }); put("notes", description) }
+        val defaultTarget = buildJsonObject { put("schemaVersion", "0.1.0"); put("targetId", "$goalId-default"); put("periodDays", intent.schedule!!.cycleLengthDays!!); put("muscles", goalPolicy["muscles"]!!); put("notes", description) }
         val mergedTarget = mergeTarget(defaultTarget, target); val targetErrors = validateTarget(mergedTarget); if (targetErrors.isNotEmpty()) return IntentResolutionResult("invalid", resolvedTarget = mergedTarget, conflicts = targetErrors.map { IntentConflict("TARGET_OVERRIDE_CONFLICT", detail = it) })
         val historyWarnings = buildList { if (intent.useHistory == true && history == null) add("useHistory was requested but no history was provided"); if (intent.useHistory == true && history != null && asOf == null) add("useHistory was requested but as_of is required to derive TrainingState") }
         val dbMetadata = database?.metadata.orEmpty()
-        return IntentResolutionResult(if (defaults.isEmpty()) "resolved" else "resolved_with_defaults", planningPolicy = intent.requestedPlanningPolicy ?: "full-body-general-v1", goalPolicy = GoalPolicyReference(goalId, description = description), environmentPolicy = resolvedEnvironment, defaultsApplied = defaults, explicitOverrides = overrides, resolvedProfile = resolvedProfile, resolvedTarget = mergedTarget, warnings = historyWarnings, generationOptions = buildJsonObject { put("continuity", intent.continuity ?: "neutral"); put("effortDefaults", buildJsonObject { put("rir", 2) }); put("repDefaults", buildJsonObject { if (goalId == "general-strength-v1") { put("min", 3); put("target", 5); put("max", 6) } else { put("min", 6); put("target", 8); put("max", 12) } }); put("requiredFamilyIds", kotlinx.serialization.json.buildJsonArray { }) }, provenance = buildMap { put("intentSchemaVersion", JsonPrimitive(intent.schemaVersion)); put("goalPolicy", buildJsonObject { put("policyId", goalId); put("policyVersion", "1") }); put("environmentPolicy", resolvedEnvironment?.let { buildJsonObject { put("policyId", it); put("policyVersion", "1") } } ?: kotlinx.serialization.json.JsonNull); put("dbSchemaVersion", dbMetadata["schemaVersion"] ?: kotlinx.serialization.json.JsonNull); put("dbConverterVersion", dbMetadata["converterVersion"] ?: kotlinx.serialization.json.JsonNull); put("relationshipSchemaVersion", relationships?.schemaVersion?.let(::JsonPrimitive) ?: kotlinx.serialization.json.JsonNull) })
+        return IntentResolutionResult(if (defaults.isEmpty()) "resolved" else "resolved_with_defaults", planningPolicy = intent.requestedPlanningPolicy ?: goalPolicy["planningPolicy"]!!.jsonPrimitive.content, goalPolicy = GoalPolicyReference(goalId, policyVersion, description), environmentPolicy = resolvedEnvironment, defaultsApplied = defaults, explicitOverrides = overrides, resolvedProfile = resolvedProfile, resolvedTarget = mergedTarget, warnings = historyWarnings, generationOptions = buildJsonObject { put("continuity", intent.continuity ?: "neutral"); put("effortDefaults", goalPolicy["effort"]!!); put("repDefaults", goalPolicy["reps"]!!); put("requiredFamilyIds", kotlinx.serialization.json.buildJsonArray { intent.exerciseConstraints?.requiredFamilyIds.orEmpty().toSet().sorted().forEach { add(JsonPrimitive(it)) } }) }, provenance = buildMap { put("intentSchemaVersion", JsonPrimitive(intent.schemaVersion)); put("goalPolicy", buildJsonObject { put("policyId", goalId); put("policyVersion", policyVersion) }); put("environmentPolicy", resolvedEnvironment?.let { buildJsonObject { put("policyId", it); put("policyVersion", environmentVersion) } } ?: kotlinx.serialization.json.JsonNull); put("dbSchemaVersion", dbMetadata["schemaVersion"] ?: kotlinx.serialization.json.JsonNull); put("dbConverterVersion", dbMetadata["converterVersion"] ?: kotlinx.serialization.json.JsonNull); put("relationshipSchemaVersion", relationships?.schemaVersion?.let(::JsonPrimitive) ?: kotlinx.serialization.json.JsonNull) })
     }
 }
 

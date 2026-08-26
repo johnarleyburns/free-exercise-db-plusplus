@@ -397,6 +397,19 @@ private func merge(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
   }
   return .object(r)
 }
+
+private enum IntentPolicyCatalog {
+  static let root: [String: JSONValue] = {
+    guard let url = Bundle.module.url(forResource: "intent-policies", withExtension: "json"),
+      let data = try? Data(contentsOf: url),
+      let value = try? JSONDecoder().decode(JSONValue.self, from: data),
+      case .object(let object) = value else { return [:] }
+    return object
+  }()
+  static var goals: [String: JSONValue] { o(root["goalPolicies"]) }
+  static var environments: [String: JSONValue] { o(root["environmentPolicies"]) }
+}
+
 public struct IntentResolver: Sendable {
   public init() {}
   public func resolve(
@@ -470,21 +483,15 @@ public struct IntentResolver: Sendable {
             policyGoal: policyGoal)
         ])
     }
-    let desc =
-      isStrength
-      ? "Minimal generic strength defaults; exercise-specific strength programming remains out of scope."
-      : "General, conservative coverage defaults; not an optimal prescription."
-    let envMap: [String: (String, [String])] = [
-      "commercial_gym": (
-        "commercial-gym-general-v1",
-        [
-          "bands", "barbell", "body only", "cable", "dumbbell", "e-z curl bar", "exercise ball",
-          "kettlebells", "machine", "medicine ball",
-        ]
-      ), "bodyweight_only": ("bodyweight-only-v1", ["body only"]),
-      "minimal_equipment": ("minimal-equipment-general-v1", ["bands", "body only", "dumbbell"]),
-    ]
-    let env = x.environment.flatMap { envMap[$0] }
+    let policy = o(IntentPolicyCatalog.goals[gid])
+    let desc = policy["description"]?.stringValue
+    let policyVersion = policy["policyVersion"]?.stringValue ?? "1"
+    let env = IntentPolicyCatalog.environments.values.compactMap { value -> (String, [String], String)? in
+      let object = o(value)
+      guard object["environment"]?.stringValue == x.environment,
+        let id = object["policyId"]?.stringValue else { return nil }
+      return (id, object["equipment"]?.arrayValues.compactMap(\.stringValue) ?? [], object["policyVersion"]?.stringValue ?? "1")
+    }.first
     let input = o(supplied)
     var equipment = Set(
       suppliedEquipment.isEmpty ? (env?.1 ?? []) : suppliedEquipment
@@ -525,20 +532,11 @@ public struct IntentResolver: Sendable {
     var preferences = o(p["exercisePreferences"])
     if let inputPreferences = x.preferences { for (key, values) in [("preferredExerciseIds", inputPreferences.preferredExerciseIds), ("avoidedExerciseIds", inputPreferences.avoidedExerciseIds), ("preferredFamilyIds", inputPreferences.preferredFamilyIds), ("avoidedFamilyIds", inputPreferences.avoidedFamilyIds)] where !values.isEmpty { preferences[key] = .array(Set((preferences[key]?.arrayValues.compactMap { $0.stringValue } ?? []) + values).sorted().map(s)) } }
     p["exercisePreferences"] = .object(preferences)
-    let gMuscles: JSONValue =
-      isStrength
-      ? .object([
-        "chest": .object(["target": s(3)]), "quadriceps": .object(["target": s(3)]),
-        "hamstrings": .object(["target": s(2)]),
-      ])
-      : .object([
-        "chest": .object(["target": s(6)]), "lats": .object(["target": s(6)]),
-        "quadriceps": .object(["target": s(6)]), "hamstrings": .object(["target": s(4)]),
-      ])
+    let gMuscles = policy["muscles"] ?? .object([:])
     let target = merge(
       .object([
         "schemaVersion": s("0.1.0"), "targetId": s("\(gid)-default"),
-        "periodDays": s(q!.cycleLengthDays!), "muscles": gMuscles, "notes": s(desc),
+        "periodDays": s(q!.cycleLengthDays!), "muscles": gMuscles, "notes": s(desc ?? ""),
       ]), explicitTarget)
     let targetErrors = validateTarget(target)
     if !targetErrors.isEmpty { return IntentResolutionResult(status: "invalid", resolvedTarget: target, conflicts: targetErrors.map { IntentConflict(code: "TARGET_OVERRIDE_CONFLICT", detail: $0) }, provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
@@ -549,17 +547,14 @@ public struct IntentResolver: Sendable {
     var historyWarnings: [String] = []
     if x.useHistory == true && history == nil { historyWarnings.append("useHistory was requested but no history was provided") }
     if x.useHistory == true && history != nil && asOf == nil { historyWarnings.append("useHistory was requested but as_of is required to derive TrainingState") }
-    let reps: JSONValue =
-      isStrength
-      ? .object(["min": s(3), "target": s(5), "max": s(6)])
-      : .object(["min": s(6), "target": s(8), "max": s(12)])
+    let reps = policy["reps"] ?? .object([:])
     return IntentResolutionResult(
       status: defaults.isEmpty ? "resolved" : "resolved_with_defaults", resolvedProfile: .object(p),
       resolvedTarget: target, planningPolicy: x.requestedPlanningPolicy ?? "full-body-general-v1",
-      goalPolicy: GoalPolicyReference(policyId: gid, policyVersion: "1", description: desc), environmentPolicy: resolvedEnvironmentPolicy,
+      goalPolicy: GoalPolicyReference(policyId: gid, policyVersion: policyVersion, description: desc), environmentPolicy: resolvedEnvironmentPolicy,
       generationOptions: .object([
         "continuity": s(x.continuity ?? "neutral"), "repDefaults": reps,
-        "effortDefaults": .object(["rir": s(2)]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
+        "effortDefaults": policy["effort"] ?? .object([:]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
       ]), missingInformation: [], warnings: historyWarnings, defaultsApplied: defaults,
       explicitOverrides: ExplicitOverrides(
         goalPolicy: x.requestedGoalPolicy != nil, planningPolicy: x.requestedPlanningPolicy != nil,
@@ -568,8 +563,8 @@ public struct IntentResolver: Sendable {
         equipmentRemoved: x.equipmentOverrides?.removeEquipment ?? []),
       provenance: [
         "intentSchemaVersion": s(x.schemaVersion),
-        "goalPolicy": .object(["policyId": s(gid), "policyVersion": s("1")]),
-        "environmentPolicy": resolvedEnvironmentPolicy.map { .object(["policyId": s($0), "policyVersion": s("1")]) } ?? .null,
+        "goalPolicy": .object(["policyId": s(gid), "policyVersion": s(policyVersion)]),
+        "environmentPolicy": resolvedEnvironmentPolicy.map { .object(["policyId": s($0), "policyVersion": s(env?.2 ?? "1")]) } ?? .null,
         "dbSchemaVersion": o(database.map { .object($0.metadata) })["schemaVersion"] ?? .null,
         "dbConverterVersion": o(database.map { .object($0.metadata) })["converterVersion"] ?? .null,
         "relationshipSchemaVersion": relationships.map { s($0.schemaVersion) } ?? .null,
