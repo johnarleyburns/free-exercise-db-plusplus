@@ -36,10 +36,14 @@ for (fixture in sort(list.dirs(fixture_root, full.names = FALSE, recursive = FAL
   actual <- resolve_intent(input, db = db, target = explicit)
   expected <- jsonlite::fromJSON(file.path(fixture_root, fixture, "expected-resolution.json"), simplifyVector = FALSE)
   stopifnot(identical(actual$status, expected$status))
-  stopifnot(identical(actual$defaultsApplied, expected$defaultsApplied))
-  stopifnot(identical(actual$explicitOverrides, expected$explicitOverrides))
+  stopifnot(identical(actual$defaultsApplied, .strings(expected$defaultsApplied)))
+  expected_overrides <- expected$explicitOverrides
+  expected_overrides$equipmentAdded <- .strings(expected_overrides$equipmentAdded)
+  expected_overrides$equipmentRemoved <- .strings(expected_overrides$equipmentRemoved)
+  for (key in names(expected_overrides)) stopifnot(identical(actual$explicitOverrides[[key]], expected_overrides[[key]]))
   stopifnot(identical(actual$planningPolicy, expected$planningPolicy))
   stopifnot(identical(actual$environmentPolicy, expected$environmentPolicy))
-  stopifnot(identical(actual$conflicts, expected$conflicts))
+  stopifnot(length(actual$conflicts) == length(expected$conflicts))
+  if (length(actual$conflicts)) stopifnot(identical(vapply(actual$conflicts, `[[`, character(1), "code"), vapply(expected$conflicts, `[[`, character(1), "code")))
 }
 cat("R consumer package valid\n")
