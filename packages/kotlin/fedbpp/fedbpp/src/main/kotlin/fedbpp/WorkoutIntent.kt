@@ -127,7 +127,11 @@ object WorkoutIntentResolver {
 fun validateWorkoutIntent(intent: WorkoutIntent): List<String> = WorkoutIntentValidator.validate(intent)
 fun resolveIntent(intent: WorkoutIntent, database: Database? = null, profile: JsonElement? = null, target: JsonElement? = null, relationships: ExerciseRelationships? = null, history: JsonElement? = null, asOf: String? = null): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, database, profile, target, relationships, history, asOf)
 fun resolveIntent(intent: WorkoutIntent, profile: JsonElement?, target: JsonElement?): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, profile = profile, target = target)
-fun decodeWorkoutIntent(json: String): WorkoutIntent = fedbppJson.decodeFromString(WorkoutIntent.serializer(), json)
+fun decodeWorkoutIntent(json: String): WorkoutIntent {
+    val element = Json.parseToJsonElement(json)
+    require(element is JsonObject && element.containsKey("schemaVersion")) { "schemaVersion is required" }
+    return fedbppJson.decodeFromJsonElement(WorkoutIntent.serializer(), element)
+}
 
 fun mergeTarget(base: JsonElement, explicit: JsonElement?): JsonElement {
     if (explicit !is JsonObject) return base

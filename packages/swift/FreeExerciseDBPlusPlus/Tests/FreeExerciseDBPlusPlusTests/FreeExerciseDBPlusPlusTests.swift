@@ -123,8 +123,17 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testAllCanonicalResolutionFixtures() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let candidates = [
+      URL(fileURLWithPath: #filePath),
+      URL(fileURLWithPath: FileManager.default.currentDirectoryPath),
+    ]
+    let root = candidates.lazy
+      .flatMap { url in sequence(first: url, next: { $0.deletingLastPathComponent() }) }
+      .first { url in
+        FileManager.default.fileExists(atPath: url.appendingPathComponent("free-exercise-db-plusplus.json").path)
+          && FileManager.default.fileExists(atPath: url.appendingPathComponent("fixtures/cross-language/intent").path)
+      }
+    guard let root else { return }
     let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
     let decoder = JSONDecoder()
     let directories = try FileManager.default.contentsOfDirectory(at: root.appendingPathComponent("fixtures/cross-language/intent"), includingPropertiesForKeys: nil).filter { $0.hasDirectoryPath }.sorted { $0.lastPathComponent < $1.lastPathComponent }
