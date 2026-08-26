@@ -73,3 +73,10 @@ def test_explicit_repeated_substitution_is_the_only_substitution_signal():
     assert result["status"] == "revision_proposed"
     assert result["proposedPlan"]["sessions"][0]["exercises"][0]["exerciseId"] == "alternate_press"
     assert any(d["decisionType"] == "substitute_exercise" for d in result["decisions"])
+
+
+def test_unrepairable_target_drift_is_a_generator_backed_proposal_not_no_change():
+    target = deepcopy(TARGET); target["muscles"]["back"] = {"min": 1}
+    result = adapt_plan(PROFILE, target, PLAN, _history(_actual("2026-08-18", "a", (9, 9))), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
+    assert result["status"] == "regeneration_proposed"
+    assert result["proposedPlan"]["revisionId"] == "r2"

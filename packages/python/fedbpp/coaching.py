@@ -110,6 +110,12 @@ def _hard_invalid(evaluation: dict[str, Any]) -> bool:
     return not evaluation["summary"]["satisfiesHardConstraints"]
 
 
+def _target_excess_count(evaluation: dict[str, Any]) -> int:
+    sections = (evaluation.get("muscleCoverage", {}), evaluation.get("frequency", {}),
+                evaluation.get("movementPatterns", {}), evaluation.get("families", {}).get("targets", {}))
+    return sum(1 for section in sections for value in section.values() if value.get("state") == "above_maximum")
+
+
 def _state_for_current(history: TrainingHistory, current: dict[str, Any]) -> TrainingHistory:
     """Supply current PLAN to canonical state derivation without changing history."""
     if any(p.get("planId") == current.get("planId") and p.get("revisionId") == current.get("revisionId") for p in history.plans):
@@ -347,10 +353,13 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
     decisions += volume_decisions; changes += volume_changes
     if not changes:
         frequency_gaps = [muscle for muscle, value in current_eval.get("frequency", {}).items() if value.get("state") == "below_minimum"]
-        if frequency_gaps:
+        target_gaps = current_eval["summary"]["targetGaps"]
+        # A target minimum that cannot be repaired by a bounded one-set edit is
+        # structural for this conservative policy, so reuse the v1.8 generator.
+        if frequency_gaps or target_gaps:
             generated = generate_plan(profile, target, db, policy=planning_policy or "full-body-general-v1", training_state=state, relationships=relationships, current_plan=current, options={"planId": current.get("planId"), "revisionId": revision, "name": current.get("name")})
             if generated.get("plan") is not None:
-                decision = {"schemaVersion": "0.1.0", "decisionId": "decision-regenerate-frequency", "decisionType": "regenerate_plan", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "evidence": {"frequencyMuscles": frequency_gaps}, "provenance": state.get("provenance", {})}
+                decision = {"schemaVersion": "0.1.0", "decisionId": "decision-regenerate-target", "decisionType": "regenerate_plan", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "evidence": {"frequencyMuscles": frequency_gaps, "targetGaps": target_gaps}, "provenance": state.get("provenance", {})}
                 return _result("regeneration_proposed", current, generated["plan"], current_eval, generated["evaluation"], state, decisions + [decision], [], [], db, policy_obj, planning_policy or "full-body-general-v1")
         sparse = not any(x.get("recentSessionCount", 0) for x in state.get("exerciseState", {}).values())
         if sparse:
@@ -362,7 +371,8 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
     except ValueError as exc:
         return _result("unsatisfiable", current, None, current_eval, None, state, decisions, changes, [{"code": "INVALID_PROPOSAL", "detail": str(exc)}], db, policy_obj, planning_policy)
     proposed_eval = evaluate_plan(candidate, db, profile, target, relationships)
-    if _hard_invalid(proposed_eval) or proposed_eval["summary"]["targetGaps"] > current_eval["summary"]["targetGaps"]:
+    if (_hard_invalid(proposed_eval) or proposed_eval["summary"]["targetGaps"] > current_eval["summary"]["targetGaps"]
+            or _target_excess_count(proposed_eval) > _target_excess_count(current_eval)):
         return _result("unsatisfiable", current, None, current_eval, proposed_eval, state, decisions, changes, [{"code": "EVALUATOR_GATE_REJECTED"}], db, policy_obj, planning_policy)
     return _result("revision_proposed", current, candidate, current_eval, proposed_eval, state, decisions, changes, [], db, policy_obj, planning_policy)
 
