@@ -230,6 +230,59 @@ def _adherence_decisions(current: dict[str, Any], state: dict[str, Any], policy:
     return result
 
 
+def _allowed_replacement(exercise_id: str, profile: dict[str, Any], db: Any, relationships: Any) -> bool:
+    data = _exercise_data(db, exercise_id)
+    if data is None:
+        return False
+    constraints = profile.get("constraints", {}) or {}
+    if exercise_id in set(constraints.get("excludedExerciseIds", []) or []):
+        return False
+    family = relationships.family_for(exercise_id).family_id if relationships and relationships.family_for(exercise_id) else None
+    if family in set(constraints.get("excludedFamilyIds", []) or []):
+        return False
+    equipment = data.get("source", {}).get("equipment")
+    available = set(profile.get("equipment", []) or [])
+    return equipment in available or (equipment in {"body only", "bodyweight", "no equipment", "none"} and available & {"body only", "bodyweight", "no equipment", "none"})
+
+
+def _substitution_changes(candidate: dict[str, Any], history: TrainingHistory | None, state: dict[str, Any], profile: dict[str, Any], db: Any, relationships: Any, policy: CoachingPolicy) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Only explicit ACTUAL substitutions can propose an exercise replacement."""
+    if history is None:
+        return [], []
+    observed: dict[str, dict[str, int]] = {}
+    for workout in history.workouts:
+        for actual in workout.get("exercises", []):
+            substitution = actual.get("substitution") or {}
+            rxid = actual.get("exercisePrescriptionId") or substitution.get("plannedPrescriptionId")
+            replacement_id = actual.get("exerciseId")
+            if rxid and replacement_id and substitution:
+                observed.setdefault(rxid, {})[replacement_id] = observed.setdefault(rxid, {}).get(replacement_id, 0) + 1
+    decisions: list[dict[str, Any]] = []; changes: list[dict[str, Any]] = []
+    for session in candidate.get("sessions", []):
+        for rx in session.get("exercises", []):
+            rxid = rx.get("prescriptionId")
+            choices = [(count, eid) for eid, count in observed.get(rxid, {}).items()
+                       if eid != rx.get("exerciseId") and count >= policy.parameters["repeatedSubstitutionThreshold"] and _allowed_replacement(eid, profile, db, relationships)]
+            if not choices:
+                continue
+            _, replacement = sorted(choices, key=lambda x: (-x[0], x[1]))[0]
+            before = deepcopy(rx); rx["exerciseId"] = replacement
+            source = _exercise_data(db, replacement) or {}
+            if source.get("source", {}).get("name"):
+                rx["exerciseName"] = source["source"]["name"]
+            did = _decision_id("substitute_exercise", rxid)
+            decisions.append({"schemaVersion": "0.1.0", "decisionId": did, "decisionType": "substitute_exercise",
+                              "policyId": policy.policyId, "policyVersion": policy.policyVersion,
+                              "planId": candidate.get("planId"), "revisionId": candidate.get("revisionId"),
+                              "prescriptionId": rxid, "exerciseId": before.get("exerciseId"),
+                              "before": {"exerciseId": before.get("exerciseId")}, "after": {"exerciseId": replacement},
+                              "reasonCodes": ["REPEATED_SUBSTITUTION"],
+                              "evidence": {"substitutionCount": observed[rxid][replacement], "replacementExerciseId": replacement},
+                              "provenance": state.get("provenance", {})})
+            changes.append(_change("EXERCISE_SUBSTITUTED", before, rx, ["REPEATED_SUBSTITUTION"], did))
+    return decisions, changes
+
+
 def _provenance(db: Any, state: dict[str, Any] | None, policy: CoachingPolicy, evaluation: dict[str, Any] | None, planning_policy: str | None) -> dict[str, Any]:
     md = db.metadata if hasattr(db, "metadata") else db.get("metadata", {})
     return {"coachingVersion": COACHING_VERSION, "coachingPolicyId": policy.policyId, "coachingPolicyVersion": policy.policyVersion,
@@ -286,11 +339,19 @@ def adapt_plan(profile: Any, target: Any, current_plan: Any, history: TrainingHi
     # their advisory deltas to a copy while it still identifies as current,
     # then assign the immutable proposal its new revision identity.
     candidate = deepcopy(current)
+    substitution_decisions, substitution_changes = _substitution_changes(candidate, history if isinstance(history, TrainingHistory) else None, state, profile, db, relationships, policy_obj)
     decisions, changes = _exercise_changes(candidate, state, policy_obj)
+    decisions = substitution_decisions + decisions; changes = substitution_changes + changes
     decisions += _adherence_decisions(current, state, policy_obj)
     volume_decisions, volume_changes = _volume_changes(candidate, current_eval, db, policy_obj)
     decisions += volume_decisions; changes += volume_changes
     if not changes:
+        frequency_gaps = [muscle for muscle, value in current_eval.get("frequency", {}).items() if value.get("state") == "below_minimum"]
+        if frequency_gaps:
+            generated = generate_plan(profile, target, db, policy=planning_policy or "full-body-general-v1", training_state=state, relationships=relationships, current_plan=current, options={"planId": current.get("planId"), "revisionId": revision, "name": current.get("name")})
+            if generated.get("plan") is not None:
+                decision = {"schemaVersion": "0.1.0", "decisionId": "decision-regenerate-frequency", "decisionType": "regenerate_plan", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["PLAN_REGENERATION_REQUIRED"], "evidence": {"frequencyMuscles": frequency_gaps}, "provenance": state.get("provenance", {})}
+                return _result("regeneration_proposed", current, generated["plan"], current_eval, generated["evaluation"], state, decisions + [decision], [], [], db, policy_obj, planning_policy or "full-body-general-v1")
         sparse = not any(x.get("recentSessionCount", 0) for x in state.get("exerciseState", {}).values())
         if sparse:
             decisions.append({"schemaVersion": "0.1.0", "decisionId": "decision-insufficient-history", "decisionType": "insufficient_data", "policyId": policy_obj.policyId, "policyVersion": policy_obj.policyVersion, "planId": current.get("planId"), "revisionId": current.get("revisionId"), "prescriptionId": None, "exerciseId": None, "before": {}, "after": {}, "reasonCodes": ["INSUFFICIENT_HISTORY"], "evidence": {}, "provenance": state.get("provenance", {})})

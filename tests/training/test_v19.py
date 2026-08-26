@@ -11,7 +11,9 @@ DB = Database({"metadata": {"schemaVersion": "db", "converterVersion": "c", "ups
                "exercises": {"press": {"source": {"name": "Press", "equipment": "body only"},
                                        "annotation": {"direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"], "volumeEligible": True}},
                              "cable_press": {"source": {"name": "Cable Press", "equipment": "cable"},
-                                             "annotation": {"direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"], "volumeEligible": True}}}})
+                                             "annotation": {"direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"], "volumeEligible": True}},
+                             "alternate_press": {"source": {"name": "Alternate Press", "equipment": "body only"},
+                                                 "annotation": {"direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"], "volumeEligible": True}}}})
 PROFILE = {"schemaVersion": "0.1.0", "profileId": "profile", "availability": {"cycleLengthDays": 8, "sessionsPerCycle": {"min": 1, "target": 1, "max": 2}}, "equipment": ["body only"]}
 TARGET = {"schemaVersion": "0.1.0", "targetId": "target", "periodDays": 8, "muscles": {"chest": {"min": 2, "max": 6}}}
 PLAN = {"schemaVersion": "0.2.0", "planId": "plan", "revisionId": "r1", "name": "Current", "cycle": {"lengthDays": 8},
@@ -60,3 +62,14 @@ def test_equipment_drift_reuses_generation_and_never_returns_invalid_current_pla
     result = adapt_plan(profile, TARGET, PLAN, _history(_actual("2026-08-18", "a")), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
     assert result["status"] in {"regeneration_proposed", "unsatisfiable"}
     assert result["status"] != "no_change"
+
+
+def test_explicit_repeated_substitution_is_the_only_substitution_signal():
+    workouts = [_actual("2026-08-10", "a"), _actual("2026-08-18", "b")]
+    for workout in workouts:
+        actual = workout["exercises"][0]; actual["exerciseId"] = "alternate_press"
+        actual["substitution"] = {"plannedPrescriptionId": "press-rx", "reason": "equipment"}
+    result = adapt_plan(PROFILE, TARGET, PLAN, _history(*workouts), DB, options={"asOf": "2026-08-20T12:00:00Z", "timezone": "UTC"})
+    assert result["status"] == "revision_proposed"
+    assert result["proposedPlan"]["sessions"][0]["exercises"][0]["exerciseId"] == "alternate_press"
+    assert any(d["decisionType"] == "substitute_exercise" for d in result["decisions"])
