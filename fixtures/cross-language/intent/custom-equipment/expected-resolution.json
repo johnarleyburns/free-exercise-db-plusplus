@@ -5,6 +5,14 @@
     "planningPolicy"
   ],
   "environmentPolicy": null,
+  "explicitOverrides": [
+    {
+      "equipmentAdded": [
+        "body only",
+        "dumbbell"
+      ]
+    }
+  ],
   "generationOptions": {
     "continuity": "neutral",
     "effortDefaults": {

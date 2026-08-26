@@ -1,12 +1,13 @@
 {
   "conflicts": [],
   "defaultsApplied": [
-    "goalPolicy",
-    "planningPolicy",
     "environmentPolicy"
   ],
-  "environmentPolicy": "bodyweight-only-v1",
-  "explicitOverrides": [],
+  "environmentPolicy": "commercial-gym-general-v1",
+  "explicitOverrides": [
+    "goalPolicy",
+    "planningPolicy"
+  ],
   "generationOptions": {
     "continuity": "neutral",
     "effortDefaults": {
@@ -25,12 +26,12 @@
     "policyVersion": "1"
   },
   "missingInformation": [],
-  "planningPolicy": "full-body-general-v1",
+  "planningPolicy": "upper-lower-general-v1",
   "provenance": {
     "dbConverterVersion": "0.8.0",
     "dbSchemaVersion": "0.3.0",
     "environmentPolicy": {
-      "policyId": "bodyweight-only-v1",
+      "policyId": "commercial-gym-general-v1",
       "policyVersion": "1"
     },
     "goalPolicy": {
@@ -54,7 +55,16 @@
       "excludedFamilyIds": []
     },
     "equipment": [
-      "body only"
+      "bands",
+      "barbell",
+      "body only",
+      "cable",
+      "dumbbell",
+      "e-z curl bar",
+      "exercise ball",
+      "kettlebells",
+      "machine",
+      "medicine ball"
     ],
     "exercisePreferences": {},
     "goals": [

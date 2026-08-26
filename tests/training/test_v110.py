@@ -5,6 +5,7 @@ from pathlib import Path
 
 from fedbpp import Database, TrainingHistory, evaluate_plan, generate_plan_from_intent, resolve_intent
 from fedbpp.intent import ENVIRONMENT_POLICIES, GOAL_POLICIES, validate_workout_intent
+from fedbpp.intent import _merge_target
 
 
 def db():
@@ -95,12 +96,13 @@ def test_cross_language_oracles_and_flagship_full_database():
     for directory in sorted(path for path in root.iterdir() if path.is_dir()):
         value = json.loads((directory / "input.json").read_text())
         expected = json.loads((directory / "expected-resolution.json").read_text())
+        target = json.loads((directory / "target.json").read_text()) if (directory / "target.json").exists() else None
         if (directory / "history.json").exists():
             history_doc = json.loads((directory / "history.json").read_text())
             history = TrainingHistory(history_doc["subjectId"], history_doc["plans"], history_doc["workouts"], plan_activations=history_doc["planActivations"])
-            assert resolve_intent(value, full_db, history=history, as_of="2026-08-25T12:00:00Z") == expected
+            assert resolve_intent(value, full_db, target=target, history=history, as_of="2026-08-25T12:00:00Z") == expected
         else:
-            assert resolve_intent(value, full_db) == expected
+            assert resolve_intent(value, full_db, target=target) == expected
     directory = root / "flagship-5day-hypertrophy"
     result = generate_plan_from_intent(json.loads((directory / "input.json").read_text()), full_db)
     assert result == json.loads((directory / "expected-generation.json").read_text())
@@ -120,3 +122,12 @@ def test_history_is_derived_only_when_requested_with_explicit_as_of():
     assert historical["generationOptions"]["trainingState"]["exerciseState"]["press"]["recentSessionCount"] == 1
     no_history = resolve_intent(intent(useHistory=False), db(), history=history, as_of="2026-08-25T12:00:00Z")
     assert "trainingState" not in no_history["generationOptions"]
+
+def test_target_merge_goal_policy_and_provenance_hardening():
+    merged = _merge_target({"muscles":{"chest":{"min":4,"target":6,"max":8}},"frequency":{"muscles":{"chest":{"target":2}}},"movementPatterns":{"squat":{"targetSets":2}},"families":{"squat":{"targetSets":2}}}, {"muscles":{"chest":{"target":7},"calves":{"min":4}},"frequency":{"muscles":{"chest":{"min":1}}},"movementPatterns":{"squat":{"maximumSets":3}},"families":{"squat":{"minimumSets":1}}})
+    assert merged["muscles"]["chest"] == {"min":4,"target":7,"max":8} and merged["muscles"]["calves"] == {"min":4}
+    assert merged["frequency"]["muscles"]["chest"] == {"target":2,"min":1} and merged["movementPatterns"]["squat"] == {"targetSets":2,"maximumSets":3}
+    bad = resolve_intent(intent(requestedGoalPolicy="general-strength-v1"), db())
+    assert bad["conflicts"][0]["code"] == "GOAL_POLICY_MISMATCH"
+    explicit = resolve_intent(intent(requestedGoalPolicy="general-hypertrophy-v1", requestedPlanningPolicy="upper-lower-general-v1", equipmentOverrides={"removeEquipment":["barbell"]}), db())
+    assert explicit["defaultsApplied"] == ["environmentPolicy"] and "goalPolicy" in explicit["explicitOverrides"] and {"equipmentRemoved":["barbell"]} in explicit["explicitOverrides"]

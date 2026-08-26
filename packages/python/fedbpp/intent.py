@@ -14,6 +14,7 @@ from .planning import PLANNING_POLICIES, generate_plan
 from .training import validate_training_profile
 from .training_state import derive_training_state
 from .plan_evaluation import evaluate_plan
+from ._analysis.targets import validate_target
 
 INTENT_SCHEMA_VERSION = "0.1.0"
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
@@ -109,17 +110,25 @@ def validate_workout_intent(intent: dict[str, Any], db: Any = None, relationship
     return sorted(set(errors))
 
 def _merge_target(default: dict[str, Any], explicit: dict[str, Any] | None) -> dict[str, Any]:
+    """Merge portable TARGETs field-by-field; range members never shallow-replace."""
     result = deepcopy(default)
     if not explicit: return result
+    def section(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
+        merged = deepcopy(base)
+        for name, value in override.items():
+            merged[name] = {**deepcopy(merged.get(name, {})), **deepcopy(value)} if isinstance(value, dict) else deepcopy(value)
+        return merged
     for key, value in explicit.items():
-        if isinstance(value, dict) and isinstance(result.get(key), dict):
-            result[key].update(deepcopy(value))
+        if key == "muscles": result[key] = section(result.get(key, {}), value or {})
+        elif key == "frequency" and isinstance(value, dict):
+            result[key] = deepcopy(result.get(key, {})); result[key]["muscles"] = section(result[key].get("muscles", {}), value.get("muscles", {}))
+        elif key in {"movementPatterns", "families"}: result[key] = section(result.get(key, {}), value or {})
         else: result[key] = deepcopy(value)
-    for muscle, spec in (explicit.get("muscles", {}) or {}).items(): result.setdefault("muscles", {}).setdefault(muscle, {}).update(deepcopy(spec))
     return result
 
 def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None, relationships: Any = None, history: Any = None, *, as_of: str | None = None) -> dict[str, Any]:
-    intent = _doc(intent); profile = deepcopy(_doc(profile)) if profile is not None else {}; target = _doc(target) if target is not None else None
+    supplied_profile = profile is not None
+    intent = _doc(intent); profile = deepcopy(_doc(profile)) if supplied_profile else {}; target = _doc(target) if target is not None else None
     errors = validate_workout_intent(intent, db, relationships)
     missing = []
     if not intent.get("goal"): missing.append({"field": "goal", "reason": "required_for_goal_policy_resolution"})
@@ -135,6 +144,8 @@ def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None
     goal_policy_id = intent.get("requestedGoalPolicy") or {"hypertrophy": "general-hypertrophy-v1", "strength": "general-strength-v1"}.get(intent["goal"])
     if not goal_policy_id: return {"status": "needs_clarification", "resolvedProfile": None, "resolvedTarget": None, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": [{"field": "requestedGoalPolicy", "reason": "no_default_goal_policy_for_goal"}], "warnings": [], "conflicts": [], "defaultsApplied": [], "provenance": {"intentSchemaVersion": intent["schemaVersion"]}}
     gp = GOAL_POLICIES[goal_policy_id]; environment = intent.get("environment")
+    if gp["goal"] != intent["goal"]:
+        return {"status": "invalid", "resolvedProfile": None, "resolvedTarget": None, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": [], "warnings": [], "conflicts": [{"code": "GOAL_POLICY_MISMATCH", "goal": intent["goal"], "requestedGoalPolicy": goal_policy_id, "policyGoal": gp["goal"]}], "defaultsApplied": [], "explicitOverrides": [], "provenance": {"intentSchemaVersion": intent["schemaVersion"]}}
     env_id = next((key for key, value in ENVIRONMENT_POLICIES.items() if value["environment"] == environment), None)
     additions = set((intent.get("equipmentOverrides", {}) or {}).get("addEquipment", []) or []); removals = set((intent.get("equipmentOverrides", {}) or {}).get("removeEquipment", []) or [])
     if profile.get("equipment"):
@@ -163,6 +174,9 @@ def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None
     prefs = profile.setdefault("exercisePreferences", {}); prefs.update({key: sorted(set(prefs.get(key, []) or []) | set((intent.get("preferences", {}) or {}).get(key, []) or [])) for key in ("preferredExerciseIds", "avoidedExerciseIds", "preferredFamilyIds", "avoidedFamilyIds") if (intent.get("preferences", {}) or {}).get(key)})
     default_target = {"schemaVersion": "0.1.0", "targetId": f"{goal_policy_id}-default", "periodDays": schedule["cycleLengthDays"], "muscles": deepcopy(gp["muscles"]), "notes": gp["description"]}
     resolved_target = _merge_target(default_target, target)
+    target_errors = validate_target(resolved_target)
+    if target_errors:
+        return {"status": "invalid", "resolvedProfile": None, "resolvedTarget": resolved_target, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": [], "warnings": [], "conflicts": [{"code": "TARGET_OVERRIDE_CONFLICT", "detail": error} for error in target_errors], "defaultsApplied": [], "explicitOverrides": [], "provenance": {"intentSchemaVersion": intent["schemaVersion"]}}
     policy_id = intent.get("requestedPlanningPolicy") or gp["planningPolicy"]
     warnings = []; generation_options = {"continuity": intent.get("continuity", "neutral"), "repDefaults": gp["reps"], "effortDefaults": gp["effort"], "requiredFamilyIds": sorted(required_families)}
     if intent.get("useHistory"):
@@ -172,10 +186,13 @@ def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None
     if conflicts or validate_training_profile(profile, db, relationships):
         conflicts += [{"code": "PROFILE_CONFLICT", "detail": x} for x in validate_training_profile(profile, db, relationships)]
         return {"status": "invalid", "resolvedProfile": profile, "resolvedTarget": resolved_target, "planningPolicy": policy_id, "goalPolicy": {"policyId": goal_policy_id, "policyVersion": gp["policyVersion"]}, "environmentPolicy": env_id, "generationOptions": generation_options, "missingInformation": [], "warnings": warnings, "conflicts": conflicts, "defaultsApplied": [], "provenance": {"intentSchemaVersion": intent["schemaVersion"]}}
-    defaults = ["goalPolicy", "planningPolicy"] + (["environmentPolicy"] if env_id else [])
+    defaults = ([] if intent.get("requestedGoalPolicy") else ["goalPolicy"]) + ([] if intent.get("requestedPlanningPolicy") else ["planningPolicy"]) + (["environmentPolicy"] if env_id else [])
+    explicit_overrides = sorted((["goalPolicy"] if intent.get("requestedGoalPolicy") else []) + (["planningPolicy"] if intent.get("requestedPlanningPolicy") else []) + (["target"] if target is not None else []) + (["trainingProfile"] if supplied_profile else []))
+    if additions: explicit_overrides.append({"equipmentAdded": sorted(additions)})
+    if removals: explicit_overrides.append({"equipmentRemoved": sorted(removals)})
     dbmd = db.metadata if hasattr(db, "metadata") else (db or {}).get("metadata", {})
     environment_provenance = {"policyId": env_id, "policyVersion": ENVIRONMENT_POLICIES[env_id]["policyVersion"]} if env_id else None
-    return {"status": "resolved_with_defaults" if defaults else "resolved", "resolvedProfile": profile, "resolvedTarget": resolved_target, "planningPolicy": policy_id, "goalPolicy": {"policyId": goal_policy_id, "policyVersion": gp["policyVersion"], "description": gp["description"]}, "environmentPolicy": env_id, "generationOptions": generation_options, "missingInformation": [], "warnings": warnings, "conflicts": [], "defaultsApplied": defaults, "provenance": {"intentSchemaVersion": intent["schemaVersion"], "goalPolicy": {"policyId": goal_policy_id, "policyVersion": gp["policyVersion"]}, "environmentPolicy": environment_provenance, "dbSchemaVersion": dbmd.get("schemaVersion"), "dbConverterVersion": dbmd.get("converterVersion"), "relationshipSchemaVersion": relationships.document.get("schemaVersion") if hasattr(relationships, "document") else (relationships or {}).get("schemaVersion") if relationships else None}}
+    return {"status": "resolved_with_defaults" if defaults else "resolved", "resolvedProfile": profile, "resolvedTarget": resolved_target, "planningPolicy": policy_id, "goalPolicy": {"policyId": goal_policy_id, "policyVersion": gp["policyVersion"], "description": gp["description"]}, "environmentPolicy": env_id, "generationOptions": generation_options, "missingInformation": [], "warnings": warnings, "conflicts": [], "defaultsApplied": defaults, "explicitOverrides": explicit_overrides, "provenance": {"intentSchemaVersion": intent["schemaVersion"], "goalPolicy": {"policyId": goal_policy_id, "policyVersion": gp["policyVersion"]}, "environmentPolicy": environment_provenance, "dbSchemaVersion": dbmd.get("schemaVersion"), "dbConverterVersion": dbmd.get("converterVersion"), "relationshipSchemaVersion": relationships.document.get("schemaVersion") if hasattr(relationships, "document") else (relationships or {}).get("schemaVersion") if relationships else None}}
 
 def generate_plan_from_intent(intent: Any, db: Any, profile: Any = None, target: Any = None, relationships: Any = None, history: Any = None, *, as_of: str | None = None, current_plan: Any = None) -> dict[str, Any]:
     resolution = resolve_intent(intent, db, profile, target, relationships, history, as_of=as_of)

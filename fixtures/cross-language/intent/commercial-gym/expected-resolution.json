@@ -6,6 +6,13 @@
     "environmentPolicy"
   ],
   "environmentPolicy": "commercial-gym-general-v1",
+  "explicitOverrides": [
+    {
+      "equipmentRemoved": [
+        "cable"
+      ]
+    }
+  ],
   "generationOptions": {
     "continuity": "neutral",
     "effortDefaults": {

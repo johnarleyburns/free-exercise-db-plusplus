@@ -1,0 +1,24 @@
+{
+  "conflicts": [
+    {
+      "code": "GOAL_POLICY_MISMATCH",
+      "goal": "hypertrophy",
+      "policyGoal": "strength",
+      "requestedGoalPolicy": "general-strength-v1"
+    }
+  ],
+  "defaultsApplied": [],
+  "environmentPolicy": null,
+  "explicitOverrides": [],
+  "generationOptions": {},
+  "goalPolicy": null,
+  "missingInformation": [],
+  "planningPolicy": null,
+  "provenance": {
+    "intentSchemaVersion": "0.1.0"
+  },
+  "resolvedProfile": null,
+  "resolvedTarget": null,
+  "status": "invalid",
+  "warnings": []
+}
