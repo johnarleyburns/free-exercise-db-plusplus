@@ -15,3 +15,6 @@ hamstrings 2. It is intentionally not an exercise-specific strength program.
 These are convenience defaults, not claims of optimal programming. Explicit
 TARGET fields merge over policy defaults field-by-field. An unknown requested
 goal or planning policy is invalid; it is never silently substituted.
+
+The canonical TARGET validator also checks relational ranges in frequency,
+movement-pattern, and family sections, preserving partial ranges.

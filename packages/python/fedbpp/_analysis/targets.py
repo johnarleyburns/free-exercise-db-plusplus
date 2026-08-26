@@ -33,13 +33,18 @@ def validate_target(target: dict[str, Any], schema_path: str | Path | None = Non
         schema = json.loads(schema_file.read_text(encoding="utf-8"))
         errors = [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(target)]
     if not errors and isinstance(target, dict):
-        for muscle, value in target.get("muscles", {}).items():
-            if "min" in value and "max" in value and value["min"] > value["max"]:
-                errors.append(f"muscles.{muscle}: min must not exceed max")
-            if "target" in value and "min" in value and value["target"] < value["min"]:
-                errors.append(f"muscles.{muscle}: target must not be below min")
-            if "target" in value and "max" in value and value["target"] > value["max"]:
-                errors.append(f"muscles.{muscle}: target must not exceed max")
+        def check(section: Any, prefix: str, minimum_key: str, target_key: str, maximum_key: str) -> None:
+            if not isinstance(section, dict): return
+            for name, value in section.items():
+                if not isinstance(value, dict): continue
+                path = f"{prefix}.{name}"
+                if value.get(minimum_key) is not None and value.get(maximum_key) is not None and value[minimum_key] > value[maximum_key]: errors.append(f"{path}: minimum must not exceed maximum")
+                if value.get(target_key) is not None and value.get(minimum_key) is not None and value[target_key] < value[minimum_key]: errors.append(f"{path}: target must not be below minimum")
+                if value.get(target_key) is not None and value.get(maximum_key) is not None and value[target_key] > value[maximum_key]: errors.append(f"{path}: target must not exceed maximum")
+        check(target.get("muscles", {}), "muscles", "min", "target", "max")
+        check((target.get("frequency", {}) or {}).get("muscles", {}), "frequency.muscles", "min", "target", "max")
+        check(target.get("movementPatterns", {}), "movementPatterns", "minimumSets", "targetSets", "maximumSets")
+        check(target.get("families", {}), "families", "minimumSets", "targetSets", "maximumSets")
     if not errors and db is not None:
         metadata = db.metadata if hasattr(db, "metadata") else db.get("metadata", {})
         ontology = metadata.get("muscleOntology") or metadata.get("muscles")

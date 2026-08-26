@@ -37,3 +37,13 @@ The core package does not parse natural language and has no Foundation Models,
 OpenAI, Anthropic, LLM, prompt, chat, or remote-service dependency. If an app
 uses a conversational model, translating its result into WorkoutIntent is the
 app's responsibility.
+
+Every resolution status includes the same typed `explicitOverrides` object:
+
+```json
+{"goalPolicy":false,"planningPolicy":false,"target":false,"trainingProfile":false,"equipmentAdded":[],"equipmentRemoved":[]}
+```
+
+Flags indicate caller-supplied policy/profile/TARGET artifacts; equipment arrays
+contain sorted exact additions/removals. `defaultsApplied` is the complementary
+sorted list of concepts selected by policy defaults.

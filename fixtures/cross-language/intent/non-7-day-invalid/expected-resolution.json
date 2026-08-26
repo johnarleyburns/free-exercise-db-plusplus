@@ -7,6 +7,14 @@
   ],
   "defaultsApplied": [],
   "environmentPolicy": null,
+  "explicitOverrides": {
+    "equipmentAdded": [],
+    "equipmentRemoved": [],
+    "goalPolicy": false,
+    "planningPolicy": false,
+    "target": false,
+    "trainingProfile": false
+  },
   "generationOptions": {},
   "goalPolicy": null,
   "missingInformation": [],

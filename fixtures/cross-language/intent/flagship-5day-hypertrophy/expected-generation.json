@@ -679,7 +679,14 @@
       "environmentPolicy"
     ],
     "environmentPolicy": "commercial-gym-general-v1",
-    "explicitOverrides": [],
+    "explicitOverrides": {
+      "equipmentAdded": [],
+      "equipmentRemoved": [],
+      "goalPolicy": false,
+      "planningPolicy": false,
+      "target": false,
+      "trainingProfile": false
+    },
     "generationOptions": {
       "continuity": "neutral",
       "effortDefaults": {

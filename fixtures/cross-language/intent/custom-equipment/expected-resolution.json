@@ -5,14 +5,17 @@
     "planningPolicy"
   ],
   "environmentPolicy": null,
-  "explicitOverrides": [
-    {
-      "equipmentAdded": [
-        "body only",
-        "dumbbell"
-      ]
-    }
-  ],
+  "explicitOverrides": {
+    "equipmentAdded": [
+      "body only",
+      "dumbbell"
+    ],
+    "equipmentRemoved": [],
+    "goalPolicy": false,
+    "planningPolicy": false,
+    "target": false,
+    "trainingProfile": false
+  },
   "generationOptions": {
     "continuity": "neutral",
     "effortDefaults": {

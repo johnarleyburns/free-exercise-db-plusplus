@@ -6,6 +6,7 @@ from pathlib import Path
 from fedbpp import Database, TrainingHistory, evaluate_plan, generate_plan_from_intent, resolve_intent
 from fedbpp.intent import ENVIRONMENT_POLICIES, GOAL_POLICIES, validate_workout_intent
 from fedbpp.intent import _merge_target
+from fedbpp._analysis.targets import validate_target
 
 
 def db():
@@ -130,4 +131,11 @@ def test_target_merge_goal_policy_and_provenance_hardening():
     bad = resolve_intent(intent(requestedGoalPolicy="general-strength-v1"), db())
     assert bad["conflicts"][0]["code"] == "GOAL_POLICY_MISMATCH"
     explicit = resolve_intent(intent(requestedGoalPolicy="general-hypertrophy-v1", requestedPlanningPolicy="upper-lower-general-v1", equipmentOverrides={"removeEquipment":["barbell"]}), db())
-    assert explicit["defaultsApplied"] == ["environmentPolicy"] and "goalPolicy" in explicit["explicitOverrides"] and {"equipmentRemoved":["barbell"]} in explicit["explicitOverrides"]
+    assert explicit["defaultsApplied"] == ["environmentPolicy"] and explicit["explicitOverrides"]["goalPolicy"] and explicit["explicitOverrides"]["planningPolicy"] and explicit["explicitOverrides"]["equipmentRemoved"] == ["barbell"]
+
+def test_canonical_target_relational_validation_all_sections():
+    base = {"schemaVersion":"0.1.0","targetId":"t","periodDays":7,"muscles":{"chest":{"min":2,"target":3,"max":4}},"frequency":{"muscles":{"chest":{"min":2,"target":3,"max":4}}},"movementPatterns":{"hinge":{"minimumSets":2,"targetSets":3,"maximumSets":4}},"families":{"deadlift":{"minimumSets":2,"targetSets":3,"maximumSets":4}}}
+    assert not validate_target(base)
+    for section, path, bad in (("frequency", "frequency.muscles.chest", {"min":3,"target":2}), ("movementPatterns", "movementPatterns.hinge", {"minimumSets":4,"targetSets":2}), ("families", "families.deadlift", {"targetSets":5,"maximumSets":4})):
+        value = json.loads(json.dumps(base)); value[section] = {"muscles":{"chest":bad}} if section == "frequency" else {"hinge":bad} if section == "movementPatterns" else {"deadlift":bad}
+        assert any(path in error for error in validate_target(value))
