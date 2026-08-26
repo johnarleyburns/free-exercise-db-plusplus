@@ -1,0 +1,6 @@
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "example-no-cable",
+  "availability": {"cycleLengthDays": 7, "sessionsPerCycle": {"target": 1}},
+  "equipment": ["body only"]
+}

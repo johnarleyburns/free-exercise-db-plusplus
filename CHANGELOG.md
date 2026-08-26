@@ -16,6 +16,17 @@
 
 # Changelog
 
+## 1.8.0 - 2026-08-25
+
+- Added deterministic Python PLAN proposal generation with the versioned
+  `full-body-general-v1` reference PlanningPolicy.
+- Added canonical-evaluator-gated generation reports, explicit hard
+  unsatisfiability/target-gap reasons, deterministic IDs and provenance,
+  optional current-plan and TrainingState continuity, and `fedbpp generate-plan`.
+- Added plan-generation policy and determinism ADRs and public guidance.
+- Existing PLAN, ACTUAL, TARGET, TrainingProfile, TrainingState, relationship,
+  and evaluation schemas remain unchanged.
+
 ## 1.7.1 - 2026-08-25
 
 - Corrected the direction-specific RPE/RIR effort reason codes without changing

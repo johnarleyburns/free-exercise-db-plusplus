@@ -212,6 +212,9 @@ Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [t
 
 Training context and deterministic plan evaluation: [TrainingProfile](docs/TRAINING-PROFILE.md), [PlanEvaluation](docs/PLAN-EVALUATION.md)
 
+Deterministic PLAN proposals: [Plan generation](docs/PLAN-GENERATION.md),
+[Planning policies](docs/PLANNING-POLICIES.md).
+
 Derived state and advisory progression: [TrainingState](docs/TRAINING-STATE.md),
 [Progression policies](docs/PROGRESSION-POLICIES.md), [CoachDecision](docs/COACH-DECISIONS.md).
 

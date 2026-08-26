@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "example-full-body",
+  "availability": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {"min": 3, "target": 3, "max": 3},
+    "preferredDayOffsets": [0]
+  },
+  "equipment": ["barbell", "dumbbell", "body only"],
+  "exercisePreferences": {
+    "preferredExerciseIds": ["Barbell_Bench_Press_-_Medium_Grip"],
+    "avoidedExerciseIds": ["Around_The_Worlds"]
+  },
+  "constraints": {"excludedExerciseIds": ["Barbell_Squat"]}
+}

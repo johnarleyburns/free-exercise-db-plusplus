@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "0.1.0",
+  "targetId": "example-full-body",
+  "periodDays": 7,
+  "muscles": {
+    "chest": {"min": 3, "target": 4, "max": 8},
+    "quadriceps": {"min": 1}
+  },
+  "frequency": {"muscles": {"chest": {"min": 2}}},
+  "movementPatterns": {"horizontal_press": {"minimumSets": 3}}
+}
