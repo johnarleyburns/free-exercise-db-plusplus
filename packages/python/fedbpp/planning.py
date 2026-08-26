@@ -45,6 +45,19 @@ PLANNING_POLICIES: dict[str, PlanningPolicy] = {
          "effort": {"rir": 2}, "allowUnverifiableEquipment": False,
          "preferHistoryContinuity": True, "avoidSameFamilyInSession": True},
     )
+    ,"upper-lower-general-v1": PlanningPolicy(
+        "upper-lower-general-v1", "1", "Reference deterministic alternating upper/lower construction policy.",
+        "upper_lower_alternating", "eligible_target_coverage_v1",
+        "greatest_deficit_one_set_v1", "least_exposed_compatible_session_v1",
+        "explicit_tuple_then_exercise_id_v1",
+        {"defaultSessionsPerCycle": 4, "minimumSessionsPerCycle": 2, "setBlock": 1,
+         "reps": {"min": 6, "target": 8, "max": 10}, "effort": {"rir": 2},
+         "allowUnverifiableEquipment": False, "preferHistoryContinuity": True,
+         "upperMuscles": ["chest", "lats", "middle_back", "traps", "biceps", "triceps", "shoulders", "forearms", "rotator_cuff"],
+         "lowerMuscles": ["quadriceps", "hamstrings", "glutes", "calves", "abductors", "adductors", "hip_flexors", "lower_back"],
+         "upperPatterns": ["horizontal_press", "horizontal_press_triceps_bias", "incline_press", "decline_press", "vertical_press", "horizontal_pull", "vertical_pull", "chest_fly", "elbow_extension", "elbow_flexion", "shoulder_abduction", "shoulder_flexion", "shoulder_external_rotation", "shoulder_internal_rotation", "face_pull", "reverse_fly", "shrug", "upright_row"],
+         "lowerPatterns": ["squat", "squat_quad_bias", "lunge", "step_up", "leg_press", "hip_hinge", "hip_extension", "hip_flexion", "knee_extension", "knee_flexion", "plantar_flexion_bent_knee", "plantar_flexion_straight_knee", "hip_abduction", "hip_adduction"]},
+    )
 }
 
 
@@ -142,7 +155,7 @@ def _session_count(profile: dict[str, Any], policy: PlanningPolicy) -> tuple[lis
     # range may express zero training sessions for other application purposes.
     if high == 0:
         return [], [{"code": "SESSION_COUNT_CONFLICT", "detail": "canonical PLAN requires at least one session"}]
-    low = max(1, low)
+    low = max(1, low, int(policy.parameters.get("minimumSessionsPerCycle", 1)))
     if high is not None and low > high:
         return [], [{"code": "SESSION_COUNT_CONFLICT", "minimum": low, "maximum": high}]
     if high is not None and desired > high: desired = high
@@ -157,8 +170,8 @@ def _validate_policy(policy: PlanningPolicy) -> list[str]:
     errors = []
     if not policy.policyId or not policy.policyVersion:
         errors.append("policyId and policyVersion are required")
-    if policy.splitStrategy != "full_body_every_session":
-        errors.append("only full_body_every_session is implemented in v1.8")
+    if policy.splitStrategy not in {"full_body_every_session", "upper_lower_alternating"}:
+        errors.append("unsupported splitStrategy")
     for key in required:
         if key not in policy.parameters:
             errors.append(f"parameters.{key} is required")
@@ -170,11 +183,31 @@ def _validate_policy(policy: PlanningPolicy) -> list[str]:
     return sorted(set(errors))
 
 
-def _day_offsets(cycle_days: int, count: int, preferred: list[int], excluded: set[int]) -> list[int] | None:
+def _session_kind(policy: PlanningPolicy, index: int) -> str:
+    if policy.splitStrategy == "upper_lower_alternating":
+        return "upper" if index % 2 == 0 else "lower"
+    return "full_body"
+
+
+def _compatible(candidate: dict[str, Any], session_index: int, policy: PlanningPolicy) -> bool:
+    kind = _session_kind(policy, session_index)
+    if kind == "full_body":
+        return True
+    ann = candidate["annotation"]
+    muscles = set(ann.get("direct", [])) | set(ann.get("indirect", []))
+    patterns = set(ann.get("patterns", []))
+    return bool(muscles & set(policy.parameters[f"{kind}Muscles"]) or patterns & set(policy.parameters[f"{kind}Patterns"]))
+
+
+def _day_offsets(cycle_days: int, count: int, preferred: list[int], excluded: set[int], locked: list[int] | None = None) -> list[int] | None:
     allowed = [d for d in range(cycle_days) if d not in excluded]
     if len(allowed) < count:
         return None
-    chosen = sorted(set(d for d in preferred if d in allowed))[:count]
+    locked = sorted(set(locked or ()))
+    if len(locked) > count or any(d not in allowed for d in locked):
+        return None
+    chosen = locked + [d for d in sorted(set(d for d in preferred if d in allowed)) if d not in locked]
+    chosen = chosen[:count]
     while len(chosen) < count:
         # Maximise the nearest circular spacing; lower day offset resolves ties.
         choices = [d for d in allowed if d not in chosen]
@@ -185,13 +218,36 @@ def _day_offsets(cycle_days: int, count: int, preferred: list[int], excluded: se
     return sorted(chosen)
 
 
+def _locked_locations(current: dict[str, Any] | None, locked: set[str]) -> tuple[dict[str, list[int]], list[dict[str, Any]]]:
+    if not locked:
+        return {}, []
+    if current is None:
+        return {}, [{"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": eid, "detail": "locked exercises require current_plan"} for eid in sorted(locked)]
+    locations: dict[str, list[int]] = {eid: [] for eid in locked}
+    session_offsets: list[int] = []
+    for session in current.get("sessions", []):
+        ids = {rx.get("exerciseId") for rx in session.get("exercises", [])}
+        selected = ids & locked
+        if selected:
+            session_offsets.append(session.get("dayOffset"))
+            for eid in selected:
+                locations[eid].append(session.get("dayOffset"))
+    conflicts: list[dict[str, Any]] = []
+    for eid in sorted(locked):
+        if not locations[eid]:
+            conflicts.append({"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": eid, "detail": "exercise does not occur in current_plan"})
+    if len(session_offsets) != len(set(session_offsets)):
+        conflicts.append({"code": "LOCKED_EXERCISE_CONFLICT", "detail": "multiple locked current-plan sessions share a dayOffset"})
+    return {eid: sorted(set(offsets)) for eid, offsets in locations.items() if offsets}, conflicts
+
+
 def _new_plan(cycle_days: int, offsets: list[int], policy: PlanningPolicy, options: dict[str, Any]) -> dict[str, Any]:
     base = options.get("planId", "generated-plan")
     revision = options.get("revisionId", "r1")
     return {"schemaVersion": "0.2.0", "planId": base, "revisionId": revision,
             "name": options.get("name", f"Generated {policy.policyId}"), "description": None,
             "cycle": {"lengthDays": cycle_days},
-            "sessions": [{"planSessionId": f"session-{i + 1}", "dayOffset": day, "name": f"Session {i + 1}", "exercises": []} for i, day in enumerate(offsets)]}
+            "sessions": [{"planSessionId": f"session-{i + 1}", "dayOffset": day, "name": (f"{_session_kind(policy, i).replace('_', ' ').title()} {i // 2 + 1}" if _session_kind(policy, i) != "full_body" else f"Session {i + 1}"), "exercises": []} for i, day in enumerate(offsets)]}
 
 
 def _add(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], policy: PlanningPolicy, reason: str, rationale: dict[str, set[str]]) -> None:
@@ -270,8 +326,13 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
             Plan.from_dict(current).validate()
         except ValueError as exc:
             return {"status": "invalid_input", "plan": None, "evaluation": None, "policy": policy_obj.document(), "selectionRationale": [], "unsatisfiedConstraints": [{"code": "INVALID_INPUT", "detail": f"current_plan: {exc}"}], "unsatisfiedTargets": [], "unsatisfiedSoftPreferences": [], "provenance": {"generatorVersion": GENERATOR_VERSION}}
-    required = set(requiredExerciseIds or ()) | set(lockedExerciseIds or ())
+    locked = set(lockedExerciseIds or ())
+    required = set(requiredExerciseIds or ()) | locked
+    locked_locations, lock_conflicts = _locked_locations(current, locked)
+    if lock_conflicts:
+        return _result("unsatisfiable", None, None, policy_obj, {}, lock_conflicts, [], [], db, profile, target, state, relationships, current)
     candidates, blockers = _candidate_pool(db, profile, relationships, required, set(additionalExclusions or ()), policy_obj)
+    blockers = [{"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": item.get("exerciseId"), "conflict": item["code"], **({"detail": item["detail"]} if item.get("detail") else {})} if item.get("exerciseId") in locked else item for item in blockers]
     if blockers or not candidates:
         blockers += ([] if blockers else [{"code": "NO_ELIGIBLE_EXERCISE"}])
         return _result("unsatisfiable", None, None, policy_obj, {}, blockers, [], [], db, profile, target, state, relationships, current)
@@ -279,7 +340,11 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
     if count_errors:
         return _result("unsatisfiable", None, None, policy_obj, {}, count_errors, [], [], db, profile, target, state, relationships, current)
     av = profile.get("availability", {}) or {}; cycle_days = int(av.get("cycleLengthDays", target.get("periodDays", 7)))
-    offsets_cache: dict[int, list[int] | None] = {n: _day_offsets(cycle_days, n, av.get("preferredDayOffsets", []) or [], set(av.get("excludedDayOffsets", []) or [])) for n in counts}
+    locked_offsets = sorted({offset for offsets in locked_locations.values() for offset in offsets})
+    excluded_offsets = set(av.get("excludedDayOffsets", []) or [])
+    if any(not isinstance(offset, int) or offset < 0 or offset >= cycle_days or offset in excluded_offsets for offset in locked_offsets):
+        return _result("unsatisfiable", None, None, policy_obj, {}, [{"code": "LOCKED_EXERCISE_CONFLICT", "detail": "locked current-plan dayOffset is unavailable in generated cycle"}], [], [], db, profile, target, state, relationships, current)
+    offsets_cache: dict[int, list[int] | None] = {n: _day_offsets(cycle_days, n, av.get("preferredDayOffsets", []) or [], excluded_offsets, locked_offsets) for n in counts}
     feasible = next((n for n in counts if offsets_cache[n] is not None), None)
     if feasible is None:
         return _result("unsatisfiable", None, None, policy_obj, {}, [{"code": "SESSION_COUNT_CONFLICT", "detail": "not enough permitted day offsets"}], [], [], db, profile, target, state, relationships, current)
@@ -293,10 +358,21 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         good_history = candidate["exerciseId"] in history and (adherence is None or adherence >= 0.5)
         return (-int(candidate["exerciseId"] in required), -int(candidate["exerciseId"] in existing), -int(good_history), -int(candidate["exerciseId"] in preferred), -int(candidate.get("familyId") in preferred_families), -_contributes(candidate, kind, key, credits), int(candidate["exerciseId"] in avoided) + int(candidate.get("familyId") in avoided_families), candidate["exerciseId"])
 
-    # Required/locked exercises are hard presence constraints and are placed round-robin.
-    for i, eid in enumerate(sorted(required)):
+    # Locked exercises retain their current-plan day offset. Required exercises
+    # have only a presence constraint and therefore use deterministic placement.
+    session_by_offset = {session["dayOffset"]: i for i, session in enumerate(plan["sessions"])}
+    for eid in sorted(locked):
         candidate = next(c for c in candidates if c["exerciseId"] == eid)
-        _add(plan, i % feasible, candidate, policy_obj, "LOCKED_EXERCISE" if eid in set(lockedExerciseIds or ()) else "REQUIRED_EXERCISE", rationale)
+        for offset in locked_locations[eid]:
+            if not _compatible(candidate, session_by_offset[offset], policy_obj):
+                return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": eid, "dayOffset": offset, "detail": "locked exercise is incompatible with generated split role"}], [], [], db, profile, target, state, relationships, current)
+            _add(plan, session_by_offset[offset], candidate, policy_obj, "LOCKED_EXERCISE", rationale)
+    for i, eid in enumerate(sorted(required - locked)):
+        candidate = next(c for c in candidates if c["exerciseId"] == eid)
+        sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj)]
+        if not sessions:
+            return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_EXERCISE", "exerciseId": eid, "detail": "required exercise incompatible with split"}], [], [], db, profile, target, state, relationships, current)
+        _add(plan, sessions[i % len(sessions)], candidate, policy_obj, "REQUIRED_EXERCISE", rationale)
     evaluation = evaluate_plan(plan, db, profile, target, relationships)
     # Canonical evaluation is intentionally invoked after every allocation block.
     for phase in ("minimum", "target"):
@@ -307,7 +383,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
             eligible = sorted((c for c in candidates if _contributes(c, kind, key, credits) > 0), key=lambda c: rank(c, kind, key))
             accepted = False
             for candidate in eligible:
-                sessions = list(range(feasible))
+                sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj)]
                 if kind == "frequency":
                     sessions.sort(key=lambda i: (int(any(key in (rx.get("exerciseId") and (_exercise_data(db, rx["exerciseId"]) or {}).get("annotation", {}).get("direct", []) + (_exercise_data(db, rx["exerciseId"]) or {}).get("annotation", {}).get("indirect", [])) for rx in plan["sessions"][i]["exercises"])), len(plan["sessions"][i]["exercises"]), i))
                 else: sessions.sort(key=lambda i: (len(plan["sessions"][i]["exercises"]), i))
@@ -327,7 +403,10 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
     # populate one without breaching target maxima is an explicit hard construction failure.
     for si, session in enumerate(plan["sessions"]):
         if not session["exercises"]:
-            candidate = sorted(candidates, key=lambda c: rank(c, "muscle", ""))[0]
+            compatible = [candidate for candidate in candidates if _compatible(candidate, si, policy_obj)]
+            if not compatible:
+                return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_EXERCISE", "detail": f"no eligible {_session_kind(policy_obj, si)} exercise"}], [], [], db, profile, target, state, relationships, current)
+            candidate = sorted(compatible, key=lambda c: rank(c, "muscle", ""))[0]
             draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "DETERMINISTIC_TIE_BREAK", rationale)
             evaluated = evaluate_plan(draft, db, profile, target, relationships)
             if _above_max(evaluated):

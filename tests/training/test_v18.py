@@ -11,10 +11,11 @@ def db(order=("alpha_press", "beta_press", "row")):
         "alpha_press": {"source": {"name": "Alpha Press", "equipment": "body only"}, "annotation": {"volumeEligible": True, "direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"]}},
         "beta_press": {"source": {"name": "Beta Press", "equipment": "body only"}, "annotation": {"volumeEligible": True, "direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"]}},
         "row": {"source": {"name": "Row", "equipment": "body only"}, "annotation": {"volumeEligible": True, "direct": ["back"], "indirect": ["biceps"], "stabilizers": [], "patterns": ["horizontal_pull"]}},
+        "squat": {"source": {"name": "Squat", "equipment": "body only"}, "annotation": {"volumeEligible": True, "direct": ["quadriceps"], "indirect": ["glutes"], "stabilizers": [], "patterns": ["squat"]}},
         "cable": {"source": {"name": "Cable", "equipment": "cable"}, "annotation": {"volumeEligible": True, "direct": ["chest"], "indirect": [], "stabilizers": [], "patterns": ["horizontal_push"]}},
     }
     keys = list(order) + ["cable"]
-    return Database({"metadata": {"schemaVersion": "1", "converterVersion": "1", "setCredits": {"direct": 1, "indirect": .5, "stabilizer": 0}, "muscleOntology": ["chest", "back", "biceps"]}, "exercises": {key: rows[key] for key in keys}})
+    return Database({"metadata": {"schemaVersion": "1", "converterVersion": "1", "setCredits": {"direct": 1, "indirect": .5, "stabilizer": 0}, "muscleOntology": ["chest", "back", "biceps", "quadriceps", "glutes"]}, "exercises": {key: rows[key] for key in keys}})
 
 
 def profile(**extra):
@@ -91,3 +92,32 @@ def test_family_target_without_relationships_is_invalid_input():
     result = generate_plan(profile(), target(families={"press": {"minimumSets": 1}}), db())
     assert result["status"] == "invalid_input"
     assert any("family targets require" in row["detail"] for row in result["unsatisfiedConstraints"])
+
+
+def current_plan(exercise_id="alpha_press", day_offset=4):
+    return {"schemaVersion": "0.2.0", "planId": "current", "revisionId": "r1", "name": "Current", "cycle": {"lengthDays": 8}, "sessions": [
+        {"planSessionId": "current-1", "dayOffset": 0, "exercises": [{"prescriptionId": "old-1", "exerciseId": "row", "order": 1, "sets": 1, "reps": 8}]},
+        {"planSessionId": "current-2", "dayOffset": day_offset, "exercises": [{"prescriptionId": "old-2", "exerciseId": exercise_id, "order": 1, "sets": 1, "reps": 8}]},
+    ]}
+
+
+def test_locked_exercise_preserves_current_plan_day_offset_and_reports_conflicts():
+    locked = generate_plan(profile(), target(), db(), current_plan=current_plan(), lockedExerciseIds=["alpha_press"])
+    assert locked["status"] == "generated"
+    assert any(rx["exerciseId"] == "alpha_press" for session in locked["plan"]["sessions"] if session["dayOffset"] == 4 for rx in session["exercises"])
+    excluded = generate_plan(profile(constraints={"excludedExerciseIds": ["alpha_press"]}), target(), db(), current_plan=current_plan(), lockedExerciseIds=["alpha_press"])
+    assert excluded["status"] == "unsatisfiable" and excluded["unsatisfiedConstraints"][0]["code"] == "LOCKED_EXERCISE_CONFLICT"
+    unavailable = generate_plan(profile(), target(), db(), current_plan=current_plan("cable"), lockedExerciseIds=["cable"])
+    assert unavailable["status"] == "unsatisfiable" and unavailable["unsatisfiedConstraints"][0]["code"] == "LOCKED_EXERCISE_CONFLICT"
+    unavailable_day = generate_plan(profile(availability={"cycleLengthDays": 8, "sessionsPerCycle": {"min": 2, "target": 2, "max": 2}, "excludedDayOffsets": [4]}), target(), db(), current_plan=current_plan(), lockedExerciseIds=["alpha_press"])
+    assert unavailable_day["status"] == "unsatisfiable" and unavailable_day["unsatisfiedConstraints"][0]["code"] == "LOCKED_EXERCISE_CONFLICT"
+
+
+def test_upper_lower_policy_is_deterministic_and_uses_explicit_metadata_partition():
+    p = profile(availability={"cycleLengthDays": 8, "sessionsPerCycle": {"min": 4, "target": 4, "max": 4}}, equipment=["body only"])
+    t = target(muscles={"chest": {"min": 2}, "quadriceps": {"min": 2}})
+    result = generate_plan(p, t, db(("alpha_press", "beta_press", "row", "squat")), policy="upper-lower-general-v1")
+    assert result["status"] == "generated" and result == generate_plan(p, t, db(("squat", "row", "beta_press", "alpha_press")), policy="upper-lower-general-v1")
+    assert [session["name"] for session in result["plan"]["sessions"]] == ["Upper 1", "Lower 1", "Upper 2", "Lower 2"]
+    assert all(rx["exerciseId"] != "squat" for session in result["plan"]["sessions"][::2] for rx in session["exercises"])
+    assert all(rx["exerciseId"] == "squat" for session in result["plan"]["sessions"][1::2] for rx in session["exercises"])

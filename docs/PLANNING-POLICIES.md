@@ -20,5 +20,19 @@ continuity, preferred exercise, preferred family, contribution to the active
 deficit, avoided penalty, exerciseId. Same-family diversity is a policy
 parameter for future selection refinements, not an equivalence rule.
 
-The policy is a deterministic reference constructor, not a claim of optimal
-physiology or a coaching system.
+## `upper-lower-general-v1`
+
+This reference policy constructs alternating Upper and Lower sessions, with a
+minimum of two sessions and a default of four. It uses explicit policy-owned
+lists of canonical DB++ muscle IDs and movement patterns to decide whether a
+candidate is compatible with an Upper or Lower session; it does not derive the
+split from exercise names. Sessions are named `Upper 1`, `Lower 1`, and so on.
+
+All filtering, allocation, coverage accounting, rep/RIR defaults, ranking,
+day spacing, and evaluator acceptance behavior are the same as
+`full-body-general-v1`. A required exercise is placed in a compatible split
+session. A locked exercise that cannot remain at its current day offset *and*
+compatible split role is explicitly unsatisfiable.
+
+Both policies are deterministic reference constructors, not claims of optimal
+physiology or coaching systems.

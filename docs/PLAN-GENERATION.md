@@ -31,8 +31,10 @@ maximum. Frequency requirements select a session without that muscle exposure
 before adding repeated exposure. Movement patterns and family targets use the
 same evaluator sections.
 
-Hard required and locked exercise IDs must appear; conflicts with exclusions,
-unknown IDs, or equipment are reported rather than overridden. Existing PLAN
+Required exercise IDs must appear somewhere. Locked exercise IDs require a
+`current_plan` and retain every locked exercise at its existing day offset; an
+excluded, unavailable, absent, or now-unavailable day offset produces
+`LOCKED_EXERCISE_CONFLICT` rather than moving it. Existing non-locked PLAN
 exercises and successful in-window TrainingState exercise usage are continuity
 preferences only. Preferences never defeat hard constraints or target minima.
 The response includes a descriptive PLAN difference when `current_plan` is

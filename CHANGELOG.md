@@ -19,7 +19,7 @@
 ## 1.8.0 - 2026-08-25
 
 - Added deterministic Python PLAN proposal generation with the versioned
-  `full-body-general-v1` reference PlanningPolicy.
+  `full-body-general-v1` and `upper-lower-general-v1` reference PlanningPolicies.
 - Added canonical-evaluator-gated generation reports, explicit hard
   unsatisfiability/target-gap reasons, deterministic IDs and provenance,
   optional current-plan and TrainingState continuity, and `fedbpp generate-plan`.
