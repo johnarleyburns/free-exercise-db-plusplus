@@ -255,7 +255,6 @@ jobs:
               if name.startswith('test_'): getattr(module,name)()
           print('v1.7 TrainingState and progression tests passed')
           PY
-          PY
 
       - name: Test ACTUAL 0.2 to 0.3 migration
         run: |
