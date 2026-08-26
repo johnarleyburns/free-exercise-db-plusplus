@@ -74,3 +74,20 @@ def test_zero_session_range_and_invalid_policy_are_explicit_failures():
     policy = PlanningPolicy("bad", "1", "bad", "upper_lower", "x", "x", "x", "x", {})
     with pytest.raises(ValueError, match="invalid planning policy configuration"):
         generate_plan(profile(), target(), db(), policy=policy)
+
+
+def test_custom_set_credits_and_history_continuity_are_authoritative():
+    document = db()._document
+    document["metadata"]["setCredits"] = {"direct": .5, "indirect": .25, "stabilizer": 0}
+    credited = Database(document)
+    result = generate_plan(profile(), target(), credited)
+    assert sum(rx["sets"] for session in result["plan"]["sessions"] for rx in session["exercises"] if rx["exerciseId"] == "alpha_press") == 4
+    state = {"stateVersion": "0.1.0", "exerciseState": {"beta_press": {"recentPerformances": [{"startedAt": "2026-01-01T00:00:00Z"}], "prescriptionAdherence": {"setAdherence": 1.0}}}}
+    continued = generate_plan(profile(), target(), db(), training_state=state)
+    assert {rx["exerciseId"] for session in continued["plan"]["sessions"] for rx in session["exercises"]} == {"beta_press"}
+
+
+def test_family_target_without_relationships_is_invalid_input():
+    result = generate_plan(profile(), target(families={"press": {"minimumSets": 1}}), db())
+    assert result["status"] == "invalid_input"
+    assert any("family targets require" in row["detail"] for row in result["unsatisfiedConstraints"])
