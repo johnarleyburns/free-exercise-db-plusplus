@@ -15,7 +15,7 @@ dependencyResolutionManagement { repositories { mavenCentral() } }
 rootProject.name = "consumer"
 EOF
 cat > "$consumer/build.gradle.kts" <<EOF
-plugins { kotlin("jvm") version "2.0.21"; kotlin("plugin.serialization") version "2.0.21" }
+plugins { kotlin("jvm") version "2.0.21"; kotlin("plugin.serialization") version "2.0.21"; application }
 repositories { mavenCentral() }
 dependencies { implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"); implementation(files("$repo/packages/kotlin/fedbpp/fedbpp/build/libs/fedbpp.jar")) }
 kotlin { jvmToolchain(17) }
@@ -32,4 +32,5 @@ fun main(args: Array<String>) {
     println("kotlin consumer ok")
 }
 EOF
-gradle -p "$consumer" run --args="${consumer}/intent.json" --no-daemon
+gradle_bin=${GRADLE_BIN:-gradle}
+"$gradle_bin" -p "$consumer" run --args="${consumer}/intent.json" --no-daemon

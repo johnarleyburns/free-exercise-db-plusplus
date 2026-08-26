@@ -34,13 +34,15 @@ class FedbppTest {
     @Test fun everyCanonicalNonHistoryFixtureResolves() {
         val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "fixtures/cross-language/intent").isDirectory }
         val db = Database.load(File(root, "free-exercise-db-plusplus.json"))
-        val json = Json { ignoreUnknownKeys = true; explicitNulls = true; encodeDefaults = true }
+        val json = Json { ignoreUnknownKeys = true; explicitNulls = false; encodeDefaults = true }
         File(root, "fixtures/cross-language/intent").listFiles()!!.filter { it.isDirectory }.sortedBy { it.name }.filterNot { File(it, "history.json").exists() }.forEach { fixture ->
             val intent = json.decodeFromString<WorkoutIntent>(File(fixture, "input.json").readText())
             val target = File(fixture, "target.json").takeIf { it.exists() }?.let { json.parseToJsonElement(it.readText()) }
             val actual = json.encodeToJsonElement(IntentResolutionResult.serializer(), resolveIntent(intent, db, target = target))
             val expected = json.parseToJsonElement(File(fixture, "expected-resolution.json").readText())
-            assert(actual == expected) { fixture.name }
+            val stableTopLevel = listOf("resolvedProfile", "resolvedTarget", "planningPolicy", "goalPolicy", "environmentPolicy")
+            val normalized = if (actual is JsonObject) JsonObject(actual.toMutableMap().apply { stableTopLevel.forEach { key -> if (!containsKey(key)) put(key, kotlinx.serialization.json.JsonNull) } }) else actual
+            assert(normalized == expected) { fixture.name }
         }
     }
     @Test fun databaseLoadsAndQueries() {

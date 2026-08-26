@@ -14,6 +14,7 @@ equipment ordering, structured conflict codes, and stable `explicitOverrides`.
 Current parity report: Python and Swift execute the canonical non-history
 resolution matrix; Kotlin and R execute every non-history fixture and their
 installed/isolated consumers exercise the flagship. DB-aware unknown exercise,
-equipment, and family validation is shared by all native bindings. Full
-history-aware TrainingState derivation and native intent-to-plan parity remain
-v1.12 work and are not claimed here.
+equipment, and family validation is shared by all native bindings. Native
+history projections and deterministic intent-to-plan drafts are available in
+all bindings; Python remains the oracle for full adherence-rich state and
+production plan optimization.

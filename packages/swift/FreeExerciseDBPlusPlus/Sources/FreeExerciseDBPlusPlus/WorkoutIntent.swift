@@ -434,6 +434,17 @@ private enum IntentPolicyCatalog {
   static var environments: [String: JSONValue] { o(root["environmentPolicies"]) }
 }
 
+public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
+  let root = history.objectValue ?? [:]
+  let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
+  let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
+  let active = plans.first { plan in activations.contains { $0["planId"] == plan["planId"] && $0["revisionId"] == plan["revisionId"] } }
+  let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter { ($0["startTime"]?.stringValue ?? "") <= asOf }
+  var exerciseState: [String: JSONValue] = [:]
+  for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number(1), "recentCompletedSetCount": .number(Double(count))]) } }
+  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "activePlan": active.map { .object(["planId": $0["planId"] ?? .null, "revisionId": $0["revisionId"] ?? .null]) } ?? .object([:]), "exerciseState": .object(exerciseState), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf)])])
+}
+
 public struct IntentResolver: Sendable {
   public init() {}
   public func resolve(
@@ -572,14 +583,16 @@ public struct IntentResolver: Sendable {
     if x.useHistory == true && history == nil { historyWarnings.append("useHistory was requested but no history was provided") }
     if x.useHistory == true && history != nil && asOf == nil { historyWarnings.append("useHistory was requested but as_of is required to derive TrainingState") }
     let reps = policy["reps"] ?? .object([:])
+    var generationOptions: [String: JSONValue] = [
+      "continuity": s(x.continuity ?? "neutral"), "repDefaults": reps,
+      "effortDefaults": policy["effort"] ?? .object([:]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
+    ]
+    if x.useHistory == true, let history, let asOf { generationOptions["trainingState"] = deriveTrainingState(history, asOf: asOf) }
     return IntentResolutionResult(
       status: defaults.isEmpty ? "resolved" : "resolved_with_defaults", resolvedProfile: .object(p),
       resolvedTarget: target, planningPolicy: x.requestedPlanningPolicy ?? "full-body-general-v1",
       goalPolicy: GoalPolicyReference(policyId: gid, policyVersion: policyVersion, description: desc), environmentPolicy: resolvedEnvironmentPolicy,
-      generationOptions: .object([
-        "continuity": s(x.continuity ?? "neutral"), "repDefaults": reps,
-        "effortDefaults": policy["effort"] ?? .object([:]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
-      ]), missingInformation: [], warnings: historyWarnings, defaultsApplied: defaults,
+      generationOptions: .object(generationOptions), missingInformation: [], warnings: historyWarnings, defaultsApplied: defaults,
       explicitOverrides: ExplicitOverrides(
         goalPolicy: x.requestedGoalPolicy != nil, planningPolicy: x.requestedPlanningPolicy != nil,
         target: explicitTarget != nil, trainingProfile: supplied != nil,
@@ -599,6 +612,22 @@ public func validateWorkoutIntent(_ x: WorkoutIntent, database: FEDatabase? = ni
 public func resolveIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil)
   -> IntentResolutionResult
 { IntentResolver().resolve(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf) }
+public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil) -> JSONValue {
+  let resolution = resolveIntent(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf)
+  let resolutionJSON = (try? JSONEncoder().encode(resolution)).flatMap { try? JSONDecoder().decode(JSONValue.self, from: $0) } ?? .null
+  guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let p = resolution.resolvedProfile?.objectValue, let availability = p["availability"]?.objectValue else { return .object(["resolution": resolutionJSON, "generation": .null]) }
+  let range = availability["sessionsPerCycle"]?.objectValue ?? [:]; let count = Int(range["target"]?.numberValue ?? range["min"]?.numberValue ?? 1)
+  let exerciseCount = Int(availability["exercisesPerSession"]?.objectValue?["target"]?.numberValue ?? 3)
+  let ids = Array(database.exerciseIDs.sorted().prefix(max(1, exerciseCount)))
+  let reps = resolution.generationOptions.objectValue?["repDefaults"] ?? .object([:])
+  let sessions: [JSONValue] = (0..<max(1, count)).map { offset in
+    let exercises: [JSONValue] = ids.enumerated().map { i, id in
+      .object(["prescriptionId": .string("intent-rx-\(offset + 1)-\(i + 1)"), "exerciseId": .string(id), "order": .number(Double(i + 1)), "sets": .number(1), "reps": reps])
+    }
+    return .object(["planSessionId": .string("intent-session-\(offset + 1)"), "dayOffset": .number(Double(offset)), "exercises": .array(exercises)])
+  }
+  return .object(["resolution": resolutionJSON, "generation": .object(["status": .string("generated"), "schemaVersion": .string("0.2.0"), "sessions": .array(sessions)])])
+}
 public func mergeTarget(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
   merge(base, explicit)
 }

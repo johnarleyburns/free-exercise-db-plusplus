@@ -194,13 +194,32 @@ resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, rel
   muscles <- goal_policy$muscles; default_target <- list(schemaVersion="0.1.0", targetId=paste0(goal_id,"-default"), periodDays=s$cycleLengthDays, muscles=muscles, notes=description); resolved_target <- merge_target(default_target, target)
   target_errors <- validate_target(resolved_target); if (length(target_errors)) { empty$resolvedTarget <- resolved_target; empty$conflicts <- lapply(target_errors, function(x) list(code="TARGET_OVERRIDE_CONFLICT", detail=x)); return(empty) }
   defaults <- c(if (is.null(doc$requestedGoalPolicy)) "goalPolicy", if (is.null(doc$requestedPlanningPolicy)) "planningPolicy", if (!is.null(resolved_env)) "environmentPolicy")
-  options <- list(continuity=doc$continuity %||% "neutral", repDefaults=goal_policy$reps, effortDefaults=goal_policy$effort, requiredFamilyIds=sort(unique(constraints$requiredFamilyIds %||% character())))
+  options <- list(continuity=doc$continuity %||% "neutral", repDefaults=goal_policy$reps, effortDefaults=goal_policy$effort, requiredFamilyIds=sort(unique(.strings(constraints$requiredFamilyIds))))
   warnings <- character(); if (isTRUE(doc$useHistory) && is.null(history)) warnings <- c(warnings, "useHistory was requested but no history was provided"); if (isTRUE(doc$useHistory) && !is.null(history) && is.null(as_of)) warnings <- c(warnings, "useHistory was requested but as_of is required to derive TrainingState")
+  if (isTRUE(doc$useHistory) && !is.null(history) && !is.null(as_of)) options$trainingState <- derive_training_state(history, as_of)
   dbmd <- db$metadata %||% list(); rel_version <- if (!is.null(relationships)) relationships$schemaVersion %||% NULL else NULL
   list(status=if(length(defaults)) "resolved_with_defaults" else "resolved", resolvedProfile=resolved_profile, resolvedTarget=resolved_target, planningPolicy=doc$requestedPlanningPolicy %||% "full-body-general-v1", goalPolicy=list(policyId=goal_id, policyVersion="1", description=description), environmentPolicy=if(!is.null(resolved_env)) resolved_env$id else NULL, generationOptions=options, missingInformation=list(), warnings=warnings, conflicts=list(), defaultsApplied=defaults, explicitOverrides=list(goalPolicy=!is.null(doc$requestedGoalPolicy), planningPolicy=!is.null(doc$requestedPlanningPolicy), target=!is.null(target), trainingProfile=!is.null(profile), equipmentAdded=additions, equipmentRemoved=removals), provenance=list(intentSchemaVersion=doc$schemaVersion, goalPolicy=list(policyId=goal_id, policyVersion="1"), environmentPolicy=if(!is.null(resolved_env)) list(policyId=resolved_env$id, policyVersion="1") else NULL, dbSchemaVersion=dbmd$schemaVersion %||% NULL, dbConverterVersion=dbmd$converterVersion %||% NULL, relationshipSchemaVersion=rel_version))
 }
 
-generate_plan_from_intent <- function(intent, db, ...) stop("native R plan generation is deferred; use resolve_intent()")
+derive_training_state <- function(history, as_of) {
+  workouts <- Filter(function(w) !is.null(w$startTime) && w$startTime <= as_of, history$workouts %||% list())
+  state <- list()
+  for (workout in workouts) for (exercise in workout$exercises %||% list()) {
+    id <- exercise$exerciseId %||% NULL; if (is.null(id)) next
+    completed <- sum(vapply(exercise$sets %||% list(), function(x) isTRUE(x$completed), logical(1)))
+    state[[id]] <- list(exerciseId = id, recentSessionCount = 1L, recentCompletedSetCount = completed)
+  }
+  list(stateVersion = "0.1.0", subjectId = history$subjectId %||% NULL, asOf = as_of, activePlan = list(), exerciseState = state, familyState = list(), muscleState = list(), adherenceState = list(), sessionState = list(), provenance = list(stateVersion = "0.1.0", asOf = as_of))
+}
+
+generate_plan_from_intent <- function(intent, db, profile = NULL, target = NULL, relationships = NULL, history = NULL, as_of = NULL, ...) {
+  resolution <- resolve_intent(intent, db, profile, target, relationships, history, as_of)
+  if (!resolution$status %in% c("resolved", "resolved_with_defaults")) return(list(resolution = resolution, generation = NULL))
+  availability <- resolution$resolvedProfile$availability; n <- as.integer((availability$sessionsPerCycle$target %||% availability$sessionsPerCycle$min %||% 1)); k <- as.integer(availability$exercisesPerSession$target %||% 3)
+  ids <- sort(names(db$exercises))[seq_len(min(max(1L, k), length(db$exercises)))]
+  sessions <- lapply(seq_len(max(1L, n)), function(i) list(planSessionId = paste0("intent-session-", i), dayOffset = i - 1L, exercises = lapply(seq_along(ids), function(j) list(prescriptionId = paste0("intent-rx-", i, "-", j), exerciseId = ids[[j]], order = j, sets = 1L, reps = resolution$generationOptions$repDefaults))))
+  list(resolution = resolution, generation = list(status = "generated", schemaVersion = "0.2.0", sessions = sessions))
+}
 
 merge_target <- function(default, explicit = NULL) {
   if (is.null(explicit)) return(default)

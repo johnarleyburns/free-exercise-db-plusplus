@@ -11,7 +11,7 @@ import kotlinx.serialization.json.contentOrNull
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
 
-internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = true; encodeDefaults = true }
+internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = false; encodeDefaults = true }
 
 class Database private constructor(private val document: DatabaseDocument) {
     val metadata get() = document.metadata
