@@ -11,7 +11,9 @@ Swift, Kotlin/JVM, and R. The native bindings share the frozen schema version
 (`0.1.0`), policy IDs/versions, Monday-based weekday mapping, deterministic
 equipment ordering, structured conflict codes, and stable `explicitOverrides`.
 
-Current parity report: Python resolution is full; Swift executes the canonical
-non-history resolution matrix, and Kotlin/R pass flagship and core
-status-policy consumer cases. Full history-aware TrainingState and native
-intent-to-plan parity remain v1.12 work and are not claimed here.
+Current parity report: Python and Swift execute the canonical non-history
+resolution matrix; Kotlin and R execute every non-history fixture and their
+installed/isolated consumers exercise the flagship. DB-aware unknown exercise,
+equipment, and family validation is shared by all native bindings. Full
+history-aware TrainingState derivation and native intent-to-plan parity remain
+v1.12 work and are not claimed here.

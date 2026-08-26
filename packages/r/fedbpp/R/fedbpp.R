@@ -1,6 +1,7 @@
 #' Read-only Free Exercise DB++ research helpers.
 
 `%||%` <- function(x, y) if (is.null(x)) y else x
+.strings <- function(x) as.character(unlist(x %||% character(), use.names = FALSE))
 
 load_database <- function(path) {
   stopifnot(length(path) == 1L)
@@ -112,7 +113,8 @@ read_workout_intent <- function(path, validate = TRUE) {
 
 read_intent_policies <- function() {
   path <- system.file("extdata", "intent-policies.json", package = "fedbpp")
-  if (!nzchar(path)) path <- file.path("inst", "extdata", "intent-policies.json")
+  if (!nzchar(path) || !file.exists(path)) path <- file.path("inst", "extdata", "intent-policies.json")
+  if (!file.exists(path)) path <- file.path("packages", "r", "fedbpp", "inst", "extdata", "intent-policies.json")
   jsonlite::fromJSON(path, simplifyVector = FALSE)
 }
 
@@ -129,6 +131,7 @@ validate_workout_intent <- function(intent, database = NULL, relationships = NUL
   errors <- c(errors, range_errors(schedule$sessionsPerCycle, "schedule.sessionsPerCycle"), range_errors((intent$sessionConstraints %||% list())$exercisesPerSession, "sessionConstraints.exercisesPerSession"))
   constraints <- intent$exerciseConstraints %||% list(); if (length(intersect(unique(base::c(constraints$requiredExerciseIds %||% character(), constraints$lockedExerciseIds %||% character())), constraints$excludedExerciseIds %||% character()))) errors <- base::c(errors, "exerciseConstraints: requiredExerciseIds conflicts with excludedExerciseIds")
   if (length(intersect(constraints$requiredFamilyIds %||% character(), constraints$excludedFamilyIds %||% character()))) errors <- c(errors, "exerciseConstraints: requiredFamilyIds conflicts with excludedFamilyIds")
+  if (length(.strings(c(constraints$requiredFamilyIds, constraints$excludedFamilyIds, (intent$preferences %||% list())$preferredFamilyIds, (intent$preferences %||% list())$avoidedFamilyIds))) && is.null(relationships)) errors <- c(errors, "exercise family constraints require exercise relationships")
   for (pair in list(c("preferredExerciseIds", "excludedExerciseIds"), c("avoidedExerciseIds", "excludedExerciseIds"), c("preferredFamilyIds", "excludedFamilyIds"), c("avoidedFamilyIds", "excludedFamilyIds"))) if (length(intersect((intent$preferences %||% list())[[pair[[1L]]]] %||% character(), constraints[[pair[[2L]]]] %||% character()))) errors <- c(errors, paste0("preferences: ", pair[[1L]], " conflicts with ", pair[[2L]]))
   if (identical(intent$goal, "hypertrophy") && identical(intent$requestedGoalPolicy, "general-strength-v1") || identical(intent$goal, "strength") && identical(intent$requestedGoalPolicy, "general-hypertrophy-v1")) errors <- c(errors, "GOAL_POLICY_MISMATCH")
   if (!is.null(intent$requestedGoalPolicy) && !intent$requestedGoalPolicy %in% c("general-hypertrophy-v1", "general-strength-v1")) errors <- c(errors, "requestedGoalPolicy: unknown goal policy")
@@ -136,6 +139,29 @@ validate_workout_intent <- function(intent, database = NULL, relationships = NUL
   if (!is.null(intent$goal) && !intent$goal %in% c("hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power")) errors <- c(errors, "goal: unsupported value")
   if (!is.null(intent$environment) && !intent$environment %in% c("commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom")) errors <- c(errors, "environment: unsupported value")
   if (!is.null(intent$continuity) && !intent$continuity %in% c("preserve", "neutral", "vary")) errors <- c(errors, "continuity: unsupported value")
+  if (!is.null(database)) {
+    constraints <- intent$exerciseConstraints %||% list(); prefs <- intent$preferences %||% list()
+    known <- names(database$exercises)
+    unknown_messages <- function(field, values, known, suffix) {
+      values <- .strings(values); unknown <- values[!values %in% known]
+      if (length(unknown)) paste0(field, suffix, unknown) else character()
+    }
+    for (pair in list(c("requiredExerciseIds", "exerciseConstraints"), c("lockedExerciseIds", "exerciseConstraints"), c("excludedExerciseIds", "exerciseConstraints"), c("preferredExerciseIds", "preferences"), c("avoidedExerciseIds", "preferences"))) {
+      values <- (if (pair[[2L]] == "exerciseConstraints") constraints else prefs)[[pair[[1L]]]] %||% character()
+      errors <- c(errors, unknown_messages(pair[[1L]], values, known, ": unknown exerciseId: "))
+    }
+    equipment <- unique(unlist(lapply(database$exercises, function(x) x$source$equipment %||% character()), use.names = FALSE))
+    overrides <- intent$equipmentOverrides %||% list()
+    for (field in c("addEquipment", "removeEquipment")) {
+      values <- overrides[[field]] %||% character()
+      errors <- c(errors, unknown_messages(field, values, equipment, ": unknown DB++ equipment value: "))
+    }
+    if (!is.null(relationships)) {
+      families <- names(relationships$families)
+      for (field in c("requiredFamilyIds", "excludedFamilyIds")) { values <- constraints[[field]] %||% character(); errors <- c(errors, unknown_messages(field, values, families, ": unknown familyId: ")) }
+      for (field in c("preferredFamilyIds", "avoidedFamilyIds")) { values <- prefs[[field]] %||% character(); errors <- c(errors, unknown_messages(field, values, families, ": unknown familyId: ")) }
+    }
+  }
   sort(unique(errors))
 }
 
@@ -161,9 +187,9 @@ resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, rel
   if (!identical(doc$goal, policy_goal)) { empty$conflicts <- list(list(code="GOAL_POLICY_MISMATCH", goal=doc$goal, requestedGoalPolicy=goal_id, policyGoal=policy_goal)); return(empty) }
   policies <- read_intent_policies(); goal_policy <- policies$goalPolicies[[goal_id]]; description <- goal_policy$description
   envs <- lapply(policies$environmentPolicies, function(value) list(id=value$policyId, equipment=unlist(value$equipment, use.names=FALSE))); names(envs) <- vapply(envs, function(value) policies$environmentPolicies[[which(vapply(policies$environmentPolicies, function(x) identical(x$policyId, value$id), logical(1)))]]$environment, character(1))
-  env <- envs[[doc$environment]]; additions <- sort(unique(equipment_overrides$addEquipment %||% character())); removals <- sort(unique(equipment_overrides$removeEquipment %||% character()))
+  env <- envs[[doc$environment]]; additions <- sort(unique(.strings(equipment_overrides$addEquipment))); removals <- sort(unique(.strings(equipment_overrides$removeEquipment)))
   profile_has_equipment <- !is.null(profile$equipment) && length(profile$equipment) > 0; base_equipment <- if (profile_has_equipment) profile$equipment else if (!is.null(env)) env$equipment else character(); resolved_equipment <- sort(setdiff(union(base_equipment, additions), removals)); resolved_env <- if (profile_has_equipment) NULL else env
-  resolved_profile <- profile %||% list(); resolved_profile$schemaVersion <- resolved_profile$schemaVersion %||% "0.1.0"; resolved_profile$profileId <- resolved_profile$profileId %||% "resolved-profile"; resolved_profile$subjectId <- doc$subjectId %||% resolved_profile$subjectId %||% NULL; resolved_profile$goals <- list(list(type=doc$goal)); resolved_profile$equipment <- resolved_equipment; resolved_profile$exercisePreferences <- resolved_profile$exercisePreferences %||% list(); prefs <- doc$preferences %||% list(); for (key in c("preferredExerciseIds", "avoidedExerciseIds", "preferredFamilyIds", "avoidedFamilyIds")) if (length(prefs[[key]] %||% character())) resolved_profile$exercisePreferences[[key]] <- sort(unique(c(resolved_profile$exercisePreferences[[key]] %||% character(), prefs[[key]])))
+  resolved_profile <- profile %||% list(); resolved_profile$schemaVersion <- resolved_profile$schemaVersion %||% "0.1.0"; resolved_profile$profileId <- resolved_profile$profileId %||% "resolved-profile"; resolved_profile$subjectId <- doc$subjectId %||% resolved_profile$subjectId %||% NULL; resolved_profile$goals <- list(list(type=doc$goal)); resolved_profile$equipment <- resolved_equipment; resolved_profile$exercisePreferences <- resolved_profile$exercisePreferences %||% list(); prefs <- doc$preferences %||% list(); for (key in c("preferredExerciseIds", "avoidedExerciseIds", "preferredFamilyIds", "avoidedFamilyIds")) if (length(.strings(prefs[[key]]))) resolved_profile$exercisePreferences[[key]] <- sort(unique(c(.strings(resolved_profile$exercisePreferences[[key]]), .strings(prefs[[key]]))))
   av <- resolved_profile$availability %||% list(); av$cycleLengthDays <- s$cycleLengthDays; av$sessionsPerCycle <- s$sessionsPerCycle; av$preferredDayOffsets <- sort(unique(c(s$preferredDayOffsets %||% integer(), match(s$preferredWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$preferredDayOffsets <- av$preferredDayOffsets[!is.na(av$preferredDayOffsets)]; av$excludedDayOffsets <- sort(unique(c(s$excludedDayOffsets %||% integer(), match(s$excludedWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$excludedDayOffsets <- av$excludedDayOffsets[!is.na(av$excludedDayOffsets)]; if (!is.null(doc$sessionConstraints$exercisesPerSession)) av$exercisesPerSession <- doc$sessionConstraints$exercisesPerSession; resolved_profile$availability <- av; resolved_profile$constraints <- resolved_profile$constraints %||% list(); resolved_profile$constraints$excludedExerciseIds <- sort(unique(c(resolved_profile$constraints$excludedExerciseIds %||% character(), constraints$excludedExerciseIds %||% character()))); resolved_profile$constraints$excludedFamilyIds <- sort(unique(c(resolved_profile$constraints$excludedFamilyIds %||% character(), constraints$excludedFamilyIds %||% character())))
   muscles <- goal_policy$muscles; default_target <- list(schemaVersion="0.1.0", targetId=paste0(goal_id,"-default"), periodDays=s$cycleLengthDays, muscles=muscles, notes=description); resolved_target <- merge_target(default_target, target)
   target_errors <- validate_target(resolved_target); if (length(target_errors)) { empty$resolvedTarget <- resolved_target; empty$conflicts <- lapply(target_errors, function(x) list(code="TARGET_OVERRIDE_CONFLICT", detail=x)); return(empty) }

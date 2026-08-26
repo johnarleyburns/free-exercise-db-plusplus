@@ -11,11 +11,12 @@ import kotlinx.serialization.json.contentOrNull
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
 
-internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = false }
+internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = true; encodeDefaults = true }
 
 class Database private constructor(private val document: DatabaseDocument) {
     val metadata get() = document.metadata
     val size get() = document.exercises.size
+    val exerciseIds get() = document.exercises.keys.toSet()
     val equipmentVocabulary get() = document.exercises.values.mapNotNull { it.source["equipment"]?.jsonPrimitive?.contentOrNull }.toSet()
     fun getExercise(id: String): Exercise = document.exercises[id] ?: throw ExerciseNotFoundException(id)
     fun findExercises(query: String): List<Exercise> = document.exercises.values.filter { it.exerciseId.contains(query, ignoreCase = true) }.sortedBy { it.exerciseId }

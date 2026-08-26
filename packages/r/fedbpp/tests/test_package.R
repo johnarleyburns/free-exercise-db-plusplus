@@ -24,4 +24,22 @@ stopifnot(all(resolution$resolvedProfile$availability$preferredDayOffsets == c(0
 stopifnot(identical(resolution$explicitOverrides$equipmentAdded, character()))
 bad <- intent; bad$requestedGoalPolicy <- "general-strength-v1"
 stopifnot(resolve_intent(bad, db = db)$conflicts[[1]]$code == "GOAL_POLICY_MISMATCH")
+
+# Execute every canonical resolution fixture from an installed/source package
+# context.  The expected JSON remains the single semantic oracle; this check
+# deliberately compares every stable top-level result member.
+fixture_root <- file.path(root, "fixtures/cross-language/intent")
+for (fixture in sort(list.dirs(fixture_root, full.names = FALSE, recursive = FALSE))) {
+  if (file.exists(file.path(fixture_root, fixture, "history.json"))) next
+  input <- read_workout_intent(file.path(fixture_root, fixture, "input.json"))
+  explicit <- if (file.exists(file.path(fixture_root, fixture, "target.json"))) jsonlite::fromJSON(file.path(fixture_root, fixture, "target.json"), simplifyVector = FALSE) else NULL
+  actual <- resolve_intent(input, db = db, target = explicit)
+  expected <- jsonlite::fromJSON(file.path(fixture_root, fixture, "expected-resolution.json"), simplifyVector = FALSE)
+  stopifnot(identical(actual$status, expected$status))
+  stopifnot(identical(actual$defaultsApplied, expected$defaultsApplied))
+  stopifnot(identical(actual$explicitOverrides, expected$explicitOverrides))
+  stopifnot(identical(actual$planningPolicy, expected$planningPolicy))
+  stopifnot(identical(actual$environmentPolicy, expected$environmentPolicy))
+  stopifnot(identical(actual$conflicts, expected$conflicts))
+}
 cat("R consumer package valid\n")

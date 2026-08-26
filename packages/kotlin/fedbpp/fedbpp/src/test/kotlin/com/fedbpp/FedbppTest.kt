@@ -4,6 +4,9 @@ import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
 
 class FedbppTest {
     @Test fun workoutIntentFlagshipResolvesNatively() {
@@ -20,6 +23,25 @@ class FedbppTest {
         val intent = WorkoutIntent(goal = "hypertrophy", requestedGoalPolicy = "general-strength-v1", environment = "commercial_gym", schedule = WorkoutSchedule(7, IntRangeValue(target = 3)))
         val result = resolveIntent(intent)
         assertEquals("invalid", result.status); assertEquals("GOAL_POLICY_MISMATCH", result.conflicts.single().code); assertEquals(ExplicitOverrides(), result.explicitOverrides)
+    }
+    @Test fun workoutIntentDbAwareValidationMatchesReference() {
+        val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "free-exercise-db-plusplus.json").exists() }
+        val db = Database.load(File(root, "free-exercise-db-plusplus.json"))
+        val bad = WorkoutIntent(goal = "hypertrophy", environment = "commercial_gym", schedule = WorkoutSchedule(7, IntRangeValue(target = 3)), exerciseConstraints = ExerciseConstraints(requiredExerciseIds = listOf("does-not-exist")), equipmentOverrides = EquipmentOverrides(addEquipment = listOf("does-not-exist")))
+        val errors = validateWorkoutIntent(bad, db)
+        assert(errors.any { it.contains("unknown exerciseId") }); assert(errors.any { it.contains("unknown DB++ equipment") })
+    }
+    @Test fun everyCanonicalNonHistoryFixtureResolves() {
+        val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "fixtures/cross-language/intent").isDirectory }
+        val db = Database.load(File(root, "free-exercise-db-plusplus.json"))
+        val json = Json { ignoreUnknownKeys = true; explicitNulls = true; encodeDefaults = true }
+        File(root, "fixtures/cross-language/intent").listFiles()!!.filter { it.isDirectory }.sortedBy { it.name }.filterNot { File(it, "history.json").exists() }.forEach { fixture ->
+            val intent = json.decodeFromString<WorkoutIntent>(File(fixture, "input.json").readText())
+            val target = File(fixture, "target.json").takeIf { it.exists() }?.let { json.parseToJsonElement(it.readText()) }
+            val actual = json.encodeToJsonElement(IntentResolutionResult.serializer(), resolveIntent(intent, db, target = target))
+            val expected = json.parseToJsonElement(File(fixture, "expected-resolution.json").readText())
+            assert(actual == expected) { fixture.name }
+        }
     }
     @Test fun databaseLoadsAndQueries() {
         val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "free-exercise-db-plusplus.json").exists() }

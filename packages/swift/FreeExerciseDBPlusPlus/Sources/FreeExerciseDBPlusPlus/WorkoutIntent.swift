@@ -308,7 +308,7 @@ public enum IntentValidator {
   public static let weekdays = [
     "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday",
   ]
-  public static func validate(_ x: WorkoutIntent) -> [String] {
+  public static func validate(_ x: WorkoutIntent, database: FEDatabase? = nil, relationships: ExerciseRelationships? = nil) -> [String] {
     var e: [String] = []
     if x.schemaVersion != "0.1.0" { e += ["schemaVersion: must be 0.1.0"] }
     let a = x.schedule?.preferredWeekdays ?? []
@@ -367,6 +367,30 @@ public enum IntentValidator {
     {
       e += ["requestedPlanningPolicy: unknown planning policy"]
     }
+    let constraints = x.exerciseConstraints
+    let preferences = x.preferences
+    let familyValues = (constraints?.requiredFamilyIds ?? []) + (constraints?.excludedFamilyIds ?? []) + (preferences?.preferredFamilyIds ?? []) + (preferences?.avoidedFamilyIds ?? [])
+    if !familyValues.isEmpty && relationships == nil { e += ["exercise family constraints require exercise relationships"] }
+    if let database {
+      let exerciseIDs = Set(database.exerciseIDs)
+      for (field, values) in [
+        ("requiredExerciseIds", constraints?.requiredExerciseIds ?? []),
+        ("lockedExerciseIds", constraints?.lockedExerciseIds ?? []),
+        ("excludedExerciseIds", constraints?.excludedExerciseIds ?? []),
+        ("preferredExerciseIds", preferences?.preferredExerciseIds ?? []),
+        ("avoidedExerciseIds", preferences?.avoidedExerciseIds ?? [])
+      ] { for value in values where !exerciseIDs.contains(value) { e += ["\(field): unknown exerciseId: \(value)"] } }
+      let equipment = x.equipmentOverrides
+      for (field, values) in [("addEquipment", equipment?.addEquipment ?? []), ("removeEquipment", equipment?.removeEquipment ?? [])] {
+        for value in values where !database.equipmentVocabulary.contains(value) { e += ["equipmentOverrides.\(field): unknown DB++ equipment value: \(value)"] }
+      }
+      if let relationships {
+        let familyIDs = Set(relationships.families.keys)
+        for (field, values) in [("requiredFamilyIds", constraints?.requiredFamilyIds ?? []), ("excludedFamilyIds", constraints?.excludedFamilyIds ?? []), ("preferredFamilyIds", preferences?.preferredFamilyIds ?? []), ("avoidedFamilyIds", preferences?.avoidedFamilyIds ?? [])] {
+          for value in values where !familyIDs.contains(value) { e += ["\(field): unknown familyId: \(value)"] }
+        }
+      }
+    }
     return Array(Set(e)).sorted()
   }
   private static func ranges(_ r: IntRange, _ p: String) -> [String] {
@@ -415,7 +439,7 @@ public struct IntentResolver: Sendable {
   public func resolve(
     _ x: WorkoutIntent, database: FEDatabase? = nil, profile supplied: JSONValue? = nil, target explicitTarget: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil
   ) -> IntentResolutionResult {
-    let errors = IntentValidator.validate(x)
+    let errors = IntentValidator.validate(x, database: database, relationships: relationships)
     if !errors.isEmpty {
       if errors == ["GOAL_POLICY_MISMATCH"] {
         let policyGoal = x.requestedGoalPolicy == "general-strength-v1" ? "strength" : "hypertrophy"
@@ -571,7 +595,7 @@ public struct IntentResolver: Sendable {
       ])
   }
 }
-public func validateWorkoutIntent(_ x: WorkoutIntent) -> [String] { IntentValidator.validate(x) }
+public func validateWorkoutIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, relationships: ExerciseRelationships? = nil) -> [String] { IntentValidator.validate(x, database: database, relationships: relationships) }
 public func resolveIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil)
   -> IntentResolutionResult
 { IntentResolver().resolve(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf) }

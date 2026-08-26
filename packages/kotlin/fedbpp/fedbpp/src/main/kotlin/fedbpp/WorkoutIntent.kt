@@ -36,7 +36,7 @@ private object IntentPolicyCatalog {
 
 object WorkoutIntentValidator {
     val weekdays = listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
-    fun validate(intent: WorkoutIntent): List<String> {
+    fun validate(intent: WorkoutIntent, database: Database? = null, relationships: ExerciseRelationships? = null): List<String> {
         val errors = mutableSetOf<String>(); if (intent.schemaVersion != "0.1.0") errors += "schemaVersion: must be 0.1.0"
         val s = intent.schedule; val days = (s?.preferredWeekdays.orEmpty() + s?.excludedWeekdays.orEmpty()).toSet()
         if (days.isNotEmpty() && s?.cycleLengthDays != 7) errors += "schedule weekday fields require cycleLengthDays of 7"
@@ -49,12 +49,30 @@ object WorkoutIntentValidator {
         if (s != null) { if (s.preferredWeekdays.size != s.preferredWeekdays.toSet().size) errors += "schedule.preferredWeekdays: duplicate values"; if (s.excludedWeekdays.size != s.excludedWeekdays.toSet().size) errors += "schedule.excludedWeekdays: duplicate values"; if (s.preferredDayOffsets.size != s.preferredDayOffsets.toSet().size) errors += "schedule.preferredDayOffsets: duplicate values"; if (s.excludedDayOffsets.size != s.excludedDayOffsets.toSet().size) errors += "schedule.excludedDayOffsets: duplicate values" }
         val c = intent.exerciseConstraints; if (c != null && (c.requiredExerciseIds + c.lockedExerciseIds).toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "exerciseConstraints: requiredExerciseIds conflicts with excludedExerciseIds"
         val p = intent.preferences; if (p != null && c != null) { if (p.preferredExerciseIds.toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "preferences: preferredExerciseIds conflicts with excludedExerciseIds"; if (p.avoidedExerciseIds.toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "preferences: avoidedExerciseIds conflicts with excludedExerciseIds"; if (p.preferredFamilyIds.toSet().intersect(c.excludedFamilyIds.toSet()).isNotEmpty()) errors += "preferences: preferredFamilyIds conflicts with excludedFamilyIds"; if (p.avoidedFamilyIds.toSet().intersect(c.excludedFamilyIds.toSet()).isNotEmpty()) errors += "preferences: avoidedFamilyIds conflicts with excludedFamilyIds" }
+        if ((c?.requiredFamilyIds.orEmpty() + c?.excludedFamilyIds.orEmpty() + p?.preferredFamilyIds.orEmpty() + p?.avoidedFamilyIds.orEmpty()).isNotEmpty() && relationships == null) errors += "exercise family constraints require exercise relationships"
         if ((intent.goal == "hypertrophy" && intent.requestedGoalPolicy == "general-strength-v1") || (intent.goal == "strength" && intent.requestedGoalPolicy == "general-hypertrophy-v1")) errors += "GOAL_POLICY_MISMATCH"
         if (intent.requestedGoalPolicy != null && intent.requestedGoalPolicy !in setOf("general-hypertrophy-v1", "general-strength-v1")) errors += "requestedGoalPolicy: unknown goal policy"
         if (intent.requestedPlanningPolicy != null && intent.requestedPlanningPolicy !in setOf("full-body-general-v1", "upper-lower-general-v1")) errors += "requestedPlanningPolicy: unknown planning policy"
         if (intent.goal != null && intent.goal !in setOf("hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power")) errors += "goal: unsupported value"
         if (intent.environment != null && intent.environment !in setOf("commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom")) errors += "environment: unsupported value"
         if (intent.continuity != null && intent.continuity !in setOf("preserve", "neutral", "vary")) errors += "continuity: unsupported value"
+        database?.let { db ->
+            val c = intent.exerciseConstraints
+            val p = intent.preferences
+            listOf(
+                "requiredExerciseIds" to c?.requiredExerciseIds.orEmpty(),
+                "lockedExerciseIds" to c?.lockedExerciseIds.orEmpty(),
+                "excludedExerciseIds" to c?.excludedExerciseIds.orEmpty(),
+                "preferredExerciseIds" to p?.preferredExerciseIds.orEmpty(),
+                "avoidedExerciseIds" to p?.avoidedExerciseIds.orEmpty()
+            ).forEach { (field, values) -> values.filterNot { it in db.exerciseIds }.forEach { errors += "$field: unknown exerciseId: $it" } }
+            val equipment = intent.equipmentOverrides
+            listOf("addEquipment" to equipment?.addEquipment.orEmpty(), "removeEquipment" to equipment?.removeEquipment.orEmpty()).forEach { (field, values) -> values.filterNot { it in db.equipmentVocabulary }.forEach { errors += "equipmentOverrides.$field: unknown DB++ equipment value: $it" } }
+            relationships?.let { rel ->
+                val families = rel.families.keys
+                listOf("requiredFamilyIds" to c?.requiredFamilyIds.orEmpty(), "excludedFamilyIds" to c?.excludedFamilyIds.orEmpty(), "preferredFamilyIds" to p?.preferredFamilyIds.orEmpty(), "avoidedFamilyIds" to p?.avoidedFamilyIds.orEmpty()).forEach { (field, values) -> values.filterNot { it in families }.forEach { errors += "$field: unknown familyId: $it" } }
+            }
+        }
         return errors.sorted()
     }
     private fun rangeErrors(r: IntRangeValue, field: String): List<String> = buildList { if (r.min != null && r.max != null && r.min!! > r.max!!) add("$field: min must not exceed max"); if (r.min != null && r.target != null && r.target!! < r.min!!) add("$field: target must not be below min"); if (r.max != null && r.target != null && r.target!! > r.max!!) add("$field: target must not exceed max") }
@@ -63,7 +81,7 @@ object WorkoutIntentValidator {
 object WorkoutIntentResolver {
     fun resolve(intent: WorkoutIntent, database: Database? = null, profile: JsonElement? = null, target: JsonElement? = null, relationships: ExerciseRelationships? = null, history: JsonElement? = null, asOf: String? = null): IntentResolutionResult {
         val equipment = intent.equipmentOverrides ?: EquipmentOverrides(); val emptyOverrides = ExplicitOverrides(); val overrides = ExplicitOverrides(goalPolicy = intent.requestedGoalPolicy != null, planningPolicy = intent.requestedPlanningPolicy != null, target = target != null, trainingProfile = profile != null, equipmentAdded = equipment.addEquipment.toSet().sorted(), equipmentRemoved = equipment.removeEquipment.toSet().sorted())
-        val errors = WorkoutIntentValidator.validate(intent)
+        val errors = WorkoutIntentValidator.validate(intent, database, relationships)
         if (errors.isNotEmpty()) return IntentResolutionResult("invalid", conflicts = errors.map { IntentConflict(if (it == "GOAL_POLICY_MISMATCH") it else "INVALID_INTENT", it) }, explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
         val s = intent.schedule; val suppliedObject = profile as? JsonObject; val suppliedEquipment = (suppliedObject?.get("equipment") as? kotlinx.serialization.json.JsonArray)?.map { it.jsonPrimitive.content }.orEmpty(); val missing = buildList { if (intent.goal == null) add(MissingInformation("goal", "required_for_goal_policy_resolution")); if (s?.cycleLengthDays == null) add(MissingInformation("schedule.cycleLengthDays", "required_for_schedule_resolution")); if (s?.sessionsPerCycle == null) add(MissingInformation("schedule.sessionsPerCycle", "required_for_schedule_resolution")); if (intent.environment == null && suppliedEquipment.isEmpty()) add(MissingInformation("environmentOrEquipment", "required_for_equipment_resolution")) }
         if (missing.isNotEmpty()) return IntentResolutionResult("needs_clarification", missingInformation = missing, explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
@@ -124,7 +142,7 @@ object WorkoutIntentResolver {
     }
 }
 
-fun validateWorkoutIntent(intent: WorkoutIntent): List<String> = WorkoutIntentValidator.validate(intent)
+fun validateWorkoutIntent(intent: WorkoutIntent, database: Database? = null, relationships: ExerciseRelationships? = null): List<String> = WorkoutIntentValidator.validate(intent, database, relationships)
 fun resolveIntent(intent: WorkoutIntent, database: Database? = null, profile: JsonElement? = null, target: JsonElement? = null, relationships: ExerciseRelationships? = null, history: JsonElement? = null, asOf: String? = null): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, database, profile, target, relationships, history, asOf)
 fun resolveIntent(intent: WorkoutIntent, profile: JsonElement?, target: JsonElement?): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, profile = profile, target = target)
 fun decodeWorkoutIntent(json: String): WorkoutIntent {

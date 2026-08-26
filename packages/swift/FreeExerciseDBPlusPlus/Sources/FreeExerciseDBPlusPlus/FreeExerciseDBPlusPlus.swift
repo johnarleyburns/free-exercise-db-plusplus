@@ -57,6 +57,7 @@ public struct FEDatabase: Sendable {
     }
     public init(metadata: [String: JSONValue] = [:], exercises: [String: Exercise]) { self.metadata = metadata; self.exercises = exercises }
     public var count: Int { exercises.count }
+    public var exerciseIDs: Set<String> { Set(exercises.keys) }
     public var setCredits: (direct: Double, indirect: Double, stabilizer: Double) {
         guard case .object(let values)? = metadata["setCredits"] else { return (1, 0.5, 0) }
         func number(_ key: String, _ fallback: Double) -> Double { if case .number(let value)? = values[key] { return value }; return fallback }

@@ -5,7 +5,7 @@
 | WorkoutIntent decode + validation | full | native | native | native |
 | Intent resolution (policies/defaults/status) | full | native core | native core | native core |
 | TARGET merge/relational validation | full | native helpers + resolver | native helpers + resolver | native helpers + resolver |
-| TrainingProfile/history integration | full | profile JSON input; history deferred | profile JSON input; history deferred | profile input; history deferred |
+| TrainingProfile/history integration | full | profile JSON input; native history deferred | profile JSON input; native history deferred | profile input; native history deferred |
 | Plan generation from intent | full | not-supported | not-supported | not-supported |
 | Plan evaluation | full | read-only coverage | read-only ACTUAL | read-only ACTUAL |
 
@@ -16,7 +16,9 @@ partial TARGET merge/validation, stable provenance, and structured conflicts.
 History-to-TrainingState derivation and native plan generation remain deferred
 to v1.12 and are intentionally not represented as completed capabilities.
 
-Cross-language intent fixtures are parity inputs for later work; this release does not claim implementation parity.
+All non-history canonical resolution fixtures are executed by Python, Swift,
+Kotlin/JVM, and R. The history fixture remains Python-only until the native
+TrainingState derivation is implemented.
 
 The fixture oracle is `fixtures/cross-language/intent/`. Python and Swift
 execute the canonical non-history resolution matrix locally; Kotlin and R
