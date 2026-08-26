@@ -1,1 +1,25 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-intent.schema.json","title":"Free Exercise DB++ Workout Intent","type":"object","additionalProperties":false,"required":["schemaVersion"],"properties":{"schemaVersion":{"const":"0.1.0"},"intentId":{"type":"string"},"subjectId":{"type":"string"},"goal":{"enum":["hypertrophy","strength","muscular_endurance","general_fitness","skill_practice","power"]},"schedule":{"type":"object"},"sessionConstraints":{"type":"object"},"environment":{"enum":["commercial_gym","home_gym","minimal_equipment","bodyweight_only","custom"]},"equipmentOverrides":{"type":"object"},"exerciseConstraints":{"type":"object"},"preferences":{"type":"object"},"continuity":{"enum":["preserve","neutral","vary"]},"useHistory":{"type":"boolean"},"historyWindow":{"type":"string"},"requestedPlanningPolicy":{"type":"string"},"requestedGoalPolicy":{"type":"string"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-intent.schema.json",
+  "title": "Free Exercise DB++ Workout Intent",
+  "description": "A portable current planning request. It requires no PII and is not natural-language input.",
+  "type": "object", "additionalProperties": false, "required": ["schemaVersion"],
+  "properties": {
+    "schemaVersion": {"const": "0.1.0"}, "intentId": {"type": "string", "minLength": 1}, "subjectId": {"type": "string", "minLength": 1},
+    "goal": {"enum": ["hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"]},
+    "schedule": {"$ref": "#/$defs/schedule"}, "sessionConstraints": {"type": "object", "additionalProperties": false, "properties": {"exercisesPerSession": {"$ref": "#/$defs/range"}}},
+    "environment": {"enum": ["commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom"]},
+    "equipmentOverrides": {"type": "object", "additionalProperties": false, "properties": {"addEquipment": {"$ref": "#/$defs/strings"}, "removeEquipment": {"$ref": "#/$defs/strings"}}},
+    "exerciseConstraints": {"$ref": "#/$defs/exerciseConstraints"}, "preferences": {"$ref": "#/$defs/preferences"},
+    "continuity": {"enum": ["preserve", "neutral", "vary"]}, "useHistory": {"type": "boolean"}, "historyWindow": {"type": "string", "minLength": 1},
+    "requestedPlanningPolicy": {"type": "string", "minLength": 1}, "requestedGoalPolicy": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "strings": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "range": {"type": "object", "additionalProperties": false, "minProperties": 1, "properties": {"min": {"type": "integer", "minimum": 0}, "target": {"type": "integer", "minimum": 0}, "max": {"type": "integer", "minimum": 0}}, "anyOf": [{"required": ["min"]}, {"required": ["target"]}, {"required": ["max"]}]},
+    "schedule": {"type": "object", "additionalProperties": false, "properties": {"cycleLengthDays": {"type": "integer", "minimum": 1}, "sessionsPerCycle": {"$ref": "#/$defs/range"}, "preferredDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true}, "excludedDayOffsets": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true}, "preferredWeekdays": {"$ref": "#/$defs/weekdays"}, "excludedWeekdays": {"$ref": "#/$defs/weekdays"}}},
+    "weekdays": {"type": "array", "items": {"enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]}, "uniqueItems": true},
+    "exerciseConstraints": {"type": "object", "additionalProperties": false, "properties": {"requiredExerciseIds": {"$ref": "#/$defs/strings"}, "lockedExerciseIds": {"$ref": "#/$defs/strings"}, "excludedExerciseIds": {"$ref": "#/$defs/strings"}, "requiredFamilyIds": {"$ref": "#/$defs/strings"}, "excludedFamilyIds": {"$ref": "#/$defs/strings"}}},
+    "preferences": {"type": "object", "additionalProperties": false, "properties": {"preferredExerciseIds": {"$ref": "#/$defs/strings"}, "avoidedExerciseIds": {"$ref": "#/$defs/strings"}, "preferredFamilyIds": {"$ref": "#/$defs/strings"}, "avoidedFamilyIds": {"$ref": "#/$defs/strings"}}}
+  }
+}
