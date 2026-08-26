@@ -1,1189 +1,2106 @@
 # Free Exercise DB++ Roadmap
 
-Status: **post-v1.5.1 planning**  
-Current stable release: **v1.5.1**  
-Primary product direction: **Trainer/client planning, self-coaching, and automated coaching built on a deterministic training-domain engine**
+Status: **post-v1.9.0**  
+Current stable release: **v1.9.0**  
+Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Swift, Kotlin, Python, and R packages**
 
 ---
 
 # 1. Product vision
 
-Free Exercise DB++ should evolve from an exercise vocabulary and workout-analysis toolkit into a **portable, deterministic training-domain engine** that can sit underneath trainer software, self-coaching applications, research workflows, and automated-coach systems.
+Free Exercise DB++ has evolved from an exercise-definition database into a deterministic training-domain engine.
 
-The intended architectural boundary is:
+Through v1.9 it now provides:
 
-```text
-Application/Product Layer
-  UI, accounts, messaging, notifications,
-  persistence, sync, billing, permissions
-                |
-                v
-Free Exercise DB++
-  exercise vocabulary
-  relationships/families
-  PLAN / ACTUAL / TARGET
-  longitudinal history
-  plan evaluation
-  training-state derivation
-  progression policies
-  plan generation
-  coaching decisions
-  adaptation
-  provenance/explanations
-  interoperability
-```
+- stable exercise identity;
+- normalized movement and muscle semantics;
+- direct / indirect / stabilizer analysis;
+- PLAN / ACTUAL / TARGET interchange;
+- longitudinal analysis;
+- exercise families and relationships;
+- TrainingProfile;
+- PlanEvaluation;
+- TrainingState;
+- progression policies;
+- deterministic plan generation;
+- adaptive coaching proposals;
+- research exports;
+- external interoperability mappings.
 
-Free Exercise DB++ should own training-domain semantics and deterministic decision logic.
-
-Applications should own presentation, identity, messaging, storage, synchronization, and product-specific workflows.
-
-The same engine should support trainer→client, self-coached, trainer-assisted generation, and automated coaching.
-
-# 2. Stable foundation through v1.5.1
-
-Treat as stable:
-
-- v1.0 exercise vocabulary and stable exerciseId
-- v1.1 PLAN / ACTUAL / TARGET / analysis
-- v1.2 interoperability mappings
-- v1.3 operational conversion + CLI
-- v1.4.1 longitudinal analysis
-- v1.5.1 exercise relationships/families
-
-Do not casually redesign these semantics.
-
-# 3. New release sequence
+The next objective is to make the same deterministic training semantics easily usable from multiple environments:
 
 ```text
-v1.6  Training Profile + Plan Evaluation
-v1.7  Training State + Progression Policies
-v1.8  Deterministic Plan Generation
-v1.9  Adaptive Coaching / Plan Revision Engine
-v2.0+ Optional advanced physiology/anatomy,
-      richer evidence layers, more standards
+Swift / Apple apps
+Kotlin / Android apps
+Python / services, notebooks, automation
+R / research and statistical workflows
 ```
 
-Core rule:
-
-> Evaluate before generating. Derive state before adapting. Explain every automated decision.
-
-# 4. Core operating modes
-
-Trainer/client:
+The end goal by **v1.12** is:
 
 ```text
-Trainer -> PLAN -> assignment -> Client -> ACTUAL -> feedback -> revised PLAN
+structured WorkoutIntent
+        |
+        v
+resolveIntent()
+        |
+        +--> TrainingProfile
+        +--> TARGET
+        +--> planning policy
+        +--> generation constraints
+        |
+        v
+generatePlan()
+        |
+        v
+evaluatePlan()
+        |
+        v
+WorkoutPlan
 ```
 
-Self-coached:
+With existing history:
 
 ```text
-User -> TrainingProfile + TARGET -> PLAN -> ACTUAL -> evaluation -> revised PLAN
-```
-
-Automated coach:
-
-```text
-Profile + TARGET + History -> TrainingState -> Generator -> PLAN -> ACTUAL -> CoachDecision -> revised PLAN
-```
-
-Use one domain model for all three.
-
-# 5. v1.6 — Training Profile + Plan Evaluation
-
-Implementation status: complete in the Python reference package. See
-`docs/TRAINING-PROFILE.md`, `docs/PLAN-EVALUATION.md`, and ADRs 0012–0016.
-
-## Objective
-
-Formalize goals, constraints, preferences, equipment, and availability, then add deterministic `evaluate_plan()`.
-
-The evaluator must answer whether a PLAN satisfies:
-
-- muscle-volume targets
-- frequency targets
-- movement-pattern coverage
-- family coverage
-- available equipment
-- exercise/family exclusions
-- session count constraints
-- approximate duration constraints
-- soft preferences
-
-It should return exact gaps, not a vague score.
-
-## TrainingProfile
-
-Likely portable artifact:
-
-```text
-training-profile.schema.json
-```
-
-Conceptual shape:
-
-```json
-{
-  "schemaVersion": "0.1.0",
-  "profileId": "profile-123",
-  "subjectId": "subject-42",
-  "goals": [
-    {"type": "hypertrophy", "priority": 1},
-    {"type": "strength", "priority": 2}
-  ],
-  "experience": "intermediate",
-  "availability": {
-    "cycleLengthDays": 7,
-    "sessionsPerCycle": {"min": 3, "target": 4, "max": 4},
-    "minutesPerSession": {"max": 60}
-  },
-  "equipment": ["barbell", "dumbbell", "cable", "machine"],
-  "exercisePreferences": {
-    "preferredExerciseIds": [],
-    "avoidedExerciseIds": [],
-    "preferredFamilyIds": [],
-    "avoidedFamilyIds": []
-  },
-  "constraints": {
-    "excludedExerciseIds": [],
-    "excludedFamilyIds": []
-  }
-}
-```
-
-Use opaque IDs. Do not require PII or medical diagnoses.
-
-## Goals
-
-Start with a small controlled vocabulary such as:
-
-```text
-hypertrophy
-strength
-muscular_endurance
-general_fitness
-skill_practice
-power
-```
-
-Goal is context for explicit policies, not a hidden behavior switch.
-
-## Preferences vs exclusions
-
-Define:
-
-```text
-preferred = soft positive
-avoided   = soft negative
-excluded  = hard constraint
-```
-
-Support exercise and family IDs.
-
-## TARGET evolution
-
-TARGET remains "what the training should accomplish."
-
-TrainingProfile remains "what the user/environment permits or prefers."
-
-TARGET may expand to include:
-
-- muscle volume
-- muscle frequency
-- movement-pattern coverage
-- family coverage
-
-Do not stuff environment constraints into TARGET.
-
-## Plan evaluator API
-
-```python
-evaluate_plan(plan, db, profile=None, target=None, relationships=None)
-```
-
-Return structured sections such as:
-
-```text
-summary
-muscleCoverage
-frequency
-movementPatterns
-families
-equipment
-availability
-preferences
-constraints
-warnings
-errors
-provenance
-```
-
-Hard constraints, soft preferences, and targets must remain separate.
-
-Do not create a default 0–100 plan quality score.
-
-## Duration estimation
-
-Optional, explicit policy such as:
-
-```text
-duration-estimation-v1
-```
-
-Use transparent assumptions based on set count, rest, and transition overhead. If data is insufficient, return unknown.
-
-## Plan assignment
-
-Before adding a `plan-assignment.schema.json`, write an ADR deciding whether existing longitudinal plan activation already covers the required trainer/client semantics.
-
-Applications own messaging, approval UI, and account relationships.
-
-## v1.6 CLI
-
-```bash
-fedbpp evaluate-plan plan.json --db db.json --profile profile.json --target target.json
-```
-
-## v1.6 golden fixture
-
-Create a hand-calculated fixture containing:
-
-- muscle-volume gap
-- frequency gap
-- movement-pattern gap
-- unavailable equipment
-- excluded exercise
-- soft preference warning
-- known hard-constraint count
-
-## v1.6 release gate
-
-Release only when:
-
-- TrainingProfile semantics stable
-- deterministic evaluator implemented
-- hard/soft/target categories distinct
-- equipment, exclusions, frequency, patterns, families evaluated
-- provenance complete
-- CLI and installed wheel work
-- all prior tests green
-
-# 6. v1.7 — Training State + Progression Policies
-
-## Objective
-
-Derive a normalized current `TrainingState` from longitudinal history and use versioned progression policies to emit explicit Coach Decisions.
-
-## TrainingState
-
-Derived object, not manually authored.
-
-Potential sections:
-
-```text
-subjectId
-asOf
-exerciseState
-familyState
-muscleState
-adherenceState
-planState
-historyWindow
-provenance
-```
-
-## ExerciseState
-
-Per exercise:
-
-```text
-lastPerformed
-recentSessionCount
-recentSetCount
-recentReps
-recentLoads
-recentRPE
-recentRIR
-lastPrescription
-lastActual
-adherence
-```
-
-Do not invent trends when data is sparse.
-
-## MuscleState
-
-Over an explicit history window:
-
-```text
-direct sets
-indirect sets
-effective sets
-exposure frequency
-target state
-plan adherence
-```
-
-Support explicit windows such as last cycle, last 7 days, last 28 days, current phase.
-
-## AdherenceState
-
-Track session adherence, prescription adherence, repeated skipped exercises, repeated unplanned work, substitution frequency, and target under/overrun.
-
-Do not infer motivation.
-
-## Progression policy framework
-
-Conceptual API:
-
-```python
-apply_progression_policy(policy, prescription, recent_actuals, training_state)
-```
-
-Initial policies:
-
-```text
-fixed
-double_progression
-rep_progression
-load_progression
-hold
-```
-
-Keep policies small and versioned.
-
-## Double progression
-
-Example:
-
-```text
-3 x 8–10 @ RIR 2
-```
-
-If all working sets hit the top rep target and effort remains within policy bounds, increase load; otherwise hold load and continue rep progression.
-
-Rules must be explicit.
-
-## CoachDecision
-
-Likely portable artifact:
-
-```text
-coach-decision.schema.json
-```
-
-Example:
-
-```json
-{
-  "decisionType": "increase_load",
-  "exerciseId": "...",
-  "policyId": "double-progression-v1",
-  "before": {"load": {"value": 100, "unit": "kg"}},
-  "after": {"load": {"value": 102.5, "unit": "kg"}},
-  "reasonCodes": ["REP_TARGET_ACHIEVED", "RIR_WITHIN_TARGET"]
-}
-```
-
-## Reason codes
-
-Potential vocabulary:
-
-```text
-REP_TARGET_ACHIEVED
-REP_TARGET_NOT_ACHIEVED
-EFFORT_TOO_HIGH
-EFFORT_TOO_LOW
-LOAD_PROGRESS_STALLED
-SET_TARGET_ACHIEVED
-MISSED_PRESCRIPTION
-REPEATED_SUBSTITUTION
-INSUFFICIENT_DATA
-POLICY_HOLD
-```
-
-## Decision types
-
-Start with:
-
-```text
-increase_load
-decrease_load
-increase_reps
-decrease_reps
-increase_sets
-decrease_sets
-hold
-```
-
-Exercise replacement can wait.
-
-## Explainability requirement
-
-Every automated decision must include:
-
-- policy ID/version
-- input facts
-- reason codes
-- before
-- after
-- provenance
-
-No unexplained plan mutation.
-
-## v1.7 CLI
-
-```bash
-fedbpp training-state history.json --db db.json
-fedbpp progress --plan plan.json --history history.json --policy double-progression-v1
-```
-
-## v1.7 release gate
-
-TrainingState deterministic, at least one production progression policy implemented, CoachDecision explainable, CLI/wheel work, and all legacy tests green.
-
-# 7. v1.8 — Deterministic Plan Generation
-
-## Objective
-
-Generate candidate PLANs from:
-
-```text
-TrainingProfile
-+
-TARGET
-+
+WorkoutIntent
+        +
+current PLAN
+        +
+ACTUAL history
+        |
+        v
 TrainingState
-+
-Exercise DB
-+
-Relationships
-+
-PlanningPolicy
+        |
+        v
+adaptPlan()
+        |
+        +--> CoachDecision[]
+        +--> proposed PLAN revision
+        +--> current/proposed evaluation
 ```
 
-The v1.6 evaluator is mandatory as the quality gate.
+The same conceptual workflow must be available through first-class language packages.
 
-## Generation pipeline
+---
 
-```text
-Profile + Target + State + DB + Policy
-                  |
-                  v
-          candidate exercise pool
-                  |
-                  v
-          candidate session structure
-                  |
-                  v
-        volume/frequency allocation
-                  |
-                  v
-            candidate PLAN
-                  |
-                  v
-           evaluate_plan()
-                  |
-                  v
-          accept / improve / reject
-```
+# 2. Application / engine boundary
 
-Do not permit direct LLM-to-canonical-PLAN generation without deterministic validation.
-
-## PlanningPolicy
-
-Versioned policy controls:
-
-- split strategy
-- candidate selection
-- family diversity
-- volume allocation
-- frequency allocation
-- set/repetition defaults
-- effort targets
-- duration assumptions
-- progression-policy references
-
-## Initial reference policies
-
-Possible:
+Free Exercise DB++ owns:
 
 ```text
-full_body_general_v1
-upper_lower_general_v1
-push_pull_legs_general_v1
-```
-
-Goal-focused variants may follow, but do not call them universally optimal.
-
-## PlanGenerationRequest
-
-Potential inputs:
-
-```text
-profile
-target
-trainingState
-policyId
-locked exercises
-required exercises
-excluded exercises
-```
-
-Trainer and self-coached flows use the same request.
-
-## Candidate selection
-
-Use:
-
-- available equipment
-- exclusions
-- preferences
-- recent history
-- families
-- movement patterns
-- target muscles
-- continuity with existing plan
-
-Return rationale. No hidden similarity score.
-
-## Continuity and variation
-
-Policies may prefer continuity or allow same-family variation. Do not implement default forced rotation.
-
-## Volume allocation
-
-Allocate toward TARGET using authoritative direct/indirect credits, respecting multi-muscle contributions.
-
-## Frequency allocation
-
-Honor muscle exposure targets, not only aggregate set totals.
-
-## Session constraints
-
-Respect session count, time, equipment, day availability, exercise/family exclusions.
-
-If no valid plan exists, return:
-
-```text
-unsatisfiable
-```
-
-with exact reasons.
-
-## GeneratedPlanResult
-
-Return:
-
-```text
-plan
-evaluation
-policy
-warnings
-unsatisfiedSoftPreferences
+exercise vocabulary
+exercise relationships
+PLAN / ACTUAL / TARGET
+TrainingProfile
+WorkoutIntent
+intent resolution
+goal resolution
+environment/equipment profiles
+plan evaluation
+TrainingState
+progression
+plan generation
+adaptive coaching
+CoachDecision
+policy versioning
 provenance
+research/interchange semantics
 ```
 
-## Determinism
-
-Same DB/profile/target/state/policy/config must produce the same PLAN.
-
-If randomness is ever allowed, require explicit seed and record it. Default is deterministic.
-
-## Selection reason codes
-
-Potential:
+Consuming applications own:
 
 ```text
-TARGET_COVERAGE
-EQUIPMENT_AVAILABLE
-HISTORY_CONTINUITY
-PREFERRED_EXERCISE
-FAMILY_VARIATION
-PATTERN_REQUIREMENT
+LLM integration
+prompting
+conversation state
+voice UI
+Apple Foundation Models
+cloud-hosted models
+UI
+accounts
+trainer/client relationships
+authorization
+persistence
+sync
+messaging
+notifications
+billing
+approval/activation workflow
 ```
 
-## Trainer flow
+The core packages must not depend on a particular LLM framework.
+
+---
+
+# 3. Cross-language support is a first-class requirement
+
+The project maintains four primary package surfaces:
 
 ```text
-generate draft
--> trainer edits
--> evaluate edited PLAN
--> assign
+packages/python
+packages/swift/FreeExerciseDBPlusPlus
+packages/kotlin
+packages/r
 ```
 
-## Self-trained flow
+The languages have different product roles, but all must consume the same public artifacts and preserve the same core semantics.
 
-Same engine:
+## Python
+
+Role:
+
+- reference implementation;
+- full semantic oracle;
+- CLI;
+- service/backend usage;
+- notebooks;
+- automated validation;
+- research preprocessing.
+
+## Swift
+
+Role:
+
+- native iOS/macOS application integration;
+- offline/on-device planning and coaching;
+- primary package for Apple application usage;
+- Foundation-only core where practical;
+- no FoundationModels dependency.
+
+## Kotlin
+
+Role:
+
+- Android/JVM application integration;
+- offline/native planning and coaching;
+- server/JVM consumers where useful.
+
+## R
+
+Role:
+
+- research;
+- statistical workflows;
+- tidy data;
+- experiment analysis;
+- reproducibility;
+- participant/cohort analysis.
+
+R does not need to duplicate every interactive app convenience API, but it must understand the same interchange artifacts and reproduce the same canonical analyses where relevant.
+
+---
+
+# 4. Parity philosophy
+
+Cross-language parity does **not** mean every package must contain identical code.
+
+It means:
 
 ```text
-profile + target + history
--> draft
--> user reviews
--> PLAN
+same input artifact
+same policy version
+same DB version
+same semantic operation
+        ↓
+same canonical result
 ```
 
-## Current-plan comparison
+for operations claimed as supported in that language.
 
-Optionally report exercises added/removed, family changes, volume/frequency changes, and target-coverage changes.
+Capabilities must be explicitly documented.
 
-## v1.8 golden tests
+Never claim parity where it does not exist.
 
-At minimum:
+---
 
-- 3-day full body
-- 4-day upper/lower
-- unavailable equipment
-- excluded exercise
-- excluded family
-- preference honored
-- impossible target
-- family variation
-- continuity from history
-- deterministic regeneration
+# 5. Shared semantic source of truth
 
-## v1.8 release gate
+Public semantics live in:
 
-Valid deterministic PLAN generation, evaluator integration, explicit unsatisfiable results, shared trainer/self-coach engine, provenance/reasons, CLI/wheel, no adaptive auto-revision yet.
+```text
+schemas
+versioned JSON artifacts
+ADRs
+normative docs
+shared golden fixtures
+```
 
-# 8. v1.9 — Adaptive Coaching / Plan Revision Engine
+Python remains the reference implementation through v1.12, but Swift/Kotlin/R must be checked against common golden fixtures rather than independently evolving behavior.
+
+---
+
+# 6. Stable foundation through v1.9
+
+Treat the following as stable unless a real defect requires correction.
+
+## v1.0
+
+Exercise vocabulary and evidence-audited muscle/movement semantics.
+
+## v1.1
+
+PLAN / ACTUAL / TARGET, ranges, arbitrary cycles, periodization, PLAN analysis, PLAN-vs-ACTUAL, adherence.
+
+## v1.2
+
+Interoperability mappings and loss/provenance model.
+
+## v1.3
+
+Operational conversion, FHIR, CLI.
+
+## v1.4.1
+
+Longitudinal analysis, revision activation, repeated occurrence matching, research exports.
+
+## v1.5.1
+
+Exercise families/relationships and family-level analysis.
+
+## v1.6
+
+TrainingProfile + deterministic PlanEvaluation.
+
+## v1.7.1
+
+TrainingState + progression + CoachDecision.
+
+## v1.8
+
+Deterministic plan generation.
+
+## v1.9
+
+Adaptive coaching / PLAN revision proposal engine.
+
+---
+
+# 7. Release sequence to the app/research goal
+
+```text
+v1.10  WorkoutIntent + deterministic intent/goal/environment resolution
+
+v1.11  Cross-language semantic parity for WorkoutIntent,
+       resolution, evaluation, and plan generation
+
+v1.12  Production-ready language packages:
+       Swift SPM
+       Kotlin/JVM package
+       Python package
+       R package
+
+       with end-to-end intent → plan → history-aware adaptation support
+       according to each package's declared capability level
+```
+
+---
+
+# 8. Acceptance scenario
+
+The roadmap is successful when a consuming app or tool can represent:
+
+```text
+"I want to work out 5 times a week,
+ Monday through Thursday and Saturday.
+ I can do 3–4 exercises per workout.
+ I have a regular commercial gym.
+ My goal is hypertrophy."
+```
+
+as:
+
+```text
+WorkoutIntent
+  goal = hypertrophy
+  cycleLengthDays = 7
+  sessionsPerCycle = 5
+  preferredWeekdays = Mon/Tue/Wed/Thu/Sat
+  exercisesPerSession = 3–4
+  environment = commercial_gym
+```
+
+and then call the domain package.
+
+The LLM-to-WorkoutIntent mapping is outside the repo.
+
+---
+
+# 9. v1.10 — WorkoutIntent + deterministic resolution
 
 ## Objective
 
-Close the loop:
+Create a portable representation of a training request and a deterministic resolver that converts it into the existing DB++ planning inputs.
+
+The resolver must bridge:
 
 ```text
-PLAN
--> ACTUAL
--> longitudinal analysis
--> TrainingState
--> CoachDecision
--> PlanRevisionProposal
--> evaluate_plan()
--> new PLAN revision
+human/app request
+→ WorkoutIntent
+→ TrainingProfile/TARGET/policy/options
 ```
 
-## AdaptationPolicy
+without using an LLM internally.
 
-Versioned policy may control:
+---
+
+# 10. WorkoutIntent concept
+
+WorkoutIntent represents the current request.
+
+It is not a replacement for TrainingProfile.
+
+Examples:
 
 ```text
-progression
-volume change
-exercise continuity
-exercise replacement
-deload triggers
-target-gap response
-adherence response
-session-count adaptation
+train five days this cycle
+train Monday through Thursday and Saturday
+keep sessions to 3–4 exercises
+focus on hypertrophy
+keep bench press
+change as little as possible
+commercial gym
+home dumbbells only
 ```
 
-Prefer composable sub-policies over one opaque coach policy.
+TrainingProfile remains reusable subject/environment context.
 
-## PlanRevisionProposal
+---
 
-Potential artifact:
+# 11. WorkoutIntent vs TARGET
+
+High-level:
 
 ```text
-base plan/revision
-proposed revision
-CoachDecisions
-evaluation before
-evaluation after
-reason codes
-policy versions
-provenance
+goal = hypertrophy
 ```
 
-Supports trainer approval.
+belongs in WorkoutIntent.
 
-## Trainer-assisted adaptive mode
-
-System proposes revision; trainer reviews/edits/assigns.
-
-## Automated mode
-
-Application may auto-accept. DB++ only produces the proposal; product decides approval policy.
-
-## Adaptation triggers
-
-Potential deterministic triggers:
+Concrete:
 
 ```text
-progression achieved
-repeated prescription failure
-repeated substitution
-persistent target underfill
-persistent target overshoot
-session-duration violation
-equipment change
-availability change
+chest effective sets target 12
 ```
 
-Be conservative with fatigue/recovery claims unless evidence-backed models exist.
+belongs in TARGET.
 
-## Persistent-condition logic
+Intent resolution uses a versioned goal policy to produce default TARGET values.
 
-Policies may require N occurrences, consecutive periods, or rolling windows.
+Explicit user TARGET input overrides defaults.
 
-Example:
+---
+
+# 12. WorkoutIntent schema
+
+Create:
 
 ```text
-if exercise skipped 3 consecutive occurrences:
-    COACH_REVIEW_REQUIRED
+workout-intent.schema.json
 ```
 
-Not every signal should cause automatic replacement.
-
-## Exercise replacement
-
-If policy permits, candidate pool may use same family, compatible equipment, movement patterns, coverage difference, history, and preferences.
-
-Same family != automatic replacement or physiological equivalence.
-
-## Volume adaptation
-
-Critically distinguish:
+Initial independent schemaVersion:
 
 ```text
-plan insufficient
-vs
-plan not followed
+0.1.0
 ```
 
-Example:
+Likely fields:
 
 ```text
-PLAN 8 / ACTUAL 8 / TARGET 10–14
-=> plan may need more volume
-
-PLAN 12 / ACTUAL 7 / TARGET 10–14
-=> adherence issue, not automatically increase prescription
+schemaVersion
+intentId
+subjectId optional
+goal
+schedule
+sessionConstraints
+environment
+equipmentOverrides
+exerciseConstraints
+preferences
+continuity
+useHistory
+requestedPolicy optional
 ```
 
-This distinction must be explicit.
+No PII required.
 
-## Automated-coach explanations
+---
 
-DB++ returns facts and reason codes; UI/LLM turns them into prose.
+# 13. Schedule semantics
 
-Example:
+Support:
 
-```json
-{
-  "decisionType": "increase_sets",
-  "reasonCodes": [
-    "TARGET_BELOW_MINIMUM",
-    "HIGH_PLAN_ADHERENCE",
-    "CURRENT_VOLUME_BELOW_TARGET"
-  ]
-}
+```text
+cycleLengthDays
+sessionsPerCycle
+preferredDayOffsets
+excludedDayOffsets
+preferredWeekdays
+excludedWeekdays
 ```
 
-# 9. LLM boundary
+Weekday syntax exists for natural user requests.
+
+PLAN remains cycle-relative.
+
+---
+
+# 14. Weekday resolution
+
+For 7-day cycles, deterministic mapping from weekday to dayOffset requires an explicit anchor or a canonical Monday-based cycle convention.
+
+Choose one and document it.
 
 Recommended:
 
 ```text
-Natural-language user intent
-        |
-        v
-       LLM
-        |
-        v
-TrainingProfile / TARGET / constraints
-        |
-        v
-DB++ deterministic engine
-        |
-        v
-PLAN / Evaluation / CoachDecision
-        |
-        v
-       LLM
-        |
-        v
-human-readable explanation
+7-day intent weekday mode:
+Monday = dayOffset 0
+Tuesday = 1
+...
+Sunday = 6
 ```
 
-LLM handles language.
+This makes intent independent of actual calendar date.
 
-DB++ handles calculations and policy decisions.
+For non-7-day cycles:
 
-Core operation must not require an LLM.
+weekday fields should normally be invalid unless an explicit calendar anchor is provided.
 
-# 10. Common policy architecture
+Do not guess.
 
-Potential policy families:
+---
+
+# 15. Exercises-per-session
+
+Add first-class support for:
 
 ```text
-analysis policy
-duration policy
-progression policy
-planning policy
-adaptation policy
+minExercisesPerSession
+targetExercisesPerSession
+maxExercisesPerSession
 ```
 
-Each should have:
+This is required for the target app scenario.
+
+Recommended semantics:
 
 ```text
-policyId
-policyVersion
-parameters
-description
+minimum / maximum = hard
+target = soft
 ```
 
-Avoid hidden behavior.
+PlanEvaluation must check it.
 
-A policy change that can alter generated plans or decisions requires a new policy version. Never silently mutate an existing policy ID.
+Plan generation must satisfy it.
 
-Policies must not silently depend on current time, randomness, remote services, identity, or mutable global config.
+---
 
-# 11. Constraint priority
+# 16. Training environments
 
-Recommended planning priority:
+Introduce versioned environment presets.
+
+Initial:
 
 ```text
-1 validity
-2 hard constraints
-3 target minimums
-4 target targets
-5 soft preferences
-6 tie-breaking / optimization
+commercial_gym
+home_gym
+minimal_equipment
+bodyweight_only
+custom
 ```
 
-Version this within planning policy.
+Environment resolves to explicit normalized equipment.
 
-Do not create a single default "plan quality score."
+---
 
-# 12. Explainability as a release gate
+# 17. Commercial gym reference profile
 
-Every generated or adaptive choice must be able to answer:
-
-> Why was this chosen or changed?
-
-If structured reasons are unavailable, the feature is not ready.
-
-# 13. No hidden AI
-
-No embeddings, remote recommendation APIs, or LLM calls in core planning.
-
-Application layers may use AI to translate natural language into structured inputs or structured outputs into prose.
-
-# 14. Evidence boundary
-
-Reference policies should state whether they are:
+Create:
 
 ```text
-general reference
-research-derived
-coach-defined
-user-defined
+commercial-gym-general-v1
 ```
 
-Do not call a policy scientifically optimal unless evidence supports the exact claim.
+using actual DB++ equipment vocabulary.
 
-# 15. Trainer/app boundary
+This is a convenience default, not a guarantee every commercial gym has all equipment.
 
-DB++ owns:
+Users can override equipment.
+
+---
+
+# 18. Equipment overrides
+
+Support:
 
 ```text
-evaluate PLAN
-analyze ACTUAL
-derive TrainingState
-suggest progression
-generate draft PLAN
-propose PLAN revision
+availableEquipment
+unavailableEquipment
 ```
 
-Application owns:
+or equivalent additive/subtractive semantics.
+
+Resolved output contains explicit equipment.
+
+Downstream generator should not need to understand `commercial_gym`.
+
+---
+
+# 19. Exercise constraints
+
+Support intent-level:
 
 ```text
-accounts
-trainer-client invitations
-messaging
-notifications
-approval UI
-billing
-permissions
-sync
+requiredExerciseIds
+lockedExerciseIds
+excludedExerciseIds
+preferredExerciseIds
+avoidedExerciseIds
+
+requiredFamilyIds
+excludedFamilyIds
+preferredFamilyIds
+avoidedFamilyIds
 ```
 
-# 16. Self-trained and automated-coach modes
+These are merged with TrainingProfile using deterministic precedence.
 
-Self-trained users use the same Profile/TARGET/Evaluator/State/Generator/Decision APIs.
+---
 
-Automated coaching is the same deterministic engine plus an application decision to auto-accept proposals.
+# 20. Continuity
 
-No special core "AI coach" mode is needed.
-
-# 17. Research value
-
-Researchers should be able to reproduce:
+Support structured:
 
 ```text
-profile
-target
-history
-policy versions
-generated PLAN
-CoachDecisions
-resulting ACTUAL
+preserve
+neutral
+vary
 ```
 
-Future research tables may include policy ID, decision type, before/after, reason codes, and revision IDs.
+plus explicit locked exercise IDs.
 
-# 18. Cross-language strategy
+No natural-language parsing in core.
 
-Python remains the reference implementation.
+---
 
-Swift/Kotlin prioritize schema/model compatibility and app-facing data types.
+# 21. Use-history flag
 
-R remains research-focused.
-
-Do not block reference releases on complete cross-language parity, but never claim parity that does not exist.
-
-# 19. CLI roadmap
+Support explicit:
 
 ```text
-v1.6  fedbpp evaluate-plan
-v1.7  fedbpp training-state
-      fedbpp progress
-v1.8  fedbpp generate-plan
-v1.9  fedbpp propose-revision
+useHistory
 ```
 
-CLI should remain thin over public APIs.
+and optionally a requested state window.
 
-# 20. Schema strategy
+If history is absent, generation remains valid.
 
-Potential future schemas:
+If history is supplied and enabled, derive TrainingState canonically.
+
+---
+
+# 22. Missing-information result
+
+Create:
 
 ```text
-training-profile.schema.json
-coach-decision.schema.json
-plan-generation-request.schema.json
-plan-revision-proposal.schema.json
+IntentResolutionResult
 ```
 
-Only create schemas for genuine portable domain artifacts.
-
-# 21. Compatibility
-
-Do not break:
+with:
 
 ```text
-exerciseId
-PLAN
-ACTUAL
-TARGET existing semantics
-relationship artifact
-interop mappings
-longitudinal semantics
-```
-
-New functionality should be additive.
-
-# 22. Testing philosophy
-
-Every major policy must have hand-calculated fixtures asserting:
-
-```text
-inputs
-decision
-reason codes
-resulting plan
-evaluation
-```
-
-Avoid snapshot-only testing.
-
-# 23. v1.6 tests
-
-Required categories:
-
-```text
-TrainingProfile validation
-goals
-availability
-equipment
-hard exclusions
-soft preferences
-target gaps
-frequency gaps
-movement-pattern gaps
-family gaps
-duration estimation
-PlanEvaluation provenance
-CLI
-installed wheel
-```
-
-# 24. v1.7 tests
-
-```text
-TrainingState derivation
-history windows
-exercise state
-muscle state
-adherence state
-double progression
-load increment
-hold
-insufficient data
-CoachDecision reason codes
-determinism
-```
-
-# 25. v1.8 tests
-
-```text
-candidate pool
-equipment filtering
-exclusions
-preferences
-family continuity
-target allocation
-frequency
-movement constraints
-unsatisfiable request
-deterministic generation
-evaluator integration
-```
-
-# 26. v1.9 tests
-
-```text
-adaptation trigger
-progression
-persistent target gap
-adherence failure
-unplanned work
-plan insufficiency vs nonadherence
-revision proposal
-trainer-review mode
-automatic-mode output equivalence
-reason codes
+status
+resolvedProfile
+resolvedTarget
+planningPolicy
+generationOptions
+missingInformation
+warnings
 provenance
 ```
 
-# 27. CI
-
-Retain every prior test.
-
-Add dedicated stages as each new layer lands.
-
-Installed-wheel and CLI smoke tests remain mandatory.
-
-# 28. Release strategy
+Statuses:
 
 ```text
-v1.6.0  TrainingProfile + PlanEvaluation
-v1.6.x  evaluator corrections
-
-v1.7.0  TrainingState + progression
-
-v1.8.0  deterministic plan generation
-
-v1.9.0  adaptive coaching
+resolved
+resolved_with_defaults
+needs_clarification
+invalid
+unsatisfiable
 ```
 
-Do not rush v2.0.
+This is essential for LLM-facing apps.
 
-# 29. v2.0 decision point
+---
 
-After v1.9, reassess highest-value direction based on adoption.
+# 23. Structured clarification needs
 
-Possible directions:
+Return machine-readable missing facts:
 
-- advanced anatomy
-- richer evidence-backed policies
-- more interoperability
-- research standardization
-- broader platform parity
-
-Fine anatomy is not automatically the next feature.
-
-# 30. Documentation
-
-Add as needed:
-
-```text
-docs/TRAINING-PROFILE.md
-docs/PLAN-EVALUATION.md
-docs/TRAINING-STATE.md
-docs/PROGRESSION-POLICIES.md
-docs/PLAN-GENERATION.md
-docs/ADAPTIVE-COACHING.md
-docs/COACH-DECISIONS.md
+```json
+{
+  "field": "goal",
+  "reason": "required_for_goal_policy_resolution"
+}
 ```
 
-Recommended ADRs:
+The consuming LLM/UI asks the question.
+
+DB++ does not write conversational text.
+
+---
+
+# 24. Goal policies
+
+Introduce versioned reference goal resolution policies.
+
+Required:
 
 ```text
-training-profile-vs-target
-hard-vs-soft-constraints
-plan-evaluation-semantics
-policy-versioning
-training-state-windowing
-coach-decision-explainability
-plan-generation-determinism
-adaptive-plan-revision
-LLM-boundary
+general-hypertrophy-v1
+general-strength-v1
 ```
 
-# 31. Immediate next action
-
-Begin v1.6:
-
-1. audit current TARGET/profile-related needs;
-2. write ADR separating TrainingProfile from TARGET;
-3. design `training-profile.schema.json`;
-4. extend TARGET only where justified;
-5. implement deterministic `evaluate_plan()`;
-6. expose hard/soft/target result categories;
-7. add golden evaluator fixtures;
-8. expose Python API and CLI;
-9. run every legacy test;
-10. release v1.6.0.
-
-Do not begin plan generation until evaluator semantics are stable.
-
-# 32. Overall definition of success
-
-The application layer should eventually delegate:
+Later:
 
 ```text
-create profile
+general-muscular-endurance-v1
+general-fitness-v1
+```
+
+Goal policy may output:
+
+```text
+default TARGET
+planning policy
+default rep prescription policy
+default effort policy
+```
+
+All choices must be documented.
+
+---
+
+# 25. Hypertrophy policy
+
+`general-hypertrophy-v1` must be explicit, versioned, and conservative.
+
+It may provide default:
+
+```text
+muscle set targets
+frequency targets
+rep ranges
+effort targets
+```
+
+only where methodology is documented.
+
+Do not call the result optimal.
+
+Explicit user/trainer targets override it.
+
+---
+
+# 26. Precedence
+
+Document and test precedence.
+
+Recommended conceptual order:
+
+```text
+explicit request hard constraints
+explicit TARGET values
+explicit TrainingProfile constraints
+explicit WorkoutIntent soft preferences
+versioned goal/environment defaults
+```
+
+Hard conflicts must return invalid/unsatisfiable.
+
+Do not silently pick one.
+
+---
+
+# 27. Intent resolver API
+
+Python reference:
+
+```python
+resolved = resolve_intent(
+    intent,
+    db,
+    profile=None,
+    target=None,
+    relationships=None,
+    history=None,
+)
+```
+
+Resolution does not itself generate a plan.
+
+---
+
+# 28. Intent-to-plan convenience API
+
+May expose:
+
+```python
+generate_plan_from_intent(...)
+```
+
+but internally it must remain:
+
+```text
+resolve_intent
+→ derive TrainingState if required
+→ generate_plan
+→ evaluate_plan
+```
+
+and expose intermediate structured results.
+
+---
+
+# 29. Intent and adaptation
+
+For existing active PLAN:
+
+```text
+resolve intent
+→ merge updated constraints/profile/target
+→ adapt_plan()
+```
+
+Application decides whether it wants a new plan or adaptation.
+
+No hidden auto-detection.
+
+---
+
+# 30. Provenance
+
+Intent resolution records:
+
+```text
+intentSchemaVersion
+goalPolicyId/version
+environmentPolicyId/version
+defaultsApplied
+explicitOverrides
+profile version
+TARGET version
+DB version
+relationship version
+```
+
+---
+
+# 31. v1.10 golden scenario
+
+Required exact fixture:
+
+```text
+goal = hypertrophy
+cycle = 7
+sessions = 5
+weekdays = Mon Tue Wed Thu Sat
+exercises/session = 3–4
+environment = commercial gym
+```
+
+Assert:
+
+```text
+resolved status
+five allowed/preferred session days
+3–4 exercise hard range
+explicit equipment set
+goal policy
+resolved TARGET
+planning policy
+deterministic output
+generated PLAN passes evaluate_plan
+```
+
+---
+
+# 32. v1.10 clarification tests
+
+At minimum:
+
+```text
+empty intent
+goal only
+schedule only
+environment only
+conflicting days
+required+excluded same exercise
+custom equipment without environment
+non-7-day cycle with weekday request
+```
+
+---
+
+# 33. v1.10 PlanEvaluation changes
+
+PlanEvaluation must evaluate:
+
+```text
+exercise count per session
+resolved day constraints
+equipment constraints
+```
+
+Generator and resolver may not become separate sources of truth.
+
+---
+
+# 34. v1.10 CLI
+
+Add:
+
+```text
+fedbpp resolve-intent
+fedbpp generate-from-intent
+```
+
+CLI takes JSON intent, not natural language.
+
+---
+
+# 35. v1.10 docs
+
+Create:
+
+```text
+docs/WORKOUT-INTENT.md
+docs/GOAL-RESOLUTION.md
+docs/ENVIRONMENT-PROFILES.md
+```
+
+ADRs:
+
+```text
+WorkoutIntent vs TrainingProfile vs TARGET
+intent precedence
+weekday semantics
+exercise-count constraints
+goal-policy semantics
+environment profile semantics
+```
+
+---
+
+# 36. v1.10 cross-language preparation
+
+Before v1.10 release, define language-neutral fixtures for all new intent semantics.
+
+Store under something like:
+
+```text
+fixtures/cross-language/intent/
+```
+
+These become the parity oracle for v1.11/v1.12.
+
+---
+
+# 37. v1.10 release gate
+
+v1.10 complete only when:
+
+- WorkoutIntent schema stable enough for consumers;
+- deterministic intent resolution works;
+- hypertrophy/strength policies exist;
+- commercial-gym environment works;
+- weekday resolution works;
+- 3–4 exercise/session constraint is real;
+- missing information is structured;
+- history-free and history-aware generation work;
+- Python reference API/CLI green;
+- cross-language fixtures published;
+- no LLM dependency exists.
+
+---
+
+# 38. v1.11 — Cross-language semantic parity
+
+## Objective
+
+Bring Swift, Kotlin, and R forward against the v1.10 reference semantics while preserving Python as the semantic oracle.
+
+The major focus is not API cosmetics.
+
+It is semantic parity.
+
+---
+
+# 39. Shared fixture architecture
+
+Create canonical fixtures covering:
+
+```text
+schema decoding
+WorkoutIntent
+intent resolution
+TrainingProfile
+TARGET
+PlanEvaluation
+plan generation
+TrainingState
+CoachDecision
+adaptive coaching where language claims support
+```
+
+Suggested:
+
+```text
+fixtures/cross-language/
+  intent/
+  evaluation/
+  planning/
+  history/
+  coaching/
+```
+
+Each fixture contains:
+
+```text
+inputs/
+expected/
+metadata.json
+```
+
+Expected results generated by the versioned Python reference and committed for review.
+
+---
+
+# 40. Canonical serialization
+
+Define canonical JSON comparison rules.
+
+At minimum:
+
+```text
+stable field ordering where serialized for fixtures
+stable list ordering
+floating point tolerance policy
+date/time normalization
+unit representation
+null/missing semantics
+```
+
+Avoid comparing implementation-specific object descriptions.
+
+---
+
+# 41. Capability matrix
+
+Create:
+
+```text
+docs/LANGUAGE-CAPABILITIES.md
+```
+
+Matrix rows:
+
+```text
+load DB
+load relationships
+PLAN decode
+ACTUAL decode
+TARGET decode
+WorkoutIntent
+resolveIntent
+evaluatePlan
+TrainingHistory
+deriveTrainingState
+progression
+generatePlan
+adaptPlan
+research exports
+FHIR conversion
+```
+
+Columns:
+
+```text
+Python
+Swift
+Kotlin
+R
+```
+
+Use:
+
+```text
+full
+read-only
+partial
+not-supported
+```
+
+Never hide gaps.
+
+---
+
+# 42. Python v1.11 role
+
+Python remains full-reference implementation.
+
+Required:
+
+```text
+all v1.10 functionality
+all prior analysis/planning/coaching
+CLI
+fixture generator/validator
+```
+
+Add helpers to emit canonical fixture expected output.
+
+---
+
+# 43. Swift v1.11 objective
+
+Upgrade existing:
+
+```text
+packages/swift/FreeExerciseDBPlusPlus
+```
+
+from a read-only PLAN/ACTUAL consumer into a native training-domain package.
+
+Current package already exists and currently provides Foundation-only Codable
+models and coverage analysis.
+
+v1.11 must add native intent/planning functionality rather than wrapping Python.
+
+---
+
+# 44. Swift package constraints
+
+Swift package should remain:
+
+```text
+Swift 6
+Foundation-only core
+Sendable-safe where practical
+no SwiftUI requirement
+no FoundationModels dependency
+no CloudKit dependency
+no persistence framework dependency
+no network requirement
+```
+
+---
+
+# 45. Swift SPM installation
+
+The consumer should be able to:
+
+```swift
+import FreeExerciseDBPlusPlus
+```
+
+after adding the package through Swift Package Manager.
+
+No manual copying of DB JSON or relationship JSON should be required for bundled/default operation by v1.12.
+
+---
+
+# 46. Swift typed models
+
+Provide public typed models for:
+
+```text
+Exercise
+ExerciseDatabase
+ExerciseRelationshipRegistry
+WorkoutPlan
+WorkoutActual
+VolumeTarget
+TrainingProfile
+WorkoutIntent
+IntentResolutionResult
+PlanEvaluation
+TrainingHistory
+TrainingState
+CoachDecision
+GeneratedPlanResult
+AdaptivePlanResult
+```
+
+Avoid public `[String: Any]`.
+
+---
+
+# 47. Swift controlled vocabularies
+
+Use typed enums or forward-compatible wrappers for:
+
+```text
+TrainingGoal
+Weekday
+TrainingEnvironment
+Equipment
+MovementPattern
+IntentResolutionStatus
+GenerationStatus
+AdaptiveStatus
+CoachDecisionType
+ReasonCode
+```
+
+Define unknown-value handling deliberately.
+
+---
+
+# 48. Swift partial ranges
+
+Implement one consistent model preserving:
+
+```text
+minimum
+target
+maximum
+```
+
+independently.
+
+Do not use a range type that loses partial bounds.
+
+---
+
+# 49. Swift database resources
+
+Bundle canonical resources or generate equivalent typed resources so a caller can do:
+
+```swift
+let engine = try TrainingEngine.bundled()
+```
+
+Custom resource injection must remain possible.
+
+---
+
+# 50. Swift engine facade
+
+Target public API:
+
+```swift
+public struct TrainingEngine {
+    public func resolveIntent(...)
+    public func evaluatePlan(...)
+    public func generatePlan(...)
+    public func deriveTrainingState(...)
+}
+```
+
+By v1.12:
+
+```swift
+public func adaptPlan(...)
+```
+
+must also be available.
+
+---
+
+# 51. Swift parity tests
+
+For every supported operation:
+
+```text
+load shared fixture
+run Swift implementation
+canonicalize output
+compare to committed Python reference output
+```
+
+No independently invented Swift expected semantics.
+
+---
+
+# 52. Kotlin v1.11 objective
+
+Upgrade Kotlin package into a first-class native/JVM domain consumer.
+
+Support Android/JVM usage without Python.
+
+Primary target:
+
+```text
+WorkoutIntent
+intent resolution
+PlanEvaluation
+plan generation
+TrainingState
+```
+
+Adaptive coaching parity may complete in v1.12.
+
+---
+
+# 53. Kotlin packaging
+
+Use standard Gradle/JVM/Kotlin packaging.
+
+Keep Android framework dependencies out of core where practical.
+
+Core package should work in plain JVM tests.
+
+---
+
+# 54. Kotlin typed models
+
+Provide idiomatic:
+
+```text
+data classes
+sealed classes/enums
+serialization support
+```
+
+for the same portable artifacts.
+
+Avoid raw dynamic maps as the primary API.
+
+---
+
+# 55. Kotlin resource strategy
+
+Provide convenient bundled/default DB access for Android/JVM while allowing caller-supplied resources.
+
+Do not require network access.
+
+---
+
+# 56. Kotlin parity fixtures
+
+Run the exact shared fixture corpus used by Python/Swift.
+
+Document any unsupported operations in the capability matrix.
+
+---
+
+# 57. R v1.11 objective
+
+Strengthen the R package around research use.
+
+R priorities:
+
+```text
+schema/artifact readers
+WorkoutIntent parsing
+resolved input inspection
+PlanEvaluation
+TrainingHistory analysis
+TrainingState
+cohort/research tables
+generated PLAN inspection
+CoachDecision/adaptation result inspection
+```
+
+R need not necessarily implement the full plan search engine in native R by v1.11 if that is not valuable.
+
+However, semantics it claims to support must be parity-tested.
+
+---
+
+# 58. R tidy interfaces
+
+Provide functions returning data frames/tibbles for:
+
+```text
+intent summary
+target summary
+plan evaluation
+muscle coverage
+session coverage
+training state
+coach decisions
+plan changes
+```
+
+Do not flatten away:
+
+```text
+missing vs zero
+partial ranges
+unmapped state
+```
+
+---
+
+# 59. R reproducibility
+
+Every research result should expose policy/version provenance.
+
+Researchers must be able to save:
+
+```text
+DB version
+intent
+profile
+TARGET
+policy IDs
+PLAN
+ACTUAL
+TrainingState
+CoachDecision
+```
+
+---
+
+# 60. Cross-language numeric semantics
+
+Explicitly test:
+
+```text
+effective set calculations
+custom set credits
+range arithmetic
+normalization to 7 days
+unit conversions where supported
+target deficit/excess
+```
+
+No language may hardcode default credits.
+
+---
+
+# 61. Cross-language date/time semantics
+
+Test:
+
+```text
+timezone offsets
+asOf
+history windows
+week boundary
+non-7-day cycles
+weekday intent resolution
+```
+
+---
+
+# 62. Cross-language determinism
+
+Swift/Kotlin/Python generation should produce semantically identical plans for shared reference policies.
+
+If exact IDs differ because of language-specific serialization, fix the ID generation.
+
+Do not accept "roughly the same plan" as parity.
+
+---
+
+# 63. v1.11 release gate
+
+v1.11 complete when:
+
+- shared parity fixtures exist;
+- capability matrix exists;
+- Python remains green reference;
+- Swift resolves intent natively;
+- Swift evaluates plans natively;
+- Swift generates plans natively for reference policies;
+- Kotlin resolves/evaluates/generates for declared policy set;
+- R consumes intent/evaluation/state artifacts and reproduces declared analyses;
+- package docs are accurate;
+- parity CI is green.
+
+---
+
+# 64. v1.12 — Production-ready language packages
+
+## Objective
+
+Make the packages easy to consume from real applications and research workflows.
+
+The flagship app deliverable is the Swift SPM, but Python, Kotlin, and R are also release-grade first-class packages.
+
+---
+
+# 65. v1.12 package goal
+
+The four packages should be installable through normal language workflows:
+
+```text
+Swift Package Manager
+Python pip/wheel
+Gradle/Maven-style Kotlin/JVM package
+R package install workflow
+```
+
+The exact publishing registry may vary, but installability and documentation are mandatory.
+
+---
+
+# 66. Swift v1.12 final capability
+
+Swift must support end-to-end:
+
+```text
+WorkoutIntent
+→ resolveIntent
+→ generatePlan
+→ evaluatePlan
+```
+
+and, with history:
+
+```text
+TrainingHistory
+→ deriveTrainingState
+→ adaptPlan
+→ proposed PLAN + CoachDecision[]
+```
+
+All natively.
+
+No Python runtime.
+
+No subprocess.
+
+No network service.
+
+No LLM dependency.
+
+---
+
+# 67. Swift drop-in example
+
+Target usage:
+
+```swift
+import FreeExerciseDBPlusPlus
+
+let engine = try TrainingEngine.bundled()
+
+let intent = WorkoutIntent(
+    goal: .hypertrophy,
+    schedule: .init(
+        cycleLengthDays: 7,
+        sessionsPerCycle: .exact(5),
+        preferredWeekdays: [
+            .monday,
+            .tuesday,
+            .wednesday,
+            .thursday,
+            .saturday
+        ]
+    ),
+    sessionConstraints: .init(
+        exercisesPerSession: .init(minimum: 3, maximum: 4)
+    ),
+    environment: .commercialGym
+)
+
+let resolved = try engine.resolveIntent(intent)
+
+let result = try engine.generatePlan(
+    resolvedIntent: resolved
+)
+
+guard let plan = result.plan else {
+    // app/LLM inspects result.missingInformation / unsatisfied constraints
+    return
+}
+```
+
+---
+
+# 68. Swift history-aware example
+
+```swift
+let state = try engine.deriveTrainingState(
+    history: history,
+    asOf: Date()
+)
+
+let proposal = try engine.adaptPlan(
+    intent: intent,
+    currentPlan: currentPlan,
+    history: history,
+    asOf: Date()
+)
+```
+
+`Date()` is supplied by the application.
+
+The package must not hide current-time dependence.
+
+---
+
+# 69. App/LLM integration contract
+
+The package should expose structures that are easy for an LLM adapter to create/consume, but should not know about the LLM.
+
+The application can map:
+
+```text
+LLM output
+→ WorkoutIntent
+```
+
+and:
+
+```text
+IntentResolutionResult.missingInformation
+→ clarification prompt
+```
+
+and:
+
+```text
+GeneratedPlanResult / CoachDecision
+→ natural-language explanation
+```
+
+This is the whole intended integration boundary.
+
+---
+
+# 70. Swift error model
+
+Provide typed errors for:
+
+```text
+invalidIntent
+needsClarification
+invalidProfile
+invalidTarget
+unsatisfiable
+resourceLoadFailure
+schemaMismatch
+unsupportedPolicy
+```
+
+Avoid requiring callers to parse arbitrary strings.
+
+---
+
+# 71. Swift concurrency
+
+Public value models should be `Sendable` where practical.
+
+Engine should be safe to use from modern Swift concurrency patterns.
+
+Avoid global mutable state.
+
+---
+
+# 72. Swift performance
+
+Target normal mobile usage:
+
+```text
+load bundled DB once
+reuse indexed engine
+intent resolution near-instant
+plan evaluation near-instant
+plan generation responsive
+adaptive analysis reasonable for normal user history
+```
+
+Pre-index exercise IDs/families/muscles.
+
+No database dependency required.
+
+---
+
+# 73. Swift package resources/versioning
+
+Expose:
+
+```swift
+engine.databaseVersion
+engine.relationshipVersion
+engine.supportedPolicyVersions
+```
+
+or equivalent provenance.
+
+Consumers must be able to record exactly what engine produced a plan.
+
+---
+
+# 74. Kotlin v1.12 final capability
+
+Kotlin should support end-to-end app usage for the declared core workflow:
+
+```text
+WorkoutIntent
+resolveIntent
+evaluatePlan
+generatePlan
+deriveTrainingState
+adaptPlan
+```
+
+If any feature remains unsupported, capability docs must say so before release.
+
+Goal is full parity with Swift/Python for training-domain operations by v1.12.
+
+---
+
+# 75. Kotlin Android usability
+
+Provide README/example for:
+
+```text
+Android ViewModel/service usage
+offline engine loading
+bundled resources
+structured plan generation
+```
+
+Do not couple the core library to Compose/UI.
+
+---
+
+# 76. Python v1.12 final capability
+
+Python remains complete reference.
+
+Provide polished APIs:
+
+```text
+resolve_intent
+generate_plan_from_intent
+evaluate_plan
+derive_training_state
+adapt_plan
+```
+
+Maintain CLI equivalents.
+
+Wheel must include required default resources or provide a documented loader.
+
+---
+
+# 77. Python service usage
+
+Document simple service/server pattern without making web frameworks dependencies.
+
+Example:
+
+```python
+engine = TrainingEngine.bundled()
+result = engine.generate_plan_from_intent(intent)
+```
+
+---
+
+# 78. R v1.12 final capability
+
+R package should be research-ready.
+
+Required:
+
+```text
+read/validate WorkoutIntent
+read PLAN / ACTUAL / TARGET
 evaluate plan
-assign plan
-receive actuals
-analyze adherence
-derive training state
-suggest progression
-generate draft plan
-propose revision
+derive longitudinal/research summaries
+derive TrainingState or consume canonical TrainingState
+inspect generated/adaptive plans
+tidy CoachDecision/change outputs
+cohort export
 ```
 
-to DB++.
+Native plan generation/adaptation in R is desirable if practical, but not required if the package clearly focuses on research consumption.
 
-Trainer, self-trained, and automated-coach products should all use the same domain semantics.
+If not natively supported, do not fake parity.
 
-The engine must remain:
+---
+
+# 79. R research example
+
+Ship a reproducible example:
+
+```text
+100 subjects
+WorkoutIntent/protocol
+PLAN
+12 weeks ACTUAL
+TrainingState
+adaptive decisions
+subject-week-muscle table
+```
+
+Show loading into tidy R analysis.
+
+Do not include inferential conclusions as core package behavior.
+
+---
+
+# 80. Package API naming
+
+Aim for conceptually parallel names:
+
+```text
+resolveIntent / resolve_intent
+evaluatePlan / evaluate_plan
+generatePlan / generate_plan
+deriveTrainingState / derive_training_state
+adaptPlan / adapt_plan
+```
+
+Language idioms may differ.
+
+Semantic operation names should remain recognizable.
+
+---
+
+# 81. Shared package documentation
+
+Create:
+
+```text
+docs/PACKAGE-QUICKSTART.md
+docs/LANGUAGE-CAPABILITIES.md
+docs/CROSS-LANGUAGE-PARITY.md
+```
+
+Each package gets its own README.
+
+---
+
+# 82. Cross-language fixtures by v1.12
+
+Mandatory fixture families:
+
+```text
+WorkoutIntent exact user scenario
+missing-information clarification
+commercial gym
+custom equipment
+3-day full body
+5-day hypertrophy
+non-7-day cycle
+PlanEvaluation hard constraint
+TrainingState window
+double progression
+explicit substitution
+target deficit
+adaptive revision
+adaptive regeneration
+custom set credits
+```
+
+---
+
+# 83. Cross-language CI
+
+CI should include independent stages:
+
+```text
+python
+swift
+kotlin
+r
+cross-language-fixtures
+```
+
+The parity stage compares normalized outputs.
+
+A release cannot claim parity if the fixture suite is red.
+
+---
+
+# 84. Semantic version compatibility
+
+Project release version and schema versions remain independent.
+
+Language package versions should clearly identify compatible project releases.
+
+Document:
+
+```text
+package version
+supported DB schema versions
+supported WorkoutIntent schema versions
+supported PLAN/ACTUAL/TARGET versions
+supported policy versions
+```
+
+---
+
+# 85. Forward compatibility
+
+Portable JSON decoders need a strategy for unknown future enum values.
+
+Do not silently map unknown values to incorrect existing values.
+
+Preferred:
+
+```text
+unknown(rawValue)
+```
+
+where language supports it, or explicit validation failure where required.
+
+---
+
+# 86. Offline-first requirement
+
+All core domain operations required for:
+
+```text
+intent resolution
+plan evaluation
+plan generation
+TrainingState
+adaptive coaching
+```
+
+must work without network access.
+
+This is especially important for mobile apps.
+
+---
+
+# 87. Privacy requirement
+
+No language package requires:
+
+```text
+name
+email
+DOB
+address
+account ID
+medical diagnosis
+```
+
+Opaque subject IDs remain sufficient.
+
+---
+
+# 88. No app-specific dependencies
+
+Swift:
+
+```text
+no FoundationModels
+no SwiftUI
+no CloudKit
+```
+
+Kotlin:
+
+```text
+no Compose requirement
+no Android framework requirement in core if avoidable
+```
+
+Python:
+
+```text
+no web framework dependency
+```
+
+R:
+
+```text
+no hosted service dependency
+```
+
+---
+
+# 89. v1.12 final golden acceptance test
+
+The exact cross-language fixture:
+
+```text
+Goal:
+hypertrophy
+
+Schedule:
+5 sessions / 7-day cycle
+Mon Tue Wed Thu Sat
+
+Exercises/session:
+3–4
+
+Environment:
+commercial gym
+```
+
+must resolve/generate deterministically.
+
+Python, Swift, and Kotlin must produce semantically equivalent:
+
+```text
+resolved intent
+TrainingProfile
+TARGET
+planning policy
+PLAN
+PlanEvaluation
+```
+
+R must at minimum load/validate the artifacts and reproduce the analysis outputs.
+
+---
+
+# 90. v1.12 history-aware golden test
+
+Given:
+
+```text
+same WorkoutIntent
+current PLAN
+4–8 weeks ACTUAL history
+```
+
+Python, Swift, and Kotlin should produce semantically equivalent:
+
+```text
+TrainingState
+CoachDecision(s)
+AdaptivePlanResult
+proposed PLAN
+proposed evaluation
+```
+
+R should consume and analyze those artifacts.
+
+---
+
+# 91. Release artifacts
+
+By v1.12 releases should include or reference:
+
+```text
+free-exercise-db-plusplus.json
+exercise-relationships.json
+workout-intent.schema.json
+training-profile.schema.json
+workout-plan.schema.json
+workout.schema.json
+volume-target.schema.json
+coach-decision.schema.json
+cross-language fixtures
+package documentation
+checksums
+```
+
+---
+
+# 92. v1.12 release gate
+
+v1.12 is complete only when:
+
+1. WorkoutIntent is stable;
+2. goal/environment resolution is deterministic;
+3. target user scenario works;
+4. session exercise-count constraints are enforced;
+5. Python full reference works;
+6. Swift SPM installs cleanly;
+7. Swift end-to-end intent→plan works;
+8. Swift history-aware adaptPlan works;
+9. Kotlin package installs/builds cleanly;
+10. Kotlin end-to-end core workflow works;
+11. R package installs/checks cleanly;
+12. R research workflows consume all public artifacts;
+13. shared fixture parity is green;
+14. package capability matrix is accurate;
+15. no package depends on an LLM;
+16. no network required for core operations;
+17. provenance/versioning exposed;
+18. all prior repository tests remain green.
+
+---
+
+# 93. Immediate next step — v1.10
+
+Begin with the domain contract, not package rewrites.
+
+Implementation order:
+
+```text
+1. ADR: WorkoutIntent vs Profile vs TARGET
+2. WorkoutIntent schema
+3. weekday/cycle semantics
+4. exercises-per-session constraint
+5. environment presets
+6. goal policies
+7. precedence/defaulting
+8. IntentResolutionResult
+9. Python resolve_intent()
+10. PlanEvaluation updates
+11. plan-generation integration
+12. exact 5-day hypertrophy golden fixture
+13. shared cross-language fixtures
+14. docs/CLI
+15. audit
+16. full CI
+17. v1.10 release
+```
+
+Only after v1.10 semantics are stable should v1.11 implement broad native-language parity.
+
+---
+
+# 94. Long-term definition of success
+
+A developer should be able to use Free Exercise DB++ as a reusable domain engine rather than rebuilding training logic inside an app.
+
+Apple app:
+
+```text
+LLM
+→ WorkoutIntent
+→ FreeExerciseDBPlusPlus SPM
+→ PLAN / CoachDecision
+→ app UI
+```
+
+Android app:
+
+```text
+LLM or form input
+→ WorkoutIntent
+→ Kotlin package
+→ PLAN / CoachDecision
+→ app UI
+```
+
+Python system:
+
+```text
+API/form/LLM adapter
+→ WorkoutIntent
+→ Python package
+→ PLAN / CoachDecision
+```
+
+Research:
+
+```text
+WorkoutIntent / PLAN / ACTUAL
+→ R/Python
+→ reproducible analysis
+```
+
+The core engine remains:
 
 ```text
 deterministic
 portable
 explainable
 versioned
-testable
+cross-language
+offline-capable
 privacy-neutral
 UI-independent
+LLM-independent
 ```
 
-That is the intended long-term identity of Free Exercise DB++.
-
-
-# 8. v1.9 — Adaptive Coaching / Plan Revision Engine
-
-Implementation status: complete in the Python reference package. `adapt_plan()` composes canonical TrainingState, progression policies, plan evaluation and (when structural correction is required) the v1.8 generator. It is advisory and deterministic; proposed revisions are never activated and historic PLAN/ACTUAL documents remain unchanged. See `docs/ADAPTIVE-COACHING.md`.
+That is the target identity of Free Exercise DB++ by v1.12.
