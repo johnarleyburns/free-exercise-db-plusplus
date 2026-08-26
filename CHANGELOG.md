@@ -145,8 +145,13 @@ No PLAN, ACTUAL, TARGET, or independent schema versions changed.
 - Garmin FIT, FHIR, HealthKit, Health Connect, IEEE/Open mHealth, taxonomy, and fine-anatomy exporters remain future work.
 
 
-## 1.9.0 - 2026-08-25
+## 1.9.0 - 2026-08-26
 
 - Added deterministic, advisory adaptive coaching through `adapt_plan()` and the versioned `general-adaptive-v1` CoachingPolicy.
 - Added evaluator-gated immutable PLAN revision/regeneration proposals, machine-readable changes, decisions, and provenance; no proposal is activated automatically.
 - Added `fedbpp adapt-plan` and adaptive-coaching guidance.
+- Hardened substitution evidence so it is derived solely from the canonical
+  TrainingState as-of/window/timezone boundary, including compact windowed
+  replacement provenance.
+- Hardened evaluator gating so a revision or regeneration cannot worsen the
+  magnitude of any canonical TARGET maximum excess.
