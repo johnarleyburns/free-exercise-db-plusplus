@@ -329,6 +329,8 @@ def _rows_for_period(history: TrainingHistory, item: dict[str, Any], db: Any, an
             completeness = analysis.get("totalActualCoverage", {}).get("coverageCompleteness", {}); actual_counted += completeness.get("actualCountedSets", 0); actual_mapped += completeness.get("mappedActualSets", 0); actual_unmapped += completeness.get("unmappedActualSets", 0); _add_actual(analysis, actual, actual_exposure, exercise_rows, history, item, selected_workout, occurrence.plan, occurrence.session)
         else:
             session_rows.append(_session_row(history, item, None, occurrence.plan, occurrence.session, None, "missed_planned_session", occurrence.scheduled_date))
+            for rx in occurrence.session.get("exercises", []):
+                exercise_rows.append(_missing_exercise_row(history, item, occurrence, rx))
     all_sessions = { (plan.get("planId"), plan.get("revisionId"), s.get("planSessionId")): s for plan in plans for s in plan.get("sessions", []) }
     for workout in history.workouts:
         sid = workout.get("sessionId"); stamp = _parse_timestamp(workout["startTime"], analyzer_timezone) if workout.get("startTime") else None
@@ -349,7 +351,7 @@ def _rows_for_period(history: TrainingHistory, item: dict[str, Any], db: Any, an
         row.update({"planned_exposures": round(planned_exposure[muscle], 6), "actual_exposures": round(actual_exposure[muscle], 6), "planned_mapped_sets": planned_mapped, "planned_unmapped_sets": planned_unmapped, "actual_mapped_sets": actual_mapped, "actual_unmapped_sets": actual_unmapped, "mapped_fraction": round(actual_mapped / actual_counted, 6) if actual_counted else None, "unplanned_sets": sum(x.get("unplanned_sets", 0) for x in session_rows), "analysis_policy": ANALYSIS_POLICY, "analysis_version": ANALYSIS_VERSION})
         muscle_rows.append(row)
     summary = {"scheduledPlannedSessions": len(occurrences), "completedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "matched"), "missedPlannedSessions": sum(1 for x in session_rows if x["session_status"] == "missed_planned_session"), "unplannedActualSessions": sum(1 for x in session_rows if x["session_status"] == "unplanned_session"), "sessionAdherenceFraction": round(sum(1 for x in session_rows if x["session_status"] == "matched") / len(occurrences), 6) if occurrences else None, "targetProfilesUsed": target_ids}
-    return muscle_rows, sorted(session_rows, key=lambda x: (x["timestamp"] or "", x["session_id"] or "")), sorted(exercise_rows, key=lambda x: (x["session_id"], x["prescription_id"] or "", x["actual_exercise_id"] or "")), summary
+    return muscle_rows, sorted(session_rows, key=lambda x: (x["timestamp"] or "", x["session_id"] or "")), sorted(exercise_rows, key=lambda x: (x["session_id"] or "", x["prescription_id"] or "", x["actual_exercise_id"] or "")), summary
 
 
 def _session_row(history: TrainingHistory, item: dict[str, Any], workout: dict[str, Any] | None, plan: dict[str, Any] | None, session: dict[str, Any] | None, analysis: dict[str, Any] | None, status: str, scheduled_date: date | None = None) -> dict[str, Any]:
@@ -371,7 +373,16 @@ def _add_actual(analysis: dict[str, Any] | None, actual: dict[str, defaultdict[s
     for role in actual:
         for muscle, value in analysis.get("totalActualCoverage", {}).get({"direct":"directSets", "indirect":"indirectSets", "stabilizer":"stabilizerParticipationSets", "effective":"effectiveSets"}[role], {}).items(): actual[role][muscle] += float(value)
     for muscle in analysis.get("totalActualCoverage", {}).get("effectiveSets", {}): exposure[muscle] += 1
-    for row in analysis.get("matching", {}).get("exercises", []): exercise_rows.append({"subject_id": history.subject_id, "period": item["start"], "session_id": workout.get("sessionId"), "prescription_id": row.get("prescriptionId"), "planned_exercise_id": row.get("plannedExerciseId"), "actual_exercise_id": row.get("actualExerciseId"), "match_status": row.get("status"), "planned_sets_min": row.get("plannedSetRange", {}).get("min"), "planned_sets_target": row.get("plannedSetRange", {}).get("target"), "planned_sets_max": row.get("plannedSetRange", {}).get("max"), "actual_sets": row.get("actualCompletedSets"), "reps_adherence": row.get("reps_adherence"), "load_adherence": row.get("load_adherence"), "rpe_adherence": row.get("rpe_adherence"), "rir_adherence": row.get("rir_adherence"), "set_adherence": row.get("set_adherence"), "volume_load_adherence": row.get("volume_load_adherence"), "substitution_reason": row.get("reason")})
+    rows = analysis.get("matching", {}).get("exercises", [])
+    for row in rows:
+        exercise_rows.append({"subject_id": history.subject_id, "period": item["start"], "session_id": workout.get("sessionId"), "prescription_id": row.get("prescriptionId"), "planned_exercise_id": row.get("plannedExerciseId"), "actual_exercise_id": row.get("actualExerciseId"), "match_status": row.get("status"), "planned_sets_min": row.get("plannedSetRange", {}).get("min"), "planned_sets_target": row.get("plannedSetRange", {}).get("target"), "planned_sets_max": row.get("plannedSetRange", {}).get("max"), "actual_sets": row.get("actualCompletedSets"), "reps_adherence": row.get("reps_adherence"), "load_adherence": row.get("load_adherence"), "rpe_adherence": row.get("rpe_adherence"), "rir_adherence": row.get("rir_adherence"), "set_adherence": row.get("set_adherence"), "volume_load_adherence": row.get("volume_load_adherence"), "substitution_reason": row.get("reason")})
+    present = {row.get("prescriptionId") for row in rows}
+    for rx in analysis.get("matching", {}).get("missingPrescriptionDetails", []):
+        if rx.get("prescriptionId") not in present:
+            exercise_rows.append(_missing_exercise_row(history, item, None, rx, workout.get("sessionId")))
+
+def _missing_exercise_row(history, item, occurrence, rx, session_id=None):
+    return {"subject_id": history.subject_id, "period": item["start"], "session_id": session_id or (None if occurrence is None else None), "prescription_id": rx.get("prescriptionId"), "planned_exercise_id": rx.get("exerciseId"), "actual_exercise_id": None, "match_status": "missing_prescription", "planned_sets_min": planned_set_range(rx).get("min"), "planned_sets_target": planned_set_range(rx).get("target"), "planned_sets_max": planned_set_range(rx).get("max"), "actual_sets": 0, "reps_adherence": None, "load_adherence": None, "rpe_adherence": None, "rir_adherence": None, "set_adherence": None, "volume_load_adherence": None, "substitution_reason": None}
 
 
 def _add_unplanned(workout: dict[str, Any], actual: dict[str, defaultdict[str, float]], exposure: defaultdict[str, float], db: Any, exercise_rows: list[dict[str, Any]] | None = None, history: TrainingHistory | None = None, item: dict[str, Any] | None = None) -> dict[str, int]:

@@ -12,3 +12,10 @@ The state exposes exercise observations, optional family context, canonical
 muscle rows from longitudinal analysis, adherence/session rows, and provenance.
 It preserves missingness rather than turning absent work into zero. ACTUAL is
 the underlying truth; state is not manually edited and does not mutate PLAN.
+
+`latestPerformance` is the latest selected ACTUAL exercise occurrence in the
+window. `recentPerformances` is the complete deterministic timestamp-ordered
+list of selected ACTUAL exercise occurrences in the window. The compatibility
+fields `recentReps`, `recentLoads`, `recentRPE`, and `recentRIR` remain the
+set-level values from that latest occurrence; they are not a multi-session
+series.

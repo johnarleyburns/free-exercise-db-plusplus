@@ -19,6 +19,21 @@ def _validate(policy_id, parameters):
     p=parameters or {}; inc=p.get("loadIncrement")
     if inc is not None and (not isinstance(inc,dict) or float(inc.get("value",0))<=0 or not inc.get("unit")): raise ValueError("loadIncrement requires a positive value and unit")
 
+def _classify_effort(actual, prescribed_range, metric):
+    """Classify one effort value without converting RPE and RIR."""
+    lo = prescribed_range.get("min", prescribed_range.get("target"))
+    hi = prescribed_range.get("max", prescribed_range.get("target"))
+    value = float(actual)
+    if metric == "rpe":
+        if lo is not None and value < float(lo): return "EFFORT_TOO_LOW"
+        if hi is not None and value > float(hi): return "EFFORT_TOO_HIGH"
+    elif metric == "rir":
+        if lo is not None and value < float(lo): return "EFFORT_TOO_HIGH"
+        if hi is not None and value > float(hi): return "EFFORT_TOO_LOW"
+    else:
+        raise ValueError(f"unsupported effort metric: {metric}")
+    return None
+
 def apply_progression_policy(policy, prescription, exercise_state, *, db=None, parameters=None):
     pid=policy if isinstance(policy,str) else (policy or {}).get("policyId")
     params=parameters or (policy.get("parameters",{}) if isinstance(policy,dict) else {}) or {}; _validate(pid,params); p=POLICIES[pid]
@@ -49,8 +64,10 @@ def apply_progression_policy(policy, prescription, exercise_state, *, db=None, p
     if effort_key:
         actual_eff=[s.get(effort_key) for s in sets[:required]]
         if any(x is None for x in actual_eff): return _result(p,"insufficient_data",prescription,context,["INSUFFICIENT_EFFORT_DATA"],evidence={"sets":comparisons,"effortType":effort_key})
-        bounds=effort[effort_key]; lo=bounds.get("min",bounds.get("target")); hi=bounds.get("max",bounds.get("target"));
-        if any(lo is not None and float(x)<float(lo) or hi is not None and float(x)>float(hi) for x in actual_eff): return _result(p,"hold",prescription,context,["EFFORT_TOO_HIGH" if effort_key=="rpe" else "EFFORT_TOO_LOW"],evidence={"sets":comparisons,"actualEffort":actual_eff})
+        bounds=effort[effort_key]
+        effort_reasons = {_classify_effort(x, bounds, effort_key) for x in actual_eff}
+        effort_reasons.discard(None)
+        if effort_reasons: return _result(p,"hold",prescription,context,effort_reasons,evidence={"sets":comparisons,"actualEffort":actual_eff})
         reasons.append("EFFORT_WITHIN_TARGET")
     load=prescription.get("load"); inc=params.get("loadIncrement")
     if not load or load.get("value",load.get("target")) is None: return _result(p,"insufficient_data",prescription,context,["INSUFFICIENT_LOAD_DATA"],evidence={"sets":comparisons})
@@ -78,6 +95,22 @@ def suggest_progression(plan, training_state, *, policy="double-progression-v1",
     return out
 
 def suggest_progression_for_plan(active_plan, training_state, *, policy_map=None, parameters=None):
-    plan=_doc(active_plan); return [suggest_progression(plan,training_state,policy=policy_map.get(rx.get("prescriptionId"),"hold-v1") if policy_map else "hold-v1",parameters=parameters)[i] for i,rx in enumerate([rx for s in plan.get("sessions",[]) for rx in s.get("exercises",[])])]
+    plan=_doc(active_plan); state=_doc(training_state); active=state.get("activePlan",{})
+    prescriptions=[rx for session in plan.get("sessions",[]) for rx in session.get("exercises",[])]
+    out=[]
+    for rx in prescriptions:
+        policy = policy_map.get(rx.get("prescriptionId"), "hold-v1") if policy_map else "hold-v1"
+        policy_id = policy if isinstance(policy, str) else (policy or {}).get("policyId")
+        _validate(policy_id, parameters)
+        if not active.get("planId") or not active.get("revisionId"):
+            selected = POLICIES[policy_id]
+            out.append(_result(selected, "insufficient_data", rx, {"planId":plan.get("planId"),"revisionId":plan.get("revisionId"),"provenance":state.get("provenance",{})}, ["NO_ACTIVE_PLAN"]))
+            continue
+        if active.get("revisionId") != plan.get("revisionId"):
+            raise ValueError("plan is not the active TrainingState revision")
+        exercise_state=deepcopy(state.get("exerciseState",{}).get(rx.get("exerciseId"),{}))
+        exercise_state["planContext"]={"planId":plan.get("planId"),"revisionId":plan.get("revisionId"),"provenance":state.get("provenance",{})}
+        out.append(apply_progression_policy(policy, rx, exercise_state, parameters=parameters))
+    return out
 
 __all__=["apply_progression_policy","suggest_progression","suggest_progression_for_plan","POLICIES","REASONS"]
