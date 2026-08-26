@@ -1,995 +1,1184 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.5.0 release preparation**
-Current stable release: **v1.4.1**
-Next milestone: v1.5 exercise relationships, families, and variations
+Status: **post-v1.5.1 planning**  
+Current stable release: **v1.5.1**  
+Primary product direction: **Trainer/client planning, self-coaching, and automated coaching built on a deterministic training-domain engine**
 
-## v1.5 implementation status
+---
 
-The separate relationship artifact, schema, deterministic generator, curated
-family rules/overrides, validation, reports, Python API, CLI, optional plan
-family views, substitution context, honest family-level interop contract,
-isolated-wheel support, and Swift/Kotlin/R readers are implemented. The stable
-v1.0-v1.4.1 contracts remain unchanged.
+# 1. Product vision
 
-## v1.3 implementation status
+Free Exercise DB++ should evolve from an exercise vocabulary and workout-analysis toolkit into a **portable, deterministic training-domain engine** that can sit underneath trainer software, self-coaching applications, research workflows, and automated-coach systems.
 
-Operational conversion is implemented for FHIR R4 Physical Activity Bundle JSON,
-including strict/lossy modes, provenance, deterministic output, custom exercise
-preservation, the installed Python API, and the `fedbpp` CLI. Garmin FIT binary
-and platform API integrations remain bounded/optional as documented.
-
-## v1.2 implementation status
-
-The interoperability audit, schemas, structural mappings, Health Connect crosswalk, coverage report, validator/registry, Python API, and documentation are implemented. Binary/API import/export remains explicitly deferred to v1.3.
-
-## 1. Direction
-
-Free Exercise DB++ now has a stable three-layer foundation:
+The intended architectural boundary is:
 
 ```text
-Exercise vocabulary
-        ↓
-PLAN → ACTUAL → TARGET
-        ↓
-deterministic analysis
+Application/Product Layer
+  UI, accounts, messaging, notifications,
+  persistence, sync, billing, permissions
+                |
+                v
+Free Exercise DB++
+  exercise vocabulary
+  relationships/families
+  PLAN / ACTUAL / TARGET
+  longitudinal history
+  plan evaluation
+  training-state derivation
+  progression policies
+  plan generation
+  coaching decisions
+  adaptation
+  provenance/explanations
+  interoperability
 ```
 
-v1.0 established the exercise vocabulary. v1.1 stabilized PLAN, ACTUAL, TARGET, and analysis semantics. Future work should treat those semantics as stable unless real-world interoperability exposes a genuine defect.
+Free Exercise DB++ should own training-domain semantics and deterministic decision logic.
 
-The project should now evolve into an open strength/resistance-training interoperability ecosystem:
+Applications should own presentation, identity, messaging, storage, synchronization, and product-specific workflows.
+
+The same engine should support trainer→client, self-coached, trainer-assisted generation, and automated coaching.
+
+# 2. Stable foundation through v1.5.1
+
+Treat as stable:
+
+- v1.0 exercise vocabulary and stable exerciseId
+- v1.1 PLAN / ACTUAL / TARGET / analysis
+- v1.2 interoperability mappings
+- v1.3 operational conversion + CLI
+- v1.4.1 longitudinal analysis
+- v1.5.1 exercise relationships/families
+
+Do not casually redesign these semantics.
+
+# 3. New release sequence
 
 ```text
-Garmin FIT ───────────┐
-Health Connect ───────┤
-HealthKit ────────────┤
-FHIR ─────────────────┼──→ mapping/import layer
-IEEE/Open mHealth ────┘            ↓
-                         Free Exercise DB++
-                                ↓
-                         PLAN / ACTUAL / TARGET
-                                ↓
-                         deterministic analysis
-                                ↓
-                       trainer/research workflows
+v1.6  Training Profile + Plan Evaluation
+v1.7  Training State + Progression Policies
+v1.8  Deterministic Plan Generation
+v1.9  Adaptive Coaching / Plan Revision Engine
+v2.0+ Optional advanced physiology/anatomy,
+      richer evidence layers, more standards
 ```
 
 Core rule:
 
-> **Do not distort the DB++ canonical model merely to fit an external format.**
+> Evaluate before generating. Derive state before adapting. Explain every automated decision.
 
-External standards may be less expressive. Mapping loss must be explicit, testable, and auditable rather than silently discarded.
+# 4. Core operating modes
 
----
+Trainer/client:
 
-# 2. Stable foundation
+```text
+Trainer -> PLAN -> assignment -> Client -> ACTUAL -> feedback -> revised PLAN
+```
 
-## v1.0 — Exercise vocabulary
+Self-coached:
 
-Consider stable:
+```text
+User -> TrainingProfile + TARGET -> PLAN -> ACTUAL -> evaluation -> revised PLAN
+```
 
-- `exerciseId` vocabulary;
-- normalized Free Exercise DB data;
-- direct / indirect / stabilizer roles;
-- movement patterns and taxonomy;
-- genre and exercise metadata;
-- JSON Schema;
-- provenance/evidence metadata;
-- deterministic generated artifact.
+Automated coach:
 
-Existing exercise IDs should remain stable.
+```text
+Profile + TARGET + History -> TrainingState -> Generator -> PLAN -> ACTUAL -> CoachDecision -> revised PLAN
+```
 
-## v1.1 — PLAN / ACTUAL / TARGET / ANALYSIS
+Use one domain model for all three.
 
-Consider semantically stable:
+# 5. v1.6 — Training Profile + Plan Evaluation
 
-- Workout ACTUAL;
-- Workout PLAN;
-- volume TARGET profiles;
-- PLAN coverage;
-- direct / indirect / stabilizer / effective-set analysis;
-- authoritative `metadata.setCredits`;
-- `dbpp-default-volume-v1`;
-- arbitrary cycle lengths and seven-day normalization;
-- min / target / max and partial ranges;
-- phase-specific cycles and periodization;
-- duration-weighted phase analysis;
-- PLAN-vs-PLAN;
-- exercise, muscle, and movement-pattern exposure frequency;
-- PLAN-vs-ACTUAL;
-- substitutions and `setPrescriptionId`;
-- unplanned ACTUAL work;
-- strict/substitution-adjusted adherence;
-- load / RPE / RIR adherence where meaningful;
-- mass-based volume-load adherence;
-- TARGET gap analysis;
-- deterministic research exports;
-- analysis provenance.
-
-Changes that alter v1.1 numerical results should require a demonstrated defect, documentation, regression fixtures, and an explicit compatibility/version decision.
-
----
-
-# 3. v1.2.0 — Interoperability Mapping
+Implementation status: complete in the Python reference package. See
+`docs/TRAINING-PROFILE.md`, `docs/PLAN-EVALUATION.md`, and ADRs 0012–0016.
 
 ## Objective
 
-Create a rigorous, machine-readable mapping layer between DB++ and major fitness/health ecosystems.
+Formalize goals, constraints, preferences, equipment, and availability, then add deterministic `evaluate_plan()`.
 
-The first goal is **mapping knowledge, not exporters**.
+The evaluator must answer whether a PLAN satisfies:
 
-Before implementing adapters, establish:
+- muscle-volume targets
+- frequency targets
+- movement-pattern coverage
+- family coverage
+- available equipment
+- exercise/family exclusions
+- session count constraints
+- approximate duration constraints
+- soft preferences
 
-- what each ecosystem represents;
-- external exercise identity;
-- exact field mappings;
-- required conversions;
-- unsupported DB++ concepts;
-- external concepts DB++ cannot represent;
-- mapping loss;
-- provenance;
-- round-trip expectations.
+It should return exact gaps, not a vague score.
 
-Initial ecosystems, subject to audit findings:
+## TrainingProfile
 
-1. Garmin FIT;
-2. Android Health Connect;
-3. Apple HealthKit;
-4. HL7 FHIR Physical Activity;
-5. IEEE 1752.1 / Open mHealth;
-6. Google Fit legacy exercise vocabulary as a historical crosswalk where useful.
-
----
-
-# 4. v1.2 Phase A — Standards audit
-
-Create:
+Likely portable artifact:
 
 ```text
-docs/interop/
-  README.md
-  GARMIN-FIT.md
-  HEALTH-CONNECT.md
-  HEALTHKIT.md
-  FHIR.md
-  IEEE-1752-1.md
-  GOOGLE-FIT-LEGACY.md
-  COMPATIBILITY-MATRIX.md
+training-profile.schema.json
 ```
 
-For each ecosystem document:
+Conceptual shape:
 
-- authoritative specification/source;
-- reviewed version/date;
-- exercise/activity identity;
-- workout/session model;
-- exercise-block model;
-- set representation;
-- reps;
-- load/resistance;
-- units;
-- duration/distance;
-- rest;
-- RPE/RIR;
-- tempo;
-- set type;
-- laterality;
-- completion;
-- substitutions;
-- PLAN vs ACTUAL distinction;
-- workout plans/routines;
-- periodization;
-- provenance/source metadata;
-- timestamps/time zones;
-- participant identity;
-- custom fields/extensions;
-- round-trip limitations.
-
-Classify each DB++ concept:
-
-```text
-lossless
-representable_with_conversion
-representable_with_extension
-lossy
-unsupported
-not_applicable
-unknown
+```json
+{
+  "schemaVersion": "0.1.0",
+  "profileId": "profile-123",
+  "subjectId": "subject-42",
+  "goals": [
+    {"type": "hypertrophy", "priority": 1},
+    {"type": "strength", "priority": 2}
+  ],
+  "experience": "intermediate",
+  "availability": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {"min": 3, "target": 4, "max": 4},
+    "minutesPerSession": {"max": 60}
+  },
+  "equipment": ["barbell", "dumbbell", "cable", "machine"],
+  "exercisePreferences": {
+    "preferredExerciseIds": [],
+    "avoidedExerciseIds": [],
+    "preferredFamilyIds": [],
+    "avoidedFamilyIds": []
+  },
+  "constraints": {
+    "excludedExerciseIds": [],
+    "excludedFamilyIds": []
+  }
+}
 ```
 
-Do not infer support merely because a format has generic metadata.
+Use opaque IDs. Do not require PII or medical diagnoses.
 
----
+## Goals
 
-# 5. Compatibility matrix
-
-Build one human-readable and, where useful, machine-readable matrix covering:
+Start with a small controlled vocabulary such as:
 
 ```text
-DB++ concept | Garmin FIT | Health Connect | HealthKit | FHIR | IEEE/Open mHealth | Notes
+hypertrophy
+strength
+muscular_endurance
+general_fitness
+skill_practice
+power
 ```
 
-It must answer:
+Goal is context for explicit policies, not a hidden behavior switch.
 
-- Can bench press be identified distinctly?
-- Can sets have independent reps/load?
-- Are warmup and working sets distinguishable?
-- Can RPE/RIR be represented?
-- Can planned sets be represented?
-- Can ACTUAL link to PLAN?
-- Can custom exercises survive?
-- Can DB++ `exerciseId` survive?
-- Can provenance survive?
-- Is round-trip lossless?
+## Preferences vs exclusions
 
-Cover exercise definitions, ACTUAL, PLAN, TARGET where relevant, and provenance.
-
----
-
-# 6. Mapping registry
-
-Expand the existing interop mapping architecture into a first-class public artifact.
-
-Possible structure:
+Define:
 
 ```text
-mappings/
-  registry.json
-  garmin-fit.json
-  health-connect.json
-  healthkit.json
-  fhir.json
-  ieee-1752-1.json
-  google-fit-legacy.json
+preferred = soft positive
+avoided   = soft negative
+excluded  = hard constraint
 ```
 
-Prefer evolving `interop-mapping.schema.json` over inventing a competing contract.
+Support exercise and family IDs.
 
-A mapping should capture at least:
+## TARGET evolution
+
+TARGET remains "what the training should accomplish."
+
+TrainingProfile remains "what the user/environment permits or prefers."
+
+TARGET may expand to include:
+
+- muscle volume
+- muscle frequency
+- movement-pattern coverage
+- family coverage
+
+Do not stuff environment constraints into TARGET.
+
+## Plan evaluator API
+
+```python
+evaluate_plan(plan, db, profile=None, target=None, relationships=None)
+```
+
+Return structured sections such as:
 
 ```text
-exerciseId
-external system
-external identifier
-relation
-direction
-confidence
-notes
+summary
+muscleCoverage
+frequency
+movementPatterns
+families
+equipment
+availability
+preferences
+constraints
+warnings
+errors
 provenance
 ```
 
-Normative relation vocabulary:
+Hard constraints, soft preferences, and targets must remain separate.
+
+Do not create a default 0–100 plan quality score.
+
+## Duration estimation
+
+Optional, explicit policy such as:
 
 ```text
-exact
-close
-broader
-narrower
-approximate
-unmapped
+duration-estimation-v1
 ```
 
-Define each term precisely. Do not call mappings exact merely because names are similar.
+Use transparent assumptions based on set count, rest, and transition overhead. If data is insufficient, return unknown.
 
-Mappings may be directional. External → DB++ can be deterministic while DB++ → external may collapse several exercises into one broader concept.
+## Plan assignment
 
----
+Before adding a `plan-assignment.schema.json`, write an ADR deciding whether existing longitudinal plan activation already covers the required trainer/client semantics.
 
-# 7. Mapping provenance and validation
+Applications own messaging, approval UI, and account relationships.
 
-Mappings should record, where practical:
+## v1.6 CLI
 
-```text
-external specification/version
-external identifier
-source/reference
-review date
-mapping method
-relation
-confidence
-notes
+```bash
+fedbpp evaluate-plan plan.json --db db.json --profile profile.json --target target.json
 ```
 
-CI must validate:
+## v1.6 golden fixture
 
-- every DB++ `exerciseId`;
-- relation/direction vocabulary;
-- required provenance;
-- duplicate/conflicting mappings;
-- external uniqueness constraints;
-- schema validity;
-- deterministic registry generation.
+Create a hand-calculated fixture containing:
 
-Generate reports:
+- muscle-volume gap
+- frequency gap
+- movement-pattern gap
+- unavailable equipment
+- excluded exercise
+- soft preference warning
+- known hard-constraint count
 
-```text
-total DB++ exercises
-exact / close / approximate / unmapped
-external concepts without mappings
-coverage by genre
-coverage by movement pattern
-coverage by equipment
-```
+## v1.6 release gate
 
-Never count approximate mappings as exact coverage.
+Release only when:
 
----
+- TrainingProfile semantics stable
+- deterministic evaluator implemented
+- hard/soft/target categories distinct
+- equipment, exclusions, frequency, patterns, families evaluated
+- provenance complete
+- CLI and installed wheel work
+- all prior tests green
 
-# 8. v1.2 Phase B — Exercise crosswalks
+# 6. v1.7 — Training State + Progression Policies
 
-Exercise identity comes before workout serialization.
+## Objective
 
-For each ecosystem:
+Derive a normalized current `TrainingState` from longitudinal history and use versioned progression policies to emit explicit Coach Decisions.
 
-1. enumerate the external strength vocabulary;
-2. normalize labels for review;
-3. generate mapping candidates;
-4. manually review ambiguity;
-5. map to stable DB++ IDs;
-6. classify relation/direction/confidence;
-7. add provenance;
-8. add regression tests;
-9. generate coverage reports.
+## TrainingState
 
-Fuzzy/string matching may assist offline candidate generation, but published/runtime mappings must be deterministic. No fuzzy matching by default.
+Derived object, not manually authored.
 
----
-
-# 9. v1.2 Phase C — Workout field mappings
-
-Once exercise identity is understood, define external workout ↔ DB++ ACTUAL mappings.
-
-For every field document:
+Potential sections:
 
 ```text
-source
-destination
-conversion
-units
-loss behavior
-fallback
+subjectId
+asOf
+exerciseState
+familyState
+muscleState
+adherenceState
+planState
+historyWindow
 provenance
-round-trip expectation
 ```
 
-Cover:
+## ExerciseState
 
-- session ID;
-- timestamps;
-- exercise ID/custom identity;
-- set order;
-- reps;
-- load/unit;
-- duration/distance;
-- RPE/RIR;
-- rest;
-- set type;
-- completion;
-- notes;
-- source provenance;
-- PLAN linkage if available.
+Per exercise:
 
-Never manufacture unavailable values.
+```text
+lastPerformed
+recentSessionCount
+recentSetCount
+recentReps
+recentLoads
+recentRPE
+recentRIR
+lastPrescription
+lastActual
+adherence
+```
 
----
+Do not invent trends when data is sparse.
 
-# 10. Loss reporting
+## MuscleState
 
-Design a reusable loss model before operational exporters.
+Over an explicit history window:
+
+```text
+direct sets
+indirect sets
+effective sets
+exposure frequency
+target state
+plan adherence
+```
+
+Support explicit windows such as last cycle, last 7 days, last 28 days, current phase.
+
+## AdherenceState
+
+Track session adherence, prescription adherence, repeated skipped exercises, repeated unplanned work, substitution frequency, and target under/overrun.
+
+Do not infer motivation.
+
+## Progression policy framework
+
+Conceptual API:
+
+```python
+apply_progression_policy(policy, prescription, recent_actuals, training_state)
+```
+
+Initial policies:
+
+```text
+fixed
+double_progression
+rep_progression
+load_progression
+hold
+```
+
+Keep policies small and versioned.
+
+## Double progression
+
+Example:
+
+```text
+3 x 8–10 @ RIR 2
+```
+
+If all working sets hit the top rep target and effort remains within policy bounds, increase load; otherwise hold load and continue rep progression.
+
+Rules must be explicit.
+
+## CoachDecision
+
+Likely portable artifact:
+
+```text
+coach-decision.schema.json
+```
 
 Example:
 
 ```json
 {
-  "mappingStatus": "lossy",
-  "losses": [
-    {
-      "path": "exercises[0].sets[1].rir",
-      "reason": "destination format has no RIR representation"
-    }
-  ]
+  "decisionType": "increase_load",
+  "exerciseId": "...",
+  "policyId": "double-progression-v1",
+  "before": {"load": {"value": 100, "unit": "kg"}},
+  "after": {"load": {"value": 102.5, "unit": "kg"}},
+  "reasonCodes": ["REP_TARGET_ACHIEVED", "RIR_WITHIN_TARGET"]
 }
 ```
 
-Potential severities:
+## Reason codes
+
+Potential vocabulary:
 
 ```text
-informational
-lossy
-unsupported
-invalid
+REP_TARGET_ACHIEVED
+REP_TARGET_NOT_ACHIEVED
+EFFORT_TOO_HIGH
+EFFORT_TOO_LOW
+LOAD_PROGRESS_STALLED
+SET_TARGET_ACHIEVED
+MISSED_PRESCRIPTION
+REPEATED_SUBSTITUTION
+INSUFFICIENT_DATA
+POLICY_HOLD
 ```
 
-Converters must not silently discard meaningful known information.
+## Decision types
 
----
-
-# 11. Round-trip fixtures
-
-Test:
+Start with:
 
 ```text
-external → DB++ ACTUAL → external
-DB++ ACTUAL → external → DB++ ACTUAL
+increase_load
+decrease_load
+increase_reps
+decrease_reps
+increase_sets
+decrease_sets
+hold
 ```
 
-Classify fixtures:
+Exercise replacement can wait.
 
-```text
-lossless
-normalized
-expected_lossy
-unsupported
-```
+## Explainability requirement
 
-Tests should assert expected losses, not merely successful serialization.
+Every automated decision must include:
 
----
+- policy ID/version
+- input facts
+- reason codes
+- before
+- after
+- provenance
 
-# 12. v1.2 deliverables
+No unexplained plan mutation.
 
-Target:
-
-- standards audit;
-- compatibility matrix;
-- evolved mapping schema if necessary;
-- machine-readable mapping registry;
-- at least one production-quality external exercise crosswalk;
-- provenance;
-- coverage reports;
-- validation tooling;
-- loss model;
-- round-trip framework;
-- mapping lookup API;
-- Python mapping API;
-- Swift lookup support if practical;
-- consumer documentation.
-
-Do **not** require five shallow exporters. One strong mapping foundation is more valuable.
-
-Possible slicing:
-
-```text
-v1.2.0  framework + first production mapping
-v1.2.1  corrections/coverage
-v1.2.2+ additional ecosystem mappings
-```
-
----
-
-# 13. v1.3.0 — Import/export tooling and CLI
-
-## Objective
-
-Turn mapping knowledge into operational interchange.
-
-Potential CLI:
+## v1.7 CLI
 
 ```bash
-fedbpp validate workout.json
-fedbpp validate plan.json
-fedbpp analyze-plan plan.json
-fedbpp compare-plans a.json b.json
-fedbpp compare-actual plan.json workout.json
-fedbpp gaps plan.json target.json
-
-fedbpp import fit workout.fit -o workout.json
-fedbpp export fit workout.json -o workout.fit
-fedbpp export fhir workout.json -o observation.json
+fedbpp training-state history.json --db db.json
+fedbpp progress --plan plan.json --history history.json --policy double-progression-v1
 ```
 
-Syntax is illustrative, not contractual.
+## v1.7 release gate
 
-Importer architecture:
+TrainingState deterministic, at least one production progression policy implemented, CoachDecision explainable, CLI/wheel work, and all legacy tests green.
 
-```text
-external input
-→ parser
-→ normalized external representation
-→ mapping registry
-→ DB++ ACTUAL
-→ validation
-→ loss/provenance report
-```
-
-Exporter:
-
-```text
-DB++ ACTUAL/PLAN
-→ validation
-→ mapping registry
-→ destination capability analysis
-→ loss report
-→ external representation
-→ serializer
-```
-
-Consider explicit modes:
-
-```text
-strict
-allow-lossy
-```
-
-Strict conversion should fail when meaningful information cannot be represented. Lossy mode may proceed only with explicit diagnostics.
-
-The CLI must call the canonical analysis implementation rather than duplicate algorithms.
-
----
-
-# 14. v1.3 acceptance criteria
-
-Every advertised format requires:
-
-- documented supported version;
-- deterministic exercise mapping;
-- field compatibility matrix;
-- loss reporting;
-- provenance;
-- golden fixtures;
-- malformed-input tests;
-- round-trip tests;
-- documented limitations;
-- deterministic output.
-
-Actual format priority should be decided from v1.2 findings, with Garmin FIT the initial candidate rather than a commitment.
-
----
-
-# 15. v1.4.0 — Longitudinal research/trainer workflows
+# 7. v1.8 — Deterministic Plan Generation
 
 ## Objective
 
-Analyze subjects across time rather than only individual PLAN/session comparisons.
-
-Conceptual hierarchy:
+Generate candidate PLANs from:
 
 ```text
-subject
-  ├── PLAN revisions
-  ├── ACTUAL sessions
-  ├── TARGET profiles
-  └── analysis periods
+TrainingProfile
++
+TARGET
++
+TrainingState
++
+Exercise DB
++
+Relationships
++
+PlanningPolicy
 ```
 
-Support periods such as:
+The v1.6 evaluator is mandatory as the quality gate.
+
+## Generation pipeline
 
 ```text
-calendar week
-rolling 7 days
-plan cycle
-phase
-mesocycle
-custom date range
+Profile + Target + State + DB + Policy
+                  |
+                  v
+          candidate exercise pool
+                  |
+                  v
+          candidate session structure
+                  |
+                  v
+        volume/frequency allocation
+                  |
+                  v
+            candidate PLAN
+                  |
+                  v
+           evaluate_plan()
+                  |
+                  v
+          accept / improve / reject
 ```
 
-Always distinguish native plan-cycle, calendar, and normalized-seven-day metrics.
+Do not permit direct LLM-to-canonical-PLAN generation without deterministic validation.
 
-Enable questions such as:
+## PlanningPolicy
 
-- prescribed vs completed volume over 12 weeks;
-- direct/indirect adherence;
-- missed sessions;
-- unplanned work;
-- muscles repeatedly below TARGET;
-- exposure-frequency changes;
-- substitutions by phase;
-- actual vs periodized plan.
+Versioned policy controls:
 
-Keep analysis descriptive; avoid unsupported causal/physiological claims.
+- split strategy
+- candidate selection
+- family diversity
+- volume allocation
+- frequency allocation
+- set/repetition defaults
+- effort targets
+- duration assumptions
+- progression-policy references
 
----
+## Initial reference policies
 
-# 16. Research table model
-
-Primary tidy grain:
+Possible:
 
 ```text
-subject × period × muscle
+full_body_general_v1
+upper_lower_general_v1
+push_pull_legs_general_v1
 ```
 
-Candidate fields:
+Goal-focused variants may follow, but do not call them universally optimal.
+
+## PlanGenerationRequest
+
+Potential inputs:
 
 ```text
-subject_id
-period_start
-period_end
-plan_id
-revision_id
-phase_id
-muscle
-
-planned_direct_min/target/max
-actual_direct
-planned_indirect_min/target/max
-actual_indirect
-planned_effective_min/target/max
-actual_effective
-
-planned_exposures
-actual_exposures
-strict_adherence
-substitution_adjusted_completion
-
-target_min/target/max
-target_state
-mapped_fraction
-
-analysis_policy
-db_schema_version
-db_converter_version
+profile
+target
+trainingState
+policyId
+locked exercises
+required exercises
+excluded exercises
 ```
 
-Also provide exercise- and session-level tables.
+Trainer and self-coached flows use the same request.
 
-CSV remains baseline. Parquet can be optional later; it should not become a core dependency.
+## Candidate selection
 
----
+Use:
 
-# 17. Missing-data semantics and privacy
+- available equipment
+- exclusions
+- preferences
+- recent history
+- families
+- movement patterns
+- target muscles
+- continuity with existing plan
 
-Distinguish:
+Return rationale. No hidden similarity score.
+
+## Continuity and variation
+
+Policies may prefer continuity or allow same-family variation. Do not implement default forced rotation.
+
+## Volume allocation
+
+Allocate toward TARGET using authoritative direct/indirect credits, respecting multi-muscle contributions.
+
+## Frequency allocation
+
+Honor muscle exposure targets, not only aggregate set totals.
+
+## Session constraints
+
+Respect session count, time, equipment, day availability, exercise/family exclusions.
+
+If no valid plan exists, return:
 
 ```text
-zero
-not prescribed
-not recorded
-unknown
-unmapped
-volume-ineligible
-not applicable
+unsatisfiable
 ```
 
-Never collapse these to zero.
+with exact reasons.
 
-Use opaque subject IDs. DB++ should not require names, email, DOB, or other personally identifying data.
+## GeneratedPlanResult
 
-v1.4 deliverables may include:
-
-- longitudinal analysis API;
-- analysis-period model;
-- planned/actual aggregation;
-- TARGET aggregation;
-- session adherence;
-- subject-period-muscle tables;
-- exercise/session tables;
-- missing-data specification;
-- Python/CLI support;
-- R-friendly output;
-- golden longitudinal fixtures.
-
----
-
-# 18. v1.5.0 — Exercise relationships and families
-
-## Objective
-
-Add a descriptive relationship layer above stable exercise IDs.
-
-Do not replace IDs.
-
-Potential relationships:
+Return:
 
 ```text
-family
-variation_of
-equipment_variant_of
-grip_variant_of
-stance_variant_of
-incline_variant_of
-unilateral_variant_of
-progression_related
-regression_related
-```
-
-Be conservative with `substitute_for` and `equivalent_to`.
-
-Use cases:
-
-- browse variants;
-- family-level frequency;
-- family-level PLAN comparison;
-- identify structural relationships;
-- candidate substitutions for applications;
-- map broad external vocabularies to DB++.
-
-Do not automatically treat family members as physiologically equivalent.
-
-Substitution analysis should distinguish:
-
-```text
-structural similarity
-movement-pattern similarity
-muscle-coverage similarity
-equipment compatibility
-explicit trainer/user substitution
-```
-
-ACTUAL substitution linkage should remain explicit rather than inferred automatically.
-
----
-
-# 19. v2.0 — Optional advanced anatomy/evidence
-
-Only after interoperability, longitudinal research, and relationships mature.
-
-Possible optional anatomy:
-
-```text
-pectoralis major → clavicular / sternocostal
-deltoid → anterior / lateral / posterior
-triceps → long / lateral / medial
-```
-
-Requirements before adoption:
-
-- evidence standard;
-- ontology;
-- provenance;
-- support for the chosen granularity;
-- distinction between anatomical participation and hypertrophy claims;
-- compatibility with broad-muscle analysis;
-- avoidance of false precision.
-
-The broad direct=1.0 / indirect=0.5 model remains available.
-
----
-
-# 20. Cross-language strategy
-
-Python remains the reference implementation for advanced analysis/conversion.
-
-Swift, Kotlin, and R should support portable contracts according to real demand.
-
-Priority:
-
-```text
-JSON/schema compatibility
-mapping lookup
-core coverage
-platform-specific integration
-advanced parity where justified
-```
-
-Do not block useful reference functionality on simultaneous full parity, but never claim parity that does not exist.
-
----
-
-# 21. Schema and version strategy
-
-Maintain distinct contracts:
-
-```text
-free-exercise-db-plusplus.schema.json
-workout.schema.json
-workout-plan.schema.json
-volume-target.schema.json
-interop-mapping.schema.json
-```
-
-Potential future schemas only when justified:
-
-```text
-mapping-loss.schema.json
-exercise-relationship.schema.json
-research-analysis.schema.json
-```
-
-Distinguish:
-
-```text
-project release
-DB schema
-converter
-Workout schema
-PLAN schema
-TARGET schema
-mapping schema
-analysis policy
-mapping dataset version
-```
-
-Do not bump every version when the project release changes.
-
-Prefer additive evolution.
-
-Never silently rename/recycle exercise IDs, reinterpret analysis policies, change credits/ranges, or change mapping meaning.
-
----
-
-# 22. Development principles
-
-## Data first
-
-For interoperability and relationships:
-
-```text
-research
-→ model/schema
-→ curated data
-→ validation
-→ reports
-→ fixtures
-→ API
-→ CLI/exporter
+plan
+evaluation
+policy
+warnings
+unsatisfiedSoftPreferences
+provenance
 ```
 
 ## Determinism
 
-Public generated artifacts remain deterministic.
+Same DB/profile/target/state/policy/config must produce the same PLAN.
 
-CI should verify:
+If randomness is ever allowed, require explicit seed and record it. Default is deterministic.
 
-- provenance;
-- schema validity;
-- stable ordering;
-- reproducible generation;
-- mapping validity;
-- fixtures;
-- packages;
-- release checksums.
+## Selection reason codes
 
-## Interop quality gate
-
-Do not advertise support because a serializer exists.
-
-Require:
-
-- authoritative standard reviewed;
-- supported version documented;
-- exercise mapping;
-- compatibility matrix;
-- loss model;
-- provenance;
-- fixtures;
-- malformed-input tests;
-- round-trip tests;
-- limitations;
-- deterministic output.
-
----
-
-# 23. Explicit non-goals
-
-Unless separately approved:
-
-- runtime AI/fuzzy exercise matching;
-- silent fuzzy matching;
-- medical recommendations;
-- injury-risk prediction;
-- automatic hypertrophy prescriptions;
-- automatic program generation;
-- universal stimulus scores;
-- RPE/RIR-derived physiological weighting;
-- unsupported exercise-equivalence claims;
-- mandatory cloud services;
-- user accounts;
-- personally identifying athlete records;
-- proprietary lock-in.
-
-DB++ remains an open portable data/interchange project.
-
----
-
-# 24. Immediate implementation plan
-
-## Milestone 1 — Standards audit
-
-Research authoritative:
-
-1. Garmin FIT strength model;
-2. Android Health Connect;
-3. Apple HealthKit;
-4. HL7 FHIR Physical Activity;
-5. IEEE 1752.1/Open mHealth.
-
-Document supported versions and build:
+Potential:
 
 ```text
-docs/interop/COMPATIBILITY-MATRIX.md
+TARGET_COVERAGE
+EQUIPMENT_AVAILABLE
+HISTORY_CONTINUITY
+PREFERRED_EXERCISE
+FAMILY_VARIATION
+PATTERN_REQUIREMENT
 ```
 
-Do not change schemas prematurely.
-
-## Milestone 2 — Mapping framework
-
-Audit/evolve `interop-mapping.schema.json`.
-
-Define:
-
-- relations;
-- directionality;
-- confidence;
-- provenance;
-- loss model;
-- validation;
-- deterministic registry/index.
-
-## Milestone 3 — First crosswalk
-
-Select the ecosystem with the best mix of usefulness, documentation, strength detail, and feasibility. Garmin FIT is the initial candidate, subject to the audit.
-
-Build:
+## Trainer flow
 
 ```text
-external vocabulary
-→ reviewed DB++ mapping
-→ coverage report
-→ regression tests
+generate draft
+-> trainer edits
+-> evaluate edited PLAN
+-> assign
 ```
 
-## Milestone 4 — Workout mapping
+## Self-trained flow
 
-Map external workouts to DB++ ACTUAL with explicit conversion/loss rules and fixtures.
-
-## Milestone 5 — v1.2 release
-
-Ship the mapping framework plus at least one production-quality crosswalk.
-
----
-
-# 25. Definitions of success
-
-## v1.2
-
-A third-party developer can:
-
-1. load DB++;
-2. resolve an external exercise ID deterministically;
-3. inspect exact/close/approximate relation;
-4. inspect provenance;
-5. understand ACTUAL field compatibility;
-6. detect expected information loss;
-7. implement an adapter using documented fixtures;
-8. do so without reading DB++ implementation source.
-
-## v1.3
-
-A user can import/export a supported workout with explicit provenance/loss reporting.
-
-## v1.4
-
-A trainer/researcher can analyze many ACTUAL sessions against PLAN/TARGET across periods and obtain deterministic tidy datasets.
-
-## v1.5
-
-Applications can navigate exercise families/variations without changing stable IDs or claiming automatic equivalence.
-
----
-
-# 26. Maintainer decision test
-
-Before adding a feature ask:
-
-1. Is it a portable data/interchange concern?
-2. Does it strengthen exercise identity, PLAN, ACTUAL, TARGET, analysis, mapping, or reproducibility?
-3. Are semantics deterministic?
-4. Can it be validated?
-5. Can it be tested with golden/hand-calculated fixtures?
-6. Does it preserve stable contracts?
-7. Are we representing known information rather than inventing physiological meaning?
-
-Prefer interoperability, reproducibility, and inspectability.
-
----
-
-# 27. Next action
-
-Begin **v1.2 Phase A — Standards Audit**.
-
-Do **not** start by coding exporters.
-
-First produce:
+Same engine:
 
 ```text
-docs/interop/COMPATIBILITY-MATRIX.md
-docs/interop/GARMIN-FIT.md
-docs/interop/HEALTH-CONNECT.md
-docs/interop/HEALTHKIT.md
-docs/interop/FHIR.md
-docs/interop/IEEE-1752-1.md
+profile + target + history
+-> draft
+-> user reviews
+-> PLAN
 ```
 
-Then audit `interop-mapping.schema.json` against the standards research.
+## Current-plan comparison
 
-Only after that should the project commit to the first production mapping implementation.
+Optionally report exercises added/removed, family changes, volume/frequency changes, and target-coverage changes.
+
+## v1.8 golden tests
+
+At minimum:
+
+- 3-day full body
+- 4-day upper/lower
+- unavailable equipment
+- excluded exercise
+- excluded family
+- preference honored
+- impossible target
+- family variation
+- continuity from history
+- deterministic regeneration
+
+## v1.8 release gate
+
+Valid deterministic PLAN generation, evaluator integration, explicit unsatisfiable results, shared trainer/self-coach engine, provenance/reasons, CLI/wheel, no adaptive auto-revision yet.
+
+# 8. v1.9 — Adaptive Coaching / Plan Revision Engine
+
+## Objective
+
+Close the loop:
+
+```text
+PLAN
+-> ACTUAL
+-> longitudinal analysis
+-> TrainingState
+-> CoachDecision
+-> PlanRevisionProposal
+-> evaluate_plan()
+-> new PLAN revision
+```
+
+## AdaptationPolicy
+
+Versioned policy may control:
+
+```text
+progression
+volume change
+exercise continuity
+exercise replacement
+deload triggers
+target-gap response
+adherence response
+session-count adaptation
+```
+
+Prefer composable sub-policies over one opaque coach policy.
+
+## PlanRevisionProposal
+
+Potential artifact:
+
+```text
+base plan/revision
+proposed revision
+CoachDecisions
+evaluation before
+evaluation after
+reason codes
+policy versions
+provenance
+```
+
+Supports trainer approval.
+
+## Trainer-assisted adaptive mode
+
+System proposes revision; trainer reviews/edits/assigns.
+
+## Automated mode
+
+Application may auto-accept. DB++ only produces the proposal; product decides approval policy.
+
+## Adaptation triggers
+
+Potential deterministic triggers:
+
+```text
+progression achieved
+repeated prescription failure
+repeated substitution
+persistent target underfill
+persistent target overshoot
+session-duration violation
+equipment change
+availability change
+```
+
+Be conservative with fatigue/recovery claims unless evidence-backed models exist.
+
+## Persistent-condition logic
+
+Policies may require N occurrences, consecutive periods, or rolling windows.
+
+Example:
+
+```text
+if exercise skipped 3 consecutive occurrences:
+    COACH_REVIEW_REQUIRED
+```
+
+Not every signal should cause automatic replacement.
+
+## Exercise replacement
+
+If policy permits, candidate pool may use same family, compatible equipment, movement patterns, coverage difference, history, and preferences.
+
+Same family != automatic replacement or physiological equivalence.
+
+## Volume adaptation
+
+Critically distinguish:
+
+```text
+plan insufficient
+vs
+plan not followed
+```
+
+Example:
+
+```text
+PLAN 8 / ACTUAL 8 / TARGET 10–14
+=> plan may need more volume
+
+PLAN 12 / ACTUAL 7 / TARGET 10–14
+=> adherence issue, not automatically increase prescription
+```
+
+This distinction must be explicit.
+
+## Automated-coach explanations
+
+DB++ returns facts and reason codes; UI/LLM turns them into prose.
+
+Example:
+
+```json
+{
+  "decisionType": "increase_sets",
+  "reasonCodes": [
+    "TARGET_BELOW_MINIMUM",
+    "HIGH_PLAN_ADHERENCE",
+    "CURRENT_VOLUME_BELOW_TARGET"
+  ]
+}
+```
+
+# 9. LLM boundary
+
+Recommended:
+
+```text
+Natural-language user intent
+        |
+        v
+       LLM
+        |
+        v
+TrainingProfile / TARGET / constraints
+        |
+        v
+DB++ deterministic engine
+        |
+        v
+PLAN / Evaluation / CoachDecision
+        |
+        v
+       LLM
+        |
+        v
+human-readable explanation
+```
+
+LLM handles language.
+
+DB++ handles calculations and policy decisions.
+
+Core operation must not require an LLM.
+
+# 10. Common policy architecture
+
+Potential policy families:
+
+```text
+analysis policy
+duration policy
+progression policy
+planning policy
+adaptation policy
+```
+
+Each should have:
+
+```text
+policyId
+policyVersion
+parameters
+description
+```
+
+Avoid hidden behavior.
+
+A policy change that can alter generated plans or decisions requires a new policy version. Never silently mutate an existing policy ID.
+
+Policies must not silently depend on current time, randomness, remote services, identity, or mutable global config.
+
+# 11. Constraint priority
+
+Recommended planning priority:
+
+```text
+1 validity
+2 hard constraints
+3 target minimums
+4 target targets
+5 soft preferences
+6 tie-breaking / optimization
+```
+
+Version this within planning policy.
+
+Do not create a single default "plan quality score."
+
+# 12. Explainability as a release gate
+
+Every generated or adaptive choice must be able to answer:
+
+> Why was this chosen or changed?
+
+If structured reasons are unavailable, the feature is not ready.
+
+# 13. No hidden AI
+
+No embeddings, remote recommendation APIs, or LLM calls in core planning.
+
+Application layers may use AI to translate natural language into structured inputs or structured outputs into prose.
+
+# 14. Evidence boundary
+
+Reference policies should state whether they are:
+
+```text
+general reference
+research-derived
+coach-defined
+user-defined
+```
+
+Do not call a policy scientifically optimal unless evidence supports the exact claim.
+
+# 15. Trainer/app boundary
+
+DB++ owns:
+
+```text
+evaluate PLAN
+analyze ACTUAL
+derive TrainingState
+suggest progression
+generate draft PLAN
+propose PLAN revision
+```
+
+Application owns:
+
+```text
+accounts
+trainer-client invitations
+messaging
+notifications
+approval UI
+billing
+permissions
+sync
+```
+
+# 16. Self-trained and automated-coach modes
+
+Self-trained users use the same Profile/TARGET/Evaluator/State/Generator/Decision APIs.
+
+Automated coaching is the same deterministic engine plus an application decision to auto-accept proposals.
+
+No special core "AI coach" mode is needed.
+
+# 17. Research value
+
+Researchers should be able to reproduce:
+
+```text
+profile
+target
+history
+policy versions
+generated PLAN
+CoachDecisions
+resulting ACTUAL
+```
+
+Future research tables may include policy ID, decision type, before/after, reason codes, and revision IDs.
+
+# 18. Cross-language strategy
+
+Python remains the reference implementation.
+
+Swift/Kotlin prioritize schema/model compatibility and app-facing data types.
+
+R remains research-focused.
+
+Do not block reference releases on complete cross-language parity, but never claim parity that does not exist.
+
+# 19. CLI roadmap
+
+```text
+v1.6  fedbpp evaluate-plan
+v1.7  fedbpp training-state
+      fedbpp progress
+v1.8  fedbpp generate-plan
+v1.9  fedbpp propose-revision
+```
+
+CLI should remain thin over public APIs.
+
+# 20. Schema strategy
+
+Potential future schemas:
+
+```text
+training-profile.schema.json
+coach-decision.schema.json
+plan-generation-request.schema.json
+plan-revision-proposal.schema.json
+```
+
+Only create schemas for genuine portable domain artifacts.
+
+# 21. Compatibility
+
+Do not break:
+
+```text
+exerciseId
+PLAN
+ACTUAL
+TARGET existing semantics
+relationship artifact
+interop mappings
+longitudinal semantics
+```
+
+New functionality should be additive.
+
+# 22. Testing philosophy
+
+Every major policy must have hand-calculated fixtures asserting:
+
+```text
+inputs
+decision
+reason codes
+resulting plan
+evaluation
+```
+
+Avoid snapshot-only testing.
+
+# 23. v1.6 tests
+
+Required categories:
+
+```text
+TrainingProfile validation
+goals
+availability
+equipment
+hard exclusions
+soft preferences
+target gaps
+frequency gaps
+movement-pattern gaps
+family gaps
+duration estimation
+PlanEvaluation provenance
+CLI
+installed wheel
+```
+
+# 24. v1.7 tests
+
+```text
+TrainingState derivation
+history windows
+exercise state
+muscle state
+adherence state
+double progression
+load increment
+hold
+insufficient data
+CoachDecision reason codes
+determinism
+```
+
+# 25. v1.8 tests
+
+```text
+candidate pool
+equipment filtering
+exclusions
+preferences
+family continuity
+target allocation
+frequency
+movement constraints
+unsatisfiable request
+deterministic generation
+evaluator integration
+```
+
+# 26. v1.9 tests
+
+```text
+adaptation trigger
+progression
+persistent target gap
+adherence failure
+unplanned work
+plan insufficiency vs nonadherence
+revision proposal
+trainer-review mode
+automatic-mode output equivalence
+reason codes
+provenance
+```
+
+# 27. CI
+
+Retain every prior test.
+
+Add dedicated stages as each new layer lands.
+
+Installed-wheel and CLI smoke tests remain mandatory.
+
+# 28. Release strategy
+
+```text
+v1.6.0  TrainingProfile + PlanEvaluation
+v1.6.x  evaluator corrections
+
+v1.7.0  TrainingState + progression
+
+v1.8.0  deterministic plan generation
+
+v1.9.0  adaptive coaching
+```
+
+Do not rush v2.0.
+
+# 29. v2.0 decision point
+
+After v1.9, reassess highest-value direction based on adoption.
+
+Possible directions:
+
+- advanced anatomy
+- richer evidence-backed policies
+- more interoperability
+- research standardization
+- broader platform parity
+
+Fine anatomy is not automatically the next feature.
+
+# 30. Documentation
+
+Add as needed:
+
+```text
+docs/TRAINING-PROFILE.md
+docs/PLAN-EVALUATION.md
+docs/TRAINING-STATE.md
+docs/PROGRESSION-POLICIES.md
+docs/PLAN-GENERATION.md
+docs/ADAPTIVE-COACHING.md
+docs/COACH-DECISIONS.md
+```
+
+Recommended ADRs:
+
+```text
+training-profile-vs-target
+hard-vs-soft-constraints
+plan-evaluation-semantics
+policy-versioning
+training-state-windowing
+coach-decision-explainability
+plan-generation-determinism
+adaptive-plan-revision
+LLM-boundary
+```
+
+# 31. Immediate next action
+
+Begin v1.6:
+
+1. audit current TARGET/profile-related needs;
+2. write ADR separating TrainingProfile from TARGET;
+3. design `training-profile.schema.json`;
+4. extend TARGET only where justified;
+5. implement deterministic `evaluate_plan()`;
+6. expose hard/soft/target result categories;
+7. add golden evaluator fixtures;
+8. expose Python API and CLI;
+9. run every legacy test;
+10. release v1.6.0.
+
+Do not begin plan generation until evaluator semantics are stable.
+
+# 32. Overall definition of success
+
+The application layer should eventually delegate:
+
+```text
+create profile
+evaluate plan
+assign plan
+receive actuals
+analyze adherence
+derive training state
+suggest progression
+generate draft plan
+propose revision
+```
+
+to DB++.
+
+Trainer, self-trained, and automated-coach products should all use the same domain semantics.
+
+The engine must remain:
+
+```text
+deterministic
+portable
+explainable
+versioned
+testable
+privacy-neutral
+UI-independent
+```
+
+That is the intended long-term identity of Free Exercise DB++.
