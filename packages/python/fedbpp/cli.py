@@ -12,6 +12,8 @@ from . import (Database, Plan, VolumeTarget, Workout, TrainingHistory,
                TrainingProfile, validate_training_profile, evaluate_plan,
                analyze_periods, analyze_cohort, export_muscle_period_csv, export_session_csv,
                export_exercise_csv)
+from .training_state import derive_training_state
+from .progression import suggest_progression
 from .conversion import ConversionError, export_workout, import_workout
 from .interop import MappingRegistry
 from .relationships import RelationshipRegistry
@@ -92,6 +94,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("compare-target"); p.add_argument("plan"); p.add_argument("target"); p.add_argument("--db", required=True); p.add_argument("--json", action="store_true")
     p = sub.add_parser("evaluate-plan"); p.add_argument("plan"); p.add_argument("--db", required=True); p.add_argument("--profile"); p.add_argument("--target"); p.add_argument("--relationships"); p.add_argument("--json", action="store_true"); p.add_argument("--output")
     p = sub.add_parser("analyze-history"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("training-state"); p.add_argument("history", nargs="?"); p.add_argument("--history", dest="history_option"); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--relationships"); p.add_argument("--target"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
+    p = sub.add_parser("progress"); p.add_argument("plan", nargs="?"); p.add_argument("--plan", dest="plan_option"); p.add_argument("--history", required=True); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--policy", default="double-progression-v1"); p.add_argument("--increment"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("research-export"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output", required=True); p.add_argument("--table", choices=("muscle", "session", "exercise"), default="muscle")
     p = sub.add_parser("import"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
     p = sub.add_parser("export"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
@@ -130,6 +134,31 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"\nPreferences: {len(result['preferences'].get('findings', []))} findings")
                 print(f"Overall: {result['summary']['evaluationStatus']}")
                 if args.output: _dump(result, args.output)
+            return 0
+        if args.command in {"training-state", "progress"}:
+            history_path = getattr(args, "history_option", None) or args.history
+            history = _load_history(history_path); db = Database.load(args.db)
+            relationships = RelationshipRegistry.load(args.relationships, db=db) if getattr(args, "relationships", None) else None
+            target = VolumeTarget.load(args.target).document if getattr(args, "target", None) else None
+            state = derive_training_state(history, db, as_of=args.as_of, window=args.window, timezone=args.timezone, relationships=relationships, target=target)
+            result = state
+            if args.command == "progress":
+                plan_path = getattr(args, "plan_option", None) or args.plan
+                increment = None
+                if args.increment:
+                    import re
+                    match = re.fullmatch(r"\s*([0-9]+(?:\.[0-9]+)?)\s*([A-Za-z]+)\s*", args.increment)
+                    if not match: raise ValueError("--increment must be a positive quantity such as 2.5kg")
+                    increment = {"value": float(match.group(1)), "unit": match.group(2)}
+                result = suggest_progression(Plan.load(plan_path), state, policy=args.policy, parameters={"loadIncrement": increment} if increment else None)
+            if args.json or args.output: _dump(result, args.output)
+            else:
+                if args.command == "training-state":
+                    print("TRAINING STATE")
+                    for eid, row in result["exerciseState"].items(): print(f"\n{eid}\n  last performed: {row['lastPerformedAt'] or 'not recorded'}\n  completed sets: {row['recentCompletedSetCount']}")
+                else:
+                    print("PROGRESSION")
+                    for decision in result: print(f"\n{decision['exerciseId']}\n  Decision: {decision['decisionType']}\n  Reasons: {', '.join(decision['reasonCodes'])}")
             return 0
         if args.command in {"analyze-history", "research-export"}:
             manifest = _load_json(args.history)

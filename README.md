@@ -33,6 +33,9 @@ https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/
 **TrainingProfile schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/training-profile.schema.json
 
+**CoachDecision schema:**
+https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/coach-decision.schema.json
+
 **Interop mapping schema:**
 https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/interop-mapping.schema.json
 
@@ -208,6 +211,9 @@ Workout PLAN prescriptions: [PLAN guide](docs/WORKOUT-PLAN.md), [PLAN examples](
 Volume targets and coverage analysis: [TARGET guide](docs/VOLUME-TARGETS.md), [target examples](examples/targets/)
 
 Training context and deterministic plan evaluation: [TrainingProfile](docs/TRAINING-PROFILE.md), [PlanEvaluation](docs/PLAN-EVALUATION.md)
+
+Derived state and advisory progression: [TrainingState](docs/TRAINING-STATE.md),
+[Progression policies](docs/PROGRESSION-POLICIES.md), [CoachDecision](docs/COACH-DECISIONS.md).
 
 PLAN comparison: [PLAN-vs-PLAN guide](docs/PLAN-COMPARISON.md)
 PLAN adherence: [PLAN-vs-ACTUAL guide](docs/PLAN-ACTUAL.md)

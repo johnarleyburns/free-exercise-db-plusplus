@@ -16,6 +16,16 @@
 
 # Changelog
 
+## 1.7.0 - 2026-08-25
+
+- Added deterministic derived `TrainingState` with explicit as-of timestamps,
+  windows, active PLAN context, exercise/family/muscle/adherence state, and
+  provenance.
+- Added versioned advisory `hold-v1` and `double-progression-v1` policies,
+  machine-readable `CoachDecision`, load increment validation, and evidence.
+- Added `fedbpp training-state` and `fedbpp progress`; PLAN generation,
+  mutation, and automatic revision remain out of scope.
+
 ## 1.6.0 - 2026-08-25
 
 - Added portable TrainingProfile schema and DB-aware profile validation.

@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/coach-decision.schema.json",
+  "title":"Free Exercise DB++ CoachDecision","type":"object","additionalProperties":false,
+  "required":["schemaVersion","decisionType","policyId","policyVersion","planId","revisionId","prescriptionId","exerciseId","before","after","reasonCodes","evidence","provenance"],
+  "properties":{
+    "schemaVersion":{"const":"0.1.0"},"decisionType":{"enum":["hold","increase_load","decrease_load","increase_reps","decrease_reps","increase_sets","decrease_sets","insufficient_data"]},
+    "policyId":{"type":"string","minLength":1},"policyVersion":{"type":"string","minLength":1},"planId":{"type":["string","null"]},"revisionId":{"type":["string","null"]},"prescriptionId":{"type":["string","null"]},"exerciseId":{"type":["string","null"]},
+    "decisionId":{"type":["string","null"]},"before":{"type":"object","additionalProperties":true},"after":{"type":"object","additionalProperties":true},
+    "reasonCodes":{"type":"array","items":{"enum":["POLICY_HOLD","REP_TARGET_ACHIEVED","REP_TARGET_NOT_ACHIEVED","SET_TARGET_NOT_COMPLETED","EFFORT_WITHIN_TARGET","EFFORT_TOO_HIGH","EFFORT_TOO_LOW","INSUFFICIENT_EFFORT_DATA","INSUFFICIENT_LOAD_DATA","INCOMPATIBLE_LOAD_UNIT","INCOMPLETE_WORKOUT","NO_MATCHED_ACTUAL","NO_ACTIVE_PLAN","NO_RECENT_PERFORMANCE"]},"uniqueItems":true},
+    "evidence":{"type":"object"},"provenance":{"type":"object","minProperties":1}
+  }
+}

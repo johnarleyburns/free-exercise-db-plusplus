@@ -240,6 +240,21 @@ jobs:
           for name in dir(module):
               if name.startswith('test_'): getattr(module,name)()
           print(f'TrainingProfile schema and {len(profiles)} examples valid; evaluator tests passed')
+
+      - name: Validate v1.7 TrainingState and CoachDecision
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+          schema=json.loads(Path('coach-decision.schema.json').read_text())
+          Draft202012Validator.check_schema(schema)
+          spec=importlib.util.spec_from_file_location('v17_tests','tests/training/test_v17.py')
+          module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          for name in dir(module):
+              if name.startswith('test_'): getattr(module,name)()
+          print('v1.7 TrainingState and progression tests passed')
+          PY
           PY
 
       - name: Test ACTUAL 0.2 to 0.3 migration
