@@ -123,6 +123,7 @@ jobs:
             workout-plan.schema.json \
             volume-target.schema.json \
             training-profile.schema.json \
+            coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
             mapping-loss.schema.json \
@@ -143,6 +144,7 @@ jobs:
             workout-plan.schema.json \
             volume-target.schema.json \
             training-profile.schema.json \
+            coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
             mapping-loss.schema.json \
@@ -171,7 +173,10 @@ jobs:
             docs/PLAN-COMPARISON.md \
             docs/VOLUME-TARGETS.md \
             docs/TRAINING-PROFILE.md \
-            docs/PLAN-EVALUATION.md
+            docs/PLAN-EVALUATION.md \
+            docs/TRAINING-STATE.md \
+            docs/PROGRESSION-POLICIES.md \
+            docs/COACH-DECISIONS.md
           )
           if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
             gh release edit "${GITHUB_REF_NAME}" \
