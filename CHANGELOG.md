@@ -16,6 +16,11 @@
 
 # Changelog
 
+## 1.10.0 - 2026-08-26
+
+- Add structured WorkoutIntent resolution, versioned goal/environment policies, and intent CLI commands.
+- Add hard per-session exercise-count constraints to canonical evaluation and generation.
+
 ## 1.8.0 - 2026-08-25
 
 - Added deterministic Python PLAN proposal generation with the versioned

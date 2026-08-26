@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **post-v1.9.0**  
-Current stable release: **v1.9.0**  
+Status: **v1.10.0 released**
+Current stable release: **v1.10.0**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Swift, Kotlin, Python, and R packages**
 
 ---
@@ -325,7 +325,7 @@ The LLM-to-WorkoutIntent mapping is outside the repo.
 
 ---
 
-# 9. v1.10 — WorkoutIntent + deterministic resolution
+# 9. v1.10 — WorkoutIntent + deterministic resolution (complete)
 
 ## Objective
 
