@@ -4,7 +4,7 @@
   "expectedOperation": "resolve_intent",
   "goalPolicy": null,
   "planningPolicy": null,
-  "projectRelease": "1.10.0",
+  "projectRelease": "1.10.1",
   "relationshipVersion": null,
   "workoutIntentSchemaVersion": "0.1.0"
 }

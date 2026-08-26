@@ -16,6 +16,11 @@
 
 # Changelog
 
+## 1.10.1 - 2026-08-26
+
+- Stabilize `IntentResolutionResult.explicitOverrides` as a fixed typed object across all statuses.
+- Extend canonical TARGET relational validation to frequency, movement-pattern, and family ranges, including fallback validation.
+
 ## 1.10.0 - 2026-08-26
 
 - Add structured WorkoutIntent resolution, versioned goal/environment policies, and intent CLI commands.

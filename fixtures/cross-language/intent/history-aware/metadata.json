@@ -5,7 +5,7 @@
   "expectedOperation": "resolve_intent_with_history",
   "goalPolicy": "general-hypertrophy-v1",
   "planningPolicy": "full-body-general-v1",
-  "projectRelease": "1.10.0",
+  "projectRelease": "1.10.1",
   "relationshipVersion": null,
   "workoutIntentSchemaVersion": "0.1.0"
 }
