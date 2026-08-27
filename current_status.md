@@ -459,6 +459,9 @@ bundled resource loading, flagship resolution/generation/evaluation,
 history-backed state derivation, and adaptive planning without Python or
 network dependencies.
 
+Part BP verification: repeated Python flagship intent resolution is identical,
+and the Swift determinism/idempotence suite passes with 42 tests.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
