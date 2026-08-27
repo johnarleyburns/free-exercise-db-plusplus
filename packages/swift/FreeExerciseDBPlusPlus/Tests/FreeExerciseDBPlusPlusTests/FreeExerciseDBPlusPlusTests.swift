@@ -474,6 +474,8 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertNotNil(result.objectValue?["plan"]?.objectValue?["sessions"])
     XCTAssertNotNil(result.objectValue?["evaluation"])
     XCTAssertEqual(result.objectValue?["policy"]?.objectValue?["policyId"], .string("full-body-general-v1"))
+    let standalone = evaluatePlan(result.objectValue?["plan"] ?? .null, database: database, profile: input.objectValue?["profile"], target: input.objectValue?["target"], relationships: relationships)
+    XCTAssertEqual(result.objectValue?["evaluation"], standalone)
   }
 
   func testReleasedPlanningPoliciesExposeCanonicalDocuments() {

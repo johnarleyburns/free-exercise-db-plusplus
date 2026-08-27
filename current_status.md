@@ -83,6 +83,7 @@ native work; no Python rewrite was required.
 - Part AE — Swift session allocation: **complete; audited below**
 - Part AF — Swift frequency allocation: **complete; audited below**
 - Part AG — Swift generated-plan result envelope: **complete; audited below**
+- Part AH — Swift evaluated generation gate: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -155,6 +156,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AG commit: pending commit after review.
+
+## Part AH evaluation-gate evidence
+
+Added a regression proving every successful native generation result stores the
+same canonical evaluation produced by standalone `evaluatePlan` for the
+returned PLAN, profile, target, and relationship artifact. Generated plans
+continue to pass typed PLAN decoding before being returned.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AH commit: pending commit after review.
 
 ## Part B fixture evidence
 
