@@ -454,6 +454,11 @@ Part BN verification: `pip3 wheel --no-deps --no-build-isolation` built
 isolated target directory and exposed the public evaluation, state,
 generation, and adaptation APIs.
 
+Part BO verification: the temporary external Swift SPM consumer again passed
+bundled resource loading, flagship resolution/generation/evaluation,
+history-backed state derivation, and adaptive planning without Python or
+network dependencies.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
