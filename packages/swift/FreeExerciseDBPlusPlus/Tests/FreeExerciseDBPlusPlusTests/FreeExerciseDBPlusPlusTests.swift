@@ -69,6 +69,39 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(state.provenance["asOf"], JSONValue.string("2026-08-27T12:00:00-04:00"))
   }
 
+  func testTrainingStateSupportsPythonWindowModes() throws {
+    let history: JSONValue = .object(["subjectId": .string("s"), "workouts": .array([
+      .object(["startTime": .string("2026-08-20T12:00:00Z"), "exercises": .array([.object(["exerciseId": .string("old"), "sets": .array([])])])]),
+      .object(["startTime": .string("2026-08-25T12:00:00Z"), "exercises": .array([.object(["exerciseId": .string("recent"), "sets": .array([])])])])
+    ])])
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let recent = engine.deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", window: .last7Days)
+    XCTAssertEqual(recent.objectValue?["historyWindow"]?.objectValue?["type"], JSONValue.string("last_7_days"))
+    XCTAssertEqual(recent.objectValue?["historyWindow"]?.objectValue?["start"], JSONValue.string("2026-08-21"))
+    let custom = engine.deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", window: .custom(start: "2026-08-20", end: "2026-08-25"))
+    XCTAssertEqual(custom.objectValue?["historyWindow"]?.objectValue?["type"], JSONValue.string("custom_date_range"))
+    XCTAssertEqual(custom.objectValue?["historyWindow"]?.objectValue?["end"], JSONValue.string("2026-08-25"))
+  }
+
+  func testTrainingStateComputesCurrentCycleAndPhaseWindows() throws {
+    let history: JSONValue = .object([
+      "subjectId": .string("s"),
+      "plans": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "cycle": .object(["lengthDays": .number(7)]), "phases": .array([
+        .object(["phaseId": .string("base"), "durationCycles": .number(2)]),
+        .object(["phaseId": .string("build"), "durationCycles": .number(2)])
+      ]), "sessions": .array([])])]),
+      "planActivations": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "effectiveFrom": .string("2026-08-01T00:00:00Z")])])
+    ])
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let cycle = engine.deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", window: .currentPlanCycle)
+    XCTAssertEqual(cycle.objectValue?["historyWindow"]?.objectValue?["start"], JSONValue.string("2026-08-22"))
+    XCTAssertEqual(cycle.objectValue?["historyWindow"]?.objectValue?["end"], JSONValue.string("2026-08-27"))
+    let phase = engine.deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", window: .currentPhase)
+    XCTAssertEqual(phase.objectValue?["historyWindow"]?.objectValue?["type"], JSONValue.string("current_phase"))
+    XCTAssertEqual(phase.objectValue?["historyWindow"]?.objectValue?["start"], JSONValue.string("2026-08-15"))
+    XCTAssertEqual(phase.objectValue?["historyWindow"]?.objectValue?["end"], JSONValue.string("2026-08-27"))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)

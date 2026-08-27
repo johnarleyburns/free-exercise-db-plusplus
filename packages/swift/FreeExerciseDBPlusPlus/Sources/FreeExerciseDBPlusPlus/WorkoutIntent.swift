@@ -434,7 +434,7 @@ private enum IntentPolicyCatalog {
   static var environments: [String: JSONValue] { o(root["environmentPolicies"]) }
 }
 
-public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
+public func deriveTrainingState(_ history: JSONValue, asOf: String, window: TrainingHistoryWindow = .last28Days) -> JSONValue {
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
@@ -453,14 +453,44 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
   guard let asOfInstant else { return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .null, "activePlan": .object([:]), "exerciseState": .object([:]), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "timestampError": .string("asOf must be an offset-aware ISO-8601 timestamp")])]) }
   var calendar = Calendar(identifier: .gregorian); calendar.timeZone = TimeZone(secondsFromGMT: parsedAsOf?.offsetSeconds ?? 0)!
   let asOfDate = calendar.startOfDay(for: asOfInstant)
-  let lowerBound = calendar.date(byAdding: .day, value: -27, to: asOfDate)!
+  func date(_ value: String) -> Date? { ISO8601DateFormatter().date(from: value + "T00:00:00Z") }
+  var windowStart = calendar.date(byAdding: .day, value: -27, to: asOfDate)!
+  var windowEnd = asOfDate
+  var windowType = "last_28_days"
+  if case .last7Days = window {
+    windowStart = calendar.date(byAdding: .day, value: -6, to: asOfDate)!; windowType = "last_7_days"
+  } else if case .custom(let start, let end) = window {
+    if let parsedStart = date(String(start.prefix(10))), let parsedEnd = date(String(end.prefix(10))) { windowStart = parsedStart; windowEnd = min(parsedEnd, asOfDate); windowType = "custom_date_range" }
+  } else if case .currentPlanCycle = window, let activePair {
+    let cycle = max(1, Int(activePair.plan["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7))
+    let anchor = calendar.startOfDay(for: activePair.date)
+    let elapsed = max(0, calendar.dateComponents([.day], from: anchor, to: asOfDate).day ?? 0)
+    windowStart = calendar.date(byAdding: .day, value: (elapsed / cycle) * cycle, to: anchor)!
+    windowEnd = calendar.date(byAdding: .day, value: cycle - 1, to: windowStart)!
+    windowType = "current_plan_cycle"
+  } else if case .currentPhase = window, let activePair {
+    let anchor = calendar.startOfDay(for: activePair.date)
+    var cursor = anchor
+    var found = false
+    for phase in activePair.plan["phases"]?.arrayValues ?? [] {
+      let p = phase.objectValue ?? [:]
+      let cycle = max(1, Int((p["cycle"]?.objectValue? ["lengthDays"] ?? activePair.plan["cycle"]?.objectValue?["lengthDays"])?.numberValue ?? 7))
+      let length = cycle * max(1, Int(p["durationCycles"]?.numberValue ?? 1))
+      let phaseEnd = calendar.date(byAdding: .day, value: length - 1, to: cursor)!
+      if cursor <= asOfDate && asOfDate <= phaseEnd { windowStart = cursor; windowEnd = phaseEnd; found = true; break }
+      cursor = calendar.date(byAdding: .day, value: length, to: cursor)!
+    }
+    if found { windowType = "current_phase" }
+  }
+  windowEnd = min(windowEnd, asOfDate)
+  if windowStart > windowEnd { windowStart = windowEnd }
   let dateFormatter = ISO8601DateFormatter(); dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
   dateFormatter.formatOptions = [.withFullDate]
-  let lowerDate = dateFormatter.string(from: lowerBound), endDate = dateFormatter.string(from: asOfDate)
+  let lowerDate = dateFormatter.string(from: windowStart), endDate = dateFormatter.string(from: windowEnd)
   let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter {
     let stamp = $0["startTime"]?.stringValue ?? ""
     guard let instant = parseOffsetAwareTimestamp(stamp)?.date else { return false }
-    return instant >= lowerBound && instant <= asOfInstant
+    return instant >= windowStart && instant <= asOfInstant && instant <= calendar.date(byAdding: .day, value: 1, to: windowEnd)!.addingTimeInterval(-0.001)
   }
   var exerciseState: [String: JSONValue] = [:]
   for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; let previous = exerciseState[id]?.objectValue ?? [:]; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number((previous["recentSessionCount"]?.numberValue ?? 0) + 1), "recentCompletedSetCount": .number((previous["recentCompletedSetCount"]?.numberValue ?? 0) + Double(count))]) } }
@@ -469,7 +499,7 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
     let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7); let elapsed = max(0, calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: asOfDate).day ?? 0); let position = elapsed % cycle + 1
     activePlan = ["planId": active["planId"] ?? .null, "revisionId": active["revisionId"] ?? .null, "phaseId": .null, "cyclePosition": .number(Double(position))]
   }
-  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string("last_28_days"), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string("last_28_days"), "start": .string(lowerDate), "end": .string(endDate), "timezoneOffsetSeconds": .number(Double(parsedAsOf?.offsetSeconds ?? 0))])])])
+  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate), "timezoneOffsetSeconds": .number(Double(parsedAsOf?.offsetSeconds ?? 0))])])])
 }
 
 public struct IntentResolver: Sendable {
