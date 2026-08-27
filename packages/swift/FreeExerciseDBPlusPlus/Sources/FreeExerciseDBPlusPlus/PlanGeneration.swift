@@ -36,10 +36,13 @@ private func gRange(_ value: JSONValue?) -> (min: Double?, target: Double?, max:
 private func gStringArray(_ value: JSONValue?) -> [String] { gArray(value).compactMap(gString) }
 public func planningPolicy(_ id: String) -> JSONValue? { generationPolicies[id].map(JSONValue.object) }
 
-private func generationOffsets(cycle: Int, count: Int, preferred: [Int], excluded: Set<Int>) -> [Int]? {
+private func generationOffsets(cycle: Int, count: Int, preferred: [Int], excluded: Set<Int>, locked: [Int] = []) -> [Int]? {
   let allowed = (0..<cycle).filter { !excluded.contains($0) }
   guard allowed.count >= count else { return nil }
-  var chosen = preferred.filter { allowed.contains($0) }
+  guard locked.count <= count, locked.allSatisfy({ allowed.contains($0) }) else { return nil }
+  var chosen = Array(Set(locked)).sorted()
+  chosen += preferred.filter { allowed.contains($0) && !chosen.contains($0) }
+  chosen = Array(chosen.prefix(count))
   while chosen.count < count {
     let choices = allowed.filter { !chosen.contains($0) }
     let next = choices.min { a, b in
@@ -84,7 +87,35 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   let cycle = Int(gNumber(availability["cycleLengthDays"]) ?? gNumber(targetObject["periodDays"]) ?? 7)
   let excludedDays = Set(gIntArray(availability["excludedDayOffsets"]))
   let preferredDays = gIntArray(availability["preferredDayOffsets"])
-  guard let offsets = generationOffsets(cycle: cycle, count: max(1, sessionCount), preferred: preferredDays, excluded: excludedDays) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("SESSION_COUNT_CONFLICT")])]) }
+  let currentSessions = gArray(gObject(currentPlan)["sessions"])
+  var lockedLocations: [String: [Int]] = [:]
+  for id in lockedExerciseIds {
+    lockedLocations[id] = currentSessions.compactMap { raw in
+      let session = gObject(raw), ids = gArray(session["exercises"]).compactMap { gString(gObject($0)["exerciseId"]) }
+      guard ids.contains(id) else { return nil }
+      return gNumber(session["dayOffset"]).map(Int.init)
+    }
+  }
+  let lockedOffsets = Set(lockedLocations.values.flatMap { $0 })
+  let lockedConflict: (String?, String?) -> JSONValue = { id, detail in
+    var object: [String: JSONValue] = ["code": .string("LOCKED_EXERCISE_CONFLICT")]
+    if let id { object["exerciseId"] = .string(id) }
+    if let detail { object["detail"] = .string(detail) }
+    return .object(object)
+  }
+  if let missing = lockedExerciseIds.sorted().first(where: { (lockedLocations[$0] ?? []).isEmpty }) {
+    return result("unsatisfiable", nil, nil, constraints: [lockedConflict(missing, "locked exercises require currentPlan and the exercise must occur in it")])
+  }
+  if lockedOffsets.count > max(1, sessionCount) {
+    return result("unsatisfiable", nil, nil, constraints: [lockedConflict(lockedExerciseIds.sorted().first ?? "", "too many locked current-plan offsets for requested session count")])
+  }
+  if lockedLocations.values.flatMap({ $0 }).count != lockedOffsets.count {
+    return result("unsatisfiable", nil, nil, constraints: [lockedConflict(nil, "multiple locked current-plan sessions share a dayOffset")])
+  }
+  if lockedOffsets.contains(where: { $0 < 0 || $0 >= cycle || excludedDays.contains($0) }) {
+    return result("unsatisfiable", nil, nil, constraints: [lockedConflict(lockedExerciseIds.sorted().first ?? "", "locked current-plan dayOffset is unavailable in generated cycle")])
+  }
+  guard let offsets = generationOffsets(cycle: cycle, count: max(1, sessionCount), preferred: preferredDays, excluded: excludedDays, locked: Array(lockedOffsets)) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("SESSION_COUNT_CONFLICT")])]) }
   let constraints = gObject(profileObject["constraints"]), excluded = Set(gStringArray(constraints["excludedExerciseIds"]) + additionalExclusions), excludedFamilies = Set(gStringArray(constraints["excludedFamilyIds"])), required = Set(requiredExerciseIds + lockedExerciseIds), requiredFamilies = Set(requiredFamilyIds)
   var availableEquipment = Set(gStringArray(profileObject["equipment"]))
   if !availableEquipment.isDisjoint(with: ["bodyweight", "no equipment", "none"]) { availableEquipment.insert("body only") }
@@ -95,7 +126,13 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   }.sorted { $0.exerciseId < $1.exerciseId }
   let candidateById = Dictionary(uniqueKeysWithValues: candidates.map { ($0.exerciseId, $0) })
   let missingRequired = required.subtracting(candidateById.keys).sorted()
-  guard missingRequired.isEmpty else { return result("unsatisfiable", nil, nil, constraints: missingRequired.map { .object(["code": .string("NO_ELIGIBLE_EXERCISE"), "exerciseId": .string($0)]) }) }
+  guard missingRequired.isEmpty else {
+    let findings = missingRequired.map { id -> JSONValue in
+      if lockedExerciseIds.contains(id) { return lockedConflict(id, excluded.contains(id) ? "locked exercise is excluded" : "locked exercise is unavailable") }
+      return .object(["code": .string("NO_ELIGIBLE_EXERCISE"), "exerciseId": .string(id)])
+    }
+    return result("unsatisfiable", nil, nil, constraints: findings)
+  }
   let currentIds = Set(gArray(gObject(currentPlan)["sessions"]).flatMap { gArray(gObject($0)["exercises"]) }.compactMap { gString(gObject($0)["exerciseId"]) })
   let historyIds = Set(gObject(gObject(trainingState)["exerciseState"]).keys)
   let preferredIds = Set(gStringArray(gObject(profileObject["exercisePreferences"])["preferredExerciseIds"]))
@@ -120,23 +157,28 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     }
     sessions[session]["exercises"] = .array(exercises); rationale[id, default: []].insert(reason)
   }
+  func compatible(_ id: String, _ session: Int) -> Bool {
+    guard gString(policy["splitStrategy"]) == "upper_lower_alternating", let exercise = candidateById[id] else { return true }
+    let parameters = gObject(policy["parameters"]), prefix = session % 2 == 0 ? "upper" : "lower"
+    let muscles = Set(gStringArray(parameters["\(prefix)Muscles"])), patterns = Set(gStringArray(parameters["\(prefix)Patterns"]))
+    return !muscles.isDisjoint(with: Set(exercise.annotation.direct + exercise.annotation.indirect)) || !patterns.isDisjoint(with: Set(exercise.annotation.patterns))
+  }
   if !lockedExerciseIds.isEmpty {
-    guard let current = currentPlan?.objectValue else { return result("unsatisfiable", nil, nil, constraints: lockedExerciseIds.sorted().map { .object(["code": .string("LOCKED_EXERCISE_CONFLICT"), "exerciseId": .string($0), "detail": .string("locked exercises require currentPlan")]) }) }
+    guard currentPlan?.objectValue != nil else { return result("unsatisfiable", nil, nil, constraints: lockedExerciseIds.sorted().map { lockedConflict($0, "locked exercises require currentPlan") }) }
     for id in lockedExerciseIds.sorted() {
-      let locations = gArray(current["sessions"]).enumerated().flatMap { _, raw -> [Int] in
-        let session = gObject(raw), ids = gArray(session["exercises"]).compactMap { gString(gObject($0)["exerciseId"]) }
-        guard ids.contains(id), let offset = gNumber(session["dayOffset"]).map(Int.init) else { return [] }
-        return [offset]
-      }
-      guard !locations.isEmpty, let destination = sessions.firstIndex(where: { gNumber($0["dayOffset"]).map(Int.init) == locations[0] }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("LOCKED_EXERCISE_CONFLICT"), "exerciseId": .string(id), "detail": .string("exercise does not occur in currentPlan or its day is unavailable")])]) }
+      guard let destination = sessions.firstIndex(where: { gNumber($0["dayOffset"]).map(Int.init) == lockedLocations[id]?.first }), compatible(id, destination) else { return result("unsatisfiable", nil, nil, constraints: [lockedConflict(id, "locked exercise is incompatible with generated split role")]) }
       add(id, destination, "LOCKED_EXERCISE")
     }
   }
   for familyId in requiredFamilies.sorted() {
     guard let candidate = rankedCandidates.first(where: { family($0.exerciseId) == familyId }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_FAMILY_EXERCISE"), "familyId": .string(familyId)])]) }
-    add(candidate.exerciseId, 0, "REQUIRED_FAMILY")
+    guard let destination = sessions.indices.first(where: { compatible(candidate.exerciseId, $0) }) else { return result("unsatisfiable", nil, nil, constraints: [lockedConflict(nil, "required family is incompatible with generated split role")]) }
+    add(candidate.exerciseId, destination, "REQUIRED_FAMILY")
   }
-  for id in required.subtracting(Set(lockedExerciseIds)).sorted() { add(id, 0, "REQUIRED_EXERCISE") }
+  for id in required.subtracting(Set(lockedExerciseIds)).sorted() {
+    guard let destination = sessions.indices.first(where: { compatible(id, $0) }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_EXERCISE"), "exerciseId": .string(id), "detail": .string("required exercise incompatible with split")])]) }
+    add(id, destination, "REQUIRED_EXERCISE")
+  }
   let targetMuscles = gObject(targetObject["muscles"]), targetPatterns = gObject(targetObject["movementPatterns"])
   func contribution(_ exercise: Exercise, _ key: String) -> Double { exercise.annotation.direct.contains(key) ? database.setCredits.direct : (exercise.annotation.indirect.contains(key) ? database.setCredits.indirect : 0) }
   var guardCount = 0
@@ -148,7 +190,7 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     guard let deficit = deficits.sorted(by: { $0.0 == $1.0 ? ($0.1, $0.2) < ($1.1, $1.2) : $0.0 > $1.0 }).first else { break }
     let eligible = rankedCandidates.filter { deficit.1 == "muscle" ? contribution($0, deficit.2) > 0 : $0.annotation.patterns.contains(deficit.2) }
     guard let candidate = eligible.first else { break }
-    let choices = sessions.indices.sorted { a, b in gArray(sessions[a]["exercises"]).count < gArray(sessions[b]["exercises"]).count }
+    let choices = sessions.indices.filter { compatible(candidate.exerciseId, $0) }.sorted { a, b in gArray(sessions[a]["exercises"]).count < gArray(sessions[b]["exercises"]).count }
     guard let session = choices.first(where: { !gArray(sessions[$0]["exercises"]).contains { family(gString($0.objectValue?["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil } }) else { break }
     add(candidate.exerciseId, session, "TARGET_COVERAGE")
   }
