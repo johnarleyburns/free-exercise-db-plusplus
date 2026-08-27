@@ -9,6 +9,11 @@ public struct OffsetAwareTimestamp: Sendable, Equatable {
   public init(date: Date, offsetSeconds: Int) { self.date = date; self.offsetSeconds = offsetSeconds }
 }
 
+public enum MissingnessState: String, Codable, Sendable, Equatable {
+  case zero, notPrescribed = "not_prescribed", notRecorded = "not_recorded", unknown
+  case unmapped, volumeIneligible = "volume_ineligible", notApplicable = "not_applicable", unableToMatch = "unable_to_match"
+}
+
 /// Parses an offset-bearing ISO-8601 timestamp. Naive timestamps are rejected
 /// because their chronology cannot be resolved portably.
 public func parseOffsetAwareTimestamp(_ value: String) -> OffsetAwareTimestamp? {
