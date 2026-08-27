@@ -3,6 +3,12 @@ import XCTest
 @testable import FreeExerciseDBPlusPlus
 
 final class FreeExerciseDBPlusPlusTests: XCTestCase {
+  func testEngineValueCanCrossConcurrencyBoundary() async throws {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let count = await Task.detached { engine.database.count }.value
+    XCTAssertEqual(count, 0)
+  }
+
   func testTrainingStateExcludesFutureWorkoutOnSameUTCDate() throws {
         let history: JSONValue = .object([
             "subjectId": .string("s"), "plans": .array([]), "planActivations": .array([]),
