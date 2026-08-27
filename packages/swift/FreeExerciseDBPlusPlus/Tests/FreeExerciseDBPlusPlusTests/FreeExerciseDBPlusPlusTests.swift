@@ -122,6 +122,24 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(result.explicitOverrides, ExplicitOverrides())
   }
 
+  func testWorkoutIntentHistoryAndDraftHonorCanonicalWindowAndDays() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let fixture = root.appendingPathComponent("fixtures/cross-language/intent/history-aware")
+    let intent = try JSONDecoder().decode(WorkoutIntent.self, from: Data(contentsOf: fixture.appendingPathComponent("input.json")))
+    let history = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: fixture.appendingPathComponent("history.json")))
+    let result = resolveIntent(intent, history: history, asOf: "2026-08-25T12:00:00Z")
+    XCTAssertEqual(result.status, "resolved_with_defaults")
+    XCTAssertEqual(result.generationOptions.objectValue?["trainingState"]?.objectValue?["activePlan"]?.objectValue?["revisionId"], .string("r1"))
+    XCTAssertEqual(result.generationOptions.objectValue?["trainingState"]?.objectValue?["exerciseState"]?.objectValue?["Barbell_Bench_Press_-_Medium_Grip"]?.objectValue?["recentSessionCount"], .number(1))
+    let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+    let flagship = try JSONDecoder().decode(WorkoutIntent.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")))
+    let generated = generatePlanFromIntent(flagship, database: database)
+    let sessions: [JSONValue]
+    if case .array(let values)? = generated.objectValue?["generation"]?.objectValue?["sessions"] { sessions = values } else { sessions = [] }
+    XCTAssertEqual(sessions.compactMap { value in if case .number(let n)? = value.objectValue?["dayOffset"] { return Int(n) }; return nil }, [0, 1, 2, 3, 5])
+  }
+
   func testAllCanonicalResolutionFixtures() throws {
     let candidates = [
       URL(fileURLWithPath: #filePath),

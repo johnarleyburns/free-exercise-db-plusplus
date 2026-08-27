@@ -9,6 +9,11 @@ consumer=$(mktemp -d)
 trap 'rm -rf "$consumer"' EXIT
 mkdir -p "$consumer/src/main/kotlin"
 cp "$repo/fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json" "$consumer/intent.json"
+gradle_bin=${GRADLE_BIN:-gradle}
+# Build the artifact consumed below.  Keeping this before the temporary
+# project is important: the consumer must exercise the packaged JAR, not the
+# checkout's compiled classes.
+"$gradle_bin" --no-daemon --project-dir "$repo/packages/kotlin/fedbpp" :fedbpp:jar
 cat > "$consumer/settings.gradle.kts" <<EOF
 pluginManagement { repositories { mavenCentral(); gradlePluginPortal() } }
 dependencyResolutionManagement { repositories { mavenCentral() } }
@@ -32,5 +37,4 @@ fun main(args: Array<String>) {
     println("kotlin consumer ok")
 }
 EOF
-gradle_bin=${GRADLE_BIN:-gradle}
 "$gradle_bin" -p "$consumer" run --args="${consumer}/intent.json" --no-daemon

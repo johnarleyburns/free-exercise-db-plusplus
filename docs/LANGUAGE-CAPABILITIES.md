@@ -18,10 +18,13 @@ to v1.12 and are intentionally not represented as completed capabilities.
 
 All non-history canonical resolution fixtures are executed by Python, Swift,
 Kotlin/JVM, and R. History-aware resolution now adds a deterministic native
-TrainingState projection when history and `asOf` are supplied; the full Python
-adherence analysis remains richer than this portable projection.
+TrainingState projection when history and `asOf` are supplied, including the
+bounded 28-day window, active-plan identity/cycle position, and aggregated
+exercise counts. The full Python adherence analysis remains richer than this
+portable projection.
 
-The fixture oracle is `fixtures/cross-language/intent/`. Python and Swift
-execute the canonical non-history resolution matrix locally; Kotlin and R
-have flagship/native consumer coverage. The history fixture remains Python-only
-until native TrainingState derivation is implemented.
+The fixture oracle is `fixtures/cross-language/intent/`. Python, Swift,
+Kotlin/JVM, and R execute the canonical non-history resolution matrix; the
+history fixture and flagship draft are exercised by native package tests and
+isolated consumers. Full adherence-rich TrainingState and production plan
+optimization remain v1.12 work.

@@ -24,6 +24,14 @@ stopifnot(all(resolution$resolvedProfile$availability$preferredDayOffsets == c(0
 stopifnot(identical(resolution$explicitOverrides$equipmentAdded, character()))
 bad <- intent; bad$requestedGoalPolicy <- "general-strength-v1"
 stopifnot(resolve_intent(bad, db = db)$conflicts[[1]]$code == "GOAL_POLICY_MISMATCH")
+history_dir <- file.path(root, "fixtures/cross-language/intent/history-aware")
+history_intent <- read_workout_intent(file.path(history_dir, "input.json"))
+history <- jsonlite::fromJSON(file.path(history_dir, "history.json"), simplifyVector = FALSE)
+history_result <- resolve_intent(history_intent, db = db, history = history, as_of = "2026-08-25T12:00:00Z")
+stopifnot(identical(history_result$generationOptions$trainingState$activePlan$revisionId, "r1"))
+stopifnot(identical(history_result$generationOptions$trainingState$exerciseState[["Barbell_Bench_Press_-_Medium_Grip"]]$recentSessionCount, 1L))
+draft <- generate_plan_from_intent(intent, db)
+stopifnot(identical(vapply(draft$generation$sessions, `[[`, integer(1), "dayOffset"), as.integer(c(0, 1, 2, 3, 5))))
 
 # Execute every canonical resolution fixture from an installed/source package
 # context.  The expected JSON remains the single semantic oracle; this check

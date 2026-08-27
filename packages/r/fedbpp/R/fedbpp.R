@@ -193,6 +193,9 @@ resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, rel
   av <- resolved_profile$availability %||% list(); av$cycleLengthDays <- s$cycleLengthDays; av$sessionsPerCycle <- s$sessionsPerCycle; av$preferredDayOffsets <- sort(unique(c(s$preferredDayOffsets %||% integer(), match(s$preferredWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$preferredDayOffsets <- av$preferredDayOffsets[!is.na(av$preferredDayOffsets)]; av$excludedDayOffsets <- sort(unique(c(s$excludedDayOffsets %||% integer(), match(s$excludedWeekdays %||% character(), c("monday","tuesday","wednesday","thursday","friday","saturday","sunday"))-1L))); av$excludedDayOffsets <- av$excludedDayOffsets[!is.na(av$excludedDayOffsets)]; if (!is.null(doc$sessionConstraints$exercisesPerSession)) av$exercisesPerSession <- doc$sessionConstraints$exercisesPerSession; resolved_profile$availability <- av; resolved_profile$constraints <- resolved_profile$constraints %||% list(); resolved_profile$constraints$excludedExerciseIds <- sort(unique(c(resolved_profile$constraints$excludedExerciseIds %||% character(), constraints$excludedExerciseIds %||% character()))); resolved_profile$constraints$excludedFamilyIds <- sort(unique(c(resolved_profile$constraints$excludedFamilyIds %||% character(), constraints$excludedFamilyIds %||% character())))
   muscles <- goal_policy$muscles; default_target <- list(schemaVersion="0.1.0", targetId=paste0(goal_id,"-default"), periodDays=s$cycleLengthDays, muscles=muscles, notes=description); resolved_target <- merge_target(default_target, target)
   target_errors <- validate_target(resolved_target); if (length(target_errors)) { empty$resolvedTarget <- resolved_target; empty$conflicts <- lapply(target_errors, function(x) list(code="TARGET_OVERRIDE_CONFLICT", detail=x)); return(empty) }
+  required_exercises <- unique(c(.strings(constraints$requiredExerciseIds), .strings(constraints$lockedExerciseIds))); excluded_exercises <- .strings(resolved_profile$constraints$excludedExerciseIds); required_families <- .strings(constraints$requiredFamilyIds); excluded_families <- .strings(resolved_profile$constraints$excludedFamilyIds)
+  constraint_conflicts <- c(lapply(sort(intersect(required_exercises, excluded_exercises)), function(x) list(code="REQUIRED_EXERCISE_EXCLUDED", exerciseId=x)), lapply(sort(intersect(required_families, excluded_families)), function(x) list(code="REQUIRED_FAMILY_EXCLUDED", familyId=x)))
+  if (length(constraint_conflicts)) { empty$resolvedProfile <- resolved_profile; empty$resolvedTarget <- resolved_target; empty$conflicts <- constraint_conflicts; return(empty) }
   defaults <- c(if (is.null(doc$requestedGoalPolicy)) "goalPolicy", if (is.null(doc$requestedPlanningPolicy)) "planningPolicy", if (!is.null(resolved_env)) "environmentPolicy")
   options <- list(continuity=doc$continuity %||% "neutral", repDefaults=goal_policy$reps, effortDefaults=goal_policy$effort, requiredFamilyIds=sort(unique(.strings(constraints$requiredFamilyIds))))
   warnings <- character(); if (isTRUE(doc$useHistory) && is.null(history)) warnings <- c(warnings, "useHistory was requested but no history was provided"); if (isTRUE(doc$useHistory) && !is.null(history) && is.null(as_of)) warnings <- c(warnings, "useHistory was requested but as_of is required to derive TrainingState")
@@ -202,22 +205,41 @@ resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, rel
 }
 
 derive_training_state <- function(history, as_of) {
-  workouts <- Filter(function(w) !is.null(w$startTime) && w$startTime <= as_of, history$workouts %||% list())
+  as_date <- as.Date(substr(as_of, 1L, 10L)); start_date <- as_date - 27L
+  workouts <- Filter(function(w) {
+    if (is.null(w$startTime)) return(FALSE)
+    stamp <- as.POSIXct(w$startTime, format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
+    !is.na(stamp) && as.Date(stamp) >= start_date && w$startTime <= as_of
+  }, history$workouts %||% list())
   state <- list()
   for (workout in workouts) for (exercise in workout$exercises %||% list()) {
     id <- exercise$exerciseId %||% NULL; if (is.null(id)) next
     completed <- sum(vapply(exercise$sets %||% list(), function(x) isTRUE(x$completed), logical(1)))
-    state[[id]] <- list(exerciseId = id, recentSessionCount = 1L, recentCompletedSetCount = completed)
+    previous <- state[[id]] %||% list(exerciseId = id, recentSessionCount = 0L, recentCompletedSetCount = 0L)
+    state[[id]] <- list(exerciseId = id, recentSessionCount = previous$recentSessionCount + 1L, recentCompletedSetCount = previous$recentCompletedSetCount + completed)
   }
-  list(stateVersion = "0.1.0", subjectId = history$subjectId %||% NULL, asOf = as_of, activePlan = list(), exerciseState = state, familyState = list(), muscleState = list(), adherenceState = list(), sessionState = list(), provenance = list(stateVersion = "0.1.0", asOf = as_of))
+  active <- NULL
+  for (plan in history$plans %||% list()) for (activation in history$planActivations %||% list()) if (identical(plan$planId, activation$planId) && identical(plan$revisionId, activation$revisionId) && !is.null(activation$effectiveFrom) && activation$effectiveFrom <= as_of && (is.null(activation$effectiveTo) || as_of < activation$effectiveTo)) active <- plan
+  active_plan <- list()
+  if (!is.null(active)) {
+    activation <- Filter(function(x) identical(x$planId, active$planId) && identical(x$revisionId, active$revisionId), history$planActivations %||% list())[[1L]]
+    cycle <- as.integer(active$cycle$lengthDays %||% 7L); elapsed <- max(0L, as.integer(as_date - as.Date(substr(activation$effectiveFrom, 1L, 10L))))
+    active_plan <- list(planId = active$planId, revisionId = active$revisionId, phaseId = NULL, cyclePosition = elapsed %% cycle + 1L)
+  }
+  window <- list(type = "last_28_days", start = as.character(start_date), end = as.character(as_date))
+  list(stateVersion = "0.1.0", subjectId = history$subjectId %||% NULL, asOf = as_of, historyWindow = window, activePlan = active_plan, exerciseState = state, familyState = list(), muscleState = list(), adherenceState = list(), sessionState = list(), provenance = list(stateVersion = "0.1.0", asOf = as_of, historyWindow = window))
 }
 
 generate_plan_from_intent <- function(intent, db, profile = NULL, target = NULL, relationships = NULL, history = NULL, as_of = NULL, ...) {
   resolution <- resolve_intent(intent, db, profile, target, relationships, history, as_of)
   if (!resolution$status %in% c("resolved", "resolved_with_defaults")) return(list(resolution = resolution, generation = NULL))
   availability <- resolution$resolvedProfile$availability; n <- as.integer((availability$sessionsPerCycle$target %||% availability$sessionsPerCycle$min %||% 1)); k <- as.integer(availability$exercisesPerSession$target %||% 3)
-  ids <- sort(names(db$exercises))[seq_len(min(max(1L, k), length(db$exercises)))]
-  sessions <- lapply(seq_len(max(1L, n)), function(i) list(planSessionId = paste0("intent-session-", i), dayOffset = i - 1L, exercises = lapply(seq_along(ids), function(j) list(prescriptionId = paste0("intent-rx-", i, "-", j), exerciseId = ids[[j]], order = j, sets = 1L, reps = resolution$generationOptions$repDefaults))))
+  constraints <- intent$exerciseConstraints %||% list(); excluded <- unique(.strings(constraints$excludedExerciseIds)); required <- unique(c(.strings(constraints$requiredExerciseIds), .strings(constraints$lockedExerciseIds)))
+  available <- sort(names(db$exercises)); allowed <- available[!available %in% excluded]
+  ids <- unique(c(required, allowed))[seq_len(min(max(1L, k), length(unique(c(required, allowed)))))]
+  preferred <- as.integer(unlist(availability$preferredDayOffsets %||% integer(), use.names = FALSE)); excluded_days <- as.integer(unlist(availability$excludedDayOffsets %||% integer(), use.names = FALSE)); cycle <- as.integer(availability$cycleLengthDays %||% 7L)
+  offsets <- unique(c(preferred, seq_len(cycle) - 1L)); offsets <- offsets[!offsets %in% excluded_days]; offsets <- offsets[seq_len(min(max(1L, n), length(offsets)))]
+  sessions <- lapply(seq_along(offsets), function(i) list(planSessionId = paste0("intent-session-", i), dayOffset = offsets[[i]], exercises = lapply(seq_along(ids), function(j) list(prescriptionId = paste0("intent-rx-", i, "-", j), exerciseId = ids[[j]], order = j, sets = 1L, reps = resolution$generationOptions$repDefaults))))
   list(resolution = resolution, generation = list(status = "generated", schemaVersion = "0.2.0", sessions = sessions))
 }
 

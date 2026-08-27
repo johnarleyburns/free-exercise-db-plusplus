@@ -9,7 +9,8 @@ val volume = workout.effectiveSets(database)
 val healthConnect = workout.toHealthConnect() // preserves dbppExerciseId
 ```
 
-Run `gradle test` from `packages/kotlin/fedbpp`.
+Run `gradle --no-daemon test --project-dir packages/kotlin/fedbpp` with a
+current Gradle 8.x installation.
 
 Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting. Advanced PLAN/TARGET/adherence parity is not currently claimed.
 

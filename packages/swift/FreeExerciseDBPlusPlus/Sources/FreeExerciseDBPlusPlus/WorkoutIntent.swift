@@ -438,11 +438,27 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
-  let active = plans.first { plan in activations.contains { $0["planId"] == plan["planId"] && $0["revisionId"] == plan["revisionId"] } }
-  let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter { ($0["startTime"]?.stringValue ?? "") <= asOf }
+  let active = plans.first { plan in activations.contains { activation in
+    activation["planId"] == plan["planId"] && activation["revisionId"] == plan["revisionId"] &&
+      (activation["effectiveFrom"]?.stringValue ?? "") <= asOf &&
+      (activation["effectiveTo"]?.stringValue == nil || asOf < (activation["effectiveTo"]?.stringValue ?? ""))
+  } }
+  let asOfDate = String(asOf.prefix(10))
+  let calendar = Calendar(identifier: .gregorian)
+  let formatter = ISO8601DateFormatter()
+  let lowerDate = formatter.date(from: "\(asOfDate)T00:00:00Z").flatMap { calendar.date(byAdding: .day, value: -27, to: $0) }.map { String(formatter.string(from: $0).prefix(10)) } ?? asOfDate
+  let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter {
+    let stamp = $0["startTime"]?.stringValue ?? ""
+    return String(stamp.prefix(10)) >= lowerDate && stamp <= asOf
+  }
   var exerciseState: [String: JSONValue] = [:]
-  for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number(1), "recentCompletedSetCount": .number(Double(count))]) } }
-  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "activePlan": active.map { .object(["planId": $0["planId"] ?? .null, "revisionId": $0["revisionId"] ?? .null]) } ?? .object([:]), "exerciseState": .object(exerciseState), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf)])])
+  for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; let previous = exerciseState[id]?.objectValue ?? [:]; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number((previous["recentSessionCount"]?.numberValue ?? 0) + 1), "recentCompletedSetCount": .number((previous["recentCompletedSetCount"]?.numberValue ?? 0) + Double(count))]) } }
+  var activePlan: [String: JSONValue] = [:]
+  if let active, let activation = activations.first(where: { $0["planId"] == active["planId"] && $0["revisionId"] == active["revisionId"] }), let from = activation["effectiveFrom"]?.stringValue {
+    let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7); let fromDate = String(from.prefix(10)); let elapsed = max(0, (formatter.date(from: "\(asOfDate)T00:00:00Z")?.timeIntervalSince(formatter.date(from: "\(fromDate)T00:00:00Z") ?? Date()) ?? 0) / 86400); let position = Int(elapsed) % cycle + 1
+    activePlan = ["planId": active["planId"] ?? .null, "revisionId": active["revisionId"] ?? .null, "phaseId": .null, "cyclePosition": .number(Double(position))]
+  }
+  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string("last_28_days"), "start": .string(lowerDate), "end": .string(asOfDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string("last_28_days"), "start": .string(lowerDate), "end": .string(asOfDate)])])])
 }
 
 public struct IntentResolver: Sendable {
@@ -564,6 +580,11 @@ public struct IntentResolver: Sendable {
     let excludedExercises = Set((constraints["excludedExerciseIds"]?.arrayValues.compactMap { $0.stringValue } ?? []) + (inputConstraints?.excludedExerciseIds ?? [])).sorted()
     let excludedFamilies = Set((constraints["excludedFamilyIds"]?.arrayValues.compactMap { $0.stringValue } ?? []) + (inputConstraints?.excludedFamilyIds ?? [])).sorted()
     constraints["excludedExerciseIds"] = .array(excludedExercises.map(s)); constraints["excludedFamilyIds"] = .array(excludedFamilies.map(s)); p["constraints"] = .object(constraints)
+    let requiredExercises = Set((inputConstraints?.requiredExerciseIds ?? []) + (inputConstraints?.lockedExerciseIds ?? []))
+    let requiredFamilies = Set(inputConstraints?.requiredFamilyIds ?? [])
+    var constraintConflicts = requiredExercises.intersection(Set(excludedExercises)).sorted().map { IntentConflict(code: "REQUIRED_EXERCISE_EXCLUDED", exerciseId: $0) }
+    constraintConflicts += requiredFamilies.intersection(Set(excludedFamilies)).sorted().map { IntentConflict(code: "REQUIRED_FAMILY_EXCLUDED", familyId: $0) }
+    if !constraintConflicts.isEmpty { return IntentResolutionResult(status: "invalid", resolvedProfile: .object(p), conflicts: constraintConflicts, provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
     var preferences = o(p["exercisePreferences"])
     if let inputPreferences = x.preferences { for (key, values) in [("preferredExerciseIds", inputPreferences.preferredExerciseIds), ("avoidedExerciseIds", inputPreferences.avoidedExerciseIds), ("preferredFamilyIds", inputPreferences.preferredFamilyIds), ("avoidedFamilyIds", inputPreferences.avoidedFamilyIds)] where !values.isEmpty { preferences[key] = .array(Set((preferences[key]?.arrayValues.compactMap { $0.stringValue } ?? []) + values).sorted().map(s)) } }
     p["exercisePreferences"] = .object(preferences)
@@ -618,13 +639,20 @@ public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, pro
   guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let p = resolution.resolvedProfile?.objectValue, let availability = p["availability"]?.objectValue else { return .object(["resolution": resolutionJSON, "generation": .null]) }
   let range = availability["sessionsPerCycle"]?.objectValue ?? [:]; let count = Int(range["target"]?.numberValue ?? range["min"]?.numberValue ?? 1)
   let exerciseCount = Int(availability["exercisesPerSession"]?.objectValue?["target"]?.numberValue ?? 3)
-  let ids = Array(database.exerciseIDs.sorted().prefix(max(1, exerciseCount)))
+  let constraints = x.exerciseConstraints
+  let excluded = Set(constraints?.excludedExerciseIds ?? [])
+  let required = (constraints?.requiredExerciseIds ?? []) + (constraints?.lockedExerciseIds ?? [])
+  let ids = Array((required + database.exerciseIDs.sorted().filter { !excluded.contains($0) && !required.contains($0) }).prefix(max(1, exerciseCount)))
+  let preferred = (resolution.resolvedProfile?.objectValue?["availability"]?.objectValue?["preferredDayOffsets"]?.arrayValues.compactMap { $0.numberValue.map(Int.init) } ?? [])
+  let excludedDays = Set(resolution.resolvedProfile?.objectValue?["availability"]?.objectValue?["excludedDayOffsets"]?.arrayValues.compactMap { $0.numberValue.map(Int.init) } ?? [])
+  let cycle = Int(availability["cycleLengthDays"]?.numberValue ?? 7)
+  let offsets = (preferred + Array(0..<cycle)).filter { !excludedDays.contains($0) }.reduce(into: [Int]()) { if !$0.contains($1) { $0.append($1) } }.prefix(max(1, count))
   let reps = resolution.generationOptions.objectValue?["repDefaults"] ?? .object([:])
-  let sessions: [JSONValue] = (0..<max(1, count)).map { offset in
+  let sessions: [JSONValue] = offsets.enumerated().map { index, offset in
     let exercises: [JSONValue] = ids.enumerated().map { i, id in
-      .object(["prescriptionId": .string("intent-rx-\(offset + 1)-\(i + 1)"), "exerciseId": .string(id), "order": .number(Double(i + 1)), "sets": .number(1), "reps": reps])
+      .object(["prescriptionId": .string("intent-rx-\(index + 1)-\(i + 1)"), "exerciseId": .string(id), "order": .number(Double(i + 1)), "sets": .number(1), "reps": reps])
     }
-    return .object(["planSessionId": .string("intent-session-\(offset + 1)"), "dayOffset": .number(Double(offset)), "exercises": .array(exercises)])
+    return .object(["planSessionId": .string("intent-session-\(index + 1)"), "dayOffset": .number(Double(offset)), "exercises": .array(exercises)])
   }
   return .object(["resolution": resolutionJSON, "generation": .object(["status": .string("generated"), "schemaVersion": .string("0.2.0"), "sessions": .array(sessions)])])
 }

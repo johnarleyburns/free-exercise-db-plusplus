@@ -7,6 +7,10 @@ import kotlin.test.assertFailsWith
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.intOrNull
 
 class FedbppTest {
     @Test fun workoutIntentFlagshipResolvesNatively() {
@@ -44,6 +48,19 @@ class FedbppTest {
             val normalized = if (actual is JsonObject) JsonObject(actual.toMutableMap().apply { stableTopLevel.forEach { key -> if (!containsKey(key)) put(key, kotlinx.serialization.json.JsonNull) } }) else actual
             assert(normalized == expected) { fixture.name }
         }
+    }
+    @Test fun historyAndGenerationUseCanonicalWindowAndOffsets() {
+        val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "fixtures/cross-language/intent").isDirectory }
+        val json = Json { ignoreUnknownKeys = true; explicitNulls = false; encodeDefaults = true }
+        val historyDir = File(root, "fixtures/cross-language/intent/history-aware")
+        val intent = json.decodeFromString<WorkoutIntent>(File(historyDir, "input.json").readText())
+        val result = resolveIntent(intent, history = json.parseToJsonElement(File(historyDir, "history.json").readText()), asOf = "2026-08-25T12:00:00Z")
+        assertEquals("r1", result.generationOptions.jsonObject["trainingState"]!!.jsonObject["activePlan"]!!.jsonObject["revisionId"]!!.jsonPrimitive.content)
+        assertEquals(1, result.generationOptions.jsonObject["trainingState"]!!.jsonObject["exerciseState"]!!.jsonObject["Barbell_Bench_Press_-_Medium_Grip"]!!.jsonObject["recentSessionCount"]!!.jsonPrimitive.intOrNull)
+        val db = Database.load(File(root, "free-exercise-db-plusplus.json"))
+        val flagship = json.decodeFromString<WorkoutIntent>(File(root, "fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json").readText())
+        val sessions = generatePlanFromIntent(flagship, db).jsonObject["generation"]!!.jsonObject["sessions"]!!.jsonArray
+        assertEquals(listOf(0, 1, 2, 3, 5), sessions.map { it.jsonObject["dayOffset"]!!.jsonPrimitive.intOrNull })
     }
     @Test fun databaseLoadsAndQueries() {
         val root = generateSequence(File(".").absoluteFile) { it.parentFile }.first { File(it, "free-exercise-db-plusplus.json").exists() }
