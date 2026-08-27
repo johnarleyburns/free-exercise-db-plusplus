@@ -70,6 +70,7 @@ native work; no Python rewrite was required.
 - Part R — Swift missingness semantics: **complete; audited below**
 - Part S — Swift family state: **complete; audited below**
 - Part T — Swift muscle state: **complete; audited below**
+- Part U — Swift progression policies: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -414,6 +415,23 @@ was changed.
 
 Part T commit: `7b64054` (`feat: add Swift muscle state`).
 
+## Part U progression evidence
+
+Added Swift progression policy execution for `hold-v1` and
+`double-progression-v1`, exposed through `TrainingEngine`. Results use the
+canonical decision envelope with policy metadata, before/after values,
+reason codes, evidence, and provenance. Double progression requires all
+counted sets to meet the top rep target, preserves partial/incomplete and
+insufficient-data outcomes, applies the corrected RPE/RIR effort direction,
+and supports compatible kg/lb/g load increments.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 31 tests, including top-rep load increase, effort-boundary, and
+canonical counted-set regressions. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part U commit: `d559261` (`feat: add Swift progression policies`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -463,8 +481,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `7b64054`
-  (`feat: add Swift muscle state`)
+- Current committed HEAD before the next implementation phase: `d559261`
+  (`feat: add Swift progression policies`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
