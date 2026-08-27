@@ -517,4 +517,22 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertFalse(sessions.flatMap { value -> [JSONValue] in if case .array(let values)? = value.objectValue?["exercises"] { return values }; return [] }.contains { $0.objectValue?["exerciseId"] == .string("row") })
   }
 
+  func testProductionGeneratorUsesExactPythonEquipmentSemantics() {
+    let body = Exercise(exerciseId: "body", annotation: ExerciseAnnotation(direct: ["chest"], volumeEligible: true), source: ["equipment": .string("body only")])
+    let unknown = Exercise(exerciseId: "unknown", annotation: ExerciseAnnotation(direct: ["chest"], volumeEligible: true), source: ["equipment": .string("other")])
+    let database = FEDatabase(exercises: ["body": body, "unknown": unknown])
+    let profile: JSONValue = .object(["schemaVersion": .string("0.1.0"), "equipment": .array([.string("bodyweight")]), "availability": .object(["cycleLengthDays": .number(7), "sessionsPerCycle": .object(["target": .number(1)])])])
+    let target: JSONValue = .object(["schemaVersion": .string("0.1.0"), "periodDays": .number(7)])
+    let engine = TrainingEngine(database: database)
+    let accepted = engine.generatePlan(profile: profile, target: target, requiredExerciseIds: ["body"])
+    XCTAssertNotNil(accepted.objectValue?["plan"])
+    let rejected = engine.generatePlan(profile: profile, target: target, requiredExerciseIds: ["unknown"])
+    XCTAssertEqual(rejected.objectValue?["status"], .string("unsatisfiable"))
+    if case .array(let findings)? = rejected.objectValue?["unsatisfiedConstraints"] {
+      XCTAssertEqual(findings.first?.objectValue?["code"], .string("NO_ELIGIBLE_EXERCISE"))
+    } else {
+      XCTFail("equipment rejection must be reported as a structured constraint")
+    }
+  }
+
 }

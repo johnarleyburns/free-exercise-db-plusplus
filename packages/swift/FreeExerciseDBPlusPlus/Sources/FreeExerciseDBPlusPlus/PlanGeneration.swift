@@ -86,7 +86,8 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   let preferredDays = gIntArray(availability["preferredDayOffsets"])
   guard let offsets = generationOffsets(cycle: cycle, count: max(1, sessionCount), preferred: preferredDays, excluded: excludedDays) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("SESSION_COUNT_CONFLICT")])]) }
   let constraints = gObject(profileObject["constraints"]), excluded = Set(gStringArray(constraints["excludedExerciseIds"]) + additionalExclusions), excludedFamilies = Set(gStringArray(constraints["excludedFamilyIds"])), required = Set(requiredExerciseIds + lockedExerciseIds), requiredFamilies = Set(requiredFamilyIds)
-  let availableEquipment = Set(gStringArray(profileObject["equipment"]))
+  var availableEquipment = Set(gStringArray(profileObject["equipment"]))
+  if !availableEquipment.isDisjoint(with: ["bodyweight", "no equipment", "none"]) { availableEquipment.insert("body only") }
   let candidates = database.allExercises.values.filter { exercise in
     guard exercise.annotation.volumeEligible, !excluded.contains(exercise.exerciseId) else { return false }
     guard let equipment = gString(exercise.source?["equipment"]) else { return false }
