@@ -471,6 +471,11 @@ Part BW release-preparation commit: `fe84ebc` updated `CHANGELOG.md` and
 `docs/releases/v1.11.0.md` for the final Python/Swift scope. Follow-up CI
 resource correction is `87ecc31`; both are included in the release history.
 
+Part BY acceptance: Swift package/consumer tests, canonical resource checks,
+Python wheel smoke, deterministic repeated resolution, custom policy/resource
+checks, and the remote full workflow are green. The release workflow inputs
+remain offline and deterministic; Kotlin/R full parity remain deferred.
+
 
 Part BP verification: repeated Python flagship intent resolution is identical,
 and the Swift determinism/idempotence suite passes with 42 tests.
