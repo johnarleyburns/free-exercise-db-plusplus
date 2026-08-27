@@ -86,7 +86,7 @@ above. Python package tests could not be rerun in this environment because
 neither `pytest` nor the `pytest` Python module is installed. No Swift, Kotlin,
 or R source was changed.
 
-Part B commit: pending commit after review.
+Part B commit: `62c0334` (`test: add Python engine parity fixtures`).
 
 ## Part A audit evidence
 
