@@ -93,6 +93,7 @@ native work; no Python rewrite was required.
 - Part AO — Swift adaptive target-maximum gate: **complete; audited below**
 - Part AP — Swift adaptive regeneration: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
+- Part AZ — Swift external consumer contract: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -285,6 +286,20 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AT commit: pending commit after review.
+
+## Part AZ consumer evidence
+
+Expanded `scripts/test_swift_consumer.sh` to build a temporary external Swift
+package and exercise `TrainingEngine.bundled()`, flagship intent resolution,
+production generation, standalone evaluation equality, history-backed state
+derivation, and adaptive planning. The consumer receives all fixture paths as
+arguments and makes no repository-current-directory resource assumption.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`,
+`bash scripts/test_swift_consumer.sh`, and `git diff --check` pass. No Python,
+Kotlin, or R source was changed.
+
+Part AZ commit: pending commit after review.
 
 ## Part B fixture evidence
 
