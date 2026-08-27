@@ -85,6 +85,7 @@ native work; no Python rewrite was required.
 - Part AG — Swift generated-plan result envelope: **complete; audited below**
 - Part AH — Swift evaluated generation gate: **complete; audited below**
 - Part AI — Swift flagship generation coverage: **complete; audited below**
+- Part AJ — Swift adaptive coaching façade: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -181,6 +182,20 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AI commit: pending commit after review.
+
+## Part AJ adaptive-coaching evidence
+
+Added the native advisory `adaptPlan` pipeline and `TrainingEngine` façade.
+It accepts profile, target, current PLAN, history or precomputed TrainingState,
+and as-of context; applies the existing Swift progression policy to a copied
+PLAN; evaluates any proposal; and returns current/proposed evaluations,
+decisions, changes, policy, state, and provenance without activation or input
+mutation.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AJ commit: pending commit after review.
 
 ## Part B fixture evidence
 

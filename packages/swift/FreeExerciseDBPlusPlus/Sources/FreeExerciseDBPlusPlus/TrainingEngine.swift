@@ -79,6 +79,19 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.planningPolicy(policy)
   }
 
+  public func coachingPolicy(_ policy: String = "general-adaptive-v1") -> JSONValue? {
+    FreeExerciseDBPlusPlus.coachingPolicy(policy)
+  }
+
+  public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONValue,
+                        history: JSONValue? = nil, asOf: String? = nil,
+                        trainingState: JSONValue? = nil, policy: String = "general-adaptive-v1",
+                        planningPolicy: String? = nil) -> JSONValue {
+    FreeExerciseDBPlusPlus.adaptPlan(profile: profile, target: target, currentPlan: currentPlan,
+      history: history, asOf: asOf, trainingState: trainingState, database: database,
+      policy: policy, planningPolicy: planningPolicy, relationships: relationships)
+  }
+
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
   }
