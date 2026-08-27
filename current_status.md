@@ -68,6 +68,7 @@ native work; no Python rewrite was required.
 - Part P — Swift exercise state: **complete; audited below**
 - Part Q — Swift adherence-rich state: **complete; audited below**
 - Part R — Swift missingness semantics: **complete; audited below**
+- Part S — Swift family state: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -382,6 +383,21 @@ Kotlin, or R source was changed.
 
 Part R commit: `c443364` (`feat: preserve Swift missingness states`).
 
+## Part S family-state evidence
+
+Added relationship-backed `familyState` derivation to the Swift state
+projection. Family rows preserve deterministic recent exercise IDs, the most
+recent exercise, and explicit substitution totals. Family membership alone is
+never treated as a substitution; only actual observations carrying an
+explicit substitution record contribute to substitution counts.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 29 tests, including a same-family membership regression proving
+that substitution is not inferred. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part S commit: `39b348b` (`feat: add Swift family state`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -431,8 +447,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `c443364`
-  (`feat: preserve Swift missingness states`)
+- Current committed HEAD before the next implementation phase: `39b348b`
+  (`feat: add Swift family state`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
