@@ -64,7 +64,8 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(state.exerciseState.count, 0)
     XCTAssertEqual(state.familyState.count, 0)
     XCTAssertEqual(state.muscleState.count, 0)
-    XCTAssertEqual(state.adherenceState.count, 0)
+    XCTAssertEqual(state.adherenceState["sessionAdherence"], JSONValue.array([]))
+    XCTAssertEqual(state.adherenceState["exercisePrescriptionAdherence"], JSONValue.array([]))
     XCTAssertEqual(state.sessionState.count, 0)
     XCTAssertEqual(state.provenance["asOf"], JSONValue.string("2026-08-27T12:00:00-04:00"))
   }
@@ -141,6 +142,14 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(exercise?["lastPrescription"]?.objectValue?["prescriptionId"], .string("history-rx"))
     XCTAssertEqual(exercise?["substitutionCount"], JSONValue.number(0))
     XCTAssertEqual(exercise?["unplannedCount"], JSONValue.number(0))
+    let adherence = state.objectValue?["adherenceState"]?.objectValue
+    if case .array(let sessions)? = adherence?["sessionAdherence"] { XCTAssertEqual(sessions.count, 1) } else { XCTFail("missing session adherence") }
+    if case .array(let rows)? = adherence?["exercisePrescriptionAdherence"], let row = rows.first?.objectValue {
+      XCTAssertEqual(row["match_status"], .string("matched"))
+      XCTAssertEqual(row["actual_sets"], .number(1))
+    } else { XCTFail("missing exercise adherence") }
+    XCTAssertEqual(adherence?["substitutionAdjustedCompletion"], .number(1))
+    XCTAssertEqual(adherence?["unplannedSets"], .number(0))
   }
 
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
