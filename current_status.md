@@ -60,15 +60,16 @@ native work; no Python rewrite was required.
 - Part H — Swift full PLAN analysis: **complete; audited below**
 - Part I — Swift full PLAN evaluation: **complete; audited below**
 - Part J — Swift TARGET validation and merging: **complete; audited below**
-- Parts K–N — Swift engine architecture and parity: pending the preceding
-  parts and the detailed order in `HANDOFF.md`
+- Part K — Swift TrainingHistory model and semantics: **complete; audited below**
+- Parts L–N — Swift time-aware history and state: pending the detailed order in
+  `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
-Begin Part C by defining the normalized field-by-field comparison contract
-for the five new engine fixture families. Do not begin Swift implementation
-work in the same cycle; preserve the existing intent fixtures and do not work
-on Kotlin or R.
+Begin Part L by adding offset-aware timestamp parsing and comparison helpers
+for history semantics. Keep Part M state derivation and broader time-window
+behavior out of that cycle; preserve the Python oracle and do not work on
+Kotlin or R.
 
 ## Part B fixture evidence
 
@@ -230,6 +231,29 @@ all 17 tests, including the Python golden PLAN evaluation, and
 
 Part J commit: pending commit after review.
 
+## Part K history evidence
+
+Completed the typed Swift `TrainingHistory` representation for subject
+identity, PLAN revisions, plan activations, and ACTUAL workouts. ACTUAL
+observations preserve session and plan references, prescription IDs,
+set-level prescription IDs and telemetry fields, and typed substitution
+references. An observation without a prescription or substitution is exposed
+as unplanned work. History decoding defaults omitted optional collections to
+empty, matching the canonical history fixture shape; plan lookup and
+activation filtering helpers are available without resolving active revisions
+or applying time windows.
+
+Added a date-string-based `ScheduledOccurrence` value for the later scheduling
+surface. It intentionally does not parse or compare offsets; that behavior is
+reserved for Part L.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 19 tests, including canonical history linkage and plan-linked
+substitution/unplanned-work regressions. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part K commit: `6494743` (`feat: complete Swift training history domain`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -279,8 +303,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `ac0e0a3`
-  (`begun kotlin port`)
+- Current committed HEAD before the next implementation phase: `6494743`
+  (`feat: complete Swift training history domain`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
