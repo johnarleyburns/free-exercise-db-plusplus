@@ -463,6 +463,10 @@ Part BT verification: remote `main` was reread after green CI; the only bot
 change was the expected generated-output commit `ccc80fa`, limited to the
 database/report regeneration artifacts and with no semantic source changes.
 
+Part BU verification: the remote zero-gap review found no remaining source,
+resource, fixture, documentation, or consumer issue in the released v1.11
+scope.
+
 
 Part BP verification: repeated Python flagship intent resolution is identical,
 and the Swift determinism/idempotence suite passes with 42 tests.
