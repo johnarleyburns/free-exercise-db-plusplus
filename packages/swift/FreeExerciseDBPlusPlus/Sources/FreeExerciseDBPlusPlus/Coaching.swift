@@ -38,13 +38,14 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   var proposed = currentPlan
   var decisions: [JSONValue] = [], changes: [JSONValue] = []
   let exerciseState = cObject(cObject(state)["exerciseState"])
+  let progressionPolicy = cString(cObject(policy)["exerciseProgressionPolicy"]) ?? "double-progression-v1"
   var sessions = cArray(cObject(proposed)["sessions"])
   for sessionIndex in sessions.indices {
     var session = cObject(sessions[sessionIndex]), exercises = cArray(session["exercises"])
     for exerciseIndex in exercises.indices {
       let rx = exercises[exerciseIndex], rxObject = cObject(rx), id = cString(rxObject["exerciseId"])
       guard let id, let stateRow = exerciseState[id] else { continue }
-      let decision = applyProgressionPolicy("double-progression-v1", prescription: rx, exerciseState: stateRow, parameters: cObject(policy)["parameters"])
+      let decision = applyProgressionPolicy(progressionPolicy, prescription: rx, exerciseState: stateRow, parameters: cObject(policy)["parameters"])
       let decisionObject = cObject(decision)
       decisions.append(decision)
       guard decisionObject["decisionType"] == JSONValue.string("increase_load"), let after = decisionObject["after"]?.objectValue else { continue }

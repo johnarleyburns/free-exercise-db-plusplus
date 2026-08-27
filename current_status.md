@@ -88,6 +88,7 @@ native work; no Python rewrite was required.
 - Part AJ — Swift adaptive coaching façade: **complete; audited below**
 - Part AK — Swift coaching policy: **complete; audited below**
 - Part AL — Swift adaptive decision ordering: **complete; audited below**
+- Part AM — Swift adaptive progression reuse: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -220,6 +221,17 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AL commit: pending commit after review.
+
+## Part AM progression evidence
+
+Adaptive coaching now obtains its progression policy from the released coaching
+document and invokes the existing native progression implementation directly;
+double-progression logic is not duplicated inside coaching.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AM commit: pending commit after review.
 
 ## Part B fixture evidence
 
