@@ -54,7 +54,8 @@ native work; no Python rewrite was required.
 - Part B — Python golden fixtures: **complete; audited below**
 - Part C — canonical comparison rules: **complete; audited below**
 - Part D — Swift engine architecture: **complete; audited below**
-- Parts E–N — Swift engine architecture and parity: pending the preceding
+- Part E — Swift TrainingEngine façade: **complete; audited below**
+- Parts F–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -121,6 +122,23 @@ passed all 12 tests. A source audit found only Foundation imports and no
 prohibited runtime dependencies.
 
 Part D commit: pending commit after review.
+
+## Part E façade evidence
+
+Extended the existing native `TrainingEngine` façade with the application-level
+`generatePlanFromIntent` entry point, alongside its existing intent validation,
+resolution, evaluation, and TrainingState projection methods. The façade keeps
+database and relationship dependencies injected as immutable values and
+delegates to the native implementations, preserving the shared JSON result
+shape during the typed-domain migration. Full typed domain results and the
+remaining generation/progression/adaptation entry points are intentionally
+reserved for Parts F and later.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 13 tests, including a façade draft-generation regression. No
+Kotlin or R functionality was changed.
+
+Part E commit: pending commit after review.
 
 ## Part A audit evidence
 
