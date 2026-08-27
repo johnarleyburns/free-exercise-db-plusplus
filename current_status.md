@@ -476,6 +476,14 @@ Python wheel smoke, deterministic repeated resolution, custom policy/resource
 checks, and the remote full workflow are green. The release workflow inputs
 remain offline and deterministic; Kotlin/R full parity remain deferred.
 
+Part CA verification: the `Release Free Exercise DB++` workflow for tag
+`v1.11.0` completed successfully and uploaded the expected packaged schemas,
+database, mappings, reports, and documentation assets.
+
+Part CB verification: an isolated installed `fedbpp-1.11.0` wheel completed
+flagship generation/evaluation and history-aware adaptation; the external
+Swift SPM consumer completed the matching flagship and history-aware flows.
+
 
 Part BP verification: repeated Python flagship intent resolution is identical,
 and the Swift determinism/idempotence suite passes with 42 tests.
@@ -1052,38 +1060,11 @@ Run Swift tests again after every Swift change. Do not infer full parity from
 language-local tests; add Python-authored golden fixtures and compare normalized
 results field-by-field.
 
-## Immediate next task: Part A Python completeness audit
+## Completion state
 
-After Part A is completed and reviewed, continue incrementally using the
-Python reference as the oracle. The later Swift port uses these files:
-
-- `packages/python/fedbpp/planning.py`
-- `packages/python/fedbpp/plan_evaluation.py`
-- `packages/python/fedbpp/training_state.py`
-- `packages/python/fedbpp/progression.py`
-- `packages/python/fedbpp/coaching.py`
-- `packages/python/fedbpp/intent.py`
-
-Priority order:
-
-1. Finish Swift evaluator parity against shared fixtures.
-2. Replace Swift's lightweight `generatePlanFromIntent` constructor with the
-   evaluator-gated Python planning algorithm.
-3. Port complete TrainingHistory/TrainingState semantics, including active
-   revision resolution, all windows, ACTUAL matching/adherence/substitutions,
-   offset-aware time handling, and arbitrary cycles.
-4. Port progression and adaptive coaching through `TrainingEngine`.
-5. Add Python-authored shared fixture families for evaluation, generation,
-   history, progression, and adaptation; Swift must pass every supported row.
-6. Update docs/capability matrix/roadmap truthfully to state Swift's actual
-   scope and defer Kotlin/R core-engine completion to future releases.
-
-## Release conditions
-
-Do not prepare/tag/release until the Swift-focused release gate is written and
-met: full Swift fixture parity, isolated Swift consumer coverage for the full
-engine, complete repository suite green, audit documentation updated, and CI
-green on the exact human implementation and release-prep commits.
+Parts BA–CB are complete. v1.11.0 is tagged and released; the release workflow
+and post-release Python/Swift smoke checks passed. Do not begin v1.12, v1.13,
+or v1.14 work in this cycle.
 
 No Python bridge, network dependency, LLM integration, UI, or v1.12 feature
 work is in scope.
