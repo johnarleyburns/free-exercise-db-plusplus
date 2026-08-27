@@ -449,6 +449,11 @@ Part BM verification: database release contract, golden mapping anchors,
 medium-confidence mapping policy, Swift tests/consumer, and Kotlin Gradle
 tests pass. R remains blocked by the missing installed `fedbpp` package.
 
+Part BN verification: `pip3 wheel --no-deps --no-build-isolation` built
+`fedbpp-1.11.0-py3-none-any.whl`, which imported successfully from an
+isolated target directory and exposed the public evaluation, state,
+generation, and adaptation APIs.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
