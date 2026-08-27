@@ -71,6 +71,12 @@ public struct TrainingEngine: Sendable {
       options: options)
   }
 
+  /// Return the immutable released planning-policy document used by the
+  /// native generator, or nil for an unknown policy identifier.
+  public func planningPolicy(_ policy: String) -> JSONValue? {
+    FreeExerciseDBPlusPlus.planningPolicy(policy)
+  }
+
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
   }

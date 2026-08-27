@@ -476,4 +476,26 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(result.objectValue?["policy"]?.objectValue?["policyId"], .string("full-body-general-v1"))
   }
 
+  func testReleasedPlanningPoliciesExposeCanonicalDocuments() {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let fullBody = engine.planningPolicy("full-body-general-v1")?.objectValue
+    XCTAssertEqual(fullBody?["policyVersion"], .string("1"))
+    XCTAssertEqual(fullBody?["splitStrategy"], .string("full_body_every_session"))
+    XCTAssertEqual(fullBody?["frequencyStrategy"], .string("least_exposed_session_v1"))
+    XCTAssertEqual(fullBody?["parameters"]?.objectValue?["reps"], .object(["min": .number(6), "target": .number(8), "max": .number(10)]))
+    XCTAssertEqual(fullBody?["parameters"]?.objectValue?["effort"], .object(["rir": .number(2)]))
+
+    let upperLower = engine.planningPolicy("upper-lower-general-v1")?.objectValue
+    XCTAssertEqual(upperLower?["splitStrategy"], .string("upper_lower_alternating"))
+    XCTAssertEqual(upperLower?["frequencyStrategy"], .string("least_exposed_compatible_session_v1"))
+    XCTAssertEqual(upperLower?["parameters"]?.objectValue?["minimumSessionsPerCycle"], .number(2))
+    XCTAssertEqual(upperLower?["parameters"]?.objectValue?["upperMuscles"]?.objectValue, nil)
+    if case .array(let upperMuscles)? = upperLower?["parameters"]?.objectValue?["upperMuscles"] {
+      XCTAssertEqual(upperMuscles.count, 9)
+    } else {
+      XCTFail("upper/lower policy must expose upper muscle compatibility")
+    }
+    XCTAssertNil(engine.planningPolicy("unknown-policy"))
+  }
+
 }

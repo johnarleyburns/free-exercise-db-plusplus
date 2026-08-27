@@ -15,7 +15,15 @@ private let generationPolicies: [String: [String: JSONValue]] = [
     "splitStrategy": .string("upper_lower_alternating"), "exerciseSelectionStrategy": .string("eligible_target_coverage_v1"),
     "volumeAllocationStrategy": .string("greatest_deficit_one_set_v1"), "frequencyStrategy": .string("least_exposed_compatible_session_v1"),
     "tieBreakingStrategy": .string("explicit_tuple_then_exercise_id_v1"),
-    "parameters": .object(["defaultSessionsPerCycle": .number(4), "minimumSessionsPerCycle": .number(2), "setBlock": .number(1), "reps": .object(["min": .number(6), "target": .number(8), "max": .number(10)]), "effort": .object(["rir": .number(2)]), "allowUnverifiableEquipment": .bool(false), "preferHistoryContinuity": .bool(true), "avoidSameFamilyInSession": .bool(true)])
+    "parameters": .object([
+      "defaultSessionsPerCycle": .number(4), "minimumSessionsPerCycle": .number(2), "setBlock": .number(1),
+      "reps": .object(["min": .number(6), "target": .number(8), "max": .number(10)]), "effort": .object(["rir": .number(2)]),
+      "allowUnverifiableEquipment": .bool(false), "preferHistoryContinuity": .bool(true), "avoidSameFamilyInSession": .bool(true),
+      "upperMuscles": .array(["chest", "lats", "middle_back", "traps", "biceps", "triceps", "shoulders", "forearms", "rotator_cuff"].map(JSONValue.string)),
+      "lowerMuscles": .array(["quadriceps", "hamstrings", "glutes", "calves", "abductors", "adductors", "hip_flexors", "lower_back"].map(JSONValue.string)),
+      "upperPatterns": .array(["horizontal_press", "horizontal_press_triceps_bias", "incline_press", "decline_press", "vertical_press", "horizontal_pull", "vertical_pull", "chest_fly", "elbow_extension", "elbow_flexion", "shoulder_abduction", "shoulder_flexion", "shoulder_external_rotation", "shoulder_internal_rotation", "face_pull", "reverse_fly", "shrug", "upright_row"].map(JSONValue.string)),
+      "lowerPatterns": .array(["squat", "squat_quad_bias", "lunge", "step_up", "leg_press", "hip_hinge", "hip_extension", "hip_flexion", "knee_extension", "knee_flexion", "plantar_flexion_bent_knee", "plantar_flexion_straight_knee", "hip_abduction", "hip_adduction"].map(JSONValue.string))
+    ])
   ]
 ]
 
@@ -26,7 +34,7 @@ private func gArray(_ value: JSONValue?) -> [JSONValue] { if case .array(let val
 private func gIntArray(_ value: JSONValue?) -> [Int] { gArray(value).compactMap { gNumber($0).map(Int.init) ?? gString($0).flatMap(Int.init) } }
 private func gRange(_ value: JSONValue?) -> (min: Double?, target: Double?, max: Double?) { let o = gObject(value); return (gNumber(o["min"]), gNumber(o["target"]), gNumber(o["max"])) }
 private func gStringArray(_ value: JSONValue?) -> [String] { gArray(value).compactMap(gString) }
-private func gPolicy(_ id: String) -> JSONValue { .object(generationPolicies[id] ?? [:]) }
+public func planningPolicy(_ id: String) -> JSONValue? { generationPolicies[id].map(JSONValue.object) }
 
 private func generationOffsets(cycle: Int, count: Int, preferred: [Int], excluded: Set<Int>) -> [Int]? {
   let allowed = (0..<cycle).filter { !excluded.contains($0) }
