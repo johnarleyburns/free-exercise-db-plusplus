@@ -151,6 +151,18 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(sessions.compactMap { value in if case .number(let n)? = value.objectValue?["dayOffset"] { return Int(n) }; return nil }, [0, 1, 2, 3, 5])
   }
 
+  func testTrainingEngineFacadeGeneratesIntentDraft() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+    let intent = try JSONDecoder().decode(
+      WorkoutIntent.self,
+      from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")))
+    let result = TrainingEngine(database: database).generatePlanFromIntent(intent)
+    XCTAssertNotNil(result.objectValue?["resolution"])
+    XCTAssertNotNil(result.objectValue?["generation"])
+  }
+
   func testAllCanonicalResolutionFixtures() throws {
     let candidates = [
       URL(fileURLWithPath: #filePath),

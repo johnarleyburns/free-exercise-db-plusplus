@@ -27,4 +27,19 @@ public struct TrainingEngine: Sendable {
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf)
   }
+
+  /// Resolve intent and construct the current native deterministic draft in a
+  /// single application-facing call.  The returned document contains the
+  /// resolution and generation sections used by the shared intent fixtures.
+  public func generatePlanFromIntent(
+    _ intent: WorkoutIntent,
+    profile: JSONValue? = nil,
+    target: JSONValue? = nil,
+    history: JSONValue? = nil,
+    asOf: String? = nil
+  ) -> JSONValue {
+    FreeExerciseDBPlusPlus.generatePlanFromIntent(
+      intent, database: database, profile: profile, target: target,
+      relationships: relationships, history: history, asOf: asOf)
+  }
 }
