@@ -95,6 +95,7 @@ native work; no Python rewrite was required.
 - Part AQ — Swift adaptive result envelope: **complete; audited below**
 - Part AR — Swift determinism/idempotence: **complete; audited below**
 - Part AS — Swift WorkoutIntent end-to-end: **complete; audited below**
+- Part AU — Swift intent plus existing-plan adaptation: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
 - Part AZ — Swift external consumer contract: **complete; audited below**
 
@@ -315,6 +316,19 @@ the external consumer script, and `git diff --check` pass. No Python, Kotlin,
 or R source was changed.
 
 Part AS commit: pending commit after review.
+
+## Part AU adaptation-flow evidence
+
+The Swift application surface exposes generation from new intent separately
+from `adaptPlan(profile:target:currentPlan:history:asOf:...)`. Hosts therefore
+choose generation or adaptation explicitly; no automatic mode switching or
+activation is performed.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`,
+the external consumer script, and `git diff --check` pass. No Python, Kotlin,
+or R source was changed.
+
+Part AU commit: pending commit after review.
 
 ## Part AT history-aware intent evidence
 
