@@ -1,0 +1,6 @@
+{
+  "dbSchemaVersion": "0.3.0",
+  "expectedOperation": "evaluate_plan",
+  "oracle": "python",
+  "relationshipSchemaVersion": "0.1.0"
+}

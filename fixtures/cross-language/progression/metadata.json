@@ -1,0 +1,4 @@
+{
+  "expectedOperation": "apply_progression_policy",
+  "oracle": "python"
+}

@@ -1,0 +1,4 @@
+{
+  "expectedOperation": "generate_plan",
+  "oracle": "python"
+}

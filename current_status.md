@@ -51,16 +51,42 @@ native work; no Python rewrite was required.
 ## Phase tracker
 
 - Part A — Python completeness audit: **complete; audited below**
-- Part B — Python golden fixtures: **next**
+- Part B — Python golden fixtures: **complete; audited below**
 - Part C — canonical comparison rules: pending Part B
 - Parts D–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
-Begin Part B by generating Python-authored canonical fixtures for the five
-missing cross-language families listed in the audit below. Preserve the
-existing intent fixtures and do not work on Kotlin or R.
+Begin Part C by defining the normalized field-by-field comparison contract
+for the five new engine fixture families. Do not begin Swift implementation
+work in the same cycle; preserve the existing intent fixtures and do not work
+on Kotlin or R.
+
+## Part B fixture evidence
+
+Added Python-authored, reproducible fixtures under
+`fixtures/cross-language/{evaluation,history,progression,generation,adaptation}`.
+The authoring tool is `tools/generate_cross_language_engine_fixtures.py`; it
+loads the repository database and relationship artifact, invokes the Python
+oracle, and writes deterministic JSON inputs, expected outputs, and metadata.
+
+Coverage includes evaluation constraints/target gaps/incomplete coverage and
+provenance; active-plan history windows, timezone/as-of handling, and ACTUAL
+matching; progression success, hold, incomplete-workout, and effort-boundary
+decisions; evaluator-gated generation with required exercise selection; and
+adaptive revision proposals with progression decisions. The generation case
+is `generated`; the adaptation case is `revision_proposed`; the evaluation
+case deliberately records `hard_constraint_violation` so native consumers
+must preserve failure semantics.
+
+Verification: rerunning the authoring tool reproduced the committed artifacts;
+all five expected JSON documents loaded successfully and reported the statuses
+above. Python package tests could not be rerun in this environment because
+neither `pytest` nor the `pytest` Python module is installed. No Swift, Kotlin,
+or R source was changed.
+
+Part B commit: pending commit after review.
 
 ## Part A audit evidence
 

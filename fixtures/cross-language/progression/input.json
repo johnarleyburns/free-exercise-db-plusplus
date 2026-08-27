@@ -1,0 +1,182 @@
+{
+  "cases": [
+    {
+      "id": "top-reps-effort-ok",
+      "prescription": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "prescriptionId": "bench-rx",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "state": {
+        "lastActual": {
+          "sets": [
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2
+            },
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2
+            }
+          ]
+        },
+        "planContext": {
+          "planId": "p",
+          "revisionId": "r"
+        },
+        "planId": "p",
+        "revisionId": "r"
+      }
+    },
+    {
+      "id": "reps-below-top",
+      "prescription": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "prescriptionId": "bench-rx",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "state": {
+        "lastActual": {
+          "sets": [
+            {
+              "completed": true,
+              "reps": 8,
+              "rir": 2
+            },
+            {
+              "completed": true,
+              "reps": 9,
+              "rir": 2
+            }
+          ]
+        },
+        "planContext": {
+          "planId": "p",
+          "revisionId": "r"
+        },
+        "planId": "p",
+        "revisionId": "r"
+      }
+    },
+    {
+      "id": "incomplete-workout",
+      "prescription": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "prescriptionId": "bench-rx",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "state": {
+        "lastActual": {
+          "sets": [
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2
+            }
+          ]
+        },
+        "planContext": {
+          "planId": "p",
+          "revisionId": "r"
+        },
+        "planId": "p",
+        "revisionId": "r"
+      }
+    },
+    {
+      "id": "effort-too-high",
+      "prescription": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "prescriptionId": "bench-rx",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "state": {
+        "lastActual": {
+          "sets": [
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 1
+            },
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2
+            }
+          ]
+        },
+        "planContext": {
+          "planId": "p",
+          "revisionId": "r"
+        },
+        "planId": "p",
+        "revisionId": "r"
+      }
+    }
+  ],
+  "parameters": {
+    "loadIncrement": {
+      "unit": "kg",
+      "value": 2.5
+    }
+  },
+  "policy": "double-progression-v1"
+}

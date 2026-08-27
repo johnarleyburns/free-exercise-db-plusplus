@@ -1,0 +1,238 @@
+{
+  "effort-too-high": {
+    "after": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "before": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "decisionType": "hold",
+    "evidence": {
+      "actualEffort": [
+        1,
+        2
+      ],
+      "sets": [
+        {
+          "actualReps": 10,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        },
+        {
+          "actualReps": 10,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        }
+      ]
+    },
+    "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+    "planId": "p",
+    "policyId": "double-progression-v1",
+    "policyVersion": "1.0.0",
+    "prescriptionId": "bench-rx",
+    "provenance": {},
+    "reasonCodes": [
+      "EFFORT_TOO_HIGH"
+    ],
+    "revisionId": "r",
+    "schemaVersion": "0.1.0"
+  },
+  "incomplete-workout": {
+    "after": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "before": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "decisionType": "hold",
+    "evidence": {
+      "actualSetCount": 1,
+      "plannedSetCount": 2
+    },
+    "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+    "planId": "p",
+    "policyId": "double-progression-v1",
+    "policyVersion": "1.0.0",
+    "prescriptionId": "bench-rx",
+    "provenance": {},
+    "reasonCodes": [
+      "INCOMPLETE_WORKOUT",
+      "SET_TARGET_NOT_COMPLETED"
+    ],
+    "revisionId": "r",
+    "schemaVersion": "0.1.0"
+  },
+  "reps-below-top": {
+    "after": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "before": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "decisionType": "hold",
+    "evidence": {
+      "sets": [
+        {
+          "actualReps": 8,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        },
+        {
+          "actualReps": 9,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        }
+      ]
+    },
+    "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+    "planId": "p",
+    "policyId": "double-progression-v1",
+    "policyVersion": "1.0.0",
+    "prescriptionId": "bench-rx",
+    "provenance": {},
+    "reasonCodes": [
+      "REP_TARGET_NOT_ACHIEVED"
+    ],
+    "revisionId": "r",
+    "schemaVersion": "0.1.0"
+  },
+  "top-reps-effort-ok": {
+    "after": {
+      "load": {
+        "unit": "kg",
+        "value": 82.5
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "before": {
+      "load": {
+        "unit": "kg",
+        "value": 80
+      },
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "sets": 2
+    },
+    "decisionType": "increase_load",
+    "evidence": {
+      "newLoad": {
+        "unit": "kg",
+        "value": 82.5
+      },
+      "previousLoad": {
+        "unit": "kg",
+        "value": 80
+      },
+      "sets": [
+        {
+          "actualReps": 10,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        },
+        {
+          "actualReps": 10,
+          "plannedReps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "setId": null
+        }
+      ]
+    },
+    "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+    "planId": "p",
+    "policyId": "double-progression-v1",
+    "policyVersion": "1.0.0",
+    "prescriptionId": "bench-rx",
+    "provenance": {},
+    "reasonCodes": [
+      "EFFORT_WITHIN_TARGET",
+      "REP_TARGET_ACHIEVED"
+    ],
+    "revisionId": "r",
+    "schemaVersion": "0.1.0"
+  }
+}
