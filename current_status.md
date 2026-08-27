@@ -1085,5 +1085,10 @@ Rules for the next implementer:
 - Do not expand Kotlin/R functionality, browse externally, or add LLM,
   network, subprocess, UI, FoundationModels, or CloudKit dependencies.
 
-Current next action: inspect the baseline and create the remediation audit
-ledger, as specified by Phase 0 / Part 0A.
+Part 0A is complete in commit `42fb43b`. Part 1A is complete in commit
+`f0e7084`: `ROADMAP.md` has been rewritten so v1.12 is Swift SPM
+production hardening, Kotlin is v1.13, and R is v1.14. The roadmap scan found
+no stale v1.12 engine/parity assertions.
+
+Current next action: begin Phase 2 / Part 2A from the HANDOFF addendum — build
+immutable deterministic Swift TrainingEngine indexes and add focused tests.
