@@ -860,25 +860,14 @@ public func resolveIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, profi
 public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil) -> JSONValue {
   let resolution = resolveIntent(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf)
   let resolutionJSON = (try? JSONEncoder().encode(resolution)).flatMap { try? JSONDecoder().decode(JSONValue.self, from: $0) } ?? .null
-  guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let p = resolution.resolvedProfile?.objectValue, let availability = p["availability"]?.objectValue else { return .object(["resolution": resolutionJSON, "generation": .null]) }
-  let range = availability["sessionsPerCycle"]?.objectValue ?? [:]; let count = Int(range["target"]?.numberValue ?? range["min"]?.numberValue ?? 1)
-  let exerciseCount = Int(availability["exercisesPerSession"]?.objectValue?["target"]?.numberValue ?? 3)
+  guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let resolvedProfile = resolution.resolvedProfile, let resolvedTarget = resolution.resolvedTarget else { return .object(["resolution": resolutionJSON, "generation": .null]) }
   let constraints = x.exerciseConstraints
-  let excluded = Set(constraints?.excludedExerciseIds ?? [])
-  let required = (constraints?.requiredExerciseIds ?? []) + (constraints?.lockedExerciseIds ?? [])
-  let ids = Array((required + database.exerciseIDs.sorted().filter { !excluded.contains($0) && !required.contains($0) }).prefix(max(1, exerciseCount)))
-  let preferred = (resolution.resolvedProfile?.objectValue?["availability"]?.objectValue?["preferredDayOffsets"]?.arrayValues.compactMap { $0.numberValue.map(Int.init) } ?? [])
-  let excludedDays = Set(resolution.resolvedProfile?.objectValue?["availability"]?.objectValue?["excludedDayOffsets"]?.arrayValues.compactMap { $0.numberValue.map(Int.init) } ?? [])
-  let cycle = Int(availability["cycleLengthDays"]?.numberValue ?? 7)
-  let offsets = (preferred + Array(0..<cycle)).filter { !excludedDays.contains($0) }.reduce(into: [Int]()) { if !$0.contains($1) { $0.append($1) } }.prefix(max(1, count))
-  let reps = resolution.generationOptions.objectValue?["repDefaults"] ?? .object([:])
-  let sessions: [JSONValue] = offsets.enumerated().map { index, offset in
-    let exercises: [JSONValue] = ids.enumerated().map { i, id in
-      .object(["prescriptionId": .string("intent-rx-\(index + 1)-\(i + 1)"), "exerciseId": .string(id), "order": .number(Double(i + 1)), "sets": .number(1), "reps": reps])
-    }
-    return .object(["planSessionId": .string("intent-session-\(index + 1)"), "dayOffset": .number(Double(offset)), "exercises": .array(exercises)])
-  }
-  return .object(["resolution": resolutionJSON, "generation": .object(["status": .string("generated"), "schemaVersion": .string("0.2.0"), "sessions": .array(sessions)])])
+  let options = resolution.generationOptions.objectValue ?? [:]
+  let generated = generatePlan(profile: resolvedProfile, target: resolvedTarget, database: database,
+    policy: resolution.planningPolicy ?? "full-body-general-v1", relationships: relationships,
+    trainingState: options["trainingState"], requiredExerciseIds: constraints?.requiredExerciseIds ?? [],
+    lockedExerciseIds: constraints?.lockedExerciseIds ?? [], options: .object(["planId": .string("generated-plan"), "revisionId": .string("r1")]))
+  return .object(["resolution": resolutionJSON, "generation": generated])
 }
 public func mergeTarget(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
   merge(base, explicit)

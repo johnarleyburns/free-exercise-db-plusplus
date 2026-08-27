@@ -390,7 +390,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     let flagship = try JSONDecoder().decode(WorkoutIntent.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")))
     let generated = generatePlanFromIntent(flagship, database: database)
     let sessions: [JSONValue]
-    if case .array(let values)? = generated.objectValue?["generation"]?.objectValue?["sessions"] { sessions = values } else { sessions = [] }
+    if case .array(let values)? = generated.objectValue?["generation"]?.objectValue?["plan"]?.objectValue?["sessions"] { sessions = values } else { sessions = [] }
     XCTAssertEqual(sessions.compactMap { value in if case .number(let n)? = value.objectValue?["dayOffset"] { return Int(n) }; return nil }, [0, 1, 2, 3, 5])
   }
 
@@ -459,6 +459,21 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(decision.decisionType, "hold")
     XCTAssertEqual(decision.policyId, "hold-v1")
     XCTAssertEqual(decision.reasonCodes, ["POLICY_HOLD"])
+  }
+
+  func testProductionGeneratorReturnsEvaluatedResultEnvelope() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/generation/input.json")))
+    let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+    let relationships = try JSONDecoder().decode(ExerciseRelationships.self, from: JSONEncoder().encode(input.objectValue?["relationships"] ?? .null))
+    let result = TrainingEngine(database: database, relationships: relationships).generatePlan(
+      profile: input.objectValue?["profile"] ?? .null, target: input.objectValue?["target"] ?? .null,
+      policy: "full-body-general-v1", requiredExerciseIds: ["Barbell_Bench_Press_-_Medium_Grip"])
+    XCTAssertEqual(result.objectValue?["status"], .string("generated"))
+    XCTAssertNotNil(result.objectValue?["plan"]?.objectValue?["sessions"])
+    XCTAssertNotNil(result.objectValue?["evaluation"])
+    XCTAssertEqual(result.objectValue?["policy"]?.objectValue?["policyId"], .string("full-body-general-v1"))
   }
 
 }

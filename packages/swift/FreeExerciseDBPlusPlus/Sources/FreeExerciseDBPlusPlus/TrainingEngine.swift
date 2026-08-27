@@ -54,6 +54,23 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.applyProgressionPolicy(policy, prescription: prescription, exerciseState: exerciseState, parameters: parameters)
   }
 
+  /// Generate a production-equivalent PLAN result using the native database,
+  /// relationships, evaluator, and deterministic planning policy.
+  public func generatePlan(profile: JSONValue, target: JSONValue,
+                           policy: String = "full-body-general-v1",
+                           trainingState: JSONValue? = nil,
+                           currentPlan: JSONValue? = nil,
+                           requiredExerciseIds: [String] = [],
+                           lockedExerciseIds: [String] = [],
+                           additionalExclusions: [String] = [],
+                           options: JSONValue? = nil) -> JSONValue {
+    FreeExerciseDBPlusPlus.generatePlan(profile: profile, target: target, database: database,
+      policy: policy, relationships: relationships, trainingState: trainingState,
+      currentPlan: currentPlan, requiredExerciseIds: requiredExerciseIds,
+      lockedExerciseIds: lockedExerciseIds, additionalExclusions: additionalExclusions,
+      options: options)
+  }
+
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
   }
