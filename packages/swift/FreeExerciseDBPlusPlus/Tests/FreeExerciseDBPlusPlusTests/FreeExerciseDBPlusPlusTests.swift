@@ -3,6 +3,17 @@ import XCTest
 @testable import FreeExerciseDBPlusPlus
 
 final class FreeExerciseDBPlusPlusTests: XCTestCase {
+    func testTrainingStateExcludesFutureWorkoutOnSameUTCDate() throws {
+        let history: JSONValue = .object([
+            "subjectId": .string("s"), "plans": .array([]), "planActivations": .array([]),
+            "workouts": .array([
+                .object(["startTime": .string("2026-08-25T11:00:00Z"), "exercises": .array([.object(["exerciseId": .string("before"), "sets": .array([.object(["completed": .bool(true)])])])])]),
+                .object(["startTime": .string("2026-08-25T13:00:00Z"), "exercises": .array([.object(["exerciseId": .string("after"), "sets": .array([.object(["completed": .bool(true)])])])])])
+            ])
+        ])
+        XCTAssertEqual(Set(deriveTrainingState(history, asOf: "2026-08-25T12:00:00Z").objectValue!["exerciseState"]!.objectValue!.keys), Set(["before"]))
+    }
+
   func testDatabaseLoadsAndQueries() throws {
     let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
       .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()

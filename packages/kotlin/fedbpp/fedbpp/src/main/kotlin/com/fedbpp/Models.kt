@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable data class ExerciseAnnotation(
     val direct: List<String> = emptyList(), val indirect: List<String> = emptyList(),
     val stabilizers: List<String> = emptyList(), val volumeEligible: Boolean = false,
-    val confidence: String? = null
+    val confidence: String? = null, val patterns: List<String> = emptyList()
 )
 @Serializable data class Exercise(val exerciseId: String, val annotation: ExerciseAnnotation = ExerciseAnnotation(), val source: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap())
 @Serializable internal data class DatabaseDocument(val metadata: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap(), val exercises: Map<String, Exercise> = emptyMap())

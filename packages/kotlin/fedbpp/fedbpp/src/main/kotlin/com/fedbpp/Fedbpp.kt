@@ -17,6 +17,8 @@ class Database private constructor(private val document: DatabaseDocument) {
     val metadata get() = document.metadata
     val size get() = document.exercises.size
     val exerciseIds get() = document.exercises.keys.toSet()
+    /** Stable DB++ exercise view for native analysis and planning. */
+    val exercises get() = document.exercises.toSortedMap()
     val equipmentVocabulary get() = document.exercises.values.mapNotNull { it.source["equipment"]?.jsonPrimitive?.contentOrNull }.toSet()
     fun getExercise(id: String): Exercise = document.exercises[id] ?: throw ExerciseNotFoundException(id)
     fun findExercises(query: String): List<Exercise> = document.exercises.values.filter { it.exerciseId.contains(query, ignoreCase = true) }.sortedBy { it.exerciseId }

@@ -14,6 +14,8 @@ import kotlinx.serialization.json.booleanOrNull
 import kotlinx.serialization.json.intOrNull
 import kotlinx.serialization.json.put
 import java.time.Instant
+import java.time.ZoneOffset
+import java.time.temporal.ChronoUnit
 
 private object IntentPolicyCatalog {
     val root: JsonObject by lazy {
@@ -160,12 +162,13 @@ object WorkoutIntentResolver {
 
 fun deriveTrainingState(history: JsonElement, asOf: String): JsonElement {
     val root = history.jsonObject
-    val asDate = java.time.LocalDate.parse(asOf.substring(0, 10)); val start = asDate.minusDays(27)
     val asOfInstant = runCatching { Instant.parse(asOf) }.getOrNull()
+        ?: throw IllegalArgumentException("asOf must be an offset-aware ISO-8601 timestamp")
+    val asDate = asOfInstant.atOffset(ZoneOffset.UTC).toLocalDate(); val start = asDate.minusDays(27)
     val workouts = root["workouts"]?.jsonArray.orEmpty().map { it.jsonObject }.filter { raw ->
         val stamp = raw["startTime"]?.jsonPrimitive?.content ?: ""
         val instant = runCatching { Instant.parse(stamp) }.getOrNull()
-        instant != null && asOfInstant != null && stamp.substring(0, 10) >= start.toString() && instant <= asOfInstant
+        instant != null && instant.atOffset(ZoneOffset.UTC).toLocalDate() >= start && instant <= asOfInstant
     }
     val counts = mutableMapOf<String, Pair<Int, Int>>()
     workouts.flatMap { it["exercises"]?.jsonArray.orEmpty() }.forEach { raw -> val e = raw.jsonObject; val id = e["exerciseId"]?.jsonPrimitive?.content ?: return@forEach; val old = counts[id] ?: (0 to 0); counts[id] = (old.first + 1) to (old.second + e["sets"]?.jsonArray.orEmpty().count { it.jsonObject["completed"]?.jsonPrimitive?.booleanOrNull == true }) }
@@ -174,11 +177,11 @@ fun deriveTrainingState(history: JsonElement, asOf: String): JsonElement {
         val from = activation["effectiveFrom"]?.jsonPrimitive?.content ?: return@mapNotNull null
         val fromInstant = runCatching { Instant.parse(from) }.getOrNull() ?: return@mapNotNull null
         val toInstant = activation["effectiveTo"]?.jsonPrimitive?.content?.let { runCatching { Instant.parse(it) }.getOrNull() }
-        if (asOfInstant == null || fromInstant > asOfInstant || (toInstant != null && asOfInstant >= toInstant)) return@mapNotNull null
+        if (fromInstant > asOfInstant || (toInstant != null && asOfInstant >= toInstant)) return@mapNotNull null
         val plan = root["plans"]?.jsonArray.orEmpty().map { it.jsonObject }.firstOrNull { it["planId"] == activation["planId"] && it["revisionId"] == activation["revisionId"] } ?: return@mapNotNull null
         Triple(plan, activation, fromInstant)
     }.maxByOrNull { it.third }
-    val activePlan = activePair?.let { (plan, activation, _) -> val elapsed = java.time.LocalDate.parse(activation["effectiveFrom"]!!.jsonPrimitive.content.substring(0, 10)).until(asDate).days.coerceAtLeast(0); buildJsonObject { put("planId", plan["planId"]!!); put("revisionId", plan["revisionId"]!!); put("phaseId", kotlinx.serialization.json.JsonNull); put("cyclePosition", elapsed % (plan["cycle"]?.jsonObject?.get("lengthDays")?.jsonPrimitive?.intOrNull ?: 7) + 1) } } ?: JsonObject(emptyMap())
+    val activePlan = activePair?.let { (plan, _, fromInstant) -> val elapsed = ChronoUnit.DAYS.between(fromInstant.atOffset(ZoneOffset.UTC).toLocalDate(), asDate).coerceAtLeast(0); buildJsonObject { put("planId", plan["planId"]!!); put("revisionId", plan["revisionId"]!!); put("phaseId", kotlinx.serialization.json.JsonNull); put("cyclePosition", elapsed % (plan["cycle"]?.jsonObject?.get("lengthDays")?.jsonPrimitive?.intOrNull ?: 7) + 1) } } ?: JsonObject(emptyMap())
     val window = buildJsonObject { put("type", "last_28_days"); put("start", start.toString()); put("end", asDate.toString()) }
     return buildJsonObject { put("stateVersion", "0.1.0"); put("subjectId", root["subjectId"] ?: kotlinx.serialization.json.JsonNull); put("asOf", asOf); put("historyWindow", window); put("activePlan", activePlan); put("exerciseState", exercises); put("familyState", buildJsonObject { }); put("muscleState", buildJsonObject { }); put("adherenceState", buildJsonObject { }); put("sessionState", kotlinx.serialization.json.buildJsonArray { }); put("provenance", buildJsonObject { put("stateVersion", "0.1.0"); put("asOf", asOf); put("historyWindow", window) }) }
 }
@@ -188,18 +191,9 @@ fun resolveIntent(intent: WorkoutIntent, database: Database? = null, profile: Js
 fun generatePlanFromIntent(intent: WorkoutIntent, database: Database, profile: JsonElement? = null, target: JsonElement? = null, relationships: ExerciseRelationships? = null, history: JsonElement? = null, asOf: String? = null): JsonElement {
     val resolution = resolveIntent(intent, database, profile, target, relationships, history, asOf)
     if (resolution.status !in setOf("resolved", "resolved_with_defaults")) return buildJsonObject { put("resolution", fedbppJson.encodeToJsonElement(IntentResolutionResult.serializer(), resolution)); put("generation", kotlinx.serialization.json.JsonNull) }
-    val availability = (resolution.resolvedProfile as? JsonObject)?.get("availability")?.jsonObject ?: JsonObject(emptyMap())
-    val range = availability["sessionsPerCycle"]?.jsonObject; val count = range?.get("target")?.jsonPrimitive?.intOrNull ?: range?.get("min")?.jsonPrimitive?.intOrNull ?: 1
-    val exerciseCount = availability["exercisesPerSession"]?.jsonObject?.get("target")?.jsonPrimitive?.intOrNull ?: 3
-    val constraints = intent.exerciseConstraints
-    val excluded = constraints?.excludedExerciseIds.orEmpty().toSet()
-    val required = (constraints?.requiredExerciseIds.orEmpty() + constraints?.lockedExerciseIds.orEmpty()).distinct()
-    val ids = (required + database.exerciseIds.sorted().filter { it !in excluded && it !in required }).take(exerciseCount.coerceAtLeast(1))
-    val preferred = (availability["preferredDayOffsets"] as? JsonArray)?.mapNotNull { it.jsonPrimitive.intOrNull }.orEmpty()
-    val excludedDays = (availability["excludedDayOffsets"] as? JsonArray)?.mapNotNull { it.jsonPrimitive.intOrNull }.orEmpty().toSet()
-    val cycle = availability["cycleLengthDays"]?.jsonPrimitive?.intOrNull ?: 7
-    val offsets = (preferred + (0 until cycle)).distinct().filterNot { it in excludedDays }.take(count.coerceAtLeast(1))
-    return buildJsonObject { put("resolution", fedbppJson.encodeToJsonElement(IntentResolutionResult.serializer(), resolution)); put("generation", buildJsonObject { put("status", "generated"); put("schemaVersion", "0.2.0"); put("sessions", kotlinx.serialization.json.buildJsonArray { offsets.forEachIndexed { n, offset -> add(buildJsonObject { put("planSessionId", "intent-session-${n + 1}"); put("dayOffset", offset); put("exercises", kotlinx.serialization.json.buildJsonArray { ids.forEachIndexed { i, id -> add(buildJsonObject { put("prescriptionId", "intent-rx-${n + 1}-${i + 1}"); put("exerciseId", id); put("order", i + 1); put("sets", 1); put("reps", resolution.generationOptions.jsonObject["repDefaults"] ?: JsonObject(emptyMap())) }) } }) }) } }) }) }
+    val generated = generatePlan(resolution.resolvedProfile!!, resolution.resolvedTarget!!, database, relationships,
+        intent.exerciseConstraints?.requiredExerciseIds.orEmpty() + intent.exerciseConstraints?.lockedExerciseIds.orEmpty())
+    return buildJsonObject { put("resolution", fedbppJson.encodeToJsonElement(IntentResolutionResult.serializer(), resolution)); put("generation", generated) }
 }
 fun resolveIntent(intent: WorkoutIntent, profile: JsonElement?, target: JsonElement?): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, profile = profile, target = target)
 fun decodeWorkoutIntent(json: String): WorkoutIntent {
