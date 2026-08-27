@@ -62,12 +62,14 @@ public struct TrainingEngine: Sendable {
                            currentPlan: JSONValue? = nil,
                            requiredExerciseIds: [String] = [],
                            lockedExerciseIds: [String] = [],
+                           requiredFamilyIds: [String] = [],
                            additionalExclusions: [String] = [],
                            options: JSONValue? = nil) -> JSONValue {
     FreeExerciseDBPlusPlus.generatePlan(profile: profile, target: target, database: database,
       policy: policy, relationships: relationships, trainingState: trainingState,
       currentPlan: currentPlan, requiredExerciseIds: requiredExerciseIds,
-      lockedExerciseIds: lockedExerciseIds, additionalExclusions: additionalExclusions,
+      lockedExerciseIds: lockedExerciseIds, requiredFamilyIds: requiredFamilyIds,
+      additionalExclusions: additionalExclusions,
       options: options)
   }
 

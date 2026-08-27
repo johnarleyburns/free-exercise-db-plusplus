@@ -498,4 +498,23 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertNil(engine.planningPolicy("unknown-policy"))
   }
 
+  func testProductionGeneratorAppliesFamilyAndLockedPlacementFilters() {
+    let press = Exercise(exerciseId: "press", annotation: ExerciseAnnotation(direct: ["chest"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Press")])
+    let row = Exercise(exerciseId: "row", annotation: ExerciseAnnotation(direct: ["lats"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Row")])
+    let database = FEDatabase(exercises: ["press": press, "row": row])
+    let relationships = ExerciseRelationships(schemaVersion: "0.1.0", families: ["press-family": ExerciseFamily(familyId: "press-family", name: "Press", aliases: [])], relationships: [ExerciseRelationship(sourceExerciseId: "press", targetExerciseId: nil, familyId: "press-family", relationship: "member_of_family", dimensions: [:], confidence: "high")])
+    let profile: JSONValue = .object(["schemaVersion": .string("0.1.0"), "equipment": .array([.string("barbell")]), "availability": .object(["cycleLengthDays": .number(7), "sessionsPerCycle": .object(["target": .number(2)])]), "constraints": .object(["excludedFamilyIds": .array([.string("row-family")])])])
+    let target: JSONValue = .object(["schemaVersion": .string("0.1.0"), "periodDays": .number(7)])
+    let current: JSONValue = .object(["sessions": .array([.object(["dayOffset": .number(3), "exercises": .array([.object(["exerciseId": .string("press")])])])])])
+    let result = TrainingEngine(database: database, relationships: relationships).generatePlan(profile: profile, target: target, currentPlan: current, lockedExerciseIds: ["press"], requiredFamilyIds: ["press-family"])
+    let sessions: [JSONValue]
+    if case .array(let values)? = result.objectValue?["plan"]?.objectValue?["sessions"] { sessions = values } else { sessions = [] }
+    let lockedSession = sessions.first { $0.objectValue?["dayOffset"] == .number(3) }
+    XCTAssertNotNil(lockedSession)
+    let firstExercises: [JSONValue]
+    if case .array(let values)? = lockedSession?.objectValue?["exercises"] { firstExercises = values } else { firstExercises = [] }
+    XCTAssertEqual(firstExercises.first?.objectValue?["exerciseId"], .string("press"))
+    XCTAssertFalse(sessions.flatMap { value -> [JSONValue] in if case .array(let values)? = value.objectValue?["exercises"] { return values }; return [] }.contains { $0.objectValue?["exerciseId"] == .string("row") })
+  }
+
 }

@@ -866,7 +866,8 @@ public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, pro
   let generated = generatePlan(profile: resolvedProfile, target: resolvedTarget, database: database,
     policy: resolution.planningPolicy ?? "full-body-general-v1", relationships: relationships,
     trainingState: options["trainingState"], requiredExerciseIds: constraints?.requiredExerciseIds ?? [],
-    lockedExerciseIds: constraints?.lockedExerciseIds ?? [], options: .object(["planId": .string("generated-plan"), "revisionId": .string("r1")]))
+    lockedExerciseIds: constraints?.lockedExerciseIds ?? [], requiredFamilyIds: constraints?.requiredFamilyIds ?? [],
+    options: .object(["planId": .string("generated-plan"), "revisionId": .string("r1")]))
   return .object(["resolution": resolutionJSON, "generation": generated])
 }
 public func mergeTarget(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {
