@@ -66,8 +66,7 @@ native work; no Python rewrite was required.
 - Part N — Swift TrainingState windows: **complete; audited below**
 - Part O — Swift active-plan resolution: **complete; audited below**
 - Part P — Swift exercise state: **complete; audited below**
-- Part Q — Swift adherence-rich state: pending the detailed order in
-  `HANDOFF.md`
+- Part Q — Swift adherence-rich state: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -347,6 +346,24 @@ changed.
 
 Part P commit: `dcd013f` (`feat: expand Swift exercise state`).
 
+## Part Q adherence evidence
+
+Added Python-shaped adherence state to the Swift projection. It now emits
+session and exercise-prescription rows with matched, substitution, missing,
+and unplanned classifications; canonical counted-set totals; set-count
+adherence; comparable reps/load/RPE/RIR adherence when planned and actual
+telemetry is present; missed-session and unplanned collections; repeated skip
+and substitution counts; and substitution history grouped by prescription.
+Missing telemetry remains explicitly non-comparable rather than being
+converted to zero.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 27 tests, including canonical matched adherence and unplanned/
+substitution regressions. `git diff --check` passed. No Python, Kotlin, or R
+source was changed.
+
+Part Q commit: `a7f564f` (`feat: add Swift adherence state`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -396,8 +413,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `dcd013f`
-  (`feat: expand Swift exercise state`)
+- Current committed HEAD before the next implementation phase: `a7f564f`
+  (`feat: add Swift adherence state`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
