@@ -62,8 +62,9 @@ native work; no Python rewrite was required.
 - Part J — Swift TARGET validation and merging: **complete; audited below**
 - Part K — Swift TrainingHistory model and semantics: **complete; audited below**
 - Part L — Swift offset-aware time: **complete; audited below**
-- Parts M–N — Swift full TrainingState and windows: pending the detailed order
-  in `HANDOFF.md`
+- Part M — Swift full TrainingState envelope: **complete; audited below**
+- Part N — Swift TrainingState windows: pending the detailed order in
+  `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
@@ -273,6 +274,25 @@ changed.
 
 Part L commit: `b9829a0` (`feat: add Swift offset-aware time semantics`).
 
+## Part M state evidence
+
+Completed the typed `TrainingState` envelope and added a typed
+`TrainingEngine.deriveTrainingState` overload. The state now consistently
+represents `stateVersion`, `subjectId`, `asOf`, `historyWindow`, `activePlan`,
+`exerciseState`, `familyState`, `muscleState`, `adherenceState`, `sessionState`,
+and `provenance`, with Codable defaults for optional/empty sections. The
+existing JSON projection now emits `sessionState` on valid results and records
+the as-of numeric offset in provenance. Detailed exercise-state, adherence,
+active-plan-resolution, and alternate-window semantics remain assigned to
+Parts N/Q/O/P as specified by `HANDOFF.md`.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 22 tests, including typed state-envelope decoding and invalid
+as-of handling. `git diff --check` passed. No Python, Kotlin, or R source was
+changed.
+
+Part M commit: `3f55dd8` (`feat: add typed Swift training state envelope`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -322,8 +342,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `b9829a0`
-  (`feat: add Swift offset-aware time semantics`)
+- Current committed HEAD before the next implementation phase: `3f55dd8`
+  (`feat: add typed Swift training state envelope`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
