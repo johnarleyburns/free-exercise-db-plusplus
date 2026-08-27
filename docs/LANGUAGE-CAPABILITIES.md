@@ -2,31 +2,26 @@
 
 | Capability | Python | Swift | Kotlin/JVM | R |
 | --- | --- | --- | --- | --- |
-| WorkoutIntent decode + validation | full | native | native | native |
-| Intent resolution (policies/defaults/status) | full | native core | native core | native core |
-| TARGET merge/relational validation | full | native helpers + resolver | native helpers + resolver | native helpers + resolver |
-| TrainingProfile/history integration | full | profile JSON input; bounded 28-day state projection | profile JSON input; bounded 28-day state projection | profile input; bounded 28-day state projection |
-| Plan generation from intent | full | native deterministic draft | native deterministic draft | native deterministic draft |
-| Plan evaluation | full | read-only coverage | read-only ACTUAL | read-only ACTUAL |
+| WorkoutIntent decode + validation | full | full native | partial legacy/current | partial legacy/current |
+| Intent resolution (policies/defaults/status) | full | full native | partial legacy/current | partial legacy/current |
+| TARGET merge/relational validation | full | full native | partial legacy/current | partial legacy/current |
+| TrainingProfile/history integration | full | full native, adherence-rich | partial legacy/current | partial legacy/current |
+| Plan generation from intent | full | full native production generator | deferred to v1.13 | deferred to v1.14 |
+| Plan evaluation | full | full native | deferred to v1.13 | deferred to v1.14 |
+| Progression and CoachDecision | full | full native | deferred to v1.13 | deferred to v1.14 |
+| Adaptive coaching | full | full native | deferred to v1.13 | deferred to v1.14 |
 
-Swift, Kotlin, and R resolution models are offline and do not invoke Python or
-network services. Native core resolution includes policy defaults, weekday
-mapping, deterministic equipment overrides, profile equipment precedence,
-partial TARGET merge/validation, stable provenance, and structured conflicts.
-Native history projection and draft generation are implemented within the
-bounded v1.11 scope; full adherence-rich TrainingState and optimizer-equivalent
-generation remain deferred to v1.12.
+Swift is offline and does not invoke Python, network services, or an LLM.
+Swift includes policy defaults, weekday mapping, deterministic equipment
+overrides, profile equipment precedence, partial TARGET merge/validation,
+stable provenance, structured conflicts, full history/state semantics,
+production generation, progression, and adaptive coaching. Kotlin and R
+remain supported at their existing partial boundaries and are intentionally
+deferred to v1.13 and v1.14 respectively.
 
-All non-history canonical resolution fixtures are executed by Python, Swift,
-Kotlin/JVM, and R. History-aware resolution now adds a deterministic native
-TrainingState projection when history and `asOf` are supplied, including the
-bounded 28-day window, active-plan identity/cycle position, and aggregated
-exercise counts. Native timestamp comparisons are offset-aware and exclude
-future same-day observations. The full Python adherence analysis remains
-richer than this portable projection.
+Canonical Python-authored evaluation, history, progression, generation, and
+adaptation fixtures are consumed by Swift under the shared comparison policy.
+Native timestamp comparisons are offset-aware and exclude future observations.
 
-The fixture oracle is `fixtures/cross-language/intent/`. Python, Swift,
-Kotlin/JVM, and R execute the canonical non-history resolution matrix; the
-history fixture and flagship draft are exercised by native package tests and
-isolated consumers. Full adherence-rich TrainingState and production plan
-optimization remain v1.12 work.
+The fixture oracle is `fixtures/cross-language/`; Python remains the semantic
+oracle. Kotlin and R are not v1.11 parity deliverables.
