@@ -18,15 +18,15 @@
 
 ## 1.11.0 - 2026-08-26
 
-- Add native Swift, Kotlin/JVM, and R WorkoutIntent models, validation, and
-  deterministic resolution boundaries.
-- Add stable typed `explicitOverrides`/resolution result shapes and offline
-  policy resources.
-- Add tested bounded native history projections and deterministic draft
-  generation while deferring adherence-rich state and optimizer-equivalent
-  generation to v1.12.
-- Add CI enforcement for canonical resource parity, cross-language fixtures,
-  and isolated Swift, Kotlin/JVM, and R consumers.
+- Complete the Python reference audit and full native Swift engine parity for
+  intent, TARGET/profile handling, evaluation, history/state, progression,
+  production generation, and adaptive coaching.
+- Add deterministic Python-authored evaluation, history, progression,
+  generation, and adaptation fixtures with an external Swift SPM consumer.
+- Keep the release offline with no Python bridge, network dependency, or LLM;
+  defer the full Kotlin port to v1.13 and the full R port to v1.14.
+- Define v1.12 as Swift SPM packaging and app-readiness hardening, with no
+  unfinished core Swift engine semantics.
 
 ## 1.10.1 - 2026-08-26
 

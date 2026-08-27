@@ -428,8 +428,8 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     let decoder = JSONDecoder()
     let directories = try FileManager.default.contentsOfDirectory(at: root.appendingPathComponent("fixtures/cross-language/intent"), includingPropertiesForKeys: nil).filter { $0.hasDirectoryPath }.sorted { $0.lastPathComponent < $1.lastPathComponent }
     for directory in directories {
-      // TrainingState derivation remains a v1.12 native-package item; the
-      // history fixture is exercised by the Python oracle until then.
+      // History-aware intent has a dedicated end-to-end regression below;
+      // this loop covers resolution-only fixture documents.
       if FileManager.default.fileExists(atPath: directory.appendingPathComponent("history.json").path) { continue }
       let intent = try decoder.decode(WorkoutIntent.self, from: Data(contentsOf: directory.appendingPathComponent("input.json")))
       let explicit = directory.appendingPathComponent("target.json")
