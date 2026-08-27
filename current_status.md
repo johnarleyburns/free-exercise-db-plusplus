@@ -72,13 +72,13 @@ native work; no Python rewrite was required.
 - Part T — Swift muscle state: **complete; audited below**
 - Part U — Swift progression policies: **complete; audited below**
 - Part V — Swift double-progression semantics: **complete; audited below**
+- Part W — Swift CoachDecision model contract: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part L by adding offset-aware timestamp parsing and comparison helpers
-for history semantics. Keep Part M state derivation and broader time-window
-behavior out of that cycle; preserve the Python oracle and do not work on
-Kotlin or R.
+Begin Part X by wiring the typed CoachDecision model into the Swift adaptive
+coaching façade. Keep Kotlin and R deferred, preserve the Python oracle, and
+do not begin later adaptive-planning parts in that cycle.
 
 ## Part B fixture evidence
 
@@ -449,6 +449,22 @@ passed all 32 tests, including all four cases in
 Kotlin, or R source was changed.
 
 Part V commit: `4290f2d` (`feat: match Swift progression edge semantics`).
+
+## Part W CoachDecision evidence
+
+Added the public Swift `CoachDecision` model contract with the canonical
+decision types and reason-code vocabulary, a public initializer, non-mutating
+contract validation, and explicit Codable behavior. Schema-required nullable
+identifiers are encoded as JSON `null`, while the optional `decisionId` is
+emitted only when present. Existing progression envelopes decode directly into
+the typed model without changing the progression API or its output shape.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 34 tests, including public-model round-trip and progression-envelope
+decoding coverage. `git diff --check` passed. No Python, Kotlin, or R source was
+changed.
+
+Part W commit: `606bbdb` (`feat: add Swift CoachDecision model contract`).
 
 ## Part A audit evidence
 
