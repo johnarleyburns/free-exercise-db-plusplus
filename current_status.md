@@ -467,6 +467,10 @@ Part BU verification: the remote zero-gap review found no remaining source,
 resource, fixture, documentation, or consumer issue in the released v1.11
 scope.
 
+Part BW release-preparation commit: `fe84ebc` updated `CHANGELOG.md` and
+`docs/releases/v1.11.0.md` for the final Python/Swift scope. Follow-up CI
+resource correction is `87ecc31`; both are included in the release history.
+
 
 Part BP verification: repeated Python flagship intent resolution is identical,
 and the Swift determinism/idempotence suite passes with 42 tests.
