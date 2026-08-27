@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.10.1 released**
-Current stable release: **v1.10.1**
+Status: **v1.11.0 release prepared**
+Current stable release: **v1.11.0**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Swift, Kotlin, Python, and R packages**
 
 ---
@@ -36,18 +36,19 @@ Python / services, notebooks, automation
 R / research and statistical workflows
 ```
 
-## v1.11 implementation status (2026-08-26)
+## v1.11 COMPLETE (2026-08-26)
 
-The native WorkoutIntent model/validation/resolution boundary is implemented
-for Swift, Kotlin/JVM, and R against the frozen Python v1.10.1 contract.
-Complete DB-aware TARGET/profile/history parity and native intent-to-plan
-generation remain open v1.12 work; the capability matrix and audit document
-are authoritative and do not claim those features prematurely.
+Cross-language WorkoutIntent resolution parity is complete for Swift,
+Kotlin/JVM, and R against the frozen Python v1.10.1 contract. Canonical
+fixtures, resource copies, isolated consumers, bounded native history
+projections, and deterministic native drafts are audited and tested. The
+capability matrix and audit document define the supported boundary.
 
-v1.12 explicitly targets production-quality Swift SPM, the complete native
-intent-to-plan path required by an Apple app, a clean structured
-LLM-produced-WorkoutIntent boundary, and validation/clarification APIs for
-conversational hosts. DB++ will remain free of LLM vendor dependencies.
+v1.12 NEXT: production-grade native training-engine completion, especially
+Swift SPM for drop-in Apple application integration. It owns full native plan
+generation parity where incomplete, full native PlanEvaluation, adherence-rich
+TrainingState, adaptive coaching, and distribution polish. DB++ will remain
+free of LLM vendor dependencies.
 
 The end goal by **v1.12** is:
 
@@ -293,10 +294,9 @@ Adaptive coaching / PLAN revision proposal engine.
 ```text
 v1.10  WorkoutIntent + deterministic intent/goal/environment resolution
 
-v1.11  Cross-language semantic parity for WorkoutIntent,
-       resolution, evaluation, and plan generation
+v1.11  COMPLETE: cross-language WorkoutIntent resolution parity
 
-v1.12  Production-ready language packages:
+v1.12  NEXT: production-grade native training-engine completion:
        Swift SPM
        Kotlin/JVM package
        Python package

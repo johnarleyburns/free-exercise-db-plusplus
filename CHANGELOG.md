@@ -16,14 +16,17 @@
 
 # Changelog
 
-## 1.11.0 (unreleased)
+## 1.11.0 - 2026-08-26
 
 - Add native Swift, Kotlin/JVM, and R WorkoutIntent models, validation, and
   deterministic resolution boundaries.
 - Add stable typed `explicitOverrides`/resolution result shapes and offline
   policy resources.
-- Document cross-language parity status and defer native plan generation to
-  v1.12 rather than claiming unsupported parity.
+- Add tested bounded native history projections and deterministic draft
+  generation while deferring adherence-rich state and optimizer-equivalent
+  generation to v1.12.
+- Add CI enforcement for canonical resource parity, cross-language fixtures,
+  and isolated Swift, Kotlin/JVM, and R consumers.
 
 ## 1.10.1 - 2026-08-26
 
