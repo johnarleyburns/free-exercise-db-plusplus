@@ -22,6 +22,20 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(try db.getExercise("Bench_Dips").exerciseId, "Bench_Dips")
     XCTAssertFalse(db.findExercises(containing: "bench").isEmpty)
   }
+
+  func testTypedCoreDomainDocumentsDecodeAndRoundTrip() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let decoder = JSONDecoder()
+    let target = try decoder.decode(VolumeTarget.self, from: Data(contentsOf: root.appendingPathComponent("examples/targets/example-hypertrophy.json")))
+    XCTAssertEqual(target.muscles["chest"]?.min, 8)
+    let profile = try decoder.decode(TrainingProfile.self, from: Data(contentsOf: root.appendingPathComponent("examples/plan-evaluation/profile-golden.json")))
+    XCTAssertEqual(profile.availability?.minutesPerSession?.max, 60)
+    let plan = try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: root.appendingPathComponent("examples/plans/basic-upper-lower.json")))
+    let history = TrainingHistory(subjectId: "opaque", plans: [plan], targets: [target])
+    let roundTrip = try decoder.decode(TrainingHistory.self, from: JSONEncoder().encode(history))
+    XCTAssertEqual(roundTrip, history)
+  }
   func testEffectiveSets() throws {
     let ex = Exercise(
       exerciseId: "x",
