@@ -569,4 +569,12 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     }
   }
 
+  func testSemanticGenerationFailuresAreReturnedAsResults() {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let result = engine.generatePlan(profile: .object([:]), target: .object([:]))
+    XCTAssertEqual(result.objectValue?["status"], .string("invalid_input"))
+    XCTAssertEqual(result.objectValue?["plan"], .null)
+    XCTAssertNotNil(result.objectValue?["unsatisfiedConstraints"])
+  }
+
 }
