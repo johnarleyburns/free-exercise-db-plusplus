@@ -505,8 +505,74 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
     guard let instant = parseOffsetAwareTimestamp(stamp)?.date else { return false }
     return instant >= windowStart && instant <= asOfInstant && instant <= calendar.date(byAdding: .day, value: 1, to: windowEnd)!.addingTimeInterval(-0.001)
   }
+  let countedSetTypes: Set<String> = ["working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted"]
+  func completedSets(_ exercise: [String: JSONValue]) -> [[String: JSONValue]] {
+    (exercise["sets"]?.arrayValues ?? []).compactMap { raw in
+      guard let set = raw.objectValue, set["completed"] == .bool(true) else { return nil }
+      if let type = set["setType"]?.stringValue, !countedSetTypes.contains(type) { return nil }
+      return set
+    }
+  }
+  var exids = Set<String>()
+  if let active {
+    for session in active["sessions"]?.arrayValues ?? [] {
+      for exercise in session.objectValue?["exercises"]?.arrayValues ?? [] {
+        if let id = exercise.objectValue?["exerciseId"]?.stringValue { exids.insert(id) }
+      }
+    }
+  }
+  for workout in workouts {
+    for exercise in workout["exercises"]?.arrayValues ?? [] {
+      if let id = exercise.objectValue?["exerciseId"]?.stringValue { exids.insert(id) }
+    }
+  }
   var exerciseState: [String: JSONValue] = [:]
-  for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; let previous = exerciseState[id]?.objectValue ?? [:]; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number((previous["recentSessionCount"]?.numberValue ?? 0) + 1), "recentCompletedSetCount": .number((previous["recentCompletedSetCount"]?.numberValue ?? 0) + Double(count))]) } }
+  for id in exids.sorted() {
+    let observations = workouts.flatMap { workout -> [([String: JSONValue], [String: JSONValue])] in
+      (workout["exercises"]?.arrayValues ?? []).compactMap { raw in
+        guard let exercise = raw.objectValue, exercise["exerciseId"]?.stringValue == id else { return nil }
+        return (workout, exercise)
+      }
+    }.sorted {
+      let left = parseOffsetAwareTimestamp($0.0["startTime"]?.stringValue ?? "")?.date ?? .distantPast
+      let right = parseOffsetAwareTimestamp($1.0["startTime"]?.stringValue ?? "")?.date ?? .distantPast
+      if left != right { return left < right }
+      return ($0.0["sessionId"]?.stringValue ?? "") < ($1.0["sessionId"]?.stringValue ?? "")
+    }
+    let prescribed = active?["sessions"]?.arrayValues.compactMap { $0.objectValue }.flatMap { $0["exercises"]?.arrayValues.compactMap { $0.objectValue } ?? [] }.filter { $0["exerciseId"]?.stringValue == id } ?? []
+    let last = observations.last
+    let actual = last.map { completedSets($0.1) } ?? []
+    let performances: [JSONValue] = observations.map { pair in
+      let workout = pair.0, exercise = pair.1
+      let sets: [JSONValue] = completedSets(exercise).map { JSONValue.object($0) }
+      return JSONValue.object(["sessionId": workout["sessionId"] ?? .null, "timestamp": workout["startTime"] ?? .null, "exerciseId": exercise["exerciseId"] ?? .null, "exercisePrescriptionId": exercise["exercisePrescriptionId"] ?? .null, "sets": .array(sets)])
+    }
+    let latest = performances.last
+    let recentSets = observations.flatMap { completedSets($0.1) }
+    let recentReps = recentSets.compactMap { $0["reps"]?.numberValue }.map(JSONValue.number)
+    let recentLoads = recentSets.compactMap { $0["load"] }
+    let recentRPE = recentSets.compactMap { $0["rpe"]?.numberValue }.map(JSONValue.number)
+    let recentRIR = recentSets.compactMap { $0["rir"]?.numberValue }.map(JSONValue.number)
+    let recentSetTypes = recentSets.compactMap { $0["setType"] }
+    let values: [String: JSONValue] = [
+      "exerciseId": .string(id),
+      "lastPerformedAt": last?.0["startTime"] ?? .null,
+      "lastPrescription": prescribed.first.map(JSONValue.object) ?? .null,
+      "lastActual": last == nil ? .null : .object(["exerciseId": .string(id), "sets": .array(actual.map(JSONValue.object))]),
+      "latestPerformance": latest ?? .null,
+      "recentPerformances": .array(performances),
+      "recentSessionCount": .number(Double(observations.count)),
+      "recentCompletedSetCount": .number(Double(recentSets.count)),
+      "recentReps": .array(recentReps), "recentLoads": .array(recentLoads),
+      "recentRPE": .array(recentRPE), "recentRIR": .array(recentRIR),
+      "recentSetTypes": .array(recentSetTypes),
+      "substitutionCount": .number(Double(observations.filter { $0.1["substitution"] != nil }.count)),
+      "unplannedCount": .number(Double(observations.filter { $0.1["exercisePrescriptionId"] == nil }.count)),
+      "prescriptionAdherence": .null,
+      "prescriptionAdherenceByPrescriptionId": .object([:])
+    ]
+    exerciseState[id] = .object(values)
+  }
   var activePlan: [String: JSONValue] = [:]
   if let active, let fromDate = activePair?.date {
     let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7); let elapsed = max(0, calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: asOfDate).day ?? 0); let position = elapsed % cycle + 1

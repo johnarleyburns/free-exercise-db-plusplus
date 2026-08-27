@@ -127,6 +127,22 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertThrowsError(try TrainingEngine(database: FEDatabase(exercises: [:])).activePlan(in: history, asOf: "2026-08-15T00:00:00Z"))
   }
 
+  func testExerciseStatePreservesPythonPerformanceFields() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let history = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/history/input.json")))
+    let state = deriveTrainingState(history, asOf: "2026-08-27T12:00:00-04:00")
+    let exercise = state.objectValue?["exerciseState"]?.objectValue?["Barbell_Bench_Press_-_Medium_Grip"]?.objectValue
+    XCTAssertEqual(exercise?["recentSessionCount"], JSONValue.number(1))
+    XCTAssertEqual(exercise?["recentCompletedSetCount"], JSONValue.number(1))
+    XCTAssertEqual(exercise?["recentReps"], JSONValue.array([.number(8)]))
+    XCTAssertEqual(exercise?["recentSetTypes"], JSONValue.array([.string("working")]))
+    XCTAssertEqual(exercise?["latestPerformance"]?.objectValue?["sessionId"], .string("history-workout"))
+    XCTAssertEqual(exercise?["lastPrescription"]?.objectValue?["prescriptionId"], .string("history-rx"))
+    XCTAssertEqual(exercise?["substitutionCount"], JSONValue.number(0))
+    XCTAssertEqual(exercise?["unplannedCount"], JSONValue.number(0))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
