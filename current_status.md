@@ -67,6 +67,7 @@ native work; no Python rewrite was required.
 - Part O — Swift active-plan resolution: **complete; audited below**
 - Part P — Swift exercise state: **complete; audited below**
 - Part Q — Swift adherence-rich state: **complete; audited below**
+- Part R — Swift missingness semantics: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -364,6 +365,23 @@ source was changed.
 
 Part Q commit: `a7f564f` (`feat: add Swift adherence state`).
 
+## Part R missingness evidence
+
+Added the typed `MissingnessState` vocabulary and preserved missingness at the
+adherence-row boundary. Planned-but-unrecorded prescriptions are marked
+`not_recorded`; unplanned additions are `not_prescribed`; missing exercise
+identity is `unknown`; and explicit references outside the linked session are
+`unable_to_match`. These states remain distinct from numeric zero and from
+each other, while the existing plan-analysis paths continue to report
+`unmapped` and `volume_ineligible` coverage separately.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 28 tests, including distinct missingness regressions for recorded,
+unplanned, and unable-to-match actuals. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part R commit: `c443364` (`feat: preserve Swift missingness states`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -413,8 +431,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `a7f564f`
-  (`feat: add Swift adherence state`)
+- Current committed HEAD before the next implementation phase: `c443364`
+  (`feat: preserve Swift missingness states`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
