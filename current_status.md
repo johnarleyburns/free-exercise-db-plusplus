@@ -63,8 +63,9 @@ native work; no Python rewrite was required.
 - Part K — Swift TrainingHistory model and semantics: **complete; audited below**
 - Part L — Swift offset-aware time: **complete; audited below**
 - Part M — Swift full TrainingState envelope: **complete; audited below**
-- Part N — Swift TrainingState windows: pending the detailed order in
-  `HANDOFF.md`
+- Part N — Swift TrainingState windows: **complete; audited below**
+- Parts O–Q — Swift active-plan, exercise-state, and adherence semantics:
+  pending the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
@@ -293,6 +294,23 @@ changed.
 
 Part M commit: `3f55dd8` (`feat: add typed Swift training state envelope`).
 
+## Part N window evidence
+
+Added exact Python-aligned window selection to the Swift state projection and
+`TrainingEngine` façade: `last_7_days`, `last_28_days`,
+`current_plan_cycle`, `current_phase`, and custom date ranges. Window ends are
+clamped to the supplied `asOf` calendar date, ACTUAL filtering remains
+offset-aware and future-exclusive, and cycle/phase boundaries use the active
+activation anchor and plan durations. The existing two-argument API retains
+the `last_28_days` default.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 24 tests, including last-seven-day, custom-range, current-cycle,
+and current-phase boundary regressions. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part N commit: `01341fa` (`feat: add Swift training state windows`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -342,8 +360,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `3f55dd8`
-  (`feat: add typed Swift training state envelope`)
+- Current committed HEAD before the next implementation phase: `01341fa`
+  (`feat: add Swift training state windows`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
