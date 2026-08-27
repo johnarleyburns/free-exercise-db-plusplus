@@ -57,7 +57,8 @@ native work; no Python rewrite was required.
 - Part E — Swift TrainingEngine façade: **complete; audited below**
 - Part F — Swift typed core domain models: **complete; audited below**
 - Part G — Swift database/relationship resource loading: **complete; audited below**
-- Parts H–N — Swift engine architecture and parity: pending the preceding
+- Part H — Swift full PLAN analysis: **complete; audited below**
+- Parts I–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -175,6 +176,23 @@ passed all 15 tests, including bundled resource loading and canonical family
 lookup. `git diff --check` passed. No Python, Kotlin, or R source was changed.
 
 Part G commit: pending commit after review.
+
+## Part H analysis evidence
+
+Expanded Swift `WorkoutPlan.coverage(using:)` to preserve independent set
+ranges and representative scalar views for direct, indirect, stabilizer,
+effective, and movement-pattern volume. The implementation now honors counted
+and excluded set types, database-configured set credits, volume eligibility,
+unmapped/ineligible completeness ranges and prescription IDs, native and
+normalized seven-day periods, phase-specific views, exposure frequency, and
+analysis provenance.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 15 tests, including database set-credit, arbitrary-cycle
+normalization, range, and completeness assertions. `git diff --check` passed.
+No Python, Kotlin, or R source was changed.
+
+Part H commit: pending commit after review.
 
 ## Part A audit evidence
 
