@@ -73,12 +73,14 @@ native work; no Python rewrite was required.
 - Part U — Swift progression policies: **complete; audited below**
 - Part V — Swift double-progression semantics: **complete; audited below**
 - Part W — Swift CoachDecision model contract: **complete; audited below**
+- Part X — Swift production plan generation: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part X by wiring the typed CoachDecision model into the Swift adaptive
-coaching façade. Keep Kotlin and R deferred, preserve the Python oracle, and
-do not begin later adaptive-planning parts in that cycle.
+Begin Part Y by porting the released planning-policy documents and semantics
+for the native production generator. Keep Kotlin and R deferred, preserve the
+Python oracle, and do not begin generator filtering or later planning parts in
+that cycle.
 
 ## Part B fixture evidence
 
@@ -465,6 +467,25 @@ decoding coverage. `git diff --check` passed. No Python, Kotlin, or R source was
 changed.
 
 Part W commit: `606bbdb` (`feat: add Swift CoachDecision model contract`).
+
+## Part X production generation evidence
+
+Added the native `generatePlan` façade and routed `generatePlanFromIntent`
+through it, demoting the former lightweight intent-only constructor. The
+generator returns the Python-shaped result envelope with status, generated
+PLAN, evaluator output, policy metadata, selection rationale, unsatisfied
+findings, and provenance. It supports deterministic session-offset selection,
+required/excluded exercise filtering, equipment eligibility, target-coverage
+allocation, canonical prescription metadata, and both released planning-policy
+identifiers.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 35 tests, including fixture-backed production generation using the
+canonical database and relationship artifact, intent-to-production routing,
+and evaluator integration. `git diff --check` passed. No Python, Kotlin, or R
+source was changed.
+
+Part X commit: `e8e9ba8` (`feat: add native production plan generation`).
 
 ## Part A audit evidence
 
