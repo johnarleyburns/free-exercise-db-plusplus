@@ -74,13 +74,14 @@ native work; no Python rewrite was required.
 - Part V — Swift double-progression semantics: **complete; audited below**
 - Part W — Swift CoachDecision model contract: **complete; audited below**
 - Part X — Swift production plan generation: **complete; audited below**
+- Part Y — Swift planning policies: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part Y by porting the released planning-policy documents and semantics
-for the native production generator. Keep Kotlin and R deferred, preserve the
-Python oracle, and do not begin generator filtering or later planning parts in
-that cycle.
+Begin Part Z by matching Swift generator input filtering to Python, including
+equipment, exclusions, required/locked exercises, family constraints, and
+profile constraints. Keep Kotlin and R deferred, preserve the Python oracle,
+and do not begin later planning parts in that cycle.
 
 ## Part B fixture evidence
 
@@ -486,6 +487,23 @@ and evaluator integration. `git diff --check` passed. No Python, Kotlin, or R
 source was changed.
 
 Part X commit: `e8e9ba8` (`feat: add native production plan generation`).
+
+## Part Y planning-policy evidence
+
+Aligned the Swift planning-policy documents with the released Python policy
+set: `full-body-general-v1` and `upper-lower-general-v1`. The native policy
+documents now carry the canonical policy/version metadata, descriptions, split
+strategies, candidate-ranking, volume-allocation, frequency, and tie-breaking
+strategies, plus exact rep/effort defaults and upper/lower compatibility
+parameters. Exposed policy lookup through `TrainingEngine` and kept the
+resource catalog synchronized.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 36 tests, including policy-document assertions and existing
+generation/evaluation coverage. `git diff --check` passed. No Python, Kotlin,
+or R source was changed.
+
+Part Y commit: `a9f9897` (`feat: align Swift planning policy documents`).
 
 ## Part A audit evidence
 
