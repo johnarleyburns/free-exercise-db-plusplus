@@ -54,6 +54,13 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf)
   }
 
+  /// Typed TrainingState façade for callers that already hold canonical history.
+  public func deriveTrainingState(_ history: TrainingHistory, asOf: String) throws -> TrainingState {
+    let data = try JSONEncoder().encode(history)
+    let projected = FreeExerciseDBPlusPlus.deriveTrainingState(try JSONDecoder().decode(JSONValue.self, from: data), asOf: asOf)
+    return try JSONDecoder().decode(TrainingState.self, from: JSONEncoder().encode(projected))
+  }
+
   /// Resolve intent and construct the current native deterministic draft in a
   /// single application-facing call.  The returned document contains the
   /// resolution and generation sections used by the shared intent fixtures.

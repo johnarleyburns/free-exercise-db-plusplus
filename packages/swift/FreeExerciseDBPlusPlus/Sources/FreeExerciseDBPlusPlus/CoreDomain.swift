@@ -218,9 +218,24 @@ public struct TrainingState: Codable, Sendable, Equatable {
   public let familyState: [String: JSONValue]
   public let muscleState: [String: JSONValue]
   public let adherenceState: [String: JSONValue]
+  public let sessionState: [JSONValue]
   public let provenance: [String: JSONValue]
-  public init(stateVersion: String = "0.1.0", subjectId: String, asOf: String, historyWindow: [String: JSONValue] = [:], activePlan: [String: JSONValue] = [:], exerciseState: [String: ExerciseState] = [:], familyState: [String: JSONValue] = [:], muscleState: [String: JSONValue] = [:], adherenceState: [String: JSONValue] = [:], provenance: [String: JSONValue] = [:]) {
-    self.stateVersion = stateVersion; self.subjectId = subjectId; self.asOf = asOf; self.historyWindow = historyWindow; self.activePlan = activePlan; self.exerciseState = exerciseState; self.familyState = familyState; self.muscleState = muscleState; self.adherenceState = adherenceState; self.provenance = provenance
+  public init(stateVersion: String = "0.1.0", subjectId: String, asOf: String, historyWindow: [String: JSONValue] = [:], activePlan: [String: JSONValue] = [:], exerciseState: [String: ExerciseState] = [:], familyState: [String: JSONValue] = [:], muscleState: [String: JSONValue] = [:], adherenceState: [String: JSONValue] = [:], sessionState: [JSONValue] = [], provenance: [String: JSONValue] = [:]) {
+    self.stateVersion = stateVersion; self.subjectId = subjectId; self.asOf = asOf; self.historyWindow = historyWindow; self.activePlan = activePlan; self.exerciseState = exerciseState; self.familyState = familyState; self.muscleState = muscleState; self.adherenceState = adherenceState; self.sessionState = sessionState; self.provenance = provenance
+  }
+  private enum CodingKeys: String, CodingKey { case stateVersion, subjectId, asOf, historyWindow, activePlan, exerciseState, familyState, muscleState, adherenceState, sessionState, provenance }
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    stateVersion = try c.decodeIfPresent(String.self, forKey: .stateVersion) ?? "0.1.0"
+    subjectId = try c.decode(String.self, forKey: .subjectId); asOf = try c.decode(String.self, forKey: .asOf)
+    historyWindow = try c.decodeIfPresent([String: JSONValue].self, forKey: .historyWindow) ?? [:]
+    activePlan = try c.decodeIfPresent([String: JSONValue].self, forKey: .activePlan) ?? [:]
+    exerciseState = try c.decodeIfPresent([String: ExerciseState].self, forKey: .exerciseState) ?? [:]
+    familyState = try c.decodeIfPresent([String: JSONValue].self, forKey: .familyState) ?? [:]
+    muscleState = try c.decodeIfPresent([String: JSONValue].self, forKey: .muscleState) ?? [:]
+    adherenceState = try c.decodeIfPresent([String: JSONValue].self, forKey: .adherenceState) ?? [:]
+    sessionState = try c.decodeIfPresent([JSONValue].self, forKey: .sessionState) ?? []
+    provenance = try c.decodeIfPresent([String: JSONValue].self, forKey: .provenance) ?? [:]
   }
 }
 

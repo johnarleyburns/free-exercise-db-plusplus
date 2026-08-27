@@ -53,6 +53,22 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(parseOffsetAwareTimestamp("2026-03-08T07:00:00Z")!.date > parseOffsetAwareTimestamp("2026-03-08T01:30:00-05:00")!.date, true)
   }
 
+  func testTypedTrainingStateContainsCompletePartMEnvelope() throws {
+    let history = TrainingHistory(subjectId: "state-subject")
+    let state = try TrainingEngine(database: FEDatabase(exercises: [:])).deriveTrainingState(history, asOf: "2026-08-27T12:00:00-04:00")
+    XCTAssertEqual(state.stateVersion, "0.1.0")
+    XCTAssertEqual(state.subjectId, "state-subject")
+    XCTAssertEqual(state.asOf, "2026-08-27T12:00:00-04:00")
+    XCTAssertEqual(state.historyWindow["type"], JSONValue.string("last_28_days"))
+    XCTAssertEqual(state.activePlan.count, 0)
+    XCTAssertEqual(state.exerciseState.count, 0)
+    XCTAssertEqual(state.familyState.count, 0)
+    XCTAssertEqual(state.muscleState.count, 0)
+    XCTAssertEqual(state.adherenceState.count, 0)
+    XCTAssertEqual(state.sessionState.count, 0)
+    XCTAssertEqual(state.provenance["asOf"], JSONValue.string("2026-08-27T12:00:00-04:00"))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
