@@ -71,6 +71,7 @@ native work; no Python rewrite was required.
 - Part S — Swift family state: **complete; audited below**
 - Part T — Swift muscle state: **complete; audited below**
 - Part U — Swift progression policies: **complete; audited below**
+- Part V — Swift double-progression semantics: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -432,6 +433,23 @@ Kotlin, or R source was changed.
 
 Part U commit: `d559261` (`feat: add Swift progression policies`).
 
+## Part V progression evidence
+
+Refined Swift double progression to match the Python edge semantics: all
+counted sets must meet their top rep bounds; heterogeneous `plannedSets` and
+explicit `setPrescriptionId` matching are honored; partial/incomplete work,
+missing reps/effort/load, incompatible units, and missing actual matches
+produce deterministic insufficient or hold decisions; and RPE/RIR effort
+direction is preserved without conversion. The canonical decision envelope
+and evidence shapes are retained.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 32 tests, including all four cases in
+`fixtures/cross-language/progression`. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part V commit: `4290f2d` (`feat: match Swift progression edge semantics`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -481,8 +499,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `d559261`
-  (`feat: add Swift progression policies`)
+- Current committed HEAD before the next implementation phase: `4290f2d`
+  (`feat: match Swift progression edge semantics`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
