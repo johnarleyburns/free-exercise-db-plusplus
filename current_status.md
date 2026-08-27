@@ -92,6 +92,7 @@ native work; no Python rewrite was required.
 - Part AN — Swift explicit adaptive substitution: **complete; audited below**
 - Part AO — Swift adaptive target-maximum gate: **complete; audited below**
 - Part AP — Swift adaptive regeneration: **complete; audited below**
+- Part AQ — Swift adaptive result envelope: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
 - Part AZ — Swift external consumer contract: **complete; audited below**
 
@@ -274,6 +275,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AP commit: pending commit after review.
+
+## Part AQ adaptive-result evidence
+
+The native adaptive façade returns the Python-shaped result concepts: status,
+current/proposed plans, current/proposed evaluations, TrainingState, ordered
+decisions, ordered changes, unresolved issues, policy, and provenance.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`,
+the external consumer script, and `git diff --check` pass. No Python, Kotlin,
+or R source was changed.
+
+Part AQ commit: pending commit after review.
 
 ## Part AT history-aware intent evidence
 
