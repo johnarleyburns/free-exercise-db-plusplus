@@ -6,7 +6,7 @@ library_dir=$(mktemp -d)
 trap 'rm -rf "$consumer" "$library_dir"' EXIT
 R CMD INSTALL --library="$library_dir" "$repo/packages/r/fedbpp" >/dev/null
 cd "$consumer"
-REPO_ROOT="$repo" R_LIBS_USER="$library_dir" Rscript - <<'RS'
+REPO_ROOT="$repo" R_LIBS_USER="$library_dir${R_LIBS_USER:+:$R_LIBS_USER}" Rscript - <<'RS'
 library(fedbpp)
 repo <- Sys.getenv("REPO_ROOT")
 db <- load_database(file.path(repo, "free-exercise-db-plusplus.json"))

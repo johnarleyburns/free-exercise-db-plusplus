@@ -17,4 +17,5 @@ dist/
 exercises.json
 packages/swift/FreeExerciseDBPlusPlus/.build/
 packages/kotlin/fedbpp/.gradle/
+packages/kotlin/fedbpp/.kotlin/
 *.Rcheck/
