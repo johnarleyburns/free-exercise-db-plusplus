@@ -98,6 +98,8 @@ native work; no Python rewrite was required.
 - Part AU — Swift intent plus existing-plan adaptation: **complete; audited below**
 - Part AV — Shared policy resources: **complete; audited below**
 - Part AW — Swift resource-copy verification: **complete; audited below**
+- Part AX — Cross-language fixture families: **complete; audited below**
+- Part AY — Python↔Swift parity harness: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
 - Part AZ — Swift external consumer contract: **complete; audited below**
 
@@ -345,6 +347,29 @@ pass. No Python, Kotlin, or R source was changed.
 
 Part AV commit: pending commit after review.
 Part AW commit: pending commit after review.
+
+## Part AX fixture evidence
+
+Canonical Python-authored fixture families are present under
+`fixtures/cross-language` for intent, evaluation, history, progression,
+generation, and adaptation. Swift golden tests consume shared fixture inputs
+and expected documents rather than maintaining a separate semantic oracle.
+
+Verification: fixture JSON loading, `swift test --package-path
+packages/swift/FreeExerciseDBPlusPlus`, and `git diff --check` pass.
+
+Part AX commit: pending commit after review.
+
+## Part AY parity evidence
+
+`tools/compare_canonical_json.py` supplies the repository comparison policy;
+Swift evaluation and progression golden tests use the Python-authored expected
+documents and the same semantic normalization rules.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`,
+the external consumer script, and `git diff --check` pass.
+
+Part AY commit: pending commit after review.
 
 ## Part AW resource-copy evidence
 
