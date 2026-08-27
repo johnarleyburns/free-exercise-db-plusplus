@@ -56,7 +56,8 @@ native work; no Python rewrite was required.
 - Part D — Swift engine architecture: **complete; audited below**
 - Part E — Swift TrainingEngine façade: **complete; audited below**
 - Part F — Swift typed core domain models: **complete; audited below**
-- Parts G–N — Swift engine architecture and parity: pending the preceding
+- Part G — Swift database/relationship resource loading: **complete; audited below**
+- Parts H–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -158,6 +159,22 @@ typed `TrainingHistory` Codable round trip. `git diff --check` passed. No
 Python, Kotlin, or R source was changed.
 
 Part F commit: pending commit after review.
+
+## Part G resource-loading evidence
+
+Packaged the canonical `free-exercise-db-plusplus.json`,
+`exercise-relationships.json`, PLAN/WORKOUT/profile/TARGET/CoachDecision
+schemas, and existing intent policy resources in the Swift target resources.
+Added `TrainingEngine.bundled()` to load the database and relationship
+artifact through `Bundle.module`; custom database/relationship injection
+remains available through the existing initializer. Database metadata and
+relationship schema versions remain exposed on the loaded values.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 15 tests, including bundled resource loading and canonical family
+lookup. `git diff --check` passed. No Python, Kotlin, or R source was changed.
+
+Part G commit: pending commit after review.
 
 ## Part A audit evidence
 
