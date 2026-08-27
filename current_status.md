@@ -424,6 +424,13 @@ attempted, but the package is not installed in the current environment;
 running it directly fails at `library(fedbpp)`. This is an environment
 limitation, not a Kotlin/R source change.
 
+## Parts BG–BH evidence
+
+Existing package metadata already reports project version `1.11.0`; portable
+schema versions were not changed. The implementation remains offline and
+contains no web research, exercise-science methodology changes, LLM
+integration, or Python bridge.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
