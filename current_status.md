@@ -445,6 +445,10 @@ of the later repository gate.
 Part BL verification: Swift package tests pass with 42 tests, and
 `scripts/test_swift_consumer.sh` passes its external SPM consumer workflow.
 
+Part BM verification: database release contract, golden mapping anchors,
+medium-confidence mapping policy, Swift tests/consumer, and Kotlin Gradle
+tests pass. R remains blocked by the missing installed `fedbpp` package.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
