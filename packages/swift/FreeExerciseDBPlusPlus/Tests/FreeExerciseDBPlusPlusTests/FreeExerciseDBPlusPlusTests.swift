@@ -145,6 +145,15 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
         ])), ["movementPatterns.squat: target must not be below min"])
   }
 
+  func testTrainingEngineTargetFacadePreservesPartialOverrideAndConflict() {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let base: JSONValue = .object(["muscles": .object(["chest": .object(["min": .number(4), "target": .number(6), "max": .number(8)])])])
+    let override: JSONValue = .object(["muscles": .object(["chest": .object(["target": .number(7)])])])
+    let merged = engine.mergeTarget(base, explicit: override)
+    XCTAssertEqual(merged.objectValue?["muscles"]?.objectValue?["chest"]?.objectValue?["min"], .number(4))
+    XCTAssertEqual(engine.validateTarget(.object(["muscles": .object(["chest": .object(["min": .number(8), "target": .number(4)])])])), ["muscles.chest: target must not be below min"])
+  }
+
   func testWorkoutIntentGoalMismatchIsStructured() {
     let intent = WorkoutIntent(
       goal: "hypertrophy", requestedGoalPolicy: "general-strength-v1",

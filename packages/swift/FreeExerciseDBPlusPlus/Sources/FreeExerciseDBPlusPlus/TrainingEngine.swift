@@ -31,6 +31,17 @@ public struct TrainingEngine: Sendable {
     IntentValidator.validate(intent, database: database, relationships: relationships)
   }
 
+  /// Validate a portable TARGET and return stable path-qualified issues.
+  public func validateTarget(_ target: JSONValue) -> [String] {
+    FreeExerciseDBPlusPlus.validateTarget(target)
+  }
+
+  /// Merge an explicit TARGET override without replacing unrelated range
+  /// members or nested frequency targets.
+  public func mergeTarget(_ base: JSONValue, explicit: JSONValue?) -> JSONValue {
+    FreeExerciseDBPlusPlus.mergeTarget(base, explicit)
+  }
+
   public func resolveIntent(_ intent: WorkoutIntent, profile: JSONValue? = nil, target: JSONValue? = nil, history: JSONValue? = nil, asOf: String? = nil) -> IntentResolutionResult {
     IntentResolver().resolve(intent, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf)
   }
