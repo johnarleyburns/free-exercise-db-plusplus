@@ -438,26 +438,20 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
-  func parseTimestamp(_ value: String) -> Date? {
-    let formatter = ISO8601DateFormatter()
-    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-    if let date = formatter.date(from: value) { return date }
-    formatter.formatOptions = [.withInternetDateTime]
-    return formatter.date(from: value)
-  }
-  let asOfInstant = parseTimestamp(asOf)
+  let parsedAsOf = parseOffsetAwareTimestamp(asOf)
+  let asOfInstant = parsedAsOf?.date
   let activePair = activations.compactMap { activation -> (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? in
     guard let from = activation["effectiveFrom"]?.stringValue,
-      let fromDate = parseTimestamp(from), let asOfInstant,
+      let fromDate = parseOffsetAwareTimestamp(from)?.date, let asOfInstant,
       fromDate <= asOfInstant,
-      activation["effectiveTo"]?.stringValue.map({ parseTimestamp($0).map { asOfInstant < $0 } ?? false }) ?? true,
+      activation["effectiveTo"]?.stringValue.map({ parseOffsetAwareTimestamp($0).map { asOfInstant < $0.date } ?? false }) ?? true,
       let plan = plans.first(where: { $0["planId"] == activation["planId"] && $0["revisionId"] == activation["revisionId"] })
     else { return nil }
     return (plan: plan, activation: activation, date: fromDate)
   }.max { $0.date < $1.date }
   let active = activePair?.plan
   guard let asOfInstant else { return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .null, "activePlan": .object([:]), "exerciseState": .object([:]), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "timestampError": .string("asOf must be an offset-aware ISO-8601 timestamp")])]) }
-  var calendar = Calendar(identifier: .gregorian); calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+  var calendar = Calendar(identifier: .gregorian); calendar.timeZone = TimeZone(secondsFromGMT: parsedAsOf?.offsetSeconds ?? 0)!
   let asOfDate = calendar.startOfDay(for: asOfInstant)
   let lowerBound = calendar.date(byAdding: .day, value: -27, to: asOfDate)!
   let dateFormatter = ISO8601DateFormatter(); dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -465,7 +459,7 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
   let lowerDate = dateFormatter.string(from: lowerBound), endDate = dateFormatter.string(from: asOfDate)
   let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter {
     let stamp = $0["startTime"]?.stringValue ?? ""
-    guard let instant = parseTimestamp(stamp) else { return false }
+    guard let instant = parseOffsetAwareTimestamp(stamp)?.date else { return false }
     return instant >= lowerBound && instant <= asOfInstant
   }
   var exerciseState: [String: JSONValue] = [:]

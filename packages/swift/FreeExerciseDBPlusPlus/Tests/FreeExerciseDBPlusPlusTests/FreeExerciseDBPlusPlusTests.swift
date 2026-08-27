@@ -3,7 +3,7 @@ import XCTest
 @testable import FreeExerciseDBPlusPlus
 
 final class FreeExerciseDBPlusPlusTests: XCTestCase {
-    func testTrainingStateExcludesFutureWorkoutOnSameUTCDate() throws {
+  func testTrainingStateExcludesFutureWorkoutOnSameUTCDate() throws {
         let history: JSONValue = .object([
             "subjectId": .string("s"), "plans": .array([]), "planActivations": .array([]),
             "workouts": .array([
@@ -21,6 +21,36 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertGreaterThan(db.count, 800)
     XCTAssertEqual(try db.getExercise("Bench_Dips").exerciseId, "Bench_Dips")
     XCTAssertFalse(db.findExercises(containing: "bench").isEmpty)
+  }
+
+  func testOffsetAwareTimestampParsingAndFutureBoundaries() throws {
+    XCTAssertNotNil(parseOffsetAwareTimestamp("2026-08-25T12:00:00Z"))
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-08-25T12:00:00-05:00")?.offsetSeconds, -18_000)
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-08-25T12:00:00-04:00")?.offsetSeconds, -14_400)
+    XCTAssertNil(parseOffsetAwareTimestamp("2026-08-25T12:00:00"))
+    let history: JSONValue = .object([
+      "subjectId": .string("s"), "workouts": .array([
+        .object(["sessionId": .string("before"), "startTime": .string("2026-08-25T15:30:00Z"), "exercises": .array([])]),
+        .object(["sessionId": .string("after"), "startTime": .string("2026-08-25T16:30:00Z"), "exercises": .array([])])
+      ])
+    ])
+    let state = deriveTrainingState(history, asOf: "2026-08-25T12:00:00-04:00")
+    XCTAssertEqual(state.objectValue?["provenance"]?.objectValue?["asOf"], .string("2026-08-25T12:00:00-04:00"))
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-08-25T15:30:00Z")!.date < parseOffsetAwareTimestamp("2026-08-25T12:00:00-04:00")!.date, true)
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-08-25T16:30:00Z")!.date > parseOffsetAwareTimestamp("2026-08-25T12:00:00-04:00")!.date, true)
+  }
+
+  func testOffsetAwareTimestampHandlesDSTAdjacentInstantBoundary() throws {
+    let history: JSONValue = .object([
+      "subjectId": .string("s"), "workouts": .array([
+        .object(["sessionId": .string("before"), "startTime": .string("2026-03-08T06:00:00Z"), "exercises": .array([])]),
+        .object(["sessionId": .string("after"), "startTime": .string("2026-03-08T07:00:00Z"), "exercises": .array([])])
+      ])
+    ])
+    let state = deriveTrainingState(history, asOf: "2026-03-08T01:30:00-05:00")
+    XCTAssertEqual(state.objectValue?["historyWindow"]?.objectValue?["start"], .string("2026-02-09"))
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-03-08T06:00:00Z")!.date < parseOffsetAwareTimestamp("2026-03-08T01:30:00-05:00")!.date, true)
+    XCTAssertEqual(parseOffsetAwareTimestamp("2026-03-08T07:00:00Z")!.date > parseOffsetAwareTimestamp("2026-03-08T01:30:00-05:00")!.date, true)
   }
 
   func testTrainingEngineLoadsCanonicalBundledResources() throws {

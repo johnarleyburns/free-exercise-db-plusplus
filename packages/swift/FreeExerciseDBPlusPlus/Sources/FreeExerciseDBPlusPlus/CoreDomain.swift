@@ -1,5 +1,33 @@
 import Foundation
 
+/// An ISO-8601 instant together with the numeric offset carried by its input.
+/// The offset is retained so callers can construct local calendar boundaries
+/// without requiring an IANA timezone database.
+public struct OffsetAwareTimestamp: Sendable, Equatable {
+  public let date: Date
+  public let offsetSeconds: Int
+  public init(date: Date, offsetSeconds: Int) { self.date = date; self.offsetSeconds = offsetSeconds }
+}
+
+/// Parses an offset-bearing ISO-8601 timestamp. Naive timestamps are rejected
+/// because their chronology cannot be resolved portably.
+public func parseOffsetAwareTimestamp(_ value: String) -> OffsetAwareTimestamp? {
+  let pattern = #"(?:Z|[+-]\d{2}:?\d{2})$"#
+  guard value.range(of: pattern, options: .regularExpression) != nil else { return nil }
+  let formatter = ISO8601DateFormatter()
+  formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+  guard let date = formatter.date(from: value) ?? {
+    formatter.formatOptions = [.withInternetDateTime]
+    return formatter.date(from: value)
+  }() else { return nil }
+  if value.last == "Z" { return OffsetAwareTimestamp(date: date, offsetSeconds: 0) }
+  let suffix = String(value.suffix(6))
+  let raw = suffix.replacingOccurrences(of: ":", with: "")
+  guard let hours = Int(raw.prefix(3)), let minutes = Int(raw.suffix(2)) else { return nil }
+  let sign = raw.first == "-" ? -1 : 1
+  return OffsetAwareTimestamp(date: date, offsetSeconds: sign * (abs(hours) * 3600 + minutes * 60))
+}
+
 /// A portable inclusive numeric range.  Missing bounds remain missing.
 public struct TargetRange: Codable, Sendable, Equatable {
   public let min: Double?
