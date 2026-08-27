@@ -69,6 +69,7 @@ native work; no Python rewrite was required.
 - Part Q — Swift adherence-rich state: **complete; audited below**
 - Part R — Swift missingness semantics: **complete; audited below**
 - Part S — Swift family state: **complete; audited below**
+- Part T — Swift muscle state: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -398,6 +399,21 @@ Kotlin, or R source was changed.
 
 Part S commit: `39b348b` (`feat: add Swift family state`).
 
+## Part T muscle-state evidence
+
+Added database-backed `muscleState` derivation to the Swift state projection.
+Counted ACTUAL sets now contribute to direct, indirect, stabilizer, and
+effective set totals using the configured DB++ credits; exposures count
+distinct sessions, unmapped exercises do not invent muscle attribution, and
+TARGET ranges can contribute target-state and planned-vs-actual fields.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 30 tests, including direct/indirect/stabilizer credit and exposure
+count regressions. `git diff --check` passed. No Python, Kotlin, or R source
+was changed.
+
+Part T commit: `7b64054` (`feat: add Swift muscle state`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -447,8 +463,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `39b348b`
-  (`feat: add Swift family state`)
+- Current committed HEAD before the next implementation phase: `7b64054`
+  (`feat: add Swift muscle state`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
