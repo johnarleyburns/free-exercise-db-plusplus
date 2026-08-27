@@ -411,6 +411,19 @@ Kotlin, or R source was changed.
 
 Part AZ commit: pending commit after review.
 
+## Parts BA–BF implementation evidence
+
+Part BA added immutable Swift database indexes for stable exercise, muscle,
+movement-pattern, and equipment lookup without result caching. Part BB added a
+concurrency-boundary regression for the `Sendable` engine façade. Part BC
+verified semantic generator failures remain structured results. Parts BD–BE
+updated the roadmap and capability matrix for the v1.11 Swift-focused scope.
+
+The existing Kotlin Gradle test suite passes. The R package test script was
+attempted, but the package is not installed in the current environment;
+running it directly fails at `library(fedbpp)`. This is an environment
+limitation, not a Kotlin/R source change.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
