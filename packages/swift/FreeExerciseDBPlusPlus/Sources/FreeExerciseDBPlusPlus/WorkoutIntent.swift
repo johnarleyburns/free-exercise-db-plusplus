@@ -438,23 +438,37 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
-  let active = plans.first { plan in activations.contains { activation in
-    activation["planId"] == plan["planId"] && activation["revisionId"] == plan["revisionId"] &&
-      (activation["effectiveFrom"]?.stringValue ?? "") <= asOf &&
-      (activation["effectiveTo"]?.stringValue == nil || asOf < (activation["effectiveTo"]?.stringValue ?? ""))
-  } }
+  func parseTimestamp(_ value: String) -> Date? {
+    let formatter = ISO8601DateFormatter()
+    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    if let date = formatter.date(from: value) { return date }
+    formatter.formatOptions = [.withInternetDateTime]
+    return formatter.date(from: value)
+  }
+  let asOfInstant = parseTimestamp(asOf)
+  let activePair = activations.compactMap { activation -> (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? in
+    guard let from = activation["effectiveFrom"]?.stringValue,
+      let fromDate = parseTimestamp(from), let asOfInstant,
+      fromDate <= asOfInstant,
+      activation["effectiveTo"]?.stringValue.map({ parseTimestamp($0).map { asOfInstant < $0 } ?? false }) ?? true,
+      let plan = plans.first(where: { $0["planId"] == activation["planId"] && $0["revisionId"] == activation["revisionId"] })
+    else { return nil }
+    return (plan: plan, activation: activation, date: fromDate)
+  }.max { $0.date < $1.date }
+  let active = activePair?.plan
   let asOfDate = String(asOf.prefix(10))
   let calendar = Calendar(identifier: .gregorian)
   let formatter = ISO8601DateFormatter()
   let lowerDate = formatter.date(from: "\(asOfDate)T00:00:00Z").flatMap { calendar.date(byAdding: .day, value: -27, to: $0) }.map { String(formatter.string(from: $0).prefix(10)) } ?? asOfDate
   let workouts = (root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue }.filter {
     let stamp = $0["startTime"]?.stringValue ?? ""
-    return String(stamp.prefix(10)) >= lowerDate && stamp <= asOf
+    guard let instant = parseTimestamp(stamp), let asOfInstant else { return false }
+    return String(stamp.prefix(10)) >= lowerDate && instant <= asOfInstant
   }
   var exerciseState: [String: JSONValue] = [:]
   for workout in workouts { for raw in workout["exercises"]?.arrayValues ?? [] { guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }; let count = exercise["sets"]?.arrayValues.filter { $0.objectValue?["completed"] == .bool(true) }.count ?? 0; let previous = exerciseState[id]?.objectValue ?? [:]; exerciseState[id] = .object(["exerciseId": .string(id), "recentSessionCount": .number((previous["recentSessionCount"]?.numberValue ?? 0) + 1), "recentCompletedSetCount": .number((previous["recentCompletedSetCount"]?.numberValue ?? 0) + Double(count))]) } }
   var activePlan: [String: JSONValue] = [:]
-  if let active, let activation = activations.first(where: { $0["planId"] == active["planId"] && $0["revisionId"] == active["revisionId"] }), let from = activation["effectiveFrom"]?.stringValue {
+  if let active, let activation = activePair?.activation, let from = activation["effectiveFrom"]?.stringValue {
     let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7); let fromDate = String(from.prefix(10)); let elapsed = max(0, (formatter.date(from: "\(asOfDate)T00:00:00Z")?.timeIntervalSince(formatter.date(from: "\(fromDate)T00:00:00Z") ?? Date()) ?? 0) / 86400); let position = Int(elapsed) % cycle + 1
     activePlan = ["planId": active["planId"] ?? .null, "revisionId": active["revisionId"] ?? .null, "phaseId": .null, "cyclePosition": .number(Double(position))]
   }

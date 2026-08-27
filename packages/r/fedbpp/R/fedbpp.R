@@ -206,10 +206,16 @@ resolve_intent <- function(intent, db = NULL, profile = NULL, target = NULL, rel
 
 derive_training_state <- function(history, as_of) {
   as_date <- as.Date(substr(as_of, 1L, 10L)); start_date <- as_date - 27L
+  parse_timestamp <- function(value) {
+    value <- sub("Z$", "+0000", value)
+    value <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", value)
+    as.POSIXct(value, format = "%Y-%m-%dT%H:%M:%OS%z", tz = "UTC")
+  }
+  as_of_stamp <- parse_timestamp(as_of)
   workouts <- Filter(function(w) {
     if (is.null(w$startTime)) return(FALSE)
-    stamp <- as.POSIXct(w$startTime, format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
-    !is.na(stamp) && as.Date(stamp) >= start_date && w$startTime <= as_of
+    stamp <- parse_timestamp(w$startTime)
+    !is.na(stamp) && !is.na(as_of_stamp) && as.Date(stamp) >= start_date && stamp <= as_of_stamp
   }, history$workouts %||% list())
   state <- list()
   for (workout in workouts) for (exercise in workout$exercises %||% list()) {
@@ -218,11 +224,19 @@ derive_training_state <- function(history, as_of) {
     previous <- state[[id]] %||% list(exerciseId = id, recentSessionCount = 0L, recentCompletedSetCount = 0L)
     state[[id]] <- list(exerciseId = id, recentSessionCount = previous$recentSessionCount + 1L, recentCompletedSetCount = previous$recentCompletedSetCount + completed)
   }
-  active <- NULL
-  for (plan in history$plans %||% list()) for (activation in history$planActivations %||% list()) if (identical(plan$planId, activation$planId) && identical(plan$revisionId, activation$revisionId) && !is.null(activation$effectiveFrom) && activation$effectiveFrom <= as_of && (is.null(activation$effectiveTo) || as_of < activation$effectiveTo)) active <- plan
+  applicable <- list()
+  for (activation in history$planActivations %||% list()) {
+    from <- parse_timestamp(activation$effectiveFrom %||% "")
+    to <- if (is.null(activation$effectiveTo)) NA else parse_timestamp(activation$effectiveTo)
+    if (is.na(from) || is.na(as_of_stamp) || from > as_of_stamp || (!is.na(to) && as_of_stamp >= to)) next
+    plan <- Filter(function(p) identical(p$planId, activation$planId) && identical(p$revisionId, activation$revisionId), history$plans %||% list())
+    if (length(plan)) applicable[[length(applicable) + 1L]] <- list(plan = plan[[1L]], activation = activation, from = from)
+  }
+  active_entry <- if (length(applicable)) applicable[[which.max(vapply(applicable, function(x) as.numeric(x$from), numeric(1)))]] else NULL
+  active <- if (is.null(active_entry)) NULL else active_entry$plan
   active_plan <- list()
   if (!is.null(active)) {
-    activation <- Filter(function(x) identical(x$planId, active$planId) && identical(x$revisionId, active$revisionId), history$planActivations %||% list())[[1L]]
+    activation <- active_entry$activation
     cycle <- as.integer(active$cycle$lengthDays %||% 7L); elapsed <- max(0L, as.integer(as_date - as.Date(substr(activation$effectiveFrom, 1L, 10L))))
     active_plan <- list(planId = active$planId, revisionId = active$revisionId, phaseId = NULL, cyclePosition = elapsed %% cycle + 1L)
   }

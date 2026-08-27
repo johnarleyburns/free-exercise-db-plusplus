@@ -13,6 +13,7 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.booleanOrNull
 import kotlinx.serialization.json.intOrNull
 import kotlinx.serialization.json.put
+import java.time.Instant
 
 private object IntentPolicyCatalog {
     val root: JsonObject by lazy {
@@ -160,12 +161,24 @@ object WorkoutIntentResolver {
 fun deriveTrainingState(history: JsonElement, asOf: String): JsonElement {
     val root = history.jsonObject
     val asDate = java.time.LocalDate.parse(asOf.substring(0, 10)); val start = asDate.minusDays(27)
-    val workouts = root["workouts"]?.jsonArray.orEmpty().map { it.jsonObject }.filter { raw -> val stamp = raw["startTime"]?.jsonPrimitive?.content ?: ""; stamp.substring(0, 10) >= start.toString() && stamp <= asOf }
+    val asOfInstant = runCatching { Instant.parse(asOf) }.getOrNull()
+    val workouts = root["workouts"]?.jsonArray.orEmpty().map { it.jsonObject }.filter { raw ->
+        val stamp = raw["startTime"]?.jsonPrimitive?.content ?: ""
+        val instant = runCatching { Instant.parse(stamp) }.getOrNull()
+        instant != null && asOfInstant != null && stamp.substring(0, 10) >= start.toString() && instant <= asOfInstant
+    }
     val counts = mutableMapOf<String, Pair<Int, Int>>()
     workouts.flatMap { it["exercises"]?.jsonArray.orEmpty() }.forEach { raw -> val e = raw.jsonObject; val id = e["exerciseId"]?.jsonPrimitive?.content ?: return@forEach; val old = counts[id] ?: (0 to 0); counts[id] = (old.first + 1) to (old.second + e["sets"]?.jsonArray.orEmpty().count { it.jsonObject["completed"]?.jsonPrimitive?.booleanOrNull == true }) }
     val exercises = buildJsonObject { counts.toSortedMap().forEach { (id, value) -> put(id, buildJsonObject { put("exerciseId", id); put("recentSessionCount", value.first); put("recentCompletedSetCount", value.second) }) } }
-    val active = root["plans"]?.jsonArray.orEmpty().map { it.jsonObject }.firstOrNull { plan -> root["planActivations"]?.jsonArray.orEmpty().any { a -> a.jsonObject["planId"] == plan["planId"] && a.jsonObject["revisionId"] == plan["revisionId"] && (a.jsonObject["effectiveFrom"]?.jsonPrimitive?.content ?: "") <= asOf } }
-    val activePlan = active?.let { plan -> val activation = root["planActivations"]!!.jsonArray.first { it.jsonObject["planId"] == plan["planId"] && it.jsonObject["revisionId"] == plan["revisionId"] }.jsonObject; val elapsed = java.time.LocalDate.parse(activation["effectiveFrom"]!!.jsonPrimitive.content.substring(0, 10)).until(asDate).days.coerceAtLeast(0); buildJsonObject { put("planId", plan["planId"]!!); put("revisionId", plan["revisionId"]!!); put("phaseId", kotlinx.serialization.json.JsonNull); put("cyclePosition", elapsed % (plan["cycle"]?.jsonObject?.get("lengthDays")?.jsonPrimitive?.intOrNull ?: 7) + 1) } } ?: JsonObject(emptyMap())
+    val activePair = root["planActivations"]?.jsonArray.orEmpty().map { it.jsonObject }.mapNotNull { activation ->
+        val from = activation["effectiveFrom"]?.jsonPrimitive?.content ?: return@mapNotNull null
+        val fromInstant = runCatching { Instant.parse(from) }.getOrNull() ?: return@mapNotNull null
+        val toInstant = activation["effectiveTo"]?.jsonPrimitive?.content?.let { runCatching { Instant.parse(it) }.getOrNull() }
+        if (asOfInstant == null || fromInstant > asOfInstant || (toInstant != null && asOfInstant >= toInstant)) return@mapNotNull null
+        val plan = root["plans"]?.jsonArray.orEmpty().map { it.jsonObject }.firstOrNull { it["planId"] == activation["planId"] && it["revisionId"] == activation["revisionId"] } ?: return@mapNotNull null
+        Triple(plan, activation, fromInstant)
+    }.maxByOrNull { it.third }
+    val activePlan = activePair?.let { (plan, activation, _) -> val elapsed = java.time.LocalDate.parse(activation["effectiveFrom"]!!.jsonPrimitive.content.substring(0, 10)).until(asDate).days.coerceAtLeast(0); buildJsonObject { put("planId", plan["planId"]!!); put("revisionId", plan["revisionId"]!!); put("phaseId", kotlinx.serialization.json.JsonNull); put("cyclePosition", elapsed % (plan["cycle"]?.jsonObject?.get("lengthDays")?.jsonPrimitive?.intOrNull ?: 7) + 1) } } ?: JsonObject(emptyMap())
     val window = buildJsonObject { put("type", "last_28_days"); put("start", start.toString()); put("end", asDate.toString()) }
     return buildJsonObject { put("stateVersion", "0.1.0"); put("subjectId", root["subjectId"] ?: kotlinx.serialization.json.JsonNull); put("asOf", asOf); put("historyWindow", window); put("activePlan", activePlan); put("exerciseState", exercises); put("familyState", buildJsonObject { }); put("muscleState", buildJsonObject { }); put("adherenceState", buildJsonObject { }); put("sessionState", kotlinx.serialization.json.buildJsonArray { }); put("provenance", buildJsonObject { put("stateVersion", "0.1.0"); put("asOf", asOf); put("historyWindow", window) }) }
 }
