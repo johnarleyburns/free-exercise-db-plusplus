@@ -81,6 +81,7 @@ native work; no Python rewrite was required.
 - Part AC — Swift deterministic candidate ranking: **complete; audited below**
 - Part AD — Swift target-driven generation: **complete; audited below**
 - Part AE — Swift session allocation: **complete; audited below**
+- Part AF — Swift frequency allocation: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -127,6 +128,19 @@ passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
 source was changed.
 
 Part AE commit: `cd5a34f` (`feat: align Swift session allocation`).
+
+## Part AF frequency evidence
+
+Made frequency allocation explicit in the native generator. Frequency deficits
+are evaluated from qualifying session exposures, and candidate placement sorts
+compatible sessions by whether the target muscle is already exposed, then by
+exercise count and session index. Rationale records `FREQUENCY_COVERAGE` for
+these additions.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AF commit: pending commit after review.
 
 ## Part B fixture evidence
 

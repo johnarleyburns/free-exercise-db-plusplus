@@ -301,7 +301,9 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
           let draftPlan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(draftSessions.map(JSONValue.object))])
           let evaluated = evaluatePlan(draftPlan, database: database, profile: profile, target: target, relationships: relationships)
           if !exceedsMaximum(evaluated) {
-            sessions = draftSessions; allocationEvaluation = evaluated; rationale[candidate.exerciseId, default: []].insert("TARGET_COVERAGE"); accepted = true; break
+            sessions = draftSessions; allocationEvaluation = evaluated
+            rationale[candidate.exerciseId, default: []].insert(deficit.1 == "frequency" ? "FREQUENCY_COVERAGE" : "TARGET_COVERAGE")
+            accepted = true; break
           }
         }
         if accepted { break }
