@@ -59,7 +59,8 @@ native work; no Python rewrite was required.
 - Part G — Swift database/relationship resource loading: **complete; audited below**
 - Part H — Swift full PLAN analysis: **complete; audited below**
 - Part I — Swift full PLAN evaluation: **complete; audited below**
-- Parts J–N — Swift engine architecture and parity: pending the preceding
+- Part J — Swift TARGET validation and merging: **complete; audited below**
+- Parts K–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -212,6 +213,22 @@ all 16 tests, and `git diff --check` passes. No Python, Kotlin, or R source was
 changed.
 
 Part I commit: pending commit after review.
+
+## Part J target evidence
+
+Exposed Swift `TrainingEngine` methods for TARGET validation and
+field-preserving explicit TARGET merging. Partial `min`/`target`/`max` ranges
+and nested frequency muscle ranges retain unrelated base members; validation
+returns stable path-qualified range conflicts, which intent resolution maps to
+`TARGET_OVERRIDE_CONFLICT`.
+
+Verification: the façade regression covers partial-range preservation and an
+invalid target range. The complete
+`swift test --package-path packages/swift/FreeExerciseDBPlusPlus` suite passes
+all 17 tests, including the Python golden PLAN evaluation, and
+`git diff --check` passes. No Python, Kotlin, or R source was changed.
+
+Part J commit: pending commit after review.
 
 ## Part A audit evidence
 
