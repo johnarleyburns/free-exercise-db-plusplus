@@ -200,7 +200,14 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   }
   let reps = gObject(policy["parameters"])["reps"] ?? .object([:]), effort = gObject(policy["parameters"])["effort"] ?? .object([:])
   let planId = gString(gObject(options)["planId"]) ?? "generated-plan", revisionId = gString(gObject(options)["revisionId"]) ?? "r1", planName = gString(gObject(options)["name"]) ?? "Generated \(policyId)"
-  var sessions: [[String: JSONValue]] = offsets.enumerated().map { index, offset in ["planSessionId": .string("session-\(index + 1)"), "dayOffset": .number(Double(offset)), "name": .string("Session \(index + 1)"), "exercises": .array([])] }
+  let exerciseRange = gRange(availability["exercisesPerSession"])
+  let minimumExercises = Int(exerciseRange.min ?? 1)
+  let maximumExercises = exerciseRange.max.map { Int($0) }
+  var sessions: [[String: JSONValue]] = offsets.enumerated().map { index, offset in
+    let kind = gString(policy["splitStrategy"]) == "upper_lower_alternating" ? (index % 2 == 0 ? "Upper" : "Lower") : "Session"
+    let name = kind == "Session" ? "Session \(index + 1)" : "\(kind) \(index / 2 + 1)"
+    return ["planSessionId": .string("session-\(index + 1)"), "dayOffset": .number(Double(offset)), "name": .string(name), "exercises": .array([])]
+  }
   var rationale: [String: Set<String>] = [:]
   func add(_ id: String, _ session: Int, _ reason: String) {
     var exercises = gArray(sessions[session]["exercises"])
@@ -300,6 +307,26 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
         if accepted { break }
       }
       if !accepted { break }
+    }
+  }
+  // Every generated session must satisfy the hard lower exercise bound. The
+  // Python generator fills these slots only after target allocation, using
+  // the same deterministic candidate order and maximum guard.
+  for session in sessions.indices {
+    while gArray(sessions[session]["exercises"]).count < minimumExercises {
+      let existing = Set(gArray(sessions[session]["exercises"]).compactMap { gString(gObject($0)["exerciseId"]) })
+      let choices = ranked("muscle", "").filter { !existing.contains($0.exerciseId) && compatible($0.exerciseId, session) && (maximumExercises == nil || gArray(sessions[session]["exercises"]).count < maximumExercises!) }
+      guard let candidate = choices.first else {
+        return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_EXERCISE"), "detail": .string("no eligible exercise for session \(session + 1)")])])
+      }
+      var draftSessions = sessions, exercises = gArray(draftSessions[session]["exercises"])
+      let order = exercises.count + 1, name = gString(candidate.source?["name"]) ?? candidate.exerciseId
+      exercises.append(.object(["prescriptionId": .string(String(format: "rx-%02d-%02d", session + 1, order)), "exerciseId": .string(candidate.exerciseId), "exerciseName": .string(name), "order": .number(Double(order)), "sets": .number(1), "reps": reps, "effort": effort, "setType": .string("working")]))
+      draftSessions[session]["exercises"] = .array(exercises)
+      let draftPlan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(draftSessions.map(JSONValue.object))])
+      let evaluated = evaluatePlan(draftPlan, database: database, profile: profile, target: target, relationships: relationships)
+      guard !exceedsMaximum(evaluated) else { return result("unsatisfiable", nil, evaluated, constraints: [.object(["code": .string("SESSION_COUNT_CONFLICT"), "detail": .string("cannot populate session without exceeding target maximum")])]) }
+      sessions = draftSessions; allocationEvaluation = evaluated; rationale[candidate.exerciseId, default: []].insert("DETERMINISTIC_TIE_BREAK")
     }
   }
   let plan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(sessions.map(JSONValue.object))])

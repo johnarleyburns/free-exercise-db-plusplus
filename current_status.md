@@ -80,6 +80,7 @@ native work; no Python rewrite was required.
 - Part AB — Swift locked-exercise semantics: **complete; audited below**
 - Part AC — Swift deterministic candidate ranking: **complete; audited below**
 - Part AD — Swift target-driven generation: **complete; audited below**
+- Part AE — Swift session allocation: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -113,6 +114,19 @@ passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
 source was changed.
 
 Part AD commit: pending commit after review.
+
+## Part AE session-allocation evidence
+
+Aligned generated session construction with Python for arbitrary cycle lengths,
+preferred/excluded offsets, session-count bounds, alternating split labels, and
+per-session exercise minimum/maximum bounds. Minimum exercise slots are filled
+after target allocation with deterministic, compatibility-aware candidates.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
+source was changed.
+
+Part AE commit: `cd5a34f` (`feat: align Swift session allocation`).
 
 ## Part B fixture evidence
 
