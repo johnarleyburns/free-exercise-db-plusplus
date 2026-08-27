@@ -93,6 +93,7 @@ native work; no Python rewrite was required.
 - Part AO — Swift adaptive target-maximum gate: **complete; audited below**
 - Part AP — Swift adaptive regeneration: **complete; audited below**
 - Part AQ — Swift adaptive result envelope: **complete; audited below**
+- Part AR — Swift determinism/idempotence: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
 - Part AZ — Swift external consumer contract: **complete; audited below**
 
@@ -287,6 +288,19 @@ the external consumer script, and `git diff --check` pass. No Python, Kotlin,
 or R source was changed.
 
 Part AQ commit: pending commit after review.
+
+## Part AR idempotence evidence
+
+Added a repeated-input regression for native generation, asserting byte-level
+semantic equality of two results with the same database, profile, target, and
+requirements. The generator uses caller-supplied deterministic inputs and no
+runtime timestamps, UUIDs, or global mutable state.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`,
+the external consumer script, and `git diff --check` pass. No Python, Kotlin,
+or R source was changed.
+
+Part AR commit: pending commit after review.
 
 ## Part AT history-aware intent evidence
 

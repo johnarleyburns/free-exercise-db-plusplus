@@ -476,6 +476,10 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(result.objectValue?["policy"]?.objectValue?["policyId"], .string("full-body-general-v1"))
     let standalone = evaluatePlan(result.objectValue?["plan"] ?? .null, database: database, profile: input.objectValue?["profile"], target: input.objectValue?["target"], relationships: relationships)
     XCTAssertEqual(result.objectValue?["evaluation"], standalone)
+    let repeatResult = TrainingEngine(database: database, relationships: relationships).generatePlan(
+      profile: input.objectValue?["profile"] ?? .null, target: input.objectValue?["target"] ?? .null,
+      policy: "full-body-general-v1", requiredExerciseIds: ["Barbell_Bench_Press_-_Medium_Grip"])
+    XCTAssertEqual(result, repeatResult)
   }
 
   func testFlagshipIntentResolvesCanonicalFiveDayOffsets() throws {
