@@ -371,6 +371,12 @@ the external consumer script, and `git diff --check` pass.
 
 Part AY commit: pending commit after review.
 
+## Part AY completion note
+
+Parity verification is wired through the existing fixture-backed Swift test
+targets and `compare_canonical_json.py`; no handcrafted native expected output
+was introduced for the shared evaluation or progression cases.
+
 ## Part AW resource-copy evidence
 
 The external consumer script performs a byte-for-byte `cmp` of the canonical
