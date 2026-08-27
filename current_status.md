@@ -77,13 +77,13 @@ native work; no Python rewrite was required.
 - Part Y — Swift planning policies: **complete; audited below**
 - Part Z — Swift generator input filtering: **complete; audited below**
 - Part AA — Swift equipment semantics: **complete; audited below**
+- Part AB — Swift locked-exercise semantics: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part AB by porting locked-exercise semantics in isolation. Preserve
-current-plan day placement and conflict behavior, keep Kotlin and R deferred,
-preserve the Python oracle, and do not begin later coaching/planning parts in
-that cycle.
+Begin Part AC by matching deterministic candidate ranking to Python. Preserve
+the current filtering and locking contracts, keep Kotlin and R deferred,
+preserve the Python oracle, and do not begin later planning parts in that cycle.
 
 ## Part B fixture evidence
 
@@ -541,6 +541,22 @@ equipment rejection coverage. `git diff --check` passed. No Python, Kotlin, or
 R source was changed.
 
 Part AA commit: `65993d2` (`feat: match Swift generator equipment semantics`).
+
+## Part AB locked-exercise evidence
+
+Aligned Swift locked-exercise handling with the Python v1.8 contract. A locked
+exercise must occur in `currentPlan`, remains subject to the same eligibility
+filter, and preserves its canonical session/day offset. Locked offsets are
+passed into deterministic session selection; excluded days, unavailable days,
+duplicate offsets, too many offsets, missing locks, and upper/lower split-role
+conflicts return machine-readable `LOCKED_EXERCISE_CONFLICT` findings.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 38 tests, including current-plan locked placement and generator
+filtering coverage. `git diff --check` passed. No Python, Kotlin, or R source
+was changed.
+
+Part AB commit: `1b9ba3a` (`feat: align Swift locked exercise semantics`).
 
 ## Part A audit evidence
 
