@@ -478,6 +478,19 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(result.objectValue?["evaluation"], standalone)
   }
 
+  func testFlagshipIntentResolvesCanonicalFiveDayOffsets() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")))
+    let intent = try JSONDecoder().decode(WorkoutIntent.self, from: JSONEncoder().encode(input))
+    let engine = try TrainingEngine.bundled()
+    let resolution = engine.resolveIntent(intent)
+    XCTAssertTrue(["resolved", "resolved_with_defaults"].contains(resolution.status))
+    let availability = resolution.resolvedProfile?.objectValue?["availability"]?.objectValue
+    XCTAssertEqual(availability?["preferredDayOffsets"], .array([0, 1, 2, 3, 5].map { .number(Double($0)) }))
+    XCTAssertEqual(availability?["cycleLengthDays"], .number(7))
+  }
+
   func testReleasedPlanningPoliciesExposeCanonicalDocuments() {
     let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
     let fullBody = engine.planningPolicy("full-body-general-v1")?.objectValue

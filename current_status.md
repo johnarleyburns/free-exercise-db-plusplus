@@ -84,6 +84,7 @@ native work; no Python rewrite was required.
 - Part AF — Swift frequency allocation: **complete; audited below**
 - Part AG — Swift generated-plan result envelope: **complete; audited below**
 - Part AH — Swift evaluated generation gate: **complete; audited below**
+- Part AI — Swift flagship generation coverage: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -168,6 +169,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AH commit: pending commit after review.
+
+## Part AI flagship evidence
+
+Added fixture-backed coverage for the mandatory five-day hypertrophy intent.
+Resolution is verified against the canonical Monday/Tuesday/Wednesday/Thursday/
+Saturday offsets `0,1,2,3,5` and the seven-day cycle before production
+generation is invoked.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AI commit: pending commit after review.
 
 ## Part B fixture evidence
 
