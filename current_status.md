@@ -468,6 +468,11 @@ database, schema, Kotlin, R, random-ID, network, LLM, or external-research
 artifacts. The pre-existing untracked `HANDOFF.md` remains intentionally
 uncommitted.
 
+Part BS CI result: the first implementation/release-prep run failed because
+the Swift bundled intent-policy copy was not byte-identical to the canonical
+resource. The copy was corrected, local `cmp` checks and 42 Swift tests pass,
+and the fix is committed for the next CI run.
+
 Parts BA–BQ are complete as separate human commits. The implementation branch
 is ready for the aggregate release-gate checks; no combined feature commit is
 needed because the requested one-part-at-a-time history is preserved.
