@@ -346,6 +346,14 @@ pass. No Python, Kotlin, or R source was changed.
 Part AV commit: pending commit after review.
 Part AW commit: pending commit after review.
 
+## Part AW resource-copy evidence
+
+The external consumer script performs a byte-for-byte `cmp` of the canonical
+root intent policy and the SPM-bundled copy before building the consumer.
+
+Verification: `bash scripts/test_swift_consumer.sh` and `git diff --check`
+pass. No Python, Kotlin, or R source was changed.
+
 ## Part AT history-aware intent evidence
 
 History-aware intent resolution now derives TrainingState with the injected

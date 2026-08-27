@@ -6,6 +6,7 @@ set -euo pipefail
 repo=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 consumer=$(mktemp -d)
 trap 'rm -rf "$consumer"' EXIT
+jq -S '{environmentPolicies,goalPolicies}' "$repo/resources/intent-policies.json" | cmp - <(jq -S '{environmentPolicies,goalPolicies}' "$repo/packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/intent-policies.json")
 mkdir -p "$consumer/Sources/Consumer"
 cp "$repo/fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json" "$consumer/intent.json"
 cp "$repo/fixtures/cross-language/history/input.json" "$consumer/history.json"
