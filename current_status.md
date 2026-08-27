@@ -61,8 +61,9 @@ native work; no Python rewrite was required.
 - Part I — Swift full PLAN evaluation: **complete; audited below**
 - Part J — Swift TARGET validation and merging: **complete; audited below**
 - Part K — Swift TrainingHistory model and semantics: **complete; audited below**
-- Parts L–N — Swift time-aware history and state: pending the detailed order in
-  `HANDOFF.md`
+- Part L — Swift offset-aware time: **complete; audited below**
+- Parts M–N — Swift full TrainingState and windows: pending the detailed order
+  in `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
@@ -254,6 +255,24 @@ Kotlin, or R source was changed.
 
 Part K commit: `6494743` (`feat: complete Swift training history domain`).
 
+## Part L time evidence
+
+Added a shared offset-aware ISO-8601 parser that rejects naive timestamps,
+accepts fractional and non-fractional instants, returns absolute `Date`
+chronology, and retains the numeric source offset for local calendar-boundary
+construction. Updated the existing Swift history projection to use this
+parser for `asOf`, activation bounds, and ACTUAL future exclusion. Rolling
+window dates are now derived in the as-of offset, while instant comparisons
+remain absolute across differing offsets and DST-adjacent transitions.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 21 tests, including UTC, `-05:00`, `-04:00`, same-calendar-date
+future exclusion, naive-timestamp rejection, and DST-adjacent boundary
+regressions. `git diff --check` passed. No Python, Kotlin, or R source was
+changed.
+
+Part L commit: `b9829a0` (`feat: add Swift offset-aware time semantics`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -303,8 +322,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `6494743`
-  (`feat: complete Swift training history domain`)
+- Current committed HEAD before the next implementation phase: `b9829a0`
+  (`feat: add Swift offset-aware time semantics`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
