@@ -39,12 +39,24 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   var decisions: [JSONValue] = [], changes: [JSONValue] = []
   let exerciseState = cObject(cObject(state)["exerciseState"])
   let progressionPolicy = cString(cObject(policy)["exerciseProgressionPolicy"]) ?? "double-progression-v1"
+  let substitutionHistory = cObject(cObject(cObject(state)["adherenceState"])["substitutionHistoryByPrescription"])
   var sessions = cArray(cObject(proposed)["sessions"])
   for sessionIndex in sessions.indices {
     var session = cObject(sessions[sessionIndex]), exercises = cArray(session["exercises"])
     for exerciseIndex in exercises.indices {
       let rx = exercises[exerciseIndex], rxObject = cObject(rx), id = cString(rxObject["exerciseId"])
       guard let id, let stateRow = exerciseState[id] else { continue }
+      if let prescriptionId = cString(rxObject["prescriptionId"]) {
+        let substitution = cObject(substitutionHistory[prescriptionId])
+        let count = substitution["count"].flatMap { if case .number(let value) = $0 { return value }; return nil } ?? 0
+        if count >= 2, let replacement = cString(substitution["replacementExerciseId"]), let replacementExercise = try? database.getExercise(replacement), replacementExercise.annotation.volumeEligible {
+        var updated = rxObject; updated["exerciseId"] = .string(replacement); exercises[exerciseIndex] = .object(updated)
+        let decisionId = "substitute_exercise-\(prescriptionId)"
+        decisions.append(.object(["schemaVersion": .string("0.1.0"), "decisionId": .string(decisionId), "decisionType": .string("substitute_exercise"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .string(prescriptionId), "exerciseId": .string(id), "before": .object(["exerciseId": .string(id)]), "after": .object(["exerciseId": .string(replacement)]), "reasonCodes": .array([.string("REPEATED_SUBSTITUTION")]), "evidence": .object(substitution), "provenance": cObject(state)["provenance"] ?? .object([:])]))
+        changes.append(.object(["type": .string("EXERCISE_SUBSTITUTED"), "prescriptionId": .string(prescriptionId), "before": .object(["exerciseId": .string(id)]), "after": .object(["exerciseId": .string(replacement)]), "reasonCodes": .array([.string("REPEATED_SUBSTITUTION")]), "decisionIds": .array([.string(decisionId)])]))
+        continue
+        }
+      }
       let decision = applyProgressionPolicy(progressionPolicy, prescription: rx, exerciseState: stateRow, parameters: cObject(policy)["parameters"])
       let decisionObject = cObject(decision)
       decisions.append(decision)

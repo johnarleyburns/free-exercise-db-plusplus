@@ -89,6 +89,7 @@ native work; no Python rewrite was required.
 - Part AK — Swift coaching policy: **complete; audited below**
 - Part AL — Swift adaptive decision ordering: **complete; audited below**
 - Part AM — Swift adaptive progression reuse: **complete; audited below**
+- Part AN — Swift explicit adaptive substitution: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -232,6 +233,19 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AM commit: pending commit after review.
+
+## Part AN substitution evidence
+
+Adaptive coaching now consumes only explicit windowed substitution history.
+Repeated substitutions at the canonical threshold produce a deterministic
+substitution decision and change using the recorded replacement exercise; family
+or muscle similarity and unrelated ACTUAL exercise IDs are never inferred as a
+substitution.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AN commit: pending commit after review.
 
 ## Part B fixture evidence
 
