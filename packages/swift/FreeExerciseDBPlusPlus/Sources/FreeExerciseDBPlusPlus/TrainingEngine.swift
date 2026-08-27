@@ -50,6 +50,10 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.evaluatePlan(plan, database: database, profile: profile, target: target, relationships: relationships)
   }
 
+  public func applyProgressionPolicy(_ policy: String, prescription: JSONValue, exerciseState: JSONValue, parameters: JSONValue? = nil) -> JSONValue {
+    FreeExerciseDBPlusPlus.applyProgressionPolicy(policy, prescription: prescription, exerciseState: exerciseState, parameters: parameters)
+  }
+
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
     FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
   }

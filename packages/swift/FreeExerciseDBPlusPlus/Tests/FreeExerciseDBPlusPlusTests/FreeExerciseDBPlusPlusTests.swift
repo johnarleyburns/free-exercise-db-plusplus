@@ -183,6 +183,17 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(muscles?["chest"]?.objectValue?["exposures"], .number(1))
   }
 
+  func testProgressionMatchesCanonicalTopRepsAndEffortBoundary() throws {
+    let prescription: JSONValue = .object(["prescriptionId": .string("rx"), "exerciseId": .string("x"), "load": .object(["unit": .string("kg"), "value": .number(80)]), "reps": .object(["min": .number(6), "target": .number(8), "max": .number(10)]), "sets": .number(2), "effort": .object(["rir": .object(["target": .number(2)])])])
+    let state: JSONValue = .object(["planContext": .object(["planId": .string("p"), "revisionId": .string("r")]), "lastActual": .object(["sets": .array([.object(["completed": .bool(true), "reps": .number(10), "rir": .number(2)]), .object(["completed": .bool(true), "reps": .number(10), "rir": .number(2)])])])])
+    let result = applyProgressionPolicy("double-progression-v1", prescription: prescription, exerciseState: state, parameters: .object(["loadIncrement": .object(["unit": .string("kg"), "value": .number(2.5)])]))
+    XCTAssertEqual(result.objectValue?["decisionType"], .string("increase_load"))
+    XCTAssertEqual(result.objectValue?["after"]?.objectValue?["load"]?.objectValue?["value"], .number(82.5))
+    XCTAssertEqual(result.objectValue?["reasonCodes"], .array([.string("EFFORT_WITHIN_TARGET"), .string("REP_TARGET_ACHIEVED")]))
+    let tooHigh = state.objectValue.map { value -> JSONValue in var copy = value; copy["lastActual"] = .object(["sets": .array([.object(["completed": .bool(true), "reps": .number(10), "rir": .number(1)]), .object(["completed": .bool(true), "reps": .number(10), "rir": .number(2)])])]); return .object(copy) } ?? .null
+    XCTAssertEqual(applyProgressionPolicy("double-progression-v1", prescription: prescription, exerciseState: tooHigh).objectValue?["reasonCodes"], .array([.string("EFFORT_TOO_HIGH")]))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
