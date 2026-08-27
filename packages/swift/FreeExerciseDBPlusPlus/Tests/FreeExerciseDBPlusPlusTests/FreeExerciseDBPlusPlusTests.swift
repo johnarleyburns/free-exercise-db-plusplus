@@ -45,6 +45,31 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     let roundTrip = try decoder.decode(TrainingHistory.self, from: JSONEncoder().encode(history))
     XCTAssertEqual(roundTrip, history)
   }
+
+  func testTypedTrainingHistoryDecodesCanonicalActualLinkage() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let decoder = JSONDecoder()
+    let history = try decoder.decode(TrainingHistory.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/history-aware/history.json")))
+    XCTAssertEqual(history.subjectId, "fixture-subject")
+    XCTAssertEqual(history.plans.first?.revisionId, "r1")
+    XCTAssertEqual(history.planActivations.first?.effectiveFrom, "2026-08-01T00:00:00Z")
+    XCTAssertEqual(history.workouts.first?.planReference?.planSessionId, "history-session")
+    XCTAssertEqual(history.workouts.first?.exercises.first?.exercisePrescriptionId, "history-rx")
+    XCTAssertEqual(history.workouts.first?.exercises.first?.sets.first?.setType, "working")
+    XCTAssertEqual(history.plan(planId: "history-plan", revisionId: "r1")?.planId, "history-plan")
+    XCTAssertEqual(history.activations(for: "history-plan").count, 1)
+  }
+
+  func testTypedActualSupportsSubstitutionAndUnplannedWork() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let workout = try JSONDecoder().decode(Workout.self, from: Data(contentsOf: root.appendingPathComponent("examples/workouts/plan-linked.json")))
+    XCTAssertEqual(workout.exercises[1].substitution?.plannedPrescriptionId, "upper-a-row")
+    XCTAssertFalse(workout.exercises[1].isUnplanned)
+    let unplanned = ExerciseObservation(exerciseId: "extra", order: 3, sets: [SetObservation(setNumber: 1, setType: "working", completed: true)])
+    XCTAssertTrue(unplanned.isUnplanned)
+  }
   func testEffectiveSets() throws {
     let ex = Exercise(
       exerciseId: "x",

@@ -117,6 +117,17 @@ public struct PlanActivation: Codable, Sendable, Equatable {
   }
 }
 
+/// A scheduled plan occurrence is intentionally date-string based here; timezone-aware chronology is Part L.
+public struct ScheduledOccurrence: Codable, Sendable, Equatable {
+  public let planId: String
+  public let revisionId: String
+  public let planSessionId: String
+  public let scheduledDate: String
+  public init(planId: String, revisionId: String, planSessionId: String, scheduledDate: String) {
+    self.planId = planId; self.revisionId = revisionId; self.planSessionId = planSessionId; self.scheduledDate = scheduledDate
+  }
+}
+
 public struct TrainingHistory: Codable, Sendable, Equatable {
   public let subjectId: String
   public let plans: [WorkoutPlan]
@@ -127,6 +138,18 @@ public struct TrainingHistory: Codable, Sendable, Equatable {
   public init(subjectId: String, plans: [WorkoutPlan] = [], workouts: [Workout] = [], targets: [VolumeTarget] = [], planActivations: [PlanActivation] = [], metadata: [String: JSONValue] = [:]) {
     self.subjectId = subjectId; self.plans = plans; self.workouts = workouts; self.targets = targets; self.planActivations = planActivations; self.metadata = metadata
   }
+  private enum CodingKeys: String, CodingKey { case subjectId, plans, workouts, targets, planActivations, metadata }
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    subjectId = try c.decode(String.self, forKey: .subjectId)
+    plans = try c.decodeIfPresent([WorkoutPlan].self, forKey: .plans) ?? []
+    workouts = try c.decodeIfPresent([Workout].self, forKey: .workouts) ?? []
+    targets = try c.decodeIfPresent([VolumeTarget].self, forKey: .targets) ?? []
+    planActivations = try c.decodeIfPresent([PlanActivation].self, forKey: .planActivations) ?? []
+    metadata = try c.decodeIfPresent([String: JSONValue].self, forKey: .metadata) ?? [:]
+  }
+  public func plan(planId: String, revisionId: String? = nil) -> WorkoutPlan? { plans.first { $0.planId == planId && (revisionId == nil || $0.revisionId == revisionId) } }
+  public func activations(for planId: String? = nil) -> [PlanActivation] { planActivations.filter { planId == nil || $0.planId == planId } }
 }
 
 public enum TrainingHistoryWindow: Codable, Sendable, Equatable {
