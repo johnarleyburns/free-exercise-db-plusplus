@@ -194,6 +194,21 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(applyProgressionPolicy("double-progression-v1", prescription: prescription, exerciseState: tooHigh).objectValue?["reasonCodes"], .array([.string("EFFORT_TOO_HIGH")]))
   }
 
+  func testProgressionCasesMatchPythonGoldenFixture() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/progression/input.json")))
+    let expected = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/progression/expected.json")))
+    guard case .array(let cases)? = input.objectValue?["cases"], let parameters = input.objectValue?["parameters"] else { return XCTFail("invalid progression fixture") }
+    for raw in cases {
+      guard let item = raw.objectValue, case .string(let id)? = item["id"], let expectedItem = expected.objectValue?[id]?.objectValue, let prescription = item["prescription"], let state = item["state"] else { return XCTFail("invalid progression case") }
+      let result = applyProgressionPolicy("double-progression-v1", prescription: prescription, exerciseState: state, parameters: parameters)
+      XCTAssertEqual(result.objectValue?["decisionType"], expectedItem["decisionType"], id)
+      XCTAssertEqual(result.objectValue?["reasonCodes"], expectedItem["reasonCodes"], id)
+      XCTAssertEqual(result.objectValue?["after"], expectedItem["after"], id)
+    }
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)

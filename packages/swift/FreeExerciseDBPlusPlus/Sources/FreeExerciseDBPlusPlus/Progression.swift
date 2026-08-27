@@ -23,8 +23,14 @@ public func applyProgressionPolicy(_ policy: String, prescription value: JSONVal
   let required = plannedItems.isEmpty ? Int(pRangeTop(prescription["sets"]) ?? 0) : plannedItems.count
   let sets = pCountedSets(actual)
   if sets.count < required { return pDecision(policy, "hold", prescription, state, ["SET_TARGET_NOT_COMPLETED", "INCOMPLETE_WORKOUT"], evidence: ["plannedSetCount": .number(Double(required)), "actualSetCount": .number(Double(sets.count))]) }
+  var orderedPlans: [[String: JSONValue]] = []
+  if !plannedItems.isEmpty && sets.contains(where: { $0["setPrescriptionId"] != nil }) {
+    let byId = Dictionary(uniqueKeysWithValues: plannedItems.compactMap { item -> (String, [String: JSONValue])? in guard let id = pString(item["setPrescriptionId"]) else { return nil }; return (id, item) })
+    guard sets.prefix(required).allSatisfy({ set in guard let id = pString(set["setPrescriptionId"]) else { return true }; return byId[id] != nil }) else { return pDecision(policy, "insufficient_data", prescription, state, ["NO_MATCHED_ACTUAL"], evidence: ["sets": .array(sets.map(JSONValue.object))]) }
+    orderedPlans = sets.prefix(required).compactMap { set in pString(set["setPrescriptionId"]).flatMap { byId[$0] } }
+  }
   let comparisons: [JSONValue] = sets.prefix(required).enumerated().map { index, set in
-    let planned = plannedItems.indices.contains(index) ? plannedItems[index]["reps"] : prescription["reps"]
+    let planned = orderedPlans.indices.contains(index) ? orderedPlans[index]["reps"] : (plannedItems.indices.contains(index) ? plannedItems[index]["reps"] : prescription["reps"])
     return .object(["setId": set["setPrescriptionId"] ?? set["setNumber"] ?? .null, "plannedReps": planned ?? .null, "actualReps": set["reps"] ?? .null])
   }
   let topReached = comparisons.allSatisfy { pNumber($0.objectValue?["actualReps"]) != nil && pRangeTop($0.objectValue?["plannedReps"]) != nil && pNumber($0.objectValue?["actualReps"])! >= pRangeTop($0.objectValue?["plannedReps"])! }
@@ -34,7 +40,7 @@ public func applyProgressionPolicy(_ policy: String, prescription value: JSONVal
   if let effortKey {
     let actualEffort = sets.prefix(required).compactMap { pNumber($0[effortKey]) }
     guard actualEffort.count == required else { return pDecision(policy, "insufficient_data", prescription, state, ["INSUFFICIENT_EFFORT_DATA"], evidence: ["sets": .array(comparisons), "effortType": .string(effortKey)]) }
-    let bounds = pObject(effort[effortKey]); let low = pRangeTop(.object(bounds)), high = bounds["max"].flatMap(pNumber) ?? bounds["target"].flatMap(pNumber)
+    let bounds = pObject(effort[effortKey]); let low = bounds["min"].flatMap(pNumber) ?? bounds["target"].flatMap(pNumber), high = bounds["max"].flatMap(pNumber) ?? bounds["target"].flatMap(pNumber)
     var effortReasons = Set<String>()
     for actual in actualEffort { if effortKey == "rpe", let low, actual < low { effortReasons.insert("EFFORT_TOO_LOW") }; if effortKey == "rpe", let high, actual > high { effortReasons.insert("EFFORT_TOO_HIGH") }; if effortKey == "rir", let low, actual < low { effortReasons.insert("EFFORT_TOO_HIGH") }; if effortKey == "rir", let high, actual > high { effortReasons.insert("EFFORT_TOO_LOW") } }
     if !effortReasons.isEmpty { return pDecision(policy, "hold", prescription, state, effortReasons, evidence: ["sets": .array(comparisons), "actualEffort": .array(actualEffort.map(JSONValue.number))]) }
