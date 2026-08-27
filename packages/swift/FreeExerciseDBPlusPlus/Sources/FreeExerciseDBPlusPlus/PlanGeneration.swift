@@ -27,6 +27,28 @@ private let generationPolicies: [String: [String: JSONValue]] = [
   ]
 ]
 
+private struct CandidateRank: Comparable {
+  let required: Int
+  let continuity: Int
+  let history: Int
+  let preferred: Int
+  let preferredFamily: Int
+  let contribution: Double
+  let avoided: Int
+  let exerciseId: String
+
+  static func < (lhs: CandidateRank, rhs: CandidateRank) -> Bool {
+    if lhs.required != rhs.required { return lhs.required < rhs.required }
+    if lhs.continuity != rhs.continuity { return lhs.continuity < rhs.continuity }
+    if lhs.history != rhs.history { return lhs.history < rhs.history }
+    if lhs.preferred != rhs.preferred { return lhs.preferred < rhs.preferred }
+    if lhs.preferredFamily != rhs.preferredFamily { return lhs.preferredFamily < rhs.preferredFamily }
+    if lhs.contribution != rhs.contribution { return lhs.contribution < rhs.contribution }
+    if lhs.avoided != rhs.avoided { return lhs.avoided < rhs.avoided }
+    return lhs.exerciseId < rhs.exerciseId
+  }
+}
+
 private func gObject(_ value: JSONValue?) -> [String: JSONValue] { value?.objectValue ?? [:] }
 private func gString(_ value: JSONValue?) -> String? { if case .string(let value)? = value { return value }; return nil }
 private func gNumber(_ value: JSONValue?) -> Double? { if case .number(let value)? = value { return value }; return nil }
@@ -134,19 +156,52 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     return result("unsatisfiable", nil, nil, constraints: findings)
   }
   let currentIds = Set(gArray(gObject(currentPlan)["sessions"]).flatMap { gArray(gObject($0)["exercises"]) }.compactMap { gString(gObject($0)["exerciseId"]) })
-  let historyIds = Set(gObject(gObject(trainingState)["exerciseState"]).keys)
+  let history = gObject(gObject(trainingState)["exerciseState"])
   let preferredIds = Set(gStringArray(gObject(profileObject["exercisePreferences"])["preferredExerciseIds"]))
+  let avoidedIds = Set(gStringArray(gObject(profileObject["exercisePreferences"])["avoidedExerciseIds"]))
+  let preferredFamilies = Set(gStringArray(gObject(profileObject["exercisePreferences"])["preferredFamilyIds"]))
+  let avoidedFamilies = Set(gStringArray(gObject(profileObject["exercisePreferences"])["avoidedFamilyIds"]))
   let continuity = gString(gObject(options)["continuity"]) ?? "preserve"
-  let rankedCandidates = candidates.sorted {
-    let lhs: (Int, Int, Int, String) = (0 - (currentIds.contains($0.exerciseId) && continuity == "preserve" ? 1 : 0), 0 - (historyIds.contains($0.exerciseId) && continuity != "vary" ? 1 : 0), 0 - (preferredIds.contains($0.exerciseId) ? 1 : 0), $0.exerciseId)
-    let rhs: (Int, Int, Int, String) = (0 - (currentIds.contains($1.exerciseId) && continuity == "preserve" ? 1 : 0), 0 - (historyIds.contains($1.exerciseId) && continuity != "vary" ? 1 : 0), 0 - (preferredIds.contains($1.exerciseId) ? 1 : 0), $1.exerciseId)
-    return lhs < rhs
+  guard ["preserve", "neutral", "vary"].contains(continuity) else {
+    return result("invalid_input", nil, nil, constraints: [.object(["code": .string("INVALID_INPUT"), "detail": .string("options.continuity must be preserve, neutral, or vary")])])
+  }
+  func family(_ id: String) -> String? { relationships?.family(for: id)?.familyId }
+  func contribution(_ exercise: Exercise, _ kind: String, _ key: String) -> Double {
+    if kind == "pattern" { return exercise.annotation.patterns.contains(key) ? 1 : 0 }
+    if kind == "family" { return family(exercise.exerciseId) == key ? 1 : 0 }
+    if kind == "frequency" {
+      return (exercise.annotation.direct.contains(key) || exercise.annotation.indirect.contains(key)) ? 1 : 0
+    }
+    return exercise.annotation.direct.contains(key) ? database.setCredits.direct
+      : (exercise.annotation.indirect.contains(key) ? database.setCredits.indirect
+      : (exercise.annotation.stabilizers.contains(key) ? database.setCredits.stabilizer : 0))
+  }
+  func rank(_ candidate: Exercise, _ kind: String, _ key: String) -> CandidateRank {
+    let state = gObject(history[candidate.exerciseId])
+    let adherence = gNumber(gObject(state["prescriptionAdherence"])["setAdherence"])
+    let goodHistory = history[candidate.exerciseId] != nil && (adherence == nil || adherence! >= 0.5)
+    let current = currentIds.contains(candidate.exerciseId) ? 1 : 0
+    let good = goodHistory ? 1 : 0
+    let continuityRank: (Int, Int)
+    if continuity == "preserve" { continuityRank = (-current, -good) }
+    else if continuity == "neutral" { continuityRank = (0, 0) }
+    else { continuityRank = (current, good) }
+    let familyId = family(candidate.exerciseId)
+    let preferred = preferredIds.contains(candidate.exerciseId) ? -1 : 0
+    let preferredFamily = familyId.map { preferredFamilies.contains($0) ? -1 : 0 } ?? 0
+    let avoided = (avoidedIds.contains(candidate.exerciseId) ? 1 : 0) + (familyId.map { avoidedFamilies.contains($0) ? 1 : 0 } ?? 0)
+    return CandidateRank(required: required.contains(candidate.exerciseId) ? -1 : 0, continuity: continuityRank.0,
+                         history: continuityRank.1, preferred: preferred, preferredFamily: preferredFamily,
+                         contribution: -contribution(candidate, kind, key), avoided: avoided,
+                         exerciseId: candidate.exerciseId)
+  }
+  func ranked(_ kind: String, _ key: String) -> [Exercise] {
+    candidates.sorted { rank($0, kind, key) < rank($1, kind, key) }
   }
   let reps = gObject(policy["parameters"])["reps"] ?? .object([:]), effort = gObject(policy["parameters"])["effort"] ?? .object([:])
   let planId = gString(gObject(options)["planId"]) ?? "generated-plan", revisionId = gString(gObject(options)["revisionId"]) ?? "r1", planName = gString(gObject(options)["name"]) ?? "Generated \(policyId)"
   var sessions: [[String: JSONValue]] = offsets.enumerated().map { index, offset in ["planSessionId": .string("session-\(index + 1)"), "dayOffset": .number(Double(offset)), "name": .string("Session \(index + 1)"), "exercises": .array([])] }
   var rationale: [String: Set<String>] = [:]
-  func family(_ id: String) -> String? { relationships?.family(for: id)?.familyId }
   func add(_ id: String, _ session: Int, _ reason: String) {
     var exercises = gArray(sessions[session]["exercises"])
     if let index = exercises.firstIndex(where: { gString(gObject($0)["exerciseId"]) == id }) {
@@ -171,7 +226,7 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     }
   }
   for familyId in requiredFamilies.sorted() {
-    guard let candidate = rankedCandidates.first(where: { family($0.exerciseId) == familyId }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_FAMILY_EXERCISE"), "familyId": .string(familyId)])]) }
+    guard let candidate = ranked("family", familyId).first(where: { family($0.exerciseId) == familyId }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_FAMILY_EXERCISE"), "familyId": .string(familyId)])]) }
     guard let destination = sessions.indices.first(where: { compatible(candidate.exerciseId, $0) }) else { return result("unsatisfiable", nil, nil, constraints: [lockedConflict(nil, "required family is incompatible with generated split role")]) }
     add(candidate.exerciseId, destination, "REQUIRED_FAMILY")
   }
@@ -180,15 +235,14 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     add(id, destination, "REQUIRED_EXERCISE")
   }
   let targetMuscles = gObject(targetObject["muscles"]), targetPatterns = gObject(targetObject["movementPatterns"])
-  func contribution(_ exercise: Exercise, _ key: String) -> Double { exercise.annotation.direct.contains(key) ? database.setCredits.direct : (exercise.annotation.indirect.contains(key) ? database.setCredits.indirect : 0) }
   var guardCount = 0
   while guardCount < 256 {
     guardCount += 1
     var deficits: [(Double, String, String)] = []
-    for (muscle, rangeValue) in targetMuscles { let range = gRange(rangeValue), actual = sessions.flatMap { gArray($0["exercises"]) }.reduce(0.0) { total, raw in total + (candidateById[gString(gObject(raw)["exerciseId"]) ?? ""].map { contribution($0, muscle) * (gNumber(gObject(raw)["sets"]) ?? 0) } ?? 0) }; if let minimum = range.min, actual < minimum { deficits.append((minimum - actual, "muscle", muscle)) }; if let target = range.target, actual < target { deficits.append((target - actual, "muscle", muscle)) } }
+    for (muscle, rangeValue) in targetMuscles { let range = gRange(rangeValue), actual = sessions.flatMap { gArray($0["exercises"]) }.reduce(0.0) { total, raw in total + (candidateById[gString(gObject(raw)["exerciseId"]) ?? ""].map { contribution($0, "muscle", muscle) * (gNumber(gObject(raw)["sets"]) ?? 0) } ?? 0) }; if let minimum = range.min, actual < minimum { deficits.append((minimum - actual, "muscle", muscle)) }; if let target = range.target, actual < target { deficits.append((target - actual, "muscle", muscle)) } }
     for (pattern, value) in targetPatterns { let range = gRange(value), actual = sessions.flatMap { gArray($0["exercises"]) }.reduce(0.0) { total, raw in total + (candidateById[gString(gObject(raw)["exerciseId"]) ?? ""]?.annotation.patterns.contains(pattern) == true ? (gNumber(gObject(raw)["sets"]) ?? 0) : 0) }; if let minimum = range.min, actual < minimum { deficits.append((minimum - actual, "pattern", pattern)) } }
     guard let deficit = deficits.sorted(by: { $0.0 == $1.0 ? ($0.1, $0.2) < ($1.1, $1.2) : $0.0 > $1.0 }).first else { break }
-    let eligible = rankedCandidates.filter { deficit.1 == "muscle" ? contribution($0, deficit.2) > 0 : $0.annotation.patterns.contains(deficit.2) }
+    let eligible = ranked(deficit.1, deficit.2).filter { contribution($0, deficit.1, deficit.2) > 0 }
     guard let candidate = eligible.first else { break }
     let choices = sessions.indices.filter { compatible(candidate.exerciseId, $0) }.sorted { a, b in gArray(sessions[a]["exercises"]).count < gArray(sessions[b]["exercises"]).count }
     guard let session = choices.first(where: { !gArray(sessions[$0]["exercises"]).contains { family(gString($0.objectValue?["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil } }) else { break }

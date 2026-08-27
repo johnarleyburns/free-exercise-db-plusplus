@@ -78,12 +78,26 @@ native work; no Python rewrite was required.
 - Part Z — Swift generator input filtering: **complete; audited below**
 - Part AA — Swift equipment semantics: **complete; audited below**
 - Part AB — Swift locked-exercise semantics: **complete; audited below**
+- Part AC — Swift deterministic candidate ranking: **complete; audited below**
 
 ### Resume instructions for the next phase
 
 Begin Part AC by matching deterministic candidate ranking to Python. Preserve
 the current filtering and locking contracts, keep Kotlin and R deferred,
 preserve the Python oracle, and do not begin later planning parts in that cycle.
+
+## Part AC ranking evidence
+
+Matched native candidate ranking to Python's explicit tuple: required exercise,
+continuity mode, adherence-qualified history continuity, preferred exercise and
+family, target-specific contribution using direct/indirect/stabilizer credits,
+avoided exercise/family penalties, and lexical exercise ID tie-breaking.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
+source was changed.
+
+Part AC commit: pending commit after review.
 
 ## Part B fixture evidence
 
