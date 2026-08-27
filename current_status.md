@@ -468,6 +468,10 @@ database, schema, Kotlin, R, random-ID, network, LLM, or external-research
 artifacts. The pre-existing untracked `HANDOFF.md` remains intentionally
 uncommitted.
 
+Parts BA–BQ are complete as separate human commits. The implementation branch
+is ready for the aggregate release-gate checks; no combined feature commit is
+needed because the requested one-part-at-a-time history is preserved.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
