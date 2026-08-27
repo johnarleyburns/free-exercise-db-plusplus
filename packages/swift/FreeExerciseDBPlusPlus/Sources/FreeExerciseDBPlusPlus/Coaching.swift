@@ -3,6 +3,7 @@ import Foundation
 private func cObject(_ value: JSONValue?) -> [String: JSONValue] { value?.objectValue ?? [:] }
 private func cArray(_ value: JSONValue?) -> [JSONValue] { if case .array(let values)? = value { return values }; return [] }
 private func cString(_ value: JSONValue?) -> String? { if case .string(let value)? = value { return value }; return nil }
+private func cNumber(_ value: JSONValue?) -> Double? { if case .number(let value)? = value { return value }; return nil }
 
 /// The released coaching policy document. Algorithms remain native code; the
 /// document is kept stable so consumers can identify the policy used.
@@ -71,7 +72,16 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   proposed = .object(proposedObject)
   let proposedEvaluation = changes.isEmpty ? nil : evaluatePlan(proposed, database: database, profile: profile, target: target, relationships: relationships)
   let hardRejected = proposedEvaluation.map { cObject(cObject($0)["summary"])["satisfiesHardConstraints"] != .bool(true) } ?? false
-  let accepted = !changes.isEmpty && !hardRejected
+  func excesses(_ evaluation: JSONValue) -> [String: Double] {
+    let root = cObject(evaluation), sections = [cObject(root["muscleCoverage"]), cObject(root["frequency"]), cObject(root["movementPatterns"]), cObject(cObject(root["families"])["targets"])]
+    var result: [String: Double] = [:]
+    for rows in sections { for (key, raw) in rows { let row = cObject(raw), actual = cNumber(row["actualEffectiveSets"]) ?? cNumber(row["normalizedExposuresPer7Days"]) ?? cNumber(row["plannedSets"]) ?? 0; if let max = cNumber(row["maximum"]), actual > max { result[key] = actual - max } } }
+    return result
+  }
+  let currentExcess = excesses(currentEvaluation), proposedExcess = proposedEvaluation.map(excesses) ?? [:]
+  let worsensMaximum = proposedExcess.contains { key, value in value > (currentExcess[key] ?? 0) }
+  let gateRejected = hardRejected || worsensMaximum
+  let accepted = !changes.isEmpty && !gateRejected
   func keyLess(_ left: [String], _ right: [String]) -> Bool {
     for (l, r) in zip(left, right) { if l != r { return l < r } }
     return left.count < right.count
@@ -84,5 +94,5 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
     let l = cObject(left), r = cObject(right)
     return keyLess([cString(l["prescriptionId"]) ?? "", cString(l["type"]) ?? ""], [cString(r["prescriptionId"]) ?? "", cString(r["type"]) ?? ""])
   }
-  return .object(["status": .string(accepted ? "revision_proposed" : (orderedDecisions.isEmpty ? "insufficient_data" : "no_change")), "currentPlan": currentPlan, "proposedPlan": accepted ? proposed : .null, "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(orderedDecisions), "changes": .array(orderedChanges), "unresolvedIssues": .array([]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
+  return .object(["status": .string(gateRejected ? "unsatisfiable" : (accepted ? "revision_proposed" : (orderedDecisions.isEmpty ? "insufficient_data" : "no_change"))), "currentPlan": currentPlan, "proposedPlan": gateRejected ? .null : (accepted ? proposed : .null), "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(orderedDecisions), "changes": .array(orderedChanges), "unresolvedIssues": .array(gateRejected ? [.object(["code": .string("EVALUATOR_GATE_REJECTED")])] : []), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
 }

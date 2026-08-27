@@ -90,6 +90,7 @@ native work; no Python rewrite was required.
 - Part AL — Swift adaptive decision ordering: **complete; audited below**
 - Part AM — Swift adaptive progression reuse: **complete; audited below**
 - Part AN — Swift explicit adaptive substitution: **complete; audited below**
+- Part AO — Swift adaptive target-maximum gate: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -246,6 +247,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AN commit: pending commit after review.
+
+## Part AO maximum-gate evidence
+
+Adaptive proposals now compare maximum-target excess magnitude across muscle,
+frequency, movement-pattern, and family dimensions. A proposal that increases
+an existing excess is rejected with `EVALUATOR_GATE_REJECTED`; reducing an
+excess remains eligible when other evaluator constraints pass.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AO commit: pending commit after review.
 
 ## Part B fixture evidence
 
