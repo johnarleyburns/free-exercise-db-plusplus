@@ -53,7 +53,8 @@ native work; no Python rewrite was required.
 - Part A — Python completeness audit: **complete; audited below**
 - Part B — Python golden fixtures: **complete; audited below**
 - Part C — canonical comparison rules: **complete; audited below**
-- Parts D–N — Swift engine architecture and parity: pending the preceding
+- Part D — Swift engine architecture: **complete; audited below**
+- Parts E–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -104,6 +105,22 @@ rejection, Python syntax compilation, and `git diff --check`. No engine
 implementation was changed in Part C.
 
 Part C commit: pending commit after review.
+
+## Part D architecture evidence
+
+Recorded the native Swift package boundary and implementation constraints in
+`docs/adr/0027-swift-native-engine-architecture.md`. The existing
+`packages/swift/FreeExerciseDBPlusPlus` package remains the sole Swift package,
+uses Swift 6 and Foundation, keeps portable values Codable/Sendable where
+practical, and has no UI, network, subprocess, Python, or LLM dependency.
+Part D made no semantic engine changes and intentionally leaves typed public
+engine expansion to Parts E–F.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 12 tests. A source audit found only Foundation imports and no
+prohibited runtime dependencies.
+
+Part D commit: pending commit after review.
 
 ## Part A audit evidence
 
