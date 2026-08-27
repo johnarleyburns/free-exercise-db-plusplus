@@ -50,12 +50,17 @@ private struct DatabaseDocument: Codable, Sendable { let metadata: [String: JSON
 public struct FEDatabase: Sendable {
     public let metadata: [String: JSONValue]
     private let exercises: [String: Exercise]
+    private let indexes: DatabaseIndexes
     public static func load(url: URL) throws -> FEDatabase {
         let data = try Data(contentsOf: url)
         do { let doc = try JSONDecoder().decode(DatabaseDocument.self, from: data); return FEDatabase(metadata: doc.metadata ?? [:], exercises: doc.exercises) }
         catch { throw FEDBError.invalidDocument("Unable to decode database: \(error)") }
     }
-    public init(metadata: [String: JSONValue] = [:], exercises: [String: Exercise]) { self.metadata = metadata; self.exercises = exercises }
+    public init(metadata: [String: JSONValue] = [:], exercises: [String: Exercise]) {
+        self.metadata = metadata
+        self.exercises = exercises
+        self.indexes = DatabaseIndexes(exercises: exercises)
+    }
     public var count: Int { exercises.count }
     public var exerciseIDs: Set<String> { Set(exercises.keys) }
     /// Stable DB++ exercise view for native analysis and planning.
@@ -66,9 +71,41 @@ public struct FEDatabase: Sendable {
         return (number("direct", 1), number("indirect", 0.5), number("stabilizer", 0))
     }
     public func getExercise(_ id: String) throws -> Exercise { guard let e = exercises[id] else { throw FEDBError.exerciseNotFound(id) }; return e }
-    public func findExercises(containing query: String) -> [Exercise] { let q = query.lowercased(); return exercises.values.filter { $0.exerciseId.lowercased().contains(q) }.sorted { $0.exerciseId < $1.exerciseId } }
-    public func exercisesForMuscle(_ muscle: String) -> [Exercise] { exercises.values.filter { $0.annotation.direct.contains(muscle) || $0.annotation.indirect.contains(muscle) }.sorted { $0.exerciseId < $1.exerciseId } }
-    public var equipmentVocabulary: Set<String> { Set(exercises.values.compactMap { if case .string(let value)? = $0.source?["equipment"] { return value }; return nil }) }
+    public func findExercises(containing query: String) -> [Exercise] { let q = query.lowercased(); return indexes.all.filter { $0.exerciseId.lowercased().contains(q) } }
+    public func exercisesForMuscle(_ muscle: String) -> [Exercise] { indexes.byMuscle[muscle, default: []].compactMap { exercises[$0] } }
+    public func exercisesForMovementPattern(_ pattern: String) -> [Exercise] { indexes.byMovementPattern[pattern, default: []].compactMap { exercises[$0] } }
+    public func exercisesForEquipment(_ equipment: String) -> [Exercise] { indexes.byEquipment[equipment, default: []].compactMap { exercises[$0] } }
+    public var equipmentVocabulary: Set<String> { Set(indexes.byEquipment.keys) }
+}
+
+private struct DatabaseIndexes: Sendable {
+    let all: [Exercise]
+    let byMuscle: [String: [String]]
+    let byMovementPattern: [String: [String]]
+    let byEquipment: [String: [String]]
+
+    init(exercises: [String: Exercise]) {
+        let sorted = exercises.values.sorted { $0.exerciseId < $1.exerciseId }
+        self.all = sorted
+        var muscles: [String: [String]] = [:]
+        var patterns: [String: [String]] = [:]
+        var equipment: [String: [String]] = [:]
+        for exercise in sorted {
+            let ids = Set(exercise.annotation.direct + exercise.annotation.indirect + exercise.annotation.stabilizers)
+            for muscle in ids { muscles[muscle, default: []].append(exercise.exerciseId) }
+            if case .array(let values)? = exercise.source?["movementPatterns"] {
+                for value in values {
+                    if case .string(let pattern) = value { patterns[pattern, default: []].append(exercise.exerciseId) }
+                }
+            }
+            if case .string(let value)? = exercise.source?["equipment"] {
+                equipment[value, default: []].append(exercise.exerciseId)
+            }
+        }
+        self.byMuscle = muscles
+        self.byMovementPattern = patterns
+        self.byEquipment = equipment
+    }
 }
 
 public struct Quantity: Codable, Sendable, Equatable { public let value: Double; public let unit: String }
@@ -96,7 +133,7 @@ public struct WorkoutPlan: Codable, Sendable, Equatable {
 public struct ExerciseFamily: Codable, Sendable, Equatable { public let familyId: String; public let name: String; public let aliases: [String] }
 public struct ExerciseRelationship: Codable, Sendable, Equatable { public let sourceExerciseId: String; public let targetExerciseId: String?; public let familyId: String; public let relationship: String; public let dimensions: [String: JSONValue]; public let confidence: String }
 public struct ExerciseRelationships: Codable, Sendable, Equatable {
-    public let schemaVersion: String; public let families: [String: ExerciseFamily]; public let relationships: [ExerciseRelationship]
+  public let schemaVersion: String; public let families: [String: ExerciseFamily]; public let relationships: [ExerciseRelationship]
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> ExerciseRelationships { do { return try decoder.decode(ExerciseRelationships.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode relationships: \(error)") } }
     public func family(for exerciseId: String) -> ExerciseFamily? { guard let row = relationships.first(where: { $0.sourceExerciseId == exerciseId && $0.relationship == "member_of_family" }) else { return nil }; return families[row.familyId] }
     public func members(of familyId: String) -> [String] { relationships.filter { $0.familyId == familyId && $0.relationship == "member_of_family" }.map(\.sourceExerciseId).sorted() }
