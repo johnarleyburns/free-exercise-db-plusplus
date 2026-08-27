@@ -161,6 +161,16 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertTrue(rows.contains { $0.objectValue?["missingness"] == .string("unable_to_match") })
   }
 
+  func testFamilyStateUsesMembershipWithoutInferringSubstitution() throws {
+    let relationships = ExerciseRelationships(schemaVersion: "1.0.0", families: ["press": ExerciseFamily(familyId: "press", name: "Press", aliases: [])], relationships: [ExerciseRelationship(sourceExerciseId: "planned", targetExerciseId: nil, familyId: "press", relationship: "member_of_family", dimensions: [:], confidence: "high"), ExerciseRelationship(sourceExerciseId: "actual", targetExerciseId: nil, familyId: "press", relationship: "member_of_family", dimensions: [:], confidence: "high")])
+    let history: JSONValue = .object(["subjectId": .string("s"), "workouts": .array([.object(["sessionId": .string("w"), "startTime": .string("2026-08-20T12:00:00Z"), "exercises": .array([.object(["exerciseId": .string("actual"), "sets": .array([])])])])])])
+    let state = deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", relationships: relationships)
+    let family = state.objectValue?["familyState"]?.objectValue?["press"]?.objectValue
+    XCTAssertEqual(family?["recentExerciseIds"], .array([.string("actual")]))
+    XCTAssertEqual(family?["mostRecentExerciseId"], .string("actual"))
+    XCTAssertEqual(family?["explicitSubstitutionCount"], .number(0))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
