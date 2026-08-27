@@ -92,6 +92,7 @@ native work; no Python rewrite was required.
 - Part AN — Swift explicit adaptive substitution: **complete; audited below**
 - Part AO — Swift adaptive target-maximum gate: **complete; audited below**
 - Part AP — Swift adaptive regeneration: **complete; audited below**
+- Part AT — Swift history-aware intent: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -272,6 +273,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AP commit: pending commit after review.
+
+## Part AT history-aware intent evidence
+
+History-aware intent resolution now derives TrainingState with the injected
+database and relationship artifact, preserving the full native state projection
+for production generation instead of falling back to a reduced no-resource
+projection.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AT commit: pending commit after review.
 
 ## Part B fixture evidence
 

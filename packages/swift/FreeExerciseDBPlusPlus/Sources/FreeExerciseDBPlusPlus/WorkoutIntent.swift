@@ -832,7 +832,9 @@ public struct IntentResolver: Sendable {
       "continuity": s(x.continuity ?? "neutral"), "repDefaults": reps,
       "effortDefaults": policy["effort"] ?? .object([:]), "requiredFamilyIds": .array((x.exerciseConstraints?.requiredFamilyIds ?? []).sorted().map(s)),
     ]
-    if x.useHistory == true, let history, let asOf { generationOptions["trainingState"] = deriveTrainingState(history, asOf: asOf) }
+    if x.useHistory == true, let history, let asOf {
+      generationOptions["trainingState"] = deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
+    }
     return IntentResolutionResult(
       status: defaults.isEmpty ? "resolved" : "resolved_with_defaults", resolvedProfile: .object(p),
       resolvedTarget: target, planningPolicy: x.requestedPlanningPolicy ?? "full-body-general-v1",
