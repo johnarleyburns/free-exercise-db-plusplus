@@ -52,7 +52,7 @@ native work; no Python rewrite was required.
 
 - Part A — Python completeness audit: **complete; audited below**
 - Part B — Python golden fixtures: **complete; audited below**
-- Part C — canonical comparison rules: pending Part B
+- Part C — canonical comparison rules: **complete; audited below**
 - Parts D–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
@@ -87,6 +87,23 @@ neither `pytest` nor the `pytest` Python module is installed. No Swift, Kotlin,
 or R source was changed.
 
 Part B commit: `62c0334` (`test: add Python engine parity fixtures`).
+
+## Part C comparison-rule evidence
+
+Defined one strict Python↔native comparison policy in
+`docs/CROSS-LANGUAGE-ENGINE-PARITY.md` and implemented its reference checker
+as `tools/compare_canonical_json.py`. Only JSON object member order,
+whitespace, and mathematically equal integer/float representations are
+ignored. Arrays, null-versus-missing fields, ordering, counts, policy
+identity, statuses, reason codes, provenance, coverage, and decision contents
+remain semantic.
+
+Verification: the checker passed self-comparison of a canonical expected
+fixture, numeric-equivalence coverage, null/missing rejection, array-order
+rejection, Python syntax compilation, and `git diff --check`. No engine
+implementation was changed in Part C.
+
+Part C commit: pending commit after review.
 
 ## Part A audit evidence
 
