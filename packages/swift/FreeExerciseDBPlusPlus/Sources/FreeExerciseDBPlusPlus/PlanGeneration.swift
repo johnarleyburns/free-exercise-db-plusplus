@@ -336,6 +336,20 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   let typedPlanValid = (try? JSONDecoder().decode(WorkoutPlan.self, from: JSONEncoder().encode(plan))) != nil
   guard typedPlanValid else { return result("unsatisfiable", nil, evaluation, constraints: [.object(["code": .string("INVALID_GENERATED_PLAN")])], rationale: rationale.sorted { $0.key < $1.key }.map { .object(["exerciseId": .string($0.key), "reasonCodes": .array($0.value.sorted().map(JSONValue.string))]) }) }
   let hard = gObject(gObject(evaluation)["summary"])["satisfiesHardConstraints"] == .bool(true)
-  let status = hard ? "generated" : "unsatisfiable"
-  return result(status, plan, evaluation, rationale: rationale.sorted { $0.key < $1.key }.map { .object(["exerciseId": .string($0.key), "reasonCodes": .array($0.value.sorted().map(JSONValue.string))]) })
+  let minimumGaps = allocationDeficits(evaluation, "minimum")
+  let targetGaps = allocationDeficits(evaluation, "target")
+  let targets = minimumGaps.map { deficit, kind, key in JSONValue.object(["code": .string("\(kind.uppercased())_TARGET_UNSATISFIED"), "targetId": .string(key), "deficit": .number(deficit)]) }
+  let evalConstraints = gArray(gObject(gObject(evaluation)["constraints"])["violations"])
+  let preferences = gObject(profileObject["exercisePreferences"])
+  let selectedIds = Set(sessions.flatMap { gArray($0["exercises"]) }.compactMap { gString(gObject($0)["exerciseId"]) })
+  let selectedFamilies = Set(selectedIds.compactMap(family))
+  var soft: [JSONValue] = []
+  let preferred = Set(gStringArray(preferences["preferredExerciseIds"])), preferredFamily = Set(gStringArray(preferences["preferredFamilyIds"]))
+  let avoided = Set(gStringArray(preferences["avoidedExerciseIds"])), avoidedFamily = Set(gStringArray(preferences["avoidedFamilyIds"]))
+  if !preferred.isEmpty && selectedIds.isDisjoint(with: preferred) { soft.append(.object(["code": .string("PREFERRED_EXERCISE_UNSATISFIED"), "exerciseIds": .array(preferred.sorted().map(JSONValue.string))])) }
+  if !preferredFamily.isEmpty && selectedFamilies.isDisjoint(with: preferredFamily) { soft.append(.object(["code": .string("PREFERRED_FAMILY_UNSATISFIED"), "familyIds": .array(preferredFamily.sorted().map(JSONValue.string))])) }
+  if !selectedIds.isDisjoint(with: avoided) { soft.append(.object(["code": .string("AVOIDED_EXERCISE_USED"), "exerciseIds": .array(selectedIds.intersection(avoided).sorted().map(JSONValue.string))])) }
+  if !selectedFamilies.isDisjoint(with: avoidedFamily) { soft.append(.object(["code": .string("AVOIDED_FAMILY_USED"), "familyIds": .array(selectedFamilies.intersection(avoidedFamily).sorted().map(JSONValue.string))])) }
+  let status = !hard ? "unsatisfiable" : (minimumGaps.isEmpty && targetGaps.isEmpty ? "generated" : "generated_with_target_gaps")
+  return result(status, plan, evaluation, constraints: evalConstraints, targets: targets, soft: soft, rationale: rationale.sorted { $0.key < $1.key }.map { .object(["exerciseId": .string($0.key), "reasonCodes": .array($0.value.sorted().map(JSONValue.string))]) })
 }

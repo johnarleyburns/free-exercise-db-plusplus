@@ -82,6 +82,7 @@ native work; no Python rewrite was required.
 - Part AD — Swift target-driven generation: **complete; audited below**
 - Part AE — Swift session allocation: **complete; audited below**
 - Part AF — Swift frequency allocation: **complete; audited below**
+- Part AG — Swift generated-plan result envelope: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -141,6 +142,19 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AF commit: pending commit after review.
+
+## Part AG result-envelope evidence
+
+Aligned successful native generation outcomes with the Python result contract:
+`generated`, `generated_with_target_gaps`, and `unsatisfiable` are now selected
+from evaluator hard constraints and minimum/target gaps. Structured target,
+constraint, and soft-preference findings are included alongside the existing
+plan, evaluation, policy, rationale, and provenance fields.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AG commit: pending commit after review.
 
 ## Part B fixture evidence
 
