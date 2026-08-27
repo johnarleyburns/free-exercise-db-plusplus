@@ -55,7 +55,8 @@ native work; no Python rewrite was required.
 - Part C — canonical comparison rules: **complete; audited below**
 - Part D — Swift engine architecture: **complete; audited below**
 - Part E — Swift TrainingEngine façade: **complete; audited below**
-- Parts F–N — Swift engine architecture and parity: pending the preceding
+- Part F — Swift typed core domain models: **complete; audited below**
+- Parts G–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -139,6 +140,24 @@ passed all 13 tests, including a façade draft-generation regression. No
 Kotlin or R functionality was changed.
 
 Part E commit: pending commit after review.
+
+## Part F typed-domain evidence
+
+Added Codable/Sendable value models for `TargetRange`, `VolumeTarget`,
+`TrainingProfile`, availability, `TrainingHistory`, plan activations, history
+windows, exercise/training state, `CoachDecision`, and generated/adaptive
+result envelopes. Extended ACTUAL values with optional plan linkage,
+prescription linkage, substitution, set prescription, and effort telemetry.
+`JSONValue` remains limited to open-ended metadata and detailed forward-
+compatible result sections; the primary portable identities and containers are
+typed.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 14 tests, including canonical TARGET/profile/PLAN decoding and a
+typed `TrainingHistory` Codable round trip. `git diff --check` passed. No
+Python, Kotlin, or R source was changed.
+
+Part F commit: pending commit after review.
 
 ## Part A audit evidence
 
