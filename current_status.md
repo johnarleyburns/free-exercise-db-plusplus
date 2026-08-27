@@ -26,14 +26,99 @@ Future-release ownership:
 - R: complete required research/analysis semantics, artifact handling, and any
   later native planning/adaptation decision.
 
+## Execution protocol for HANDOFF.md
+
+Implement `HANDOFF.md` one part at a time, in its stated order. For every
+part:
+
+1. Read the relevant Python oracle, schemas, ADRs/docs, and tests before
+   changing code.
+2. Implement only that part's in-scope work. Do not begin the next part in
+   the same work cycle.
+3. Double-check the implementation with focused tests and the applicable
+   cross-language/golden comparisons. Run the required language and repository
+   checks; record any limitation explicitly.
+4. Commit the completed and verified part as its own commit.
+5. Update this file with what changed, verification evidence, the commit, and
+   precise instructions for resuming the next part.
+6. Pause for human review and provide a concise BLUF. Do not continue to the
+   next part until the user explicitly resumes the work.
+
+The current cycle has completed **Part A — First Audit Python for
+Completeness**. The Python engine is the semantic oracle for the remaining
+native work; no Python rewrite was required.
+
+## Phase tracker
+
+- Part A — Python completeness audit: **complete; audited below**
+- Part B — Python golden fixtures: **next**
+- Part C — canonical comparison rules: pending Part B
+- Parts D–N — Swift engine architecture and parity: pending the preceding
+  parts and the detailed order in `HANDOFF.md`
+
+### Resume instructions for the next phase
+
+Begin Part B by generating Python-authored canonical fixtures for the five
+missing cross-language families listed in the audit below. Preserve the
+existing intent fixtures and do not work on Kotlin or R.
+
+## Part A audit evidence
+
+Audited the Python modules listed in `HANDOFF.md`, their public exports in
+`packages/python/fedbpp/__init__.py`, the shipped schemas, the v1.1–v1.10.1
+release documentation/ADRs, and the associated package, analysis, plan,
+relationship, target, training, workout, longitudinal, and interop tests.
+
+The fourteen required behaviors are present and coherent:
+
+1. PLAN validation — schema and semantic invalid-fixture tests pass.
+2. ACTUAL validation — schema, migration, and invalid-fixture tests pass.
+3. TARGET validation — schema and relational-range tests pass.
+4. TrainingProfile — schema, contradiction, and DB/relationship validation tests pass.
+5. Relationships — artifact validation, golden families, coverage, and substitution enrichment tests pass.
+6. PlanEvaluation — deterministic evaluation, profile findings, target gaps, provenance, and incompleteness tests pass.
+7. TrainingHistory — period, revision, activation, date-window, timezone, and CSV/cohort tests pass.
+8. TrainingState — bounded windows, adherence, matching, substitutions, skip counts, and provenance tests pass.
+9. Progression — double-progression, effort direction, hold, regression, and policy-map tests pass.
+10. CoachDecision — deterministic explainable decisions, schema validation, and immutable proposal tests pass.
+11. Production PlanGeneration — deterministic candidate selection, constraints, frequency/pattern/family targets, locked exercises, and evaluator gating tests pass.
+12. Adaptive coaching — progression, substitution, regeneration, target-maximum gating, and equipment drift tests pass.
+13. WorkoutIntent resolution — validation, precedence, policies, partial ranges, weekdays, conflicts, and provenance tests pass.
+14. `generate_plan_from_intent` — deterministic flagship generation, evaluation gating, and history-aware intent tests pass.
+
+Verification: the three `packages/python/tests/test_*.py` package checks pass;
+the focused Python suites pass (`123 passed` across analysis, plan,
+relationships, target, training, workout, longitudinal, and interop); and the
+three database-argument contract checks pass. The unqualified `pytest -q`
+command is not valid for this repository because several contract tests
+consume `sys.argv[1]` as the database path; the documented per-suite commands
+were used instead.
+
+No genuine Python defect was found, so no Python source or regression test was
+changed in Part A.
+
+### Exact Part B fixture gaps
+
+`fixtures/cross-language/intent/` already contains resolution and flagship
+intent-generation fixtures. These required families do not exist yet:
+
+- `evaluation/`: PlanEvaluation constraints, target gaps, incomplete coverage, relationships, and provenance.
+- `history/`: active revisions, windows, timezone/as-of handling, ACTUAL matching, adherence, substitutions, and arbitrary cycles.
+- `progression/`: effort classifications, progression/hold/regression, and policy-map decisions.
+- `generation/`: direct planning policies, locked/required exercises and families, target allocation, and unsatisfiable constraints.
+- `adaptation/`: adaptive progression, substitutions, regeneration, target-maximum, and evaluator gates.
+
 ## Repository state
 
 - Branch: `main`
-- Last committed HEAD before this work: `564272a release: prepare v1.11.0`
-- That release-preparation commit is superseded. **Do not tag or release it.**
+- Current committed HEAD before the next implementation phase: `ac0e0a3`
+  (`begun kotlin port`)
+- The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
+  tag or release it.**
 - No `v1.11.0` tag has been created.
-- The working tree contains uncommitted Swift/Kotlin engine-foundation work.
-  Inspect it before committing; do not discard it.
+- `HANDOFF.md` is currently untracked and is user-provided. Preserve it.
+- Before each implementation phase, inspect `git status` and preserve unrelated
+  user changes; do not discard them.
 
 ## Work completed in the working tree
 
@@ -61,9 +146,10 @@ Run Swift tests again after every Swift change. Do not infer full parity from
 language-local tests; add Python-authored golden fixtures and compare normalized
 results field-by-field.
 
-## Immediate next task: Swift canonical engine port
+## Immediate next task: Part A Python completeness audit
 
-Port the Python reference incrementally, using these files as the oracle:
+After Part A is completed and reviewed, continue incrementally using the
+Python reference as the oracle. The later Swift port uses these files:
 
 - `packages/python/fedbpp/planning.py`
 - `packages/python/fedbpp/plan_evaluation.py`
