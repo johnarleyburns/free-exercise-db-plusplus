@@ -245,6 +245,23 @@ public struct TrainingState: Codable, Sendable, Equatable {
 }
 
 public struct CoachDecision: Codable, Sendable, Equatable {
+  public static let supportedDecisionTypes: Set<String> = [
+    "hold", "increase_load", "decrease_load", "increase_reps", "decrease_reps",
+    "increase_sets", "decrease_sets", "substitute_exercise", "regenerate_plan",
+    "insufficient_data"
+  ]
+  public static let supportedReasonCodes: Set<String> = [
+    "POLICY_HOLD", "REP_TARGET_ACHIEVED", "REP_TARGET_NOT_ACHIEVED",
+    "SET_TARGET_NOT_COMPLETED", "EFFORT_WITHIN_TARGET", "EFFORT_TOO_HIGH",
+    "EFFORT_TOO_LOW", "INSUFFICIENT_EFFORT_DATA", "INSUFFICIENT_LOAD_DATA",
+    "INCOMPATIBLE_LOAD_UNIT", "INCOMPLETE_WORKOUT", "NO_MATCHED_ACTUAL",
+    "NO_ACTIVE_PLAN", "NO_RECENT_PERFORMANCE", "INSUFFICIENT_HISTORY",
+    "PROGRESSION_CRITERIA_MET", "REPEATED_PERFORMANCE_FAILURE",
+    "TARGET_VOLUME_DEFICIT", "TARGET_VOLUME_EXCESS", "REPEATEDLY_SKIPPED",
+    "REPEATED_SUBSTITUTION", "EQUIPMENT_UNAVAILABLE", "EXERCISE_EXCLUDED",
+    "FAMILY_EXCLUDED", "PLAN_REGENERATION_REQUIRED"
+  ]
+
   public let schemaVersion: String
   public let decisionId: String?
   public let decisionType: String
@@ -259,6 +276,65 @@ public struct CoachDecision: Codable, Sendable, Equatable {
   public let reasonCodes: [String]
   public let evidence: [String: JSONValue]
   public let provenance: [String: JSONValue]
+
+  public init(schemaVersion: String = "0.1.0", decisionId: String? = nil,
+              decisionType: String, policyId: String, policyVersion: String,
+              planId: String? = nil, revisionId: String? = nil,
+              prescriptionId: String? = nil, exerciseId: String? = nil,
+              before: [String: JSONValue] = [:], after: [String: JSONValue] = [:],
+              reasonCodes: [String] = [], evidence: [String: JSONValue] = [:],
+              provenance: [String: JSONValue] = [:]) {
+    self.schemaVersion = schemaVersion; self.decisionId = decisionId
+    self.decisionType = decisionType; self.policyId = policyId; self.policyVersion = policyVersion
+    self.planId = planId; self.revisionId = revisionId; self.prescriptionId = prescriptionId; self.exerciseId = exerciseId
+    self.before = before; self.after = after; self.reasonCodes = reasonCodes
+    self.evidence = evidence; self.provenance = provenance
+  }
+
+  /// Reports violations of the stable CoachDecision contract without making
+  /// decoding unrepresentable upstream data impossible.
+  public func validationErrors() -> [String] {
+    var errors: [String] = []
+    if schemaVersion != "0.1.0" { errors.append("schemaVersion must be 0.1.0") }
+    if !Self.supportedDecisionTypes.contains(decisionType) { errors.append("unsupported decisionType") }
+    if policyId.isEmpty { errors.append("policyId must not be empty") }
+    if policyVersion.isEmpty { errors.append("policyVersion must not be empty") }
+    if Set(reasonCodes).count != reasonCodes.count { errors.append("reasonCodes must be unique") }
+    if reasonCodes.contains(where: { !Self.supportedReasonCodes.contains($0) }) { errors.append("unsupported reasonCode") }
+    return errors
+  }
+
+  private enum CodingKeys: String, CodingKey {
+    case schemaVersion, decisionId, decisionType, policyId, policyVersion, planId, revisionId
+    case prescriptionId, exerciseId, before, after, reasonCodes, evidence, provenance
+  }
+
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    schemaVersion = try c.decode(String.self, forKey: .schemaVersion)
+    decisionId = try c.decodeIfPresent(String.self, forKey: .decisionId)
+    decisionType = try c.decode(String.self, forKey: .decisionType)
+    policyId = try c.decode(String.self, forKey: .policyId)
+    policyVersion = try c.decode(String.self, forKey: .policyVersion)
+    planId = try c.decodeIfPresent(String.self, forKey: .planId)
+    revisionId = try c.decodeIfPresent(String.self, forKey: .revisionId)
+    prescriptionId = try c.decodeIfPresent(String.self, forKey: .prescriptionId)
+    exerciseId = try c.decodeIfPresent(String.self, forKey: .exerciseId)
+    before = try c.decode([String: JSONValue].self, forKey: .before)
+    after = try c.decode([String: JSONValue].self, forKey: .after)
+    reasonCodes = try c.decode([String].self, forKey: .reasonCodes)
+    evidence = try c.decode([String: JSONValue].self, forKey: .evidence)
+    provenance = try c.decode([String: JSONValue].self, forKey: .provenance)
+  }
+
+  public func encode(to encoder: Encoder) throws {
+    var c = encoder.container(keyedBy: CodingKeys.self)
+    try c.encode(schemaVersion, forKey: .schemaVersion); try c.encodeIfPresent(decisionId, forKey: .decisionId)
+    try c.encode(decisionType, forKey: .decisionType); try c.encode(policyId, forKey: .policyId); try c.encode(policyVersion, forKey: .policyVersion)
+    try c.encode(planId, forKey: .planId); try c.encode(revisionId, forKey: .revisionId); try c.encode(prescriptionId, forKey: .prescriptionId); try c.encode(exerciseId, forKey: .exerciseId)
+    try c.encode(before, forKey: .before); try c.encode(after, forKey: .after); try c.encode(reasonCodes, forKey: .reasonCodes)
+    try c.encode(evidence, forKey: .evidence); try c.encode(provenance, forKey: .provenance)
+  }
 }
 
 public struct GeneratedPlanResult: Codable, Sendable, Equatable { public let status: String; public let plan: WorkoutPlan?; public let evaluation: JSONValue?; public let provenance: [String: JSONValue] }

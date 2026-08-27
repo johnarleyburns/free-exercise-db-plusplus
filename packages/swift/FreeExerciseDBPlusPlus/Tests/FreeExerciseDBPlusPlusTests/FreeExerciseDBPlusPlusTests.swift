@@ -435,4 +435,30 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     }
   }
 
+  func testCoachDecisionPublicModelRoundTripsSchemaFields() throws {
+    let decision = CoachDecision(
+      decisionId: "decision-1", decisionType: "hold", policyId: "hold-v1", policyVersion: "1.0.0",
+      planId: nil, revisionId: "revision-1", prescriptionId: "rx-1", exerciseId: "Bench_Dips",
+      before: ["load": .object(["unit": .string("kg"), "value": .number(20)])],
+      after: ["load": .object(["unit": .string("kg"), "value": .number(20)])],
+      reasonCodes: ["POLICY_HOLD"], evidence: ["source": .string("test")],
+      provenance: ["source": .string("swift-test")])
+    XCTAssertTrue(decision.validationErrors().isEmpty)
+    let encoded = try JSONEncoder().encode(decision)
+    let object = try XCTUnwrap(JSONSerialization.jsonObject(with: encoded) as? [String: Any])
+    XCTAssertTrue(object.keys.contains("planId"))
+    XCTAssertTrue(object["planId"] is NSNull)
+    XCTAssertTrue(object.keys.contains("decisionId"))
+    XCTAssertEqual(try JSONDecoder().decode(CoachDecision.self, from: encoded), decision)
+  }
+
+  func testProgressionEnvelopeDecodesAsCoachDecision() throws {
+    let prescription: JSONValue = .object(["prescriptionId": .string("rx-1"), "exerciseId": .string("e-1")])
+    let raw = applyProgressionPolicy("hold-v1", prescription: prescription, exerciseState: .object([:]))
+    let decision = try JSONDecoder().decode(CoachDecision.self, from: JSONEncoder().encode(raw))
+    XCTAssertEqual(decision.decisionType, "hold")
+    XCTAssertEqual(decision.policyId, "hold-v1")
+    XCTAssertEqual(decision.reasonCodes, ["POLICY_HOLD"])
+  }
+
 }
