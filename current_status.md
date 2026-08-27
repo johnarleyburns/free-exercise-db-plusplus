@@ -75,13 +75,14 @@ native work; no Python rewrite was required.
 - Part W — Swift CoachDecision model contract: **complete; audited below**
 - Part X — Swift production plan generation: **complete; audited below**
 - Part Y — Swift planning policies: **complete; audited below**
+- Part Z — Swift generator input filtering: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part Z by matching Swift generator input filtering to Python, including
-equipment, exclusions, required/locked exercises, family constraints, and
-profile constraints. Keep Kotlin and R deferred, preserve the Python oracle,
-and do not begin later planning parts in that cycle.
+Begin Part AA by matching Swift equipment filtering to Python, including
+unknown/unverifiable equipment behavior and exact body-only handling. Keep
+Kotlin and R deferred, preserve the Python oracle, and do not begin later
+locking or planning parts in that cycle.
 
 ## Part B fixture evidence
 
@@ -504,6 +505,24 @@ generation/evaluation coverage. `git diff --check` passed. No Python, Kotlin,
 or R source was changed.
 
 Part Y commit: `a9f9897` (`feat: align Swift planning policy documents`).
+
+## Part Z generator-filtering evidence
+
+Aligned native generator inputs with the Python candidate-pool contract for
+volume eligibility, available equipment, exercise exclusions, excluded and
+required families, required exercises, locked exercises, target-driven
+selection, and continuity ranking from the current plan, TrainingState, and
+profile preferences. Locked exercises now require a current plan and retain
+their available canonical day placement. Required family IDs are exposed
+through both the global and `TrainingEngine` generation APIs and through intent
+generation.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 37 tests, including family exclusion/requirement and locked
+placement coverage, plus the existing generation and evaluator tests. `git
+diff --check` passed. No Python, Kotlin, or R source was changed.
+
+Part Z commit: `7b3b73b` (`feat: align Swift generator input filtering`).
 
 ## Part A audit evidence
 
