@@ -513,6 +513,15 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertNil(engine.planningPolicy("unknown-policy"))
   }
 
+  func testReleasedCoachingPolicyExposesCanonicalDocument() {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let policy = engine.coachingPolicy()
+    XCTAssertEqual(policy?.objectValue?["policyId"], .string("general-adaptive-v1"))
+    XCTAssertEqual(policy?.objectValue?["policyVersion"], .string("1.0.0"))
+    XCTAssertEqual(policy?.objectValue?["stateWindowPolicy"], .string("last_28_days"))
+    XCTAssertNil(engine.coachingPolicy("unknown-policy"))
+  }
+
   func testProductionGeneratorAppliesFamilyAndLockedPlacementFilters() {
     let press = Exercise(exerciseId: "press", annotation: ExerciseAnnotation(direct: ["chest"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Press")])
     let row = Exercise(exerciseId: "row", annotation: ExerciseAnnotation(direct: ["lats"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Row")])

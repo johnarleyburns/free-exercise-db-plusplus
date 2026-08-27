@@ -86,6 +86,7 @@ native work; no Python rewrite was required.
 - Part AH — Swift evaluated generation gate: **complete; audited below**
 - Part AI — Swift flagship generation coverage: **complete; audited below**
 - Part AJ — Swift adaptive coaching façade: **complete; audited below**
+- Part AK — Swift coaching policy: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -196,6 +197,17 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AJ commit: pending commit after review.
+
+## Part AK coaching-policy evidence
+
+Exposed the released `general-adaptive-v1` policy document through the native
+engine, including its state window, progression/adherence/volume/frequency/
+substitution/regeneration policies, priority order, and canonical parameters.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AK commit: pending commit after review.
 
 ## Part B fixture evidence
 
