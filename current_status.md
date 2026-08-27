@@ -87,6 +87,7 @@ native work; no Python rewrite was required.
 - Part AI — Swift flagship generation coverage: **complete; audited below**
 - Part AJ — Swift adaptive coaching façade: **complete; audited below**
 - Part AK — Swift coaching policy: **complete; audited below**
+- Part AL — Swift adaptive decision ordering: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -208,6 +209,17 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AK commit: pending commit after review.
+
+## Part AL decision-order evidence
+
+Sorted native coaching decisions and changes by the Python canonical keys
+(prescription ID, decision/change type, decision ID), making the output
+independent of input session/exercise traversal order.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AL commit: pending commit after review.
 
 ## Part B fixture evidence
 

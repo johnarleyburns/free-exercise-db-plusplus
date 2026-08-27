@@ -59,5 +59,17 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   let proposedEvaluation = changes.isEmpty ? nil : evaluatePlan(proposed, database: database, profile: profile, target: target, relationships: relationships)
   let hardRejected = proposedEvaluation.map { cObject(cObject($0)["summary"])["satisfiesHardConstraints"] != .bool(true) } ?? false
   let accepted = !changes.isEmpty && !hardRejected
-  return .object(["status": .string(accepted ? "revision_proposed" : (decisions.isEmpty ? "insufficient_data" : "no_change")), "currentPlan": currentPlan, "proposedPlan": accepted ? proposed : .null, "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(decisions), "changes": .array(changes), "unresolvedIssues": .array([]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
+  func keyLess(_ left: [String], _ right: [String]) -> Bool {
+    for (l, r) in zip(left, right) { if l != r { return l < r } }
+    return left.count < right.count
+  }
+  let orderedDecisions = decisions.sorted { left, right in
+    let l = cObject(left), r = cObject(right)
+    return keyLess([cString(l["prescriptionId"]) ?? "", cString(l["decisionType"]) ?? "", cString(l["decisionId"]) ?? ""], [cString(r["prescriptionId"]) ?? "", cString(r["decisionType"]) ?? "", cString(r["decisionId"]) ?? ""])
+  }
+  let orderedChanges = changes.sorted { left, right in
+    let l = cObject(left), r = cObject(right)
+    return keyLess([cString(l["prescriptionId"]) ?? "", cString(l["type"]) ?? ""], [cString(r["prescriptionId"]) ?? "", cString(r["type"]) ?? ""])
+  }
+  return .object(["status": .string(accepted ? "revision_proposed" : (orderedDecisions.isEmpty ? "insufficient_data" : "no_change")), "currentPlan": currentPlan, "proposedPlan": accepted ? proposed : .null, "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(orderedDecisions), "changes": .array(orderedChanges), "unresolvedIssues": .array([]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
 }
