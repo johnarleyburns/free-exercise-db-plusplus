@@ -234,19 +234,73 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
     guard let destination = sessions.indices.first(where: { compatible(id, $0) }) else { return result("unsatisfiable", nil, nil, constraints: [.object(["code": .string("NO_ELIGIBLE_EXERCISE"), "exerciseId": .string(id), "detail": .string("required exercise incompatible with split")])]) }
     add(id, destination, "REQUIRED_EXERCISE")
   }
-  let targetMuscles = gObject(targetObject["muscles"]), targetPatterns = gObject(targetObject["movementPatterns"])
-  var guardCount = 0
-  while guardCount < 256 {
-    guardCount += 1
-    var deficits: [(Double, String, String)] = []
-    for (muscle, rangeValue) in targetMuscles { let range = gRange(rangeValue), actual = sessions.flatMap { gArray($0["exercises"]) }.reduce(0.0) { total, raw in total + (candidateById[gString(gObject(raw)["exerciseId"]) ?? ""].map { contribution($0, "muscle", muscle) * (gNumber(gObject(raw)["sets"]) ?? 0) } ?? 0) }; if let minimum = range.min, actual < minimum { deficits.append((minimum - actual, "muscle", muscle)) }; if let target = range.target, actual < target { deficits.append((target - actual, "muscle", muscle)) } }
-    for (pattern, value) in targetPatterns { let range = gRange(value), actual = sessions.flatMap { gArray($0["exercises"]) }.reduce(0.0) { total, raw in total + (candidateById[gString(gObject(raw)["exerciseId"]) ?? ""]?.annotation.patterns.contains(pattern) == true ? (gNumber(gObject(raw)["sets"]) ?? 0) : 0) }; if let minimum = range.min, actual < minimum { deficits.append((minimum - actual, "pattern", pattern)) } }
-    guard let deficit = deficits.sorted(by: { $0.0 == $1.0 ? ($0.1, $0.2) < ($1.1, $1.2) : $0.0 > $1.0 }).first else { break }
-    let eligible = ranked(deficit.1, deficit.2).filter { contribution($0, deficit.1, deficit.2) > 0 }
-    guard let candidate = eligible.first else { break }
-    let choices = sessions.indices.filter { compatible(candidate.exerciseId, $0) }.sorted { a, b in gArray(sessions[a]["exercises"]).count < gArray(sessions[b]["exercises"]).count }
-    guard let session = choices.first(where: { !gArray(sessions[$0]["exercises"]).contains { family(gString($0.objectValue?["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil } }) else { break }
-    add(candidate.exerciseId, session, "TARGET_COVERAGE")
+  func allocationDeficits(_ evaluation: JSONValue, _ phase: String) -> [(Double, String, String)] {
+    let root = gObject(evaluation), sections: [(String, [String: JSONValue], String)] = [
+      ("muscle", gObject(root["muscleCoverage"]), "actualEffectiveSets"),
+      ("frequency", gObject(root["frequency"]), "normalizedExposuresPer7Days"),
+      ("pattern", gObject(root["movementPatterns"]), "plannedSets"),
+      ("family", gObject(gObject(root["families"])["targets"]), "plannedSets")
+    ]
+    var result: [(Double, String, String)] = []
+    for (kind, rows, actualKey) in sections {
+      for (key, raw) in rows {
+        let row = gObject(raw), actual = gNumber(row[actualKey]) ?? 0
+        let required = phase == "minimum" ? gNumber(row["minimum"]) : gNumber(row["target"])
+        if let required, actual < required { result.append((required - actual, kind, key)) }
+      }
+    }
+    return result.sorted { lhs, rhs in
+      if lhs.0 != rhs.0 { return lhs.0 > rhs.0 }
+      if lhs.1 != rhs.1 { return lhs.1 < rhs.1 }
+      return lhs.2 < rhs.2
+    }
+  }
+  func exceedsMaximum(_ evaluation: JSONValue) -> Bool {
+    let root = gObject(evaluation), sections = [gObject(root["muscleCoverage"]), gObject(root["frequency"]), gObject(root["movementPatterns"]), gObject(gObject(root["families"])["targets"])]
+    return sections.contains { rows in rows.values.contains { row in
+      let value = gObject(row), actual = gNumber(value["actualEffectiveSets"]) ?? gNumber(value["normalizedExposuresPer7Days"]) ?? gNumber(value["plannedSets"]) ?? 0
+      return (gNumber(value["maximum"]) ?? .infinity) < actual
+    } }
+  }
+  let initialPlan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(sessions.map(JSONValue.object))])
+  var allocationEvaluation = evaluatePlan(initialPlan, database: database, profile: profile, target: target, relationships: relationships)
+  for phase in ["minimum", "target"] {
+    var guardCount = 0
+    while guardCount < 512, let deficit = allocationDeficits(allocationEvaluation, phase).first {
+      guardCount += 1
+      let eligible = ranked(deficit.1, deficit.2).filter { contribution($0, deficit.1, deficit.2) > 0 }
+      var accepted = false
+      for candidate in eligible {
+        var choices = sessions.indices.filter { compatible(candidate.exerciseId, $0) }
+        if deficit.1 == "frequency" {
+          choices.sort { a, b in
+            func exposed(_ index: Int) -> Int {
+              gArray(sessions[index]["exercises"]).contains { raw in
+                guard let exercise = candidateById[gString(gObject(raw)["exerciseId"]) ?? ""] else { return false }
+                return contribution(exercise, "frequency", deficit.2) > 0
+              } ? 1 : 0
+            }
+            let left = exposed(a), right = exposed(b)
+            return left == right ? (gArray(sessions[a]["exercises"]).count, a) < (gArray(sessions[b]["exercises"]).count, b) : left < right
+          }
+        } else { choices.sort { a, b in let left = gArray(sessions[a]["exercises"]).count, right = gArray(sessions[b]["exercises"]).count; return left == right ? a < b : left < right } }
+        for session in choices {
+          if gArray(sessions[session]["exercises"]).contains(where: { family(gString(gObject($0)["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil }) { continue }
+          var draftSessions = sessions
+          var draft = gArray(draftSessions[session]["exercises"])
+          let order = draft.count + 1, name = gString(candidateById[candidate.exerciseId]?.source?["name"]) ?? candidate.exerciseId
+          draft.append(.object(["prescriptionId": .string(String(format: "rx-%02d-%02d", session + 1, order)), "exerciseId": .string(candidate.exerciseId), "exerciseName": .string(name), "order": .number(Double(order)), "sets": .number(1), "reps": reps, "effort": effort, "setType": .string("working")]))
+          draftSessions[session]["exercises"] = .array(draft)
+          let draftPlan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(draftSessions.map(JSONValue.object))])
+          let evaluated = evaluatePlan(draftPlan, database: database, profile: profile, target: target, relationships: relationships)
+          if !exceedsMaximum(evaluated) {
+            sessions = draftSessions; allocationEvaluation = evaluated; rationale[candidate.exerciseId, default: []].insert("TARGET_COVERAGE"); accepted = true; break
+          }
+        }
+        if accepted { break }
+      }
+      if !accepted { break }
+    }
   }
   let plan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(sessions.map(JSONValue.object))])
   let evaluation = evaluatePlan(plan, database: database, profile: profile, target: target, relationships: relationships)

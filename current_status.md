@@ -79,6 +79,7 @@ native work; no Python rewrite was required.
 - Part AA — Swift equipment semantics: **complete; audited below**
 - Part AB — Swift locked-exercise semantics: **complete; audited below**
 - Part AC — Swift deterministic candidate ranking: **complete; audited below**
+- Part AD — Swift target-driven generation: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -98,6 +99,20 @@ passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
 source was changed.
 
 Part AC commit: pending commit after review.
+
+## Part AD target-allocation evidence
+
+Reworked native generation allocation around canonical PLAN evaluation, matching
+Python's minimum-then-target passes. Deficits now cover effective muscle volume
+(including direct, indirect, and stabilizer DB++ credits), normalized frequency,
+movement patterns, and relationship-backed family targets; candidate additions
+are rejected when they introduce any configured maximum excess.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 38 tests and `git diff --check` passed. No Python, Kotlin, or R
+source was changed.
+
+Part AD commit: pending commit after review.
 
 ## Part B fixture evidence
 
