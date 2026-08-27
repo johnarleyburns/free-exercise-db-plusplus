@@ -64,8 +64,9 @@ native work; no Python rewrite was required.
 - Part L — Swift offset-aware time: **complete; audited below**
 - Part M — Swift full TrainingState envelope: **complete; audited below**
 - Part N — Swift TrainingState windows: **complete; audited below**
-- Parts O–Q — Swift active-plan, exercise-state, and adherence semantics:
-  pending the detailed order in `HANDOFF.md`
+- Part O — Swift active-plan resolution: **complete; audited below**
+- Parts P–Q — Swift exercise-state and adherence semantics: pending the
+  detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
@@ -311,6 +312,24 @@ Kotlin, or R source was changed.
 
 Part N commit: `01341fa` (`feat: add Swift training state windows`).
 
+## Part O active-plan evidence
+
+Added typed `TrainingEngine` resolution for the uniquely active PLAN revision
+at an offset-aware `asOf`. Selection is independent of input ordering, honors
+activation start/end intervals, rejects overlapping active windows, and
+returns no plan when no unambiguous context exists. Workout resolution
+honors an explicit plan/revision reference first; the JSON state path now
+applies the same no-arbitrary-overlap rule and uses a uniquely referenced
+historical plan when activation metadata is absent.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 26 tests, including order-independent revision selection, future
+and ended activations, explicit workout references, no-active-plan behavior,
+and overlapping-activation rejection. `git diff --check` passed. No Python,
+Kotlin, or R source was changed.
+
+Part O commit: `1895418` (`feat: add Swift active plan resolution`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -360,8 +379,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `01341fa`
-  (`feat: add Swift training state windows`)
+- Current committed HEAD before the next implementation phase: `1895418`
+  (`feat: add Swift active plan resolution`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
