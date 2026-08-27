@@ -1060,11 +1060,30 @@ Run Swift tests again after every Swift change. Do not infer full parity from
 language-local tests; add Python-authored golden fixtures and compare normalized
 results field-by-field.
 
-## Completion state
+## Next implementation phase
 
-Parts BA–CB are complete. v1.11.0 is tagged and released; the release workflow
-and post-release Python/Swift smoke checks passed. Do not begin v1.12, v1.13,
-or v1.14 work in this cycle.
+The previous completion claim is superseded by the execution addendum at the
+end of [HANDOFF.md](HANDOFF.md), titled “V1.11 Handoff Remediation and V1.12
+Execution Plan”. Begin with **Phase 0 / Part 0A — Baseline**, then proceed in
+the addendum’s numbered order.
 
-No Python bridge, network dependency, LLM integration, UI, or v1.12 feature
-work is in scope.
+The addendum records known release-blocking gaps: direct Swift/Python golden
+mismatches, incomplete cross-language fixture coverage, missing
+`generatePlanFromIntent` coverage in the external Swift consumer, incomplete
+TrainingEngine indexes, stale roadmap sections, insufficient audit evidence,
+and release/CI sequencing gaps.
+
+Rules for the next implementer:
+
+- Treat `HANDOFF.md` and its addendum as authoritative.
+- Complete v1.11 remediation before beginning v1.12.
+- Do not move or rewrite the existing `v1.11.0` tag; use a corrective patch
+  release if required.
+- Commit each numbered part separately after focused verification.
+- Preserve unrelated user changes and the user-provided untracked
+  `HANDOFF.md`.
+- Do not expand Kotlin/R functionality, browse externally, or add LLM,
+  network, subprocess, UI, FoundationModels, or CloudKit dependencies.
+
+Current next action: inspect the baseline and create the remediation audit
+ledger, as specified by Phase 0 / Part 0A.
