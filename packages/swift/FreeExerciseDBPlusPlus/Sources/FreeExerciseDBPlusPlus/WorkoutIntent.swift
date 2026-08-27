@@ -440,7 +440,7 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let parsedAsOf = parseOffsetAwareTimestamp(asOf)
   let asOfInstant = parsedAsOf?.date
-  let activePair = activations.compactMap { activation -> (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? in
+  let activationCandidates = activations.compactMap { activation -> (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? in
     guard let from = activation["effectiveFrom"]?.stringValue,
       let fromDate = parseOffsetAwareTimestamp(from)?.date, let asOfInstant,
       fromDate <= asOfInstant,
@@ -448,7 +448,20 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
       let plan = plans.first(where: { $0["planId"] == activation["planId"] && $0["revisionId"] == activation["revisionId"] })
     else { return nil }
     return (plan: plan, activation: activation, date: fromDate)
-  }.max { $0.date < $1.date }
+  }
+  let activePair: (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? = {
+    guard activationCandidates.count <= 1 else { return nil }
+    if let candidate = activationCandidates.first { return candidate }
+    let referenced = (root["workouts"]?.arrayValues ?? []).compactMap { raw -> (plan: [String: JSONValue], activation: [String: JSONValue], date: Date)? in
+      guard let workout = raw.objectValue, let stamp = workout["startTime"]?.stringValue,
+            let date = parseOffsetAwareTimestamp(stamp)?.date, let reference = workout["planReference"]?.objectValue,
+            let planId = reference["planId"]?.stringValue,
+            let plan = plans.first(where: { $0["planId"]?.stringValue == planId && (reference["revisionId"]?.stringValue == nil || $0["revisionId"]?.stringValue == reference["revisionId"]?.stringValue) })
+      else { return nil }
+      return (plan: plan, activation: [:], date: date)
+    }
+    return referenced.max { $0.date < $1.date }
+  }()
   let active = activePair?.plan
   guard let asOfInstant else { return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .null, "activePlan": .object([:]), "exerciseState": .object([:]), "familyState": .object([:]), "muscleState": .object([:]), "adherenceState": .object([:]), "sessionState": .array([]), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "timestampError": .string("asOf must be an offset-aware ISO-8601 timestamp")])]) }
   var calendar = Calendar(identifier: .gregorian); calendar.timeZone = TimeZone(secondsFromGMT: parsedAsOf?.offsetSeconds ?? 0)!

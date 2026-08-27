@@ -102,6 +102,31 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(phase.objectValue?["historyWindow"]?.objectValue?["end"], JSONValue.string("2026-08-27"))
   }
 
+  func testActivePlanResolutionIsOrderIndependentAndHonorsReferences() throws {
+    let plan1 = WorkoutPlan(schemaVersion: "0.2.0", planId: "p", revisionId: "r1", name: nil, cycle: PlanCycle(lengthDays: 7), phases: nil, sessions: [])
+    let plan2 = WorkoutPlan(schemaVersion: "0.2.0", planId: "p", revisionId: "r2", name: nil, cycle: PlanCycle(lengthDays: 7), phases: nil, sessions: [])
+    let history = TrainingHistory(subjectId: "s", plans: [plan2, plan1], planActivations: [
+      PlanActivation(planId: "p", revisionId: "r2", effectiveFrom: "2026-08-20T00:00:00Z"),
+      PlanActivation(planId: "p", revisionId: "r1", effectiveFrom: "2026-08-01T00:00:00Z", effectiveTo: "2026-08-20T00:00:00Z")
+    ])
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    XCTAssertEqual(try engine.activePlan(in: history, asOf: "2026-08-25T12:00:00Z")?.revisionId, "r2")
+    let actual = Workout(schemaVersion: "0.3.0", sessionId: "w", startTime: "2026-08-10T12:00:00Z", exercises: [], planReference: PlanReference(planId: "p", revisionId: "r1", planSessionId: nil))
+    XCTAssertEqual(try engine.resolvePlan(for: actual, in: history, asOf: "2026-08-25T12:00:00Z")?.revisionId, "r1")
+  }
+
+  func testActivePlanResolutionRejectsOverlappingActivations() throws {
+    let plans = [
+      WorkoutPlan(schemaVersion: "0.2.0", planId: "p", revisionId: "r1", name: nil, cycle: PlanCycle(lengthDays: 7), phases: nil, sessions: []),
+      WorkoutPlan(schemaVersion: "0.2.0", planId: "p", revisionId: "r2", name: nil, cycle: PlanCycle(lengthDays: 7), phases: nil, sessions: [])
+    ]
+    let history = TrainingHistory(subjectId: "s", plans: plans, planActivations: [
+      PlanActivation(planId: "p", revisionId: "r1", effectiveFrom: "2026-08-01T00:00:00Z"),
+      PlanActivation(planId: "p", revisionId: "r2", effectiveFrom: "2026-08-10T00:00:00Z")
+    ])
+    XCTAssertThrowsError(try TrainingEngine(database: FEDatabase(exercises: [:])).activePlan(in: history, asOf: "2026-08-15T00:00:00Z"))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
