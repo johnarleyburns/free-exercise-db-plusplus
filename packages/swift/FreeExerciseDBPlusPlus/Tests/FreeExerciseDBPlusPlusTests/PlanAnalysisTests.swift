@@ -2,6 +2,22 @@ import XCTest
 @testable import FreeExerciseDBPlusPlus
 
 final class PlanAnalysisTests: XCTestCase {
+    func testPlanEvaluationMatchesPythonGoldenFixture() throws {
+        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+            .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        let decoder = JSONDecoder()
+        let input = try decoder.decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/evaluation/input.json")))
+        let plan = try XCTUnwrap(input.objectValue?["plan"])
+        let profile = try XCTUnwrap(input.objectValue?["profile"])
+        let target = try XCTUnwrap(input.objectValue?["target"])
+        let relationshipsValue = try XCTUnwrap(input.objectValue?["relationships"])
+        let relationships = try decoder.decode(ExerciseRelationships.self, from: JSONEncoder().encode(relationshipsValue))
+        let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
+        let expected = try decoder.decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/evaluation/expected.json")))
+        let actual = evaluatePlan(plan, database: database, profile: profile, target: target, relationships: relationships)
+        XCTAssertEqual(actual, expected)
+    }
+
     func testNativePlanEvaluatorUsesDatabaseSetCreditsAndReportsTargetState() {
         let exercise = Exercise(exerciseId: "press", annotation: ExerciseAnnotation(direct: ["chest"], indirect: ["triceps"], volumeEligible: true), source: ["equipment": .string("barbell")])
         let database = FEDatabase(metadata: ["setCredits": .object(["direct": .number(1), "indirect": .number(0.25), "stabilizer": .number(0)])], exercises: ["press": exercise])
