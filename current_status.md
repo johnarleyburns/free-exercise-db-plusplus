@@ -65,8 +65,9 @@ native work; no Python rewrite was required.
 - Part M — Swift full TrainingState envelope: **complete; audited below**
 - Part N — Swift TrainingState windows: **complete; audited below**
 - Part O — Swift active-plan resolution: **complete; audited below**
-- Parts P–Q — Swift exercise-state and adherence semantics: pending the
-  detailed order in `HANDOFF.md`
+- Part P — Swift exercise state: **complete; audited below**
+- Part Q — Swift adherence-rich state: pending the detailed order in
+  `HANDOFF.md`
 
 ### Resume instructions for the next phase
 
@@ -330,6 +331,22 @@ Kotlin, or R source was changed.
 
 Part O commit: `1895418` (`feat: add Swift active plan resolution`).
 
+## Part P exercise-state evidence
+
+Expanded Swift `exerciseState` to preserve the Python-facing performance
+fields: latest and recent performance records, last prescription/actual,
+recent session and counted-set totals, reps, loads, RPE, RIR, and set-type
+histories, plus substitution and unplanned counts. Completed-set extraction
+uses the canonical counted set types and excludes incomplete/non-counted sets;
+prescription adherence remains reserved for Part Q.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 27 tests, including the canonical history performance-field
+regression. `git diff --check` passed. No Python, Kotlin, or R source was
+changed.
+
+Part P commit: `dcd013f` (`feat: expand Swift exercise state`).
+
 ## Part A audit evidence
 
 Audited the Python modules listed in `HANDOFF.md`, their public exports in
@@ -379,8 +396,8 @@ intent-generation fixtures. These required families do not exist yet:
 ## Repository state
 
 - Branch: `main`
-- Current committed HEAD before the next implementation phase: `1895418`
-  (`feat: add Swift active plan resolution`)
+- Current committed HEAD before the next implementation phase: `dcd013f`
+  (`feat: expand Swift exercise state`)
 - The older `564272a release: prepare v1.11.0` commit is superseded. **Do not
   tag or release it.**
 - No `v1.11.0` tag has been created.
