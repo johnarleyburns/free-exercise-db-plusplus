@@ -1,0 +1,787 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnarleyburns/free-exercise-db-plusplus/main/workout-plan.schema.json",
+  "title": "Free Exercise DB++ Workout PLAN Interchange",
+  "description": "Portable resistance-training prescriptions. PLAN is separate from ACTUAL observations and contains no derived muscle coverage totals.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "revisionId",
+    "name",
+    "cycle",
+    "sessions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "0.1.0",
+        "0.2.0"
+      ]
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revisionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "cycle": {
+      "$ref": "#/$defs/cycle"
+    },
+    "sessions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/plannedSession"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/phase"
+      }
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "system",
+        "recordId"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recordId": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "cycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lengthDays"
+      ],
+      "properties": {
+        "lengthDays": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "count": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/range"
+        }
+      ]
+    },
+    "reps": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/range"
+        }
+      ]
+    },
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "quantityRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit"
+      ],
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "effort": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rpe": {
+          "$ref": "#/$defs/range10"
+        },
+        "rir": {
+          "$ref": "#/$defs/rangeNonnegative"
+        }
+      },
+      "minProperties": 1
+    },
+    "range10": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        {
+          "$ref": "#/$defs/range10Object"
+        }
+      ]
+    },
+    "range10Object": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "target": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "rangeNonnegative": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/rangeNonnegativeObject"
+        }
+      ]
+    },
+    "rangeNonnegativeObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "externalExerciseId": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system",
+        "value"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "plannedSession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "planSessionId",
+        "dayOffset",
+        "exercises"
+      ],
+      "properties": {
+        "planSessionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dayOffset": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exercises": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/exercisePrescription"
+          }
+        },
+        "phaseId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "exercisePrescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prescriptionId",
+        "order"
+      ],
+      "properties": {
+        "prescriptionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exerciseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exerciseName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "externalExerciseId": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/externalExerciseId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sets": {
+          "$ref": "#/$defs/count"
+        },
+        "reps": {
+          "$ref": "#/$defs/reps"
+        },
+        "load": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "$ref": "#/$defs/quantityRange"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effort": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/effort"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "setType": {
+          "type": "string",
+          "enum": [
+            "warmup",
+            "working",
+            "backoff",
+            "technique",
+            "test",
+            "isometric",
+            "other"
+          ]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": [
+            "bilateral",
+            "left",
+            "right",
+            "alternating",
+            "unspecified"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "progression": {
+          "$ref": "#/$defs/progression"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plannedSets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/plannedSet"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "exerciseId"
+              ]
+            },
+            {
+              "required": [
+                "exerciseName"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "sets",
+                "reps"
+              ],
+              "not": {
+                "required": [
+                  "plannedSets"
+                ]
+              }
+            },
+            {
+              "required": [
+                "plannedSets"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sets"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "reps"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "load"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "effort"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "phase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phaseId",
+        "durationCycles"
+      ],
+      "properties": {
+        "phaseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "durationCycles": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cycle": {
+          "$ref": "#/$defs/phaseCycle"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "phaseCycle": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "lengthDays": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "progression": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "linear_load",
+            "linear_reps",
+            "double_progression",
+            "percentage_1rm",
+            "rpe_based",
+            "rir_based",
+            "autoregulated",
+            "custom"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameters": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "plannedSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setPrescriptionId",
+        "setType",
+        "reps"
+      ],
+      "properties": {
+        "setPrescriptionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "setType": {
+          "type": "string",
+          "enum": [
+            "warmup",
+            "working",
+            "backoff",
+            "technique",
+            "test",
+            "isometric",
+            "other"
+          ]
+        },
+        "reps": {
+          "$ref": "#/$defs/reps"
+        },
+        "load": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "$ref": "#/$defs/quantityRange"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effort": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/effort"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": {
+            "const": "0.1.0"
+          }
+        },
+        "required": [
+          "schemaVersion"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "phases"
+          ]
+        },
+        "properties": {
+          "sessions": {
+            "items": {
+              "allOf": [
+                {
+                  "not": {
+                    "required": [
+                      "phaseId"
+                    ]
+                  }
+                },
+                {
+                  "properties": {
+                    "exercises": {
+                      "items": {
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "plannedSets"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "progression"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "optional"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "condition"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

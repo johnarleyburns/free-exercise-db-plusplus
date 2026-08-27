@@ -23,6 +23,15 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertFalse(db.findExercises(containing: "bench").isEmpty)
   }
 
+  func testTrainingEngineLoadsCanonicalBundledResources() throws {
+    let engine = try TrainingEngine.bundled()
+    XCTAssertGreaterThan(engine.database.count, 800)
+    XCTAssertEqual(
+      engine.relationships?.family(for: "Dumbbell_Bench_Press")?.familyId,
+      "bench_press")
+    XCTAssertNotNil(engine.database.metadata["schemaVersion"])
+  }
+
   func testTypedCoreDomainDocumentsDecodeAndRoundTrip() throws {
     let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
       .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()

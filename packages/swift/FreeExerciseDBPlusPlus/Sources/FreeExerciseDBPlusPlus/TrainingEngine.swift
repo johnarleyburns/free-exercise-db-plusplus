@@ -12,6 +12,21 @@ public struct TrainingEngine: Sendable {
     self.relationships = relationships
   }
 
+  /// Load the canonical offline DB++ artifacts shipped with this Swift
+  /// package. Applications do not need to know the repository layout.
+  public static func bundled() throws -> TrainingEngine {
+    guard let databaseURL = Bundle.module.url(
+      forResource: "free-exercise-db-plusplus", withExtension: "json"),
+      let relationshipsURL = Bundle.module.url(
+        forResource: "exercise-relationships", withExtension: "json")
+    else {
+      throw FEDBError.invalidDocument("bundled DB++ resources are unavailable")
+    }
+    return TrainingEngine(
+      database: try FEDatabase.load(url: databaseURL),
+      relationships: try ExerciseRelationships.load(url: relationshipsURL))
+  }
+
   public func validateWorkoutIntent(_ intent: WorkoutIntent) -> [String] {
     IntentValidator.validate(intent, database: database, relationships: relationships)
   }
