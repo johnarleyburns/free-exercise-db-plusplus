@@ -462,6 +462,12 @@ network dependencies.
 Part BP verification: repeated Python flagship intent resolution is identical,
 and the Swift determinism/idempotence suite passes with 42 tests.
 
+Part BQ diff review: `git diff --check` passes; the BA–BP changes touch only
+Swift indexing/tests, roadmap/capability/audit/status documentation, and no
+database, schema, Kotlin, R, random-ID, network, LLM, or external-research
+artifacts. The pre-existing untracked `HANDOFF.md` remains intentionally
+uncommitted.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
