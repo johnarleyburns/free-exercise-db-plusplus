@@ -76,13 +76,14 @@ native work; no Python rewrite was required.
 - Part X — Swift production plan generation: **complete; audited below**
 - Part Y — Swift planning policies: **complete; audited below**
 - Part Z — Swift generator input filtering: **complete; audited below**
+- Part AA — Swift equipment semantics: **complete; audited below**
 
 ### Resume instructions for the next phase
 
-Begin Part AA by matching Swift equipment filtering to Python, including
-unknown/unverifiable equipment behavior and exact body-only handling. Keep
-Kotlin and R deferred, preserve the Python oracle, and do not begin later
-locking or planning parts in that cycle.
+Begin Part AB by porting locked-exercise semantics in isolation. Preserve
+current-plan day placement and conflict behavior, keep Kotlin and R deferred,
+preserve the Python oracle, and do not begin later coaching/planning parts in
+that cycle.
 
 ## Part B fixture evidence
 
@@ -523,6 +524,23 @@ placement coverage, plus the existing generation and evaluator tests. `git
 diff --check` passed. No Python, Kotlin, or R source was changed.
 
 Part Z commit: `7b3b73b` (`feat: align Swift generator input filtering`).
+
+## Part AA equipment evidence
+
+Matched the released Python equipment behavior in the Swift generator. The
+canonical bodyweight aliases `bodyweight`, `no equipment`, and `none` admit
+`body only` exercises; equipment matching otherwise remains exact, with no
+fuzzy or platform-specific aliases. Missing, `None`, and `other` equipment
+remain unverifiable and are excluded by the released policies, while required
+exercises produce structured unsatisfiable findings when they cannot pass the
+same filter.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+passed all 38 tests, including bodyweight acceptance and unverifiable-
+equipment rejection coverage. `git diff --check` passed. No Python, Kotlin, or
+R source was changed.
+
+Part AA commit: `65993d2` (`feat: match Swift generator equipment semantics`).
 
 ## Part A audit evidence
 
