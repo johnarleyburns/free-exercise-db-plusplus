@@ -434,6 +434,14 @@ integration, or Python bridge.
 Part BH was audited locally: no external research artifacts or methodology
 changes were introduced.
 
+## Parts BI–BK verification evidence
+
+The two-pass audit ledger is committed. Swift and Kotlin test suites pass, and
+Python source compilation with `python3 -m compileall` passes. The repository
+Python tests are pytest-style and cannot run here because neither `pytest` nor
+the `pytest` module is installed; direct release-contract scripts remain part
+of the later repository gate.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
