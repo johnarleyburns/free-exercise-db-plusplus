@@ -2,7 +2,7 @@
 
 Status: **v1.11.0 release prepared**
 Current stable release: **v1.11.0**
-Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Swift, Kotlin, Python, and R packages**
+Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python and Swift packages**
 
 ---
 
@@ -36,21 +36,25 @@ Python / services, notebooks, automation
 R / research and statistical workflows
 ```
 
-## v1.11 COMPLETE (2026-08-26)
+## v1.11 COMPLETE (2026-08-27)
 
-Cross-language WorkoutIntent resolution parity is complete for Swift,
-Kotlin/JVM, and R against the frozen Python v1.10.1 contract. Canonical
-fixtures, resource copies, isolated consumers, bounded native history
-projections, and deterministic native drafts are audited and tested. The
-capability matrix and audit document define the supported boundary.
+The Python reference engine is audited and complete, and the Swift native
+engine matches the released Python semantics for intent resolution, TARGET and
+profile handling, plan analysis/evaluation, history and adherence-rich state,
+progression, deterministic production generation, and adaptive coaching.
+Canonical fixtures, resource copies, isolated consumers, and deterministic
+native results are covered by the parity suite.
 
-v1.12 NEXT: production-grade native training-engine completion, especially
-Swift SPM for drop-in Apple application integration. It owns full native plan
-generation parity where incomplete, full native PlanEvaluation, adherence-rich
-TrainingState, adaptive coaching, and distribution polish. DB++ will remain
-free of LLM vendor dependencies.
+v1.12 NEXT: Swift SPM production hardening: API ergonomics, documentation,
+distribution, resource-size/performance work, app-integration examples,
+semantic stability, and drop-in application readiness. It owns no missing core
+engine semantics. DB++ remains free of LLM vendor dependencies.
 
-The end goal by **v1.12** is:
+v1.13: Kotlin/JVM/Android full engine port.
+
+v1.14: R research/full analysis port.
+
+The completed v1.11 workflow is:
 
 ```text
 structured WorkoutIntent
@@ -239,7 +243,8 @@ normative docs
 shared golden fixtures
 ```
 
-Python remains the reference implementation through v1.12, but Swift/Kotlin/R must be checked against common golden fixtures rather than independently evolving behavior.
+Python remains the reference implementation, and Swift is checked against the
+same common golden fixtures rather than independently evolving behavior.
 
 ---
 
@@ -294,16 +299,13 @@ Adaptive coaching / PLAN revision proposal engine.
 ```text
 v1.10  WorkoutIntent + deterministic intent/goal/environment resolution
 
-v1.11  COMPLETE: cross-language WorkoutIntent resolution parity
+v1.11  COMPLETE: Python reference audit and full Swift engine parity
 
-v1.12  NEXT: production-grade native training-engine completion:
-       Swift SPM
-       Kotlin/JVM package
-       Python package
-       R package
+v1.12  NEXT: Swift SPM production hardening and app-readiness polish
 
-       with end-to-end intent → plan → history-aware adaptation support
-       according to each package's declared capability level
+v1.13  Kotlin/JVM/Android full engine port
+
+v1.14  R research/full analysis port
 ```
 
 ---
