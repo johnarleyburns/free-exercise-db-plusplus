@@ -96,6 +96,8 @@ native work; no Python rewrite was required.
 - Part AR — Swift determinism/idempotence: **complete; audited below**
 - Part AS — Swift WorkoutIntent end-to-end: **complete; audited below**
 - Part AU — Swift intent plus existing-plan adaptation: **complete; audited below**
+- Part AV — Shared policy resources: **complete; audited below**
+- Part AW — Swift resource-copy verification: **complete; audited below**
 - Part AT — Swift history-aware intent: **complete; audited below**
 - Part AZ — Swift external consumer contract: **complete; audited below**
 
@@ -329,6 +331,20 @@ the external consumer script, and `git diff --check` pass. No Python, Kotlin,
 or R source was changed.
 
 Part AU commit: pending commit after review.
+
+## Part AV–AW resource evidence
+
+Swift continues to consume the canonical intent-policy resource; algorithmic
+planning and coaching policy documents remain native declarations to avoid
+extracting executable semantics into data. The external consumer check now
+uses `cmp` to enforce byte identity between the root and SPM intent-policy
+copies.
+
+Verification: `bash scripts/test_swift_consumer.sh` and `git diff --check`
+pass. No Python, Kotlin, or R source was changed.
+
+Part AV commit: pending commit after review.
+Part AW commit: pending commit after review.
 
 ## Part AT history-aware intent evidence
 
