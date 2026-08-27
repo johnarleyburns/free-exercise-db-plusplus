@@ -434,7 +434,7 @@ private enum IntentPolicyCatalog {
   static var environments: [String: JSONValue] { o(root["environmentPolicies"]) }
 }
 
-public func deriveTrainingState(_ history: JSONValue, asOf: String, window: TrainingHistoryWindow = .last28Days, relationships: ExerciseRelationships? = nil) -> JSONValue {
+public func deriveTrainingState(_ history: JSONValue, asOf: String, window: TrainingHistoryWindow = .last28Days, relationships: ExerciseRelationships? = nil, database: FEDatabase? = nil) -> JSONValue {
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
   let activations = (root["planActivations"]?.arrayValues ?? []).compactMap { $0.objectValue }
@@ -637,6 +637,31 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
   }
   let skipped = skippedCounts.mapValues { JSONValue.number($0) }, substitutions = substitutionCounts.mapValues { JSONValue.number($0) }
   let adherenceState: JSONValue = .object(["sessionAdherence": .array(sessionRows), "exercisePrescriptionAdherence": .array(exerciseRows), "substitutionAdjustedCompletion": .number(Double(exerciseRows.filter { ["matched", "substitution"].contains($0.objectValue?["match_status"]?.stringValue) }.count)), "missedScheduledOccurrences": .array(sessionRows.filter { $0.objectValue?["session_status"] == .string("missed_planned_session") }), "repeatedSkippedExercises": .array(skipped.keys.sorted().map(JSONValue.string)), "repeatedSubstitutions": .array(substitutions.keys.sorted().map(JSONValue.string)), "skippedPrescriptionCounts": .object(skipped), "substitutionCountsByPrescription": .object(substitutions), "substitutionHistoryByPrescription": .object(substitutionHistory), "unplannedExercises": .array(exerciseRows.filter { $0.objectValue?["match_status"] == .string("unplanned_addition") }), "unplannedSets": .number(Double(exerciseRows.filter { $0.objectValue?["match_status"] == .string("unplanned_addition") }.reduce(0) { $0 + Int($1.objectValue?["actual_sets"]?.numberValue ?? 0) }))])
+  var muscleState: [String: JSONValue] = [:]
+  var muscleExposureSessions: [String: Set<String>] = [:]
+  for workout in workouts {
+    let sessionId = workout["sessionId"]?.stringValue ?? ""
+    for raw in workout["exercises"]?.arrayValues ?? [] {
+      guard let exercise = raw.objectValue, let id = exercise["exerciseId"]?.stringValue else { continue }
+      let count = Double(completedSets(exercise).count); guard count > 0 else { continue }
+      guard let database, let annotation = try? database.getExercise(id).annotation else { continue }
+      func add(_ muscle: String, direct: Double, indirect: Double, stabilizer: Double) {
+        var row = muscleState[muscle]?.objectValue ?? ["muscleId": .string(muscle), "directSets": .number(0), "indirectSets": .number(0), "stabilizerSets": .number(0), "effectiveSets": .number(0), "exposures": .number(0), "mappedFraction": .number(1)]
+        row["directSets"] = .number((row["directSets"]?.numberValue ?? 0) + direct)
+        row["indirectSets"] = .number((row["indirectSets"]?.numberValue ?? 0) + indirect)
+        row["stabilizerSets"] = .number((row["stabilizerSets"]?.numberValue ?? 0) + stabilizer)
+        row["effectiveSets"] = .number((row["effectiveSets"]?.numberValue ?? 0) + direct * database.setCredits.direct + indirect * database.setCredits.indirect + stabilizer * database.setCredits.stabilizer)
+        muscleState[muscle] = .object(row); muscleExposureSessions[muscle, default: []].insert(sessionId)
+      }
+      for muscle in annotation.direct { add(muscle, direct: count, indirect: 0, stabilizer: 0) }
+      for muscle in annotation.indirect { add(muscle, direct: 0, indirect: count, stabilizer: 0) }
+      for muscle in annotation.stabilizers { add(muscle, direct: 0, indirect: 0, stabilizer: count) }
+    }
+  }
+  for (muscle, sessions) in muscleExposureSessions { if var row = muscleState[muscle]?.objectValue { row["exposures"] = .number(Double(sessions.count)); muscleState[muscle] = .object(row) } }
+  if let target = (root["targets"]?.arrayValues ?? []).first?.objectValue?["muscles"]?.objectValue {
+    for (muscle, targetValue) in target { guard var row = muscleState[muscle]?.objectValue else { continue }; let actual = row["effectiveSets"]?.numberValue ?? 0; let range = targetValue.objectValue ?? [:]; let minimum = range["min"]?.numberValue ?? range["minimumSets"]?.numberValue; let desired = range["target"]?.numberValue ?? range["targetSets"]?.numberValue; let maximum = range["max"]?.numberValue ?? range["maximumSets"]?.numberValue; let state = minimum.map { actual < $0 ? "below_minimum" : (maximum.map { actual > $0 } ?? false ? "above_maximum" : (desired.map { actual < $0 } ?? false ? "within_range_below_target" : (desired.map { actual > $0 } ?? false ? "within_range_above_target" : (desired != nil ? "at_target" : "within_range")))) } ?? "not_targeted"; row["targetState"] = .string(state); row["plannedVsActual"] = .object(["planned": desired.map(JSONValue.number) ?? .null, "actual": .number(actual)]); muscleState[muscle] = .object(row) }
+  }
   var familyState: [String: JSONValue] = [:]
   if let relationships {
     for id in exerciseState.keys.sorted() {
@@ -657,7 +682,7 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
       familyState[id] = .object(row)
     }
   }
-  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object(familyState), "adherenceState": adherenceState, "sessionState": .array(sessionRows), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate), "timezoneOffsetSeconds": .number(Double(parsedAsOf?.offsetSeconds ?? 0))])])])
+  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object(familyState), "muscleState": .object(muscleState), "adherenceState": adherenceState, "sessionState": .array(sessionRows), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate), "timezoneOffsetSeconds": .number(Double(parsedAsOf?.offsetSeconds ?? 0))])])])
 }
 
 public struct IntentResolver: Sendable {

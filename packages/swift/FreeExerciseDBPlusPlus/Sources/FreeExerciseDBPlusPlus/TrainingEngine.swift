@@ -51,24 +51,24 @@ public struct TrainingEngine: Sendable {
   }
 
   public func deriveTrainingState(_ history: JSONValue, asOf: String) -> JSONValue {
-    FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf)
+    FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database)
   }
 
   public func deriveTrainingState(_ history: JSONValue, asOf: String, window: TrainingHistoryWindow) -> JSONValue {
-    FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, window: window, relationships: relationships)
+    FreeExerciseDBPlusPlus.deriveTrainingState(history, asOf: asOf, window: window, relationships: relationships, database: database)
   }
 
   /// Typed TrainingState façade for callers that already hold canonical history.
   public func deriveTrainingState(_ history: TrainingHistory, asOf: String) throws -> TrainingState {
     let data = try JSONEncoder().encode(history)
-    let projected = FreeExerciseDBPlusPlus.deriveTrainingState(try JSONDecoder().decode(JSONValue.self, from: data), asOf: asOf, relationships: relationships)
+    let projected = FreeExerciseDBPlusPlus.deriveTrainingState(try JSONDecoder().decode(JSONValue.self, from: data), asOf: asOf, relationships: relationships, database: database)
     return try JSONDecoder().decode(TrainingState.self, from: JSONEncoder().encode(projected))
   }
 
   public func deriveTrainingState(_ history: TrainingHistory, asOf: String, window: TrainingHistoryWindow) throws -> TrainingState {
     let data = try JSONEncoder().encode(history)
     let source = try JSONDecoder().decode(JSONValue.self, from: data)
-    let projected = FreeExerciseDBPlusPlus.deriveTrainingState(source, asOf: asOf, window: window, relationships: relationships)
+    let projected = FreeExerciseDBPlusPlus.deriveTrainingState(source, asOf: asOf, window: window, relationships: relationships, database: database)
     return try JSONDecoder().decode(TrainingState.self, from: JSONEncoder().encode(projected))
   }
 

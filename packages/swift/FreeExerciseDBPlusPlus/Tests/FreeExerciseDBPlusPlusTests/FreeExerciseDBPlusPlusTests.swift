@@ -171,6 +171,18 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(family?["explicitSubstitutionCount"], .number(0))
   }
 
+  func testMuscleStateUsesDatabaseCreditsAndExposureCounts() throws {
+    let exercise = Exercise(exerciseId: "x", annotation: ExerciseAnnotation(direct: ["chest"], indirect: ["triceps"], stabilizers: ["shoulders"], volumeEligible: true), source: nil)
+    let database = FEDatabase(metadata: ["setCredits": .object(["direct": .number(1), "indirect": .number(0.5), "stabilizer": .number(0)])], exercises: ["x": exercise])
+    let history: JSONValue = .object(["subjectId": .string("s"), "workouts": .array([.object(["sessionId": .string("w"), "startTime": .string("2026-08-20T12:00:00Z"), "exercises": .array([.object(["exerciseId": .string("x"), "sets": .array([.object(["completed": .bool(true), "setType": .string("working")])])])])])])])
+    let state = deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z", database: database)
+    let muscles = state.objectValue?["muscleState"]?.objectValue
+    XCTAssertEqual(muscles?["chest"]?.objectValue?["directSets"], .number(1))
+    XCTAssertEqual(muscles?["triceps"]?.objectValue?["effectiveSets"], .number(0.5))
+    XCTAssertEqual(muscles?["shoulders"]?.objectValue?["effectiveSets"], .number(0))
+    XCTAssertEqual(muscles?["chest"]?.objectValue?["exposures"], .number(1))
+  }
+
   func testTrainingEngineLoadsCanonicalBundledResources() throws {
     let engine = try TrainingEngine.bundled()
     XCTAssertGreaterThan(engine.database.count, 800)
