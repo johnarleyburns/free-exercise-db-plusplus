@@ -58,7 +58,8 @@ native work; no Python rewrite was required.
 - Part F — Swift typed core domain models: **complete; audited below**
 - Part G — Swift database/relationship resource loading: **complete; audited below**
 - Part H — Swift full PLAN analysis: **complete; audited below**
-- Parts I–N — Swift engine architecture and parity: pending the preceding
+- Part I — Swift full PLAN evaluation: **complete; audited below**
+- Parts J–N — Swift engine architecture and parity: pending the preceding
   parts and the detailed order in `HANDOFF.md`
 
 ### Resume instructions for the next phase
@@ -193,6 +194,24 @@ normalization, range, and completeness assertions. `git diff --check` passed.
 No Python, Kotlin, or R source was changed.
 
 Part H commit: pending commit after review.
+
+## Part I evaluation evidence
+
+Completed the Swift evaluator parity surface for summary status, target gaps,
+muscle/frequency/pattern/family comparisons, equipment and profile findings,
+availability, exercise counts, completeness, warnings, and provenance. Family
+coverage now preserves canonical membership, exposures, planned ranges, and
+variant dimensions; unknown exercises and unique preference summaries follow
+the Python oracle.
+
+Verification: the new Swift golden test compares the complete evaluation
+document against `fixtures/cross-language/evaluation/expected.json` and passes
+exactly under the Part C comparison policy. The full
+`swift test --package-path packages/swift/FreeExerciseDBPlusPlus` suite passes
+all 16 tests, and `git diff --check` passes. No Python, Kotlin, or R source was
+changed.
+
+Part I commit: pending commit after review.
 
 ## Part A audit evidence
 
