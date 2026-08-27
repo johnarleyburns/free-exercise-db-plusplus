@@ -431,6 +431,9 @@ schema versions were not changed. The implementation remains offline and
 contains no web research, exercise-science methodology changes, LLM
 integration, or Python bridge.
 
+Part BH was audited locally: no external research artifacts or methodology
+changes were introduced.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
