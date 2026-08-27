@@ -36,6 +36,17 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   if let trainingState { state = trainingState }
   else if let history, let asOf { state = deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database) }
   else { return .object(["status": .string("insufficient_data"), "currentPlan": currentPlan, "proposedPlan": .null, "currentEvaluation": currentEvaluation, "proposedEvaluation": .null, "trainingState": .null, "decisions": .array([]), "changes": .array([]), "unresolvedIssues": .array([.object(["code": .string("INSUFFICIENT_HISTORY")])]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId)])]) }
+  if cObject(cObject(currentEvaluation)["summary"])["satisfiesHardConstraints"] != .bool(true) {
+    let generated = generatePlan(profile: profile, target: target, database: database,
+      policy: planningPolicy ?? "full-body-general-v1", relationships: relationships,
+      trainingState: state, currentPlan: currentPlan,
+      options: .object(["planId": cObject(currentPlan)["planId"] ?? .string("generated-plan"), "revisionId": .string((cString(cObject(currentPlan)["revisionId"]) ?? "r1") + "-adaptive-1")]))
+    if let proposed = cObject(generated)["plan"], proposed != .null {
+      let decision: JSONValue = .object(["decisionId": .string("decision-regenerate"), "decisionType": .string("regenerate_plan"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .null, "exerciseId": .null, "before": .object([:]), "after": .object([:]), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "evidence": .object(cObject(cObject(currentEvaluation)["constraints"])), "provenance": cObject(state)["provenance"] ?? .object([:])])
+      let change: JSONValue = .object(["type": .string("PLAN_REGENERATED"), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "decisionIds": .array([.string("decision-regenerate")])])
+      return .object(["status": .string("regeneration_proposed"), "currentPlan": currentPlan, "proposedPlan": proposed, "currentEvaluation": currentEvaluation, "proposedEvaluation": cObject(generated)["evaluation"] ?? .null, "trainingState": state, "decisions": .array([decision]), "changes": .array([change]), "unresolvedIssues": .array([]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
+    }
+  }
   var proposed = currentPlan
   var decisions: [JSONValue] = [], changes: [JSONValue] = []
   let exerciseState = cObject(cObject(state)["exerciseState"])

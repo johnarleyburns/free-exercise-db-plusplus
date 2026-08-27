@@ -91,6 +91,7 @@ native work; no Python rewrite was required.
 - Part AM — Swift adaptive progression reuse: **complete; audited below**
 - Part AN — Swift explicit adaptive substitution: **complete; audited below**
 - Part AO — Swift adaptive target-maximum gate: **complete; audited below**
+- Part AP — Swift adaptive regeneration: **complete; audited below**
 
 ### Resume instructions for the next phase
 
@@ -259,6 +260,18 @@ Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
 and `git diff --check` pass. No Python, Kotlin, or R source was changed.
 
 Part AO commit: pending commit after review.
+
+## Part AP regeneration evidence
+
+When the current evaluation violates hard constraints, native coaching now
+delegates regeneration to the production Swift generator, preserving the
+current plan identity with an adaptive revision and returning a canonical
+`regeneration_proposed` result with a regeneration decision and change.
+
+Verification: `swift test --package-path packages/swift/FreeExerciseDBPlusPlus`
+and `git diff --check` pass. No Python, Kotlin, or R source was changed.
+
+Part AP commit: pending commit after review.
 
 ## Part B fixture evidence
 
