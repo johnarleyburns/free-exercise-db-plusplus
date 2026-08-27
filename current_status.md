@@ -442,6 +442,9 @@ Python tests are pytest-style and cannot run here because neither `pytest` nor
 the `pytest` module is installed; direct release-contract scripts remain part
 of the later repository gate.
 
+Part BL verification: Swift package tests pass with 42 tests, and
+`scripts/test_swift_consumer.sh` passes its external SPM consumer workflow.
+
 ## Part B fixture evidence
 
 Added Python-authored, reproducible fixtures under
