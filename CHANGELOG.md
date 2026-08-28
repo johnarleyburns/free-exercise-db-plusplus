@@ -16,6 +16,20 @@
 
 # Changelog
 
+## 1.15.0 - 2026-08-28
+
+- Add a versioned, transport-neutral TrainingRequest/TrainingResult contract
+  with explicit resolve, generation, evaluation, state, progression, and
+  adaptation operations.
+- Expose the contract through typed Swift and Kotlin facades, Python dict and
+  typed helpers, and an offline base-R named-list facade while preserving all
+  existing lower-level engine APIs.
+- Add bundled schemas, executable four-language consumers, canonical
+  application fixtures, full-envelope parity checks, integration guides, and
+  CI coverage for the application boundary.
+- Preserve deterministic training semantics; no new training methodology,
+  LLM, network, or current-time dependency is introduced.
+
 ## 1.14.1 - 2026-08-28
 
 - Enforce full Python-authored R parity checks for intent, evaluation, history,

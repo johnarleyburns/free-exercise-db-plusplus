@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.14.1 released**
-Current stable release: **v1.14.1**
+Status: **v1.15.0 released**
+Current stable release: **v1.15.0**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, Kotlin, and R packages**
 
 ---
@@ -54,6 +54,12 @@ remains free of LLM vendor dependencies.
 v1.13 COMPLETE: Kotlin/JVM/Android full engine port.
 
 v1.14 COMPLETE: R full research engine and statistical interface.
+
+v1.15 COMPLETE: application integration contract across Python, Swift,
+Kotlin/JVM, and R, with explicit request/result operations, typed/native
+facades, bundled schemas, executable consumers, and full cross-language
+contract fixtures. This milestone changes integration ergonomics only; it
+does not introduce new training methodology.
 
 The completed v1.11 workflow is:
 

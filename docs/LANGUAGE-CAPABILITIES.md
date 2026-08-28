@@ -2,8 +2,8 @@
 
 v1.11 completed the Python reference engine and full Swift semantic engine
 parity. v1.12 completed the Swift SPM application-grade API and packaging
-hardening. v1.13 completed the native Kotlin/JVM engine port. v1.14 completes
-the native R research/analysis engine. v1.15 adds a shared application
+hardening. v1.13 completed the native Kotlin/JVM engine port. v1.14 completed
+the native R research/analysis engine. v1.15 completes the shared application
 integration contract over all four engines.
 
 | Capability | Python | Swift | Kotlin/JVM | R |
