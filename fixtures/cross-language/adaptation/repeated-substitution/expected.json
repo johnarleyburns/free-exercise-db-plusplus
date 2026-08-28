@@ -1,0 +1,1791 @@
+{
+  "changes": [
+    {
+      "after": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Dumbbell_Bench_Press",
+        "exerciseName": "Dumbbell Bench Press",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "order": 1,
+        "prescriptionId": "adaptive-bench",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "before": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "order": 1,
+        "prescriptionId": "adaptive-bench",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "decisionIds": [
+        "decision-substitute_exercise-adaptive-bench"
+      ],
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "prescriptionId": "adaptive-bench",
+      "reasonCodes": [
+        "REPEATED_SUBSTITUTION"
+      ],
+      "type": "EXERCISE_SUBSTITUTED"
+    },
+    {
+      "after": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Dumbbell_Bench_Press",
+        "exerciseName": "Dumbbell Bench Press",
+        "load": {
+          "unit": "kg",
+          "value": 82.5
+        },
+        "order": 1,
+        "prescriptionId": "adaptive-bench",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "before": {
+        "effort": {
+          "rir": {
+            "target": 2
+          }
+        },
+        "exerciseId": "Dumbbell_Bench_Press",
+        "exerciseName": "Dumbbell Bench Press",
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "order": 1,
+        "prescriptionId": "adaptive-bench",
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "decisionIds": [
+        "decision-increase_load-adaptive-bench"
+      ],
+      "exerciseId": "Dumbbell_Bench_Press",
+      "prescriptionId": "adaptive-bench",
+      "reasonCodes": [
+        "PROGRESSION_CRITERIA_MET"
+      ],
+      "type": "LOAD_CHANGED"
+    }
+  ],
+  "currentEvaluation": {
+    "availability": {
+      "max": null,
+      "min": null,
+      "plannedSessions": 1,
+      "state": "at_target",
+      "target": 1
+    },
+    "constraints": {
+      "violations": []
+    },
+    "coverageCompleteness": {
+      "ineligiblePrescriptions": [],
+      "ineligibleSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "ineligibleSets": 0.0,
+      "mappedFraction": 1.0,
+      "mappedSetRange": {
+        "max": 2.0,
+        "min": 2.0,
+        "target": 2.0
+      },
+      "mappedSets": 2.0,
+      "plannedSetRange": {
+        "max": 2.0,
+        "min": 2.0,
+        "target": 2.0
+      },
+      "plannedSets": 2.0,
+      "unmappedPrescriptions": [],
+      "unmappedSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "unmappedSets": 0.0
+    },
+    "equipment": {
+      "supportedExercises": [
+        "Barbell_Bench_Press_-_Medium_Grip"
+      ],
+      "unknownEquipmentExercises": [],
+      "unsupportedExercises": []
+    },
+    "exerciseCounts": {},
+    "families": {
+      "coverage": {
+        "bench_press": {
+          "exerciseIds": [
+            "Barbell_Bench_Press_-_Medium_Grip"
+          ],
+          "familyId": "bench_press",
+          "name": "Bench Press",
+          "plannedSetRanges": {
+            "max": 2.0,
+            "min": 2.0,
+            "target": 2.0
+          },
+          "plannedSets": 2.0,
+          "sessionExposures": 1,
+          "sessions": [
+            "adaptive-session"
+          ],
+          "variantDimensions": {
+            "Barbell_Bench_Press_-_Medium_Grip": {
+              "equipment": "barbell"
+            }
+          },
+          "variantDimensionsUsed": {
+            "equipment": [
+              "barbell"
+            ]
+          }
+        }
+      },
+      "targets": {}
+    },
+    "frequency": {},
+    "movementPatterns": {},
+    "muscleCoverage": {
+      "chest": {
+        "actualEffectiveSets": 2.0,
+        "differenceFromTarget": 0.0,
+        "max": 4,
+        "maximum": 4,
+        "min": 1,
+        "minimum": 1,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 2.0,
+          "min": 2.0,
+          "target": 2.0
+        },
+        "state": "at_target",
+        "target": 2
+      },
+      "shoulders": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "triceps": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "not_targeted",
+        "target": null
+      }
+    },
+    "preferences": {
+      "avoidedExercisesUsed": [],
+      "avoidedFamiliesUsed": [],
+      "findings": [],
+      "preferredExercisesUsed": [],
+      "preferredFamiliesUsed": []
+    },
+    "provenance": {
+      "analysisPolicy": "plan-evaluation-v1",
+      "analysisVersion": "0.1.0",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "durationPolicy": null,
+      "planSchemaVersion": "0.1.0",
+      "profileSchemaVersion": "0.1.0",
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "targetSchemaVersion": "0.1.0"
+    },
+    "summary": {
+      "evaluationStatus": "valid",
+      "hardConstraintViolations": 0,
+      "meetsTargetMinimums": true,
+      "satisfiesHardConstraints": true,
+      "softPreferenceWarnings": 0,
+      "targetGaps": 0
+    },
+    "warnings": []
+  },
+  "currentPlan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "name": "Adaptive fixture",
+    "planId": "adaptive-plan",
+    "revisionId": "r1",
+    "schemaVersion": "0.1.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": {
+                "target": 2
+              }
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "load": {
+              "unit": "kg",
+              "value": 80
+            },
+            "order": 1,
+            "prescriptionId": "adaptive-bench",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "sets": 2
+          }
+        ],
+        "planSessionId": "adaptive-session"
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "after": {},
+      "before": {},
+      "decisionId": "decision-hold-adaptive-bench",
+      "decisionType": "hold",
+      "evidence": {
+        "skippedPrescriptionCount": 4
+      },
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "planId": "adaptive-plan",
+      "policyId": "general-adaptive-v1",
+      "policyVersion": "1.0.0",
+      "prescriptionId": "adaptive-bench",
+      "provenance": {
+        "analysisPolicy": "dbpp-default-volume-v1",
+        "analysisVersion": "1.4.1",
+        "asOf": "2026-08-27T12:00:00+00:00",
+        "dbConverterVersion": "0.8.0",
+        "dbSchemaVersion": "0.3.0",
+        "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+        "historyWindow": {
+          "end": "2026-08-27",
+          "start": "2026-07-31",
+          "type": "last_28_days"
+        },
+        "mappedFraction": null,
+        "planSchemaVersions": [
+          "0.1.0"
+        ],
+        "relationshipSchemaVersion": "0.1.0",
+        "setCredits": {
+          "direct": 1.0,
+          "indirect": 0.5,
+          "stabilizer": 0.0
+        },
+        "stateVersion": "0.1.0",
+        "targetSchemaVersion": "0.1.0",
+        "timezone": "UTC",
+        "workoutCount": 2,
+        "workoutSchemaVersions": [
+          "0.3.0"
+        ]
+      },
+      "reasonCodes": [
+        "REPEATEDLY_SKIPPED"
+      ],
+      "revisionId": "r1",
+      "schemaVersion": "0.1.0"
+    },
+    {
+      "after": {
+        "load": {
+          "unit": "kg",
+          "value": 82.5
+        },
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "before": {
+        "load": {
+          "unit": "kg",
+          "value": 80
+        },
+        "reps": {
+          "max": 10,
+          "min": 6,
+          "target": 8
+        },
+        "sets": 2
+      },
+      "decisionId": "decision-increase_load-adaptive-bench",
+      "decisionType": "increase_load",
+      "evidence": {
+        "newLoad": {
+          "unit": "kg",
+          "value": 82.5
+        },
+        "previousLoad": {
+          "unit": "kg",
+          "value": 80
+        },
+        "sets": [
+          {
+            "actualReps": 10,
+            "plannedReps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setId": 1
+          },
+          {
+            "actualReps": 10,
+            "plannedReps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setId": 2
+          }
+        ]
+      },
+      "exerciseId": "Dumbbell_Bench_Press",
+      "planId": "adaptive-plan",
+      "policyId": "double-progression-v1",
+      "policyVersion": "1.0.0",
+      "prescriptionId": "adaptive-bench",
+      "provenance": {
+        "analysisPolicy": "dbpp-default-volume-v1",
+        "analysisVersion": "1.4.1",
+        "asOf": "2026-08-27T12:00:00+00:00",
+        "dbConverterVersion": "0.8.0",
+        "dbSchemaVersion": "0.3.0",
+        "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+        "historyWindow": {
+          "end": "2026-08-27",
+          "start": "2026-07-31",
+          "type": "last_28_days"
+        },
+        "mappedFraction": null,
+        "planSchemaVersions": [
+          "0.1.0"
+        ],
+        "relationshipSchemaVersion": "0.1.0",
+        "setCredits": {
+          "direct": 1.0,
+          "indirect": 0.5,
+          "stabilizer": 0.0
+        },
+        "stateVersion": "0.1.0",
+        "targetSchemaVersion": "0.1.0",
+        "timezone": "UTC",
+        "workoutCount": 2,
+        "workoutSchemaVersions": [
+          "0.3.0"
+        ]
+      },
+      "reasonCodes": [
+        "EFFORT_WITHIN_TARGET",
+        "REP_TARGET_ACHIEVED"
+      ],
+      "revisionId": "r1",
+      "schemaVersion": "0.1.0"
+    },
+    {
+      "after": {
+        "exerciseId": "Dumbbell_Bench_Press"
+      },
+      "before": {
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip"
+      },
+      "decisionId": "decision-substitute_exercise-adaptive-bench",
+      "decisionType": "substitute_exercise",
+      "evidence": {
+        "prescriptionId": "adaptive-bench",
+        "replacementExerciseId": "Dumbbell_Bench_Press",
+        "sessionIds": [
+          "adaptive-workout-1",
+          "adaptive-workout"
+        ],
+        "substitutionCount": 2,
+        "timestamps": [
+          "2026-08-23T12:00:00Z",
+          "2026-08-24T12:00:00Z"
+        ]
+      },
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "planId": "adaptive-plan",
+      "policyId": "general-adaptive-v1",
+      "policyVersion": "1.0.0",
+      "prescriptionId": "adaptive-bench",
+      "provenance": {
+        "analysisPolicy": "dbpp-default-volume-v1",
+        "analysisVersion": "1.4.1",
+        "asOf": "2026-08-27T12:00:00+00:00",
+        "dbConverterVersion": "0.8.0",
+        "dbSchemaVersion": "0.3.0",
+        "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+        "historyWindow": {
+          "end": "2026-08-27",
+          "start": "2026-07-31",
+          "type": "last_28_days"
+        },
+        "mappedFraction": null,
+        "planSchemaVersions": [
+          "0.1.0"
+        ],
+        "relationshipSchemaVersion": "0.1.0",
+        "setCredits": {
+          "direct": 1.0,
+          "indirect": 0.5,
+          "stabilizer": 0.0
+        },
+        "stateVersion": "0.1.0",
+        "targetSchemaVersion": "0.1.0",
+        "timezone": "UTC",
+        "workoutCount": 2,
+        "workoutSchemaVersions": [
+          "0.3.0"
+        ]
+      },
+      "reasonCodes": [
+        "REPEATED_SUBSTITUTION"
+      ],
+      "revisionId": "r1",
+      "schemaVersion": "0.1.0"
+    }
+  ],
+  "policy": {
+    "adherencePolicy": "quantitative-adherence-v1",
+    "decisionPriority": [
+      "hard_constraints",
+      "structural_invalidity",
+      "target_minimums",
+      "adherence",
+      "repeated_failure",
+      "progression",
+      "target_optimization",
+      "preferences",
+      "continuity",
+      "stable_tie_break"
+    ],
+    "description": "Conservative deterministic advisory adaptation. Ambiguous evidence holds the PLAN.",
+    "exerciseProgressionPolicy": "double-progression-v1",
+    "frequencyAdjustmentPolicy": "canonical-exposure-v1",
+    "parameters": {
+      "loadIncrement": {
+        "unit": "kg",
+        "value": 2.5
+      },
+      "maxSetsAddedPerMusclePerRevision": 1,
+      "maxSetsRemovedPerMusclePerRevision": 1,
+      "maxTotalSetChangesPerRevision": 2,
+      "minimumRecentPerformances": 2,
+      "repeatedFailureThreshold": 2,
+      "repeatedSkipThreshold": 2,
+      "repeatedSubstitutionThreshold": 2
+    },
+    "policyId": "general-adaptive-v1",
+    "policyVersion": "1.0.0",
+    "regenerationPolicy": "v1.8-generator-v1",
+    "stateWindowPolicy": "last_28_days",
+    "substitutionPolicy": "explicit-substitution-v1",
+    "volumeAdjustmentPolicy": "effective-set-one-step-v1"
+  },
+  "proposedEvaluation": {
+    "availability": {
+      "max": null,
+      "min": null,
+      "plannedSessions": 1,
+      "state": "at_target",
+      "target": 1
+    },
+    "constraints": {
+      "violations": []
+    },
+    "coverageCompleteness": {
+      "ineligiblePrescriptions": [],
+      "ineligibleSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "ineligibleSets": 0.0,
+      "mappedFraction": 1.0,
+      "mappedSetRange": {
+        "max": 2.0,
+        "min": 2.0,
+        "target": 2.0
+      },
+      "mappedSets": 2.0,
+      "plannedSetRange": {
+        "max": 2.0,
+        "min": 2.0,
+        "target": 2.0
+      },
+      "plannedSets": 2.0,
+      "unmappedPrescriptions": [],
+      "unmappedSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "unmappedSets": 0.0
+    },
+    "equipment": {
+      "supportedExercises": [
+        "Dumbbell_Bench_Press"
+      ],
+      "unknownEquipmentExercises": [],
+      "unsupportedExercises": []
+    },
+    "exerciseCounts": {},
+    "families": {
+      "coverage": {
+        "bench_press": {
+          "exerciseIds": [
+            "Dumbbell_Bench_Press"
+          ],
+          "familyId": "bench_press",
+          "name": "Bench Press",
+          "plannedSetRanges": {
+            "max": 2.0,
+            "min": 2.0,
+            "target": 2.0
+          },
+          "plannedSets": 2.0,
+          "sessionExposures": 1,
+          "sessions": [
+            "adaptive-session"
+          ],
+          "variantDimensions": {
+            "Dumbbell_Bench_Press": {
+              "equipment": "dumbbell"
+            }
+          },
+          "variantDimensionsUsed": {
+            "equipment": [
+              "dumbbell"
+            ]
+          }
+        }
+      },
+      "targets": {}
+    },
+    "frequency": {},
+    "movementPatterns": {},
+    "muscleCoverage": {
+      "chest": {
+        "actualEffectiveSets": 2.0,
+        "differenceFromTarget": 0.0,
+        "max": 4,
+        "maximum": 4,
+        "min": 1,
+        "minimum": 1,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 2.0,
+          "min": 2.0,
+          "target": 2.0
+        },
+        "state": "at_target",
+        "target": 2
+      },
+      "shoulders": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "triceps": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "not_targeted",
+        "target": null
+      }
+    },
+    "preferences": {
+      "avoidedExercisesUsed": [],
+      "avoidedFamiliesUsed": [],
+      "findings": [],
+      "preferredExercisesUsed": [],
+      "preferredFamiliesUsed": []
+    },
+    "provenance": {
+      "analysisPolicy": "plan-evaluation-v1",
+      "analysisVersion": "0.1.0",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "durationPolicy": null,
+      "planSchemaVersion": "0.1.0",
+      "profileSchemaVersion": "0.1.0",
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "targetSchemaVersion": "0.1.0"
+    },
+    "summary": {
+      "evaluationStatus": "valid",
+      "hardConstraintViolations": 0,
+      "meetsTargetMinimums": true,
+      "satisfiesHardConstraints": true,
+      "softPreferenceWarnings": 0,
+      "targetGaps": 0
+    },
+    "warnings": []
+  },
+  "proposedPlan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "name": "Adaptive fixture",
+    "planId": "adaptive-plan",
+    "revisionId": "r2",
+    "schemaVersion": "0.1.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": {
+                "target": 2
+              }
+            },
+            "exerciseId": "Dumbbell_Bench_Press",
+            "exerciseName": "Dumbbell Bench Press",
+            "load": {
+              "unit": "kg",
+              "value": 82.5
+            },
+            "order": 1,
+            "prescriptionId": "adaptive-bench",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "sets": 2
+          }
+        ],
+        "planSessionId": "adaptive-session"
+      }
+    ]
+  },
+  "provenance": {
+    "coachingPolicyId": "general-adaptive-v1",
+    "coachingPolicyVersion": "1.0.0",
+    "coachingVersion": "1.9.0",
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+    "evaluationVersion": "0.1.0",
+    "historyWindow": {
+      "end": "2026-08-27",
+      "start": "2026-07-31",
+      "type": "last_28_days"
+    },
+    "planningPolicyId": null,
+    "setCredits": {
+      "direct": 1.0,
+      "indirect": 0.5,
+      "stabilizer": 0.0
+    },
+    "stateProvenance": {
+      "analysisPolicy": "dbpp-default-volume-v1",
+      "analysisVersion": "1.4.1",
+      "asOf": "2026-08-27T12:00:00+00:00",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "historyWindow": {
+        "end": "2026-08-27",
+        "start": "2026-07-31",
+        "type": "last_28_days"
+      },
+      "mappedFraction": null,
+      "planSchemaVersions": [
+        "0.1.0"
+      ],
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "stateVersion": "0.1.0",
+      "targetSchemaVersion": "0.1.0",
+      "timezone": "UTC",
+      "workoutCount": 2,
+      "workoutSchemaVersions": [
+        "0.3.0"
+      ]
+    },
+    "trainingStateVersion": "0.1.0"
+  },
+  "status": "revision_proposed",
+  "trainingState": {
+    "activePlan": {
+      "cyclePosition": 6,
+      "nextScheduledOccurrence": {
+        "planSessionId": "adaptive-session",
+        "scheduledDate": "2026-08-29"
+      },
+      "phaseId": null,
+      "planId": "adaptive-plan",
+      "revisionId": "r1"
+    },
+    "adherenceState": {
+      "exercisePrescriptionAdherence": [
+        {
+          "actual_exercise_id": null,
+          "actual_sets": 0,
+          "load_adherence": null,
+          "match_status": "missing_prescription",
+          "period": "2026-07-31",
+          "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+          "planned_sets_max": 2.0,
+          "planned_sets_min": 2.0,
+          "planned_sets_target": 2.0,
+          "prescription_id": "adaptive-bench",
+          "reps_adherence": null,
+          "rir_adherence": null,
+          "rpe_adherence": null,
+          "session_id": null,
+          "set_adherence": null,
+          "subject_id": "adaptive-subject",
+          "substitution_reason": null,
+          "volume_load_adherence": null
+        },
+        {
+          "actual_exercise_id": null,
+          "actual_sets": 0,
+          "load_adherence": null,
+          "match_status": "missing_prescription",
+          "period": "2026-07-31",
+          "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+          "planned_sets_max": 2.0,
+          "planned_sets_min": 2.0,
+          "planned_sets_target": 2.0,
+          "prescription_id": "adaptive-bench",
+          "reps_adherence": null,
+          "rir_adherence": null,
+          "rpe_adherence": null,
+          "session_id": null,
+          "set_adherence": null,
+          "subject_id": "adaptive-subject",
+          "substitution_reason": null,
+          "volume_load_adherence": null
+        },
+        {
+          "actual_exercise_id": null,
+          "actual_sets": 0,
+          "load_adherence": null,
+          "match_status": "missing_prescription",
+          "period": "2026-07-31",
+          "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+          "planned_sets_max": 2.0,
+          "planned_sets_min": 2.0,
+          "planned_sets_target": 2.0,
+          "prescription_id": "adaptive-bench",
+          "reps_adherence": null,
+          "rir_adherence": null,
+          "rpe_adherence": null,
+          "session_id": null,
+          "set_adherence": null,
+          "subject_id": "adaptive-subject",
+          "substitution_reason": null,
+          "volume_load_adherence": null
+        },
+        {
+          "actual_exercise_id": null,
+          "actual_sets": 0,
+          "load_adherence": null,
+          "match_status": "missing_prescription",
+          "period": "2026-07-31",
+          "planned_exercise_id": "Barbell_Bench_Press_-_Medium_Grip",
+          "planned_sets_max": 2.0,
+          "planned_sets_min": 2.0,
+          "planned_sets_target": 2.0,
+          "prescription_id": "adaptive-bench",
+          "reps_adherence": null,
+          "rir_adherence": null,
+          "rpe_adherence": null,
+          "session_id": null,
+          "set_adherence": null,
+          "subject_id": "adaptive-subject",
+          "substitution_reason": null,
+          "volume_load_adherence": null
+        },
+        {
+          "actual_exercise_id": "Dumbbell_Bench_Press",
+          "actual_sets": 2,
+          "match_status": "unplanned_addition",
+          "period": "2026-07-31",
+          "planned_exercise_id": null,
+          "prescription_id": null,
+          "session_id": "adaptive-workout",
+          "subject_id": "adaptive-subject",
+          "unmapped": false
+        },
+        {
+          "actual_exercise_id": "Dumbbell_Bench_Press",
+          "actual_sets": 2,
+          "match_status": "unplanned_addition",
+          "period": "2026-07-31",
+          "planned_exercise_id": null,
+          "prescription_id": null,
+          "session_id": "adaptive-workout-1",
+          "subject_id": "adaptive-subject",
+          "unmapped": false
+        }
+      ],
+      "missedScheduledOccurrences": [
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-01",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-08",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-15",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-22",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        }
+      ],
+      "repeatedSkippedExercises": [
+        "adaptive-bench"
+      ],
+      "repeatedSubstitutions": [],
+      "sessionAdherence": [
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-01",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-08",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-15",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 0,
+          "matched_exercises": 0,
+          "missed_sets": 2.0,
+          "missed_sets_max": 2.0,
+          "missed_sets_min": 2.0,
+          "missed_sets_target": 2.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": "2026-08-22",
+          "session_adherence": 0.0,
+          "session_id": null,
+          "session_status": "missed_planned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": null,
+          "unplanned_exercises": 0,
+          "unplanned_sets": 0
+        },
+        {
+          "actual_counted_sets": 2,
+          "matched_exercises": 0,
+          "missed_sets": 0.0,
+          "missed_sets_max": 0.0,
+          "missed_sets_min": 0.0,
+          "missed_sets_target": 0.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": null,
+          "session_adherence": null,
+          "session_id": "adaptive-workout-1",
+          "session_status": "unplanned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": "2026-08-23T12:00:00Z",
+          "unplanned_exercises": 1,
+          "unplanned_sets": 2
+        },
+        {
+          "actual_counted_sets": 2,
+          "matched_exercises": 0,
+          "missed_sets": 0.0,
+          "missed_sets_max": 0.0,
+          "missed_sets_min": 0.0,
+          "missed_sets_target": 0.0,
+          "missing_prescriptions": 1,
+          "period_end": "2026-08-27",
+          "period_start": "2026-07-31",
+          "period_type": "custom_date_range",
+          "plan_id": "adaptive-plan",
+          "plan_session_id": "adaptive-session",
+          "planned_exercises": 1,
+          "planned_set_max": 2.0,
+          "planned_set_min": 2.0,
+          "planned_sets": 2.0,
+          "revision_id": "r1",
+          "scheduled_date": null,
+          "session_adherence": null,
+          "session_id": "adaptive-workout",
+          "session_status": "unplanned_session",
+          "subject_id": "adaptive-subject",
+          "substitutions": 0,
+          "timestamp": "2026-08-24T12:00:00Z",
+          "unplanned_exercises": 1,
+          "unplanned_sets": 2
+        }
+      ],
+      "skippedPrescriptionCounts": {
+        "adaptive-bench": 4
+      },
+      "substitutionAdjustedCompletion": 0,
+      "substitutionCountsByPrescription": {},
+      "substitutionHistoryByPrescription": {
+        "adaptive-bench": {
+          "Dumbbell_Bench_Press": {
+            "count": 2,
+            "sessionIds": [
+              "adaptive-workout-1",
+              "adaptive-workout"
+            ],
+            "timestamps": [
+              "2026-08-23T12:00:00Z",
+              "2026-08-24T12:00:00Z"
+            ]
+          }
+        }
+      },
+      "unplannedExercises": [
+        {
+          "actual_exercise_id": "Dumbbell_Bench_Press",
+          "actual_sets": 2,
+          "match_status": "unplanned_addition",
+          "period": "2026-07-31",
+          "planned_exercise_id": null,
+          "prescription_id": null,
+          "session_id": "adaptive-workout",
+          "subject_id": "adaptive-subject",
+          "unmapped": false
+        },
+        {
+          "actual_exercise_id": "Dumbbell_Bench_Press",
+          "actual_sets": 2,
+          "match_status": "unplanned_addition",
+          "period": "2026-07-31",
+          "planned_exercise_id": null,
+          "prescription_id": null,
+          "session_id": "adaptive-workout-1",
+          "subject_id": "adaptive-subject",
+          "unmapped": false
+        }
+      ],
+      "unplannedSets": 4
+    },
+    "asOf": "2026-08-27T12:00:00+00:00",
+    "exerciseState": {
+      "Barbell_Bench_Press_-_Medium_Grip": {
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "lastActual": null,
+        "lastPerformedAt": null,
+        "lastPrescription": {
+          "effort": {
+            "rir": {
+              "target": 2
+            }
+          },
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "load": {
+            "unit": "kg",
+            "value": 80
+          },
+          "order": 1,
+          "prescriptionId": "adaptive-bench",
+          "reps": {
+            "max": 10,
+            "min": 6,
+            "target": 8
+          },
+          "sets": 2
+        },
+        "latestPerformance": null,
+        "prescriptionAdherence": {
+          "actualSets": 0.0,
+          "loadAdherence": null,
+          "matchedOccurrences": 0,
+          "missingOccurrences": 4,
+          "plannedSets": 8.0,
+          "repsAdherence": null,
+          "rirAdherence": null,
+          "rpeAdherence": null,
+          "setAdherence": null,
+          "substitutionOccurrences": 0
+        },
+        "prescriptionAdherenceByPrescriptionId": {
+          "adaptive-bench": {
+            "actualSets": 0.0,
+            "loadAdherence": null,
+            "matchedOccurrences": 0,
+            "missingOccurrences": 4,
+            "plannedSets": 8.0,
+            "repsAdherence": null,
+            "rirAdherence": null,
+            "rpeAdherence": null,
+            "setAdherence": null,
+            "substitutionOccurrences": 0
+          }
+        },
+        "recentCompletedSetCount": 0,
+        "recentLoads": [],
+        "recentPerformances": [],
+        "recentRIR": [],
+        "recentRPE": [],
+        "recentReps": [],
+        "recentSessionCount": 0,
+        "recentSetTypes": [],
+        "substitutionCount": 0,
+        "unplannedCount": 0
+      },
+      "Dumbbell_Bench_Press": {
+        "exerciseId": "Dumbbell_Bench_Press",
+        "lastActual": {
+          "exerciseId": "Dumbbell_Bench_Press",
+          "sets": [
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2,
+              "setNumber": 1,
+              "setType": "working"
+            },
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2,
+              "setNumber": 2,
+              "setType": "working"
+            }
+          ]
+        },
+        "lastPerformedAt": "2026-08-24T12:00:00Z",
+        "lastPrescription": null,
+        "latestPerformance": {
+          "exerciseId": "Dumbbell_Bench_Press",
+          "exercisePrescriptionId": null,
+          "sessionId": "adaptive-workout",
+          "sets": [
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2,
+              "setNumber": 1,
+              "setType": "working"
+            },
+            {
+              "completed": true,
+              "reps": 10,
+              "rir": 2,
+              "setNumber": 2,
+              "setType": "working"
+            }
+          ],
+          "timestamp": "2026-08-24T12:00:00Z"
+        },
+        "prescriptionAdherence": {
+          "actualSets": 4.0,
+          "loadAdherence": null,
+          "matchedOccurrences": 0,
+          "missingOccurrences": 0,
+          "plannedSets": 0.0,
+          "repsAdherence": null,
+          "rirAdherence": null,
+          "rpeAdherence": null,
+          "setAdherence": null,
+          "substitutionOccurrences": 0
+        },
+        "prescriptionAdherenceByPrescriptionId": {},
+        "recentCompletedSetCount": 4,
+        "recentLoads": [],
+        "recentPerformances": [
+          {
+            "exerciseId": "Dumbbell_Bench_Press",
+            "exercisePrescriptionId": null,
+            "sessionId": "adaptive-workout-1",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 1,
+                "setType": "working"
+              },
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 2,
+                "setType": "working"
+              }
+            ],
+            "timestamp": "2026-08-23T12:00:00Z"
+          },
+          {
+            "exerciseId": "Dumbbell_Bench_Press",
+            "exercisePrescriptionId": null,
+            "sessionId": "adaptive-workout",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 1,
+                "setType": "working"
+              },
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 2,
+                "setType": "working"
+              }
+            ],
+            "timestamp": "2026-08-24T12:00:00Z"
+          }
+        ],
+        "recentRIR": [
+          2,
+          2
+        ],
+        "recentRPE": [],
+        "recentReps": [
+          10,
+          10
+        ],
+        "recentSessionCount": 2,
+        "recentSetTypes": [
+          "working",
+          "working"
+        ],
+        "substitutionCount": 2,
+        "unplannedCount": 2
+      }
+    },
+    "familyState": {
+      "bench_press": {
+        "explicitSubstitutionCount": 2,
+        "familyId": "bench_press",
+        "mostRecentExerciseId": "Dumbbell_Bench_Press",
+        "recentExerciseIds": [
+          "Barbell_Bench_Press_-_Medium_Grip",
+          "Dumbbell_Bench_Press"
+        ],
+        "variantHistory": []
+      }
+    },
+    "historyWindow": {
+      "end": "2026-08-27",
+      "start": "2026-07-31",
+      "type": "last_28_days"
+    },
+    "muscleState": {
+      "c": {
+        "directSets": 0,
+        "effectiveSets": 0,
+        "exposures": 0.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "c",
+        "plannedVsActual": {
+          "actual": 0,
+          "planned": 0.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "chest": {
+        "directSets": 4.0,
+        "effectiveSets": 4.0,
+        "exposures": 2.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "chest",
+        "plannedVsActual": {
+          "actual": 4.0,
+          "planned": 8.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "within_range_below_target"
+      },
+      "e": {
+        "directSets": 0,
+        "effectiveSets": 0,
+        "exposures": 0.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "e",
+        "plannedVsActual": {
+          "actual": 0,
+          "planned": 0.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "h": {
+        "directSets": 0,
+        "effectiveSets": 0,
+        "exposures": 0.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "h",
+        "plannedVsActual": {
+          "actual": 0,
+          "planned": 0.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "s": {
+        "directSets": 0,
+        "effectiveSets": 0,
+        "exposures": 0.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "s",
+        "plannedVsActual": {
+          "actual": 0,
+          "planned": 0.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "shoulders": {
+        "directSets": 0,
+        "effectiveSets": 2.0,
+        "exposures": 2.0,
+        "indirectSets": 4.0,
+        "mappedFraction": 1.0,
+        "muscleId": "shoulders",
+        "plannedVsActual": {
+          "actual": 2.0,
+          "planned": 4.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "t": {
+        "directSets": 0,
+        "effectiveSets": 0,
+        "exposures": 0.0,
+        "indirectSets": 0,
+        "mappedFraction": 1.0,
+        "muscleId": "t",
+        "plannedVsActual": {
+          "actual": 0,
+          "planned": 0.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      },
+      "triceps": {
+        "directSets": 0,
+        "effectiveSets": 2.0,
+        "exposures": 2.0,
+        "indirectSets": 4.0,
+        "mappedFraction": 1.0,
+        "muscleId": "triceps",
+        "plannedVsActual": {
+          "actual": 2.0,
+          "planned": 4.0
+        },
+        "stabilizerSets": 0,
+        "targetState": "not_targeted"
+      }
+    },
+    "provenance": {
+      "analysisPolicy": "dbpp-default-volume-v1",
+      "analysisVersion": "1.4.1",
+      "asOf": "2026-08-27T12:00:00+00:00",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "historyWindow": {
+        "end": "2026-08-27",
+        "start": "2026-07-31",
+        "type": "last_28_days"
+      },
+      "mappedFraction": null,
+      "planSchemaVersions": [
+        "0.1.0"
+      ],
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "stateVersion": "0.1.0",
+      "targetSchemaVersion": "0.1.0",
+      "timezone": "UTC",
+      "workoutCount": 2,
+      "workoutSchemaVersions": [
+        "0.3.0"
+      ]
+    },
+    "sessionState": [
+      {
+        "actual_counted_sets": 0,
+        "matched_exercises": 0,
+        "missed_sets": 2.0,
+        "missed_sets_max": 2.0,
+        "missed_sets_min": 2.0,
+        "missed_sets_target": 2.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": "2026-08-01",
+        "session_adherence": 0.0,
+        "session_id": null,
+        "session_status": "missed_planned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": null,
+        "unplanned_exercises": 0,
+        "unplanned_sets": 0
+      },
+      {
+        "actual_counted_sets": 0,
+        "matched_exercises": 0,
+        "missed_sets": 2.0,
+        "missed_sets_max": 2.0,
+        "missed_sets_min": 2.0,
+        "missed_sets_target": 2.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": "2026-08-08",
+        "session_adherence": 0.0,
+        "session_id": null,
+        "session_status": "missed_planned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": null,
+        "unplanned_exercises": 0,
+        "unplanned_sets": 0
+      },
+      {
+        "actual_counted_sets": 0,
+        "matched_exercises": 0,
+        "missed_sets": 2.0,
+        "missed_sets_max": 2.0,
+        "missed_sets_min": 2.0,
+        "missed_sets_target": 2.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": "2026-08-15",
+        "session_adherence": 0.0,
+        "session_id": null,
+        "session_status": "missed_planned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": null,
+        "unplanned_exercises": 0,
+        "unplanned_sets": 0
+      },
+      {
+        "actual_counted_sets": 0,
+        "matched_exercises": 0,
+        "missed_sets": 2.0,
+        "missed_sets_max": 2.0,
+        "missed_sets_min": 2.0,
+        "missed_sets_target": 2.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": "2026-08-22",
+        "session_adherence": 0.0,
+        "session_id": null,
+        "session_status": "missed_planned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": null,
+        "unplanned_exercises": 0,
+        "unplanned_sets": 0
+      },
+      {
+        "actual_counted_sets": 2,
+        "matched_exercises": 0,
+        "missed_sets": 0.0,
+        "missed_sets_max": 0.0,
+        "missed_sets_min": 0.0,
+        "missed_sets_target": 0.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": null,
+        "session_adherence": null,
+        "session_id": "adaptive-workout-1",
+        "session_status": "unplanned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": "2026-08-23T12:00:00Z",
+        "unplanned_exercises": 1,
+        "unplanned_sets": 2
+      },
+      {
+        "actual_counted_sets": 2,
+        "matched_exercises": 0,
+        "missed_sets": 0.0,
+        "missed_sets_max": 0.0,
+        "missed_sets_min": 0.0,
+        "missed_sets_target": 0.0,
+        "missing_prescriptions": 1,
+        "period_end": "2026-08-27",
+        "period_start": "2026-07-31",
+        "period_type": "custom_date_range",
+        "plan_id": "adaptive-plan",
+        "plan_session_id": "adaptive-session",
+        "planned_exercises": 1,
+        "planned_set_max": 2.0,
+        "planned_set_min": 2.0,
+        "planned_sets": 2.0,
+        "revision_id": "r1",
+        "scheduled_date": null,
+        "session_adherence": null,
+        "session_id": "adaptive-workout",
+        "session_status": "unplanned_session",
+        "subject_id": "adaptive-subject",
+        "substitutions": 0,
+        "timestamp": "2026-08-24T12:00:00Z",
+        "unplanned_exercises": 1,
+        "unplanned_sets": 2
+      }
+    ],
+    "stateVersion": "0.1.0",
+    "subjectId": "adaptive-subject"
+  },
+  "unresolvedIssues": []
+}

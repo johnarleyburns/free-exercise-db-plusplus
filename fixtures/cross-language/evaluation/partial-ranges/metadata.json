@@ -1,0 +1,9 @@
+{
+  "coverage": [
+    "partial_ranges",
+    "target_minimums"
+  ],
+  "deterministic": true,
+  "expectedOperation": "evaluate_plan",
+  "oracle": "python"
+}

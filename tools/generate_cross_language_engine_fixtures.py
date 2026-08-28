@@ -147,6 +147,102 @@ def main() -> None:
     write(base / "adaptation/expected.json", adapted)
     write(base / "adaptation/metadata.json", {"expectedOperation": "adapt_plan", "oracle": "python"})
 
+    def matrix_case(kind: str, name: str, document: dict, expected: object, coverage: list[str]) -> None:
+        folder = base / kind / name
+        write(folder / "input.json", document)
+        write(folder / "expected.json", expected)
+        write(folder / "metadata.json", {
+            "expectedOperation": document.get("operation"), "oracle": "python",
+            "coverage": coverage, "deterministic": True,
+        })
+
+    partial_target = deepcopy(target)
+    partial_target["muscles"]["chest"].pop("min", None)
+    matrix_case("evaluation", "partial-ranges", {
+        "operation": "evaluate_plan", "plan": plan, "profile": profile,
+        "target": partial_target, "relationships": REL.document,
+    }, evaluate_plan(plan, DB, profile, partial_target, REL), ["partial_ranges", "target_minimums"])
+
+    constrained_profile = deepcopy(profile)
+    constrained_profile["constraints"] = {
+        **constrained_profile.get("constraints", {}),
+        "excludedExerciseIds": sorted(set(constrained_profile.get("constraints", {}).get("excludedExerciseIds", [])) | {"Dumbbell_Bench_Press"}),
+    }
+    matrix_case("evaluation", "hard-soft-constraints", {
+        "operation": "evaluate_plan", "plan": plan, "profile": constrained_profile,
+        "target": target, "relationships": REL.document,
+    }, evaluate_plan(plan, DB, constrained_profile, target, REL), ["hard_constraints", "soft_preferences", "equipment"])
+
+    custom_document = json.loads((ROOT / "free-exercise-db-plusplus.json").read_text())
+    custom_document["metadata"] = deepcopy(custom_document.get("metadata", {}))
+    custom_document["metadata"]["setCredits"] = {"direct": 1.0, "indirect": 0.25, "stabilizer": 0.0}
+    custom_db = Database(custom_document)
+    matrix_case("evaluation", "custom-credits", {
+        "operation": "evaluate_plan", "plan": plan, "profile": profile, "target": target,
+        "relationships": REL.document, "databaseOverrides": {"setCredits": custom_document["metadata"]["setCredits"]},
+    }, evaluate_plan(plan, custom_db, profile, target, REL), ["custom_set_credits", "provenance"])
+
+    future_history = {**deepcopy(history_input), "operation": "derive_training_state"}
+    future_workout = deepcopy(history_doc["workouts"][0])
+    future_workout["sessionId"] = "future-workout"
+    future_workout["startTime"] = "2026-08-27T21:00:00Z"
+    future_history["workouts"].append(future_workout)
+    future_history_obj = TrainingHistory(future_history["subjectId"], future_history["plans"], future_history["workouts"], future_history["targets"], future_history["planActivations"])
+    matrix_case("history", "offset-future-exclusion", future_history, derive_training_state(
+        future_history_obj, DB, as_of=future_history["asOf"], window=future_history["window"],
+        timezone=future_history["timezone"], relationships=REL), ["offsets", "future_exclusion", "as_of"])
+
+    cycle_history = deepcopy(adaptation_history_doc)
+    cycle_history["plans"][0]["cycle"]["lengthDays"] = 5
+    cycle_history["planActivations"][0]["effectiveFrom"] = "2026-08-01T00:00:00Z"
+    cycle_history_obj = TrainingHistory(cycle_history["subjectId"], cycle_history["plans"], cycle_history["workouts"], cycle_history["targets"], cycle_history["planActivations"])
+    matrix_case("history", "arbitrary-cycle", {
+        "operation": "derive_training_state", "history": cycle_history,
+        "asOf": "2026-08-27T12:00:00Z", "window": "last_28_days", "timezone": "UTC",
+        "relationships": REL.document,
+    }, derive_training_state(cycle_history_obj, DB, as_of="2026-08-27T12:00:00Z", window="last_28_days", timezone="UTC", relationships=REL), ["arbitrary_cycles", "missed_occurrences"])
+
+    for case in progression_cases:
+        matrix_case("progression", case["id"], {
+            "operation": "apply_progression_policy", "policy": progression_input["policy"],
+            "parameters": progression_input["parameters"], "prescription": case["prescription"],
+            "state": case["state"],
+        }, apply_progression_policy(progression_input["policy"], case["prescription"], case["state"], parameters=progression_input["parameters"]), ["effort_classification", "completed_set_rules", "ids_and_evidence"])
+
+    locked_input = {**generation_input, "operation": "generate_plan", "lockedExerciseIds": ["Barbell_Bench_Press_-_Medium_Grip"]}
+    matrix_case("generation", "locked-exercise-conflict", locked_input, generate_plan(
+        gen_profile, gen_target, DB, policy=locked_input["policy"], relationships=REL,
+        lockedExerciseIds=locked_input["lockedExerciseIds"]), ["locked_exercises", "unsatisfiable_generation"])
+
+    maximum_target = deepcopy(gen_target)
+    for value in maximum_target.get("muscles", {}).values():
+        if value.get("max") is not None:
+            value["max"] = 0
+    maximum_input = {**generation_input, "operation": "generate_plan", "target": maximum_target}
+    matrix_case("generation", "target-maximum-rejection", maximum_input, generate_plan(
+        gen_profile, maximum_target, DB, policy=maximum_input["policy"], relationships=REL,
+        requiredExerciseIds=maximum_input["requiredExerciseIds"]), ["target_maximums", "evaluation_gating", "status"])
+
+    regeneration_profile = deepcopy(adaptation_profile)
+    regeneration_profile["equipment"] = ["body only"]
+    regeneration_input = {**adaptation_input, "operation": "adapt_plan", "profile": regeneration_profile}
+    regeneration = adapt_plan(regeneration_profile, adaptation_target, adaptation_plan, adaptation_history, DB,
+                              policy=adaptation_input["policy"], relationships=REL,
+                              options={"asOf": adaptation_input["asOf"]})
+    matrix_case("adaptation", "regeneration", regeneration_input, regeneration, ["regeneration", "current_evaluation", "provenance"])
+
+    substitution_history_doc = deepcopy(adaptation_history_doc)
+    for workout in substitution_history_doc["workouts"]:
+        workout["exercises"][0]["exerciseId"] = "Dumbbell_Bench_Press"
+        workout["exercises"][0].pop("exercisePrescriptionId", None)
+        workout["exercises"][0]["substitution"] = {"reason": "equipment_unavailable", "plannedPrescriptionId": "adaptive-bench"}
+    substitution_history_obj = TrainingHistory(substitution_history_doc["subjectId"], substitution_history_doc["plans"], substitution_history_doc["workouts"], substitution_history_doc["targets"], substitution_history_doc["planActivations"])
+    substitution_input = {**adaptation_input, "operation": "adapt_plan", "history": substitution_history_doc}
+    substitution_result = adapt_plan(adaptation_profile, adaptation_target, adaptation_plan, substitution_history_obj, DB,
+                                     policy=adaptation_input["policy"], relationships=REL,
+                                     options={"asOf": adaptation_input["asOf"]})
+    matrix_case("adaptation", "repeated-substitution", substitution_input, substitution_result, ["substitutions", "decision_evidence", "change_records"])
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "effort_classification",
+    "completed_set_rules",
+    "ids_and_evidence"
+  ],
+  "deterministic": true,
+  "expectedOperation": "apply_progression_policy",
+  "oracle": "python"
+}

@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "regeneration",
+    "current_evaluation",
+    "provenance"
+  ],
+  "deterministic": true,
+  "expectedOperation": "adapt_plan",
+  "oracle": "python"
+}

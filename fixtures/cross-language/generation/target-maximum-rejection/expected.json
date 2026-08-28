@@ -1,0 +1,46 @@
+{
+  "evaluation": null,
+  "plan": null,
+  "policy": {
+    "description": "Reference deterministic full-body construction policy.",
+    "exerciseSelectionStrategy": "eligible_target_coverage_v1",
+    "frequencyStrategy": "least_exposed_session_v1",
+    "parameters": {
+      "allowUnverifiableEquipment": false,
+      "avoidSameFamilyInSession": true,
+      "defaultSessionsPerCycle": 3,
+      "effort": {
+        "rir": 2
+      },
+      "preferHistoryContinuity": true,
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "setBlock": 1
+    },
+    "policyId": "full-body-general-v1",
+    "policyVersion": "1",
+    "splitStrategy": "full_body_every_session",
+    "tieBreakingStrategy": "explicit_tuple_then_exercise_id_v1",
+    "volumeAllocationStrategy": "greatest_deficit_one_set_v1"
+  },
+  "provenance": {
+    "generatorVersion": "0.1.0"
+  },
+  "selectionRationale": [],
+  "status": "invalid_input",
+  "unsatisfiedConstraints": [
+    {
+      "code": "INVALID_INPUT",
+      "detail": "muscles.chest: minimum must not exceed maximum"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "detail": "muscles.chest: target must not exceed maximum"
+    }
+  ],
+  "unsatisfiedSoftPreferences": [],
+  "unsatisfiedTargets": []
+}

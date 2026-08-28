@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "target_maximums",
+    "evaluation_gating",
+    "status"
+  ],
+  "deterministic": true,
+  "expectedOperation": "generate_plan",
+  "oracle": "python"
+}

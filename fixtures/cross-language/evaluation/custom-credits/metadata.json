@@ -1,0 +1,9 @@
+{
+  "coverage": [
+    "custom_set_credits",
+    "provenance"
+  ],
+  "deterministic": true,
+  "expectedOperation": "evaluate_plan",
+  "oracle": "python"
+}

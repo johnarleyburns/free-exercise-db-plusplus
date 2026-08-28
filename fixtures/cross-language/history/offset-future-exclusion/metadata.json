@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "offsets",
+    "future_exclusion",
+    "as_of"
+  ],
+  "deterministic": true,
+  "expectedOperation": "derive_training_state",
+  "oracle": "python"
+}

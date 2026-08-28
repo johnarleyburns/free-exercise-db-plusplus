@@ -1,0 +1,345 @@
+{
+  "availability": {
+    "max": 4,
+    "min": null,
+    "plannedSessions": 4,
+    "state": "within_range",
+    "target": null
+  },
+  "constraints": {
+    "violations": [
+      {
+        "exerciseId": "Barbell_Squat",
+        "prescriptionId": "lower-a-squat",
+        "sessionId": "lower-a",
+        "type": "excluded_exercise"
+      }
+    ]
+  },
+  "coverageCompleteness": {
+    "ineligiblePrescriptions": [],
+    "ineligibleSetRange": {
+      "max": 0.0,
+      "min": 0.0,
+      "target": 0.0
+    },
+    "ineligibleSets": 0.0,
+    "mappedFraction": 0.823529,
+    "mappedSetRange": {
+      "max": 14.0,
+      "min": 14.0,
+      "target": 14.0
+    },
+    "mappedSets": 14.0,
+    "plannedSetRange": {
+      "max": 17.0,
+      "min": 17.0,
+      "target": 17.0
+    },
+    "plannedSets": 17.0,
+    "unmappedPrescriptions": [
+      "upper-a-row"
+    ],
+    "unmappedSetRange": {
+      "max": 3.0,
+      "min": 3.0,
+      "target": 3.0
+    },
+    "unmappedSets": 3.0
+  },
+  "equipment": {
+    "supportedExercises": [
+      "Barbell_Bench_Press_-_Medium_Grip",
+      "Barbell_Deadlift",
+      "Barbell_Squat",
+      "Dumbbell_Bench_Press"
+    ],
+    "unknownEquipmentExercises": [
+      {
+        "exerciseId": null,
+        "prescriptionId": "upper-a-row",
+        "sessionId": "upper-a",
+        "type": "unknown_exercise"
+      }
+    ],
+    "unsupportedExercises": []
+  },
+  "exerciseCounts": {},
+  "families": {
+    "coverage": {
+      "bench_press": {
+        "exerciseIds": [
+          "Barbell_Bench_Press_-_Medium_Grip",
+          "Dumbbell_Bench_Press"
+        ],
+        "familyId": "bench_press",
+        "name": "Bench Press",
+        "plannedSetRanges": {
+          "max": 7.0,
+          "min": 7.0,
+          "target": 7.0
+        },
+        "plannedSets": 7.0,
+        "sessionExposures": 2,
+        "sessions": [
+          "upper-a",
+          "upper-b"
+        ],
+        "variantDimensions": {
+          "Barbell_Bench_Press_-_Medium_Grip": {
+            "equipment": "barbell"
+          },
+          "Dumbbell_Bench_Press": {
+            "equipment": "dumbbell"
+          }
+        },
+        "variantDimensionsUsed": {
+          "equipment": [
+            "barbell",
+            "dumbbell"
+          ]
+        }
+      },
+      "deadlift": {
+        "exerciseIds": [
+          "Barbell_Deadlift"
+        ],
+        "familyId": "deadlift",
+        "name": "Deadlift",
+        "plannedSetRanges": {
+          "max": 3.0,
+          "min": 3.0,
+          "target": 3.0
+        },
+        "plannedSets": 3.0,
+        "sessionExposures": 1,
+        "sessions": [
+          "lower-b"
+        ],
+        "variantDimensions": {
+          "Barbell_Deadlift": {
+            "equipment": "barbell"
+          }
+        },
+        "variantDimensionsUsed": {
+          "equipment": [
+            "barbell"
+          ]
+        }
+      },
+      "squat": {
+        "exerciseIds": [
+          "Barbell_Squat"
+        ],
+        "familyId": "squat",
+        "name": "Squat",
+        "plannedSetRanges": {
+          "max": 4.0,
+          "min": 4.0,
+          "target": 4.0
+        },
+        "plannedSets": 4.0,
+        "sessionExposures": 1,
+        "sessions": [
+          "lower-a"
+        ],
+        "variantDimensions": {
+          "Barbell_Squat": {
+            "equipment": "barbell"
+          }
+        },
+        "variantDimensionsUsed": {
+          "equipment": [
+            "barbell"
+          ]
+        }
+      }
+    },
+    "targets": {}
+  },
+  "frequency": {},
+  "movementPatterns": {},
+  "muscleCoverage": {
+    "adductors": {
+      "actualEffectiveSets": 2.0,
+      "differenceFromTarget": null,
+      "max": null,
+      "maximum": null,
+      "min": null,
+      "minimum": null,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 2.0,
+        "min": 2.0,
+        "target": 2.0
+      },
+      "state": "not_targeted",
+      "target": null
+    },
+    "back": {
+      "actualEffectiveSets": 0.0,
+      "differenceFromTarget": -14.0,
+      "max": 22,
+      "maximum": 22,
+      "min": 10,
+      "minimum": 10,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "state": "below_minimum",
+      "target": 14
+    },
+    "chest": {
+      "actualEffectiveSets": 7.0,
+      "differenceFromTarget": -5.0,
+      "max": 20,
+      "maximum": 20,
+      "min": null,
+      "minimum": null,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 7.0,
+        "min": 7.0,
+        "target": 7.0
+      },
+      "state": "within_range_below_target",
+      "target": 12
+    },
+    "glutes": {
+      "actualEffectiveSets": 7.0,
+      "differenceFromTarget": null,
+      "max": null,
+      "maximum": null,
+      "min": null,
+      "minimum": null,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 7.0,
+        "min": 7.0,
+        "target": 7.0
+      },
+      "state": "not_targeted",
+      "target": null
+    },
+    "hamstrings": {
+      "actualEffectiveSets": 3.0,
+      "differenceFromTarget": -7.0,
+      "max": 16,
+      "maximum": 16,
+      "min": 6,
+      "minimum": 6,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 3.0,
+        "min": 3.0,
+        "target": 3.0
+      },
+      "state": "below_minimum",
+      "target": 10
+    },
+    "quadriceps": {
+      "actualEffectiveSets": 5.5,
+      "differenceFromTarget": -6.5,
+      "max": 18,
+      "maximum": 18,
+      "min": 8,
+      "minimum": 8,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 5.5,
+        "min": 5.5,
+        "target": 5.5
+      },
+      "state": "below_minimum",
+      "target": 12
+    },
+    "shoulders": {
+      "actualEffectiveSets": 3.5,
+      "differenceFromTarget": null,
+      "max": null,
+      "maximum": null,
+      "min": null,
+      "minimum": null,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 3.5,
+        "min": 3.5,
+        "target": 3.5
+      },
+      "state": "not_targeted",
+      "target": null
+    },
+    "triceps": {
+      "actualEffectiveSets": 3.5,
+      "differenceFromTarget": null,
+      "max": null,
+      "maximum": null,
+      "min": null,
+      "minimum": null,
+      "periodDays": 7,
+      "planEffectiveSetRange": {
+        "max": 3.5,
+        "min": 3.5,
+        "target": 3.5
+      },
+      "state": "not_targeted",
+      "target": null
+    }
+  },
+  "preferences": {
+    "avoidedExercisesUsed": [],
+    "avoidedFamiliesUsed": [],
+    "findings": [
+      {
+        "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+        "familyId": "bench_press",
+        "prescriptionId": "upper-a-bench",
+        "sessionId": "upper-a",
+        "type": "preferred_family_used"
+      },
+      {
+        "exerciseId": "Dumbbell_Bench_Press",
+        "familyId": "bench_press",
+        "prescriptionId": "upper-b-press",
+        "sessionId": "upper-b",
+        "type": "preferred_family_used"
+      }
+    ],
+    "preferredExercisesUsed": [],
+    "preferredFamiliesUsed": [
+      "bench_press"
+    ]
+  },
+  "provenance": {
+    "analysisPolicy": "plan-evaluation-v1",
+    "analysisVersion": "0.1.0",
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+    "durationPolicy": "duration-estimation-v1",
+    "planSchemaVersion": "0.1.0",
+    "profileSchemaVersion": "0.1.0",
+    "relationshipSchemaVersion": "0.1.0",
+    "setCredits": {
+      "direct": 1.0,
+      "indirect": 0.5,
+      "stabilizer": 0.0
+    },
+    "targetSchemaVersion": "0.1.0"
+  },
+  "summary": {
+    "evaluationStatus": "hard_constraint_violation",
+    "hardConstraintViolations": 1,
+    "meetsTargetMinimums": false,
+    "satisfiesHardConstraints": false,
+    "softPreferenceWarnings": 2,
+    "targetGaps": 3
+  },
+  "warnings": [
+    "coverage is incomplete for one or more PLAN exercises",
+    "duration estimation is not evaluated by duration-estimation-v1 because PLAN rest/transition inputs are not complete"
+  ]
+}

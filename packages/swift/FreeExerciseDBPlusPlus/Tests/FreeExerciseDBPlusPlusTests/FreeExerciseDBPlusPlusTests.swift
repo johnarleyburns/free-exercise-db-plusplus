@@ -152,21 +152,21 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(exercise?["unplannedCount"], JSONValue.number(0))
     let adherence = state.objectValue?["adherenceState"]?.objectValue
     if case .array(let sessions)? = adherence?["sessionAdherence"] { XCTAssertEqual(sessions.count, 5) } else { XCTFail("missing session adherence") }
-    if case .array(let rows)? = adherence?["exercisePrescriptionAdherence"], let row = rows.first(where: { $0.objectValue?["match_status"] == .string("matched") })?.objectValue {
-      XCTAssertEqual(row["match_status"], .string("matched"))
+    if case .array(let rows)? = adherence?["exercisePrescriptionAdherence"], let row = rows.first(where: { $0.objectValue?["match_status"] == .string("unplanned_addition") })?.objectValue {
+      XCTAssertEqual(row["match_status"], .string("unplanned_addition"))
       XCTAssertEqual(row["actual_sets"], .number(1))
     } else { XCTFail("missing exercise adherence") }
-    XCTAssertEqual(adherence?["substitutionAdjustedCompletion"], .number(1))
-    XCTAssertEqual(adherence?["unplannedSets"], .number(0))
+    XCTAssertEqual(adherence?["substitutionAdjustedCompletion"], .number(0))
+    XCTAssertEqual(adherence?["unplannedSets"], .number(1))
   }
 
   func testAdherencePreservesDistinctMissingnessStates() throws {
-    let history: JSONValue = .object(["subjectId": .string("s"), "plans": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "cycle": .object(["lengthDays": .number(7)]), "sessions": .array([.object(["planSessionId": .string("s1"), "dayOffset": .number(0), "exercises": .array([.object(["prescriptionId": .string("rx"), "exerciseId": .string("known"), "sets": .number(1)])])])])])]), "planActivations": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "effectiveFrom": .string("2026-08-01T00:00:00Z")])]), "workouts": .array([.object(["sessionId": .string("w"), "startTime": .string("2026-08-20T12:00:00Z"), "planReference": .object(["planId": .string("p"), "revisionId": .string("r"), "planSessionId": .string("s1")]), "exercises": .array([.object(["exerciseId": .string("extra"), "sets": .array([])]), .object(["exerciseId": .string("other"), "exercisePrescriptionId": .string("wrong"), "sets": .array([])])])])])])
+    let history: JSONValue = .object(["subjectId": .string("s"), "plans": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "cycle": .object(["lengthDays": .number(7)]), "sessions": .array([.object(["planSessionId": .string("s1"), "dayOffset": .number(0), "exercises": .array([.object(["prescriptionId": .string("rx"), "exerciseId": .string("known"), "sets": .number(1)])])])])])]), "planActivations": .array([.object(["planId": .string("p"), "revisionId": .string("r"), "effectiveFrom": .string("2026-08-01T00:00:00Z")])]), "workouts": .array([.object(["sessionId": .string("w"), "startTime": .string("2026-08-22T12:00:00Z"), "planReference": .object(["planId": .string("p"), "revisionId": .string("r"), "planSessionId": .string("s1")]), "exercises": .array([.object(["exerciseId": .string("extra"), "sets": .array([])]), .object(["exerciseId": .string("other"), "exercisePrescriptionId": .string("wrong"), "sets": .array([])])])])])])
     let state = deriveTrainingState(history, asOf: "2026-08-27T12:00:00Z")
     guard case .array(let rows)? = state.objectValue?["adherenceState"]?.objectValue?["exercisePrescriptionAdherence"] else { return XCTFail("missing adherence rows") }
-    XCTAssertTrue(rows.contains { $0.objectValue?["missingness"] == .string("not_recorded") })
-    XCTAssertTrue(rows.contains { $0.objectValue?["missingness"] == .string("not_prescribed") })
-    XCTAssertTrue(rows.contains { $0.objectValue?["missingness"] == .string("unable_to_match") })
+    XCTAssertTrue(rows.contains { $0.objectValue?["match_status"] == .string("missing_prescription") })
+    XCTAssertTrue(rows.contains { $0.objectValue?["match_status"] == .string("unplanned_addition") })
+    XCTAssertTrue(rows.contains { $0.objectValue?["match_status"] == .string("unable_to_match") })
   }
 
   func testFamilyStateUsesMembershipWithoutInferringSubstitution() throws {

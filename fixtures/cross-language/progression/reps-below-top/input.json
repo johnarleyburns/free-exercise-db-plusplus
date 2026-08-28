@@ -1,0 +1,51 @@
+{
+  "operation": "apply_progression_policy",
+  "parameters": {
+    "loadIncrement": {
+      "unit": "kg",
+      "value": 2.5
+    }
+  },
+  "policy": "double-progression-v1",
+  "prescription": {
+    "effort": {
+      "rir": {
+        "target": 2
+      }
+    },
+    "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+    "load": {
+      "unit": "kg",
+      "value": 80
+    },
+    "prescriptionId": "bench-rx",
+    "reps": {
+      "max": 10,
+      "min": 6,
+      "target": 8
+    },
+    "sets": 2
+  },
+  "state": {
+    "lastActual": {
+      "sets": [
+        {
+          "completed": true,
+          "reps": 8,
+          "rir": 2
+        },
+        {
+          "completed": true,
+          "reps": 9,
+          "rir": 2
+        }
+      ]
+    },
+    "planContext": {
+      "planId": "p",
+      "revisionId": "r"
+    },
+    "planId": "p",
+    "revisionId": "r"
+  }
+}

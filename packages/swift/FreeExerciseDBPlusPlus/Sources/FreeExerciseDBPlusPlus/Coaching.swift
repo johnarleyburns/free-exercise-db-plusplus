@@ -36,15 +36,34 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
   if let trainingState { state = trainingState }
   else if let history, let asOf { state = deriveTrainingState(history, asOf: asOf, relationships: relationships, database: database) }
   else { return .object(["status": .string("insufficient_data"), "currentPlan": currentPlan, "proposedPlan": .null, "currentEvaluation": currentEvaluation, "proposedEvaluation": .null, "trainingState": .null, "decisions": .array([]), "changes": .array([]), "unresolvedIssues": .array([.object(["code": .string("INSUFFICIENT_HISTORY")])]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId)])]) }
+  func resultProvenance() -> JSONValue {
+    .object([
+      "coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId),
+      "coachingPolicyVersion": .string("1.0.0"), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null,
+      "trainingStateVersion": cObject(state)["stateVersion"] ?? .null,
+      "historyWindow": cObject(state)["historyWindow"] ?? .null,
+      "stateProvenance": cObject(state)["provenance"] ?? .null,
+      "dbSchemaVersion": database.metadata["schemaVersion"] ?? .null,
+      "dbConverterVersion": database.metadata["converterVersion"] ?? .null,
+      "dbUpstreamSha256": database.metadata["upstream"]?.objectValue?["sha256"] ?? .null,
+      "setCredits": .object(["direct": .number(database.setCredits.direct), "indirect": .number(database.setCredits.indirect), "stabilizer": .number(database.setCredits.stabilizer)]),
+      "evaluationVersion": .string("0.1.0")
+    ])
+  }
+  let proposedRevision: String = {
+    guard let current = cString(cObject(currentPlan)["revisionId"]) else { return "r2" }
+    if current.hasPrefix("r"), let number = Int(current.dropFirst()) { return "r\(number + 1)" }
+    return current + "-adaptive-1"
+  }()
   if cObject(cObject(currentEvaluation)["summary"])["satisfiesHardConstraints"] != .bool(true) {
     let generated = generatePlan(profile: profile, target: target, database: database,
       policy: planningPolicy ?? "full-body-general-v1", relationships: relationships,
       trainingState: state, currentPlan: currentPlan,
-      options: .object(["planId": cObject(currentPlan)["planId"] ?? .string("generated-plan"), "revisionId": .string((cString(cObject(currentPlan)["revisionId"]) ?? "r1") + "-adaptive-1")]))
+      options: .object(["planId": cObject(currentPlan)["planId"] ?? .string("generated-plan"), "revisionId": .string(proposedRevision)]))
     if let proposed = cObject(generated)["plan"], proposed != .null {
       let decision: JSONValue = .object(["decisionId": .string("decision-regenerate"), "decisionType": .string("regenerate_plan"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .null, "exerciseId": .null, "before": .object([:]), "after": .object([:]), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "evidence": .object(cObject(cObject(currentEvaluation)["constraints"])), "provenance": cObject(state)["provenance"] ?? .object([:])])
       let change: JSONValue = .object(["type": .string("PLAN_REGENERATED"), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "decisionIds": .array([.string("decision-regenerate")])])
-      return .object(["status": .string("regeneration_proposed"), "currentPlan": currentPlan, "proposedPlan": proposed, "currentEvaluation": currentEvaluation, "proposedEvaluation": cObject(generated)["evaluation"] ?? .null, "trainingState": state, "decisions": .array([decision]), "changes": .array([change]), "unresolvedIssues": .array([]), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
+      return .object(["status": .string("regeneration_proposed"), "currentPlan": currentPlan, "proposedPlan": proposed, "currentEvaluation": currentEvaluation, "proposedEvaluation": cObject(generated)["evaluation"] ?? .null, "trainingState": state, "decisions": .array([decision]), "changes": .array([change]), "unresolvedIssues": .array([]), "policy": policy, "provenance": resultProvenance()])
     }
   }
   var proposed = currentPlan
@@ -62,7 +81,6 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
         let skipped = cNumber(cObject(cObject(state)["adherenceState"])["skippedPrescriptionCounts"]?.objectValue?[prescriptionId]) ?? 0
         if skipped >= 2 {
           decisions.append(.object(["schemaVersion": .string("0.1.0"), "decisionId": .string("decision-hold-\(prescriptionId)"), "decisionType": .string("hold"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .string(prescriptionId), "exerciseId": .string(id), "before": .object([:]), "after": .object([:]), "reasonCodes": .array([.string("REPEATEDLY_SKIPPED")]), "evidence": .object(["skippedPrescriptionCount": .number(skipped)]), "provenance": cObject(state)["provenance"] ?? .object([:])]))
-          continue
         }
         let substitution = cObject(substitutionHistory[prescriptionId])
         let count = substitution["count"].flatMap { if case .number(let value) = $0 { return value }; return nil } ?? 0
@@ -74,17 +92,24 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
         continue
         }
       }
-      let decision = applyProgressionPolicy(progressionPolicy, prescription: rx, exerciseState: stateRow, parameters: cObject(policy)["parameters"])
-      let decisionObject = cObject(decision)
+      var normalizedDecision = cObject(applyProgressionPolicy(progressionPolicy, prescription: rx, exerciseState: stateRow, parameters: cObject(policy)["parameters"]))
+      if let prescriptionId = cString(rxObject["prescriptionId"]), let decisionType = cString(normalizedDecision["decisionType"]) {
+        normalizedDecision["decisionId"] = .string("decision-\(decisionType)-\(prescriptionId)")
+      }
+      normalizedDecision["planId"] = cObject(currentPlan)["planId"] ?? .null
+      normalizedDecision["revisionId"] = cObject(currentPlan)["revisionId"] ?? .null
+      normalizedDecision["provenance"] = cObject(state)["provenance"] ?? .object([:])
+      let decision = JSONValue.object(normalizedDecision)
+      let decisionObject = normalizedDecision
       decisions.append(decision)
       guard decisionObject["decisionType"] == JSONValue.string("increase_load"), let after = decisionObject["after"]?.objectValue else { continue }
       var updated = rxObject; updated["load"] = after["load"] ?? .null; exercises[exerciseIndex] = .object(updated)
-      changes.append(.object(["type": .string("LOAD_CHANGED"), "prescriptionId": rxObject["prescriptionId"] ?? .null, "exerciseId": rxObject["exerciseId"] ?? .null, "before": .object(rxObject), "after": .object(after), "reasonCodes": decisionObject["reasonCodes"] ?? .array([]), "decisionIds": .array([decisionObject["decisionId"] ?? .null])]))
+      changes.append(.object(["type": .string("LOAD_CHANGED"), "prescriptionId": rxObject["prescriptionId"] ?? .null, "exerciseId": rxObject["exerciseId"] ?? .null, "before": .object(rxObject), "after": .object(updated), "reasonCodes": .array([.string("PROGRESSION_CRITERIA_MET")]), "decisionIds": .array([decisionObject["decisionId"] ?? .null])]))
     }
     session["exercises"] = .array(exercises); sessions[sessionIndex] = .object(session)
   }
   var proposedObject = cObject(proposed); proposedObject["sessions"] = .array(sessions)
-  if !changes.isEmpty { proposedObject["revisionId"] = .string((cString(cObject(currentPlan)["revisionId"]) ?? "r1") + "-adaptive-1") }
+  if !changes.isEmpty { proposedObject["revisionId"] = .string(proposedRevision) }
   proposed = .object(proposedObject)
   let proposedEvaluation = changes.isEmpty ? nil : evaluatePlan(proposed, database: database, profile: profile, target: target, relationships: relationships)
   let hardRejected = proposedEvaluation.map { cObject(cObject($0)["summary"])["satisfiesHardConstraints"] != .bool(true) } ?? false
@@ -110,5 +135,5 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
     let l = cObject(left), r = cObject(right)
     return keyLess([cString(l["prescriptionId"]) ?? "", cString(l["type"]) ?? ""], [cString(r["prescriptionId"]) ?? "", cString(r["type"]) ?? ""])
   }
-  return .object(["status": .string(gateRejected ? "unsatisfiable" : (accepted ? "revision_proposed" : (orderedDecisions.isEmpty ? "insufficient_data" : "no_change"))), "currentPlan": currentPlan, "proposedPlan": gateRejected ? .null : (accepted ? proposed : .null), "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(orderedDecisions), "changes": .array(orderedChanges), "unresolvedIssues": .array(gateRejected ? [.object(["code": .string("EVALUATOR_GATE_REJECTED")])] : []), "policy": policy, "provenance": .object(["coachingVersion": .string("1.9.0"), "coachingPolicyId": .string(policyId), "planningPolicyId": planningPolicy.map(JSONValue.string) ?? .null])])
+  return .object(["status": .string(gateRejected ? "unsatisfiable" : (accepted ? "revision_proposed" : (orderedDecisions.isEmpty ? "insufficient_data" : "no_change"))), "currentPlan": currentPlan, "proposedPlan": gateRejected ? .null : (accepted ? proposed : .null), "currentEvaluation": currentEvaluation, "proposedEvaluation": proposedEvaluation ?? .null, "trainingState": state, "decisions": .array(orderedDecisions), "changes": .array(orderedChanges), "unresolvedIssues": .array(gateRejected ? [.object(["code": .string("EVALUATOR_GATE_REJECTED")])] : []), "policy": policy, "provenance": resultProvenance()])
 }

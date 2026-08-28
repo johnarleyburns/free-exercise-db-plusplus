@@ -1,0 +1,60 @@
+{
+  "evaluation": null,
+  "plan": null,
+  "policy": {
+    "description": "Reference deterministic full-body construction policy.",
+    "exerciseSelectionStrategy": "eligible_target_coverage_v1",
+    "frequencyStrategy": "least_exposed_session_v1",
+    "parameters": {
+      "allowUnverifiableEquipment": false,
+      "avoidSameFamilyInSession": true,
+      "defaultSessionsPerCycle": 3,
+      "effort": {
+        "rir": 2
+      },
+      "preferHistoryContinuity": true,
+      "reps": {
+        "max": 10,
+        "min": 6,
+        "target": 8
+      },
+      "setBlock": 1
+    },
+    "policyId": "full-body-general-v1",
+    "policyVersion": "1",
+    "splitStrategy": "full_body_every_session",
+    "tieBreakingStrategy": "explicit_tuple_then_exercise_id_v1",
+    "volumeAllocationStrategy": "greatest_deficit_one_set_v1"
+  },
+  "provenance": {
+    "analysisPolicy": "dbpp-default-volume-v1",
+    "currentPlanRevisionId": null,
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+    "evaluationVersion": null,
+    "generatorVersion": "0.1.0",
+    "policyId": "full-body-general-v1",
+    "policyVersion": "1",
+    "relationshipSchemaVersion": "0.1.0",
+    "setCredits": {
+      "direct": 1.0,
+      "indirect": 0.5,
+      "stabilizer": 0.0
+    },
+    "targetSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingStateVersion": null
+  },
+  "selectionRationale": [],
+  "status": "unsatisfiable",
+  "unsatisfiedConstraints": [
+    {
+      "code": "LOCKED_EXERCISE_CONFLICT",
+      "detail": "locked exercises require current_plan",
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip"
+    }
+  ],
+  "unsatisfiedSoftPreferences": [],
+  "unsatisfiedTargets": []
+}

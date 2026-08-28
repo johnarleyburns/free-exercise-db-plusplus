@@ -1,0 +1,9 @@
+{
+  "coverage": [
+    "arbitrary_cycles",
+    "missed_occurrences"
+  ],
+  "deterministic": true,
+  "expectedOperation": "derive_training_state",
+  "oracle": "python"
+}

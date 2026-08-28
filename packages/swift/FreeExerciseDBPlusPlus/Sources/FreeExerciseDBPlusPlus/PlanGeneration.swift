@@ -92,6 +92,7 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   guard let policy = generationPolicies[policyId] else { return .object(["status": .string("invalid_input"), "plan": .null, "evaluation": .null, "policy": .object([:]), "selectionRationale": .array([]), "unsatisfiedConstraints": .array([.object(["code": .string("UNKNOWN_PLANNING_POLICY")])]), "unsatisfiedTargets": .array([]), "unsatisfiedSoftPreferences": .array([]), "provenance": .object(["generatorVersion": .string("0.1.0")])]) }
   let provenance: [String: JSONValue] = [
     "generatorVersion": .string("0.1.0"), "policyId": .string(policyId), "policyVersion": policy["policyVersion"] ?? .string("1"),
+    "currentPlanRevisionId": gObject(currentPlan)["revisionId"] ?? .null, "evaluationVersion": .string("0.1.0"),
     "dbSchemaVersion": database.metadata["schemaVersion"] ?? .null, "dbConverterVersion": database.metadata["converterVersion"] ?? .null,
     "dbUpstreamSha256": database.metadata["upstream"]?.objectValue?["sha256"] ?? .null,
     "trainingProfileSchemaVersion": profileObject["schemaVersion"] ?? .null, "targetSchemaVersion": targetObject["schemaVersion"] ?? .null,

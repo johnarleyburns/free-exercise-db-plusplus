@@ -1,0 +1,9 @@
+{
+  "coverage": [
+    "locked_exercises",
+    "unsatisfiable_generation"
+  ],
+  "deterministic": true,
+  "expectedOperation": "generate_plan",
+  "oracle": "python"
+}

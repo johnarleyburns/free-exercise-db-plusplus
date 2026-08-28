@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "substitutions",
+    "decision_evidence",
+    "change_records"
+  ],
+  "deterministic": true,
+  "expectedOperation": "adapt_plan",
+  "oracle": "python"
+}

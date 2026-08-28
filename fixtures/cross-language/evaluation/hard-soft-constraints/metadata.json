@@ -1,0 +1,10 @@
+{
+  "coverage": [
+    "hard_constraints",
+    "soft_preferences",
+    "equipment"
+  ],
+  "deterministic": true,
+  "expectedOperation": "evaluate_plan",
+  "oracle": "python"
+}
