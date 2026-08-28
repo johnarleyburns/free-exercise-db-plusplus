@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.15.0**
+Current release: **v1.15.1**
 
 ## Build an app with DB++
 
@@ -16,6 +16,7 @@ PLAN, derive state, and request an advisory adaptation:
 
 - [Application integration guide](docs/APPLICATION-INTEGRATION.md)
 - [Swift / iOS getting started](docs/SWIFT-GETTING-STARTED.md)
+- [Runnable Swift history/state/adaptation example](examples/app-integration/swift/Sources/AppIntegration/main.swift)
 - [Kotlin / Android/JVM API](docs/KOTLIN-API.md)
 - [Python package guide](packages/python/README.md)
 - [R research API](docs/R-API.md)

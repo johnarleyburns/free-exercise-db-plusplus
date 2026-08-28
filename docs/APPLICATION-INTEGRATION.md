@@ -95,3 +95,38 @@ provenance. Missing, null, zero, false, and empty collections remain distinct.
 The executable consumers under
 [`examples/app-integration/`](../examples/app-integration/) exercise the same
 scenario in all four languages.
+
+## End-to-end persisted-history flow
+
+Persist canonical PLAN and ACTUAL JSON, together with the profile and TARGET.
+When the host has an explicit instant, the complete coaching flow is:
+
+```text
+persisted PLAN + ACTUAL history + profile + TARGET + explicit asOf
+                              │
+                              ▼
+                    TrainingRequest(derive_state)
+                              │
+                              ▼
+                       TrainingState
+                              │
+                              ▼
+                    suggest_progression
+                              │
+                              ▼
+                         CoachDecision[]
+                              │
+                              ▼
+                       adapt_plan
+                              │
+                              ▼
+                   host reviews proposed revision
+```
+
+The runnable [Swift history/state/adaptation consumer](../examples/app-integration/swift/Sources/AppIntegration/main.swift)
+uses only the public SPM API and a standalone persisted input resource. The
+[Kotlin](../examples/app-integration/kotlin/src/main/kotlin/AppIntegration.kt),
+[Python](../examples/app-integration/python/example.py), and
+[R](../examples/app-integration/r/example.R) consumers mirror the same flow.
+DB++ never activates a proposal; approval and activation remain host-app
+responsibilities.

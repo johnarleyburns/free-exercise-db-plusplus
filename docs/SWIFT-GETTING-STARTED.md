@@ -10,11 +10,11 @@ In Xcode, choose **File → Add Package Dependencies** and enter:
 
 `https://github.com/johnarleyburns/free-exercise-db-plusplus.git`
 
-Choose **Up to Next Major Version** from `1.15.0`. In `Package.swift`:
+Choose **Up to Next Major Version** from `1.15.1`. In `Package.swift`:
 
 ```swift
 .package(url: "https://github.com/johnarleyburns/free-exercise-db-plusplus.git",
-         from: "1.15.0")
+         from: "1.15.1")
 ```
 
 Then `import FreeExerciseDBPlusPlus` and initialize `try TrainingEngine.bundled()`.
@@ -81,31 +81,38 @@ for native values, or `JSONDecoder().decode(TrainingHistory.self, from:)` for
 persisted JSON. `Workout`, `WorkoutPlan`, `TrainingProfile`, and `VolumeTarget`
 are decoded in the same way.
 
-## Existing PLAN, state, progression, and adaptation
+## Complete runnable history and adaptation example
 
-```swift
-let plan: WorkoutPlan = /* decode persisted PLAN JSON */ fatalError("load PLAN")
-let target: VolumeTarget = /* decode TARGET JSON */ fatalError("load TARGET")
-let profile: TrainingProfile = /* decode profile JSON */ fatalError("load profile")
-let history: TrainingHistory = /* decode history JSON */ fatalError("load history")
+The external [Swift example project](../examples/app-integration/swift/) is a
+copy-pasteable SPM consumer. Its
+[main.swift](../examples/app-integration/swift/Sources/AppIntegration/main.swift)
+loads a standalone persisted request resource, extracts a current PLAN,
+TrainingProfile, VolumeTarget, and TrainingHistory, then runs state derivation,
+progression, and adaptation with an explicit `asOf`. Run it with:
 
-let evaluation = try engine.processTrainingRequest(TrainingRequest(
-  requestId: "evaluate-1", operation: .evaluatePlan, profile: profile,
-  target: target, plan: plan))
-let state = try engine.processTrainingRequest(TrainingRequest(
-  requestId: "state-1", operation: .deriveState, target: target,
-  history: history, asOf: "2026-08-28T12:00:00Z",
-  historyWindow: .last28Days))
-let adaptation = try engine.processTrainingRequest(TrainingRequest(
-  requestId: "adapt-1", operation: .adaptPlan, profile: profile, target: target,
-  currentPlan: plan, history: history, asOf: "2026-08-28T12:00:00Z"))
+```sh
+swift run --package-path examples/app-integration/swift AppIntegration
 ```
 
-`evaluatePlan` returns `evaluated`, state derivation returns `state_derived`,
-and adaptation returns `no_change` or `revision_proposed`. The host decides
-whether to approve and activate a proposal; DB++ does not mutate or activate
-the current PLAN. For direct progression, provide `plan` and a decoded
-`trainingState` with operation `.suggestProgression`.
+The persisted-document calls used by that example are ordinary Foundation
+Codable calls (plain `JSONDecoder`/`JSONEncoder`; no custom decoder is needed):
+
+```swift
+let history = try JSONDecoder().decode(TrainingHistory.self, from: historyData)
+let plan = try JSONDecoder().decode(WorkoutPlan.self, from: planData)
+let profile = try JSONDecoder().decode(TrainingProfile.self, from: profileData)
+let target = try JSONDecoder().decode(VolumeTarget.self, from: targetData)
+let persistedPlanJSON = try JSONEncoder().encode(plan)
+```
+
+For native construction, use the public
+`TrainingHistory(subjectId:plans:workouts:targets:planActivations:metadata:)`
+initializer. State derivation returns `state_derived`; progression returns
+`progression_available` or `insufficient_data`; adaptation returns
+`no_change`, `revision_proposed`, or `regeneration_proposed` when a proposal is
+available. Also handle `invalid`/`invalid_input` and `unsatisfiable` as shown
+in the example. DB++ proposes only: the host app decides whether to display,
+persist, approve, or activate a proposed revision.
 
 All public application models are typed, `Codable`, `Sendable`, and
 `Equatable` where meaningful. Keep canonical JSON as the persistence boundary;

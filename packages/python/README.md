@@ -9,6 +9,10 @@ explicit `resolve_intent`, `generate_from_intent`, `generate_plan`,
 operation. See [the application guide](../../docs/APPLICATION-INTEGRATION.md)
 and `examples/app-integration/python/example.py`.
 
+The [external history/state/adaptation example](../../examples/app-integration/python/example.py)
+uses the public facade with persisted canonical documents and an explicit
+`asOf`; it does not infer adaptation from a generation request.
+
 The v1.5 wheel embeds `exercise-relationships.json`. Load it outside a
 repository checkout with `RelationshipRegistry.load()`. Family lookup,
 members, related candidates, structural comparison, and DB++ coverage

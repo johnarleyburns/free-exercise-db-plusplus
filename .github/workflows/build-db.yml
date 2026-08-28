@@ -521,7 +521,7 @@ jobs:
           bash scripts/test_swift_resources.sh
           bash scripts/test_swift_consumer.sh
           bash scripts/test_application_swift_parity.sh
-          swift build --package-path examples/app-integration/swift
+          swift run --package-path examples/app-integration/swift AppIntegration
 
       - name: Test Kotlin consumer package
         run: |
@@ -530,6 +530,7 @@ jobs:
           bash scripts/test_kotlin_consumer.sh
           bash scripts/test_application_kotlin_parity.sh
           packages/kotlin/fedbpp/gradlew --no-daemon build --project-dir examples/app-integration/kotlin
+          packages/kotlin/fedbpp/gradlew --no-daemon run --project-dir examples/app-integration/kotlin
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v2

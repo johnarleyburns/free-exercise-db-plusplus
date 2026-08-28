@@ -7,5 +7,6 @@ let package = Package(
   dependencies: [.package(path: "../../../packages/swift/FreeExerciseDBPlusPlus")],
   targets: [.executableTarget(name: "AppIntegration",
                               dependencies: [.product(name: "FreeExerciseDBPlusPlus",
-                                                      package: "FreeExerciseDBPlusPlus")])]
+                                                      package: "FreeExerciseDBPlusPlus")],
+                              resources: [.process("Resources")])]
 )

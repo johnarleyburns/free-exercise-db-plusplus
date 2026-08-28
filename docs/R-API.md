@@ -69,6 +69,11 @@ Adaptation never mutates or activates the input plan. Its proposed revision is
 validated and evaluated before it is returned. Active-plan selection uses
 offset-aware instants, activation windows, and explicit plan/revision IDs.
 
+The [external R consumer](../examples/app-integration/r/example.R) demonstrates
+the same persisted-history flow: `derive_state`, `suggest_progression`, and an
+explicit `adapt_plan` request with status handling. It uses named lists and runs
+after installing the package into a clean library.
+
 ## Research views and reproducibility
 
 `workout_observations()`, `plan_observations()`,

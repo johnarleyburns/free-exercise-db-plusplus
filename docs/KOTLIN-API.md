@@ -72,6 +72,12 @@ val adapted = engine.adaptPlan(
 Adaptation proposes a revision and does not activate or mutate the supplied
 plan.
 
+For a complete external consumer, see
+[`examples/app-integration/kotlin/src/main/kotlin/AppIntegration.kt`](../examples/app-integration/kotlin/src/main/kotlin/AppIntegration.kt).
+It decodes the canonical persisted application request, derives state, inspects
+progression, and explicitly submits `ADAPT_PLAN`, including normal
+`no_change`, proposal, insufficient-data, and invalid status handling.
+
 ## Serialization, resources, and boundaries
 
 Use `kotlinx.serialization` serializers on the public data classes.
