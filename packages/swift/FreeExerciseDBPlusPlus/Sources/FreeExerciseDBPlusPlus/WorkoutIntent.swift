@@ -575,8 +575,20 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
   }
   var activePlan: [String: JSONValue] = [:]
   if let active, let fromDate = activePair?.date {
-    let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7); let elapsed = max(0, calendar.dateComponents([.day], from: calendar.startOfDay(for: fromDate), to: asOfDate).day ?? 0); let position = elapsed % cycle + 1
-    activePlan = ["planId": active["planId"] ?? .null, "revisionId": active["revisionId"] ?? .null, "phaseId": .null, "cyclePosition": .number(Double(position))]
+    let cycle = Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7)
+    // Python anchors cycle position to the ISO date in effectiveFrom (UTC),
+    // while the as-of date is interpreted in its supplied offset.
+    var utc = Calendar(identifier: .gregorian); utc.timeZone = TimeZone(secondsFromGMT: 0)!
+    let elapsed = max(0, calendar.dateComponents([.day], from: utc.startOfDay(for: fromDate), to: asOfDate).day ?? 0); let position = elapsed % cycle + 1
+    var next: (Date, [String: JSONValue])? = nil
+    let sessions = active["sessions"]?.arrayValues.compactMap { $0.objectValue } ?? []
+    var cycleAnchor = calendar.startOfDay(for: fromDate)
+    while cycleAnchor <= asOfDate { cycleAnchor = calendar.date(byAdding: .day, value: cycle, to: cycleAnchor)! }
+    for session in sessions {
+      let offset = Int(session["dayOffset"]?.numberValue ?? 0)
+      if let candidate = calendar.date(byAdding: .day, value: offset, to: cycleAnchor), next == nil || candidate < next!.0 { next = (candidate, session) }
+    }
+    activePlan = ["planId": active["planId"] ?? .null, "revisionId": active["revisionId"] ?? .null, "phaseId": .null, "cyclePosition": .number(Double(position)), "nextScheduledOccurrence": next.map { .object(["scheduledDate": .string(dateFormatter.string(from: $0.0)), "planSessionId": $0.1["planSessionId"] ?? .null]) } ?? .null]
   }
   func scalar(_ value: JSONValue?) -> Double? { value?.numberValue }
   func adherence(_ planned: Double?, _ actual: Double) -> JSONValue {
@@ -620,7 +632,7 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
       let effort = rx["effort"]?.objectValue ?? [:]
       let rpeAdherence = metric(sets.compactMap { _ in scalar(effort["rpe"]) }, sets.compactMap { $0["rpe"]?.numberValue })
       let rirAdherence = metric(sets.compactMap { _ in scalar(effort["rir"]) }, sets.compactMap { $0["rir"]?.numberValue })
-      let row: [String: JSONValue] = ["subjectId": root["subjectId"] ?? .null, "period": .string(lowerDate), "sessionId": workout["sessionId"] ?? .null, "prescriptionId": .string(pid), "plannedExerciseId": rx["exerciseId"] ?? .null, "actualExerciseId": observation?["exerciseId"] ?? .null, "match_status": .string(status), "missingness": observation == nil ? .string("not_recorded") : .null, "planned_sets_min": plannedSets.map(JSONValue.number) ?? .null, "planned_sets_target": plannedSets.map(JSONValue.number) ?? .null, "planned_sets_max": plannedSets.map(JSONValue.number) ?? .null, "actual_sets": .number(actualCount), "set_adherence": adherence(plannedSets, actualCount), "reps_adherence": .null, "load_adherence": .null, "rpe_adherence": .null, "rir_adherence": .null, "substitution_reason": observation?["substitution"]?.objectValue?["reason"] ?? .null]
+      let row: [String: JSONValue] = ["subject_id": root["subjectId"] ?? .null, "period": .string(lowerDate), "session_id": workout["sessionId"] ?? .null, "prescription_id": .string(pid), "planned_exercise_id": rx["exerciseId"] ?? .null, "actual_exercise_id": observation?["exerciseId"] ?? .null, "match_status": .string(status), "missingness": observation == nil ? .string("not_recorded") : .null, "planned_sets_min": plannedSets.map(JSONValue.number) ?? .null, "planned_sets_target": plannedSets.map(JSONValue.number) ?? .null, "planned_sets_max": plannedSets.map(JSONValue.number) ?? .null, "actual_sets": .number(actualCount), "set_adherence": adherence(plannedSets, actualCount), "reps_adherence": .null, "load_adherence": .null, "rpe_adherence": .null, "rir_adherence": .null, "substitution_reason": observation?["substitution"]?.objectValue?["reason"] ?? .null]
       var enriched = row
       enriched["reps_adherence"] = repsAdherence; enriched["load_adherence"] = loadAdherence; enriched["rpe_adherence"] = rpeAdherence; enriched["rir_adherence"] = rirAdherence
       exerciseRows.append(.object(enriched))
@@ -634,6 +646,73 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
       exerciseRows.append(.object(["subjectId": root["subjectId"] ?? .null, "period": .string(lowerDate), "sessionId": workout["sessionId"] ?? .null, "prescriptionId": item["exercisePrescriptionId"] ?? .null, "plannedExerciseId": .null, "actualExerciseId": item["exerciseId"] ?? .null, "match_status": .string(status), "missingness": .string(missingness), "planned_sets_min": .null, "planned_sets_target": .null, "planned_sets_max": .null, "actual_sets": .number(count), "set_adherence": .null, "reps_adherence": .null, "load_adherence": .null, "rpe_adherence": .null, "rir_adherence": .null, "substitution_reason": .null]))
     }
     sessionRows.append(.object(["subject_id": root["subjectId"] ?? .null, "period_type": .string("custom_date_range"), "period_start": .string(lowerDate), "period_end": .string(endDate), "scheduled_date": .null, "session_id": workout["sessionId"] ?? .null, "timestamp": workout["startTime"] ?? .null, "plan_id": reference["planId"] ?? .null, "revision_id": reference["revisionId"] ?? .null, "plan_session_id": .string(sessionId), "session_status": .string(missing == planned.count ? "missed_planned_session" : "matched"), "planned_exercises": .number(Double(planned.count)), "matched_exercises": .number(Double(matched)), "substitutions": .number(Double(substitutions)), "unplanned_exercises": .number(Double(unplanned.count)), "planned_sets": .number(planned.compactMap { scalar($0["sets"]) }.reduce(0, +)), "actual_counted_sets": .number(Double(actualSets)), "missing_prescriptions": .number(Double(missing)), "missed_sets": .number(0), "unplanned_sets": .number(Double(unplanned.reduce(0) { $0 + completedSets($1).count })), "session_adherence": .number(missing == 0 ? 1 : 0)]))
+  }
+  // Materialize scheduled occurrences that ended before the as-of date and
+  // had no referenced ACTUAL. Python exposes these as both session and
+  // prescription adherence rows, which is required for repeated-skip policy.
+  if let active, let activationDate = activePair?.date {
+    let anchor = calendar.startOfDay(for: activationDate)
+    let cycle = max(1, Int(active["cycle"]?.objectValue?["lengthDays"]?.numberValue ?? 7))
+    let activeSessions = active["sessions"]?.arrayValues.compactMap { $0.objectValue } ?? []
+    var scheduled: [(Date, [String: JSONValue])] = []
+    var cursor = anchor
+    while cursor <= asOfDate {
+      for session in activeSessions {
+        let offset = Int(session["dayOffset"]?.numberValue ?? 0)
+        guard let day = calendar.date(byAdding: .day, value: offset, to: cursor), day >= windowStart && day <= asOfDate else { continue }
+        scheduled.append((day, session))
+      }
+      cursor = calendar.date(byAdding: .day, value: cycle, to: cursor)!
+    }
+    let actualScheduledDates = Set(sessionRows.compactMap { row -> String? in
+      guard row.objectValue?["scheduled_date"] == .null, let stamp = row.objectValue?["timestamp"]?.stringValue else { return nil }
+      return String(stamp.prefix(10))
+    })
+    for (day, session) in scheduled.sorted(by: { $0.0 < $1.0 }) {
+      let iso = dateFormatter.string(from: day)
+      if actualScheduledDates.contains(iso) { continue }
+      let planned = session["exercises"]?.arrayValues.compactMap { $0.objectValue } ?? []
+      let plannedSets = planned.compactMap { scalar($0["sets"]) }.reduce(0, +)
+      let range = ["min": .number(plannedSets), "target": .number(plannedSets), "max": .number(plannedSets)] as [String: JSONValue]
+      sessionRows.append(.object(["subject_id": root["subjectId"] ?? .null, "period_type": .string("custom_date_range"), "period_start": .string(lowerDate), "period_end": .string(endDate), "scheduled_date": .string(iso), "session_id": .null, "timestamp": .null, "plan_id": active["planId"] ?? .null, "revision_id": active["revisionId"] ?? .null, "plan_session_id": session["planSessionId"] ?? .null, "session_status": .string("missed_planned_session"), "planned_exercises": .number(Double(planned.count)), "matched_exercises": .number(0), "substitutions": .number(0), "unplanned_exercises": .number(0), "planned_sets": .number(plannedSets), "actual_counted_sets": .number(0), "missing_prescriptions": .number(Double(planned.count)), "missed_sets": .number(plannedSets), "missed_sets_min": .number(plannedSets), "missed_sets_target": .number(plannedSets), "missed_sets_max": .number(plannedSets), "planned_set_min": range["min"]!, "planned_set_target": range["target"]!, "planned_set_max": range["max"]!, "unplanned_sets": .number(0), "session_adherence": .number(0)]))
+      for rx in planned {
+        let pid = rx["prescriptionId"] ?? .null
+        exerciseRows.append(.object(["subject_id": root["subjectId"] ?? .null, "period": .string(iso), "session_id": .null, "prescription_id": pid, "planned_exercise_id": rx["exerciseId"] ?? .null, "actual_exercise_id": .null, "match_status": .string("missing_prescription"), "planned_sets_min": scalar(rx["sets"]).map(JSONValue.number) ?? .null, "planned_sets_target": scalar(rx["sets"]).map(JSONValue.number) ?? .null, "planned_sets_max": scalar(rx["sets"]).map(JSONValue.number) ?? .null, "actual_sets": .number(0), "set_adherence": .null, "reps_adherence": .null, "load_adherence": .null, "rpe_adherence": .null, "rir_adherence": .null, "substitution_reason": .null]))
+      }
+    }
+  }
+  sessionRows.sort {
+    let left = $0.objectValue?["scheduled_date"]?.stringValue ?? "9999-99-99"
+    let right = $1.objectValue?["scheduled_date"]?.stringValue ?? "9999-99-99"
+    if left != right { return left < right }
+    return ($0.objectValue?["session_id"]?.stringValue ?? "") < ($1.objectValue?["session_id"]?.stringValue ?? "")
+  }
+  exerciseRows.sort {
+    let left = $0.objectValue?["period"]?.stringValue ?? ""
+    let right = $1.objectValue?["period"]?.stringValue ?? ""
+    if left != right { return left < right }
+    return ($0.objectValue?["session_id"]?.stringValue ?? "") < ($1.objectValue?["session_id"]?.stringValue ?? "")
+  }
+  // Publish the same per-prescription summaries used by progression and
+  // adaptive coaching. Missing scheduled occurrences are intentionally part
+  // of these aggregates.
+  for id in exerciseState.keys {
+    guard var state = exerciseState[id]?.objectValue else { continue }
+    let rows = exerciseRows.filter { $0.objectValue?["planned_exercise_id"] == .string(id) }
+    var summaries: [String: JSONValue] = [:]
+    for row in rows {
+      guard let pid = row.objectValue?["prescription_id"]?.stringValue else { continue }
+      var summary = summaries[pid]?.objectValue ?? ["matchedOccurrences": .number(0), "missingOccurrences": .number(0), "substitutionOccurrences": .number(0), "plannedSets": .number(0), "actualSets": .number(0), "setAdherence": .null, "repsAdherence": .null, "loadAdherence": .null, "rpeAdherence": .null, "rirAdherence": .null]
+      let status = row.objectValue?["match_status"]?.stringValue
+      if status == "matched" { summary["matchedOccurrences"] = .number((summary["matchedOccurrences"]?.numberValue ?? 0) + 1) }
+      if status == "missing_prescription" { summary["missingOccurrences"] = .number((summary["missingOccurrences"]?.numberValue ?? 0) + 1) }
+      if status == "substitution" { summary["substitutionOccurrences"] = .number((summary["substitutionOccurrences"]?.numberValue ?? 0) + 1) }
+      summary["plannedSets"] = .number((summary["plannedSets"]?.numberValue ?? 0) + (row.objectValue?["planned_sets_target"]?.numberValue ?? 0))
+      summary["actualSets"] = .number((summary["actualSets"]?.numberValue ?? 0) + (row.objectValue?["actual_sets"]?.numberValue ?? 0))
+      summaries[pid] = .object(summary)
+    }
+    state["prescriptionAdherenceByPrescriptionId"] = .object(summaries)
+    exerciseState[id] = .object(state)
   }
   let skipped = skippedCounts.mapValues { JSONValue.number($0) }, substitutions = substitutionCounts.mapValues { JSONValue.number($0) }
   let adherenceState: JSONValue = .object(["sessionAdherence": .array(sessionRows), "exercisePrescriptionAdherence": .array(exerciseRows), "substitutionAdjustedCompletion": .number(Double(exerciseRows.filter { ["matched", "substitution"].contains($0.objectValue?["match_status"]?.stringValue) }.count)), "missedScheduledOccurrences": .array(sessionRows.filter { $0.objectValue?["session_status"] == .string("missed_planned_session") }), "repeatedSkippedExercises": .array(skipped.keys.sorted().map(JSONValue.string)), "repeatedSubstitutions": .array(substitutions.keys.sorted().map(JSONValue.string)), "skippedPrescriptionCounts": .object(skipped), "substitutionCountsByPrescription": .object(substitutions), "substitutionHistoryByPrescription": .object(substitutionHistory), "unplannedExercises": .array(exerciseRows.filter { $0.objectValue?["match_status"] == .string("unplanned_addition") }), "unplannedSets": .number(Double(exerciseRows.filter { $0.objectValue?["match_status"] == .string("unplanned_addition") }.reduce(0) { $0 + Int($1.objectValue?["actual_sets"]?.numberValue ?? 0) }))])
@@ -682,7 +761,22 @@ public func deriveTrainingState(_ history: JSONValue, asOf: String, window: Trai
       familyState[id] = .object(row)
     }
   }
-  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object(familyState), "muscleState": .object(muscleState), "adherenceState": adherenceState, "sessionState": .array(sessionRows), "provenance": .object(["stateVersion": .string("0.1.0"), "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate), "timezoneOffsetSeconds": .number(Double(parsedAsOf?.offsetSeconds ?? 0))])])])
+  let provenance: [String: JSONValue] = [
+    "stateVersion": .string("0.1.0"), "analysisVersion": .string("1.4.1"),
+    "analysisPolicy": .string("dbpp-default-volume-v1"), "asOf": .string(asOf),
+    "timezone": root["timezone"] ?? .string(TimeZone(secondsFromGMT: parsedAsOf?.offsetSeconds ?? 0)?.identifier ?? "UTC"),
+    "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]),
+    "dbSchemaVersion": database?.metadata["schemaVersion"] ?? .null,
+    "dbConverterVersion": database?.metadata["converterVersion"] ?? .null,
+    "dbUpstreamSha256": database?.metadata["upstream"]?.objectValue?["sha256"] ?? .null,
+    "setCredits": .object(["direct": .number(database?.setCredits.direct ?? 1), "indirect": .number(database?.setCredits.indirect ?? 0.5), "stabilizer": .number(database?.setCredits.stabilizer ?? 0)]),
+    "planSchemaVersions": .array(Set(plans.compactMap { $0["schemaVersion"]?.stringValue }).sorted().map(JSONValue.string)),
+    "workoutSchemaVersions": .array(Set((root["workouts"]?.arrayValues ?? []).compactMap { $0.objectValue?["schemaVersion"]?.stringValue }).sorted().map(JSONValue.string)),
+    "targetSchemaVersion": (root["targets"]?.arrayValues.first?.objectValue?["schemaVersion"] ?? .null),
+    "relationshipSchemaVersion": relationships.map { .string($0.schemaVersion) } ?? .null,
+    "workoutCount": .number(Double(workouts.count)), "mappedFraction": .null
+  ]
+  return .object(["stateVersion": .string("0.1.0"), "subjectId": root["subjectId"] ?? .null, "asOf": .string(asOf), "historyWindow": .object(["type": .string(windowType), "start": .string(lowerDate), "end": .string(endDate)]), "activePlan": .object(activePlan), "exerciseState": .object(exerciseState), "familyState": .object(familyState), "muscleState": .object(muscleState), "adherenceState": adherenceState, "sessionState": .array(sessionRows), "provenance": .object(provenance)])
 }
 
 public struct IntentResolver: Sendable {

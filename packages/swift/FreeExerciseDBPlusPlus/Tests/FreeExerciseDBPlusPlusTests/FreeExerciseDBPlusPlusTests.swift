@@ -151,8 +151,8 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(exercise?["substitutionCount"], JSONValue.number(0))
     XCTAssertEqual(exercise?["unplannedCount"], JSONValue.number(0))
     let adherence = state.objectValue?["adherenceState"]?.objectValue
-    if case .array(let sessions)? = adherence?["sessionAdherence"] { XCTAssertEqual(sessions.count, 1) } else { XCTFail("missing session adherence") }
-    if case .array(let rows)? = adherence?["exercisePrescriptionAdherence"], let row = rows.first?.objectValue {
+    if case .array(let sessions)? = adherence?["sessionAdherence"] { XCTAssertEqual(sessions.count, 5) } else { XCTFail("missing session adherence") }
+    if case .array(let rows)? = adherence?["exercisePrescriptionAdherence"], let row = rows.first(where: { $0.objectValue?["match_status"] == .string("matched") })?.objectValue {
       XCTAssertEqual(row["match_status"], .string("matched"))
       XCTAssertEqual(row["actual_sets"], .number(1))
     } else { XCTFail("missing exercise adherence") }

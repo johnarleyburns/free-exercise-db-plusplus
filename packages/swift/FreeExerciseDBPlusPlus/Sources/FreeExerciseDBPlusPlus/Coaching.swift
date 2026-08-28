@@ -59,6 +59,11 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
       let rx = exercises[exerciseIndex], rxObject = cObject(rx), id = cString(rxObject["exerciseId"])
       guard let id, let stateRow = exerciseState[id] else { continue }
       if let prescriptionId = cString(rxObject["prescriptionId"]) {
+        let skipped = cNumber(cObject(cObject(state)["adherenceState"])["skippedPrescriptionCounts"]?.objectValue?[prescriptionId]) ?? 0
+        if skipped >= 2 {
+          decisions.append(.object(["schemaVersion": .string("0.1.0"), "decisionId": .string("decision-hold-\(prescriptionId)"), "decisionType": .string("hold"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .string(prescriptionId), "exerciseId": .string(id), "before": .object([:]), "after": .object([:]), "reasonCodes": .array([.string("REPEATEDLY_SKIPPED")]), "evidence": .object(["skippedPrescriptionCount": .number(skipped)]), "provenance": cObject(state)["provenance"] ?? .object([:])]))
+          continue
+        }
         let substitution = cObject(substitutionHistory[prescriptionId])
         let count = substitution["count"].flatMap { if case .number(let value) = $0 { return value }; return nil } ?? 0
         if count >= 2, let replacement = cString(substitution["replacementExerciseId"]), let replacementExercise = try? database.getExercise(replacement), replacementExercise.annotation.volumeEligible {
@@ -74,7 +79,7 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
       decisions.append(decision)
       guard decisionObject["decisionType"] == JSONValue.string("increase_load"), let after = decisionObject["after"]?.objectValue else { continue }
       var updated = rxObject; updated["load"] = after["load"] ?? .null; exercises[exerciseIndex] = .object(updated)
-      changes.append(.object(["type": .string("LOAD_INCREASED"), "prescriptionId": rxObject["prescriptionId"] ?? .null, "before": .object(["load": rxObject["load"] ?? .null]), "after": .object(["load": after["load"] ?? .null]), "reasonCodes": decisionObject["reasonCodes"] ?? .array([]), "decisionIds": .array([])]))
+      changes.append(.object(["type": .string("LOAD_CHANGED"), "prescriptionId": rxObject["prescriptionId"] ?? .null, "exerciseId": rxObject["exerciseId"] ?? .null, "before": .object(rxObject), "after": .object(after), "reasonCodes": decisionObject["reasonCodes"] ?? .array([]), "decisionIds": .array([decisionObject["decisionId"] ?? .null])]))
     }
     session["exercises"] = .array(exercises); sessions[sessionIndex] = .object(session)
   }

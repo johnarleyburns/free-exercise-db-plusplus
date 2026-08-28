@@ -292,11 +292,19 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
           }
         } else { choices.sort { a, b in let left = gArray(sessions[a]["exercises"]).count, right = gArray(sessions[b]["exercises"]).count; return left == right ? a < b : left < right } }
         for session in choices {
-          if gArray(sessions[session]["exercises"]).contains(where: { family(gString(gObject($0)["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil }) { continue }
+          // A second set of an already selected exercise is the canonical
+          // target-allocation operation. The family exclusion only applies
+          // when introducing a distinct exercise into the session.
+          let alreadySelected = gArray(sessions[session]["exercises"]).contains { gString(gObject($0)["exerciseId"]) == candidate.exerciseId }
+          if !alreadySelected && gArray(sessions[session]["exercises"]).contains(where: { family(gString(gObject($0)["exerciseId"]) ?? "") == family(candidate.exerciseId) && family(candidate.exerciseId) != nil }) { continue }
           var draftSessions = sessions
           var draft = gArray(draftSessions[session]["exercises"])
-          let order = draft.count + 1, name = gString(candidateById[candidate.exerciseId]?.source?["name"]) ?? candidate.exerciseId
-          draft.append(.object(["prescriptionId": .string(String(format: "rx-%02d-%02d", session + 1, order)), "exerciseId": .string(candidate.exerciseId), "exerciseName": .string(name), "order": .number(Double(order)), "sets": .number(1), "reps": reps, "effort": effort, "setType": .string("working")]))
+          if let existing = draft.firstIndex(where: { gString(gObject($0)["exerciseId"]) == candidate.exerciseId }) {
+            var item = gObject(draft[existing]); item["sets"] = .number((gNumber(item["sets"]) ?? 0) + 1); draft[existing] = .object(item)
+          } else {
+            let order = draft.count + 1, name = gString(candidateById[candidate.exerciseId]?.source?["name"]) ?? candidate.exerciseId
+            draft.append(.object(["prescriptionId": .string(String(format: "rx-%02d-%02d", session + 1, order)), "exerciseId": .string(candidate.exerciseId), "exerciseName": .string(name), "order": .number(Double(order)), "sets": .number(1), "reps": reps, "effort": effort, "setType": .string("working")]))
+          }
           draftSessions[session]["exercises"] = .array(draft)
           let draftPlan: JSONValue = .object(["schemaVersion": .string("0.2.0"), "planId": .string(planId), "revisionId": .string(revisionId), "name": .string(planName), "description": .null, "cycle": .object(["lengthDays": .number(Double(cycle))]), "sessions": .array(draftSessions.map(JSONValue.object))])
           let evaluated = evaluatePlan(draftPlan, database: database, profile: profile, target: target, relationships: relationships)
@@ -346,6 +354,10 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   var soft: [JSONValue] = []
   let preferred = Set(gStringArray(preferences["preferredExerciseIds"])), preferredFamily = Set(gStringArray(preferences["preferredFamilyIds"]))
   let avoided = Set(gStringArray(preferences["avoidedExerciseIds"])), avoidedFamily = Set(gStringArray(preferences["avoidedFamilyIds"]))
+  for id in selectedIds {
+    if preferred.contains(id) { rationale[id, default: []].insert("PREFERRED_EXERCISE") }
+    if required.contains(id) { rationale[id, default: []].insert("REQUIRED_EXERCISE") }
+  }
   if !preferred.isEmpty && selectedIds.isDisjoint(with: preferred) { soft.append(.object(["code": .string("PREFERRED_EXERCISE_UNSATISFIED"), "exerciseIds": .array(preferred.sorted().map(JSONValue.string))])) }
   if !preferredFamily.isEmpty && selectedFamilies.isDisjoint(with: preferredFamily) { soft.append(.object(["code": .string("PREFERRED_FAMILY_UNSATISFIED"), "familyIds": .array(preferredFamily.sorted().map(JSONValue.string))])) }
   if !selectedIds.isDisjoint(with: avoided) { soft.append(.object(["code": .string("AVOIDED_EXERCISE_USED"), "exerciseIds": .array(selectedIds.intersection(avoided).sorted().map(JSONValue.string))])) }

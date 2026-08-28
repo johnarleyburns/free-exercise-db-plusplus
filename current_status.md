@@ -1099,3 +1099,27 @@ Current next action: continue Phase 2 / Part 2B from the HANDOFF addendum —
 expand the Python-authored cross-language fixture matrix and deterministic
 regeneration checks. Phase 2 remains incomplete until all its parts and exact
 Python/Swift comparisons pass.
+
+## Phase 2 remediation work in the current cycle
+
+Added deterministic fixture-regeneration acceptance at
+`scripts/test_cross_language_fixtures.sh`; it reproduces the committed
+Python-authored fixtures byte-for-byte and validates canonical self-comparison.
+Aligned Swift generation with Python for repeated-set target allocation,
+preferred/required rationale tags, offset-anchored cycle position, and full
+load-change records. The isolated Swift consumer and installed Python wheel
+smoke checks pass.
+
+Phase 2 is still open. Exact probes against the adversarial Python goldens
+show remaining Swift history-state differences in missed-occurrence
+prescription rows and remaining adaptive differences in decision evidence and
+provenance; generation still needs complete envelope/provenance parity. Do not
+claim 2B–2K complete until those exact comparisons are green.
+
+The latest remediation pass now materializes missed scheduled session and
+prescription rows, adds `activePlan.nextScheduledOccurrence`, uses Python's
+effective-date cycle-position anchor, and routes repeated skipped prescriptions
+to native adaptive hold decisions. Swift's 42-test suite, deterministic fixture
+regeneration, and isolated SPM consumer pass after these changes. Full
+operation-by-operation golden comparison and metadata/release audit remain
+required before Phase 2 can be closed.
