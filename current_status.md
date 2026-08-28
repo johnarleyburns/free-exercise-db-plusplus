@@ -1126,3 +1126,17 @@ Release metadata is prepared for v1.11.1 in
 `docs/releases/v1.11.1.md` and `packages/python/pyproject.toml`; v1.11.0 is
 not moved or rewritten. Kotlin and R remain compatibility checks for their
 deferred releases and were not expanded in this phase.
+
+## Phase 3 zero-gap audit — closed
+
+Parts 3A–3B are complete. The Python/Swift source, public operation map,
+fixtures, package boundary, and every hazard in `HANDOFF.md` Part BI were
+reviewed in three complete passes. The field-complete finding ledger is
+[`docs/audits/v1.11-python-swift-engine.md`](docs/audits/v1.11-python-swift-engine.md).
+
+All 21 audit findings are fixed or verified as no-gap, with regressions and
+commits recorded. The final pass found zero unresolved semantic gaps. Exact
+parity, deterministic fixture regeneration, isolated Swift consumer, installed
+Python wheel, 42 Swift tests, Kotlin compatibility, syntax, and canonical
+artifact checks passed. Phase 3 is closed; v1.12 Swift SPM hardening is the
+next separately scoped phase, while Kotlin/R engine ports remain deferred.
