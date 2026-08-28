@@ -1,8 +1,8 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.13.0 released**
-Current stable release: **v1.13.0**
-Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, and Kotlin packages**
+Status: **v1.14.0 released**
+Current stable release: **v1.14.0**
+Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, Kotlin, and R packages**
 
 ---
 
@@ -53,7 +53,7 @@ remains free of LLM vendor dependencies.
 
 v1.13 COMPLETE: Kotlin/JVM/Android full engine port.
 
-v1.14: R research/full analysis port.
+v1.14 COMPLETE: R full research engine and statistical interface.
 
 The completed v1.11 workflow is:
 
@@ -306,7 +306,7 @@ v1.12  COMPLETE: Swift SPM production hardening and app-readiness polish
 
 v1.13  COMPLETE: Kotlin/JVM/Android full engine port
 
-v1.14  R research/full analysis port
+v1.14  COMPLETE: R research/full analysis port
 ```
 
 ---
@@ -1064,8 +1064,9 @@ partial
 not-supported
 ```
 
-Never hide gaps. Swift is the required complete native engine for v1.11;
-Kotlin and R remain explicitly partial/future implementations.
+Never hide gaps. Python, Swift, Kotlin, and R are complete native engines for
+the released semantics; their interfaces are optimized for their respective
+runtime and research roles.
 
 ---
 
@@ -1312,10 +1313,10 @@ Document any unsupported operations in the capability matrix.
 
 ---
 
-# 57. R future scope
+# 57. R v1.14 completed scope
 
-R is not a v1.11 or v1.12 implementation target beyond preserving existing
-builds and tests. The research/full-analysis port is scheduled for v1.14.
+The v1.14 release completes the native R research/full-analysis port while
+preserving a lightweight base-R-compatible package design.
 
 Future R priorities:
 
@@ -1331,7 +1332,8 @@ generated PLAN inspection
 CoachDecision/adaptation result inspection
 ```
 
-R need not implement the full plan search engine until its v1.14 milestone.
+R implements the released plan generation and adaptive coaching semantics in
+v1.14; future work is limited to incremental parity and research ergonomics.
 
 Existing semantics it claims to support must continue to be tested.
 
@@ -1728,8 +1730,8 @@ result = engine.generate_plan_from_intent(intent)
 
 # 78. R v1.14 final capability
 
-The R package should become research-ready in v1.14. v1.12 only preserves its
-existing build/test contract.
+The R package is research-ready in v1.14 and provides a native implementation
+of the released training semantics.
 
 The v1.14 target requires:
 
@@ -1744,9 +1746,8 @@ tidy CoachDecision/change outputs
 cohort export
 ```
 
-Native plan generation/adaptation in R is desirable if practical, but not required if the package clearly focuses on research consumption.
-
-If not natively supported, do not fake parity.
+Native plan generation and adaptation are part of the v1.14 implementation;
+the package exposes them alongside canonical research views.
 
 ---
 

@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.14.0 - 2026-08-28
+
+- Complete the native R research/analysis engine for the released DB++ training
+  semantics, including intent resolution, PLAN/TARGET evaluation,
+  TrainingHistory, TrainingState, progression, generation, and adaptation.
+- Bundle canonical database, relationships, and intent-policy resources for
+  installed-package workflows.
+- Add base-R research data.frame views, provenance helpers, JSON shape-safe
+  serialization, and R API/release audit documentation.
+- Keep the package independent of Python, reticulate, Java, tidyverse, network
+  services, and LLM APIs.
+
 ## 1.13.0 - 2026-08-28
 
 - Complete the native Kotlin/JVM training engine port with the offline

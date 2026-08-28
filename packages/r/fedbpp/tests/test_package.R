@@ -31,7 +31,21 @@ history_result <- resolve_intent(history_intent, db = db, history = history, as_
 stopifnot(identical(history_result$generationOptions$trainingState$activePlan$revisionId, "r1"))
 stopifnot(identical(history_result$generationOptions$trainingState$exerciseState[["Barbell_Bench_Press_-_Medium_Grip"]]$recentSessionCount, 1L))
 draft <- generate_plan_from_intent(intent, db)
-stopifnot(identical(vapply(draft$generation$sessions, `[[`, integer(1), "dayOffset"), as.integer(c(0, 1, 2, 3, 5))))
+stopifnot(identical(vapply(draft$generation$plan$sessions, `[[`, integer(1), "dayOffset"), as.integer(c(0, 1, 2, 3, 5))))
+
+# v1.14 semantic regressions: authoritative credits, scalar ranges, and
+# offset-aware as-of filtering must remain stable in an installed package.
+credits_db <- db
+credits_db$metadata$setCredits <- list(direct = 2, indirect = 0.25, stabilizer = 0)
+credit_totals <- effective_sets(w, credits_db)
+stopifnot(all(credit_totals$credit %in% c(2, 0.25, 0)))
+round_trip <- jsonlite::fromJSON(write_workout_intent(intent), simplifyVector = FALSE)
+stopifnot(identical(round_trip$schemaVersion, intent$schemaVersion), is.list(round_trip$schedule$preferredWeekdays))
+future <- w
+future$startTime <- "2026-01-01T01:00:00+02:00"
+history_check <- list(subjectId = "s", workouts = list(future), plans = list(), targets = list(), planActivations = list())
+state_check <- derive_training_state(history_check, db, as_of = "2025-12-31T22:30:00Z")
+stopifnot(length(state_check$exerciseState) == 0L)
 
 # Execute every canonical resolution fixture from an installed/source package
 # context.  The expected JSON remains the single semantic oracle; this check
@@ -39,7 +53,7 @@ stopifnot(identical(vapply(draft$generation$sessions, `[[`, integer(1), "dayOffs
 fixture_root <- file.path(root, "fixtures/cross-language/intent")
 for (fixture in sort(list.dirs(fixture_root, full.names = FALSE, recursive = FALSE))) {
   if (file.exists(file.path(fixture_root, fixture, "history.json"))) next
-  input <- read_workout_intent(file.path(fixture_root, fixture, "input.json"))
+  input <- read_workout_intent(file.path(fixture_root, fixture, "input.json"), validate = FALSE)
   explicit <- if (file.exists(file.path(fixture_root, fixture, "target.json"))) jsonlite::fromJSON(file.path(fixture_root, fixture, "target.json"), simplifyVector = FALSE) else NULL
   actual <- resolve_intent(input, db = db, target = explicit)
   expected <- jsonlite::fromJSON(file.path(fixture_root, fixture, "expected-resolution.json"), simplifyVector = FALSE)

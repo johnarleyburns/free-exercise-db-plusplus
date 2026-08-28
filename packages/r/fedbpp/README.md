@@ -1,23 +1,35 @@
-# fedbpp: Free Exercise DB++ research integration
+# fedbpp: Free Exercise DB++ research engine
 
-This base-R-compatible package provides read-only JSON loaders, Workout 0.2 validation/migration, data-frame helpers, and effective-set/longitudinal analysis. `jsonlite` is the only required dependency; tidyverse is not required.
+`fedbpp` is the native R implementation of the released DB++ training
+semantics. It supports PLAN, ACTUAL, TARGET, TrainingProfile, WorkoutIntent,
+TrainingHistory, evaluation, TrainingState, progression, deterministic plan
+generation, and advisory adaptation. `jsonlite` is the only required
+dependency; tidyverse and data.table are not required.
 
 ```r
-db <- load_database("free-exercise-db-plusplus.json")
-w <- load_workout("examples/workouts/basic-barbell-strength.json")
+db <- load_database()                         # bundled resource
+w <- read_workout("examples/workouts/basic-barbell-strength.json")
 sets <- effective_sets(w, db)       # credits from database metadata
 observations <- workout_observations(w)
 ```
 
 Analyses retain source exercise IDs and annotation confidence. Missing IDs, names, and confidence values remain `NA`; derived tables never mutate source observations.
 
-Run `Rscript tests/test_package.R` from this directory.
+Run `Rscript tests/test_package.R` from this directory, or install with
+`R CMD INSTALL packages/r/fedbpp` and use `load_database()` outside the repo.
 
-Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting. Advanced PLAN/TARGET/adherence parity is not currently claimed.
+All coverage and evaluation paths read `metadata.setCredits`, exclude
+`volumeEligible=false`, and apply the named `dbpp-default-volume-v1` counting
+policy. Canonical documents stay as lists; research helpers such as
+`plan_observations()` and `training_state_observations()` return data.frames.
 
 WorkoutIntent resolution is available without a network service:
 
 ```r
 intent <- read_workout_intent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")
-resolution <- resolve_intent(intent)
+resolution <- resolve_intent(intent, db)
+next_plan <- generate_plan_from_intent(intent, db)
 ```
+
+See [R-API](../../../docs/R-API.md) for history-aware state, progression,
+adaptation, serialization, missingness, provenance, and longitudinal examples.

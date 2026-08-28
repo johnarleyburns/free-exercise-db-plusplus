@@ -133,6 +133,29 @@ val resolved = engine.resolveIntent(intent)
 val result = engine.generatePlanFromIntent(intent)
 ```
 
+### R research / statistical analysis
+
+R provides the full offline engine through an idiomatic list-and-data.frame
+interface. It bundles the canonical database and relationships and requires
+only `jsonlite`.
+
+```r
+library(fedbpp)
+db <- load_database()
+relationships <- load_relationships()
+intent <- read_workout_intent("intent.json")
+resolved <- resolve_intent(intent, db, relationships=relationships)
+next_week <- generate_plan_from_intent(intent, db, relationships=relationships)
+history <- read_training_history("history.json")
+current_plan <- read_workout_plan("current-plan.json")
+state <- derive_training_state(history, db,
+  as_of="2026-08-28T12:00:00Z", window="last_28_days",
+  relationships=relationships)
+proposal <- adapt_plan(resolved$resolvedProfile, resolved$resolvedTarget,
+  current_plan, history, db, relationships=relationships,
+  as_of="2026-08-28T12:00:00Z")
+```
+
 ```swift
 import Foundation
 

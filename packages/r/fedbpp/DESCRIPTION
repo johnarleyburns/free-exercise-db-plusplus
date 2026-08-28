@@ -1,12 +1,12 @@
 Package: fedbpp
 Type: Package
 Title: Free Exercise DB++ Research Integration
-Version: 1.13.0
+Version: 1.14.0
 Authors@R: person("Free Exercise DB++", role = c("aut", "cre"), email = "maintainers@example.invalid")
 Author: Free Exercise DB++ [aut, cre]
 Maintainer: Free Exercise DB++ <maintainers@example.invalid>
-Description: Read-only loaders, validators, and reproducible effective-set analyses for Free Exercise DB++.
-License: MIT
+Description: Native Free Exercise DB++ training engine with reproducible research and statistical analysis interfaces.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: jsonlite
 Suggests: testthat
