@@ -10,7 +10,7 @@ mkdir -p "$consumer/Sources/Consumer"
 cat > "$consumer/Package.swift" <<EOF
 // swift-tools-version: 6.0
 import PackageDescription
-let package = Package(name: "Consumer", dependencies: [.package(url: "https://github.com/johnarleyburns/free-exercise-db-plusplus.git", exact: "$version")], targets: [.executableTarget(name: "Consumer", dependencies: [.product(name: "FreeExerciseDBPlusPlus", package: "FreeExerciseDBPlusPlus")])])
+let package = Package(name: "Consumer", dependencies: [.package(url: "https://github.com/johnarleyburns/free-exercise-db-plusplus.git", exact: "$version")], targets: [.executableTarget(name: "Consumer", dependencies: [.product(name: "FreeExerciseDBPlusPlus", package: "free-exercise-db-plusplus")])])
 EOF
 cat > "$consumer/Sources/Consumer/main.swift" <<'EOF'
 import Foundation
