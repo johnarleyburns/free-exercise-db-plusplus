@@ -93,10 +93,8 @@ private struct DatabaseIndexes: Sendable {
         for exercise in sorted {
             let ids = Set(exercise.annotation.direct + exercise.annotation.indirect + exercise.annotation.stabilizers)
             for muscle in ids { muscles[muscle, default: []].append(exercise.exerciseId) }
-            if case .array(let values)? = exercise.source?["movementPatterns"] {
-                for value in values {
-                    if case .string(let pattern) = value { patterns[pattern, default: []].append(exercise.exerciseId) }
-                }
+            for pattern in exercise.annotation.patterns {
+                patterns[pattern, default: []].append(exercise.exerciseId)
             }
             if case .string(let value)? = exercise.source?["equipment"] {
                 equipment[value, default: []].append(exercise.exerciseId)

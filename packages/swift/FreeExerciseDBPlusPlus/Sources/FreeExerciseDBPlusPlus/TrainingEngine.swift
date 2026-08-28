@@ -6,10 +6,42 @@ import Foundation
 public struct TrainingEngine: Sendable {
   public let database: FEDatabase
   public let relationships: ExerciseRelationships?
+  private let indexes: TrainingEngineIndexes
 
   public init(database: FEDatabase, relationships: ExerciseRelationships? = nil) {
     self.database = database
     self.relationships = relationships
+    self.indexes = TrainingEngineIndexes(database: database, relationships: relationships)
+  }
+
+  /// Deterministic, immutable lookup views retained for the lifetime of the
+  /// engine. These are deliberately private so callers cannot mutate or
+  /// accidentally depend on implementation storage.
+  private struct TrainingEngineIndexes: Sendable {
+    let exerciseByID: [String: Exercise]
+    let exercisesByMuscle: [String: [String]]
+    let exercisesByMovementPattern: [String: [String]]
+    let exercisesByEquipment: [String: [String]]
+    let familyMembersByID: [String: [String]]
+
+    init(database: FEDatabase, relationships: ExerciseRelationships?) {
+      let exercises = database.allExercises.values.sorted { $0.exerciseId < $1.exerciseId }
+      self.exerciseByID = Dictionary(uniqueKeysWithValues: exercises.map { ($0.exerciseId, $0) })
+      self.exercisesByMuscle = Dictionary(grouping: exercises.flatMap { exercise in
+        Set(exercise.annotation.direct + exercise.annotation.indirect + exercise.annotation.stabilizers)
+          .map { ($0, exercise.exerciseId) }
+      }, by: { $0.0 }).mapValues { $0.map(\.1).sorted() }
+      self.exercisesByMovementPattern = Dictionary(grouping: exercises.flatMap { exercise in
+        exercise.annotation.patterns.map { ($0, exercise.exerciseId) }
+      }, by: { $0.0 }).mapValues { $0.map(\.1).sorted() }
+      self.exercisesByEquipment = Dictionary(grouping: exercises.compactMap { exercise -> (String, String)? in
+        guard case .string(let equipment) = exercise.source?["equipment"] else { return nil }
+        return (equipment, exercise.exerciseId)
+      }, by: { $0.0 }).mapValues { $0.map(\.1).sorted() }
+      self.familyMembersByID = Dictionary(uniqueKeysWithValues: (relationships?.families.keys.sorted() ?? []).map { familyID in
+        (familyID, relationships?.members(of: familyID) ?? [])
+      })
+    }
   }
 
   /// Load the canonical offline DB++ artifacts shipped with this Swift

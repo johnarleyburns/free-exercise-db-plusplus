@@ -1090,5 +1090,12 @@ Part 0A is complete in commit `42fb43b`. Part 1A is complete in commit
 production hardening, Kotlin is v1.13, and R is v1.14. The roadmap scan found
 no stale v1.12 engine/parity assertions.
 
-Current next action: begin Phase 2 / Part 2A from the HANDOFF addendum — build
-immutable deterministic Swift TrainingEngine indexes and add focused tests.
+Phase 2 / Part 2A implementation is present in the current working change:
+TrainingEngine retains immutable deterministic indexes, canonical movement
+pattern lookup is corrected, focused lookup tests pass, and the external
+consumer now invokes `generatePlanFromIntent`.
+
+Current next action: continue Phase 2 / Part 2B from the HANDOFF addendum —
+expand the Python-authored cross-language fixture matrix and deterministic
+regeneration checks. Phase 2 remains incomplete until all its parts and exact
+Python/Swift comparisons pass.

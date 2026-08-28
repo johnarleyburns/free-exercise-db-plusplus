@@ -28,7 +28,9 @@ precondition(result.defaultsApplied == ["goalPolicy", "planningPolicy", "environ
 precondition(result.explicitOverrides == ExplicitOverrides())
 let profile = result.resolvedProfile!
 let target = result.resolvedTarget!
-let generated = engine.generatePlan(profile: profile, target: target, policy: result.planningPolicy ?? "full-body-general-v1")
+let generatedFromIntent = engine.generatePlanFromIntent(intent)
+precondition(generatedFromIntent.objectValue?["resolution"] != nil)
+let generated = generatedFromIntent.objectValue?["generation"] ?? engine.generatePlan(profile: profile, target: target, policy: result.planningPolicy ?? "full-body-general-v1")
 precondition(generated.objectValue?["plan"] != .null)
 let evaluated = engine.evaluatePlan(generated.objectValue?["plan"] ?? .null, profile: profile, target: target)
 precondition(generated.objectValue?["evaluation"] == evaluated)

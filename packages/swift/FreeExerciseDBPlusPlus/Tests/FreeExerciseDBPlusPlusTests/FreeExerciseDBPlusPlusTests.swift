@@ -27,6 +27,8 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertGreaterThan(db.count, 800)
     XCTAssertEqual(try db.getExercise("Bench_Dips").exerciseId, "Bench_Dips")
     XCTAssertFalse(db.findExercises(containing: "bench").isEmpty)
+    XCTAssertTrue(db.exercisesForMovementPattern("horizontal_press").contains { $0.exerciseId == "Barbell_Bench_Press_-_Medium_Grip" })
+    XCTAssertTrue(db.exercisesForEquipment("barbell").contains { $0.exerciseId == "Barbell_Bench_Press_-_Medium_Grip" })
   }
 
   func testOffsetAwareTimestampParsingAndFutureBoundaries() throws {
