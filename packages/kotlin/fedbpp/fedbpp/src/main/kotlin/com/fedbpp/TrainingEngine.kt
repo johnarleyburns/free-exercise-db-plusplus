@@ -25,20 +25,36 @@ class TrainingEngine(val database: Database, val relationships: ExerciseRelation
             put("lockedExerciseIds", JsonArray(request.lockedExerciseIds.distinct().sorted().map(::JsonPrimitive)))
             put("additionalExclusions", JsonArray(request.additionalExclusions.distinct().sorted().map(::JsonPrimitive)))
             put("requiredFamilyIds", JsonArray(request.requiredFamilyIds.distinct().sorted().map(::JsonPrimitive)))
+            request.options.forEach { (key, value) -> put(key, value) }
         }
-        return decodeGenerated(com.fedbpp.generatePlan(profile, target, database, relationships, (request.requiredExerciseIds + request.lockedExerciseIds).distinct(), options))
+        val raw = com.fedbpp.generatePlan(profile, target, database, relationships, (request.requiredExerciseIds + request.lockedExerciseIds).distinct(), options)
+        val enriched = if (request.trainingState == null) raw else raw.jsonObject.let { root ->
+            val provenance = (root["provenance"] as? JsonObject)?.toMutableMap() ?: mutableMapOf()
+            provenance["trainingStateVersion"] = JsonPrimitive(request.trainingState.stateVersion)
+            JsonObject(root.toMutableMap().apply { put("provenance", JsonObject(provenance)) })
+        }
+        return decodeGenerated(enriched)
     }
     fun generatePlanFromIntent(intent: WorkoutIntent, profile: TrainingProfile? = null, target: VolumeTarget? = null, history: TrainingHistory? = null, currentPlan: WorkoutPlan? = null, asOf: Instant? = null): IntentPlanResult {
         val resolution = resolveIntent(intent, profile, target, history, asOf)
         if (resolution.status !in setOf("resolved", "resolved_with_defaults")) return IntentPlanResult(resolution)
-        val ids = (intent.exerciseConstraints?.requiredExerciseIds.orEmpty() + intent.exerciseConstraints?.lockedExerciseIds.orEmpty()).distinct()
-        val raw = com.fedbpp.generatePlan(resolution.resolvedProfile!!, resolution.resolvedTarget!!, database, relationships, ids, buildJsonObject {
-            currentPlan?.let { put("currentPlan", it.toJson()) }
-            intent.exerciseConstraints?.lockedExerciseIds?.let { put("lockedExerciseIds", JsonArray(it.distinct().sorted().map(::JsonPrimitive))) }
-            intent.exerciseConstraints?.excludedExerciseIds?.let { put("additionalExclusions", JsonArray(it.distinct().sorted().map(::JsonPrimitive))) }
-            intent.exerciseConstraints?.excludedFamilyIds?.let { put("excludedFamilyIds", JsonArray(it.distinct().sorted().map(::JsonPrimitive))) }
-        })
-        return IntentPlanResult(resolution, decodeGenerated(raw))
+        val resolvedProfile = apiJson.decodeFromJsonElement(TrainingProfile.serializer(), resolution.resolvedProfile!!)
+        val resolvedTarget = apiJson.decodeFromJsonElement(VolumeTarget.serializer(), resolution.resolvedTarget!!)
+        val generationOptions = resolution.generationOptions.jsonObjectOrEmpty
+        val state = generationOptions["trainingState"]?.takeUnless { it is JsonNull }?.let(TrainingState::fromJson)
+        val constraints = intent.exerciseConstraints
+        return IntentPlanResult(resolution, generatePlan(PlanGenerationRequest(
+            profile = resolvedProfile, target = resolvedTarget,
+            policy = resolution.planningPolicy ?: "full-body-general-v1",
+            trainingState = state, currentPlan = currentPlan,
+            requiredExerciseIds = constraints?.requiredExerciseIds.orEmpty(),
+            lockedExerciseIds = constraints?.lockedExerciseIds.orEmpty(),
+            requiredFamilyIds = generationOptions["requiredFamilyIds"].jsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull },
+            additionalExclusions = constraints?.excludedExerciseIds.orEmpty(),
+            options = buildJsonObject {
+                generationOptions.forEach { (key, value) -> if (key != "trainingState" && key != "requiredFamilyIds") put(key, value) }
+            }
+        )))
     }
     fun evaluatePlan(plan: WorkoutPlan, profile: TrainingProfile? = null, target: VolumeTarget? = null): PlanEvaluation =
         PlanEvaluation.fromJson(com.fedbpp.evaluatePlan(plan.toJson(), database, profile?.let { apiJson.encodeToJsonElement(TrainingProfile.serializer(), it) }, target?.let { apiJson.encodeToJsonElement(VolumeTarget.serializer(), it) }, relationships))

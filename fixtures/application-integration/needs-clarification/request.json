@@ -1,0 +1,9 @@
+{
+  "intent": {
+    "environment": "commercial_gym",
+    "schemaVersion": "0.1.0"
+  },
+  "operation": "resolve_intent",
+  "requestId": "app-needs-clarification",
+  "schemaVersion": "0.1.0"
+}

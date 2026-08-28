@@ -61,7 +61,7 @@ fun Workout.validate() {
     exercises.forEach { observation ->
         if (observation.exerciseId.isNullOrBlank() && observation.exerciseName.isNullOrBlank()) throw ValidationException("exercise observation requires exerciseId or exerciseName")
         if (observation.order < 1) throw ValidationException("exercise order must be positive")
-        observation.sets.forEach { if (it.setNumber < 1) throw ValidationException("setNumber must be positive") }
+        observation.sets.forEach { if ((it.setNumber ?: 1) < 1) throw ValidationException("setNumber must be positive") }
     }
 }
 

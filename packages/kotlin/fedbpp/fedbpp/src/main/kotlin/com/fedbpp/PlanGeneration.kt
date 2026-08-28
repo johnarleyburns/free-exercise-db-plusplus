@@ -12,6 +12,7 @@ import kotlinx.serialization.json.intOrNull
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.put
 
 private fun JsonElement?.planInt(): Int? = this?.jsonPrimitive?.intOrNull ?: this?.jsonPrimitive?.doubleOrNull?.toInt()
@@ -33,9 +34,9 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     val counts = canonicalSessionCounts(sessionRange["min"].planInt(), sessionRange["target"].planInt(), sessionRange["max"].planInt(), 3)
     if (counts.conflicts.isNotEmpty()) return generationResult("unsatisfiable", null, null, counts.conflicts)
     val cycle = availability["cycleLengthDays"]?.jsonPrimitive?.intOrNull ?: t["periodDays"]?.jsonPrimitive?.intOrNull ?: 7
-    val preferred = availability["preferredDayOffsets"]?.jsonArray.orEmpty().mapNotNull { it.jsonPrimitive.intOrNull }
+    val dayPreferred = availability["preferredDayOffsets"]?.jsonArray.orEmpty().mapNotNull { it.jsonPrimitive.intOrNull }
     val excluded = availability["excludedDayOffsets"]?.jsonArray.orEmpty().mapNotNull { it.jsonPrimitive.intOrNull }.toSet()
-    val count = counts.counts.first(); val offsets = canonicalDayOffsets(cycle, count, preferred, excluded) ?: return generationResult("unsatisfiable", null, null, listOf("SESSION_COUNT_CONFLICT"))
+    val count = counts.counts.first(); val offsets = canonicalDayOffsets(cycle, count, dayPreferred, excluded) ?: return generationResult("unsatisfiable", null, null, listOf("SESSION_COUNT_CONFLICT"))
     val additionalExclusions = options["additionalExclusions"]?.jsonArray.orEmpty().map { it.jsonPrimitive.content }.toSet()
     val candidates = canonicalCandidatePool(database, p, relationships, additionalExclusions)
     if (candidates.isEmpty()) return generationResult("unsatisfiable", null, null, listOf("NO_ELIGIBLE_EXERCISE"))
@@ -54,10 +55,24 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     }
     fun plan(): JsonObject = buildJsonObject { put("schemaVersion", "0.2.0"); put("planId", options["planId"] ?: JsonPrimitive("generated-plan")); put("revisionId", options["revisionId"] ?: JsonPrimitive("r1")); put("name", options["name"] ?: JsonPrimitive("Generated full-body-general-v1")); put("description", JsonNull); put("cycle", buildJsonObject { put("lengthDays", cycle) }); put("sessions", buildJsonArray { sessions.forEachIndexed { i, pair -> add(buildJsonObject { put("planSessionId", "session-${i + 1}"); put("dayOffset", pair.second); put("name", "Session ${i + 1}"); put("exercises", JsonArray(pair.first)) }) } }) }
     var current = plan(); var evaluation = evaluatePlan(current, database, p, t, relationships).jsonObject
+    val existing = options["currentPlan"]?.planJsonObjectOrEmpty?.get("sessions").planJsonArrayOrEmpty()
+        .flatMap { it.planJsonObjectOrEmpty["exercises"].planJsonArrayOrEmpty() }
+        .mapNotNull { it.planJsonObjectOrEmpty["exerciseId"]?.jsonPrimitive?.contentOrNull }.toSet()
+    val state = options["trainingState"]?.planJsonObjectOrEmpty
+    val history: Map<String, JsonObject> = state?.get("exerciseState")?.planJsonObjectOrEmpty
+        ?.mapValues { (_, value) -> value as? JsonObject ?: JsonObject(emptyMap()) } ?: emptyMap()
+    val preferences = p["exercisePreferences"].planJsonObjectOrEmpty
+    val preferred = preferences["preferredExerciseIds"].planJsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull }.toSet()
+    val avoided = preferences["avoidedExerciseIds"].planJsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull }.toSet()
+    val preferredFamilies = preferences["preferredFamilyIds"].planJsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull }.toSet()
+    val avoidedFamilies = preferences["avoidedFamilyIds"].planJsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull }.toSet()
+    val continuity = options["continuity"]?.jsonPrimitive?.content ?: "preserve"
+    fun rank(values: List<PlanningCandidate>, contribution: (PlanningCandidate) -> Double) =
+        rankCandidates(values, required, existing, history, continuity, preferred, preferredFamilies, avoided, avoidedFamilies, contribution)
     // Canonical first phase: satisfy muscle minima, greatest deficit then rank.
     while (true) {
         val deficit = evaluation["muscleCoverage"]?.jsonObject.orEmpty().mapNotNull { (muscle, row) -> val value = row.jsonObject; val min = value["minimum"]?.jsonPrimitive?.doubleOrNull; val actual = value["actualEffectiveSets"]?.jsonPrimitive?.doubleOrNull ?: 0.0; if (min != null && actual < min) Triple(min - actual, muscle, value) else null }.sortedWith(compareByDescending<Triple<Double, String, JsonObject>> { it.first }.thenBy { it.second }).firstOrNull() ?: break
-        val ranked = rankCandidates(candidates.filter { targetContribution(it, "muscle", deficit.second, database) > 0 }, required, emptySet(), contribution = { targetContribution(it, "muscle", deficit.second, database) })
+        val ranked = rank(candidates.filter { targetContribution(it, "muscle", deficit.second, database) > 0 }) { targetContribution(it, "muscle", deficit.second, database) }
         var accepted = false
         for (candidate in ranked) if (!accepted) for (slot in sessions.indices.sortedBy { sessions[it].first.size }) if (canAdd(slot, candidate)) {
             val snapshot = sessions.map { it.first.toList() }; add(slot, candidate); val proposed = plan(); val proposedEvaluation = evaluatePlan(proposed, database, p, t, relationships).jsonObject
@@ -69,7 +84,7 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     // Target phase follows minimum fulfillment; target shortfalls remain soft gaps.
     while (true) {
         val deficit = evaluation["muscleCoverage"]?.jsonObject.orEmpty().mapNotNull { (muscle, row) -> val value = row.jsonObject; val targetValue = value["target"]?.jsonPrimitive?.doubleOrNull; val actual = value["actualEffectiveSets"]?.jsonPrimitive?.doubleOrNull ?: 0.0; if (targetValue != null && actual < targetValue) Pair(muscle, targetValue - actual) else null }.sortedWith(compareByDescending<Pair<String, Double>> { it.second }.thenBy { it.first }).firstOrNull() ?: break
-        val ranked = rankCandidates(candidates.filter { targetContribution(it, "muscle", deficit.first, database) > 0 }, required, emptySet(), contribution = { targetContribution(it, "muscle", deficit.first, database) })
+        val ranked = rank(candidates.filter { targetContribution(it, "muscle", deficit.first, database) > 0 }) { targetContribution(it, "muscle", deficit.first, database) }
         var accepted = false
         for (candidate in ranked) if (!accepted) for (slot in sessions.indices.sortedBy { sessions[it].first.size }) if (canAdd(slot, candidate)) {
             val snapshot = sessions.map { it.first.toList() }; add(slot, candidate); val proposed = plan(); val proposedEvaluation = evaluatePlan(proposed, database, p, t, relationships).jsonObject
@@ -82,9 +97,9 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     // per-session minimum without breaching evaluator maxima.
     val minimumExercises = ((availability["exercisesPerSession"] as? JsonObject)?.get("min").planInt() ?: 1).coerceAtLeast(1)
     for (slot in sessions.indices) while (sessions[slot].first.size < minimumExercises) {
-        val ranked = rankCandidates(candidates.filter { candidate ->
+        val ranked = rank(candidates.filter { candidate ->
             canAdd(slot, candidate) && sessions[slot].first.none { it["exerciseId"]?.jsonPrimitive?.content == candidate.exerciseId }
-        }, required, emptySet(), contribution = { 0.0 })
+        }) { 0.0 }
         val candidate = ranked.firstOrNull() ?: return generationResult("unsatisfiable", null, null, listOf("NO_ELIGIBLE_EXERCISE"))
         val snapshot = sessions.map { it.first.toList() }; add(slot, candidate); val proposed = plan(); val proposedEvaluation = evaluatePlan(proposed, database, p, t, relationships).jsonObject
         val above = proposedEvaluation["muscleCoverage"]?.jsonObject.orEmpty().values.any { it.jsonObject["state"]?.jsonPrimitive?.content == "above_maximum" }
@@ -94,7 +109,7 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     // Family target minima when relationships exist.
     while (true) {
         val deficit = evaluation["families"]?.jsonObject?.get("targets")?.jsonObject.orEmpty().mapNotNull { (family, row) -> val value = row.jsonObject; val min = value["minimum"]?.jsonPrimitive?.doubleOrNull; val actual = value["plannedSets"]?.jsonPrimitive?.doubleOrNull ?: 0.0; if (min != null && actual < min) Pair(family, min - actual) else null }.sortedWith(compareByDescending<Pair<String, Double>> { it.second }.thenBy { it.first }).firstOrNull() ?: break
-        val ranked = rankCandidates(candidates.filter { targetContribution(it, "family", deficit.first, database) > 0 }, required, emptySet(), contribution = { targetContribution(it, "family", deficit.first, database) })
+        val ranked = rank(candidates.filter { targetContribution(it, "family", deficit.first, database) > 0 }) { targetContribution(it, "family", deficit.first, database) }
         var accepted = false
         for (candidate in ranked) if (!accepted) for (slot in sessions.indices.sortedBy { sessions[it].first.size }) if (canAdd(slot, candidate)) {
             val snapshot = sessions.map { it.first.toList() }; add(slot, candidate); val proposed = plan(); val proposedEvaluation = evaluatePlan(proposed, database, p, t, relationships).jsonObject
@@ -106,7 +121,7 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     // Movement-pattern minima.
     while (true) {
         val deficit = evaluation["movementPatterns"]?.jsonObject.orEmpty().mapNotNull { (pattern, row) -> val value = row.jsonObject; val min = value["minimum"]?.jsonPrimitive?.doubleOrNull; val actual = value["plannedSets"]?.jsonPrimitive?.doubleOrNull ?: 0.0; if (min != null && actual < min) Pair(pattern, min - actual) else null }.sortedWith(compareByDescending<Pair<String, Double>> { it.second }.thenBy { it.first }).firstOrNull() ?: break
-        val ranked = rankCandidates(candidates.filter { targetContribution(it, "pattern", deficit.first, database) > 0 }, required, emptySet(), contribution = { targetContribution(it, "pattern", deficit.first, database) })
+        val ranked = rank(candidates.filter { targetContribution(it, "pattern", deficit.first, database) > 0 }) { targetContribution(it, "pattern", deficit.first, database) }
         var accepted = false
         for (candidate in ranked) if (!accepted) for (slot in sessions.indices.sortedBy { sessions[it].first.size }) if (canAdd(slot, candidate)) {
             val snapshot = sessions.map { it.first.toList() }; add(slot, candidate); val proposed = plan(); val proposedEvaluation = evaluatePlan(proposed, database, p, t, relationships).jsonObject
@@ -118,7 +133,7 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     // Distribute frequency minima across distinct sessions.
     while (true) {
         val deficit = evaluation["frequency"]?.jsonObject.orEmpty().mapNotNull { (muscle, row) -> val value = row.jsonObject; val min = value["minimum"]?.jsonPrimitive?.doubleOrNull; val actual = value["normalizedExposuresPer7Days"]?.jsonPrimitive?.doubleOrNull ?: 0.0; if (min != null && actual < min) Pair(muscle, min - actual) else null }.sortedWith(compareByDescending<Pair<String, Double>> { it.second }.thenBy { it.first }).firstOrNull() ?: break
-        val ranked = rankCandidates(candidates.filter { targetContribution(it, "frequency", deficit.first, database) > 0 }, required, emptySet(), contribution = { targetContribution(it, "frequency", deficit.first, database) })
+        val ranked = rank(candidates.filter { targetContribution(it, "frequency", deficit.first, database) > 0 }) { targetContribution(it, "frequency", deficit.first, database) }
         var accepted = false
         for (candidate in ranked) if (!accepted) for (slot in sessions.indices.sortedWith(compareBy<Int> { sessionIndex ->
             val hasExposure = sessions[sessionIndex].first.any { rx -> database.exercises[rx["exerciseId"]?.jsonPrimitive?.content]?.annotation?.let { deficit.first in it.direct || deficit.first in it.indirect } == true }

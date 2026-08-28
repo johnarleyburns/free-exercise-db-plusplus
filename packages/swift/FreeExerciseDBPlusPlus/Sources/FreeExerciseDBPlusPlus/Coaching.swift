@@ -59,7 +59,7 @@ public func adaptPlan(profile: JSONValue, target: JSONValue, currentPlan: JSONVa
     let generated = generatePlan(profile: profile, target: target, database: database,
       policy: planningPolicy ?? "full-body-general-v1", relationships: relationships,
       trainingState: state, currentPlan: currentPlan,
-      options: .object(["planId": cObject(currentPlan)["planId"] ?? .string("generated-plan"), "revisionId": .string(proposedRevision)]))
+      options: .object(["planId": cObject(currentPlan)["planId"] ?? .string("generated-plan"), "revisionId": .string(proposedRevision), "name": cObject(currentPlan)["name"] ?? .null]))
     if let proposed = cObject(generated)["plan"], proposed != .null {
       let decision: JSONValue = .object(["decisionId": .string("decision-regenerate"), "decisionType": .string("regenerate_plan"), "policyId": .string(policyId), "policyVersion": .string("1.0.0"), "planId": cObject(currentPlan)["planId"] ?? .null, "revisionId": cObject(currentPlan)["revisionId"] ?? .null, "prescriptionId": .null, "exerciseId": .null, "before": .object([:]), "after": .object([:]), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "evidence": .object(cObject(cObject(currentEvaluation)["constraints"])), "provenance": cObject(state)["provenance"] ?? .object([:])])
       let change: JSONValue = .object(["type": .string("PLAN_REGENERATED"), "reasonCodes": .array([.string("PLAN_REGENERATION_REQUIRED")]), "decisionIds": .array([.string("decision-regenerate")])])

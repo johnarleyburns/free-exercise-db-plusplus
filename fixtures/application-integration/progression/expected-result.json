@@ -1,0 +1,99 @@
+{
+  "adaptation": null,
+  "coachDecisions": [
+    {
+      "after": {
+        "reps": 8,
+        "sets": 1
+      },
+      "before": {
+        "reps": 8,
+        "sets": 1
+      },
+      "decisionType": "insufficient_data",
+      "evidence": {
+        "sets": [
+          {
+            "actualReps": 8,
+            "plannedReps": 8,
+            "setId": null
+          }
+        ]
+      },
+      "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+      "planId": "history-plan",
+      "policyId": "double-progression-v1",
+      "policyVersion": "1.0.0",
+      "prescriptionId": "history-rx",
+      "provenance": {
+        "analysisPolicy": "dbpp-default-volume-v1",
+        "analysisVersion": "1.4.1",
+        "asOf": "2026-08-27T12:00:00-04:00",
+        "dbConverterVersion": "0.8.0",
+        "dbSchemaVersion": "0.3.0",
+        "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+        "historyWindow": {
+          "end": "2026-08-27",
+          "start": "2026-07-31",
+          "type": "last_28_days"
+        },
+        "mappedFraction": null,
+        "planSchemaVersions": [
+          "0.2.0"
+        ],
+        "relationshipSchemaVersion": "0.1.0",
+        "setCredits": {
+          "direct": 1.0,
+          "indirect": 0.5,
+          "stabilizer": 0.0
+        },
+        "stateVersion": "0.1.0",
+        "targetSchemaVersion": null,
+        "timezone": "America/New_York",
+        "workoutCount": 1,
+        "workoutSchemaVersions": [
+          "0.3.0"
+        ]
+      },
+      "reasonCodes": [
+        "INSUFFICIENT_LOAD_DATA"
+      ],
+      "revisionId": "r1",
+      "schemaVersion": "0.1.0"
+    }
+  ],
+  "conflicts": [],
+  "evaluation": null,
+  "issues": [],
+  "missingInformation": [],
+  "operation": "suggest_progression",
+  "plan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "planId": "history-plan",
+    "revisionId": "r1",
+    "schemaVersion": "0.2.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "prescriptionId": "history-rx",
+            "reps": 8,
+            "sets": 1
+          }
+        ],
+        "planSessionId": "history-session"
+      }
+    ]
+  },
+  "provenance": {},
+  "requestId": "app-progression",
+  "resolution": null,
+  "schemaVersion": "0.1.0",
+  "status": "progression_available",
+  "trainingState": null,
+  "warnings": []
+}

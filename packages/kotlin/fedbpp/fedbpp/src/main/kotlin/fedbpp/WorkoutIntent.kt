@@ -1,6 +1,8 @@
 package com.fedbpp
 
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.EncodeDefault
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
@@ -44,7 +46,15 @@ private object IntentPolicyCatalog {
 @Serializable data class WorkoutPreferences(val preferredExerciseIds: List<String> = emptyList(), val avoidedExerciseIds: List<String> = emptyList(), val preferredFamilyIds: List<String> = emptyList(), val avoidedFamilyIds: List<String> = emptyList())
 @Serializable data class EquipmentOverrides(val addEquipment: List<String> = emptyList(), val removeEquipment: List<String> = emptyList())
 @Serializable data class WorkoutIntent(val schemaVersion: String = "0.1.0", val intentId: String? = null, val subjectId: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val requestedPlanningPolicy: String? = null, val environment: String? = null, val schedule: WorkoutSchedule? = null, val sessionConstraints: SessionConstraints? = null, val exerciseConstraints: ExerciseConstraints? = null, val preferences: WorkoutPreferences? = null, val equipmentOverrides: EquipmentOverrides? = null, val continuity: String? = null, val useHistory: Boolean? = null, val historyWindow: String? = null)
-@Serializable data class ExplicitOverrides(val goalPolicy: Boolean = false, val planningPolicy: Boolean = false, val target: Boolean = false, val trainingProfile: Boolean = false, val equipmentAdded: List<String> = emptyList(), val equipmentRemoved: List<String> = emptyList())
+@OptIn(ExperimentalSerializationApi::class)
+@Serializable data class ExplicitOverrides(
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val goalPolicy: Boolean = false,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val planningPolicy: Boolean = false,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val target: Boolean = false,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val trainingProfile: Boolean = false,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val equipmentAdded: List<String> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val equipmentRemoved: List<String> = emptyList()
+)
 @Serializable data class GoalPolicyReference(val policyId: String, val policyVersion: String, val description: String? = null)
 @Serializable data class MissingInformation(val field: String, val reason: String)
 @Serializable(with = IntentConflictSerializer::class) data class IntentConflict(val code: String, val detail: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val policyGoal: String? = null, val exerciseId: String? = null, val familyId: String? = null)
@@ -66,7 +76,22 @@ object IntentConflictSerializer : KSerializer<IntentConflict> {
         return IntentConflict(value["code"]?.jsonPrimitive?.content ?: error("code is required"), text("detail"), text("goal"), text("requestedGoalPolicy"), text("policyGoal"), text("exerciseId"), text("familyId"))
     }
 }
-@Serializable data class IntentResolutionResult(val status: String, val resolvedProfile: JsonElement? = null, val resolvedTarget: JsonElement? = null, val planningPolicy: String? = null, val goalPolicy: GoalPolicyReference? = null, val environmentPolicy: String? = null, val generationOptions: JsonElement = JsonObject(emptyMap()), val missingInformation: List<MissingInformation> = emptyList(), val warnings: List<String> = emptyList(), val conflicts: List<IntentConflict> = emptyList(), val defaultsApplied: List<String> = emptyList(), val explicitOverrides: ExplicitOverrides = ExplicitOverrides(), val provenance: Map<String, JsonElement> = emptyMap())
+@OptIn(ExperimentalSerializationApi::class)
+@Serializable data class IntentResolutionResult(
+    val status: String,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val resolvedProfile: JsonElement? = null,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val resolvedTarget: JsonElement? = null,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val planningPolicy: String? = null,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val goalPolicy: GoalPolicyReference? = null,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val environmentPolicy: String? = null,
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val generationOptions: JsonElement = JsonObject(emptyMap()),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val missingInformation: List<MissingInformation> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val warnings: List<String> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val conflicts: List<IntentConflict> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val defaultsApplied: List<String> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val explicitOverrides: ExplicitOverrides = ExplicitOverrides(),
+    @EncodeDefault(EncodeDefault.Mode.ALWAYS) val provenance: Map<String, JsonElement> = emptyMap()
+)
 
 object WorkoutIntentValidator {
     val weekdays = listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")

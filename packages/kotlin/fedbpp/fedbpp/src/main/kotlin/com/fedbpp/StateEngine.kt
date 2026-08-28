@@ -23,7 +23,7 @@ private fun JsonElement?.evRangeTriple(): Triple<Double, Double, Double> = when 
     else -> Triple(0.0, 0.0, 0.0)
 }
 
-fun deriveTrainingStateCanonical(history: JsonElement, asOf: Instant, window: TrainingHistoryWindow, database: Database?, relationships: ExerciseRelationships?, target: JsonElement? = null): JsonElement {
+fun deriveTrainingStateCanonical(history: JsonElement, asOf: Instant, window: TrainingHistoryWindow, database: Database?, relationships: ExerciseRelationships?, target: JsonElement? = null, canonicalAsOf: String? = null): JsonElement {
     val root = history.stObj(); val targetWasExplicit = target != null
     val effectiveTarget = target ?: root["targets"].stArr().lastOrNull()
     val plans = root["plans"].stArr().map { it.stObj() }
@@ -50,7 +50,7 @@ fun deriveTrainingStateCanonical(history: JsonElement, asOf: Instant, window: Tr
     }
     val workouts = root["workouts"].stArr().map { it.stObj() }.filter { val t = stInstant(it["startTime"].stStr()); t != null && t.atZone(zone).toLocalDate() >= start && t.atZone(zone).toLocalDate() <= asDate }
     val stateWorkouts = workouts.filter { stInstant(it["startTime"].stStr())?.let { timestamp -> timestamp <= asOf } == true }
-    val canonicalAsOf = root["asOf"]?.jsonPrimitive?.contentOrNull ?: (asOf.toString().removeSuffix("Z") + "+00:00"); val periodStart = start.toString(); val periodEnd = end.toString()
+    val canonicalAsOf = canonicalAsOf ?: root["asOf"]?.jsonPrimitive?.contentOrNull ?: (asOf.toString().removeSuffix("Z") + "+00:00"); val periodStart = start.toString(); val periodEnd = end.toString()
     val sessionRows = mutableListOf<JsonObject>(); val historyExerciseRows = mutableListOf<JsonObject>(); val consumedWorkouts = mutableSetOf<String>()
     val directActual = sortedMapOf<String, Double>(); val indirectActual = sortedMapOf<String, Double>(); val stabilizerActual = sortedMapOf<String, Double>(); val exposureActual = sortedMapOf<String, Double>()
     fun countedSets(exercise: JsonObject): List<JsonObject> = stCompleted(exercise)

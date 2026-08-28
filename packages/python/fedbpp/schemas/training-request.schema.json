@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/johnarleyburns/free-exercise-db-plusplus/blob/main/training-request.schema.json",
+  "title": "Free Exercise DB++ Training Request",
+  "description": "Transport-neutral application orchestration request. The operation is explicit; the engine never guesses between generation and adaptation.",
+  "type": "object",
+  "required": ["schemaVersion", "requestId", "operation"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "operation": { "enum": ["resolve_intent", "generate_from_intent", "generate_plan", "evaluate_plan", "derive_state", "suggest_progression", "adapt_plan"] },
+    "intent": { "type": "object" },
+    "profile": { "type": "object" },
+    "target": { "type": "object" },
+    "history": { "type": "object" },
+    "trainingState": { "type": "object" },
+    "currentPlan": { "type": "object" },
+    "plan": { "type": "object" },
+    "asOf": { "type": "string", "format": "date-time" },
+    "historyWindow": { "oneOf": [{ "type": "string" }, { "type": "object" }] },
+    "options": { "type": "object" }
+  },
+  "allOf": [
+    { "if": { "properties": { "operation": { "const": "resolve_intent" } } }, "then": { "required": ["intent"] } },
+    { "if": { "properties": { "operation": { "const": "generate_from_intent" } } }, "then": { "required": ["intent"] } },
+    { "if": { "properties": { "operation": { "const": "generate_plan" } } }, "then": { "required": ["profile", "target"] } },
+    { "if": { "properties": { "operation": { "const": "evaluate_plan" } } }, "then": { "required": ["plan"] } },
+    { "if": { "properties": { "operation": { "const": "derive_state" } } }, "then": { "required": ["history", "asOf"] } },
+    { "if": { "properties": { "operation": { "const": "suggest_progression" } } }, "then": { "required": ["plan", "trainingState"] } },
+    { "if": { "properties": { "operation": { "const": "adapt_plan" } } }, "then": { "required": ["currentPlan", "profile", "target", "history", "asOf"] } }
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,79 @@
+{
+  "asOf": "2026-08-25T12:00:00Z",
+  "history": {
+    "planActivations": [
+      {
+        "effectiveFrom": "2026-08-01T00:00:00Z",
+        "planId": "history-plan",
+        "revisionId": "r1"
+      }
+    ],
+    "plans": [
+      {
+        "cycle": {
+          "lengthDays": 7
+        },
+        "planId": "history-plan",
+        "revisionId": "r1",
+        "schemaVersion": "0.2.0",
+        "sessions": [
+          {
+            "dayOffset": 0,
+            "exercises": [
+              {
+                "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+                "prescriptionId": "history-rx",
+                "reps": 8,
+                "sets": 1
+              }
+            ],
+            "planSessionId": "history-session"
+          }
+        ]
+      }
+    ],
+    "subjectId": "fixture-subject",
+    "workouts": [
+      {
+        "exercises": [
+          {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exercisePrescriptionId": "history-rx",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 8,
+                "setType": "working"
+              }
+            ]
+          }
+        ],
+        "planReference": {
+          "planId": "history-plan",
+          "planSessionId": "history-session",
+          "revisionId": "r1"
+        },
+        "schemaVersion": "0.3.0",
+        "sessionId": "history-workout",
+        "startTime": "2026-08-24T12:00:00Z"
+      }
+    ]
+  },
+  "intent": {
+    "continuity": "preserve",
+    "environment": "commercial_gym",
+    "goal": "hypertrophy",
+    "historyWindow": "last_28_days",
+    "schedule": {
+      "cycleLengthDays": 7,
+      "sessionsPerCycle": {
+        "target": 3
+      }
+    },
+    "schemaVersion": "0.1.0",
+    "useHistory": true
+  },
+  "operation": "generate_from_intent",
+  "requestId": "app-generate-history-aware",
+  "schemaVersion": "0.1.0"
+}

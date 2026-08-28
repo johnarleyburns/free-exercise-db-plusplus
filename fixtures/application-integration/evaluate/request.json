@@ -1,0 +1,203 @@
+{
+  "operation": "evaluate_plan",
+  "plan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "description": "A simple four-session plan on a seven-day cycle.",
+    "name": "Basic Upper / Lower",
+    "planId": "basic-upper-lower",
+    "provenance": {
+      "recordId": "example",
+      "system": "fedbpp-example",
+      "version": "0.1"
+    },
+    "revisionId": "basic-upper-lower-r1",
+    "schemaVersion": "0.1.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": {
+                "target": 2
+              }
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "load": {
+              "unit": "kg",
+              "value": 80
+            },
+            "order": 1,
+            "prescriptionId": "upper-a-bench",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 4
+          },
+          {
+            "effort": {
+              "rpe": {
+                "max": 9,
+                "min": 7,
+                "target": 8
+              }
+            },
+            "exerciseName": "Custom Chest-Supported Row",
+            "load": {
+              "unit": "kg",
+              "value": 60
+            },
+            "notes": "Use the same machine each cycle.",
+            "order": 2,
+            "prescriptionId": "upper-a-row",
+            "reps": 10,
+            "sets": 3
+          }
+        ],
+        "name": "Upper A",
+        "planSessionId": "upper-a"
+      },
+      {
+        "dayOffset": 1,
+        "exercises": [
+          {
+            "effort": {
+              "rir": {
+                "min": 1,
+                "target": 2
+              }
+            },
+            "exerciseId": "Barbell_Squat",
+            "load": {
+              "unit": "kg",
+              "value": 100
+            },
+            "order": 1,
+            "prescriptionId": "lower-a-squat",
+            "reps": {
+              "max": 8,
+              "min": 5,
+              "target": 6
+            },
+            "sets": 4
+          }
+        ],
+        "name": "Lower A",
+        "planSessionId": "lower-a"
+      },
+      {
+        "dayOffset": 3,
+        "exercises": [
+          {
+            "exerciseId": "Dumbbell_Bench_Press",
+            "laterality": "bilateral",
+            "load": {
+              "max": 28,
+              "min": 24,
+              "target": 26,
+              "unit": "kg"
+            },
+            "order": 1,
+            "prescriptionId": "upper-b-press",
+            "reps": {
+              "max": 12,
+              "min": 8,
+              "target": 10
+            },
+            "sets": 3
+          }
+        ],
+        "name": "Upper B",
+        "planSessionId": "upper-b"
+      },
+      {
+        "dayOffset": 4,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Barbell_Deadlift",
+            "load": {
+              "unit": "kg",
+              "value": 140
+            },
+            "order": 1,
+            "prescriptionId": "lower-b-deadlift",
+            "reps": 5,
+            "sets": 3
+          }
+        ],
+        "name": "Lower B",
+        "planSessionId": "lower-b"
+      }
+    ]
+  },
+  "profile": {
+    "availability": {
+      "cycleLengthDays": 7,
+      "minutesPerSession": {
+        "max": 60
+      },
+      "sessionsPerCycle": {
+        "max": 4
+      }
+    },
+    "constraints": {
+      "excludedExerciseIds": [
+        "Barbell_Squat"
+      ]
+    },
+    "equipment": [
+      "barbell",
+      "dumbbell"
+    ],
+    "exercisePreferences": {
+      "preferredFamilyIds": [
+        "bench_press"
+      ]
+    },
+    "profileId": "golden-v16-profile",
+    "schemaVersion": "0.1.0"
+  },
+  "requestId": "app-evaluate",
+  "schemaVersion": "0.1.0",
+  "target": {
+    "muscles": {
+      "back": {
+        "max": 22,
+        "min": 10,
+        "target": 14
+      },
+      "chest": {
+        "max": 20,
+        "min": 8,
+        "target": 12
+      },
+      "hamstrings": {
+        "max": 16,
+        "min": 6,
+        "target": 10
+      },
+      "quadriceps": {
+        "max": 18,
+        "min": 8,
+        "target": 12
+      }
+    },
+    "notes": "Effective-set criteria per seven-day period.",
+    "periodDays": 7,
+    "provenance": {
+      "recordId": "target-example",
+      "system": "fedbpp-example",
+      "version": "0.1"
+    },
+    "schemaVersion": "0.1.0",
+    "targetId": "hypertrophy-general"
+  }
+}

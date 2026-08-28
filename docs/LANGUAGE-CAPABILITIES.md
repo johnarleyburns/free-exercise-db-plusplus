@@ -3,7 +3,8 @@
 v1.11 completed the Python reference engine and full Swift semantic engine
 parity. v1.12 completed the Swift SPM application-grade API and packaging
 hardening. v1.13 completed the native Kotlin/JVM engine port. v1.14 completes
-the native R research/analysis engine.
+the native R research/analysis engine. v1.15 adds a shared application
+integration contract over all four engines.
 
 | Capability | Python | Swift | Kotlin/JVM | R |
 | --- | --- | --- | --- | --- |
@@ -15,6 +16,7 @@ the native R research/analysis engine.
 | Plan evaluation | full | full native | full native | full native |
 | Progression and CoachDecision | full | full native | full native | full native |
 | Adaptive coaching | full | full native | full native | full native |
+| Application request/result facade | full | full typed | full typed | full named-list |
 
 Python, Swift, Kotlin, and R are offline and do not invoke network services or an
 LLM. Swift, Kotlin, and R include policy defaults, weekday mapping, deterministic equipment

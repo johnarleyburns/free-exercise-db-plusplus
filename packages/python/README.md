@@ -2,6 +2,13 @@
 
 Standalone helpers for DB++, Workout ACTUAL, Workout PLAN 0.1/0.2, Volume TARGET, and derived analysis. Install from this directory with `pip install .` or use `pip install -e .` during development. Built wheels include their schemas and reference analysis implementation; they never import repository-level `src.*`. JSON Schema validation uses the optional `jsonschema` dependency.
 
+The application facade is `process_training_request()`. It accepts a
+`TrainingRequest` or the equivalent JSON-shaped dictionary and dispatches an
+explicit `resolve_intent`, `generate_from_intent`, `generate_plan`,
+`evaluate_plan`, `derive_state`, `suggest_progression`, or `adapt_plan`
+operation. See [the application guide](../../docs/APPLICATION-INTEGRATION.md)
+and `examples/app-integration/python/example.py`.
+
 The v1.5 wheel embeds `exercise-relationships.json`. Load it outside a
 repository checkout with `RelationshipRegistry.load()`. Family lookup,
 members, related candidates, structural comparison, and DB++ coverage

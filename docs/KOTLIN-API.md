@@ -7,7 +7,10 @@ deterministic, independent of the Android SDK, and bundles canonical resources.
 ## Installation and facade
 
 Run `./packages/kotlin/fedbpp/gradlew --no-daemon test --project-dir packages/kotlin/fedbpp`.
-Applications can depend on the `fedbpp` module or its JVM artifact.
+Applications can depend on the `fedbpp` module or its JVM artifact. The
+application boundary is `TrainingRequest` plus the extension
+`engine.processTrainingRequest(request)`; it uses the same explicit operation
+names and result statuses as the Python, Swift, and R facades.
 
 ```kotlin
 import com.fedbpp.*
@@ -27,6 +30,23 @@ val resolution = engine.resolveIntent(intent)
 val generated = engine.generatePlanFromIntent(intent)
 val plan = generated.generation?.plan
 val evaluation = plan?.let { engine.evaluatePlan(it) }
+```
+
+For transport-neutral JSON, decode a request with kotlinx.serialization and
+dispatch it explicitly:
+
+```kotlin
+val request = TrainingRequest(
+    requestId = "request-1", operation = TrainingOperation.GENERATE_FROM_INTENT,
+    intent = intent, asOf = "2026-08-28T12:00:00Z"
+)
+val result = engine.processTrainingRequest(request)
+when (result.status) {
+    "needs_clarification" -> println(result.missingInformation)
+    "generated", "generated_with_target_gaps" -> println(result.plan)
+    "invalid", "unsatisfiable" -> println(result.issues)
+    else -> println(result.status)
+}
 ```
 
 The facade also exposes `validateIntent`, `deriveTrainingState`,

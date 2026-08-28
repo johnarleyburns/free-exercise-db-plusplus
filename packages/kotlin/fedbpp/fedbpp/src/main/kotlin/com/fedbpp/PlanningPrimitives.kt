@@ -1,9 +1,14 @@
 package com.fedbpp
 
 import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.jsonPrimitive
+
+internal val JsonElement?.planJsonObjectOrEmpty: JsonObject
+    get() = this as? JsonObject ?: JsonObject(emptyMap())
+internal fun JsonElement?.planJsonArrayOrEmpty(): JsonArray = this as? JsonArray ?: JsonArray(emptyList())
 
 /** Exact deterministic day-offset selection used by Python's planning.py. */
 internal fun canonicalDayOffsets(cycleDays: Int, count: Int, preferred: List<Int>, excluded: Set<Int>, locked: List<Int> = emptyList()): List<Int>? {

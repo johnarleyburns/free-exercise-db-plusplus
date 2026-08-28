@@ -12,6 +12,8 @@ on:
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
       - "workout-intent.schema.json"
+      - "training-request.schema.json"
+      - "training-result.schema.json"
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
@@ -41,6 +43,8 @@ on:
       - "workout-plan.schema.json"
       - "volume-target.schema.json"
       - "workout-intent.schema.json"
+      - "training-request.schema.json"
+      - "training-result.schema.json"
       - "interop-mapping.schema.json"
       - "exercise-interop-mapping.schema.json"
       - "mapping-loss.schema.json"
@@ -308,6 +312,14 @@ jobs:
           cmp workout-intent.schema.json packages/python/fedbpp/schemas/workout-intent.schema.json
           cmp workout-intent.schema.json packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/workout-intent.schema.json
           cmp workout-intent.schema.json packages/kotlin/fedbpp/fedbpp/src/main/resources/workout-intent.schema.json
+          cmp training-request.schema.json packages/python/fedbpp/schemas/training-request.schema.json
+          cmp training-request.schema.json packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/training-request.schema.json
+          cmp training-request.schema.json packages/kotlin/fedbpp/fedbpp/src/main/resources/training-request.schema.json
+          cmp training-request.schema.json packages/r/fedbpp/inst/extdata/training-request.schema.json
+          cmp training-result.schema.json packages/python/fedbpp/schemas/training-result.schema.json
+          cmp training-result.schema.json packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/training-result.schema.json
+          cmp training-result.schema.json packages/kotlin/fedbpp/fedbpp/src/main/resources/training-result.schema.json
+          cmp training-result.schema.json packages/r/fedbpp/inst/extdata/training-result.schema.json
           cmp workout-intent.schema.json packages/r/fedbpp/inst/extdata/workout-intent.schema.json
 
       - name: Test ACTUAL 0.2 to 0.3 migration
@@ -508,12 +520,16 @@ jobs:
           swift test --package-path packages/swift/FreeExerciseDBPlusPlus
           bash scripts/test_swift_resources.sh
           bash scripts/test_swift_consumer.sh
+          bash scripts/test_application_swift_parity.sh
+          swift build --package-path examples/app-integration/swift
 
       - name: Test Kotlin consumer package
         run: |
           packages/kotlin/fedbpp/gradlew --no-daemon test --project-dir packages/kotlin/fedbpp
           bash scripts/test_kotlin_resources.sh
           bash scripts/test_kotlin_consumer.sh
+          bash scripts/test_application_kotlin_parity.sh
+          packages/kotlin/fedbpp/gradlew --no-daemon build --project-dir examples/app-integration/kotlin
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
@@ -528,6 +544,17 @@ jobs:
           cd ../../..
           bash scripts/test_r_consumer.sh
           bash scripts/test_r_python_parity.sh
+          bash scripts/test_application_r_parity.sh
+          r_example_lib="${RUNNER_TEMP}/fedbpp-r-example-lib"
+          mkdir -p "$r_example_lib"
+          R CMD INSTALL --library="$r_example_lib" packages/r/fedbpp >/dev/null
+          R_LIBS_USER="$r_example_lib${R_LIBS_USER:+:$R_LIBS_USER}" Rscript examples/app-integration/r/example.R
+          cd packages/r/fedbpp
+
+      - name: Test application contract Python consumer
+        run: |
+          bash scripts/test_application_python_parity.sh
+          PYTHONPATH=packages/python python3 examples/app-integration/python/example.py >/dev/null
 
       - name: Prepare reports directory
         run: mkdir -p reports

@@ -6,6 +6,7 @@ export(load_database, load_relationships, family_for, family_members, related_ex
        read_workout_intent, write_workout_intent, read_intent_policies,
        validate_workout_intent, resolve_intent,
        read_training_history, write_training_history, validate_training_history,
+       read_training_request, write_training_request, process_training_request,
        effective_sets, workout_observations, longitudinal_volume,
        analyze_plan, compare_to_targets, evaluate_plan,
        derive_training_state, apply_progression_policy, suggest_progression,

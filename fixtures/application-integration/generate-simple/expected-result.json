@@ -1,0 +1,775 @@
+{
+  "adaptation": null,
+  "coachDecisions": [],
+  "conflicts": [],
+  "evaluation": {
+    "availability": {
+      "max": 5,
+      "min": 5,
+      "plannedSessions": 5,
+      "state": "at_target",
+      "target": 5
+    },
+    "constraints": {
+      "violations": []
+    },
+    "coverageCompleteness": {
+      "ineligiblePrescriptions": [],
+      "ineligibleSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "ineligibleSets": 0.0,
+      "mappedFraction": 1.0,
+      "mappedSetRange": {
+        "max": 19.0,
+        "min": 19.0,
+        "target": 19.0
+      },
+      "mappedSets": 19.0,
+      "plannedSetRange": {
+        "max": 19.0,
+        "min": 19.0,
+        "target": 19.0
+      },
+      "plannedSets": 19.0,
+      "unmappedPrescriptions": [],
+      "unmappedSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "unmappedSets": 0.0
+    },
+    "equipment": {
+      "supportedExercises": [
+        "Alternating_Floor_Press",
+        "Alternating_Hang_Clean",
+        "Alternating_Kettlebell_Row",
+        "Ball_Leg_Curl"
+      ],
+      "unknownEquipmentExercises": [],
+      "unsupportedExercises": []
+    },
+    "exerciseCounts": {
+      "session-1": {
+        "exerciseCount": 3,
+        "maximum": 4,
+        "minimum": 3,
+        "state": "within_range",
+        "target": null
+      },
+      "session-2": {
+        "exerciseCount": 3,
+        "maximum": 4,
+        "minimum": 3,
+        "state": "within_range",
+        "target": null
+      },
+      "session-3": {
+        "exerciseCount": 3,
+        "maximum": 4,
+        "minimum": 3,
+        "state": "within_range",
+        "target": null
+      },
+      "session-4": {
+        "exerciseCount": 3,
+        "maximum": 4,
+        "minimum": 3,
+        "state": "within_range",
+        "target": null
+      },
+      "session-5": {
+        "exerciseCount": 3,
+        "maximum": 4,
+        "minimum": 3,
+        "state": "within_range",
+        "target": null
+      }
+    },
+    "families": {
+      "coverage": {
+        "row": {
+          "exerciseIds": [
+            "Alternating_Kettlebell_Row"
+          ],
+          "familyId": "row",
+          "name": "Row",
+          "plannedSetRanges": {
+            "max": 6.0,
+            "min": 6.0,
+            "target": 6.0
+          },
+          "plannedSets": 6.0,
+          "sessionExposures": 4,
+          "sessions": [
+            "session-1",
+            "session-2",
+            "session-3",
+            "session-5"
+          ],
+          "variantDimensions": {
+            "Alternating_Kettlebell_Row": {
+              "equipment": "kettlebell"
+            }
+          },
+          "variantDimensionsUsed": {
+            "equipment": [
+              "kettlebell"
+            ]
+          }
+        }
+      },
+      "targets": {}
+    },
+    "frequency": {},
+    "movementPatterns": {},
+    "muscleCoverage": {
+      "biceps": {
+        "actualEffectiveSets": 3.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 3.0,
+          "min": 3.0,
+          "target": 3.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "calves": {
+        "actualEffectiveSets": 3.5,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 3.5,
+          "min": 3.5,
+          "target": 3.5
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "chest": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": 0.0,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "at_target",
+        "target": 6
+      },
+      "glutes": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "hamstrings": {
+        "actualEffectiveSets": 4.0,
+        "differenceFromTarget": 0.0,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 4.0,
+          "min": 4.0,
+          "target": 4.0
+        },
+        "state": "at_target",
+        "target": 4
+      },
+      "lats": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": 0.0,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "at_target",
+        "target": 6
+      },
+      "middle_back": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "quadriceps": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": 0.0,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "at_target",
+        "target": 6
+      },
+      "shoulders": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "traps": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "triceps": {
+        "actualEffectiveSets": 6.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 6.0,
+          "min": 6.0,
+          "target": 6.0
+        },
+        "state": "not_targeted",
+        "target": null
+      }
+    },
+    "preferences": {
+      "avoidedExercisesUsed": [],
+      "avoidedFamiliesUsed": [],
+      "findings": [],
+      "preferredExercisesUsed": [],
+      "preferredFamiliesUsed": []
+    },
+    "provenance": {
+      "analysisPolicy": "plan-evaluation-v1",
+      "analysisVersion": "0.1.0",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "durationPolicy": null,
+      "planSchemaVersion": "0.2.0",
+      "profileSchemaVersion": "0.1.0",
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "targetSchemaVersion": "0.1.0"
+    },
+    "summary": {
+      "evaluationStatus": "valid",
+      "hardConstraintViolations": 0,
+      "meetsTargetMinimums": true,
+      "satisfiesHardConstraints": true,
+      "softPreferenceWarnings": 0,
+      "targetGaps": 0
+    },
+    "warnings": []
+  },
+  "issues": [],
+  "missingInformation": [],
+  "operation": "generate_from_intent",
+  "plan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "description": null,
+    "name": "Generated full-body-general-v1",
+    "planId": "generated-plan",
+    "revisionId": "r1",
+    "schemaVersion": "0.2.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Floor_Press",
+            "exerciseName": "Alternating Floor Press",
+            "order": 1,
+            "prescriptionId": "rx-01-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 2
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Hang_Clean",
+            "exerciseName": "Alternating Hang Clean",
+            "order": 2,
+            "prescriptionId": "rx-01-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 2
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Kettlebell_Row",
+            "exerciseName": "Alternating Kettlebell Row",
+            "order": 3,
+            "prescriptionId": "rx-01-03",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 2
+          }
+        ],
+        "name": "Session 1",
+        "planSessionId": "session-1"
+      },
+      {
+        "dayOffset": 1,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Kettlebell_Row",
+            "exerciseName": "Alternating Kettlebell Row",
+            "order": 1,
+            "prescriptionId": "rx-02-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Floor_Press",
+            "exerciseName": "Alternating Floor Press",
+            "order": 2,
+            "prescriptionId": "rx-02-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Hang_Clean",
+            "exerciseName": "Alternating Hang Clean",
+            "order": 3,
+            "prescriptionId": "rx-02-03",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 2",
+        "planSessionId": "session-2"
+      },
+      {
+        "dayOffset": 2,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Hang_Clean",
+            "exerciseName": "Alternating Hang Clean",
+            "order": 1,
+            "prescriptionId": "rx-03-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Kettlebell_Row",
+            "exerciseName": "Alternating Kettlebell Row",
+            "order": 2,
+            "prescriptionId": "rx-03-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Floor_Press",
+            "exerciseName": "Alternating Floor Press",
+            "order": 3,
+            "prescriptionId": "rx-03-03",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 3",
+        "planSessionId": "session-3"
+      },
+      {
+        "dayOffset": 3,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Floor_Press",
+            "exerciseName": "Alternating Floor Press",
+            "order": 1,
+            "prescriptionId": "rx-04-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Hang_Clean",
+            "exerciseName": "Alternating Hang Clean",
+            "order": 2,
+            "prescriptionId": "rx-04-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Ball_Leg_Curl",
+            "exerciseName": "Ball Leg Curl",
+            "order": 3,
+            "prescriptionId": "rx-04-03",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 4",
+        "planSessionId": "session-4"
+      },
+      {
+        "dayOffset": 5,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Kettlebell_Row",
+            "exerciseName": "Alternating Kettlebell Row",
+            "order": 1,
+            "prescriptionId": "rx-05-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 2
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Floor_Press",
+            "exerciseName": "Alternating Floor Press",
+            "order": 2,
+            "prescriptionId": "rx-05-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Alternating_Hang_Clean",
+            "exerciseName": "Alternating Hang Clean",
+            "order": 3,
+            "prescriptionId": "rx-05-03",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 5",
+        "planSessionId": "session-5"
+      }
+    ]
+  },
+  "provenance": {
+    "analysisPolicy": "dbpp-default-volume-v1",
+    "currentPlanRevisionId": null,
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+    "evaluationVersion": "0.1.0",
+    "generatorVersion": "0.1.0",
+    "policyId": "full-body-general-v1",
+    "policyVersion": "1",
+    "relationshipSchemaVersion": "0.1.0",
+    "setCredits": {
+      "direct": 1.0,
+      "indirect": 0.5,
+      "stabilizer": 0.0
+    },
+    "targetSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingStateVersion": null
+  },
+  "requestId": "app-generate-simple",
+  "resolution": {
+    "conflicts": [],
+    "defaultsApplied": [
+      "goalPolicy",
+      "planningPolicy",
+      "environmentPolicy"
+    ],
+    "environmentPolicy": "commercial-gym-general-v1",
+    "explicitOverrides": {
+      "equipmentAdded": [],
+      "equipmentRemoved": [],
+      "goalPolicy": false,
+      "planningPolicy": false,
+      "target": false,
+      "trainingProfile": false
+    },
+    "generationOptions": {
+      "continuity": "neutral",
+      "effortDefaults": {
+        "rir": 2
+      },
+      "repDefaults": {
+        "max": 12,
+        "min": 6,
+        "target": 8
+      },
+      "requiredFamilyIds": []
+    },
+    "goalPolicy": {
+      "description": "General, conservative coverage defaults; not an optimal prescription.",
+      "policyId": "general-hypertrophy-v1",
+      "policyVersion": "1"
+    },
+    "missingInformation": [],
+    "planningPolicy": "full-body-general-v1",
+    "provenance": {
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "environmentPolicy": {
+        "policyId": "commercial-gym-general-v1",
+        "policyVersion": "1"
+      },
+      "goalPolicy": {
+        "policyId": "general-hypertrophy-v1",
+        "policyVersion": "1"
+      },
+      "intentSchemaVersion": "0.1.0",
+      "relationshipSchemaVersion": "0.1.0"
+    },
+    "resolvedProfile": {
+      "availability": {
+        "cycleLengthDays": 7,
+        "excludedDayOffsets": [],
+        "exercisesPerSession": {
+          "max": 4,
+          "min": 3
+        },
+        "preferredDayOffsets": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "sessionsPerCycle": {
+          "max": 5,
+          "min": 5,
+          "target": 5
+        }
+      },
+      "constraints": {
+        "excludedExerciseIds": [],
+        "excludedFamilyIds": []
+      },
+      "equipment": [
+        "bands",
+        "barbell",
+        "body only",
+        "cable",
+        "dumbbell",
+        "e-z curl bar",
+        "exercise ball",
+        "kettlebells",
+        "machine",
+        "medicine ball"
+      ],
+      "exercisePreferences": {},
+      "goals": [
+        {
+          "type": "hypertrophy"
+        }
+      ],
+      "profileId": "resolved-profile",
+      "schemaVersion": "0.1.0",
+      "subjectId": null
+    },
+    "resolvedTarget": {
+      "muscles": {
+        "chest": {
+          "target": 6
+        },
+        "hamstrings": {
+          "target": 4
+        },
+        "lats": {
+          "target": 6
+        },
+        "quadriceps": {
+          "target": 6
+        }
+      },
+      "notes": "General, conservative coverage defaults; not an optimal prescription.",
+      "periodDays": 7,
+      "schemaVersion": "0.1.0",
+      "targetId": "general-hypertrophy-v1-default"
+    },
+    "status": "resolved_with_defaults",
+    "warnings": []
+  },
+  "schemaVersion": "0.1.0",
+  "status": "generated",
+  "trainingState": null,
+  "warnings": []
+}

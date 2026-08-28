@@ -152,7 +152,23 @@ public struct PlanExercisePrescription: Codable, Sendable, Equatable { public le
 public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public var name: String? = nil; public var notes: String? = nil; public let exercises: [PlanExercisePrescription]; public init(planSessionId: String, phaseId: String? = nil, dayOffset: Int, name: String? = nil, notes: String? = nil, exercises: [PlanExercisePrescription]) { self.planSessionId = planSessionId; self.phaseId = phaseId; self.dayOffset = dayOffset; self.name = name; self.notes = notes; self.exercises = exercises } }
 public struct WorkoutPlan: Codable, Sendable, Equatable {
     public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String?; public var description: String? = nil; public var provenance: JSONValue? = nil; public let cycle: PlanCycle; public var notes: String? = nil; public var tags: [String]? = nil; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
-    public init(schemaVersion: String = "0.2.0", planId: String, revisionId: String, name: String? = nil, description: String? = nil, provenance: JSONValue? = nil, cycle: PlanCycle, notes: String? = nil, tags: [String]? = nil, phases: [PlanPhase]? = nil, sessions: [PlanSession]) { self.schemaVersion = schemaVersion; self.planId = planId; self.revisionId = revisionId; self.name = name; self.description = description; self.provenance = provenance; self.cycle = cycle; self.notes = notes; self.tags = tags; self.phases = phases; self.sessions = sessions }
+    private let descriptionWasPresent: Bool
+    public init(schemaVersion: String = "0.2.0", planId: String, revisionId: String, name: String? = nil, description: String? = nil, provenance: JSONValue? = nil, cycle: PlanCycle, notes: String? = nil, tags: [String]? = nil, phases: [PlanPhase]? = nil, sessions: [PlanSession]) { self.schemaVersion = schemaVersion; self.planId = planId; self.revisionId = revisionId; self.name = name; self.description = description; self.descriptionWasPresent = description != nil; self.provenance = provenance; self.cycle = cycle; self.notes = notes; self.tags = tags; self.phases = phases; self.sessions = sessions }
+    private enum CodingKeys: String, CodingKey { case schemaVersion, planId, revisionId, name, description, provenance, cycle, notes, tags, phases, sessions }
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        schemaVersion = try c.decode(String.self, forKey: .schemaVersion); planId = try c.decode(String.self, forKey: .planId); revisionId = try c.decode(String.self, forKey: .revisionId)
+        name = try c.decodeIfPresent(String.self, forKey: .name); description = try c.decodeIfPresent(String.self, forKey: .description); descriptionWasPresent = c.contains(.description)
+        provenance = try c.decodeIfPresent(JSONValue.self, forKey: .provenance); cycle = try c.decode(PlanCycle.self, forKey: .cycle)
+        notes = try c.decodeIfPresent(String.self, forKey: .notes); tags = try c.decodeIfPresent([String].self, forKey: .tags); phases = try c.decodeIfPresent([PlanPhase].self, forKey: .phases); sessions = try c.decode([PlanSession].self, forKey: .sessions)
+    }
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(schemaVersion, forKey: .schemaVersion); try c.encode(planId, forKey: .planId); try c.encode(revisionId, forKey: .revisionId)
+        try c.encodeIfPresent(name, forKey: .name); if descriptionWasPresent { try c.encode(description, forKey: .description) }; try c.encodeIfPresent(provenance, forKey: .provenance)
+        try c.encode(cycle, forKey: .cycle); try c.encodeIfPresent(notes, forKey: .notes); try c.encodeIfPresent(tags, forKey: .tags)
+        try c.encodeIfPresent(phases, forKey: .phases); try c.encode(sessions, forKey: .sessions)
+    }
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> WorkoutPlan { do { return try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode PLAN: \(error)") } }
 }
 

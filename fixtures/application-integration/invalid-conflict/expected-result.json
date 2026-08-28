@@ -1,0 +1,56 @@
+{
+  "adaptation": null,
+  "coachDecisions": [],
+  "conflicts": [
+    {
+      "code": "GOAL_POLICY_MISMATCH",
+      "goal": "hypertrophy",
+      "policyGoal": "strength",
+      "requestedGoalPolicy": "general-strength-v1"
+    }
+  ],
+  "evaluation": null,
+  "issues": [],
+  "missingInformation": [],
+  "operation": "resolve_intent",
+  "plan": null,
+  "provenance": {
+    "intentSchemaVersion": "0.1.0"
+  },
+  "requestId": "app-invalid-conflict",
+  "resolution": {
+    "conflicts": [
+      {
+        "code": "GOAL_POLICY_MISMATCH",
+        "goal": "hypertrophy",
+        "policyGoal": "strength",
+        "requestedGoalPolicy": "general-strength-v1"
+      }
+    ],
+    "defaultsApplied": [],
+    "environmentPolicy": null,
+    "explicitOverrides": {
+      "equipmentAdded": [],
+      "equipmentRemoved": [],
+      "goalPolicy": false,
+      "planningPolicy": false,
+      "target": false,
+      "trainingProfile": false
+    },
+    "generationOptions": {},
+    "goalPolicy": null,
+    "missingInformation": [],
+    "planningPolicy": null,
+    "provenance": {
+      "intentSchemaVersion": "0.1.0"
+    },
+    "resolvedProfile": null,
+    "resolvedTarget": null,
+    "status": "invalid",
+    "warnings": []
+  },
+  "schemaVersion": "0.1.0",
+  "status": "invalid",
+  "trainingState": null,
+  "warnings": []
+}

@@ -29,6 +29,21 @@ evaluation <- evaluate_plan(plan, db, resolved$resolvedProfile,
                              resolved$resolvedTarget, relationships)
 ```
 
+For a stable host-application envelope, construct a named list matching
+`training-request.schema.json` and call the explicit facade operation:
+
+```r
+request <- list(schemaVersion="0.1.0", requestId="request-1",
+                operation="generate_from_intent", intent=intent,
+                asOf="2026-08-28T12:00:00Z")
+result <- process_training_request(request, db, relationships)
+if (result$status %in% c("generated", "generated_with_target_gaps")) {
+  plan <- result$plan
+} else if (identical(result$status, "needs_clarification")) {
+  print(result$missingInformation)
+}
+```
+
 PLAN, ACTUAL, TARGET, TrainingProfile, WorkoutIntent, and TrainingHistory are
 ordinary named lists. Use the corresponding `read_*`/`write_*` functions for
 JSON round trips. Serialization uses `simplifyVector=FALSE`, `auto_unbox=FALSE`,

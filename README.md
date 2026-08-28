@@ -7,6 +7,30 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
+## Build an app with DB++
+
+Use the explicit application contract to resolve intent, generate or evaluate a
+PLAN, derive state, and request an advisory adaptation:
+
+- [Application integration guide](docs/APPLICATION-INTEGRATION.md)
+- [Swift / iOS getting started](docs/SWIFT-GETTING-STARTED.md)
+- [Kotlin / Android/JVM API](docs/KOTLIN-API.md)
+- [Python package guide](packages/python/README.md)
+- [R research API](docs/R-API.md)
+
+```swift
+import FreeExerciseDBPlusPlus
+let engine = try TrainingEngine.bundled()
+let intent = WorkoutIntent(goal: "hypertrophy")
+let request = TrainingRequest(requestId: "request-1", operation: .generateFromIntent,
+                              intent: intent, asOf: "2026-08-28T12:00:00Z")
+let result = try engine.processTrainingRequest(request)
+```
+
+Branch on `result.status`; clarification, invalid, unsatisfiable, generated,
+state, progression, and advisory revision outcomes are normal structured
+results. See the linked guide for persistence and history-aware adaptation.
+
 ## Download
 
 **Database:**  
@@ -229,6 +253,12 @@ short and stable for consumers.
 
 ## Documentation
 
+- [Application integration contract](docs/APPLICATION-INTEGRATION.md)
+- [Swift getting started](docs/SWIFT-GETTING-STARTED.md)
+- [Swift API](docs/SWIFT-API.md)
+- [Kotlin API](docs/KOTLIN-API.md)
+- [Python package API](packages/python/README.md)
+- [R research API](docs/R-API.md)
 - [Methodology](docs/METHODOLOGY.md)
 - [Design](docs/DESIGN.md)
 - [Evidence policy](docs/EVIDENCE.md)

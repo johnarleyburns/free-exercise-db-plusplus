@@ -214,9 +214,49 @@ public struct ExerciseState: Codable, Sendable, Equatable {
   public let unplannedCount: Int
   public let lastPrescription: JSONValue?
   public let lastActual: JSONValue?
+  public let latestPerformance: JSONValue?
+  public let recentPerformances: [JSONValue]
+  public let recentReps: [JSONValue]
+  public let recentLoads: [JSONValue]
+  public let recentRPE: [JSONValue]
+  public let recentRIR: [JSONValue]
+  public let recentSetTypes: [JSONValue]
   public let prescriptionAdherence: JSONValue?
-  public init(exerciseId: String, lastPerformedAt: String? = nil, recentSessionCount: Int = 0, recentCompletedSetCount: Int = 0, substitutionCount: Int = 0, unplannedCount: Int = 0, lastPrescription: JSONValue? = nil, lastActual: JSONValue? = nil, prescriptionAdherence: JSONValue? = nil) {
-    self.exerciseId = exerciseId; self.lastPerformedAt = lastPerformedAt; self.recentSessionCount = recentSessionCount; self.recentCompletedSetCount = recentCompletedSetCount; self.substitutionCount = substitutionCount; self.unplannedCount = unplannedCount; self.lastPrescription = lastPrescription; self.lastActual = lastActual; self.prescriptionAdherence = prescriptionAdherence
+  public let prescriptionAdherenceByPrescriptionId: [String: JSONValue]
+  public init(exerciseId: String, lastPerformedAt: String? = nil, recentSessionCount: Int = 0, recentCompletedSetCount: Int = 0, substitutionCount: Int = 0, unplannedCount: Int = 0, lastPrescription: JSONValue? = nil, lastActual: JSONValue? = nil, latestPerformance: JSONValue? = nil, recentPerformances: [JSONValue] = [], recentReps: [JSONValue] = [], recentLoads: [JSONValue] = [], recentRPE: [JSONValue] = [], recentRIR: [JSONValue] = [], recentSetTypes: [JSONValue] = [], prescriptionAdherence: JSONValue? = nil, prescriptionAdherenceByPrescriptionId: [String: JSONValue] = [:]) {
+    self.exerciseId = exerciseId; self.lastPerformedAt = lastPerformedAt; self.recentSessionCount = recentSessionCount; self.recentCompletedSetCount = recentCompletedSetCount; self.substitutionCount = substitutionCount; self.unplannedCount = unplannedCount; self.lastPrescription = lastPrescription; self.lastActual = lastActual; self.latestPerformance = latestPerformance; self.recentPerformances = recentPerformances; self.recentReps = recentReps; self.recentLoads = recentLoads; self.recentRPE = recentRPE; self.recentRIR = recentRIR; self.recentSetTypes = recentSetTypes; self.prescriptionAdherence = prescriptionAdherence; self.prescriptionAdherenceByPrescriptionId = prescriptionAdherenceByPrescriptionId
+  }
+  private enum CodingKeys: String, CodingKey { case exerciseId, lastPerformedAt, lastPrescription, lastActual, latestPerformance, recentPerformances, recentSessionCount, recentCompletedSetCount, recentReps, recentLoads, recentRPE, recentRIR, recentSetTypes, prescriptionAdherence, prescriptionAdherenceByPrescriptionId, substitutionCount, unplannedCount }
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    self.init(exerciseId: try c.decode(String.self, forKey: .exerciseId),
+      lastPerformedAt: try c.decodeIfPresent(String.self, forKey: .lastPerformedAt),
+      recentSessionCount: try c.decodeIfPresent(Int.self, forKey: .recentSessionCount) ?? 0,
+      recentCompletedSetCount: try c.decodeIfPresent(Int.self, forKey: .recentCompletedSetCount) ?? 0,
+      substitutionCount: try c.decodeIfPresent(Int.self, forKey: .substitutionCount) ?? 0,
+      unplannedCount: try c.decodeIfPresent(Int.self, forKey: .unplannedCount) ?? 0,
+      lastPrescription: try c.decodeIfPresent(JSONValue.self, forKey: .lastPrescription),
+      lastActual: try c.decodeIfPresent(JSONValue.self, forKey: .lastActual),
+      latestPerformance: try c.decodeIfPresent(JSONValue.self, forKey: .latestPerformance),
+      recentPerformances: try c.decodeIfPresent([JSONValue].self, forKey: .recentPerformances) ?? [],
+      recentReps: try c.decodeIfPresent([JSONValue].self, forKey: .recentReps) ?? [],
+      recentLoads: try c.decodeIfPresent([JSONValue].self, forKey: .recentLoads) ?? [],
+      recentRPE: try c.decodeIfPresent([JSONValue].self, forKey: .recentRPE) ?? [],
+      recentRIR: try c.decodeIfPresent([JSONValue].self, forKey: .recentRIR) ?? [],
+      recentSetTypes: try c.decodeIfPresent([JSONValue].self, forKey: .recentSetTypes) ?? [],
+      prescriptionAdherence: try c.decodeIfPresent(JSONValue.self, forKey: .prescriptionAdherence),
+      prescriptionAdherenceByPrescriptionId: try c.decodeIfPresent([String: JSONValue].self, forKey: .prescriptionAdherenceByPrescriptionId) ?? [:])
+  }
+  public func encode(to encoder: Encoder) throws {
+    var c = encoder.container(keyedBy: CodingKeys.self)
+    try c.encode(exerciseId, forKey: .exerciseId); try c.encode(lastPerformedAt, forKey: .lastPerformedAt)
+    try c.encode(lastPrescription, forKey: .lastPrescription); try c.encode(lastActual, forKey: .lastActual)
+    try c.encode(latestPerformance, forKey: .latestPerformance); try c.encode(recentPerformances, forKey: .recentPerformances)
+    try c.encode(recentSessionCount, forKey: .recentSessionCount); try c.encode(recentCompletedSetCount, forKey: .recentCompletedSetCount)
+    try c.encode(recentReps, forKey: .recentReps); try c.encode(recentLoads, forKey: .recentLoads)
+    try c.encode(recentRPE, forKey: .recentRPE); try c.encode(recentRIR, forKey: .recentRIR); try c.encode(recentSetTypes, forKey: .recentSetTypes)
+    try c.encode(prescriptionAdherence, forKey: .prescriptionAdherence); try c.encode(prescriptionAdherenceByPrescriptionId, forKey: .prescriptionAdherenceByPrescriptionId)
+    try c.encode(substitutionCount, forKey: .substitutionCount); try c.encode(unplannedCount, forKey: .unplannedCount)
   }
 }
 

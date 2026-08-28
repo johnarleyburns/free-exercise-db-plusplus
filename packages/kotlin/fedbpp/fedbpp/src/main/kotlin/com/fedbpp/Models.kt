@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class Quantity(val value: Double, val unit: String)
 @Serializable data class SetObservation(
-    val setNumber: Int = 1, val setType: String = "working", val reps: Int? = null, val load: Quantity? = null,
+    val setNumber: Int? = null, val setType: String = "working", val reps: Int? = null, val load: Quantity? = null,
     val duration: Quantity? = null, val distance: Quantity? = null, val rpe: Double? = null,
     val rir: Double? = null, val completed: Boolean = false, val laterality: String? = null,
     val setPrescriptionId: String? = null, val notes: String? = null,

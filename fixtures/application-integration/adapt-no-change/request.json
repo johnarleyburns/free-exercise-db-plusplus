@@ -1,0 +1,206 @@
+{
+  "asOf": "2026-08-27T12:00:00Z",
+  "currentPlan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "name": "Adaptive fixture",
+    "planId": "adaptive-plan",
+    "revisionId": "r1",
+    "schemaVersion": "0.1.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": {
+                "target": 2
+              }
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "load": {
+              "unit": "kg",
+              "value": 80
+            },
+            "order": 1,
+            "prescriptionId": "adaptive-bench",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "sets": 2
+          }
+        ],
+        "planSessionId": "adaptive-session"
+      }
+    ]
+  },
+  "history": {
+    "planActivations": [
+      {
+        "effectiveFrom": "2026-08-01T00:00:00Z",
+        "planId": "adaptive-plan",
+        "revisionId": "r1"
+      }
+    ],
+    "plans": [
+      {
+        "cycle": {
+          "lengthDays": 7
+        },
+        "name": "Adaptive fixture",
+        "planId": "adaptive-plan",
+        "revisionId": "r1",
+        "schemaVersion": "0.1.0",
+        "sessions": [
+          {
+            "dayOffset": 0,
+            "exercises": [
+              {
+                "effort": {
+                  "rir": {
+                    "target": 2
+                  }
+                },
+                "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+                "load": {
+                  "unit": "kg",
+                  "value": 80
+                },
+                "order": 1,
+                "prescriptionId": "adaptive-bench",
+                "reps": {
+                  "max": 10,
+                  "min": 6,
+                  "target": 8
+                },
+                "sets": 2
+              }
+            ],
+            "planSessionId": "adaptive-session"
+          }
+        ]
+      }
+    ],
+    "subjectId": "adaptive-subject",
+    "targets": [
+      {
+        "muscles": {
+          "chest": {
+            "max": 4,
+            "min": 1,
+            "target": 2
+          }
+        },
+        "periodDays": 7,
+        "schemaVersion": "0.1.0",
+        "targetId": "adaptive-target"
+      }
+    ],
+    "workouts": [
+      {
+        "exercises": [
+          {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exercisePrescriptionId": "adaptive-bench",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 1,
+                "setType": "working"
+              },
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 2,
+                "setType": "working"
+              }
+            ]
+          }
+        ],
+        "planReference": {
+          "planId": "adaptive-plan",
+          "planSessionId": "adaptive-session",
+          "revisionId": "r1"
+        },
+        "schemaVersion": "0.3.0",
+        "sessionId": "adaptive-workout-1",
+        "startTime": "2026-08-23T12:00:00Z"
+      },
+      {
+        "exercises": [
+          {
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exercisePrescriptionId": "adaptive-bench",
+            "sets": [
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 1,
+                "setType": "working"
+              },
+              {
+                "completed": true,
+                "reps": 10,
+                "rir": 2,
+                "setNumber": 2,
+                "setType": "working"
+              }
+            ]
+          }
+        ],
+        "planReference": {
+          "planId": "adaptive-plan",
+          "planSessionId": "adaptive-session",
+          "revisionId": "r1"
+        },
+        "schemaVersion": "0.3.0",
+        "sessionId": "adaptive-workout",
+        "startTime": "2026-08-24T12:00:00Z"
+      }
+    ]
+  },
+  "operation": "adapt_plan",
+  "options": {
+    "policy": "general-adaptive-v1"
+  },
+  "profile": {
+    "availability": {
+      "cycleLengthDays": 7,
+      "sessionsPerCycle": {
+        "target": 1
+      }
+    },
+    "constraints": {
+      "excludedExerciseIds": [],
+      "excludedFamilyIds": []
+    },
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "body only"
+    ],
+    "profileId": "adaptive-profile",
+    "schemaVersion": "0.1.0"
+  },
+  "requestId": "app-adapt-no-change",
+  "schemaVersion": "0.1.0",
+  "target": {
+    "muscles": {
+      "chest": {
+        "max": 4,
+        "min": 1,
+        "target": 2
+      }
+    },
+    "periodDays": 7,
+    "schemaVersion": "0.1.0",
+    "targetId": "adaptive-target"
+  }
+}

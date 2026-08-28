@@ -1,0 +1,72 @@
+{
+  "operation": "generate_plan",
+  "options": {
+    "lockedExerciseIds": [],
+    "policy": "full-body-general-v1",
+    "requiredExerciseIds": [
+      "Barbell_Bench_Press_-_Medium_Grip"
+    ]
+  },
+  "profile": {
+    "availability": {
+      "cycleLengthDays": 7,
+      "preferredDayOffsets": [
+        0
+      ],
+      "sessionsPerCycle": {
+        "max": 3,
+        "min": 3,
+        "target": 3
+      }
+    },
+    "constraints": {
+      "excludedExerciseIds": [
+        "Barbell_Squat"
+      ]
+    },
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "body only"
+    ],
+    "exercisePreferences": {
+      "avoidedExerciseIds": [
+        "Around_The_Worlds"
+      ],
+      "preferredExerciseIds": [
+        "Barbell_Bench_Press_-_Medium_Grip"
+      ]
+    },
+    "profileId": "example-full-body",
+    "schemaVersion": "0.1.0"
+  },
+  "requestId": "app-unsatisfiable",
+  "schemaVersion": "0.1.0",
+  "target": {
+    "frequency": {
+      "muscles": {
+        "chest": {
+          "min": 2
+        }
+      }
+    },
+    "movementPatterns": {
+      "horizontal_press": {
+        "minimumSets": 3
+      }
+    },
+    "muscles": {
+      "chest": {
+        "max": 8,
+        "min": 3,
+        "target": 4
+      },
+      "quadriceps": {
+        "min": 1
+      }
+    },
+    "periodDays": 7,
+    "schemaVersion": "0.1.0",
+    "targetId": "example-full-body"
+  }
+}

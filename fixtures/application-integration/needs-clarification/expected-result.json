@@ -1,0 +1,68 @@
+{
+  "adaptation": null,
+  "coachDecisions": [],
+  "conflicts": [],
+  "evaluation": null,
+  "issues": [],
+  "missingInformation": [
+    {
+      "field": "goal",
+      "reason": "required_for_goal_policy_resolution"
+    },
+    {
+      "field": "schedule.cycleLengthDays",
+      "reason": "required_for_schedule_resolution"
+    },
+    {
+      "field": "schedule.sessionsPerCycle",
+      "reason": "required_for_schedule_resolution"
+    }
+  ],
+  "operation": "resolve_intent",
+  "plan": null,
+  "provenance": {
+    "intentSchemaVersion": "0.1.0"
+  },
+  "requestId": "app-needs-clarification",
+  "resolution": {
+    "conflicts": [],
+    "defaultsApplied": [],
+    "environmentPolicy": null,
+    "explicitOverrides": {
+      "equipmentAdded": [],
+      "equipmentRemoved": [],
+      "goalPolicy": false,
+      "planningPolicy": false,
+      "target": false,
+      "trainingProfile": false
+    },
+    "generationOptions": {},
+    "goalPolicy": null,
+    "missingInformation": [
+      {
+        "field": "goal",
+        "reason": "required_for_goal_policy_resolution"
+      },
+      {
+        "field": "schedule.cycleLengthDays",
+        "reason": "required_for_schedule_resolution"
+      },
+      {
+        "field": "schedule.sessionsPerCycle",
+        "reason": "required_for_schedule_resolution"
+      }
+    ],
+    "planningPolicy": null,
+    "provenance": {
+      "intentSchemaVersion": "0.1.0"
+    },
+    "resolvedProfile": null,
+    "resolvedTarget": null,
+    "status": "needs_clarification",
+    "warnings": []
+  },
+  "schemaVersion": "0.1.0",
+  "status": "needs_clarification",
+  "trainingState": null,
+  "warnings": []
+}

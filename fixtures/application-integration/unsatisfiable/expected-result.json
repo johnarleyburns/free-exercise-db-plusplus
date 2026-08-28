@@ -1,0 +1,413 @@
+{
+  "adaptation": null,
+  "coachDecisions": [],
+  "conflicts": [],
+  "evaluation": {
+    "availability": {
+      "max": 3,
+      "min": 3,
+      "plannedSessions": 3,
+      "state": "at_target",
+      "target": 3
+    },
+    "constraints": {
+      "violations": []
+    },
+    "coverageCompleteness": {
+      "ineligiblePrescriptions": [],
+      "ineligibleSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "ineligibleSets": 0.0,
+      "mappedFraction": 1.0,
+      "mappedSetRange": {
+        "max": 5.0,
+        "min": 5.0,
+        "target": 5.0
+      },
+      "mappedSets": 5.0,
+      "plannedSetRange": {
+        "max": 5.0,
+        "min": 5.0,
+        "target": 5.0
+      },
+      "plannedSets": 5.0,
+      "unmappedPrescriptions": [],
+      "unmappedSetRange": {
+        "max": 0.0,
+        "min": 0.0,
+        "target": 0.0
+      },
+      "unmappedSets": 0.0
+    },
+    "equipment": {
+      "supportedExercises": [
+        "Barbell_Bench_Press_-_Medium_Grip",
+        "Barbell_Full_Squat"
+      ],
+      "unknownEquipmentExercises": [],
+      "unsupportedExercises": []
+    },
+    "exerciseCounts": {},
+    "families": {
+      "coverage": {
+        "bench_press": {
+          "exerciseIds": [
+            "Barbell_Bench_Press_-_Medium_Grip"
+          ],
+          "familyId": "bench_press",
+          "name": "Bench Press",
+          "plannedSetRanges": {
+            "max": 4.0,
+            "min": 4.0,
+            "target": 4.0
+          },
+          "plannedSets": 4.0,
+          "sessionExposures": 3,
+          "sessions": [
+            "session-1",
+            "session-2",
+            "session-3"
+          ],
+          "variantDimensions": {
+            "Barbell_Bench_Press_-_Medium_Grip": {
+              "equipment": "barbell"
+            }
+          },
+          "variantDimensionsUsed": {
+            "equipment": [
+              "barbell"
+            ]
+          }
+        },
+        "squat": {
+          "exerciseIds": [
+            "Barbell_Full_Squat"
+          ],
+          "familyId": "squat",
+          "name": "Squat",
+          "plannedSetRanges": {
+            "max": 1.0,
+            "min": 1.0,
+            "target": 1.0
+          },
+          "plannedSets": 1.0,
+          "sessionExposures": 1,
+          "sessions": [
+            "session-1"
+          ],
+          "variantDimensions": {
+            "Barbell_Full_Squat": {
+              "equipment": "barbell"
+            }
+          },
+          "variantDimensionsUsed": {
+            "equipment": [
+              "barbell"
+            ]
+          }
+        }
+      },
+      "targets": {}
+    },
+    "frequency": {
+      "chest": {
+        "maximum": null,
+        "minimum": 2,
+        "normalizedExposuresPer7Days": 3.0,
+        "plannedExposuresPerNativeCycle": 3,
+        "state": "within_range",
+        "target": null
+      }
+    },
+    "movementPatterns": {
+      "horizontal_press": {
+        "maximum": null,
+        "minimum": 3,
+        "plannedSets": 4.0,
+        "state": "within_range",
+        "target": null
+      }
+    },
+    "muscleCoverage": {
+      "adductors": {
+        "actualEffectiveSets": 0.5,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 0.5,
+          "min": 0.5,
+          "target": 0.5
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "chest": {
+        "actualEffectiveSets": 4.0,
+        "differenceFromTarget": 0.0,
+        "max": 8,
+        "maximum": 8,
+        "min": 3,
+        "minimum": 3,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 4.0,
+          "min": 4.0,
+          "target": 4.0
+        },
+        "state": "at_target",
+        "target": 4
+      },
+      "glutes": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "quadriceps": {
+        "actualEffectiveSets": 1.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": 1,
+        "minimum": 1,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 1.0,
+          "min": 1.0,
+          "target": 1.0
+        },
+        "state": "within_range",
+        "target": null
+      },
+      "shoulders": {
+        "actualEffectiveSets": 2.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 2.0,
+          "min": 2.0,
+          "target": 2.0
+        },
+        "state": "not_targeted",
+        "target": null
+      },
+      "triceps": {
+        "actualEffectiveSets": 2.0,
+        "differenceFromTarget": null,
+        "max": null,
+        "maximum": null,
+        "min": null,
+        "minimum": null,
+        "periodDays": 7,
+        "planEffectiveSetRange": {
+          "max": 2.0,
+          "min": 2.0,
+          "target": 2.0
+        },
+        "state": "not_targeted",
+        "target": null
+      }
+    },
+    "preferences": {
+      "avoidedExercisesUsed": [],
+      "avoidedFamiliesUsed": [],
+      "findings": [
+        {
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "prescriptionId": "rx-01-01",
+          "sessionId": "session-1",
+          "type": "preferred_exercise_used"
+        },
+        {
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "prescriptionId": "rx-02-01",
+          "sessionId": "session-2",
+          "type": "preferred_exercise_used"
+        },
+        {
+          "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+          "prescriptionId": "rx-03-01",
+          "sessionId": "session-3",
+          "type": "preferred_exercise_used"
+        }
+      ],
+      "preferredExercisesUsed": [
+        "Barbell_Bench_Press_-_Medium_Grip"
+      ],
+      "preferredFamiliesUsed": []
+    },
+    "provenance": {
+      "analysisPolicy": "plan-evaluation-v1",
+      "analysisVersion": "0.1.0",
+      "dbConverterVersion": "0.8.0",
+      "dbSchemaVersion": "0.3.0",
+      "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+      "durationPolicy": null,
+      "planSchemaVersion": "0.2.0",
+      "profileSchemaVersion": "0.1.0",
+      "relationshipSchemaVersion": "0.1.0",
+      "setCredits": {
+        "direct": 1.0,
+        "indirect": 0.5,
+        "stabilizer": 0.0
+      },
+      "targetSchemaVersion": "0.1.0"
+    },
+    "summary": {
+      "evaluationStatus": "valid",
+      "hardConstraintViolations": 0,
+      "meetsTargetMinimums": true,
+      "satisfiesHardConstraints": true,
+      "softPreferenceWarnings": 3,
+      "targetGaps": 0
+    },
+    "warnings": []
+  },
+  "issues": [],
+  "missingInformation": [],
+  "operation": "generate_plan",
+  "plan": {
+    "cycle": {
+      "lengthDays": 7
+    },
+    "description": null,
+    "name": "Generated full-body-general-v1",
+    "planId": "generated-plan",
+    "revisionId": "r1",
+    "schemaVersion": "0.2.0",
+    "sessions": [
+      {
+        "dayOffset": 0,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "order": 1,
+            "prescriptionId": "rx-01-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          },
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Barbell_Full_Squat",
+            "exerciseName": "Barbell Full Squat",
+            "order": 2,
+            "prescriptionId": "rx-01-02",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 1",
+        "planSessionId": "session-1"
+      },
+      {
+        "dayOffset": 3,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "order": 1,
+            "prescriptionId": "rx-02-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 2
+          }
+        ],
+        "name": "Session 2",
+        "planSessionId": "session-2"
+      },
+      {
+        "dayOffset": 5,
+        "exercises": [
+          {
+            "effort": {
+              "rir": 2
+            },
+            "exerciseId": "Barbell_Bench_Press_-_Medium_Grip",
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "order": 1,
+            "prescriptionId": "rx-03-01",
+            "reps": {
+              "max": 10,
+              "min": 6,
+              "target": 8
+            },
+            "setType": "working",
+            "sets": 1
+          }
+        ],
+        "name": "Session 3",
+        "planSessionId": "session-3"
+      }
+    ]
+  },
+  "provenance": {
+    "analysisPolicy": "dbpp-default-volume-v1",
+    "currentPlanRevisionId": null,
+    "dbConverterVersion": "0.8.0",
+    "dbSchemaVersion": "0.3.0",
+    "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
+    "evaluationVersion": "0.1.0",
+    "generatorVersion": "0.1.0",
+    "policyId": "full-body-general-v1",
+    "policyVersion": "1",
+    "relationshipSchemaVersion": "0.1.0",
+    "setCredits": {
+      "direct": 1.0,
+      "indirect": 0.5,
+      "stabilizer": 0.0
+    },
+    "targetSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingStateVersion": null
+  },
+  "requestId": "app-unsatisfiable",
+  "resolution": null,
+  "schemaVersion": "0.1.0",
+  "status": "generated",
+  "trainingState": null,
+  "warnings": []
+}

@@ -49,7 +49,7 @@ fun applyProgressionPolicy(policyId: String, prescription: JsonElement, exercise
     }
     val load = rx["load"].o(); val increment = parameters.o()["loadIncrement"].o()
     val current = load["value"]?.n() ?: load["target"]?.n(); val delta = increment["value"]?.n()
-    if (current == null || delta == null || load["unit"]?.s() !in setOf("kg", "lb", "g") || increment["unit"]?.s() !in setOf("kg", "lb", "g")) return decision(p, "insufficient_data", rx, context, listOf("INSUFFICIENT_LOAD_DATA"))
+    if (current == null || delta == null || load["unit"]?.s() !in setOf("kg", "lb", "g") || increment["unit"]?.s() !in setOf("kg", "lb", "g")) return decision(p, "insufficient_data", rx, context, listOf("INSUFFICIENT_LOAD_DATA"), evidence = buildJsonObject { put("sets", JsonArray(comparisons)) })
     val units = load["unit"]!!.jsonPrimitive.content; val next = if (units == increment["unit"]!!.jsonPrimitive.content) current + delta else if (units == "kg") current + if (increment["unit"]!!.jsonPrimitive.content == "lb") delta * 0.45359237 else delta / 1000.0 else return decision(p, "insufficient_data", rx, context, listOf("INCOMPATIBLE_LOAD_UNIT"))
     val after = buildJsonObject { rx.forEach { (k, v) -> put(k, v) }; put("load", buildJsonObject { load.forEach { (k, v) -> if (k != "target") put(k, v) }; put("value", clean(next)) }) }
     return decision(p, "increase_load", rx, context, reasons, after = buildJsonObject { listOf("load", "reps", "sets").forEach { if (after[it] != null) put(it, after[it]!!) } }, evidence = buildJsonObject { put("sets", JsonArray(comparisons)); put("previousLoad", rx["load"] ?: JsonNull); put("newLoad", after["load"]!!) })

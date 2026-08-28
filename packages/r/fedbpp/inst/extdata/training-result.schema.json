@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/johnarleyburns/free-exercise-db-plusplus/blob/main/training-result.schema.json",
+  "title": "Free Exercise DB++ Training Result",
+  "description": "Stable application result envelope containing canonical DB++ domain documents and machine-readable status information.",
+  "type": "object",
+  "required": ["schemaVersion", "requestId", "operation", "status", "missingInformation", "conflicts", "warnings", "issues", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "operation": { "type": "string" },
+    "status": { "enum": ["resolved", "resolved_with_defaults", "needs_clarification", "invalid", "unsatisfiable", "generated", "generated_with_target_gaps", "evaluated", "state_derived", "progression_available", "no_change", "revision_proposed", "regeneration_proposed", "insufficient_data", "invalid_input"] },
+    "resolution": { "type": ["object", "null"] },
+    "plan": { "type": ["object", "null"] },
+    "evaluation": { "type": ["object", "null"] },
+    "trainingState": { "type": ["object", "null"] },
+    "coachDecisions": { "type": "array" },
+    "adaptation": { "type": ["object", "null"] },
+    "missingInformation": { "type": "array" },
+    "conflicts": { "type": "array" },
+    "warnings": { "type": "array" },
+    "issues": { "type": "array" },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": true
+}

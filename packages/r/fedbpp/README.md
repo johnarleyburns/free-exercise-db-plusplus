@@ -6,6 +6,11 @@ TrainingHistory, evaluation, TrainingState, progression, deterministic plan
 generation, and advisory adaptation. `jsonlite` is the only required
 dependency; tidyverse and data.table are not required.
 
+For application orchestration, use `process_training_request()` with a named
+list matching `training-request.schema.json`. The operation is explicit and
+returns a stable result envelope; see [the application guide](../../../docs/APPLICATION-INTEGRATION.md)
+and `examples/app-integration/r/example.R`.
+
 ```r
 db <- load_database()                         # bundled resource
 w <- read_workout("examples/workouts/basic-barbell-strength.json")

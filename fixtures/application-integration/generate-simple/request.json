@@ -1,0 +1,32 @@
+{
+  "intent": {
+    "environment": "commercial_gym",
+    "goal": "hypertrophy",
+    "intentId": "flagship-5day-hypertrophy",
+    "schedule": {
+      "cycleLengthDays": 7,
+      "preferredWeekdays": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "saturday"
+      ],
+      "sessionsPerCycle": {
+        "max": 5,
+        "min": 5,
+        "target": 5
+      }
+    },
+    "schemaVersion": "0.1.0",
+    "sessionConstraints": {
+      "exercisesPerSession": {
+        "max": 4,
+        "min": 3
+      }
+    }
+  },
+  "operation": "generate_from_intent",
+  "requestId": "app-generate-simple",
+  "schemaVersion": "0.1.0"
+}

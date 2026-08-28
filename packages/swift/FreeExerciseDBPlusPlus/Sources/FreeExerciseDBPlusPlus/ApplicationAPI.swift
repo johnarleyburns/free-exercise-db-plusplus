@@ -194,6 +194,11 @@ public struct PlanEvaluation: Codable, Sendable, Equatable {
     guard case .array(let values)? = document.objectValue?["warnings"] else { return [] }
     return values.compactMap(string)
   }
+  /// Machine-readable hard-constraint violations, when present in the
+  /// canonical evaluation document.
+  public var issues: [PlanIssue] {
+    applicationIssues(document.objectValue?["constraints"]?.objectValue?["violations"])
+  }
   public var provenance: [String: JSONValue] { document.objectValue?["provenance"]?.objectValue ?? [:] }
 
   public func encode(to encoder: Encoder) throws { try document.encode(to: encoder) }
@@ -220,6 +225,10 @@ public struct PlanEvaluation: Codable, Sendable, Equatable {
 /// A machine-readable generation conflict or unsatisfied target.
 public struct PlanIssue: Codable, Sendable, Equatable {
   public let code: String
+  /// Some canonical evaluation violations use `type` instead of `code`.
+  /// Keep that shape intact when the issue is carried by an application
+  /// result envelope.
+  public let type: String?
   public let detail: String?
   public let exerciseId: String?
   public let familyId: String?
@@ -228,9 +237,33 @@ public struct PlanIssue: Codable, Sendable, Equatable {
 
   public init(code: String, detail: String? = nil, exerciseId: String? = nil,
               familyId: String? = nil, sessionId: String? = nil,
-              prescriptionId: String? = nil) {
-    self.code = code; self.detail = detail; self.exerciseId = exerciseId
+              prescriptionId: String? = nil, type: String? = nil) {
+    self.code = code; self.type = type; self.detail = detail; self.exerciseId = exerciseId
     self.familyId = familyId; self.sessionId = sessionId; self.prescriptionId = prescriptionId
+  }
+
+  private enum CodingKeys: String, CodingKey { case code, type, detail, exerciseId, familyId, sessionId, prescriptionId }
+
+  public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    let decodedType = try c.decodeIfPresent(String.self, forKey: .type)
+    code = try c.decodeIfPresent(String.self, forKey: .code) ?? decodedType ?? ""
+    type = decodedType
+    detail = try c.decodeIfPresent(String.self, forKey: .detail)
+    exerciseId = try c.decodeIfPresent(String.self, forKey: .exerciseId)
+    familyId = try c.decodeIfPresent(String.self, forKey: .familyId)
+    sessionId = try c.decodeIfPresent(String.self, forKey: .sessionId)
+    prescriptionId = try c.decodeIfPresent(String.self, forKey: .prescriptionId)
+  }
+
+  public func encode(to encoder: Encoder) throws {
+    var c = encoder.container(keyedBy: CodingKeys.self)
+    if let type { try c.encode(type, forKey: .type) } else { try c.encode(code, forKey: .code) }
+    try c.encodeIfPresent(detail, forKey: .detail)
+    try c.encodeIfPresent(exerciseId, forKey: .exerciseId)
+    try c.encodeIfPresent(familyId, forKey: .familyId)
+    try c.encodeIfPresent(sessionId, forKey: .sessionId)
+    try c.encodeIfPresent(prescriptionId, forKey: .prescriptionId)
   }
 }
 
@@ -238,15 +271,16 @@ public struct PlanIssue: Codable, Sendable, Equatable {
 public struct PlanChange: Codable, Sendable, Equatable {
   public let type: String
   public let prescriptionId: String?
-  public let before: [String: JSONValue]
-  public let after: [String: JSONValue]
+  public let exerciseId: String?
+  public let before: [String: JSONValue]?
+  public let after: [String: JSONValue]?
   public let reasonCodes: [String]
   public let decisionIds: [String]
 
-  public init(type: String, prescriptionId: String? = nil,
-              before: [String: JSONValue] = [:], after: [String: JSONValue] = [:],
+  public init(type: String, prescriptionId: String? = nil, exerciseId: String? = nil,
+              before: [String: JSONValue]? = nil, after: [String: JSONValue]? = nil,
               reasonCodes: [String] = [], decisionIds: [String] = []) {
-    self.type = type; self.prescriptionId = prescriptionId; self.before = before
+    self.type = type; self.prescriptionId = prescriptionId; self.exerciseId = exerciseId; self.before = before
     self.after = after; self.reasonCodes = reasonCodes; self.decisionIds = decisionIds
   }
 }
@@ -346,23 +380,26 @@ public struct AdaptivePlanResult: Codable, Sendable, Equatable {
   public let trainingState: TrainingState?
   public let changes: [PlanChange]
   public let unresolvedIssues: [PlanIssue]
+  public let policy: JSONValue?
   public let provenance: [String: JSONValue]
 
   public init(status: String, currentPlan: WorkoutPlan? = nil, proposedPlan: WorkoutPlan? = nil,
               decisions: [CoachDecision] = [], currentEvaluation: PlanEvaluation? = nil,
               proposedEvaluation: PlanEvaluation? = nil, trainingState: TrainingState? = nil,
               changes: [PlanChange] = [], unresolvedIssues: [PlanIssue] = [],
+              policy: JSONValue? = nil,
               provenance: [String: JSONValue] = [:]) {
     self.status = status; self.currentPlan = currentPlan; self.proposedPlan = proposedPlan
     self.decisions = decisions; self.currentEvaluation = currentEvaluation
     self.proposedEvaluation = proposedEvaluation; self.trainingState = trainingState
-    self.changes = changes; self.unresolvedIssues = unresolvedIssues; self.provenance = provenance
+    self.changes = changes; self.unresolvedIssues = unresolvedIssues; self.policy = policy
+    self.provenance = provenance
   }
 }
 
 // MARK: - Canonical conversions
 
-private func applicationJSON<T: Encodable>(_ value: T) -> JSONValue? {
+func applicationJSON<T: Encodable>(_ value: T) -> JSONValue? {
   guard let data = try? JSONEncoder().encode(value) else { return nil }
   return try? JSONDecoder().decode(JSONValue.self, from: data)
 }
@@ -414,11 +451,11 @@ private func applicationIssues(_ value: JSONValue?) -> [PlanIssue] {
   guard case .array(let values)? = value else { return [] }
   return values.compactMap { raw in
     let object = raw.objectValue ?? [:]
-    guard case .string(let code)? = object["code"] else { return nil }
     func string(_ key: String) -> String? { if case .string(let value)? = object[key] { return value }; return nil }
+    guard let code = string("code") ?? string("type") else { return nil }
     return PlanIssue(code: code, detail: string("detail"), exerciseId: string("exerciseId"),
                      familyId: string("familyId"), sessionId: string("sessionId"),
-                     prescriptionId: string("prescriptionId"))
+                     prescriptionId: string("prescriptionId"), type: string("type"))
   }
 }
 
@@ -431,15 +468,25 @@ private func applicationChanges(_ value: JSONValue?) -> [PlanChange] {
       guard case .array(let values)? = object[key] else { return [] }
       return values.compactMap(stringValue)
     }
-    func dictionary(_ key: String) -> [String: JSONValue] { object[key]?.objectValue ?? [:] }
+    func dictionary(_ key: String) -> [String: JSONValue]? { object[key]?.objectValue }
     guard let type = string("type") else { return nil }
-    return PlanChange(type: type, prescriptionId: string("prescriptionId"),
+    return PlanChange(type: type, prescriptionId: string("prescriptionId"), exerciseId: string("exerciseId"),
       before: dictionary("before"), after: dictionary("after"),
       reasonCodes: strings("reasonCodes"), decisionIds: strings("decisionIds"))
   }
 }
 
 private func stringValue(_ value: JSONValue) -> String? { if case .string(let value) = value { return value }; return nil }
+
+func applicationResolution(_ value: IntentResolutionResult, asOf: String?) -> IntentResolutionResult {
+  guard let asOf, let encoded = try? JSONEncoder().encode(value),
+        let raw = try? JSONDecoder().decode(JSONValue.self, from: encoded),
+        let normalized = try? JSONDecoder().decode(IntentResolutionResult.self, from:
+          JSONEncoder().encode(canonicalizingAsOf(raw, asOf: canonicalApplicationAsOf(asOf)))) else {
+    return value
+  }
+  return normalized
+}
 
 private func applicationGenerated(_ raw: JSONValue) -> GeneratedPlanResult {
   let object = raw.objectValue ?? [:]
@@ -457,14 +504,23 @@ private func applicationGenerated(_ raw: JSONValue) -> GeneratedPlanResult {
     provenance: object["provenance"]?.objectValue ?? [:])
 }
 
-private func applicationAdaptive(_ raw: JSONValue) -> AdaptivePlanResult {
-  let object = raw.objectValue ?? [:]
+func applicationAdaptive(_ raw: JSONValue, preserveAsOf: String? = nil) -> AdaptivePlanResult {
+  let preserved = preserveAsOf.map { canonicalizingAsOf(raw, asOf: $0) } ?? raw
+  let object = preserved.objectValue ?? [:]
   func string(_ key: String) -> String? { if case .string(let value)? = object[key] { return value }; return nil }
   func typed<T: Decodable>(_ type: T.Type, _ value: JSONValue?) -> T? {
     guard let value, value != .null, let data = try? JSONEncoder().encode(value) else { return nil }
     return try? JSONDecoder().decode(type, from: data)
   }
-  let decisions = object["decisions"].flatMap { typed([CoachDecision].self, $0) } ?? []
+  let decisions: [CoachDecision] = if case .array(let values)? = object["decisions"] {
+    values.compactMap { raw in
+      var decision = raw.objectValue ?? [:]
+      // Older native coaching paths omitted this required canonical field;
+      // the application envelope always emits the released schema shape.
+      decision["schemaVersion"] = decision["schemaVersion"] ?? .string("0.1.0")
+      return typed(CoachDecision.self, .object(decision))
+    }
+  } else { [] }
   return AdaptivePlanResult(status: string("status") ?? "invalid_input",
     currentPlan: typed(WorkoutPlan.self, object["currentPlan"]),
     proposedPlan: typed(WorkoutPlan.self, object["proposedPlan"]), decisions: decisions,
@@ -472,7 +528,21 @@ private func applicationAdaptive(_ raw: JSONValue) -> AdaptivePlanResult {
     proposedEvaluation: typed(PlanEvaluation.self, object["proposedEvaluation"]),
     trainingState: typed(TrainingState.self, object["trainingState"]),
     changes: applicationChanges(object["changes"]), unresolvedIssues: applicationIssues(object["unresolvedIssues"]),
+    policy: object["policy"],
     provenance: object["provenance"]?.objectValue ?? [:])
+}
+
+private func canonicalizingAsOf(_ value: JSONValue, asOf: String) -> JSONValue {
+  switch value {
+  case .array(let values): return .array(values.map { canonicalizingAsOf($0, asOf: asOf) })
+  case .object(let values):
+    var result: [String: JSONValue] = [:]
+    for (key, value) in values {
+      result[key] = key == "asOf" ? .string(asOf) : canonicalizingAsOf(value, asOf: asOf)
+    }
+    return .object(result)
+  case .string, .null, .bool, .number: return value
+  }
 }
 
 // MARK: - Typed TrainingEngine facade
@@ -575,7 +645,15 @@ public extension TrainingEngine {
     let decisions = plan.sessions.flatMap { session in session.exercises.compactMap { prescription -> CoachDecision? in
       guard let prescriptionJSON = applicationJSON(prescription),
             let rawState = stateJSON.objectValue?["exerciseState"]?.objectValue?[prescription.exerciseId ?? ""] else { return nil }
-      let raw = applyProgressionPolicy(policy, prescription: prescriptionJSON, exerciseState: rawState)
+      var raw = applyProgressionPolicy(policy, prescription: prescriptionJSON, exerciseState: rawState)
+      if case .object(var decision) = raw {
+        if decision["planId"] == nil || decision["planId"] == .null { decision["planId"] = .string(plan.planId) }
+        if decision["revisionId"] == nil || decision["revisionId"] == .null { decision["revisionId"] = .string(plan.revisionId) }
+        if decision["provenance"] == nil || decision["provenance"] == .null || decision["provenance"]?.objectValue?.isEmpty == true {
+          decision["provenance"] = .object(state.provenance)
+        }
+        raw = .object(decision)
+      }
       return try? JSONDecoder().decode(CoachDecision.self, from: JSONEncoder().encode(raw))
     }}
     _ = planJSON
@@ -583,7 +661,7 @@ public extension TrainingEngine {
   }
 
   /// Applies adaptive coaching to a typed request without mutating the input.
-  func adaptPlan(request: PlanAdaptationRequest) -> AdaptivePlanResult {
+  func adaptPlan(request: PlanAdaptationRequest, canonicalAsOf: String? = nil) -> AdaptivePlanResult {
     guard let profile = applicationJSON(request.profile), let target = applicationJSON(request.target),
           let current = applicationJSON(request.currentPlan) else {
       return AdaptivePlanResult(status: "invalid_input", unresolvedIssues: [PlanIssue(code: "INVALID_INPUT")])
@@ -593,6 +671,8 @@ public extension TrainingEngine {
       history: request.history.flatMap(applicationJSON), asOf: applicationDate(request.asOf),
       trainingState: state, database: database, policy: request.policy,
       planningPolicy: request.planningPolicy, relationships: relationships)
-    return applicationAdaptive(raw)
+    // Preserve the caller's canonical instant spelling across the typed Date
+    // bridge; do not manufacture fractional seconds in persisted results.
+    return applicationAdaptive(raw, preserveAsOf: canonicalAsOf)
   }
 }

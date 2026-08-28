@@ -11,7 +11,7 @@ fun Workout.toHealthConnect(): HealthConnectSession {
         val id = observation.exerciseId ?: return@flatMap emptyList()
         observation.sets.map { set ->
             val extensions = mapOf("dbpp.laterality" to (observation.laterality ?: "unspecified"))
-            HealthConnectSegment(id, observation.exerciseName, set.reps, set.load?.takeIf { it.unit == "kg" }?.value, set.setNumber, MappingQuality.EXTENSION_REQUIRED, extensions)
+            HealthConnectSegment(id, observation.exerciseName, set.reps, set.load?.takeIf { it.unit == "kg" }?.value, set.setNumber ?: 1, MappingQuality.EXTENSION_REQUIRED, extensions)
         }
     }
     return HealthConnectSession(sessionId, startTime, end, segments, notes)

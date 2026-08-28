@@ -90,6 +90,8 @@ jobs:
               'relationships': load('exercise-relationships.schema.json'),
               'profile': load('training-profile.schema.json'),
               'intent': load('workout-intent.schema.json'),
+              'training_request': load('training-request.schema.json'),
+              'training_result': load('training-result.schema.json'),
               'family_mapping': load('family-interop-mapping.schema.json'),
           }
           for schema in schemas.values():
@@ -146,6 +148,8 @@ jobs:
             volume-target.schema.json \
             training-profile.schema.json \
             workout-intent.schema.json \
+            training-request.schema.json \
+            training-result.schema.json \
             coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
@@ -168,6 +172,8 @@ jobs:
             volume-target.schema.json \
             training-profile.schema.json \
             workout-intent.schema.json \
+            training-request.schema.json \
+            training-result.schema.json \
             coach-decision.schema.json \
             interop-mapping.schema.json \
             exercise-interop-mapping.schema.json \
@@ -204,7 +210,11 @@ jobs:
             docs/PLAN-EVALUATION.md \
             docs/TRAINING-STATE.md \
             docs/PROGRESSION-POLICIES.md \
-            docs/COACH-DECISIONS.md
+            docs/COACH-DECISIONS.md \
+            docs/APPLICATION-INTEGRATION.md \
+            docs/SWIFT-GETTING-STARTED.md \
+            docs/KOTLIN-API.md \
+            docs/R-API.md
           )
           if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
             gh release edit "${GITHUB_REF_NAME}" \

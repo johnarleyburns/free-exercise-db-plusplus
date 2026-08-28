@@ -9,10 +9,10 @@
 .counted_set <- function(x) isTRUE(x$completed) && (x$setType %||% "working") %in% .counted_types
 .read_json <- function(path) jsonlite::fromJSON(path, simplifyVector=FALSE, simplifyDataFrame=FALSE, simplifyMatrix=FALSE)
 .json_array_key <- function(k) !is.null(k) && (grepl("(Ids|Offsets|Weekdays|Prescriptions|Exercises|Families|Patterns|Codes|Information|Goals|SchemaVersions|SetTypes|Substitutions)$",k) || k %in% c("sessions","direct","indirect","stabilizers","reasonCodes","warnings","defaultsApplied","missingInformation","conflicts","equipmentAdded","equipmentRemoved","preferredExerciseIds","avoidedExerciseIds","requiredExerciseIds","lockedExerciseIds","requiredFamilyIds","excludedFamilyIds","preferredFamilyIds","avoidedFamilyIds","preferredExercisesUsed","preferredFamiliesUsed","avoidedExercisesUsed","avoidedFamiliesUsed"))
-.json_prepare <- function(x,key=NULL) { if(is.atomic(x)&&length(x)>1L)return(as.list(x));if(is.atomic(x)&&length(x)==1L&&.json_array_key(key))return(I(x));if(is.list(x)){if(!length(x)&&!is.null(names(x)))return(x);if(!is.null(names(x))&&length(x))return(setNames(lapply(names(x),function(k).json_prepare(x[[k]],k)),names(x)));return(lapply(x,.json_prepare))};x }
+.json_prepare <- function(x,key=NULL) { if(is.atomic(x)&&length(x)>1L)return(as.list(x));if(is.atomic(x)&&length(x)==1L&&.json_array_key(key)&&!(key%in%c("direct","indirect","stabilizers")&&is.numeric(x)))return(I(x));if(is.list(x)){if(!length(x)&&!is.null(names(x)))return(x);if(!is.null(names(x))&&length(x))return(setNames(lapply(names(x),function(k).json_prepare(x[[k]],k)),names(x)));return(lapply(x,.json_prepare))};x }
 .write_json <- function(x,path=NULL,pretty=TRUE) { z <- paste0(as.character(jsonlite::toJSON(.json_prepare(x),auto_unbox=TRUE,null="null",dataframe="rows",pretty=pretty,na="null",digits=15,force=TRUE)),"\n"); if(is.null(path)) z else {writeLines(z,path,useBytes=TRUE); invisible(path)} }
 .resource <- function(name) { p <- system.file("extdata",name,package="fedbpp"); if(nzchar(p)&&file.exists(p)) return(p); q <- c(file.path("inst","extdata",name),file.path("packages","r","fedbpp","inst","extdata",name),name); q <- q[file.exists(q)]; if(!length(q)) stop("bundled resource is unavailable: ",name); q[[1L]] }
-.range <- function(x,keys=c("min","target","max")) { if(is.numeric(x)&&length(x)==1L&&!is.na(x)) return(setNames(rep(as.numeric(x),3L),keys)); if(is.numeric(x)&&length(x)==length(keys)&&!is.null(names(x))&&all(keys%in%names(x))) return(as.list(x[keys])); if(is.null(x)) return(setNames(list(NULL,NULL,NULL),keys)); if(!is.list(x)) return(setNames(list(NULL,NULL,NULL),keys)); setNames(lapply(keys,function(k) if(is.null(x[[k]])) NULL else as.numeric(x[[k]])),keys) }
+.range <- function(x,keys=c("min","target","max")) { if(is.numeric(x)&&length(x)==1L&&!is.na(x)) return(setNames(rep(list(as.numeric(x)),3L),keys)); if(is.numeric(x)&&length(x)==length(keys)&&!is.null(names(x))&&all(keys%in%names(x))) return(as.list(x[keys])); if(is.null(x)) return(setNames(list(NULL,NULL,NULL),keys)); if(!is.list(x)) return(setNames(list(NULL,NULL,NULL),keys)); setNames(lapply(keys,function(k) if(is.null(x[[k]])) NULL else as.numeric(x[[k]])),keys) }
 .scalar <- function(x) { z <- .range(x)[c("target","min","max")]; z <- z[!vapply(z,is.null,logical(1))]; if(length(z)) as.numeric(z[[1L]]) else 0 }
 .add_range <- function(a,b) { a <- .range(a); b <- .range(b); setNames(lapply(names(a),function(k) if(is.null(a[[k]])||is.null(b[[k]])) NULL else round(a[[k]]+b[[k]],6)),names(a)) }
 .scale_range <- function(x,k) { x <- .range(x); setNames(lapply(x,function(v) if(is.null(v)) NULL else round(v*k,6)),names(x)) }
@@ -147,6 +147,102 @@ coach_decision_observations<-function(decisions){d<-.doc(decisions);if(is.list(d
 plan_evaluation_observations<-function(evaluation){e<-.doc(evaluation);rows<-lapply(names(e$muscleCoverage%||%list()),function(k){x<-e$muscleCoverage[[k]];data.frame(muscle_id=k,actual_effective_sets=x$actualEffectiveSets%||%NA_real_,target=x$target%||%NA_real_,state=x$state%||%NA_character_,stringsAsFactors=FALSE)});if(length(rows))do.call(rbind,rows)else data.frame()}
 longitudinal_volume<-function(workouts,database){ws<-if(is.list(workouts)&&!is.null(workouts$schemaVersion))list(workouts)else workouts;rows<-lapply(ws,function(w){x<-effective_sets(w,database);if(!nrow(x))return(NULL);a<-aggregate(x$effective_sets,list(x$muscle),sum);data.frame(session_id=w$sessionId,start_time=w$startTime,muscle=a$Group.1,effective_sets=a$x,stringsAsFactors=FALSE)});rows<-Filter(Negate(is.null),rows);if(length(rows))do.call(rbind,rows)else .empty_df(session_id=character(),start_time=character(),muscle=character(),effective_sets=numeric())}
 analysis_provenance<-function(db=NULL,state=NULL,as_of=NULL,window=NULL)list(packageVersion="1.14.1",dbSchemaVersion=db$metadata$schemaVersion%||%NULL,dbConverterVersion=db$metadata$converterVersion%||%NULL,setCredits=if(!is.null(db)) .set_credits(db)else NULL,asOf=as_of%||%state$asOf%||%NULL,historyWindow=window%||%state$historyWindow%||%NULL)
+
+read_training_request <- function(path) .copy_class(.read_json(path), "fedbpp_training_request")
+write_training_request <- function(request, path=NULL, pretty=TRUE) .write_json(.doc(request), path, pretty)
+
+.application_envelope <- function(request, status, resolution=NULL, plan=NULL, evaluation=NULL,
+                                  training_state=NULL, decisions=list(), adaptation=NULL,
+                                  missing=list(), conflicts=list(), warnings=character(),
+                                  issues=list(), provenance=.empty_object()) {
+  list(schemaVersion="0.1.0", requestId=request$requestId, operation=request$operation,
+       status=status, resolution=resolution, plan=plan, evaluation=evaluation,
+       trainingState=training_state, coachDecisions=decisions, adaptation=adaptation,
+       missingInformation=missing, conflicts=conflicts, warnings=warnings,
+       issues=issues, provenance=provenance)
+}
+
+process_training_request <- function(request, db, relationships=NULL) {
+  request <- .doc(request); op <- request$operation %||% ""; rid <- request$requestId %||% ""
+  invalid <- function(code) .application_envelope(request, "invalid", issues=list(list(code=code)))
+  if (!identical(request$schemaVersion %||% "0.1.0", "0.1.0") || !nzchar(as.character(rid)) ||
+      !op %in% c("resolve_intent", "generate_from_intent", "generate_plan", "evaluate_plan",
+                 "derive_state", "suggest_progression", "adapt_plan")) return(invalid("INVALID_REQUEST"))
+  if (identical(op, "resolve_intent")) {
+    if (is.null(request$intent)) return(invalid("MISSING_INTENT"))
+    z <- resolve_intent(request$intent, db, request$profile, request$target, relationships,
+                        request$history, request$asOf %||% NULL)
+    return(.application_envelope(request, z$status, resolution=z,
+      missing=z$missingInformation %||% list(), conflicts=z$conflicts %||% list(),
+      warnings=z$warnings %||% character(), provenance=z$provenance %||% list()))
+  }
+  if (identical(op, "generate_from_intent")) {
+    if (is.null(request$intent)) return(invalid("MISSING_INTENT"))
+    z <- generate_plan_from_intent(request$intent, db, request$profile, request$target,
+                                   relationships, request$history, request$asOf %||% NULL,
+                                   current_plan=request$currentPlan %||% NULL)
+    r <- z$resolution; g <- z$generation
+    if (is.null(g)) return(.application_envelope(request, r$status, resolution=r,
+      missing=r$missingInformation %||% list(), conflicts=r$conflicts %||% list(),
+      warnings=r$warnings %||% character(), provenance=r$provenance %||% list()))
+    issues <- c(g$unsatisfiedConstraints %||% list(), g$unsatisfiedTargets %||% list(), g$unsatisfiedSoftPreferences %||% list())
+    return(.application_envelope(request, g$status, resolution=r, plan=g$plan,
+      evaluation=g$evaluation, issues=issues, warnings=r$warnings %||% character(),
+      provenance=g$provenance %||% list()))
+  }
+  if (identical(op, "generate_plan")) {
+    if (is.null(request$profile) || is.null(request$target)) return(invalid("MISSING_PROFILE_OR_TARGET"))
+    o <- request$options %||% list(); policy <- o$policy %||% "full-body-general-v1"
+    g <- generate_plan(request$profile, request$target, db, policy=policy,
+      training_state=request$trainingState %||% NULL, relationships=relationships,
+      current_plan=request$currentPlan %||% NULL,
+      requiredExerciseIds=o$requiredExerciseIds %||% character(),
+      lockedExerciseIds=o$lockedExerciseIds %||% character(),
+      requiredFamilyIds=o$requiredFamilyIds %||% character(),
+      additionalExclusions=o$additionalExclusions %||% character(), options=o)
+    issues <- c(g$unsatisfiedConstraints %||% list(), g$unsatisfiedTargets %||% list(), g$unsatisfiedSoftPreferences %||% list())
+    return(.application_envelope(request, g$status, plan=g$plan, evaluation=g$evaluation,
+      issues=issues, provenance=g$provenance %||% list()))
+  }
+  if (identical(op, "evaluate_plan")) {
+    if (is.null(request$plan)) return(invalid("MISSING_PLAN"))
+    e <- evaluate_plan(request$plan, db, request$profile %||% NULL, request$target %||% NULL, relationships)
+    return(.application_envelope(request, "evaluated", plan=request$plan, evaluation=e,
+      warnings=e$warnings %||% character(), issues=e$constraints$violations %||% list(),
+      provenance=e$provenance %||% list()))
+  }
+  if (identical(op, "derive_state")) {
+    if (is.null(request$history) || is.null(request$asOf)) return(invalid("MISSING_HISTORY_OR_AS_OF"))
+    o <- request$options %||% list()
+    s <- derive_training_state(request$history, db, as_of=request$asOf,
+      window=request$historyWindow %||% "last_28_days", relationships=relationships,
+      target=request$target %||% NULL, timezone=o$timezone %||% "UTC")
+    return(.application_envelope(request, "state_derived", training_state=s,
+      provenance=s$provenance %||% list()))
+  }
+  if (identical(op, "suggest_progression")) {
+    if (is.null(request$plan) || is.null(request$trainingState)) return(invalid("MISSING_PLAN_OR_TRAINING_STATE"))
+    o <- request$options %||% list()
+    d <- suggest_progression(request$plan, request$trainingState,
+                              policy=o$policy %||% "double-progression-v1",
+                              parameters=o$parameters %||% list())
+    return(.application_envelope(request, if(length(d)) "progression_available" else "insufficient_data",
+      plan=request$plan, decisions=d))
+  }
+  if (identical(op, "adapt_plan")) {
+    if (is.null(request$currentPlan) || is.null(request$profile) || is.null(request$target) ||
+        is.null(request$history) || is.null(request$asOf)) return(invalid("MISSING_ADAPTATION_INPUT"))
+    o <- request$options %||% list(); o$asOf <- request$asOf
+    a <- adapt_plan(request$profile, request$target, request$currentPlan, request$history, db,
+                    policy=o$policy %||% "general-adaptive-v1", relationships=relationships,
+                    training_state=request$trainingState %||% NULL, as_of=request$asOf,
+                    options=o)
+    return(.application_envelope(request, a$status, plan=a$currentPlan,
+      training_state=a$trainingState, decisions=a$decisions %||% list(), adaptation=a,
+      issues=a$unresolvedIssues %||% list(), provenance=a$provenance %||% list()))
+  }
+  invalid("UNSUPPORTED_OPERATION")
+}
 
 # The helpers below are the R translation of the released deterministic
 # planning/state policies.  They intentionally live in the same source file
