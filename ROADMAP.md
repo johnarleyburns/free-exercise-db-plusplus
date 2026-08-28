@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.15.0 released**
-Current stable release: **v1.15.0**
+Status: **v1.15.1 released**
+Current stable release: **v1.15.1**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, Kotlin, and R packages**
 
 ---
@@ -60,6 +60,11 @@ Kotlin/JVM, and R, with explicit request/result operations, typed/native
 facades, bundled schemas, executable consumers, and full cross-language
 contract fixtures. This milestone changes integration ergonomics only; it
 does not introduce new training methodology.
+
+v1.15.1 COMPLETE: external consumer hardening patch with a runnable persisted
+history/state/progression/adaptation flow in all four language examples,
+placeholder-free Swift persistence documentation, and CI execution of the
+history/adaptation consumers. No training methodology changed.
 
 The completed v1.11 workflow is:
 

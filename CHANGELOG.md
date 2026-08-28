@@ -16,6 +16,16 @@
 
 # Changelog
 
+## 1.15.1 - 2026-08-28
+
+- Add runnable external-consumer history, TrainingState, progression, and
+  adaptation examples for Swift, Kotlin/JVM, Python, and R.
+- Replace Swift integration placeholders with real public Codable
+  decode/encode examples and direct links to the executable SPM consumer.
+- Execute the Swift and Kotlin history/adaptation consumers in CI and record
+  the consumer hardening audit.
+- Preserve v1.15.0 application-contract and training methodology semantics.
+
 ## 1.15.0 - 2026-08-28
 
 - Add a versioned, transport-neutral TrainingRequest/TrainingResult contract
