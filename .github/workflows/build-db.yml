@@ -506,6 +506,7 @@ jobs:
       - name: Test Swift 6 consumer package
         run: |
           swift test --package-path packages/swift/FreeExerciseDBPlusPlus
+          bash scripts/test_swift_resources.sh
           bash scripts/test_swift_consumer.sh
 
       - name: Test Kotlin consumer package

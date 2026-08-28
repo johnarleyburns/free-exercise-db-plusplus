@@ -1,7 +1,7 @@
 Package: fedbpp
 Type: Package
 Title: Free Exercise DB++ Research Integration
-Version: 1.11.0
+Version: 1.12.0
 Authors@R: person("Free Exercise DB++", role = c("aut", "cre"), email = "maintainers@example.invalid")
 Author: Free Exercise DB++ [aut, cre]
 Maintainer: Free Exercise DB++ <maintainers@example.invalid>

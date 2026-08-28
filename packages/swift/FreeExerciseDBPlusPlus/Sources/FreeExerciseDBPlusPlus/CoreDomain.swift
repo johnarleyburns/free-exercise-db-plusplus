@@ -54,6 +54,8 @@ public struct TargetRange: Codable, Sendable, Equatable {
   }
 }
 
+/// A TARGET: desired volume/frequency criteria for a period. TARGET is input
+/// to evaluation and generation; it is not a prescription or recorded work.
 public struct VolumeTarget: Codable, Sendable, Equatable {
   public let schemaVersion: String
   public let targetId: String
@@ -110,9 +112,12 @@ public struct TrainingAvailability: Codable, Sendable, Equatable {
   }
 }
 
+/// Stable subject and environment context used by planning and evaluation.
+/// A profile is not a conversational request and does not contain ACTUAL data.
 public struct TrainingProfile: Codable, Sendable, Equatable {
   public let schemaVersion: String
   public let profileId: String?
+  public let subjectId: String?
   public let goals: [JSONValue]
   public let experience: String?
   public let availability: TrainingAvailability?
@@ -120,18 +125,18 @@ public struct TrainingProfile: Codable, Sendable, Equatable {
   public let exercisePreferences: [String: JSONValue]
   public let constraints: [String: JSONValue]
   public let extensions: [String: JSONValue]
-  public init(schemaVersion: String = "0.1.0", profileId: String? = nil, goals: [JSONValue] = [],
+  public init(schemaVersion: String = "0.1.0", profileId: String? = nil, subjectId: String? = nil, goals: [JSONValue] = [],
               experience: String? = nil, availability: TrainingAvailability? = nil,
               equipment: [String] = [], exercisePreferences: [String: JSONValue] = [:],
               constraints: [String: JSONValue] = [:], extensions: [String: JSONValue] = [:]) {
-    self.schemaVersion = schemaVersion; self.profileId = profileId; self.goals = goals
+    self.schemaVersion = schemaVersion; self.profileId = profileId; self.subjectId = subjectId; self.goals = goals
     self.experience = experience; self.availability = availability; self.equipment = equipment
     self.exercisePreferences = exercisePreferences; self.constraints = constraints; self.extensions = extensions
   }
-  private enum CodingKeys: String, CodingKey { case schemaVersion, profileId, goals, experience, availability, equipment, exercisePreferences, constraints, extensions }
+  private enum CodingKeys: String, CodingKey { case schemaVersion, profileId, subjectId, goals, experience, availability, equipment, exercisePreferences, constraints, extensions }
   public init(from decoder: Decoder) throws {
     let c = try decoder.container(keyedBy: CodingKeys.self)
-    schemaVersion = try c.decode(String.self, forKey: .schemaVersion); profileId = try c.decodeIfPresent(String.self, forKey: .profileId)
+    schemaVersion = try c.decode(String.self, forKey: .schemaVersion); profileId = try c.decodeIfPresent(String.self, forKey: .profileId); subjectId = try c.decodeIfPresent(String.self, forKey: .subjectId)
     goals = try c.decodeIfPresent([JSONValue].self, forKey: .goals) ?? []; experience = try c.decodeIfPresent(String.self, forKey: .experience)
     availability = try c.decodeIfPresent(TrainingAvailability.self, forKey: .availability); equipment = try c.decodeIfPresent([String].self, forKey: .equipment) ?? []
     exercisePreferences = try c.decodeIfPresent([String: JSONValue].self, forKey: .exercisePreferences) ?? [:]
@@ -161,6 +166,8 @@ public struct ScheduledOccurrence: Codable, Sendable, Equatable {
   }
 }
 
+/// Persisted PLAN, ACTUAL, TARGET, and activation records owned by the host
+/// application and supplied to longitudinal operations.
 public struct TrainingHistory: Codable, Sendable, Equatable {
   public let subjectId: String
   public let plans: [WorkoutPlan]
@@ -213,6 +220,8 @@ public struct ExerciseState: Codable, Sendable, Equatable {
   }
 }
 
+/// Deterministic derived state at an explicit as-of instant and history window.
+/// It is a read model, not mutable application state or a new source document.
 public struct TrainingState: Codable, Sendable, Equatable {
   public let stateVersion: String
   public let subjectId: String
@@ -244,6 +253,8 @@ public struct TrainingState: Codable, Sendable, Equatable {
   }
 }
 
+/// An advisory, machine-readable coaching proposal. The host app decides
+/// whether to present, accept, persist, or activate it.
 public struct CoachDecision: Codable, Sendable, Equatable {
   public static let supportedDecisionTypes: Set<String> = [
     "hold", "increase_load", "decrease_load", "increase_reps", "decrease_reps",
@@ -336,7 +347,3 @@ public struct CoachDecision: Codable, Sendable, Equatable {
     try c.encode(evidence, forKey: .evidence); try c.encode(provenance, forKey: .provenance)
   }
 }
-
-public struct GeneratedPlanResult: Codable, Sendable, Equatable { public let status: String; public let plan: WorkoutPlan?; public let evaluation: JSONValue?; public let provenance: [String: JSONValue] }
-public struct AdaptivePlanResult: Codable, Sendable, Equatable { public let status: String; public let currentPlan: WorkoutPlan?; public let proposedPlan: WorkoutPlan?; public let decisions: [CoachDecision]; public let currentEvaluation: JSONValue?; public let proposedEvaluation: JSONValue? }
-public struct IntentPlanResult: Codable, Sendable, Equatable { public let resolution: IntentResolutionResult; public let generation: JSONValue? }

@@ -47,14 +47,14 @@ let intentDir = root.appendingPathComponent("fixtures/cross-language/intent/flag
 let intent = try decoder.decode(WorkoutIntent.self, from: Data(contentsOf: intentDir.appendingPathComponent("input.json")))
 let resolution = intentEngine.resolveIntent(intent)
 try encoder.encode(resolution).write(to: out.appendingPathComponent("intent-resolution.json"))
-try encoder.encode(intentEngine.generatePlanFromIntent(intent)).write(to: out.appendingPathComponent("intent-generation.json"))
+try encoder.encode(FreeExerciseDBPlusPlus.generatePlanFromIntent(intent, database: db)).write(to: out.appendingPathComponent("intent-generation.json"))
 let intentRoot = root.appendingPathComponent("fixtures/cross-language/intent")
 for directory in try FileManager.default.contentsOfDirectory(at: intentRoot, includingPropertiesForKeys: [.isDirectoryKey]) where (try directory.resourceValues(forKeys: [.isDirectoryKey]).isDirectory == true) {
   let name = directory.lastPathComponent
   guard let input = try? decoder.decode(WorkoutIntent.self, from: Data(contentsOf: directory.appendingPathComponent("input.json"))) else { continue }
   let history = name == "history-aware" ? try load("fixtures/cross-language/intent/history-aware/history.json") : nil
   let explicitTarget = name == "target-partial-override" ? try load("fixtures/cross-language/intent/target-partial-override/target.json") : nil
-  let resolved = intentEngine.resolveIntent(input, target: explicitTarget, history: history, asOf: name == "history-aware" ? "2026-08-25T12:00:00Z" : nil)
+  let resolved = FreeExerciseDBPlusPlus.resolveIntent(input, database: db, target: explicitTarget, history: history, asOf: name == "history-aware" ? "2026-08-25T12:00:00Z" : nil)
   try encoder.encode(resolved).write(to: out.appendingPathComponent("intent-resolution-\(name).json"))
 }
 EOF

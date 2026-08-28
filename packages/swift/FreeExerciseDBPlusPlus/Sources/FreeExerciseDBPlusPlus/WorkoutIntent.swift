@@ -77,6 +77,8 @@ public struct EquipmentOverrides: Codable, Sendable, Equatable {
     self.removeEquipment = removeEquipment
   }
 }
+/// Structured application intent. Natural-language parsing and any LLM remain
+/// outside this package; the engine consumes this deterministic input model.
 public struct WorkoutIntent: Codable, Sendable, Equatable {
   public var schemaVersion: String
   public var intentId: String?
@@ -1042,7 +1044,7 @@ public func validateWorkoutIntent(_ x: WorkoutIntent, database: FEDatabase? = ni
 public func resolveIntent(_ x: WorkoutIntent, database: FEDatabase? = nil, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil)
   -> IntentResolutionResult
 { IntentResolver().resolve(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf) }
-public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, asOf: String? = nil) -> JSONValue {
+public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, profile: JSONValue? = nil, target: JSONValue? = nil, relationships: ExerciseRelationships? = nil, history: JSONValue? = nil, currentPlan: JSONValue? = nil, asOf: String? = nil) -> JSONValue {
   let resolution = resolveIntent(x, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf)
   let resolutionJSON = (try? JSONEncoder().encode(resolution)).flatMap { try? JSONDecoder().decode(JSONValue.self, from: $0) } ?? .null
   guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let resolvedProfile = resolution.resolvedProfile, let resolvedTarget = resolution.resolvedTarget else { return .object(["resolution": resolutionJSON, "generation": .null]) }
@@ -1050,7 +1052,7 @@ public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, pro
   let options = resolution.generationOptions.objectValue ?? [:]
   let generated = generatePlan(profile: resolvedProfile, target: resolvedTarget, database: database,
     policy: resolution.planningPolicy ?? "full-body-general-v1", relationships: relationships,
-    trainingState: options["trainingState"], requiredExerciseIds: constraints?.requiredExerciseIds ?? [],
+    trainingState: options["trainingState"], currentPlan: currentPlan, requiredExerciseIds: constraints?.requiredExerciseIds ?? [],
     lockedExerciseIds: constraints?.lockedExerciseIds ?? [], requiredFamilyIds: constraints?.requiredFamilyIds ?? [],
     options: .object(["planId": .string("generated-plan"), "revisionId": .string("r1")]))
   return .object(["resolution": resolutionJSON, "generation": generated])

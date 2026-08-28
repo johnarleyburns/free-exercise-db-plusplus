@@ -1,5 +1,10 @@
 # Language capabilities
 
+v1.11 completed the Python reference engine and full Swift semantic engine
+parity. v1.12 completed the Swift SPM application-grade API and packaging
+hardening; it did not add a new training algorithm milestone. Kotlin remains
+the v1.13 full-engine port and R remains the v1.14 full-engine/research port.
+
 | Capability | Python | Swift | Kotlin/JVM | R |
 | --- | --- | --- | --- | --- |
 | WorkoutIntent decode + validation | full | full native | partial legacy/current | partial legacy/current |

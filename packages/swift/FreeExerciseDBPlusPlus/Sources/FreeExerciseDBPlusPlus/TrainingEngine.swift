@@ -1,8 +1,12 @@
 import Foundation
 
-/// Offline native-engine façade.  Methods are added here only once they are
-/// backed by a native canonical implementation; no subprocess or network path
-/// is used.
+/// The primary offline, Foundation-only DB++ domain engine.
+///
+/// `TrainingEngine` owns the exercise database, relationships, policies, and
+/// deterministic PLAN/ACTUAL/TARGET operations. It has no Python, subprocess,
+/// network, UIKit, SwiftUI, AppKit, or Foundation Models dependency. Use
+/// `bundled()` for the package's offline resources or initialize it with a
+/// custom database for tests and specialized deployments.
 public struct TrainingEngine: Sendable {
   public let database: FEDatabase
   public let relationships: ExerciseRelationships?
@@ -74,7 +78,8 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.mergeTarget(base, explicit)
   }
 
-  public func resolveIntent(_ intent: WorkoutIntent, profile: JSONValue? = nil, target: JSONValue? = nil, history: JSONValue? = nil, asOf: String? = nil) -> IntentResolutionResult {
+  @available(*, deprecated, message: "Use the typed resolveIntent(_:profile:target:history:asOf:) overload or the global compatibility function.")
+  public func resolveIntentJSON(_ intent: WorkoutIntent, profile: JSONValue? = nil, target: JSONValue? = nil, history: JSONValue? = nil, asOf: String? = nil) -> IntentResolutionResult {
     IntentResolver().resolve(intent, database: database, profile: profile, target: target, relationships: relationships, history: history, asOf: asOf)
   }
 
@@ -187,7 +192,8 @@ public struct TrainingEngine: Sendable {
   /// Resolve intent and construct the current native deterministic draft in a
   /// single application-facing call.  The returned document contains the
   /// resolution and generation sections used by the shared intent fixtures.
-  public func generatePlanFromIntent(
+  @available(*, deprecated, message: "Use the typed generatePlanFromIntent(_:profile:target:history:currentPlan:asOf:) overload or the global compatibility function.")
+  public func generatePlanFromIntentJSON(
     _ intent: WorkoutIntent,
     profile: JSONValue? = nil,
     target: JSONValue? = nil,

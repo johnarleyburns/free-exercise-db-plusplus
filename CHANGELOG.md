@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.12.0 - 2026-08-27
+
+- Make the completed Swift engine a production-ready, Foundation-only Swift
+  Package Manager dependency with a single `TrainingEngine` facade.
+- Add strongly typed intent, PLAN, ACTUAL, TARGET, profile, history, state,
+  evaluation, generation, progression, and adaptive-coaching contracts with
+  stable Codable round trips and machine-readable outcomes.
+- Bundle offline resources, validate canonical resource copies in CI, and add
+  an external SPM consumer plus performance smoke coverage.
+- Preserve deterministic v1.11 engine semantics; this release adds no new
+  training algorithm milestone. Kotlin remains v1.13 and R remains v1.14.
+
 ## 1.11.1 - 2026-08-27
 
 - Correct the native Swift history, progression, generation, intent, and

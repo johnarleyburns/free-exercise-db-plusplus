@@ -97,6 +97,26 @@ The public fedbpp package provides runnable examples under [examples/python](exa
 
 ### Swift 6 / iOS
 
+For Apple applications, the Foundation-only Swift Package is the recommended
+drop-in domain engine. It bundles its offline resources, so callers do not need
+repository-relative paths, Python, a subprocess, or a network service. See the
+[Swift application API guide](docs/SWIFT-API.md).
+
+```swift
+import Foundation
+import FreeExerciseDBPlusPlus
+
+let engine = try TrainingEngine.bundled()
+let intent = WorkoutIntent(goal: "hypertrophy", environment: "commercial_gym",
+                           schedule: WorkoutSchedule(cycleLengthDays: 7,
+                                                     sessionsPerCycle: IntRange(target: 3)))
+let validation = engine.validateIntent(intent)
+let result = engine.generatePlanFromIntent(intent)
+```
+
+The lower-level Codable example below remains useful when an app only needs to
+decode database records directly.
+
 Swift `Codable` can decode only the fields your app needs; unknown DB++ fields are ignored
 by default.
 
@@ -178,6 +198,7 @@ short and stable for consumers.
 - [Evidence policy](docs/EVIDENCE.md)
 - [1.0 compatibility contract](docs/COMPATIBILITY.md)
 - [Versioning](docs/VERSIONING.md)
+- [Swift application API](docs/SWIFT-API.md)
 - [Release checklist](docs/RELEASE-CHECKLIST.md)
 - [Current review report](reports/REVIEW.md)
 - [Current rule audit](reports/RULE-AUDIT.md)

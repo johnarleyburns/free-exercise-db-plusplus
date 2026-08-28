@@ -20,9 +20,33 @@ public indirect enum JSONValue: Codable, Sendable, Equatable {
         else { self = .object(try c.decode([String: JSONValue].self)) }
     }
     public func encode(to encoder: Encoder) throws {
-        var c = encoder.singleValueContainer()
-        switch self { case .null: try c.encodeNil(); case .bool(let v): try c.encode(v); case .number(let v): try c.encode(v); case .string(let v): try c.encode(v); case .array(let v): try c.encode(v); case .object(let v): try c.encode(v) }
+        switch self {
+        case .object(let v):
+            // JSON object order is not semantic, but sorted keys make persisted
+            // app artifacts byte-stable across processes and Swift runtimes.
+            var keyed = encoder.container(keyedBy: JSONValueCodingKey.self)
+            for key in v.keys.sorted() {
+                try keyed.encode(v[key], forKey: JSONValueCodingKey(stringValue: key))
+            }
+        case .null:
+            var c = encoder.singleValueContainer(); try c.encodeNil()
+        case .bool(let v):
+            var c = encoder.singleValueContainer(); try c.encode(v)
+        case .number(let v):
+            var c = encoder.singleValueContainer(); try c.encode(v)
+        case .string(let v):
+            var c = encoder.singleValueContainer(); try c.encode(v)
+        case .array(let v):
+            var c = encoder.singleValueContainer(); try c.encode(v)
+        }
     }
+}
+
+private struct JSONValueCodingKey: CodingKey {
+    let stringValue: String
+    let intValue: Int? = nil
+    init(stringValue: String) { self.stringValue = stringValue }
+    init?(intValue: Int) { return nil }
 }
 public extension JSONValue {
     var objectValue: [String: JSONValue]? { if case .object(let value) = self { return value }; return nil }
@@ -42,6 +66,9 @@ public struct Exercise: Codable, Sendable, Equatable, Identifiable {
     public let exerciseId: String
     public let annotation: ExerciseAnnotation
     public let source: [String: JSONValue]?
+    public init(exerciseId: String, annotation: ExerciseAnnotation, source: [String: JSONValue]? = nil) {
+        self.exerciseId = exerciseId; self.annotation = annotation; self.source = source
+    }
     public var id: String { exerciseId }
 }
 
@@ -106,11 +133,11 @@ private struct DatabaseIndexes: Sendable {
     }
 }
 
-public struct Quantity: Codable, Sendable, Equatable { public let value: Double; public let unit: String }
-public struct SetObservation: Codable, Sendable, Equatable { public let setNumber: Int?; public let setType: String; public let setPrescriptionId: String?; public let reps: Int?; public let load: Quantity?; public let completed: Bool; public let rpe: Double?; public let rir: Double?; public let resistance: [String: JSONValue]?; public init(setNumber: Int, setType: String, reps: Int? = nil, load: Quantity? = nil, completed: Bool) { self.setNumber = setNumber; self.setType = setType; self.setPrescriptionId = nil; self.reps = reps; self.load = load; self.completed = completed; self.rpe = nil; self.rir = nil; self.resistance = nil } }
+public struct Quantity: Codable, Sendable, Equatable { public let value: Double; public let unit: String; public init(value: Double, unit: String) { self.value = value; self.unit = unit } }
+public struct SetObservation: Codable, Sendable, Equatable { public let setNumber: Int?; public let setType: String; public let setPrescriptionId: String?; public let reps: Int?; public let load: Quantity?; public let completed: Bool; public let rpe: Double?; public let rir: Double?; public let resistance: [String: JSONValue]?; public init(setNumber: Int? = nil, setType: String, setPrescriptionId: String? = nil, reps: Int? = nil, load: Quantity? = nil, completed: Bool, rpe: Double? = nil, rir: Double? = nil, resistance: [String: JSONValue]? = nil) { self.setNumber = setNumber; self.setType = setType; self.setPrescriptionId = setPrescriptionId; self.reps = reps; self.load = load; self.completed = completed; self.rpe = rpe; self.rir = rir; self.resistance = resistance } }
 public struct Substitution: Codable, Sendable, Equatable { public let reason: String; public let plannedExerciseId: String?; public let plannedPrescriptionId: String?; public let notes: String?; public init(reason: String, plannedExerciseId: String? = nil, plannedPrescriptionId: String? = nil, notes: String? = nil) { self.reason = reason; self.plannedExerciseId = plannedExerciseId; self.plannedPrescriptionId = plannedPrescriptionId; self.notes = notes } }
-public struct ExerciseObservation: Codable, Sendable, Equatable { public let exerciseId: String?; public let exerciseName: String?; public let exercisePrescriptionId: String?; public let order: Int?; public let laterality: String?; public let substitution: Substitution?; public let sets: [SetObservation]; public init(exerciseId: String?, exerciseName: String? = nil, order: Int, laterality: String? = nil, sets: [SetObservation], exercisePrescriptionId: String? = nil, substitution: Substitution? = nil) { self.exerciseId = exerciseId; self.exerciseName = exerciseName; self.exercisePrescriptionId = exercisePrescriptionId; self.order = order; self.laterality = laterality; self.substitution = substitution; self.sets = sets }; public var isUnplanned: Bool { exercisePrescriptionId == nil && substitution == nil } }
-public struct PlanReference: Codable, Sendable, Equatable { public let planId: String?; public let revisionId: String?; public let planSessionId: String? }
+public struct ExerciseObservation: Codable, Sendable, Equatable { public let exerciseId: String?; public let exerciseName: String?; public let exercisePrescriptionId: String?; public let order: Int?; public let laterality: String?; public let substitution: Substitution?; public let sets: [SetObservation]; public init(exerciseId: String?, exerciseName: String? = nil, order: Int? = nil, laterality: String? = nil, sets: [SetObservation], exercisePrescriptionId: String? = nil, substitution: Substitution? = nil) { self.exerciseId = exerciseId; self.exerciseName = exerciseName; self.exercisePrescriptionId = exercisePrescriptionId; self.order = order; self.laterality = laterality; self.substitution = substitution; self.sets = sets }; public var isUnplanned: Bool { exercisePrescriptionId == nil && substitution == nil } }
+public struct PlanReference: Codable, Sendable, Equatable { public let planId: String?; public let revisionId: String?; public let planSessionId: String?; public init(planId: String? = nil, revisionId: String? = nil, planSessionId: String? = nil) { self.planId = planId; self.revisionId = revisionId; self.planSessionId = planSessionId } }
 public struct Workout: Codable, Sendable, Equatable {
     public let schemaVersion: String; public let sessionId: String; public let athleteId: String?; public let startTime: String; public let endTime: String?; public let planReference: PlanReference?; public let exercises: [ExerciseObservation]
     public init(schemaVersion: String, sessionId: String, startTime: String, endTime: String? = nil, exercises: [ExerciseObservation], athleteId: String? = nil, planReference: PlanReference? = nil) { self.schemaVersion = schemaVersion; self.sessionId = sessionId; self.athleteId = athleteId; self.startTime = startTime; self.endTime = endTime; self.planReference = planReference; self.exercises = exercises }
@@ -118,13 +145,14 @@ public struct Workout: Codable, Sendable, Equatable {
     public func effectiveSets(using database: FEDatabase) -> [String: Double] { var totals: [String: Double] = [:]; for observation in exercises { guard let id = observation.exerciseId, let exercise = try? database.getExercise(id), exercise.annotation.volumeEligible else { continue }; let credits = database.setCredits; let counted = Set(["working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted"]); let sets = Double(observation.sets.filter { $0.completed && counted.contains($0.setType) }.count); for muscle in exercise.annotation.direct { totals[muscle, default: 0] += sets * credits.direct }; for muscle in exercise.annotation.indirect { totals[muscle, default: 0] += sets * credits.indirect }; for muscle in exercise.annotation.stabilizers { totals[muscle, default: 0] += sets * credits.stabilizer } }; return totals }
 }
 
-public struct PlanCycle: Codable, Sendable, Equatable { public let lengthDays: Int }
-public struct PlanPhase: Codable, Sendable, Equatable { public let phaseId: String; public let durationCycles: Int; public let cycle: PlanCycle? }
-public struct PlannedSet: Codable, Sendable, Equatable { public let setPrescriptionId: String; public let setType: String; public let reps: JSONValue; public let load: JSONValue?; public var effort: JSONValue? = nil; public var notes: String? = nil }
-public struct PlanExercisePrescription: Codable, Sendable, Equatable { public let prescriptionId: String; public let exerciseId: String?; public let exerciseName: String?; public var externalExerciseId: JSONValue? = nil; public let order: Int?; public let sets: JSONValue?; public let reps: JSONValue?; public var load: JSONValue? = nil; public var effort: JSONValue? = nil; public var setType: String? = nil; public var laterality: String? = nil; public var notes: String? = nil; public let plannedSets: [PlannedSet]?; public let progression: JSONValue?; public let optional: Bool?; public let condition: String? }
-public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public var name: String? = nil; public var notes: String? = nil; public let exercises: [PlanExercisePrescription] }
+public struct PlanCycle: Codable, Sendable, Equatable { public let lengthDays: Int; public init(lengthDays: Int) { self.lengthDays = lengthDays } }
+public struct PlanPhase: Codable, Sendable, Equatable { public let phaseId: String; public let durationCycles: Int; public let cycle: PlanCycle?; public init(phaseId: String, durationCycles: Int, cycle: PlanCycle? = nil) { self.phaseId = phaseId; self.durationCycles = durationCycles; self.cycle = cycle } }
+public struct PlannedSet: Codable, Sendable, Equatable { public let setPrescriptionId: String; public let setType: String; public let reps: JSONValue; public let load: JSONValue?; public var effort: JSONValue? = nil; public var notes: String? = nil; public init(setPrescriptionId: String, setType: String, reps: JSONValue, load: JSONValue? = nil, effort: JSONValue? = nil, notes: String? = nil) { self.setPrescriptionId = setPrescriptionId; self.setType = setType; self.reps = reps; self.load = load; self.effort = effort; self.notes = notes } }
+public struct PlanExercisePrescription: Codable, Sendable, Equatable { public let prescriptionId: String; public let exerciseId: String?; public let exerciseName: String?; public var externalExerciseId: JSONValue? = nil; public let order: Int?; public let sets: JSONValue?; public let reps: JSONValue?; public var load: JSONValue? = nil; public var effort: JSONValue? = nil; public var setType: String? = nil; public var laterality: String? = nil; public var notes: String? = nil; public let plannedSets: [PlannedSet]?; public let progression: JSONValue?; public let optional: Bool?; public let condition: String?; public init(prescriptionId: String, exerciseId: String? = nil, exerciseName: String? = nil, externalExerciseId: JSONValue? = nil, order: Int? = nil, sets: JSONValue? = nil, reps: JSONValue? = nil, load: JSONValue? = nil, effort: JSONValue? = nil, setType: String? = nil, laterality: String? = nil, notes: String? = nil, plannedSets: [PlannedSet]? = nil, progression: JSONValue? = nil, optional: Bool? = nil, condition: String? = nil) { self.prescriptionId = prescriptionId; self.exerciseId = exerciseId; self.exerciseName = exerciseName; self.externalExerciseId = externalExerciseId; self.order = order; self.sets = sets; self.reps = reps; self.load = load; self.effort = effort; self.setType = setType; self.laterality = laterality; self.notes = notes; self.plannedSets = plannedSets; self.progression = progression; self.optional = optional; self.condition = condition } }
+public struct PlanSession: Codable, Sendable, Equatable { public let planSessionId: String; public let phaseId: String?; public let dayOffset: Int; public var name: String? = nil; public var notes: String? = nil; public let exercises: [PlanExercisePrescription]; public init(planSessionId: String, phaseId: String? = nil, dayOffset: Int, name: String? = nil, notes: String? = nil, exercises: [PlanExercisePrescription]) { self.planSessionId = planSessionId; self.phaseId = phaseId; self.dayOffset = dayOffset; self.name = name; self.notes = notes; self.exercises = exercises } }
 public struct WorkoutPlan: Codable, Sendable, Equatable {
     public let schemaVersion: String; public let planId: String; public let revisionId: String; public let name: String?; public var description: String? = nil; public var provenance: JSONValue? = nil; public let cycle: PlanCycle; public var notes: String? = nil; public var tags: [String]? = nil; public let phases: [PlanPhase]?; public let sessions: [PlanSession]
+    public init(schemaVersion: String = "0.2.0", planId: String, revisionId: String, name: String? = nil, description: String? = nil, provenance: JSONValue? = nil, cycle: PlanCycle, notes: String? = nil, tags: [String]? = nil, phases: [PlanPhase]? = nil, sessions: [PlanSession]) { self.schemaVersion = schemaVersion; self.planId = planId; self.revisionId = revisionId; self.name = name; self.description = description; self.provenance = provenance; self.cycle = cycle; self.notes = notes; self.tags = tags; self.phases = phases; self.sessions = sessions }
     public static func load(url: URL, decoder: JSONDecoder = JSONDecoder()) throws -> WorkoutPlan { do { return try decoder.decode(WorkoutPlan.self, from: Data(contentsOf: url)) } catch { throw FEDBError.invalidDocument("Unable to decode PLAN: \(error)") } }
 }
 

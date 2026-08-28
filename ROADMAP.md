@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.11.0 released; handoff remediation in progress**
-Current stable release: **v1.11.0**
+Status: **v1.12.0 released**
+Current stable release: **v1.12.0**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python and Swift packages**
 
 ---
@@ -45,10 +45,11 @@ progression, deterministic production generation, and adaptive coaching.
 Canonical fixtures, resource copies, isolated consumers, and deterministic
 native results are covered by the parity suite.
 
-v1.12 NEXT: Swift SPM production hardening: API ergonomics, documentation,
-distribution, resource-size/performance work, app-integration examples,
-semantic stability, and drop-in application readiness. It owns no missing core
-engine semantics. DB++ remains free of LLM vendor dependencies.
+v1.12 COMPLETE: the Swift SPM package is an application-grade, offline,
+typed drop-in domain engine with bundled resources, stable Codable contracts,
+deterministic behavior, and external consumer coverage. It introduces no new
+training algorithm milestone and owns no missing core engine semantics. DB++
+remains free of LLM vendor dependencies.
 
 v1.13: Kotlin/JVM/Android full engine port.
 
@@ -301,7 +302,7 @@ v1.10  WorkoutIntent + deterministic intent/goal/environment resolution
 
 v1.11  COMPLETE: Python reference audit and full Swift engine parity
 
-v1.12  NEXT: Swift SPM production hardening and app-readiness polish
+v1.12  COMPLETE: Swift SPM production hardening and app-readiness polish
 
 v1.13  Kotlin/JVM/Android full engine port
 
