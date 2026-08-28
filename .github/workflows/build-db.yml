@@ -527,6 +527,7 @@ jobs:
           Rscript tests/test_package.R
           cd ../../..
           bash scripts/test_r_consumer.sh
+          bash scripts/test_r_python_parity.sh
 
       - name: Prepare reports directory
         run: mkdir -p reports

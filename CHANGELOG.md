@@ -16,6 +16,12 @@
 
 # Changelog
 
+## Unreleased (v1.14.1 corrective patch)
+
+- Enforce full Python-authored R parity checks for intent, evaluation, history,
+  progression, generation, and adaptation, including canonical generation
+  result provenance and selection ordering.
+
 ## 1.14.0 - 2026-08-28
 
 - Complete the native R research/analysis engine for the released DB++ training
