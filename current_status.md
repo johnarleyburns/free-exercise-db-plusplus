@@ -1140,3 +1140,17 @@ parity, deterministic fixture regeneration, isolated Swift consumer, installed
 Python wheel, 42 Swift tests, Kotlin compatibility, syntax, and canonical
 artifact checks passed. Phase 3 is closed; v1.12 Swift SPM hardening is the
 next separately scoped phase, while Kotlin/R engine ports remain deferred.
+
+## Phase 4 acceptance and release — prepared
+
+The complete local Phase 4A acceptance pass passed: 130 Python tests, release
+and mapping contracts, 12 public schema validations, interop/FHIR coverage,
+deterministic fixture regeneration, exact Python/Swift parity, external Swift
+SPM consumer, installed Python wheel, 42 Swift tests, Kotlin consumer, R
+consumer, syntax/dependency checks, and canonical artifact checksums.
+
+The normal `build-db.yml` workflow is the authoritative upstream database
+rebuild and exact-SHA gate for Phase 4B. The release workflow requires that
+normal CI success on the exact release-preparation commit before v1.11.1 can
+be tagged or published. v1.11.0 remains immutable; Kotlin/R engine ports remain
+deferred.
