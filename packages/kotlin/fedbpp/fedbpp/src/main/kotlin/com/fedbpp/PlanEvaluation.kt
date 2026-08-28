@@ -1,188 +1,88 @@
 package com.fedbpp
 
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonNull
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.booleanOrNull
-import kotlinx.serialization.json.buildJsonArray
-import kotlinx.serialization.json.buildJsonObject
-import kotlinx.serialization.json.doubleOrNull
-import kotlinx.serialization.json.intOrNull
-import kotlinx.serialization.json.jsonArray
-import kotlinx.serialization.json.jsonObject
-import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.put
+import kotlinx.serialization.json.*
 import kotlin.math.round
 
-/**
- * Native implementation of the canonical PLAN evaluator.  Its JSON result is
- * deliberately shaped like Python's ``fedbpp.evaluate_plan`` result so the
- * generator and public engine façade share one evaluator gate.
- */
-private const val EVALUATION_VERSION = "0.1.0"
-private const val EVALUATION_POLICY = "plan-evaluation-v1"
-
-private fun JsonElement?.obj(): JsonObject = this as? JsonObject ?: JsonObject(emptyMap())
-private fun JsonElement?.arr(): JsonArray = this as? JsonArray ?: JsonArray(emptyList())
-private fun JsonElement?.string(): String? = (this as? JsonPrimitive)?.content
-private fun JsonElement?.number(): Double? = (this as? JsonPrimitive)?.doubleOrNull
-private fun clean(value: Double): Double = round(value * 1_000_000.0) / 1_000_000.0
-private fun jo(vararg values: Pair<String, JsonElement>): JsonObject = JsonObject(linkedMapOf(*values))
-private fun jn(value: Double?): JsonElement = value?.let(::JsonPrimitive) ?: JsonNull
-
-private data class Range(val min: Double? = null, val target: Double? = null, val max: Double? = null)
-private fun range(value: JsonElement?): Range {
-    if (value !is JsonObject) return Range(target = value.number())
-    return Range(value["min"]?.number() ?: value["minimumSets"]?.number(), value["target"]?.number() ?: value["targetSets"]?.number(), value["max"]?.number() ?: value["maximumSets"]?.number())
+private data class EvalRange(val min: Double? = null, val target: Double? = null, val max: Double? = null)
+private fun JsonElement?.evObj() = this as? JsonObject ?: JsonObject(emptyMap())
+private fun JsonElement?.evArr() = this as? JsonArray ?: JsonArray(emptyList())
+private fun JsonElement?.evNum() = (this as? JsonPrimitive)?.doubleOrNull
+private fun JsonElement?.evStr() = (this as? JsonPrimitive)?.contentOrNull
+private fun evClean(v: Double) = round(v * 1_000_000.0) / 1_000_000.0
+private fun evRange(value: JsonElement?): EvalRange = when (value) {
+    is JsonPrimitive -> value.doubleOrNull?.let { EvalRange(it, it, it) } ?: EvalRange()
+    is JsonObject -> EvalRange(value["min"].evNum() ?: value["minimumSets"].evNum(), value["target"].evNum() ?: value["targetSets"].evNum(), value["max"].evNum() ?: value["maximumSets"].evNum())
+    else -> EvalRange()
 }
-private fun state(actual: Double, range: Range): String = when {
-    range.min != null && actual < range.min -> "below_minimum"
-    range.max != null && actual > range.max -> "above_maximum"
-    range.target == null -> "within_range"
-    actual == range.target -> "at_target"
-    actual < range.target -> "within_range_below_target"
-    else -> "within_range_above_target"
+private fun evAdd(a: EvalRange, b: EvalRange) = EvalRange(if (a.min != null && b.min != null) a.min + b.min else null, if (a.target != null && b.target != null) a.target + b.target else null, if (a.max != null && b.max != null) a.max + b.max else null)
+private fun evScale(a: EvalRange, factor: Double) = EvalRange(a.min?.times(factor), a.target?.times(factor), a.max?.times(factor))
+private fun evRepresentative(a: EvalRange) = a.target ?: a.min ?: a.max ?: 0.0
+private fun evState(actual: Double, r: EvalRange) = when { r.min != null && actual < r.min -> "below_minimum"; r.max != null && actual > r.max -> "above_maximum"; r.target == null -> "within_range"; actual == r.target -> "at_target"; actual < r.target -> "within_range_below_target"; else -> "within_range_above_target" }
+private fun evSetRange(rx: JsonObject): EvalRange {
+    val explicit = rx["plannedSets"].evArr(); if (explicit.isNotEmpty()) return EvalRange(explicit.count { it.evObj()["setType"].evStr() in setOf("working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted") }.toDouble()).let { EvalRange(it.min, it.min, it.min) }
+    val type = rx["setType"].evStr(); if (type != null && type !in setOf("working", "backoff", "amrap", "drop", "cluster", "rest_pause", "assisted")) return EvalRange(0.0, 0.0, 0.0)
+    return evRange(rx["sets"])
 }
-private fun plannedSets(rx: JsonObject): Double {
-    val explicit = rx["plannedSets"]?.arr()
-    if (explicit != null && explicit.isNotEmpty()) return explicit.size.toDouble()
-    val v = rx["sets"]
-    return when (v) { is JsonPrimitive -> v.doubleOrNull ?: 0.0; is JsonObject -> range(v).target ?: range(v).min ?: range(v).max ?: 0.0; else -> 0.0 }
-}
+private fun evRangeJson(r: EvalRange) = buildJsonObject { put("min", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("max", r.max?.let(::JsonPrimitive) ?: JsonNull) }
+private fun evNumMap(values: Map<String, EvalRange>) = buildJsonObject { values.toSortedMap().forEach { (k, v) -> put(k, evClean(evRepresentative(v))) } }
+private fun evRangeMap(values: Map<String, EvalRange>) = buildJsonObject { values.toSortedMap().filterValues { it.min != null || it.target != null || it.max != null }.forEach { (k, v) -> put(k, evRangeJson(EvalRange(v.min?.let(::evClean), v.target?.let(::evClean), v.max?.let(::evClean)))) } }
+private fun evFinding(type: String, values: Map<String, JsonElement>) = buildJsonObject { put("type", type); values.toSortedMap().forEach { (k, v) -> put(k, v) } }
 
-private data class Coverage(
-    val direct: MutableMap<String, Double> = sortedMapOf(), val indirect: MutableMap<String, Double> = sortedMapOf(),
-    val stabilizer: MutableMap<String, Double> = sortedMapOf(), val patterns: MutableMap<String, Double> = sortedMapOf(),
-    val muscleSessions: MutableMap<String, MutableSet<String>> = sortedMapOf(), val patternSessions: MutableMap<String, MutableSet<String>> = sortedMapOf(),
-    var planned: Double = 0.0, var mapped: Double = 0.0, var unmapped: Double = 0.0, var ineligible: Double = 0.0,
-    val unmappedRx: MutableList<String> = mutableListOf(), val ineligibleRx: MutableList<String> = mutableListOf()
-)
-
-private fun add(table: MutableMap<String, Double>, key: String, value: Double) { table[key] = clean((table[key] ?: 0.0) + value) }
-private fun mapNumbers(input: Map<String, Double>): JsonObject = buildJsonObject { input.toSortedMap().forEach { (k, v) -> put(k, JsonPrimitive(clean(v))) } }
-private fun setCredits(database: Database): Triple<Double, Double, Double> {
-    val credits = database.metadata["setCredits"].obj()
-    return Triple(credits["direct"].number() ?: 1.0, credits["indirect"].number() ?: 0.5, credits["stabilizer"].number() ?: 0.0)
-}
-
-private fun coverage(plan: JsonObject, database: Database): Coverage {
-    val result = Coverage()
-    for (sessionValue in plan["sessions"].arr()) {
-        val session = sessionValue.obj(); val sid = session["planSessionId"].string() ?: ""
-        for (rxValue in session["exercises"].arr()) {
-            val rx = rxValue.obj(); val sets = plannedSets(rx); result.planned += sets
-            val id = rx["exerciseId"].string(); val exercise = id?.let { database.exercises[it] }
-            if (exercise == null) { result.unmapped += sets; rx["prescriptionId"].string()?.let(result.unmappedRx::add); continue }
-            result.mapped += sets
-            if (!exercise.annotation.volumeEligible) { result.ineligible += sets; rx["prescriptionId"].string()?.let(result.ineligibleRx::add); continue }
-            exercise.annotation.direct.forEach { add(result.direct, it, sets); result.muscleSessions.getOrPut(it) { sortedSetOf() }.add(sid) }
-            exercise.annotation.indirect.forEach { add(result.indirect, it, sets); result.muscleSessions.getOrPut(it) { sortedSetOf() }.add(sid) }
-            exercise.annotation.stabilizers.forEach { add(result.stabilizer, it, sets) }
-            exercise.annotation.patterns.forEach { add(result.patterns, it, sets); result.patternSessions.getOrPut(it) { sortedSetOf() }.add(sid) }
-        }
-    }
-    return result
-}
-
-private fun finding(type: String, vararg values: Pair<String, JsonElement>): JsonObject = buildJsonObject { put("type", JsonPrimitive(type)); values.sortedBy { it.first }.forEach { put(it.first, it.second) } }
-
-/** Evaluate a PLAN without a Python bridge or source-tree dependency. */
 fun evaluatePlan(planValue: JsonElement, database: Database, profileValue: JsonElement? = null, targetValue: JsonElement? = null, relationships: ExerciseRelationships? = null): JsonElement {
-    val plan = planValue.obj(); val profile = profileValue as? JsonObject; val target = targetValue as? JsonObject
-    val c = coverage(plan, database); val days = plan["cycle"].obj()["lengthDays"]?.jsonPrimitive?.intOrNull ?: 7
-    val credits = setCredits(database); val muscles = (c.direct.keys + c.indirect.keys + c.stabilizer.keys).toSortedSet()
-    val effective = muscles.associateWith { clean((c.direct[it] ?: 0.0) * credits.first + (c.indirect[it] ?: 0.0) * credits.second + (c.stabilizer[it] ?: 0.0) * credits.third) }
-    val targetDays = target?.get("periodDays")?.number() ?: days.toDouble(); val targetScale = targetDays / days
+    val plan = planValue.evObj(); val profile = profileValue as? JsonObject; val target = targetValue as? JsonObject; val cycleDays = plan["cycle"].evObj()["lengthDays"].evNum()?.toInt() ?: 7
+    val direct = sortedMapOf<String, EvalRange>(); val indirect = sortedMapOf<String, EvalRange>(); val stabilizers = sortedMapOf<String, EvalRange>(); val patterns = sortedMapOf<String, EvalRange>(); val muscleSessions = sortedMapOf<String, MutableSet<String>>(); val patternSessions = sortedMapOf<String, MutableSet<String>>()
+    var planned = EvalRange(0.0, 0.0, 0.0); var mapped = EvalRange(0.0, 0.0, 0.0); var unmapped = EvalRange(0.0, 0.0, 0.0); var ineligible = EvalRange(0.0, 0.0, 0.0); val unmappedIds = mutableListOf<String>(); val ineligibleIds = mutableListOf<String>()
+    fun add(map: MutableMap<String, EvalRange>, key: String, value: EvalRange) { map[key] = evAdd(map[key] ?: EvalRange(0.0, 0.0, 0.0), value) }
+    for (sv in plan["sessions"].evArr()) {
+        val s = sv.evObj(); val sid = s["planSessionId"].evStr() ?: ""
+        for (rv in s["exercises"].evArr()) {
+            val rx = rv.evObj(); val sets = evSetRange(rx); planned = evAdd(planned, sets); val id = rx["exerciseId"].evStr(); val ex = id?.let { database.exercises[it] }
+            if (ex == null) { unmapped = evAdd(unmapped, sets); rx["prescriptionId"].evStr()?.let(unmappedIds::add); continue }
+            mapped = evAdd(mapped, sets); if (!ex.annotation.volumeEligible) { ineligible = evAdd(ineligible, sets); rx["prescriptionId"].evStr()?.let(ineligibleIds::add); continue }
+            ex.annotation.direct.forEach { add(direct, it, sets); muscleSessions.getOrPut(it) { sortedSetOf() }.add(sid) }; ex.annotation.indirect.forEach { add(indirect, it, sets); muscleSessions.getOrPut(it) { sortedSetOf() }.add(sid) }; ex.annotation.stabilizers.forEach { add(stabilizers, it, sets) }; ex.annotation.patterns.forEach { add(patterns, it, sets); patternSessions.getOrPut(it) { sortedSetOf() }.add(sid) }
+        }
+    }
+    val creditObject = database.metadata["setCredits"].evObj(); val credits = Triple(creditObject["direct"].evNum() ?: 1.0, creditObject["indirect"].evNum() ?: 0.5, creditObject["stabilizer"].evNum() ?: 0.0)
+    val effective = sortedMapOf<String, EvalRange>(); (direct.keys + indirect.keys + stabilizers.keys).toSortedSet().forEach { m ->
+        val value = evAdd(evAdd(evScale(direct[m] ?: EvalRange(0.0, 0.0, 0.0), credits.first), evScale(indirect[m] ?: EvalRange(0.0, 0.0, 0.0), credits.second)), evScale(stabilizers[m] ?: EvalRange(0.0, 0.0, 0.0), credits.third))
+        if (value.min != 0.0 || value.target != 0.0 || value.max != 0.0) effective[m] = value
+    }
+    val periodDays = target?.get("periodDays").evNum()?.toInt() ?: cycleDays; val scale = periodDays.toDouble() / cycleDays
     val muscleRows = buildJsonObject {
-        val configured = target?.get("muscles").obj()
-        (configured.keys + effective.keys).toSortedSet().forEach { muscle ->
-            val r = range(configured[muscle]); val actual = clean((effective[muscle] ?: 0.0) * targetScale)
-            val row = jo(
-                "actualEffectiveSets" to JsonPrimitive(actual), "minimum" to jn(r.min), "target" to jn(r.target),
-                "maximum" to jn(r.max), "min" to jn(r.min), "max" to jn(r.max),
-                "differenceFromTarget" to jn(r.target?.let { clean(actual - it) }),
-                "planEffectiveSetRange" to jo("min" to JsonPrimitive(actual), "target" to JsonPrimitive(actual), "max" to JsonPrimitive(actual)),
-                "state" to JsonPrimitive(if (configured[muscle] == null) "not_targeted" else state(actual, r)),
-                "periodDays" to JsonPrimitive(targetDays)
-            )
-            put(muscle, row)
-        }
+        val configured = target?.get("muscles").evObj(); (configured.keys + effective.keys).toSortedSet().forEach { m -> val r = evRange(configured[m]); val actual = evClean(evRepresentative(effective[m] ?: EvalRange()) * scale); put(m, buildJsonObject { put("actualEffectiveSets", actual); put("minimum", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("maximum", r.max?.let(::JsonPrimitive) ?: JsonNull); put("min", r.min?.let(::JsonPrimitive) ?: JsonNull); put("max", r.max?.let(::JsonPrimitive) ?: JsonNull); put("differenceFromTarget", r.target?.let { evClean(actual - it) }?.let(::JsonPrimitive) ?: JsonNull); put("planEffectiveSetRange", evRangeJson(evScale(effective[m] ?: EvalRange(0.0, 0.0, 0.0), scale))); put("state", if (configured[m] == null) "not_targeted" else evState(actual, r)); put("periodDays", periodDays) }) }
     }
-    val frequencyRows = buildJsonObject {
-        target?.get("frequency").obj()["muscles"].obj().toSortedMap().forEach { (muscle, spec) ->
-            val exposures = c.muscleSessions[muscle]?.size ?: 0; val normalized = clean(exposures * 7.0 / days); val r = range(spec)
-            put(muscle, jo("plannedExposuresPerNativeCycle" to JsonPrimitive(exposures), "normalizedExposuresPer7Days" to JsonPrimitive(normalized), "minimum" to jn(r.min), "target" to jn(r.target), "maximum" to jn(r.max), "state" to JsonPrimitive(state(normalized, r))))
-        }
-    }
-    val patternRows = buildJsonObject {
-        target?.get("movementPatterns").obj().toSortedMap().forEach { (pattern, spec) ->
-            val actual = c.patterns[pattern] ?: 0.0; val r = range(spec)
-            put(pattern, jo("plannedSets" to JsonPrimitive(actual), "minimum" to jn(r.min), "target" to jn(r.target), "maximum" to jn(r.max), "state" to JsonPrimitive(state(actual, r))))
-        }
-    }
-    val familyCounts = sortedMapOf<String, Double>(); val familyCoverage = buildJsonObject {
-        if (relationships != null) database.exercises.keys.sorted().forEach { id -> relationships.familyFor(id)?.familyId?.let { family -> familyCounts.putIfAbsent(family, 0.0) } }
-        for (sessionValue in plan["sessions"].arr()) for (rxValue in sessionValue.obj()["exercises"].arr()) {
-            val id = rxValue.obj()["exerciseId"].string() ?: continue; relationships?.familyFor(id)?.familyId?.let { add(familyCounts, it, plannedSets(rxValue.obj())) }
-        }
-        familyCounts.forEach { (id, sets) -> put(id, jo("familyId" to JsonPrimitive(id), "plannedSets" to JsonPrimitive(sets))) }
-    }
-    val familyTargets = buildJsonObject {
-        target?.get("families").obj().toSortedMap().forEach { (family, spec) ->
-            val actual = familyCounts[family] ?: 0.0; val r = range(spec)
-            put(family, jo("plannedSets" to JsonPrimitive(actual), "minimum" to jn(r.min), "target" to jn(r.target), "maximum" to jn(r.max), "state" to JsonPrimitive(state(actual, r))))
+    val frequencyRows = buildJsonObject { target?.get("frequency").evObj()["muscles"].evObj().toSortedMap().forEach { (m, raw) -> val r = evRange(raw); val exposures = muscleSessions[m]?.size ?: 0; val actual = evClean(exposures * 7.0 / cycleDays); put(m, buildJsonObject { put("plannedExposuresPerNativeCycle", exposures); put("normalizedExposuresPer7Days", actual); put("minimum", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("maximum", r.max?.let(::JsonPrimitive) ?: JsonNull); put("state", evState(actual, r)) }) } }
+    val patternRows = buildJsonObject { target?.get("movementPatterns").evObj().toSortedMap().forEach { (p, raw) -> val r = evRange(raw); val actual = evClean(evRepresentative(patterns[p] ?: EvalRange(0.0, 0.0, 0.0))); put(p, buildJsonObject { put("plannedSets", actual); put("minimum", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("maximum", r.max?.let(::JsonPrimitive) ?: JsonNull); put("state", evState(actual, r)) }) } }
+    val familyCounts = sortedMapOf<String, EvalRange>(); if (relationships != null) for (sv in plan["sessions"].evArr()) for (rv in sv.evObj()["exercises"].evArr()) { val id = rv.evObj()["exerciseId"].evStr(); val family = id?.let { relationships.familyFor(it)?.familyId }; if (family != null) familyCounts[family] = evAdd(familyCounts[family] ?: EvalRange(0.0, 0.0, 0.0), evSetRange(rv.evObj())) }
+    val familyTargets = buildJsonObject { target?.get("families").evObj().toSortedMap().forEach { (f, raw) -> val r = evRange(raw); val actual = evRepresentative(familyCounts[f] ?: EvalRange()); put(f, buildJsonObject { put("plannedSets", actual); put("minimum", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("maximum", r.max?.let(::JsonPrimitive) ?: JsonNull); put("state", evState(actual, r)) }) } }
+    val familyCoverage = buildJsonObject {
+        familyCounts.toSortedMap().forEach { (f, r) ->
+            val prescriptions = plan["sessions"].evArr().flatMap { it.evObj()["exercises"].evArr() }
+            val members = prescriptions.mapNotNull { it.evObj()["exerciseId"].evStr()?.takeIf { id -> relationships?.familyFor(id)?.familyId == f } }.toSortedSet()
+            val dimensions = buildJsonObject { members.forEach { id -> put(id, buildJsonObject { relationships?.variantDimensions(id)?.toSortedMap()?.forEach { (key, value) -> put(key, value) } }) } }
+            val used = sortedMapOf<String, MutableSet<String>>()
+            members.forEach { id -> (relationships?.variantDimensions(id) ?: emptyMap()).forEach { (key, value) -> used.getOrPut(key) { sortedSetOf() }.add(value.toString().trim('"')) } }
+            put(f, buildJsonObject {
+                put("familyId", f); put("name", relationships?.families?.get(f)?.name ?: f)
+                put("exerciseIds", buildJsonArray { members.forEach(::add) }); put("plannedSetRanges", evRangeJson(r)); put("plannedSets", evRepresentative(r))
+                put("sessions", buildJsonArray { plan["sessions"].evArr().mapNotNull { s -> s.evObj()["planSessionId"].evStr()?.takeIf { s.evObj()["exercises"].evArr().any { it.evObj()["exerciseId"].evStr()?.let { id -> relationships?.familyFor(id)?.familyId == f } == true } } }.toSortedSet().forEach(::add) })
+                put("sessionExposures", plan["sessions"].evArr().count { s -> s.evObj()["exercises"].evArr().any { it.evObj()["exerciseId"].evStr()?.let { id -> relationships?.familyFor(id)?.familyId == f } == true } })
+                put("variantDimensions", dimensions); put("variantDimensionsUsed", buildJsonObject { used.forEach { (key, values) -> put(key, JsonArray(values.toList().map(::JsonPrimitive))) } })
+            })
         }
     }
     val hard = mutableListOf<JsonObject>(); val soft = mutableListOf<JsonObject>(); val supported = sortedSetOf<String>(); val unsupported = mutableListOf<JsonObject>(); val unknown = mutableListOf<JsonObject>()
-    val availability = profile?.get("availability").obj(); val excludedDays = availability["excludedDayOffsets"].arr().mapNotNull { it.jsonPrimitive.intOrNull }.toSet()
-    val preferences = profile?.get("exercisePreferences").obj(); val constraints = profile?.get("constraints").obj()
-    val excludedExercise = constraints["excludedExerciseIds"].arr().mapNotNull { it.string() }.toSet(); val excludedFamilies = constraints["excludedFamilyIds"].arr().mapNotNull { it.string() }.toSet()
-    val preferredExercise = preferences["preferredExerciseIds"].arr().mapNotNull { it.string() }.toSet(); val avoidedExercise = preferences["avoidedExerciseIds"].arr().mapNotNull { it.string() }.toSet(); val preferredFamilies = preferences["preferredFamilyIds"].arr().mapNotNull { it.string() }.toSet(); val avoidedFamilies = preferences["avoidedFamilyIds"].arr().mapNotNull { it.string() }.toSet()
-    val availableEquipment = profile?.get("equipment").arr().mapNotNull { it.string() }.toSet(); val body = setOf("body only", "bodyweight", "no equipment", "none")
-    for (sessionValue in plan["sessions"].arr()) {
-        val session = sessionValue.obj(); val sid = session["planSessionId"].string() ?: ""
-        if (session["dayOffset"]?.jsonPrimitive?.intOrNull in excludedDays) hard += finding("excluded_day_offset", "sessionId" to JsonPrimitive(sid), "dayOffset" to (session["dayOffset"] ?: JsonNull))
-        for (rxValue in session["exercises"].arr()) {
-            val rx = rxValue.obj(); val id = rx["exerciseId"].string() ?: continue; val pid = rx["prescriptionId"].string() ?: ""
-            val family = relationships?.familyFor(id)?.familyId
-            if (id in excludedExercise) hard += finding("excluded_exercise", "exerciseId" to JsonPrimitive(id), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            if (family in excludedFamilies) hard += finding("excluded_family", "exerciseId" to JsonPrimitive(id), "familyId" to JsonPrimitive(family!!), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            if (id in preferredExercise) soft += finding("preferred_exercise_used", "exerciseId" to JsonPrimitive(id), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            if (id in avoidedExercise) soft += finding("avoided_exercise_used", "exerciseId" to JsonPrimitive(id), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            if (family in preferredFamilies) soft += finding("preferred_family_used", "exerciseId" to JsonPrimitive(id), "familyId" to JsonPrimitive(family!!), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            if (family in avoidedFamilies) soft += finding("avoided_family_used", "exerciseId" to JsonPrimitive(id), "familyId" to JsonPrimitive(family!!), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-            val exercise = database.exercises[id]
-            if (exercise == null) { unknown += finding("unknown_exercise", "exerciseId" to JsonPrimitive(id), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid)); continue }
-            val equipment = exercise.source["equipment"].string()
-            when { equipment == null || equipment in setOf("None", "other") -> unknown += finding("unknown_equipment", "exerciseId" to JsonPrimitive(id), "equipment" to (exercise.source["equipment"] ?: JsonNull), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid))
-                equipment in body && availableEquipment.intersect(body).isNotEmpty() -> supported += id
-                equipment in availableEquipment -> supported += id
-                else -> { val f = finding("unsupported_equipment", "equipment" to JsonPrimitive(equipment), "exerciseId" to JsonPrimitive(id), "prescriptionId" to JsonPrimitive(pid), "sessionId" to JsonPrimitive(sid)); unsupported += f; hard += f }
-            }
-        }
+    if (profile != null) {
+        val prefs = profile["exercisePreferences"].evObj(); val constraints = profile["constraints"].evObj(); val avail = profile["equipment"].evArr().mapNotNull { it.evStr() }.toSet(); val body = setOf("body only", "bodyweight", "no equipment", "none")
+        for (sv in plan["sessions"].evArr()) for (rv in sv.evObj()["exercises"].evArr()) { val s = sv.evObj(); val rx = rv.evObj(); val id = rx["exerciseId"].evStr(); val pid = rx["prescriptionId"] ?: JsonNull; val sid = s["planSessionId"] ?: JsonNull; val family = id?.let { relationships?.familyFor(it)?.familyId }; if (id in constraints["excludedExerciseIds"].evArr().mapNotNull { it.evStr() }) hard += evFinding("excluded_exercise", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); if (family in constraints["excludedFamilyIds"].evArr().mapNotNull { it.evStr() }) hard += evFinding("excluded_family", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "familyId" to (family?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); if (id in prefs["preferredExerciseIds"].evArr().mapNotNull { it.evStr() }) soft += evFinding("preferred_exercise_used", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); if (id in prefs["avoidedExerciseIds"].evArr().mapNotNull { it.evStr() }) soft += evFinding("avoided_exercise_used", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); if (family in prefs["preferredFamilyIds"].evArr().mapNotNull { it.evStr() }) soft += evFinding("preferred_family_used", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "familyId" to (family?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); if (family in prefs["avoidedFamilyIds"].evArr().mapNotNull { it.evStr() }) soft += evFinding("avoided_family_used", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "familyId" to (family?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); val ex = id?.let { database.exercises[it] }; if (ex == null) unknown += evFinding("unknown_exercise", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)) else { val eq = ex.source["equipment"].evStr(); when { eq == null || eq in setOf("None", "other") -> unknown += evFinding("unknown_equipment", mapOf("exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "equipment" to (ex.source["equipment"] ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); eq in body && avail.intersect(body).isNotEmpty() -> supported += id!!; eq in avail -> supported += id!!; else -> { val f = evFinding("unsupported_equipment", mapOf("equipment" to JsonPrimitive(eq), "exerciseId" to (id?.let(::JsonPrimitive) ?: JsonNull), "prescriptionId" to pid, "sessionId" to sid)); unsupported += f; hard += f } } } }
+        val excludedDays = profile["availability"].evObj()["excludedDayOffsets"].evArr().mapNotNull { it.evNum()?.toInt() }.toSet(); plan["sessions"].evArr().forEach { s -> if (s.evObj()["dayOffset"].evNum()?.toInt() in excludedDays) hard += evFinding("excluded_day_offset", mapOf("sessionId" to (s.evObj()["planSessionId"] ?: JsonNull), "dayOffset" to (s.evObj()["dayOffset"] ?: JsonNull))) }
     }
-    val exerciseCounts = buildJsonObject {
-        val r = range(availability["exercisesPerSession"]); if (profile != null && listOf(r.min, r.target, r.max).any { it != null }) for (sessionValue in plan["sessions"].arr()) {
-            val session = sessionValue.obj(); val n = session["exercises"].arr().size.toDouble(); val s = state(n, r); val sid = session["planSessionId"].string() ?: ""
-            put(sid, jo("exerciseCount" to JsonPrimitive(n.toInt()), "minimum" to jn(r.min), "target" to jn(r.target), "maximum" to jn(r.max), "state" to JsonPrimitive(s)))
-            if (s == "below_minimum" || s == "above_maximum") hard += finding("exercise_count", "sessionId" to JsonPrimitive(sid), "exerciseCount" to JsonPrimitive(n.toInt()), "minimum" to jn(r.min), "maximum" to jn(r.max))
-            else if (r.target != null && n != r.target) soft += finding("exercise_count_target_miss", "sessionId" to JsonPrimitive(sid), "exerciseCount" to JsonPrimitive(n.toInt()), "target" to jn(r.target))
-        }
-    }
-    val sessionRange = range(availability["sessionsPerCycle"]); val sessionCount = plan["sessions"].arr().size.toDouble(); val availabilityResult = if (profile == null || availability.isEmpty()) jo("plannedSessions" to JsonPrimitive(sessionCount.toInt()), "state" to JsonPrimitive("not_evaluated")) else jo("plannedSessions" to JsonPrimitive(sessionCount.toInt()), "min" to jn(sessionRange.min), "target" to jn(sessionRange.target), "max" to jn(sessionRange.max), "state" to JsonPrimitive(state(sessionCount, sessionRange)))
-    val targetGaps = listOf(muscleRows, frequencyRows, patternRows, familyTargets).sumOf { rows -> rows.values.count { it.obj()["state"].string() == "below_minimum" } }
-    val mappedFraction = if (c.planned == 0.0) 1.0 else clean(c.mapped / c.planned)
-    val completeness = jo("plannedSets" to JsonPrimitive(clean(c.planned)), "plannedSetRange" to jo("min" to JsonPrimitive(clean(c.planned)), "target" to JsonPrimitive(clean(c.planned)), "max" to JsonPrimitive(clean(c.planned))), "mappedSets" to JsonPrimitive(clean(c.mapped)), "mappedSetRange" to jo("min" to JsonPrimitive(clean(c.mapped)), "target" to JsonPrimitive(clean(c.mapped)), "max" to JsonPrimitive(clean(c.mapped))), "unmappedSets" to JsonPrimitive(clean(c.unmapped)), "unmappedSetRange" to jo("min" to JsonPrimitive(clean(c.unmapped)), "target" to JsonPrimitive(clean(c.unmapped)), "max" to JsonPrimitive(clean(c.unmapped))), "ineligibleSets" to JsonPrimitive(clean(c.ineligible)), "ineligibleSetRange" to jo("min" to JsonPrimitive(clean(c.ineligible)), "target" to JsonPrimitive(clean(c.ineligible)), "max" to JsonPrimitive(clean(c.ineligible))), "mappedFraction" to JsonPrimitive(mappedFraction), "unmappedPrescriptions" to JsonArray(c.unmappedRx.sorted().map(::JsonPrimitive)), "ineligiblePrescriptions" to JsonArray(c.ineligibleRx.sorted().map(::JsonPrimitive)))
-    val warnings = mutableSetOf<String>(); if (c.unmapped != 0.0 || c.ineligible != 0.0 || unknown.isNotEmpty()) warnings += "coverage is incomplete for one or more PLAN exercises"; if (profile?.get("availability").obj()["minutesPerSession"] != null) warnings += "duration estimation is not evaluated by duration-estimation-v1 because PLAN rest/transition inputs are not complete"; if (target?.get("families").obj()?.isNotEmpty() == true && relationships == null) warnings += "family targets cannot be evaluated because relationship artifact was not provided"
-    val sortedHard = hard.sortedBy { "${it["type"].string()}:${it["exerciseId"].string() ?: it["familyId"].string() ?: it["sessionId"].string() ?: ""}:${it["sessionId"].string() ?: ""}:${it["prescriptionId"].string() ?: ""}" }
-    val status = if (hard.isNotEmpty()) "hard_constraint_violation" else if (mappedFraction < 1 || (target?.get("families").obj()?.isNotEmpty() == true && relationships == null)) "incomplete_coverage" else if (targetGaps > 0) "valid_with_target_gaps" else "valid"
-    return buildJsonObject {
-        put("summary", jo("hardConstraintViolations" to JsonPrimitive(sortedHard.size), "targetGaps" to JsonPrimitive(targetGaps), "softPreferenceWarnings" to JsonPrimitive(soft.size), "satisfiesHardConstraints" to JsonPrimitive(sortedHard.isEmpty()), "meetsTargetMinimums" to JsonPrimitive(targetGaps == 0), "evaluationStatus" to JsonPrimitive(status)))
-        put("muscleCoverage", muscleRows); put("frequency", frequencyRows); put("movementPatterns", patternRows); put("families", jo("coverage" to if (relationships == null) jo("available" to JsonPrimitive(false), "reason" to JsonPrimitive("relationship artifact not provided")) else familyCoverage, "targets" to familyTargets)); put("equipment", jo("supportedExercises" to JsonArray(supported.map(::JsonPrimitive)), "unsupportedExercises" to JsonArray(unsupported.sortedBy { it["exerciseId"].string() ?: "" }), "unknownEquipmentExercises" to JsonArray(unknown.sortedBy { it["exerciseId"].string() ?: "" }))); put("availability", availabilityResult); put("exerciseCounts", exerciseCounts)
-        put("preferences", jo("preferredExercisesUsed" to JsonArray(soft.filter { it["type"].string() == "preferred_exercise_used" }.mapNotNull { it["exerciseId"] }.distinct().sortedBy { it.string() }), "preferredFamiliesUsed" to JsonArray(soft.filter { it["type"].string() == "preferred_family_used" }.mapNotNull { it["familyId"] }.distinct().sortedBy { it.string() }), "avoidedExercisesUsed" to JsonArray(soft.filter { it["type"].string() == "avoided_exercise_used" }.mapNotNull { it["exerciseId"] }.distinct().sortedBy { it.string() }), "avoidedFamiliesUsed" to JsonArray(soft.filter { it["type"].string() == "avoided_family_used" }.mapNotNull { it["familyId"] }.distinct().sortedBy { it.string() }), "findings" to JsonArray(soft.sortedBy { "${it["type"].string()}:${it["exerciseId"].string() ?: it["familyId"].string() ?: ""}" })))
-        put("constraints", jo("violations" to JsonArray(sortedHard))); put("coverageCompleteness", completeness); put("warnings", JsonArray(warnings.sorted().map(::JsonPrimitive)))
-        put("provenance", jo("analysisVersion" to JsonPrimitive(EVALUATION_VERSION), "analysisPolicy" to JsonPrimitive(EVALUATION_POLICY), "planSchemaVersion" to (plan["schemaVersion"] ?: JsonNull), "profileSchemaVersion" to (profile?.get("schemaVersion") ?: JsonNull), "targetSchemaVersion" to (target?.get("schemaVersion") ?: JsonNull), "relationshipSchemaVersion" to (relationships?.schemaVersion?.let(::JsonPrimitive) ?: JsonNull), "dbSchemaVersion" to (database.metadata["schemaVersion"] ?: JsonNull), "dbConverterVersion" to (database.metadata["converterVersion"] ?: JsonNull), "dbUpstreamSha256" to (database.metadata["upstream"].obj()["sha256"] ?: JsonNull), "setCredits" to jo("direct" to JsonPrimitive(credits.first), "indirect" to JsonPrimitive(credits.second), "stabilizer" to JsonPrimitive(credits.third)), "durationPolicy" to if (profile?.get("availability").obj()["minutesPerSession"] != null) JsonPrimitive("duration-estimation-v1") else JsonNull))
-    }
+    val av = profile?.get("availability").evObj(); val sessionRange = evRange(av["sessionsPerCycle"]); val availability = buildJsonObject { put("plannedSessions", plan["sessions"].evArr().size); if (profile == null || av.isEmpty()) put("state", "not_evaluated") else { put("min", sessionRange.min?.let(::JsonPrimitive) ?: JsonNull); put("target", sessionRange.target?.let(::JsonPrimitive) ?: JsonNull); put("max", sessionRange.max?.let(::JsonPrimitive) ?: JsonNull); put("state", evState(plan["sessions"].evArr().size.toDouble(), sessionRange)) } }
+    val counts = buildJsonObject { val r = evRange(av["exercisesPerSession"]); if (profile != null && (r.min != null || r.target != null || r.max != null)) plan["sessions"].evArr().forEach { s -> val c = s.evObj()["exercises"].evArr().size.toDouble(); val st = evState(c, r); put(s.evObj()["planSessionId"].evStr() ?: "", buildJsonObject { put("exerciseCount", c.toInt()); put("minimum", r.min?.let(::JsonPrimitive) ?: JsonNull); put("target", r.target?.let(::JsonPrimitive) ?: JsonNull); put("maximum", r.max?.let(::JsonPrimitive) ?: JsonNull); put("state", st) }); if (st == "below_minimum" || st == "above_maximum") hard += evFinding("exercise_count", mapOf("sessionId" to (s.evObj()["planSessionId"] ?: JsonNull), "exerciseCount" to JsonPrimitive(c.toInt()), "minimum" to (r.min?.let(::JsonPrimitive) ?: JsonNull), "maximum" to (r.max?.let(::JsonPrimitive) ?: JsonNull))) } }
+    val targetGaps = listOf(muscleRows, frequencyRows, patternRows, familyTargets).sumOf { it.values.count { row -> row.evObj()["state"].evStr() == "below_minimum" } }; val plannedScalar = evRepresentative(planned); val mappedScalar = evRepresentative(mapped); val completeness = buildJsonObject { put("plannedSets", evClean(plannedScalar)); put("plannedSetRange", evRangeJson(planned)); put("mappedSets", evClean(mappedScalar)); put("mappedSetRange", evRangeJson(mapped)); put("unmappedSets", evClean(evRepresentative(unmapped))); put("unmappedSetRange", evRangeJson(unmapped)); put("ineligibleSets", evClean(evRepresentative(ineligible))); put("ineligibleSetRange", evRangeJson(ineligible)); put("mappedFraction", if (plannedScalar == 0.0) 1.0 else evClean(mappedScalar / plannedScalar)); put("unmappedPrescriptions", JsonArray(unmappedIds.filter { it.isNotEmpty() }.sorted().map(::JsonPrimitive))); put("ineligiblePrescriptions", JsonArray(ineligibleIds.filter { it.isNotEmpty() }.sorted().map(::JsonPrimitive))) }
+    val prefFindings = soft.sortedWith(compareBy({ it["type"].evStr() ?: "" }, { it["exerciseId"].evStr() ?: it["familyId"].evStr() ?: "" }, { it["sessionId"].evStr() ?: "" }, { it["prescriptionId"].evStr() ?: "" })); val sortedHard = hard.sortedWith(compareBy({ it["type"].evStr() ?: "" }, { it["exerciseId"].evStr() ?: it["familyId"].evStr() ?: it["sessionId"].evStr() ?: "" }, { it["sessionId"].evStr() ?: "" }, { it["prescriptionId"].evStr() ?: "" }))
+    val warnings = sortedSetOf<String>(); if (evRepresentative(unmapped) != 0.0 || evRepresentative(ineligible) != 0.0 || unknown.isNotEmpty()) warnings += "coverage is incomplete for one or more PLAN exercises"; if (av["minutesPerSession"] is JsonObject && av["minutesPerSession"]!!.jsonObject.isNotEmpty()) warnings += "duration estimation is not evaluated by duration-estimation-v1 because PLAN rest/transition inputs are not complete"; if (target?.get("families").evObj()?.isNotEmpty() == true && relationships == null) warnings += "family targets cannot be evaluated because relationship artifact was not provided"
+    val status = if (sortedHard.isNotEmpty()) "hard_constraint_violation" else if ((completeness["mappedFraction"]?.evNum() ?: 1.0) < 1 || (target?.get("families").evObj()?.isNotEmpty() == true && relationships == null)) "incomplete_coverage" else if (targetGaps > 0) "valid_with_target_gaps" else "valid"
+    val provenance = buildJsonObject { put("analysisVersion", "0.1.0"); put("analysisPolicy", "plan-evaluation-v1"); put("planSchemaVersion", plan["schemaVersion"] ?: JsonNull); put("profileSchemaVersion", profile?.get("schemaVersion") ?: JsonNull); put("targetSchemaVersion", target?.get("schemaVersion") ?: JsonNull); put("relationshipSchemaVersion", relationships?.schemaVersion?.let(::JsonPrimitive) ?: JsonNull); put("dbSchemaVersion", database.metadata["schemaVersion"] ?: JsonNull); put("dbConverterVersion", database.metadata["converterVersion"] ?: JsonNull); put("dbUpstreamSha256", database.metadata["upstream"].evObj()["sha256"] ?: JsonNull); put("setCredits", buildJsonObject { put("direct", credits.first); put("indirect", credits.second); put("stabilizer", credits.third) }); put("durationPolicy", if (av["minutesPerSession"] is JsonObject && av["minutesPerSession"]!!.jsonObject.isNotEmpty()) JsonPrimitive("duration-estimation-v1") else JsonNull) }
+    return buildJsonObject { put("summary", buildJsonObject { put("hardConstraintViolations", sortedHard.size); put("targetGaps", targetGaps); put("softPreferenceWarnings", prefFindings.size); put("satisfiesHardConstraints", sortedHard.isEmpty()); put("meetsTargetMinimums", targetGaps == 0); put("evaluationStatus", status) }); put("muscleCoverage", muscleRows); put("frequency", frequencyRows); put("movementPatterns", patternRows); put("families", buildJsonObject { put("coverage", if (relationships == null) buildJsonObject { put("available", false); put("reason", "relationship artifact not provided") } else familyCoverage); put("targets", familyTargets) }); put("equipment", buildJsonObject { put("supportedExercises", JsonArray(supported.toList().map(::JsonPrimitive))); put("unsupportedExercises", JsonArray(unsupported.sortedBy { it["exerciseId"].evStr() ?: "" })); put("unknownEquipmentExercises", JsonArray(unknown.sortedBy { it["exerciseId"].evStr() ?: "" })) }); put("availability", availability); put("exerciseCounts", counts); put("preferences", buildJsonObject { put("preferredExercisesUsed", JsonArray(prefFindings.filter { it["type"].evStr() == "preferred_exercise_used" }.mapNotNull { it["exerciseId"] }.distinct().sortedBy { it.evStr() })); put("preferredFamiliesUsed", JsonArray(prefFindings.filter { it["type"].evStr() == "preferred_family_used" }.mapNotNull { it["familyId"] }.distinct().sortedBy { it.evStr() })); put("avoidedExercisesUsed", JsonArray(prefFindings.filter { it["type"].evStr() == "avoided_exercise_used" }.mapNotNull { it["exerciseId"] }.distinct().sortedBy { it.evStr() })); put("avoidedFamiliesUsed", JsonArray(prefFindings.filter { it["type"].evStr() == "avoided_family_used" }.mapNotNull { it["familyId"] }.distinct().sortedBy { it.evStr() })); put("findings", JsonArray(prefFindings)) }); put("constraints", buildJsonObject { put("violations", JsonArray(sortedHard)) }); put("coverageCompleteness", completeness); put("warnings", JsonArray(warnings.map(::JsonPrimitive))); put("provenance", provenance) }
 }

@@ -120,6 +120,19 @@ decode database records directly.
 Swift `Codable` can decode only the fields your app needs; unknown DB++ fields are ignored
 by default.
 
+### Kotlin/JVM / Android
+
+The Kotlin package provides the same offline native training engine for Android,
+plain JVM, server-side JVM, and unit-test consumers. It bundles canonical
+resources and has no Android SDK dependency in its semantic core. See the
+[Kotlin API guide](docs/KOTLIN-API.md).
+
+```kotlin
+val engine = TrainingEngine.bundled()
+val resolved = engine.resolveIntent(intent)
+val result = engine.generatePlanFromIntent(intent)
+```
+
 ```swift
 import Foundation
 

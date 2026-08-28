@@ -16,6 +16,17 @@
 
 # Changelog
 
+## 1.13.0 - 2026-08-28
+
+- Complete the native Kotlin/JVM training engine port with the offline
+  `TrainingEngine` facade for intent resolution, production generation,
+  evaluation, history/state derivation, progression, and adaptive coaching.
+- Bundle canonical database and relationship resources for plain JVM and
+  Android-compatible consumers without an Android framework dependency.
+- Add Python-authored Kotlin parity fixtures, serialization round-trip checks,
+  an external Gradle consumer, resource integrity checks, and Kotlin API docs.
+- Keep the R full research/analysis engine port scheduled for v1.14.
+
 ## 1.12.0 - 2026-08-27
 
 - Make the completed Swift engine a production-ready, Foundation-only Swift

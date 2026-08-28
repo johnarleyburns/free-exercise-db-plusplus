@@ -511,7 +511,8 @@ jobs:
 
       - name: Test Kotlin consumer package
         run: |
-          gradle --no-daemon test --project-dir packages/kotlin/fedbpp
+          packages/kotlin/fedbpp/gradlew --no-daemon test --project-dir packages/kotlin/fedbpp
+          bash scripts/test_kotlin_resources.sh
           bash scripts/test_kotlin_consumer.sh
 
       - name: Setup R

@@ -7,11 +7,17 @@ import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
 
 internal val fedbppJson = Json { ignoreUnknownKeys = true; explicitNulls = false; encodeDefaults = true }
+// Canonical engine output omits optional null fields while retaining declared
+// defaults. Raw JsonElement-backed documents still preserve missing vs null.
+internal val apiJson = Json { ignoreUnknownKeys = true; explicitNulls = true; encodeDefaults = true }
 
 class Database private constructor(private val document: DatabaseDocument) {
     val metadata get() = document.metadata
@@ -23,9 +29,14 @@ class Database private constructor(private val document: DatabaseDocument) {
     fun getExercise(id: String): Exercise = document.exercises[id] ?: throw ExerciseNotFoundException(id)
     fun findExercises(query: String): List<Exercise> = document.exercises.values.filter { it.exerciseId.contains(query, ignoreCase = true) }.sortedBy { it.exerciseId }
     fun exercisesForMuscle(muscle: String): List<Exercise> = document.exercises.values.filter { muscle in it.annotation.direct || muscle in it.annotation.indirect }.sortedBy { it.exerciseId }
+    /** Return an immutable database view with explicit metadata overrides. */
+    fun withSetCredits(credits: JsonObject): Database = Database(DatabaseDocument(document.metadata + ("setCredits" to credits), document.exercises))
     companion object {
         fun load(file: File): Database = file.inputStream().use(::load)
         fun load(input: InputStream): Database = try { Database(fedbppJson.decodeFromString(DatabaseDocument.serializer(), input.reader().readText())) } catch (e: Exception) { throw ValidationException("Unable to decode database: ${e.message}") }
+        fun fromJson(json: String): Database = load(json.byteInputStream())
+        fun bundled(): Database = Database::class.java.classLoader.getResourceAsStream("free-exercise-db-plusplus.json")
+            ?.use(::load) ?: throw ValidationException("bundled database resource is missing")
     }
 }
 
@@ -33,11 +44,18 @@ fun loadRelationships(file: File): ExerciseRelationships = file.inputStream().us
     try { fedbppJson.decodeFromString(ExerciseRelationships.serializer(), input.reader().readText()) }
     catch (e: Exception) { throw ValidationException("Unable to decode relationships: ${e.message}") }
 }
+fun loadRelationships(input: InputStream): ExerciseRelationships = try {
+    fedbppJson.decodeFromString(ExerciseRelationships.serializer(), input.reader().readText())
+} catch (e: Exception) { throw ValidationException("Unable to decode relationships: ${e.message}") }
+fun bundledRelationships(): ExerciseRelationships = ExerciseRelationships::class.java.classLoader.getResourceAsStream("exercise-relationships.json")
+    ?.use(::loadRelationships) ?: throw ValidationException("bundled relationships resource is missing")
 fun ExerciseRelationships.familyFor(exerciseId: String): ExerciseFamily? = relationships.firstOrNull { it.sourceExerciseId == exerciseId && it.relationship == "member_of_family" }?.let { families[it.familyId] }
 fun ExerciseRelationships.members(familyId: String): List<String> = relationships.filter { it.familyId == familyId && it.relationship == "member_of_family" }.map { it.sourceExerciseId }.sorted()
+fun ExerciseRelationships.variantDimensions(exerciseId: String): Map<String, kotlinx.serialization.json.JsonElement> = relationships
+    .firstOrNull { it.sourceExerciseId == exerciseId && it.relationship == "member_of_family" }?.dimensions ?: emptyMap()
 
 fun Workout.validate() {
-    if (schemaVersion != "0.2.0") throw ValidationException("unsupported workout schema: $schemaVersion")
+    if (schemaVersion !in setOf("0.2.0", "0.3.0")) throw ValidationException("unsupported workout schema: $schemaVersion")
     if (sessionId.isBlank()) throw ValidationException("sessionId must not be blank")
     if (startTime.isBlank()) throw ValidationException("startTime must not be blank")
     exercises.forEach { observation ->

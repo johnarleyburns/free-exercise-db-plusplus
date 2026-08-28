@@ -1,8 +1,8 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.12.0 released**
-Current stable release: **v1.12.0**
-Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python and Swift packages**
+Status: **v1.13.0 released**
+Current stable release: **v1.13.0**
+Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, and Kotlin packages**
 
 ---
 
@@ -51,7 +51,7 @@ deterministic behavior, and external consumer coverage. It introduces no new
 training algorithm milestone and owns no missing core engine semantics. DB++
 remains free of LLM vendor dependencies.
 
-v1.13: Kotlin/JVM/Android full engine port.
+v1.13 COMPLETE: Kotlin/JVM/Android full engine port.
 
 v1.14: R research/full analysis port.
 
@@ -304,7 +304,7 @@ v1.11  COMPLETE: Python reference audit and full Swift engine parity
 
 v1.12  COMPLETE: Swift SPM production hardening and app-readiness polish
 
-v1.13  Kotlin/JVM/Android full engine port
+v1.13  COMPLETE: Kotlin/JVM/Android full engine port
 
 v1.14  R research/full analysis port
 ```

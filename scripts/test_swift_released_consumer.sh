@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Post-release smoke: resolve the package by its published semantic version,
 # with the temporary consumer and its working directory outside this repository.
-version=${SWIFT_RELEASE_VERSION:-1.12.0}
+version=${SWIFT_RELEASE_VERSION:-1.13.0}
 consumer=$(mktemp -d)
 trap 'rm -rf "$consumer"' EXIT
 mkdir -p "$consumer/Sources/Consumer"

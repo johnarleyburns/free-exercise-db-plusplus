@@ -1,6 +1,16 @@
 package com.fedbpp
 
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.KSerializer
+import kotlinx.serialization.descriptors.PrimitiveKind
+import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
+import kotlinx.serialization.descriptors.SerialDescriptor
+import kotlinx.serialization.encoding.Decoder
+import kotlinx.serialization.encoding.Encoder
+import kotlinx.serialization.json.JsonDecoder
+import kotlinx.serialization.json.JsonEncoder
+import kotlinx.serialization.json.JsonNull
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
@@ -37,7 +47,25 @@ private object IntentPolicyCatalog {
 @Serializable data class ExplicitOverrides(val goalPolicy: Boolean = false, val planningPolicy: Boolean = false, val target: Boolean = false, val trainingProfile: Boolean = false, val equipmentAdded: List<String> = emptyList(), val equipmentRemoved: List<String> = emptyList())
 @Serializable data class GoalPolicyReference(val policyId: String, val policyVersion: String, val description: String? = null)
 @Serializable data class MissingInformation(val field: String, val reason: String)
-@Serializable data class IntentConflict(val code: String, val detail: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val policyGoal: String? = null, val exerciseId: String? = null, val familyId: String? = null)
+@Serializable(with = IntentConflictSerializer::class) data class IntentConflict(val code: String, val detail: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val policyGoal: String? = null, val exerciseId: String? = null, val familyId: String? = null)
+
+object IntentConflictSerializer : KSerializer<IntentConflict> {
+    override val descriptor: SerialDescriptor = JsonElement.serializer().descriptor
+    override fun serialize(encoder: Encoder, value: IntentConflict) {
+        val out = buildJsonObject {
+            put("code", value.code)
+            value.detail?.let { put("detail", it) }; value.goal?.let { put("goal", it) }
+            value.requestedGoalPolicy?.let { put("requestedGoalPolicy", it) }; value.policyGoal?.let { put("policyGoal", it) }
+            value.exerciseId?.let { put("exerciseId", it) }; value.familyId?.let { put("familyId", it) }
+        }
+        (encoder as? JsonEncoder)?.encodeJsonElement(out) ?: error("IntentConflict requires JSON")
+    }
+    override fun deserialize(decoder: Decoder): IntentConflict {
+        val value = (decoder as? JsonDecoder)?.decodeJsonElement()?.jsonObject ?: error("IntentConflict requires JSON")
+        fun text(name: String) = value[name]?.takeUnless { it is JsonNull }?.jsonPrimitive?.contentOrNull
+        return IntentConflict(value["code"]?.jsonPrimitive?.content ?: error("code is required"), text("detail"), text("goal"), text("requestedGoalPolicy"), text("policyGoal"), text("exerciseId"), text("familyId"))
+    }
+}
 @Serializable data class IntentResolutionResult(val status: String, val resolvedProfile: JsonElement? = null, val resolvedTarget: JsonElement? = null, val planningPolicy: String? = null, val goalPolicy: GoalPolicyReference? = null, val environmentPolicy: String? = null, val generationOptions: JsonElement = JsonObject(emptyMap()), val missingInformation: List<MissingInformation> = emptyList(), val warnings: List<String> = emptyList(), val conflicts: List<IntentConflict> = emptyList(), val defaultsApplied: List<String> = emptyList(), val explicitOverrides: ExplicitOverrides = ExplicitOverrides(), val provenance: Map<String, JsonElement> = emptyMap())
 
 object WorkoutIntentValidator {
@@ -154,7 +182,7 @@ object WorkoutIntentResolver {
         val constraintConflicts = (intent.exerciseConstraints?.requiredExerciseIds.orEmpty() + intent.exerciseConstraints?.lockedExerciseIds.orEmpty()).toSet().intersect(excludedExercises).sorted().map { IntentConflict("REQUIRED_EXERCISE_EXCLUDED", exerciseId = it) } + intent.exerciseConstraints?.requiredFamilyIds.orEmpty().toSet().intersect(excludedFamilies).sorted().map { IntentConflict("REQUIRED_FAMILY_EXCLUDED", familyId = it) }
         if (constraintConflicts.isNotEmpty()) return IntentResolutionResult("invalid", resolvedProfile = resolvedProfile, resolvedTarget = mergedTarget, conflicts = constraintConflicts)
         val historyWarnings = buildList { if (intent.useHistory == true && history == null) add("useHistory was requested but no history was provided"); if (intent.useHistory == true && history != null && asOf == null) add("useHistory was requested but as_of is required to derive TrainingState") }
-        val options = buildJsonObject { put("continuity", intent.continuity ?: "neutral"); put("effortDefaults", goalPolicy["effort"]!!); put("repDefaults", goalPolicy["reps"]!!); put("requiredFamilyIds", kotlinx.serialization.json.buildJsonArray { intent.exerciseConstraints?.requiredFamilyIds.orEmpty().toSet().sorted().forEach { add(JsonPrimitive(it)) } }); if (intent.useHistory == true && history != null && asOf != null) put("trainingState", deriveTrainingState(history, asOf)) }
+        val options = buildJsonObject { put("continuity", intent.continuity ?: "neutral"); put("effortDefaults", goalPolicy["effort"]!!); put("repDefaults", goalPolicy["reps"]!!); put("requiredFamilyIds", kotlinx.serialization.json.buildJsonArray { intent.exerciseConstraints?.requiredFamilyIds.orEmpty().toSet().sorted().forEach { add(JsonPrimitive(it)) } }); if (intent.useHistory == true && history != null && asOf != null) { val historyWindow = when (intent.historyWindow) { "last_7_days" -> TrainingHistoryWindow.Last7Days; "current_plan_cycle" -> TrainingHistoryWindow.CurrentPlanCycle; "current_phase" -> TrainingHistoryWindow.CurrentPhase; else -> TrainingHistoryWindow.Last28Days }; put("trainingState", deriveTrainingStateCanonical(history, Instant.parse(asOf), historyWindow, database, relationships, mergedTarget)) } }
         val dbMetadata = database?.metadata.orEmpty()
         return IntentResolutionResult(if (defaults.isEmpty()) "resolved" else "resolved_with_defaults", planningPolicy = intent.requestedPlanningPolicy ?: goalPolicy["planningPolicy"]!!.jsonPrimitive.content, goalPolicy = GoalPolicyReference(goalId, policyVersion, description), environmentPolicy = resolvedEnvironment, defaultsApplied = defaults, explicitOverrides = overrides, resolvedProfile = resolvedProfile, resolvedTarget = mergedTarget, warnings = historyWarnings, generationOptions = options, provenance = buildMap { put("intentSchemaVersion", JsonPrimitive(intent.schemaVersion)); put("goalPolicy", buildJsonObject { put("policyId", goalId); put("policyVersion", policyVersion) }); put("environmentPolicy", resolvedEnvironment?.let { buildJsonObject { put("policyId", it); put("policyVersion", environmentVersion) } } ?: kotlinx.serialization.json.JsonNull); put("dbSchemaVersion", dbMetadata["schemaVersion"] ?: kotlinx.serialization.json.JsonNull); put("dbConverterVersion", dbMetadata["converterVersion"] ?: kotlinx.serialization.json.JsonNull); put("relationshipSchemaVersion", relationships?.schemaVersion?.let(::JsonPrimitive) ?: kotlinx.serialization.json.JsonNull) })
     }
@@ -164,6 +192,10 @@ fun deriveTrainingState(history: JsonElement, asOf: String): JsonElement {
     val root = history.jsonObject
     val asOfInstant = runCatching { Instant.parse(asOf) }.getOrNull()
         ?: throw IllegalArgumentException("asOf must be an offset-aware ISO-8601 timestamp")
+    // Keep the legacy convenience overload semantically aligned with the
+    // public state engine. The older bounded projection below is retained only
+    // for source compatibility and is unreachable.
+    return deriveTrainingStateCanonical(history, asOfInstant, TrainingHistoryWindow.Last28Days, null, null, null)
     val asDate = asOfInstant.atOffset(ZoneOffset.UTC).toLocalDate(); val start = asDate.minusDays(27)
     val workouts = root["workouts"]?.jsonArray.orEmpty().map { it.jsonObject }.filter { raw ->
         val stamp = raw["startTime"]?.jsonPrimitive?.content ?: ""
@@ -211,7 +243,7 @@ fun mergeTarget(base: JsonElement, explicit: JsonElement?): JsonElement {
 
 fun validateTarget(target: JsonElement): List<String> {
     val root = target as? JsonObject ?: return listOf("<root>: must be an object")
-    fun check(section: String, values: JsonObject?, keys: Triple<String, String, String>): List<String> = values?.flatMap { (name, value) -> val r = value as? JsonObject ?: return@flatMap emptyList(); val min = r[keys.first]?.toString()?.toDoubleOrNull(); val mid = r[keys.second]?.toString()?.toDoubleOrNull(); val max = r[keys.third]?.toString()?.toDoubleOrNull(); buildList { if (min != null && max != null && min > max) add("$section.$name: min must not exceed max"); if (min != null && mid != null && mid < min) add("$section.$name: target must not be below min"); if (max != null && mid != null && mid > max) add("$section.$name: target must not exceed max") } } ?: emptyList()
+    fun check(section: String, values: JsonObject?, keys: Triple<String, String, String>): List<String> = values?.flatMap { (name, value) -> val r = value as? JsonObject ?: return@flatMap emptyList(); val min = r[keys.first]?.toString()?.toDoubleOrNull(); val mid = r[keys.second]?.toString()?.toDoubleOrNull(); val max = r[keys.third]?.toString()?.toDoubleOrNull(); buildList { if (min != null && max != null && min > max) add("$section.$name: minimum must not exceed maximum"); if (min != null && mid != null && mid < min) add("$section.$name: target must not be below minimum"); if (max != null && mid != null && mid > max) add("$section.$name: target must not exceed maximum") } } ?: emptyList()
     val frequency = (root["frequency"] as? JsonObject)?.get("muscles") as? JsonObject
     return check("muscles", root["muscles"] as? JsonObject, Triple("min", "target", "max")) + check("frequency.muscles", frequency, Triple("min", "target", "max")) + check("movementPatterns", root["movementPatterns"] as? JsonObject, Triple("minimumSets", "targetSets", "maximumSets")) + check("families", root["families"] as? JsonObject, Triple("minimumSets", "targetSets", "maximumSets"))
 }

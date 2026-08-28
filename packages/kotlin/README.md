@@ -1,6 +1,9 @@
 # FreeExerciseDBPlusPlus Kotlin package
 
-Kotlin 2.x/JVM-compatible consumer and Android integration helpers. It uses `kotlinx.serialization` with `ignoreUnknownKeys` for forward-compatible DB++ decoding. The Health Connect projection is platform-neutral so Android applications can construct native `ExerciseSessionRecord` and `ExerciseSegment` objects without making this package depend on the Android SDK.
+Kotlin 2.x/JVM-compatible offline semantic engine for Android, plain JVM, and
+server-side consumers. The core uses `kotlinx.serialization`, has no Android
+SDK dependency, and bundles the canonical database and relationship resources.
+See [docs/KOTLIN-API.md](../../docs/KOTLIN-API.md) for the application API.
 
 ```kotlin
 val database = Database.load(File("free-exercise-db-plusplus.json"))
@@ -9,10 +12,9 @@ val volume = workout.effectiveSets(database)
 val healthConnect = workout.toHealthConnect() // preserves dbppExerciseId
 ```
 
-Run `gradle --no-daemon test --project-dir packages/kotlin/fedbpp` with a
-current Gradle 8.x installation.
+Run `./packages/kotlin/fedbpp/gradlew --no-daemon test --project-dir packages/kotlin/fedbpp`.
 
-Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting. Advanced PLAN/TARGET/adherence parity is not currently claimed.
+Effective-set helpers read `metadata.setCredits`, exclude `volumeEligible=false`, and apply `dbpp-default-volume-v1` top-level set-type counting.
 
 WorkoutIntent resolution is native and JVM-only:
 
@@ -20,5 +22,7 @@ WorkoutIntent resolution is native and JVM-only:
 val intent = WorkoutIntent(goal = "hypertrophy", environment = "commercial_gym",
     schedule = WorkoutSchedule(7, IntRangeValue(target = 5),
         preferredWeekdays = listOf("monday", "tuesday", "wednesday", "thursday", "saturday")))
-val resolution = resolveIntent(intent)
+val engine = TrainingEngine.bundled()
+val resolution = engine.resolveIntent(intent)
+val generated = engine.generatePlanFromIntent(intent)
 ```
