@@ -16,6 +16,15 @@
 
 # Changelog
 
+## 1.11.1 - 2026-08-27
+
+- Correct the native Swift history, progression, generation, intent, and
+  adaptive-coaching outputs to the Python reference semantics.
+- Expand deterministic cross-language fixtures and add exact external Swift
+  consumer and installed-wheel acceptance checks.
+- Refresh release checksums for the canonical database and relationship
+  artifacts; the immutable v1.11.0 tag is unchanged.
+
 ## 1.11.0 - 2026-08-26
 
 - Complete the Python reference audit and full native Swift engine parity for

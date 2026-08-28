@@ -25,6 +25,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Require successful normal CI for the exact tagged commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          conclusion=$(gh run list --workflow build-db.yml --commit "$GITHUB_SHA" --status completed --limit 1 --json conclusion --jq '.[0].conclusion // ""')
+          test "$conclusion" = success || {
+            echo "No successful normal CI run is associated with tagged commit $GITHUB_SHA" >&2
+            exit 1
+          }
+
       - name: Install validator
         run: python -m pip install --disable-pip-version-check jsonschema
 

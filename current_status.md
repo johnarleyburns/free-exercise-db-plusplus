@@ -1090,36 +1090,39 @@ Part 0A is complete in commit `42fb43b`. Part 1A is complete in commit
 production hardening, Kotlin is v1.13, and R is v1.14. The roadmap scan found
 no stale v1.12 engine/parity assertions.
 
-Phase 2 / Part 2A implementation is present in the current working change:
-TrainingEngine retains immutable deterministic indexes, canonical movement
-pattern lookup is corrected, focused lookup tests pass, and the external
-consumer now invokes `generatePlanFromIntent`.
+## Phase 2 remediation — closed
 
-Current next action: continue Phase 2 / Part 2B from the HANDOFF addendum —
-expand the Python-authored cross-language fixture matrix and deterministic
-regeneration checks. Phase 2 remains incomplete until all its parts and exact
-Python/Swift comparisons pass.
+Parts 2A–2K are complete in commit `38e6215` (with the immutable prerequisite
+index work retained from the earlier Phase 2 commits). Swift now matches the
+Python oracle for evaluation, history/state, progression, generation,
+adaptation, intent resolution, and intent-driven generation, including exact
+null/missing distinctions, ordering, offsets, IDs, evidence, and provenance.
 
-## Phase 2 remediation work in the current cycle
+The Python-authored matrix now has input/expected/metadata triples for 3
+evaluation, 2 history, 4 progression, 2 generation, 2 adaptation, and 11
+intent cases. It covers partial ranges, custom credits, constraints,
+arbitrary cycles, future exclusion, locks, maximum rejection, regeneration,
+substitution, effort boundaries, and deterministic IDs. Regeneration is
+checked byte-for-byte by `scripts/test_cross_language_fixtures.sh`.
 
-Added deterministic fixture-regeneration acceptance at
-`scripts/test_cross_language_fixtures.sh`; it reproduces the committed
-Python-authored fixtures byte-for-byte and validates canonical self-comparison.
-Aligned Swift generation with Python for repeated-set target allocation,
-preferred/required rationale tags, offset-anchored cycle position, and full
-load-change records. The isolated Swift consumer and installed Python wheel
-smoke checks pass.
+The exact parity harness is `scripts/test_swift_python_parity.sh`; it reports
+the first JSON path on failure and passes all supported operations. The
+external SPM consumer is `scripts/test_swift_consumer.sh`; it builds outside
+the checkout, uses public APIs/resources, and compares all workflow goldens.
+The installed-wheel acceptance is
+`scripts/test_python_wheel_acceptance.sh`; it verifies the import path is the
+fresh virtual environment and exercises all required Python APIs.
 
-Phase 2 is still open. Exact probes against the adversarial Python goldens
-show remaining Swift history-state differences in missed-occurrence
-prescription rows and remaining adaptive differences in decision evidence and
-provenance; generation still needs complete envelope/provenance parity. Do not
-claim 2B–2K complete until those exact comparisons are green.
+Final Phase 2 verification:
 
-The latest remediation pass now materializes missed scheduled session and
-prescription rows, adds `activePlan.nextScheduledOccurrence`, uses Python's
-effective-date cycle-position anchor, and routes repeated skipped prescriptions
-to native adaptive hold decisions. Swift's 42-test suite, deterministic fixture
-regeneration, and isolated SPM consumer pass after these changes. Full
-operation-by-operation golden comparison and metadata/release audit remain
-required before Phase 2 can be closed.
+- `swift test --package-path packages/swift/FreeExerciseDBPlusPlus` — 42 tests passed.
+- `scripts/test_cross_language_fixtures.sh` — deterministic regeneration passed.
+- `scripts/test_swift_python_parity.sh` — all exact goldens passed.
+- `scripts/test_swift_consumer.sh` — isolated consumer and goldens passed.
+- `scripts/test_python_wheel_acceptance.sh` — installed-wheel APIs and goldens passed.
+- canonical database, target schema, and relationship checksums passed.
+
+Release metadata is prepared for v1.11.1 in
+`docs/releases/v1.11.1.md` and `packages/python/pyproject.toml`; v1.11.0 is
+not moved or rewritten. Kotlin and R remain compatibility checks for their
+deferred releases and were not expanded in this phase.
