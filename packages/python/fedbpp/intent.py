@@ -148,7 +148,11 @@ def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None
     if intent.get("environment") == "custom" and not ((intent.get("equipmentOverrides", {}) or {}).get("addEquipment") or profile.get("equipment")): missing.append({"field": "equipmentOverrides.addEquipment", "reason": "required_for_custom_environment"})
     if errors: return {"status": "invalid", "resolvedProfile": None, "resolvedTarget": None, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": [], "warnings": [], "conflicts": [{"code": "INVALID_INTENT", "detail": x} for x in errors], "defaultsApplied": [], "explicitOverrides": _empty_overrides(), "provenance": {"intentSchemaVersion": intent.get("schemaVersion")}}
     if missing: return {"status": "needs_clarification", "resolvedProfile": None, "resolvedTarget": None, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": missing, "warnings": [], "conflicts": [], "defaultsApplied": [], "explicitOverrides": _empty_overrides(), "provenance": {"intentSchemaVersion": intent.get("schemaVersion")}}
-    goal_policy_id = intent.get("requestedGoalPolicy") or {"hypertrophy": "general-hypertrophy-v1", "strength": "general-strength-v1"}.get(intent["goal"])
+    goal_policy_id = intent.get("requestedGoalPolicy") or next(
+        (policy_id for policy_id, policy in GOAL_POLICIES.items()
+         if policy.get("goal") == intent["goal"]),
+        None,
+    )
     if not goal_policy_id: return {"status": "needs_clarification", "resolvedProfile": None, "resolvedTarget": None, "planningPolicy": None, "goalPolicy": None, "environmentPolicy": None, "generationOptions": {}, "missingInformation": [{"field": "requestedGoalPolicy", "reason": "no_default_goal_policy_for_goal"}], "warnings": [], "conflicts": [], "defaultsApplied": [], "explicitOverrides": _empty_overrides(), "provenance": {"intentSchemaVersion": intent["schemaVersion"]}}
     gp = GOAL_POLICIES[goal_policy_id]; environment = intent.get("environment")
     if gp["goal"] != intent["goal"]:

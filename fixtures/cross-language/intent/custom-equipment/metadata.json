@@ -1,5 +1,5 @@
 {
-  "dbVersion": "0.8.0",
+  "dbVersion": "0.8.1",
   "environmentPolicy": null,
   "expectedOperation": "resolve_intent",
   "goalPolicy": "general-strength-v1",

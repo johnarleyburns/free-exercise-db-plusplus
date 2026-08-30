@@ -36,3 +36,15 @@ def test_repeated_resolution_is_deterministic():
     intent = json.loads((ROOT / "fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json").read_text())
     db = {"metadata": {}, "exercises": {}}
     assert resolve_intent(intent, db) == resolve_intent(intent, db)
+
+
+def test_goal_policy_evidence_resolves_in_embedded_registry():
+    policies = json.loads((ROOT / "resources/intent-policies.json").read_text())
+    database = json.loads((ROOT / "free-exercise-db-plusplus.json").read_text())
+    references = database["metadata"]["evidence"]["references"]
+    expected_ids = {"repetition_continuum_2021", "rir_rpe_scale_2016"}
+    for policy in policies["goalPolicies"].values():
+        evidence = policy["evidence"]
+        assert evidence["status"] != "provisional"
+        assert set(evidence["references"]) == expected_ids
+        assert all(reference in references for reference in evidence["references"])

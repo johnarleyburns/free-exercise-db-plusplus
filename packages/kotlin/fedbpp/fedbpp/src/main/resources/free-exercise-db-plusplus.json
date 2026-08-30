@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": "0.3.0",
-    "converterVersion": "0.8.0",
-    "generatedAt": "2026-08-28T03:46:25.197743+00:00",
+    "converterVersion": "0.8.1",
+    "generatedAt": "2026-08-30T04:49:41.794001+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -405,6 +405,19 @@
           "pmid": "26589588",
           "doi": "10.1016/j.jelekin.2015.10.014",
           "url": "https://pubmed.ncbi.nlm.nih.gov/26589588/"
+        },
+        "repetition_continuum_2021": {
+          "title": "Loading Recommendations for Muscle Strength, Hypertrophy, and Local Endurance: A Re-Examination of the Repetition Continuum",
+          "type": "narrative_review",
+          "pmid": "33671664",
+          "doi": "10.3390/sports9020032",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7927075/"
+        },
+        "rir_rpe_scale_2016": {
+          "title": "Application of the Repetitions in Reserve-Based Rating of Perceived Exertion Scale for Resistance Training",
+          "type": "narrative_review",
+          "doi": "10.1519/SSC.0000000000000218",
+          "url": "https://journals.lww.com/nsca-scj/fulltext/2016/08000/application_of_the_repetitions_in_reserve_based.10.aspx"
         }
       },
       "patterns": {

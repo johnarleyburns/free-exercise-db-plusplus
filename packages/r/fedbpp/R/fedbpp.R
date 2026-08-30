@@ -439,3 +439,19 @@ derive_training_state <- function(history,db,as_of,window="last_28_days",relatio
 
 .resolve_canonical <- resolve_intent
 resolve_intent <- function(intent,db=NULL,profile=NULL,target=NULL,relationships=NULL,history=NULL,as_of=NULL) {z<-.resolve_canonical(intent,db,profile,target,relationships,history,as_of);ii<-.doc(intent);for(i in seq_along(z$conflicts%||%list()))if(identical(z$conflicts[[i]]$code,"GOAL_POLICY_MISMATCH"))z$conflicts[[i]]<-list(code="GOAL_POLICY_MISMATCH",goal=ii$goal,policyGoal=if(identical(ii$requestedGoalPolicy,"general-strength-v1"))"strength"else if(identical(ii$requestedGoalPolicy,"general-hypertrophy-v1"))"hypertrophy"else NULL,requestedGoalPolicy=ii$requestedGoalPolicy);if(!is.null(z$resolvedProfile)&&!"subjectId"%in%names(z$resolvedProfile))z$resolvedProfile<-c(z$resolvedProfile,list(subjectId=NULL));if(!is.null(z$resolvedProfile)&&!length(z$resolvedProfile$exercisePreferences))z$resolvedProfile$exercisePreferences<-.empty_object();if(!is.null(z$resolvedProfile)&&!is.list(z$resolvedProfile$equipment))z$resolvedProfile$equipment<-as.list(z$resolvedProfile$equipment);if(!length(z$generationOptions))z$generationOptions<-.empty_object();if(!is.null(z$generationOptions$trainingState)&&!length(z$generationOptions$trainingState$familyState))z$generationOptions$trainingState$familyState<-.empty_object();z}
+ .resolve_intent_with_endurance <- resolve_intent
+ resolve_intent <- function(intent, db=NULL, profile=NULL, target=NULL, relationships=NULL, history=NULL, as_of=NULL) {
+   value <- .doc(intent)
+   automatic <- identical(value$goal, "endurance") && is.null(value$requestedGoalPolicy)
+   if (automatic) {
+     policies <- read_intent_policies()$goalPolicies
+     value$requestedGoalPolicy <- names(policies)[vapply(policies, function(policy) identical(policy$goal, value$goal), logical(1))][1L]
+     intent <- value
+   }
+   result <- .resolve_intent_with_endurance(intent, db, profile, target, relationships, history, as_of)
+   if (automatic) {
+     result$defaultsApplied <- c("goalPolicy", result$defaultsApplied)
+     result$explicitOverrides$goalPolicy <- FALSE
+   }
+   result
+ }

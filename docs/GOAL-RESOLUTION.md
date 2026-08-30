@@ -12,6 +12,15 @@ chest 6, lats 6, quadriceps 6, and hamstrings 4 per native cycle.
 repetitions, RIR 2, and minimal generic coverage: chest 3, quadriceps 3, and
 hamstrings 2. It is intentionally not an exercise-specific strength program.
 
+`general-endurance-v1` resolves endurance to `full-body-general-v1`, 15--18--20
+repetitions, RIR 2, and the conservative hypertrophy-baseline coverage targets
+of chest 6, lats 6, quadriceps 6, and hamstrings 4. Endurance-specific weekly
+set-volume evidence is limited, so this is not an optimal prescription.
+
+Each goal policy declares its evidence basis. The loading-continuum and
+repetitions-in-reserve references are resolved through the embedded evidence
+registry in the database.
+
 These are convenience defaults, not claims of optimal programming. Explicit
 TARGET fields merge over policy defaults field-by-field. An unknown requested
 goal or planning policy is invalid; it is never silently substituted.

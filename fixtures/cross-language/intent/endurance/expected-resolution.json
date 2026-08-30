@@ -1,0 +1,63 @@
+{
+  "status": "resolved_with_defaults",
+  "resolvedProfile": {
+    "schemaVersion": "0.1.0",
+    "profileId": "resolved-profile",
+    "subjectId": null,
+    "goals": [{"type": "endurance"}],
+    "availability": {
+      "cycleLengthDays": 7,
+      "sessionsPerCycle": {"target": 3},
+      "preferredDayOffsets": [],
+      "excludedDayOffsets": []
+    },
+    "equipment": ["bands", "barbell", "body only", "cable", "dumbbell", "e-z curl bar", "exercise ball", "kettlebells", "machine", "medicine ball"],
+    "exercisePreferences": {},
+    "constraints": {"excludedExerciseIds": [], "excludedFamilyIds": []}
+  },
+  "resolvedTarget": {
+    "schemaVersion": "0.1.0",
+    "targetId": "general-endurance-v1-default",
+    "periodDays": 7,
+    "muscles": {
+      "chest": {"target": 6},
+      "lats": {"target": 6},
+      "quadriceps": {"target": 6},
+      "hamstrings": {"target": 4}
+    },
+    "notes": "Higher-rep, lighter-load local-muscular-endurance defaults; endurance-specific weekly set-volume evidence is limited, so coverage is kept conservative and this is not an optimal prescription."
+  },
+  "planningPolicy": "full-body-general-v1",
+  "goalPolicy": {
+    "policyId": "general-endurance-v1",
+    "policyVersion": "1",
+    "description": "Higher-rep, lighter-load local-muscular-endurance defaults; endurance-specific weekly set-volume evidence is limited, so coverage is kept conservative and this is not an optimal prescription."
+  },
+  "environmentPolicy": "commercial-gym-general-v1",
+  "generationOptions": {
+    "continuity": "neutral",
+    "repDefaults": {"min": 15, "target": 18, "max": 20},
+    "effortDefaults": {"rir": 2},
+    "requiredFamilyIds": []
+  },
+  "missingInformation": [],
+  "warnings": [],
+  "conflicts": [],
+  "defaultsApplied": ["goalPolicy", "planningPolicy", "environmentPolicy"],
+  "explicitOverrides": {
+    "goalPolicy": false,
+    "planningPolicy": false,
+    "target": false,
+    "trainingProfile": false,
+    "equipmentAdded": [],
+    "equipmentRemoved": []
+  },
+  "provenance": {
+    "intentSchemaVersion": "0.1.0",
+    "goalPolicy": {"policyId": "general-endurance-v1", "policyVersion": "1"},
+    "environmentPolicy": {"policyId": "commercial-gym-general-v1", "policyVersion": "1"},
+    "dbSchemaVersion": "0.3.0",
+    "dbConverterVersion": "0.8.1",
+    "relationshipSchemaVersion": null
+  }
+}

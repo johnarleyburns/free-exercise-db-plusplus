@@ -1,6 +1,6 @@
 {
   "asOf": "2026-08-25T12:00:00Z",
-  "dbVersion": "0.8.0",
+  "dbVersion": "0.8.1",
   "environmentPolicy": "commercial-gym-general-v1",
   "expectedOperation": "resolve_intent_with_history",
   "goalPolicy": "general-hypertrophy-v1",

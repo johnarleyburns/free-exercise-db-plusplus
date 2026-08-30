@@ -356,12 +356,16 @@ public enum IntentValidator {
       if !Set(p.preferredFamilyIds).isDisjoint(with: Set(c.excludedFamilyIds)) { e += ["preferences: preferredFamilyIds conflicts with excludedFamilyIds"] }
       if !Set(p.avoidedFamilyIds).isDisjoint(with: Set(c.excludedFamilyIds)) { e += ["preferences: avoidedFamilyIds conflicts with excludedFamilyIds"] }
     }
-    if x.requestedGoalPolicy == "general-strength-v1" && x.goal == "hypertrophy"
-      || x.requestedGoalPolicy == "general-hypertrophy-v1" && x.goal == "strength"
+    if let requested = x.requestedGoalPolicy,
+      let policyGoal = IntentPolicyCatalog.goals[requested]?.objectValue?["goal"]?.stringValue,
+      x.goal != policyGoal
     {
       e += ["GOAL_POLICY_MISMATCH"]
     }
-    if let goal = x.goal, !["hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"].contains(goal) { e += ["goal: unsupported value"] }
+    if let goal = x.goal {
+      let catalogGoals = IntentPolicyCatalog.goals.values.compactMap { $0.objectValue?["goal"]?.stringValue }
+      if !catalogGoals.contains(goal) && !["muscular_endurance", "general_fitness", "skill_practice", "power"].contains(goal) { e += ["goal: unsupported value"] }
+    }
     if let environment = x.environment, !["commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom"].contains(environment) { e += ["environment: unsupported value"] }
     if let continuity = x.continuity, !["preserve", "neutral", "vary"].contains(continuity) { e += ["continuity: unsupported value"] }
     if let policy = x.requestedPlanningPolicy,
@@ -876,7 +880,7 @@ public struct IntentResolver: Sendable {
     let errors = IntentValidator.validate(x, database: database, relationships: relationships)
     if !errors.isEmpty {
       if errors == ["GOAL_POLICY_MISMATCH"] {
-        let policyGoal = x.requestedGoalPolicy == "general-strength-v1" ? "strength" : "hypertrophy"
+        let policyGoal = x.requestedGoalPolicy.flatMap { IntentPolicyCatalog.goals[$0]?.objectValue?["goal"]?.stringValue }
         return IntentResolutionResult(status: "invalid", conflicts: [IntentConflict(code: "GOAL_POLICY_MISMATCH", goal: x.goal, requestedGoalPolicy: x.requestedGoalPolicy, policyGoal: policyGoal)], provenance: ["intentSchemaVersion": s(x.schemaVersion)])
       }
       return IntentResolutionResult(
@@ -912,10 +916,8 @@ public struct IntentResolver: Sendable {
     if x.environment == "home_gym" && suppliedEquipment.isEmpty && (x.equipmentOverrides?.addEquipment ?? []).isEmpty { return IntentResolutionResult(status: "needs_clarification", missingInformation: [.init(field: "equipmentOverrides.addEquipment", reason: "home_gym_has_no_v1_preset")], provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
     if x.environment == "custom" && suppliedEquipment.isEmpty && (x.equipmentOverrides?.addEquipment ?? []).isEmpty { return IntentResolutionResult(status: "needs_clarification", missingInformation: [.init(field: "equipmentOverrides.addEquipment", reason: "required_for_custom_environment")], provenance: ["intentSchemaVersion": s(x.schemaVersion)]) }
     let goal = x.goal!
-    let gid =
-      x.requestedGoalPolicy
-      ?? (goal == "hypertrophy"
-        ? "general-hypertrophy-v1" : goal == "strength" ? "general-strength-v1" : nil)
+    let gid = x.requestedGoalPolicy
+      ?? IntentPolicyCatalog.goals.first(where: { $0.value.objectValue?["goal"]?.stringValue == goal })?.key
     guard let gid else {
       return IntentResolutionResult(
         status: "needs_clarification",
@@ -923,15 +925,14 @@ public struct IntentResolver: Sendable {
           .init(field: "requestedGoalPolicy", reason: "no_default_goal_policy_for_goal")
         ], provenance: ["intentSchemaVersion": s(x.schemaVersion)])
     }
-    if gid != "general-hypertrophy-v1" && gid != "general-strength-v1" {
+    guard let policy = IntentPolicyCatalog.goals[gid]?.objectValue else {
       return IntentResolutionResult(
         status: "invalid",
         conflicts: [
           IntentConflict(code: "INVALID_INTENT", detail: "requestedGoalPolicy: unknown goal policy")
         ])
     }
-    let isStrength = gid == "general-strength-v1"
-    let policyGoal = isStrength ? "strength" : "hypertrophy"
+    let policyGoal = policy["goal"]?.stringValue
     if goal != policyGoal {
       return IntentResolutionResult(
         status: "invalid",
@@ -941,7 +942,6 @@ public struct IntentResolver: Sendable {
             policyGoal: policyGoal)
         ])
     }
-    let policy = o(IntentPolicyCatalog.goals[gid])
     let desc = policy["description"]?.stringValue
     let policyVersion = policy["policyVersion"]?.stringValue ?? "1"
     let env = IntentPolicyCatalog.environments.values.compactMap { value -> (String, [String], String)? in

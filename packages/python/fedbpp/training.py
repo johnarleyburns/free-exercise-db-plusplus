@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).with_name("schemas")
-GOALS = frozenset(("hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"))
+GOALS = frozenset(("hypertrophy", "strength", "endurance", "muscular_endurance", "general_fitness", "skill_practice", "power"))
 EXPERIENCE = frozenset(("novice", "intermediate", "advanced", "unknown"))
 PROFILE_KEYS = ("preferredExerciseIds", "avoidedExerciseIds", "preferredFamilyIds", "avoidedFamilyIds")
 

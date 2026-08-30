@@ -36,7 +36,7 @@
   "missingInformation": [],
   "planningPolicy": "full-body-general-v1",
   "provenance": {
-    "dbConverterVersion": "0.8.0",
+    "dbConverterVersion": "0.8.1",
     "dbSchemaVersion": "0.3.0",
     "environmentPolicy": {
       "policyId": "commercial-gym-general-v1",

@@ -1,7 +1,7 @@
 # Free Exercise DB++ Roadmap
 
-Status: **v1.15.1 released**
-Current stable release: **v1.15.1**
+Status: **v1.15.2 released**
+Current stable release: **v1.15.2**
 Primary direction: **portable workout-intent, planning, and adaptive-coaching engine with first-class Python, Swift, Kotlin, and R packages**
 
 ---
@@ -65,6 +65,10 @@ v1.15.1 COMPLETE: external consumer hardening patch with a runnable persisted
 history/state/progression/adaptation flow in all four language examples,
 placeholder-free Swift persistence documentation, and CI execution of the
 history/adaptation consumers. No training methodology changed.
+
+v1.15.2 COMPLETE: evidence-backed endurance goal policy, provenance for all
+goal policies, and identical endurance resolution across Python, Swift, Kotlin,
+and R. The exercise-data schema and exercise IDs remain unchanged.
 
 The completed v1.11 workflow is:
 

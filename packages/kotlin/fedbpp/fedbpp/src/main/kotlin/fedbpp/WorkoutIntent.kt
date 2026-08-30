@@ -109,10 +109,13 @@ object WorkoutIntentValidator {
         val c = intent.exerciseConstraints; if (c != null && (c.requiredExerciseIds + c.lockedExerciseIds).toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "exerciseConstraints: requiredExerciseIds conflicts with excludedExerciseIds"
         val p = intent.preferences; if (p != null && c != null) { if (p.preferredExerciseIds.toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "preferences: preferredExerciseIds conflicts with excludedExerciseIds"; if (p.avoidedExerciseIds.toSet().intersect(c.excludedExerciseIds.toSet()).isNotEmpty()) errors += "preferences: avoidedExerciseIds conflicts with excludedExerciseIds"; if (p.preferredFamilyIds.toSet().intersect(c.excludedFamilyIds.toSet()).isNotEmpty()) errors += "preferences: preferredFamilyIds conflicts with excludedFamilyIds"; if (p.avoidedFamilyIds.toSet().intersect(c.excludedFamilyIds.toSet()).isNotEmpty()) errors += "preferences: avoidedFamilyIds conflicts with excludedFamilyIds" }
         if ((c?.requiredFamilyIds.orEmpty() + c?.excludedFamilyIds.orEmpty() + p?.preferredFamilyIds.orEmpty() + p?.avoidedFamilyIds.orEmpty()).isNotEmpty() && relationships == null) errors += "exercise family constraints require exercise relationships"
-        if ((intent.goal == "hypertrophy" && intent.requestedGoalPolicy == "general-strength-v1") || (intent.goal == "strength" && intent.requestedGoalPolicy == "general-hypertrophy-v1")) errors += "GOAL_POLICY_MISMATCH"
-        if (intent.requestedGoalPolicy != null && intent.requestedGoalPolicy !in setOf("general-hypertrophy-v1", "general-strength-v1")) errors += "requestedGoalPolicy: unknown goal policy"
+        if (intent.requestedGoalPolicy != null && intent.requestedGoalPolicy !in IntentPolicyCatalog.goals.keys) errors += "requestedGoalPolicy: unknown goal policy"
+        intent.requestedGoalPolicy?.let { policyId ->
+            val policyGoal = IntentPolicyCatalog.goals[policyId]?.jsonObject?.get("goal")?.jsonPrimitive?.content
+            if (policyGoal != null && intent.goal != policyGoal) errors += "GOAL_POLICY_MISMATCH"
+        }
         if (intent.requestedPlanningPolicy != null && intent.requestedPlanningPolicy !in setOf("full-body-general-v1", "upper-lower-general-v1")) errors += "requestedPlanningPolicy: unknown planning policy"
-        if (intent.goal != null && intent.goal !in setOf("hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power")) errors += "goal: unsupported value"
+        if (intent.goal != null && intent.goal !in (IntentPolicyCatalog.goals.values.mapNotNull { it.jsonObject["goal"]?.jsonPrimitive?.content }.toSet() + setOf("muscular_endurance", "general_fitness", "skill_practice", "power"))) errors += "goal: unsupported value"
         if (intent.environment != null && intent.environment !in setOf("commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom")) errors += "environment: unsupported value"
         if (intent.continuity != null && intent.continuity !in setOf("preserve", "neutral", "vary")) errors += "continuity: unsupported value"
         database?.let { db ->
@@ -143,7 +146,7 @@ object WorkoutIntentResolver {
         val errors = WorkoutIntentValidator.validate(intent, database, relationships)
         if (errors.isNotEmpty()) {
             if (errors == listOf("GOAL_POLICY_MISMATCH")) {
-                val policyGoal = if (intent.requestedGoalPolicy == "general-strength-v1") "strength" else "hypertrophy"
+                val policyGoal = intent.requestedGoalPolicy?.let { IntentPolicyCatalog.goals[it]?.jsonObject?.get("goal")?.jsonPrimitive?.content }
                 return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("GOAL_POLICY_MISMATCH", goal = intent.goal, requestedGoalPolicy = intent.requestedGoalPolicy, policyGoal = policyGoal)), explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
             }
             return IntentResolutionResult("invalid", conflicts = errors.map { IntentConflict("INVALID_INTENT", it) }, explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
@@ -152,13 +155,14 @@ object WorkoutIntentResolver {
         if (missing.isNotEmpty()) return IntentResolutionResult("needs_clarification", missingInformation = missing, explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
         if (intent.environment == "home_gym" && suppliedEquipment.isEmpty() && intent.equipmentOverrides?.addEquipment.orEmpty().isEmpty()) return IntentResolutionResult("needs_clarification", missingInformation = listOf(MissingInformation("equipmentOverrides.addEquipment", "home_gym_has_no_v1_preset")))
         if (intent.environment == "custom" && suppliedEquipment.isEmpty() && intent.equipmentOverrides?.addEquipment.orEmpty().isEmpty()) return IntentResolutionResult("needs_clarification", missingInformation = listOf(MissingInformation("equipmentOverrides.addEquipment", "required_for_custom_environment")))
-        val goalId = intent.requestedGoalPolicy ?: when (intent.goal) { "hypertrophy" -> "general-hypertrophy-v1"; "strength" -> "general-strength-v1"; else -> null }
+        val goalId = intent.requestedGoalPolicy ?: IntentPolicyCatalog.goals.entries.firstOrNull { it.value.jsonObject["goal"]?.jsonPrimitive?.content == intent.goal }?.key
         if (goalId == null) return IntentResolutionResult("needs_clarification", missingInformation = listOf(MissingInformation("requestedGoalPolicy", "no_default_goal_policy_for_goal")), explicitOverrides = emptyOverrides, provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
         val goalPolicy = IntentPolicyCatalog.goals[goalId]?.jsonObject
             ?: return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("INVALID_INTENT", "requestedGoalPolicy: unknown goal policy")))
         val description = goalPolicy["description"]?.jsonPrimitive?.content
         val policyVersion = goalPolicy["policyVersion"]?.jsonPrimitive?.content ?: "1"
-        if (goalId == "general-strength-v1" && intent.goal != "strength" || goalId == "general-hypertrophy-v1" && intent.goal != "hypertrophy") return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("GOAL_POLICY_MISMATCH", goal = intent.goal, requestedGoalPolicy = goalId, policyGoal = if (goalId == "general-strength-v1") "strength" else "hypertrophy")), provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
+        val policyGoal = goalPolicy["goal"]?.jsonPrimitive?.content
+        if (intent.goal != policyGoal) return IntentResolutionResult("invalid", conflicts = listOf(IntentConflict("GOAL_POLICY_MISMATCH", goal = intent.goal, requestedGoalPolicy = goalId, policyGoal = policyGoal)), provenance = mapOf("intentSchemaVersion" to JsonPrimitive(intent.schemaVersion)))
         val environmentPolicy = IntentPolicyCatalog.environments.values
             .map { it.jsonObject }
             .firstOrNull { it["environment"]?.jsonPrimitive?.content == intent.environment }

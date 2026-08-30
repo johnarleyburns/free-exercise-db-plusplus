@@ -21,7 +21,7 @@
     "goal": {
       "type": "object", "additionalProperties": false, "required": ["type"],
       "properties": {
-        "type": {"type": "string", "enum": ["hypertrophy", "strength", "muscular_endurance", "general_fitness", "skill_practice", "power"]},
+        "type": {"type": "string", "enum": ["hypertrophy", "strength", "endurance", "muscular_endurance", "general_fitness", "skill_practice", "power"]},
         "priority": {"type": "integer", "minimum": 1}
       }
     },

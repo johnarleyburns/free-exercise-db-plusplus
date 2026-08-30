@@ -16,6 +16,17 @@
 
 # Changelog
 
+## 1.15.2 - 2026-08-30
+
+- Add the evidence-backed `general-endurance-v1` goal policy with conservative
+  15--18--20 repetition, RIR 2, and coverage defaults.
+- Add evidence blocks to all three goal policies and embed the loading
+  continuum and repetitions-in-reserve references in the generated database.
+- Recognize `endurance` consistently across Python, Swift, Kotlin, and R
+  resolvers with cross-language parity coverage.
+- Bump `converterVersion` to 0.8.1; the exercise-data schema and exercise IDs
+  remain unchanged.
+
 ## 1.15.1 - 2026-08-28
 
 - Add runnable external-consumer history, TrainingState, progression, and

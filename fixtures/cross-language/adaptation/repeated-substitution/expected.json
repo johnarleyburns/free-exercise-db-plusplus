@@ -248,7 +248,7 @@
     "provenance": {
       "analysisPolicy": "plan-evaluation-v1",
       "analysisVersion": "0.1.0",
-      "dbConverterVersion": "0.8.0",
+      "dbConverterVersion": "0.8.1",
       "dbSchemaVersion": "0.3.0",
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "durationPolicy": null,
@@ -327,7 +327,7 @@
         "analysisPolicy": "dbpp-default-volume-v1",
         "analysisVersion": "1.4.1",
         "asOf": "2026-08-27T12:00:00+00:00",
-        "dbConverterVersion": "0.8.0",
+        "dbConverterVersion": "0.8.1",
         "dbSchemaVersion": "0.3.0",
         "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
         "historyWindow": {
@@ -425,7 +425,7 @@
         "analysisPolicy": "dbpp-default-volume-v1",
         "analysisVersion": "1.4.1",
         "asOf": "2026-08-27T12:00:00+00:00",
-        "dbConverterVersion": "0.8.0",
+        "dbConverterVersion": "0.8.1",
         "dbSchemaVersion": "0.3.0",
         "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
         "historyWindow": {
@@ -489,7 +489,7 @@
         "analysisPolicy": "dbpp-default-volume-v1",
         "analysisVersion": "1.4.1",
         "asOf": "2026-08-27T12:00:00+00:00",
-        "dbConverterVersion": "0.8.0",
+        "dbConverterVersion": "0.8.1",
         "dbSchemaVersion": "0.3.0",
         "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
         "historyWindow": {
@@ -701,7 +701,7 @@
     "provenance": {
       "analysisPolicy": "plan-evaluation-v1",
       "analysisVersion": "0.1.0",
-      "dbConverterVersion": "0.8.0",
+      "dbConverterVersion": "0.8.1",
       "dbSchemaVersion": "0.3.0",
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "durationPolicy": null,
@@ -767,7 +767,7 @@
     "coachingPolicyId": "general-adaptive-v1",
     "coachingPolicyVersion": "1.0.0",
     "coachingVersion": "1.9.0",
-    "dbConverterVersion": "0.8.0",
+    "dbConverterVersion": "0.8.1",
     "dbSchemaVersion": "0.3.0",
     "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
     "evaluationVersion": "0.1.0",
@@ -786,7 +786,7 @@
       "analysisPolicy": "dbpp-default-volume-v1",
       "analysisVersion": "1.4.1",
       "asOf": "2026-08-27T12:00:00+00:00",
-      "dbConverterVersion": "0.8.0",
+      "dbConverterVersion": "0.8.1",
       "dbSchemaVersion": "0.3.0",
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "historyWindow": {
@@ -1588,7 +1588,7 @@
       "analysisPolicy": "dbpp-default-volume-v1",
       "analysisVersion": "1.4.1",
       "asOf": "2026-08-27T12:00:00+00:00",
-      "dbConverterVersion": "0.8.0",
+      "dbConverterVersion": "0.8.1",
       "dbSchemaVersion": "0.3.0",
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "historyWindow": {
