@@ -41,7 +41,7 @@ jobs:
       - name: Download current upstream
         run: |
           curl --fail --location --retry 3 \
-            https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json \
+            https://raw.githubusercontent.com/yuhonas/free-exercise-db/5197c055b356498944328bd00178b64a5e9f422c/dist/exercises.json \
             --output exercises.json
 
       - name: Require tagged release to match reviewed upstream snapshot
