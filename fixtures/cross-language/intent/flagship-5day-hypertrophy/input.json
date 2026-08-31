@@ -1,1 +1,27 @@
-{"schemaVersion":"0.1.0","intentId":"flagship-5day-hypertrophy","goal":"hypertrophy","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"min":5,"target":5,"max":5},"preferredWeekdays":["monday","tuesday","wednesday","thursday","saturday"]},"sessionConstraints":{"exercisesPerSession":{"min":3,"max":4}},"environment":"commercial_gym"}
+{
+  "environment": "commercial_gym",
+  "goal": "hypertrophy",
+  "intentId": "flagship-5day-hypertrophy",
+  "schedule": {
+    "cycleLengthDays": 7,
+    "preferredWeekdays": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "saturday"
+    ],
+    "sessionsPerCycle": {
+      "max": 5,
+      "min": 5,
+      "target": 5
+    }
+  },
+  "schemaVersion": "0.2.0",
+  "sessionConstraints": {
+    "exercisesPerSession": {
+      "max": 4,
+      "min": 3
+    }
+  }
+}

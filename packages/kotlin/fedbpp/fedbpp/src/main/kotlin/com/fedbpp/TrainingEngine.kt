@@ -52,7 +52,11 @@ class TrainingEngine(val database: Database, val relationships: ExerciseRelation
             requiredFamilyIds = generationOptions["requiredFamilyIds"].jsonArrayOrEmpty().mapNotNull { it.jsonPrimitive.contentOrNull },
             additionalExclusions = constraints?.excludedExerciseIds.orEmpty(),
             options = buildJsonObject {
-                generationOptions.forEach { (key, value) -> if (key != "trainingState" && key != "requiredFamilyIds") put(key, value) }
+                generationOptions.forEach { (key, value) ->
+                    if (key != "trainingState" && key != "requiredFamilyIds" &&
+                        (intent.goal == "endurance" || key != "repDefaults") &&
+                        (intent.goal == "endurance" || key != "effortDefaults")) put(key, value)
+                }
             }
         )))
     }

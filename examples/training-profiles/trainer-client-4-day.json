@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "profileId": "trainer-client-4-day",
   "subjectId": "client-opaque-042",
   "goals": [{"type": "hypertrophy", "priority": 1}],

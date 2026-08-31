@@ -1,1 +1,13 @@
-{"schemaVersion":"0.1.0","goal":"hypertrophy","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"target":3}},"environment":"commercial_gym","requestedGoalPolicy":"general-hypertrophy-v1","requestedPlanningPolicy":"upper-lower-general-v1"}
+{
+  "environment": "commercial_gym",
+  "goal": "hypertrophy",
+  "requestedGoalPolicy": "general-hypertrophy-v1",
+  "requestedPlanningPolicy": "upper-lower-general-v1",
+  "schedule": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {
+      "target": 3
+    }
+  },
+  "schemaVersion": "0.2.0"
+}

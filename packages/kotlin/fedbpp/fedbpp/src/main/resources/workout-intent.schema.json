@@ -5,7 +5,7 @@
   "description": "A portable current planning request. It requires no PII and is not natural-language input.",
   "type": "object", "additionalProperties": false, "required": ["schemaVersion"],
   "properties": {
-    "schemaVersion": {"const": "0.1.0"}, "intentId": {"type": "string", "minLength": 1}, "subjectId": {"type": "string", "minLength": 1},
+    "schemaVersion": {"const": "0.2.0"}, "intentId": {"type": "string", "minLength": 1}, "subjectId": {"type": "string", "minLength": 1},
     "goal": {"enum": ["hypertrophy", "strength", "endurance", "muscular_endurance", "general_fitness", "skill_practice", "power"]},
     "schedule": {"$ref": "#/$defs/schedule"}, "sessionConstraints": {"type": "object", "additionalProperties": false, "properties": {"exercisesPerSession": {"$ref": "#/$defs/range"}}},
     "environment": {"enum": ["commercial_gym", "home_gym", "minimal_equipment", "bodyweight_only", "custom"]},

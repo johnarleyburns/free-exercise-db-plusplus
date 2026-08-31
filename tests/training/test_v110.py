@@ -7,6 +7,7 @@ from fedbpp import Database, TrainingHistory, evaluate_plan, generate_plan_from_
 from fedbpp.intent import ENVIRONMENT_POLICIES, GOAL_POLICIES, validate_workout_intent
 from fedbpp.intent import _merge_target
 from fedbpp._analysis.targets import validate_target
+from fedbpp.training import validate_training_profile
 
 
 def db():
@@ -28,6 +29,28 @@ def test_flagship_is_deterministic_and_enforces_counts():
     assert [s["dayOffset"] for s in one["generation"]["plan"]["sessions"]] == [0, 1, 2, 3, 5]
     assert all(3 <= len(s["exercises"]) <= 4 for s in one["generation"]["plan"]["sessions"])
     assert one["generation"]["evaluation"]["summary"]["satisfiesHardConstraints"]
+
+def test_endurance_generation_preserves_goal_prescription_and_is_deterministic():
+    value = intent(schemaVersion="0.2.0", goal="endurance")
+    one = generate_plan_from_intent(value, db())
+    two = generate_plan_from_intent(value, db())
+    assert one == two
+    assert one["resolution"]["goalPolicy"]["policyId"] == "general-endurance-v1"
+    assert one["resolution"]["goalPolicy"]["policyVersion"] == "1"
+    assert one["resolution"]["planningPolicy"] == "full-body-general-v1"
+    for session in one["generation"]["plan"]["sessions"]:
+        for prescription in session["exercises"]:
+            assert prescription["reps"] == {"min": 15, "target": 18, "max": 20}
+            assert prescription["effort"] == {"rir": 2}
+    assert one["generation"]["evaluation"] == evaluate_plan(one["generation"]["plan"], db(), one["resolution"]["resolvedProfile"], one["resolution"]["resolvedTarget"])
+
+def test_current_schema_identity_and_legacy_runtime_compatibility():
+    current = intent(schemaVersion="0.2.0")
+    assert not validate_workout_intent(current, db())
+    assert not validate_training_profile({"schemaVersion": "0.2.0", "profileId": "p"}, db())
+    assert not validate_workout_intent(intent(schemaVersion="0.1.0"), db())
+    assert not validate_training_profile({"schemaVersion": "0.1.0", "profileId": "p"}, db())
+    assert validate_workout_intent({**current, "schemaVersion": "0.9.0"}, db())
 
 def test_nonseven_weekdays_and_conflicts_are_invalid():
     assert resolve_intent(intent(schedule={"cycleLengthDays": 8, "sessionsPerCycle": {"target": 2}, "preferredWeekdays": ["monday"]}), db())["status"] == "invalid"

@@ -2,11 +2,11 @@
   "generation": {
     "evaluation": {
       "availability": {
-        "max": 5,
-        "min": 5,
-        "plannedSessions": 5,
+        "max": null,
+        "min": null,
+        "plannedSessions": 3,
         "state": "at_target",
-        "target": 5
+        "target": 3
       },
       "constraints": {
         "violations": []
@@ -50,43 +50,7 @@
         "unknownEquipmentExercises": [],
         "unsupportedExercises": []
       },
-      "exerciseCounts": {
-        "session-1": {
-          "exerciseCount": 3,
-          "maximum": 4,
-          "minimum": 3,
-          "state": "within_range",
-          "target": null
-        },
-        "session-2": {
-          "exerciseCount": 3,
-          "maximum": 4,
-          "minimum": 3,
-          "state": "within_range",
-          "target": null
-        },
-        "session-3": {
-          "exerciseCount": 3,
-          "maximum": 4,
-          "minimum": 3,
-          "state": "within_range",
-          "target": null
-        },
-        "session-4": {
-          "exerciseCount": 3,
-          "maximum": 4,
-          "minimum": 3,
-          "state": "within_range",
-          "target": null
-        },
-        "session-5": {
-          "exerciseCount": 3,
-          "maximum": 4,
-          "minimum": 3,
-          "state": "within_range",
-          "target": null
-        }
-      },
+      "exerciseCounts": {},
       "families": {
         "coverage": {
           "available": false,
@@ -330,9 +294,25 @@
               "order": 1,
               "prescriptionId": "rx-01-01",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
+              },
+              "setType": "working",
+              "sets": 3
+            },
+            {
+              "effort": {
+                "rir": 2
+              },
+              "exerciseId": "Alternating_Kettlebell_Row",
+              "exerciseName": "Alternating Kettlebell Row",
+              "order": 2,
+              "prescriptionId": "rx-01-02",
+              "reps": {
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
               "sets": 2
@@ -343,12 +323,12 @@
               },
               "exerciseId": "Alternating_Hang_Clean",
               "exerciseName": "Alternating Hang Clean",
-              "order": 2,
-              "prescriptionId": "rx-01-02",
+              "order": 3,
+              "prescriptionId": "rx-01-03",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
               "sets": 2
@@ -357,24 +337,24 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
-              "order": 3,
-              "prescriptionId": "rx-01-03",
+              "exerciseId": "Ball_Leg_Curl",
+              "exerciseName": "Ball Leg Curl",
+              "order": 4,
+              "prescriptionId": "rx-01-04",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
-              "sets": 2
+              "sets": 1
             }
           ],
           "name": "Session 1",
           "planSessionId": "session-1"
         },
         {
-          "dayOffset": 1,
+          "dayOffset": 3,
           "exercises": [
             {
               "effort": {
@@ -385,28 +365,12 @@
               "order": 1,
               "prescriptionId": "rx-02-01",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
-              "sets": 1
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
-              "order": 2,
-              "prescriptionId": "rx-02-02",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
+              "sets": 3
             },
             {
               "effort": {
@@ -414,22 +378,38 @@
               },
               "exerciseId": "Alternating_Hang_Clean",
               "exerciseName": "Alternating Hang Clean",
+              "order": 2,
+              "prescriptionId": "rx-02-02",
+              "reps": {
+                "max": 20,
+                "min": 15,
+                "target": 18
+              },
+              "setType": "working",
+              "sets": 3
+            },
+            {
+              "effort": {
+                "rir": 2
+              },
+              "exerciseId": "Alternating_Floor_Press",
+              "exerciseName": "Alternating Floor Press",
               "order": 3,
               "prescriptionId": "rx-02-03",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
-              "sets": 1
+              "sets": 2
             }
           ],
           "name": "Session 2",
           "planSessionId": "session-2"
         },
         {
-          "dayOffset": 2,
+          "dayOffset": 5,
           "exercises": [
             {
               "effort": {
@@ -440,25 +420,9 @@
               "order": 1,
               "prescriptionId": "rx-03-01",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
-              "order": 2,
-              "prescriptionId": "rx-03-02",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
               "sets": 1
@@ -469,12 +433,28 @@
               },
               "exerciseId": "Alternating_Floor_Press",
               "exerciseName": "Alternating Floor Press",
+              "order": 2,
+              "prescriptionId": "rx-03-02",
+              "reps": {
+                "max": 20,
+                "min": 15,
+                "target": 18
+              },
+              "setType": "working",
+              "sets": 1
+            },
+            {
+              "effort": {
+                "rir": 2
+              },
+              "exerciseId": "Alternating_Kettlebell_Row",
+              "exerciseName": "Alternating Kettlebell Row",
               "order": 3,
               "prescriptionId": "rx-03-03",
               "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
+                "max": 20,
+                "min": 15,
+                "target": 18
               },
               "setType": "working",
               "sets": 1
@@ -482,116 +462,6 @@
           ],
           "name": "Session 3",
           "planSessionId": "session-3"
-        },
-        {
-          "dayOffset": 3,
-          "exercises": [
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
-              "order": 1,
-              "prescriptionId": "rx-04-01",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Hang_Clean",
-              "exerciseName": "Alternating Hang Clean",
-              "order": 2,
-              "prescriptionId": "rx-04-02",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Ball_Leg_Curl",
-              "exerciseName": "Ball Leg Curl",
-              "order": 3,
-              "prescriptionId": "rx-04-03",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            }
-          ],
-          "name": "Session 4",
-          "planSessionId": "session-4"
-        },
-        {
-          "dayOffset": 5,
-          "exercises": [
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
-              "order": 1,
-              "prescriptionId": "rx-05-01",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 2
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
-              "order": 2,
-              "prescriptionId": "rx-05-02",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            },
-            {
-              "effort": {
-                "rir": 2
-              },
-              "exerciseId": "Alternating_Hang_Clean",
-              "exerciseName": "Alternating Hang Clean",
-              "order": 3,
-              "prescriptionId": "rx-05-03",
-              "reps": {
-                "max": 10,
-                "min": 6,
-                "target": 8
-              },
-              "setType": "working",
-              "sets": 1
-            }
-          ],
-          "name": "Session 5",
-          "planSessionId": "session-5"
         }
       ]
     },
@@ -693,15 +563,15 @@
         "rir": 2
       },
       "repDefaults": {
-        "max": 12,
-        "min": 6,
-        "target": 8
+        "max": 20,
+        "min": 15,
+        "target": 18
       },
       "requiredFamilyIds": []
     },
     "goalPolicy": {
-      "description": "General, conservative coverage defaults; not an optimal prescription.",
-      "policyId": "general-hypertrophy-v1",
+      "description": "Higher-rep, lighter-load local-muscular-endurance defaults; endurance-specific weekly set-volume evidence is limited, so coverage is kept conservative and this is not an optimal prescription.",
+      "policyId": "general-endurance-v1",
       "policyVersion": "1"
     },
     "missingInformation": [],
@@ -714,7 +584,7 @@
         "policyVersion": "1"
       },
       "goalPolicy": {
-        "policyId": "general-hypertrophy-v1",
+        "policyId": "general-endurance-v1",
         "policyVersion": "1"
       },
       "intentSchemaVersion": "0.2.0",
@@ -724,21 +594,9 @@
       "availability": {
         "cycleLengthDays": 7,
         "excludedDayOffsets": [],
-        "exercisesPerSession": {
-          "max": 4,
-          "min": 3
-        },
-        "preferredDayOffsets": [
-          0,
-          1,
-          2,
-          3,
-          5
-        ],
+        "preferredDayOffsets": [],
         "sessionsPerCycle": {
-          "max": 5,
-          "min": 5,
-          "target": 5
+          "target": 3
         }
       },
       "constraints": {
@@ -760,7 +618,7 @@
       "exercisePreferences": {},
       "goals": [
         {
-          "type": "hypertrophy"
+          "type": "endurance"
         }
       ],
       "profileId": "resolved-profile",
@@ -782,10 +640,10 @@
           "target": 6
         }
       },
-      "notes": "General, conservative coverage defaults; not an optimal prescription.",
+      "notes": "Higher-rep, lighter-load local-muscular-endurance defaults; endurance-specific weekly set-volume evidence is limited, so coverage is kept conservative and this is not an optimal prescription.",
       "periodDays": 7,
       "schemaVersion": "0.1.0",
-      "targetId": "general-hypertrophy-v1-default"
+      "targetId": "general-endurance-v1-default"
     },
     "status": "resolved_with_defaults",
     "warnings": []

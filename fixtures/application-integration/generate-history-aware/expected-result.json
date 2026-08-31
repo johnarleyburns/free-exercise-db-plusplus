@@ -311,7 +311,7 @@
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "durationPolicy": null,
       "planSchemaVersion": "0.2.0",
-      "profileSchemaVersion": "0.1.0",
+      "profileSchemaVersion": "0.2.0",
       "relationshipSchemaVersion": "0.1.0",
       "setCredits": {
         "direct": 1.0,
@@ -543,7 +543,7 @@
       "stabilizer": 0.0
     },
     "targetSchemaVersion": "0.1.0",
-    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.2.0",
     "trainingStateVersion": "0.1.0"
   },
   "requestId": "app-generate-history-aware",
@@ -1528,7 +1528,7 @@
         "policyId": "general-hypertrophy-v1",
         "policyVersion": "1"
       },
-      "intentSchemaVersion": "0.1.0",
+      "intentSchemaVersion": "0.2.0",
       "relationshipSchemaVersion": "0.1.0"
     },
     "resolvedProfile": {
@@ -1563,7 +1563,7 @@
         }
       ],
       "profileId": "resolved-profile",
-      "schemaVersion": "0.1.0",
+      "schemaVersion": "0.2.0",
       "subjectId": null
     },
     "resolvedTarget": {

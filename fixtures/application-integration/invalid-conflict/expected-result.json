@@ -15,7 +15,7 @@
   "operation": "resolve_intent",
   "plan": null,
   "provenance": {
-    "intentSchemaVersion": "0.1.0"
+    "intentSchemaVersion": "0.2.0"
   },
   "requestId": "app-invalid-conflict",
   "resolution": {
@@ -42,7 +42,7 @@
     "missingInformation": [],
     "planningPolicy": null,
     "provenance": {
-      "intentSchemaVersion": "0.1.0"
+      "intentSchemaVersion": "0.2.0"
     },
     "resolvedProfile": null,
     "resolvedTarget": null,

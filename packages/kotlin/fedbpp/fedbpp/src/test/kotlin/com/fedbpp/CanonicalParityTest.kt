@@ -61,6 +61,17 @@ class CanonicalParityTest {
             val actual = engine.resolveIntentJson(intent, target = target, history = history, asOf = if (history != null) "2026-08-25T12:00:00Z" else null)
             val expectedFile = File(dir, "expected-resolution.json")
             if (expectedFile.exists()) assertEquals(null, mismatch(e(expectedFile), apiJson.encodeToJsonElement(IntentResolutionResult.serializer(), actual)), "intent ${dir.name} differs")
+            val generationFile = File(dir, "expected-generation.json")
+            if (generationFile.exists()) {
+                val generated = generatePlanFromIntent(intent, engine.database, target = target, history = history, asOf = if (history != null) "2026-08-25T12:00:00Z" else null)
+                assertEquals(null, mismatch(e(generationFile), generated), "intent generation ${dir.name} differs")
+                val generatedRoot = generated.jsonObject
+                val generation = generatedRoot["generation"]?.jsonObject
+                if (generation != null && generation["plan"] !is JsonNull) {
+                    val standalone = evaluatePlan(generation["plan"]!!, engine.database, generatedRoot["resolution"]?.jsonObject?.get("resolvedProfile"), generatedRoot["resolution"]?.jsonObject?.get("resolvedTarget"), null)
+                    assertEquals(null, mismatch(generation["evaluation"]!!, standalone), "intent generation ${dir.name} attached evaluation differs")
+                }
+            }
         }
     }
 

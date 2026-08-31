@@ -17,11 +17,15 @@ from fedbpp import (  # noqa: E402
     Database,
     RelationshipRegistry,
     TrainingHistory,
+    TrainingRequest,
     adapt_plan,
     apply_progression_policy,
     derive_training_state,
     evaluate_plan,
     generate_plan,
+    generate_plan_from_intent,
+    resolve_intent,
+    process_training_request,
 )
 
 
@@ -105,6 +109,30 @@ def main() -> None:
     write(base / "generation/expected.json", generated)
     write(base / "generation/metadata.json", {"expectedOperation": "generate_plan", "oracle": "python"})
 
+    # Intent fixtures are also authored here so resolution and generation
+    # remain one Python-oracle contract.  A generation fixture is opt-in via
+    # expected-generation.json; this keeps the existing resolution-only cases
+    # unchanged while allowing native consumers to execute the full path.
+    intent_root = base / "intent"
+    for intent_dir in sorted(path for path in intent_root.iterdir() if path.is_dir()):
+        intent = read(str(intent_dir.relative_to(ROOT) / "input.json"))
+        intent["schemaVersion"] = "0.2.0"
+        explicit_target = read(str(intent_dir.relative_to(ROOT) / "target.json")) if (intent_dir / "target.json").exists() else None
+        history = None
+        as_of = None
+        if (intent_dir / "history.json").exists():
+            history_doc = read(str(intent_dir.relative_to(ROOT) / "history.json"))
+            history = TrainingHistory(history_doc["subjectId"], history_doc.get("plans", []),
+                                      history_doc.get("workouts", []), history_doc.get("targets", []),
+                                      history_doc.get("planActivations", []))
+            as_of = "2026-08-25T12:00:00Z" if intent_dir.name == "history-aware" else None
+        write(intent_dir / "input.json", intent)
+        resolution = resolve_intent(intent, DB, target=explicit_target, history=history, as_of=as_of)
+        write(intent_dir / "expected-resolution.json", resolution)
+        if intent_dir.name == "endurance" or (intent_dir / "expected-generation.json").exists():
+            write(intent_dir / "expected-generation.json", generate_plan_from_intent(
+                intent, DB, target=explicit_target, history=history, as_of=as_of))
+
     adaptation_plan = {"schemaVersion": "0.1.0", "planId": "adaptive-plan",
                        "revisionId": "r1", "name": "Adaptive fixture",
                        "cycle": {"lengthDays": 7}, "sessions": [{
@@ -115,7 +143,7 @@ def main() -> None:
                                           "reps": {"min": 6, "target": 8, "max": 10},
                                           "load": {"value": 80, "unit": "kg"},
                                           "effort": {"rir": {"target": 2}}}]}]}
-    adaptation_profile = {"schemaVersion": "0.1.0", "profileId": "adaptive-profile",
+    adaptation_profile = {"schemaVersion": "0.2.0", "profileId": "adaptive-profile",
                           "availability": {"cycleLengthDays": 7,
                                             "sessionsPerCycle": {"target": 1}},
                           "equipment": ["barbell", "dumbbell", "body only"],
@@ -242,6 +270,12 @@ def main() -> None:
                                      policy=adaptation_input["policy"], relationships=REL,
                                      options={"asOf": adaptation_input["asOf"]})
     matrix_case("adaptation", "repeated-substitution", substitution_input, substitution_result, ["substitutions", "decision_evidence", "change_records"])
+
+    # Application-contract expected results use the same canonical Python
+    # facade as the language consumer parity suites.
+    for directory in sorted(path for path in (ROOT / "fixtures" / "application-integration").iterdir() if path.is_dir()):
+        request = TrainingRequest.load(directory / "request.json")
+        write(directory / "expected-result.json", process_training_request(request, DB, REL))
 
 
 if __name__ == "__main__":

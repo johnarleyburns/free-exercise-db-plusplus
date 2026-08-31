@@ -1,10 +1,12 @@
 # TrainingProfile
 
-TrainingProfile is the portable description of a subject’s training context.
+TrainingProfile schema `0.2.0` is the portable description of a subject’s
+training context. Runtime consumers continue accepting historical `0.1.0`
+profiles.
 It contains no required name, contact information, date of birth, diagnosis,
 or medical record number. `subjectId`, when present, is opaque.
 
-The initial goal vocabulary is `hypertrophy`, `strength`,
+The released goal vocabulary is `hypertrophy`, `strength`, `endurance`,
 `muscular_endurance`, `general_fitness`, `skill_practice`, and `power`.
 `experience` is `novice`, `intermediate`, `advanced`, or `unknown`. Neither
 field changes v1.6 evaluation behavior.

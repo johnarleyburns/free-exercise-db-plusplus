@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).with_name("schemas")
+PROFILE_SCHEMA_VERSION = "0.2.0"
+LEGACY_PROFILE_SCHEMA_VERSIONS = {"0.1.0"}
 GOALS = frozenset(("hypertrophy", "strength", "endurance", "muscular_endurance", "general_fitness", "skill_practice", "power"))
 EXPERIENCE = frozenset(("novice", "intermediate", "advanced", "unknown"))
 PROFILE_KEYS = ("preferredExerciseIds", "avoidedExerciseIds", "preferredFamilyIds", "avoidedFamilyIds")
@@ -16,9 +18,14 @@ def validate_training_profile(profile: dict[str, Any], db: Any = None, relations
     try:
         from jsonschema import Draft202012Validator
         errors = [f"{'.'.join(str(p) for p in e.absolute_path) or '<root>'}: {e.message}" for e in Draft202012Validator(_schema(schema_path)).iter_errors(profile)]
+        if isinstance(profile, dict) and profile.get("schemaVersion") in LEGACY_PROFILE_SCHEMA_VERSIONS:
+            errors = [error for error in errors if not error.startswith("schemaVersion:")]
     except ImportError:
         errors = []
-    if errors or not isinstance(profile, dict): return sorted(errors)
+    if not isinstance(profile, dict): return sorted(errors)
+    if profile.get("schemaVersion") not in {PROFILE_SCHEMA_VERSION, *LEGACY_PROFILE_SCHEMA_VERSIONS}:
+        errors.append(f"schemaVersion: must be {PROFILE_SCHEMA_VERSION}")
+    if errors: return sorted(set(errors))
     errors = []
     goal_types = [goal.get("type") for goal in profile.get("goals", []) or []]
     if len(goal_types) != len(set(goal_types)): errors.append("goals: duplicate goal types are not allowed")

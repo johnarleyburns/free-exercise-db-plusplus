@@ -25,11 +25,30 @@ def test_canonical_intent_resources_are_byte_identical():
 def test_canonical_intent_schema_is_packaged_for_native_languages():
     schema = json.loads((ROOT / "workout-intent.schema.json").read_text())
     for relative in (
+        "packages/python/fedbpp/schemas/workout-intent.schema.json",
         "packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/workout-intent.schema.json",
         "packages/kotlin/fedbpp/fedbpp/src/main/resources/workout-intent.schema.json",
         "packages/r/fedbpp/inst/extdata/workout-intent.schema.json",
     ):
         assert json.loads((ROOT / relative).read_text()) == schema
+
+
+def test_canonical_profile_schema_is_packaged_where_supported():
+    schema = json.loads((ROOT / "training-profile.schema.json").read_text())
+    for relative in (
+        "packages/python/fedbpp/schemas/training-profile.schema.json",
+        "packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/Resources/training-profile.schema.json",
+    ):
+        assert json.loads((ROOT / relative).read_text()) == schema
+
+
+def test_goal_contract_schemas_share_current_identity_and_vocabulary():
+    intent_schema = json.loads((ROOT / "workout-intent.schema.json").read_text())
+    profile_schema = json.loads((ROOT / "training-profile.schema.json").read_text())
+    assert intent_schema["properties"]["schemaVersion"]["const"] == "0.2.0"
+    assert profile_schema["properties"]["schemaVersion"]["const"] == "0.2.0"
+    assert intent_schema["properties"]["goal"]["enum"] == profile_schema["$defs"]["goal"]["properties"]["type"]["enum"]
+    assert {"endurance", "muscular_endurance"}.issubset(intent_schema["properties"]["goal"]["enum"])
 
 
 def test_repeated_resolution_is_deterministic():

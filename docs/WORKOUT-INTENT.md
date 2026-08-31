@@ -1,6 +1,11 @@
 # WorkoutIntent
 
-`WorkoutIntent` 0.1.0 is a portable, structured current planning request. It is deliberately not natural language, does not require PII, and has no model, remote-service, prompt, or conversational dependency. A consuming application may translate a conversation into this artifact.
+`WorkoutIntent` 0.2.0 is a portable, structured current planning request. The
+0.2.0 identity records the released goal-vocabulary expansion; runtime
+consumers continue accepting historical 0.1.0 documents. It is deliberately
+not natural language, does not require PII, and has no model, remote-service,
+prompt, or conversational dependency. A consuming application may translate a
+conversation into this artifact.
 
 For seven-day cycles weekdays are normative Monday-based offsets: Monday 0 through Sunday 6. Weekday fields with any other cycle length are invalid; resolver code never guesses a mapping. Session and exercise-count ranges preserve partial `min`, `target`, and `max` values. Exercise-count minimum/maximum are hard; target is a soft preference.
 

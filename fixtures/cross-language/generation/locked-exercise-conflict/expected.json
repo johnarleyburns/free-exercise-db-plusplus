@@ -43,7 +43,7 @@
       "stabilizer": 0.0
     },
     "targetSchemaVersion": "0.1.0",
-    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.2.0",
     "trainingStateVersion": null
   },
   "selectionRationale": [],

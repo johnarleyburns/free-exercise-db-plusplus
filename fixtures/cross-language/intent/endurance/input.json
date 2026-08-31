@@ -1,1 +1,11 @@
-{"schemaVersion":"0.1.0","goal":"endurance","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"target":3}},"environment":"commercial_gym"}
+{
+  "environment": "commercial_gym",
+  "goal": "endurance",
+  "schedule": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {
+      "target": 3
+    }
+  },
+  "schemaVersion": "0.2.0"
+}

@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.15.2**
+Current release: **v1.15.3**
 
 ## Build an app with DB++
 

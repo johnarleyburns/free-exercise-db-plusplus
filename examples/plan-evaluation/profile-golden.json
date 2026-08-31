@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "profileId": "golden-v16-profile",
   "availability": {"cycleLengthDays": 7, "sessionsPerCycle": {"max": 4}, "minutesPerSession": {"max": 60}},
   "equipment": ["barbell", "dumbbell"],

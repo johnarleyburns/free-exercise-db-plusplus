@@ -199,7 +199,7 @@ public func generatePlan(profile: JSONValue, target: JSONValue, database: FEData
   func ranked(_ kind: String, _ key: String) -> [Exercise] {
     candidates.sorted { rank($0, kind, key) < rank($1, kind, key) }
   }
-  let reps = gObject(policy["parameters"])["reps"] ?? .object([:]), effort = gObject(policy["parameters"])["effort"] ?? .object([:])
+  let reps = gObject(options)["repDefaults"] ?? gObject(policy["parameters"])["reps"] ?? .object([:]), effort = gObject(options)["effortDefaults"] ?? gObject(policy["parameters"])["effort"] ?? .object([:])
   let planId = gString(gObject(options)["planId"]) ?? "generated-plan", revisionId = gString(gObject(options)["revisionId"]) ?? "r1", planName = gString(gObject(options)["name"]) ?? "Generated \(policyId)"
   let exerciseRange = gRange(availability["exercisesPerSession"])
   let minimumExercises = Int(exerciseRange.min ?? 1)

@@ -1,1 +1,14 @@
-{"schemaVersion":"0.1.0","goal":"hypertrophy","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"target":3}},"environment":"commercial_gym","useHistory":true,"historyWindow":"last_28_days","continuity":"preserve"}
+{
+  "continuity": "preserve",
+  "environment": "commercial_gym",
+  "goal": "hypertrophy",
+  "historyWindow": "last_28_days",
+  "schedule": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {
+      "target": 3
+    }
+  },
+  "schemaVersion": "0.2.0",
+  "useHistory": true
+}

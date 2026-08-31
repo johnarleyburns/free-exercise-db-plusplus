@@ -408,7 +408,7 @@ public extension TrainingProfile {
   /// Convenience initializer for the schema's closed typed goal, preference,
   /// and constraint fields. The legacy JSON-backed initializer remains for
   /// forward-compatible extension data.
-  init(schemaVersion: String = "0.1.0", profileId: String, subjectId: String? = nil,
+  init(schemaVersion: String = "0.2.0", profileId: String, subjectId: String? = nil,
        goals: [TrainingGoal], experience: String? = nil,
        availability: TrainingAvailability? = nil, equipment: [String] = [],
        exercisePreferences: WorkoutPreferences = WorkoutPreferences(),

@@ -1,1 +1,14 @@
-{"schemaVersion":"0.1.0","goal":"hypertrophy","schedule":{"cycleLengthDays":8,"sessionsPerCycle":{"target":3},"preferredWeekdays":["monday"]},"environment":"commercial_gym"}
+{
+  "environment": "commercial_gym",
+  "goal": "hypertrophy",
+  "schedule": {
+    "cycleLengthDays": 8,
+    "preferredWeekdays": [
+      "monday"
+    ],
+    "sessionsPerCycle": {
+      "target": 3
+    }
+  },
+  "schemaVersion": "0.2.0"
+}

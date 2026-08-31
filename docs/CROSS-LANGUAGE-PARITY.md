@@ -7,8 +7,8 @@ arrays, policy identities, conflicts, provenance, defaults, and override
 objects are semantic.
 
 v1.11 provides native decode/validation/result/resolution entry points in
-Swift, Kotlin/JVM, and R. The native bindings share the frozen schema version
-(`0.1.0`), policy IDs/versions, Monday-based weekday mapping, deterministic
+Swift, Kotlin/JVM, and R. The native bindings share the current schema identity
+(`0.2.0`), while accepting historical `0.1.0` documents, policy IDs/versions, Monday-based weekday mapping, deterministic
 equipment ordering, structured conflict codes, and stable `explicitOverrides`.
 
 Current parity report: Python, Swift, Kotlin/JVM, and R execute every canonical

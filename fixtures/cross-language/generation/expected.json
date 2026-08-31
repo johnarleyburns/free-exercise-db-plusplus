@@ -262,7 +262,7 @@
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "durationPolicy": null,
       "planSchemaVersion": "0.2.0",
-      "profileSchemaVersion": "0.1.0",
+      "profileSchemaVersion": "0.2.0",
       "relationshipSchemaVersion": "0.1.0",
       "setCredits": {
         "direct": 1.0,
@@ -420,7 +420,7 @@
       "stabilizer": 0.0
     },
     "targetSchemaVersion": "0.1.0",
-    "trainingProfileSchemaVersion": "0.1.0",
+    "trainingProfileSchemaVersion": "0.2.0",
     "trainingStateVersion": null
   },
   "selectionRationale": [

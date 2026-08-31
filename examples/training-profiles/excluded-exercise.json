@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "profileId": "excluded-exercise-example",
   "equipment": ["barbell"],
   "constraints": {"excludedExerciseIds": ["Barbell_Bench_Press_-_Medium_Grip"]}

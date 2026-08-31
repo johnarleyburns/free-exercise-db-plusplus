@@ -16,7 +16,8 @@ from .training_state import derive_training_state
 from .plan_evaluation import evaluate_plan
 from ._analysis.targets import validate_target
 
-INTENT_SCHEMA_VERSION = "0.1.0"
+INTENT_SCHEMA_VERSION = "0.2.0"
+LEGACY_INTENT_SCHEMA_VERSIONS = {"0.1.0"}
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
 
 def _load_policy_resource() -> dict[str, Any]:
@@ -37,7 +38,7 @@ def _empty_overrides() -> dict[str, Any]:
 
 
 class WorkoutIntent:
-    """Portable WorkoutIntent 0.1 document with optional DB-aware validation."""
+    """Portable WorkoutIntent 0.2 document with optional DB-aware validation."""
     def __init__(self, document: dict[str, Any]): self.document = document
 
     @classmethod
@@ -68,7 +69,10 @@ def _schema_errors(intent: Any) -> list[str]:
     except ImportError:
         return []
     schema = json.loads((Path(__file__).with_name("schemas") / "workout-intent.schema.json").read_text(encoding="utf-8"))
-    return [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(intent)]
+    errors = [f"{'.'.join(str(p) for p in error.absolute_path) or '<root>'}: {error.message}" for error in Draft202012Validator(schema).iter_errors(intent)]
+    if isinstance(intent, dict) and intent.get("schemaVersion") in LEGACY_INTENT_SCHEMA_VERSIONS:
+        errors = [error for error in errors if not error.startswith("schemaVersion:")]
+    return errors
 def _range_errors(value: Any, field: str) -> list[str]:
     if not isinstance(value, dict): return []
     lo, target, hi = value.get("min"), value.get("target"), value.get("max")
@@ -78,7 +82,7 @@ def validate_workout_intent(intent: dict[str, Any], db: Any = None, relationship
     if not isinstance(intent, dict): return ["<root>: must be an object"]
     allowed = {"schemaVersion", "intentId", "subjectId", "goal", "schedule", "sessionConstraints", "environment", "equipmentOverrides", "exerciseConstraints", "preferences", "continuity", "useHistory", "historyWindow", "requestedPlanningPolicy", "requestedGoalPolicy"}
     errors = _schema_errors(intent) + [f"<root>: additional property {key}" for key in intent if key not in allowed]
-    if intent.get("schemaVersion") != INTENT_SCHEMA_VERSION: errors.append("schemaVersion: must be 0.1.0")
+    if intent.get("schemaVersion") not in {INTENT_SCHEMA_VERSION, *LEGACY_INTENT_SCHEMA_VERSIONS}: errors.append(f"schemaVersion: must be {INTENT_SCHEMA_VERSION}")
     schedule = intent.get("schedule", {}) or {}; errors += _range_errors(schedule.get("sessionsPerCycle"), "schedule.sessionsPerCycle")
     errors += _range_errors((intent.get("sessionConstraints", {}) or {}).get("exercisesPerSession"), "sessionConstraints.exercisesPerSession")
     cycle = schedule.get("cycleLengthDays")
@@ -178,7 +182,7 @@ def resolve_intent(intent: Any, db: Any, profile: Any = None, target: Any = None
     conflicts += [{"code": "REQUIRED_FAMILY_EXCLUDED", "familyId": x} for x in sorted(required_families & excluded_families)]
     profile_constraints["excludedExerciseIds"] = sorted(excluded)
     profile_constraints["excludedFamilyIds"] = sorted(excluded_families)
-    profile.setdefault("schemaVersion", "0.1.0"); profile.setdefault("profileId", "resolved-profile"); profile["subjectId"] = intent.get("subjectId", profile.get("subjectId")); profile["goals"] = [{"type": intent["goal"]}]
+    profile.setdefault("schemaVersion", intent["schemaVersion"] if intent["schemaVersion"] in {INTENT_SCHEMA_VERSION, *LEGACY_INTENT_SCHEMA_VERSIONS} else INTENT_SCHEMA_VERSION); profile.setdefault("profileId", "resolved-profile"); profile["subjectId"] = intent.get("subjectId", profile.get("subjectId")); profile["goals"] = [{"type": intent["goal"]}]
     av = profile.setdefault("availability", {}); av.update({"cycleLengthDays": schedule["cycleLengthDays"], "sessionsPerCycle": deepcopy(schedule["sessionsPerCycle"]), "preferredDayOffsets": sorted(set(schedule.get("preferredDayOffsets", []) or []) | {WEEKDAYS.index(x) for x in schedule.get("preferredWeekdays", []) or []}), "excludedDayOffsets": sorted(set(schedule.get("excludedDayOffsets", []) or []) | {WEEKDAYS.index(x) for x in schedule.get("excludedWeekdays", []) or []})})
     if (intent.get("sessionConstraints", {}) or {}).get("exercisesPerSession") is not None: av["exercisesPerSession"] = deepcopy(intent["sessionConstraints"]["exercisesPerSession"])
     profile["equipment"] = equipment
@@ -208,6 +212,8 @@ def generate_plan_from_intent(intent: Any, db: Any, profile: Any = None, target:
     resolution = resolve_intent(intent, db, profile, target, relationships, history, as_of=as_of)
     if resolution["status"] not in {"resolved", "resolved_with_defaults"}: return {"resolution": resolution, "generation": None}
     options = dict(resolution["generationOptions"]); state = options.pop("trainingState", None)
+    if intent.get("goal") != "endurance":
+        options.pop("repDefaults", None); options.pop("effortDefaults", None)
     generation = generate_plan(resolution["resolvedProfile"], resolution["resolvedTarget"], db, policy=resolution["planningPolicy"], relationships=relationships, training_state=state, current_plan=current_plan, requiredExerciseIds=(intent.get("exerciseConstraints", {}) or {}).get("requiredExerciseIds"), lockedExerciseIds=(intent.get("exerciseConstraints", {}) or {}).get("lockedExerciseIds"), requiredFamilyIds=options.pop("requiredFamilyIds", ()), options=options)
     if generation["plan"] is not None: generation["evaluation"] = evaluate_plan(generation["plan"], db, resolution["resolvedProfile"], resolution["resolvedTarget"], relationships)
     return {"resolution": resolution, "generation": generation}

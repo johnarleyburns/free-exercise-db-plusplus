@@ -18,7 +18,7 @@
         "target": 5
       }
     },
-    "schemaVersion": "0.1.0",
+    "schemaVersion": "0.2.0",
     "sessionConstraints": {
       "exercisesPerSession": {
         "max": 4,

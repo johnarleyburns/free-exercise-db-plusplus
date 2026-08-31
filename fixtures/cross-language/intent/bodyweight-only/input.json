@@ -1,1 +1,11 @@
-{"schemaVersion":"0.1.0","goal":"hypertrophy","schedule":{"cycleLengthDays":7,"sessionsPerCycle":{"target":3}},"environment":"bodyweight_only"}
+{
+  "environment": "bodyweight_only",
+  "goal": "hypertrophy",
+  "schedule": {
+    "cycleLengthDays": 7,
+    "sessionsPerCycle": {
+      "target": 3
+    }
+  },
+  "schemaVersion": "0.2.0"
+}

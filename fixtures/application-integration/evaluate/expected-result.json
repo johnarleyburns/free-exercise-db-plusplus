@@ -325,7 +325,7 @@
       "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
       "durationPolicy": "duration-estimation-v1",
       "planSchemaVersion": "0.1.0",
-      "profileSchemaVersion": "0.1.0",
+      "profileSchemaVersion": "0.2.0",
       "relationshipSchemaVersion": "0.1.0",
       "setCredits": {
         "direct": 1.0,
@@ -503,7 +503,7 @@
     "dbUpstreamSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4",
     "durationPolicy": "duration-estimation-v1",
     "planSchemaVersion": "0.1.0",
-    "profileSchemaVersion": "0.1.0",
+    "profileSchemaVersion": "0.2.0",
     "relationshipSchemaVersion": "0.1.0",
     "setCredits": {
       "direct": 1.0,

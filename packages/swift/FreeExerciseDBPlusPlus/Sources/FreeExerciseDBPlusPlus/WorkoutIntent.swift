@@ -96,7 +96,7 @@ public struct WorkoutIntent: Codable, Sendable, Equatable {
   public var useHistory: Bool?
   public var historyWindow: String?
   public init(
-    schemaVersion: String = "0.1.0", intentId: String? = nil, subjectId: String? = nil,
+    schemaVersion: String = "0.2.0", intentId: String? = nil, subjectId: String? = nil,
     goal: String? = nil, requestedGoalPolicy: String? = nil, requestedPlanningPolicy: String? = nil,
     environment: String? = nil, schedule: WorkoutSchedule? = nil,
     sessionConstraints: SessionConstraints? = nil, exerciseConstraints: ExerciseConstraints? = nil,
@@ -312,7 +312,7 @@ public enum IntentValidator {
   ]
   public static func validate(_ x: WorkoutIntent, database: FEDatabase? = nil, relationships: ExerciseRelationships? = nil) -> [String] {
     var e: [String] = []
-    if x.schemaVersion != "0.1.0" { e += ["schemaVersion: must be 0.1.0"] }
+    if x.schemaVersion != "0.1.0" && x.schemaVersion != "0.2.0" { e += ["schemaVersion: must be 0.2.0"] }
     let a = x.schedule?.preferredWeekdays ?? []
     let b = x.schedule?.excludedWeekdays ?? []
     if !(a + b).isEmpty && x.schedule?.cycleLengthDays != 7 {
@@ -959,7 +959,7 @@ public struct IntentResolver: Sendable {
     if let database { equipment = equipment.filter { database.equipmentVocabulary.contains($0) || $0 == "body only" }.sorted() }
     let resolvedEnvironmentPolicy = suppliedEquipment.isEmpty ? env?.0 : nil
     var p = input
-    p["schemaVersion"] = p["schemaVersion"] ?? s("0.1.0")
+    p["schemaVersion"] = p["schemaVersion"] ?? s(x.schemaVersion)
     p["profileId"] = p["profileId"] ?? s("resolved-profile")
     p["subjectId"] = x.subjectId.map { s($0) } ?? p["subjectId"] ?? .null
     p["goals"] = .array([.object(["type": s(goal)])])
@@ -1050,11 +1050,15 @@ public func generatePlanFromIntent(_ x: WorkoutIntent, database: FEDatabase, pro
   guard ["resolved", "resolved_with_defaults"].contains(resolution.status), let resolvedProfile = resolution.resolvedProfile, let resolvedTarget = resolution.resolvedTarget else { return .object(["resolution": resolutionJSON, "generation": .null]) }
   let constraints = x.exerciseConstraints
   let options = resolution.generationOptions.objectValue ?? [:]
+  var generationOptions = options
+  if x.goal != "endurance" { generationOptions["repDefaults"] = nil; generationOptions["effortDefaults"] = nil }
+  generationOptions["planId"] = .string("generated-plan")
+  generationOptions["revisionId"] = .string("r1")
   let generated = generatePlan(profile: resolvedProfile, target: resolvedTarget, database: database,
     policy: resolution.planningPolicy ?? "full-body-general-v1", relationships: relationships,
     trainingState: options["trainingState"], currentPlan: currentPlan, requiredExerciseIds: constraints?.requiredExerciseIds ?? [],
     lockedExerciseIds: constraints?.lockedExerciseIds ?? [], requiredFamilyIds: constraints?.requiredFamilyIds ?? [],
-    options: .object(["planId": .string("generated-plan"), "revisionId": .string("r1")]))
+    options: .object(generationOptions))
   return .object(["resolution": resolutionJSON, "generation": generated])
 }
 public func mergeTarget(_ base: JSONValue, _ explicit: JSONValue?) -> JSONValue {

@@ -56,6 +56,12 @@ resolution = fedbpp.resolve_intent(intent, db)
 (out / "intent-resolution.json").write_text(json.dumps(resolution, sort_keys=True))
 intent_generation = fedbpp.generate_plan_from_intent(intent_doc, db)
 (out / "intent-generation.json").write_text(json.dumps(intent_generation, sort_keys=True))
+endurance_doc = read(repo / "fixtures/cross-language/intent/endurance/input.json")
+endurance_generation = fedbpp.generate_plan_from_intent(endurance_doc, db)
+assert all(rx["reps"] == {"min": 15, "target": 18, "max": 20} and rx["effort"] == {"rir": 2}
+           for session in endurance_generation["generation"]["plan"]["sessions"]
+           for rx in session["exercises"])
+(out / "intent-generation-endurance.json").write_text(json.dumps(endurance_generation, sort_keys=True))
 print("python wheel imports and API smoke ok")
 PY
 
@@ -65,4 +71,5 @@ python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/g
 python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/adaptation/expected.json" "$out_dir/adaptation.json"
 python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/intent/flagship-5day-hypertrophy/expected-resolution.json" "$out_dir/intent-resolution.json"
 python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/intent/flagship-5day-hypertrophy/expected-generation.json" "$out_dir/intent-generation.json"
+python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/intent/endurance/expected-generation.json" "$out_dir/intent-generation-endurance.json"
 echo "python wheel goldens ok"

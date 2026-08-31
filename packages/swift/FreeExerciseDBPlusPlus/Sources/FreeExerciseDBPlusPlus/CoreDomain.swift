@@ -125,7 +125,7 @@ public struct TrainingProfile: Codable, Sendable, Equatable {
   public let exercisePreferences: [String: JSONValue]
   public let constraints: [String: JSONValue]
   public let extensions: [String: JSONValue]
-  public init(schemaVersion: String = "0.1.0", profileId: String? = nil, subjectId: String? = nil, goals: [JSONValue] = [],
+  public init(schemaVersion: String = "0.2.0", profileId: String? = nil, subjectId: String? = nil, goals: [JSONValue] = [],
               experience: String? = nil, availability: TrainingAvailability? = nil,
               equipment: [String] = [], exercisePreferences: [String: JSONValue] = [:],
               constraints: [String: JSONValue] = [:], extensions: [String: JSONValue] = [:]) {

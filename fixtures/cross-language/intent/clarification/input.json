@@ -1,1 +1,4 @@
-{"schemaVersion":"0.1.0","environment":"commercial_gym"}
+{
+  "environment": "commercial_gym",
+  "schemaVersion": "0.2.0"
+}

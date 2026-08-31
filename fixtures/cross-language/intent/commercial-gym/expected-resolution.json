@@ -46,7 +46,7 @@
       "policyId": "general-hypertrophy-v1",
       "policyVersion": "1"
     },
-    "intentSchemaVersion": "0.1.0",
+    "intentSchemaVersion": "0.2.0",
     "relationshipSchemaVersion": null
   },
   "resolvedProfile": {
@@ -80,7 +80,7 @@
       }
     ],
     "profileId": "resolved-profile",
-    "schemaVersion": "0.1.0",
+    "schemaVersion": "0.2.0",
     "subjectId": null
   },
   "resolvedTarget": {

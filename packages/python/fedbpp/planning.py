@@ -250,7 +250,10 @@ def _new_plan(cycle_days: int, offsets: list[int], policy: PlanningPolicy, optio
             "sessions": [{"planSessionId": f"session-{i + 1}", "dayOffset": day, "name": (f"{_session_kind(policy, i).replace('_', ' ').title()} {i // 2 + 1}" if _session_kind(policy, i) != "full_body" else f"Session {i + 1}"), "exercises": []} for i, day in enumerate(offsets)]}
 
 
-def _add(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], policy: PlanningPolicy, reason: str, rationale: dict[str, set[str]]) -> None:
+def _add(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], policy: PlanningPolicy, reason: str, rationale: dict[str, set[str]], options: dict[str, Any] | None = None) -> None:
+    options = options or {}
+    reps = deepcopy(options.get("repDefaults", policy.parameters["reps"]))
+    effort = deepcopy(options.get("effortDefaults", policy.parameters.get("effort")))
     session = plan["sessions"][session_index]
     existing = next((x for x in session["exercises"] if x.get("exerciseId") == candidate["exerciseId"]), None)
     if existing is not None:
@@ -259,7 +262,7 @@ def _add(plan: dict[str, Any], session_index: int, candidate: dict[str, Any], po
         n = len(session["exercises"]) + 1
         session["exercises"].append({"prescriptionId": f"rx-{session_index + 1:02d}-{n:02d}", "exerciseId": candidate["exerciseId"],
             "exerciseName": candidate["name"], "order": n, "sets": int(policy.parameters["setBlock"]),
-            "reps": deepcopy(policy.parameters["reps"]), "effort": deepcopy(policy.parameters.get("effort")), "setType": "working"})
+            "reps": reps, "effort": effort, "setType": "working"})
     rationale.setdefault(candidate["exerciseId"], set()).add(reason)
 
 
@@ -389,7 +392,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "LOCKED_EXERCISE_CONFLICT", "exerciseId": eid, "dayOffset": offset, "detail": "locked exercise is incompatible with generated split role"}], [], [], db, profile, target, state, relationships, current)
             if not _can_add_exercise(plan, session_by_offset[offset], candidate, exercise_limits):
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "exerciseId": eid}], [], [], db, profile, target, state, relationships, current)
-            _add(plan, session_by_offset[offset], candidate, policy_obj, "LOCKED_EXERCISE", rationale)
+            _add(plan, session_by_offset[offset], candidate, policy_obj, "LOCKED_EXERCISE", rationale, options)
     for family_id in sorted(required_families):
         choices = sorted((candidate for candidate in candidates if candidate.get("familyId") == family_id), key=lambda candidate: rank(candidate, "muscle", ""))
         if not choices:
@@ -398,7 +401,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj) and _can_add_exercise(plan, index, candidate, exercise_limits)]
         if not sessions:
             return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "familyId": family_id}], [], [], db, profile, target, state, relationships, current)
-        _add(plan, sessions[0], candidate, policy_obj, "REQUIRED_FAMILY", rationale)
+        _add(plan, sessions[0], candidate, policy_obj, "REQUIRED_FAMILY", rationale, options)
     for i, eid in enumerate(sorted(required - locked)):
         candidate = next(c for c in candidates if c["exerciseId"] == eid)
         sessions = [index for index in range(feasible) if _compatible(candidate, index, policy_obj)]
@@ -407,7 +410,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
         sessions = [si for si in sessions if _can_add_exercise(plan, si, candidate, exercise_limits)]
         if not sessions:
             return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "EXERCISE_COUNT_CONFLICT", "exerciseId": eid}], [], [], db, profile, target, state, relationships, current)
-        _add(plan, sessions[i % len(sessions)], candidate, policy_obj, "REQUIRED_EXERCISE", rationale)
+        _add(plan, sessions[i % len(sessions)], candidate, policy_obj, "REQUIRED_EXERCISE", rationale, options)
     evaluation = evaluate_plan(plan, db, profile, target, relationships)
     # Canonical evaluation is intentionally invoked after every allocation block.
     for phase in ("minimum", "target"):
@@ -425,7 +428,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
                 for si in sessions:
                     if not _can_add_exercise(plan, si, candidate, exercise_limits):
                         continue
-                    draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "TARGET_COVERAGE", {k: set(v) for k, v in rationale.items()})
+                    draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "TARGET_COVERAGE", {k: set(v) for k, v in rationale.items()}, options)
                     evaluated = evaluate_plan(draft, db, profile, target, relationships)
                     if not _above_max(evaluated):
                         plan, evaluation = draft, evaluated; rationale.setdefault(candidate["exerciseId"], set()).add("TARGET_COVERAGE")
@@ -446,7 +449,7 @@ def generate_plan(profile: Any, target: Any, db: Any, *, policy: str | PlanningP
             if not compatible:
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "NO_ELIGIBLE_EXERCISE", "detail": f"no eligible {_session_kind(policy_obj, si)} exercise"}], [], [], db, profile, target, state, relationships, current)
             candidate = sorted(compatible, key=lambda c: rank(c, "muscle", ""))[0]
-            draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "DETERMINISTIC_TIE_BREAK", rationale)
+            draft = deepcopy(plan); _add(draft, si, candidate, policy_obj, "DETERMINISTIC_TIE_BREAK", rationale, options)
             evaluated = evaluate_plan(draft, db, profile, target, relationships)
             if _above_max(evaluated):
                 return _result("unsatisfiable", None, None, policy_obj, rationale, [{"code": "SESSION_COUNT_CONFLICT", "detail": "cannot populate all required sessions without target maximum overshoot"}], [], [], db, profile, target, state, relationships, current)

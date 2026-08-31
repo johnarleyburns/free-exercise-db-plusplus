@@ -43,11 +43,13 @@ fun generatePlan(profile: JsonElement, target: JsonElement, database: Database, 
     val maxExercises = ((availability["exercisesPerSession"] as? JsonObject)?.get("max").planInt())
     val sessions = offsets.mapIndexed { i, day -> mutableListOf<JsonObject>() to day }
     fun canAdd(index: Int, candidate: PlanningCandidate): Boolean = sessions[index].first.any { it["exerciseId"]?.jsonPrimitive?.content == candidate.exerciseId } || maxExercises == null || sessions[index].first.size < maxExercises
+    val prescriptionReps = options["repDefaults"] ?: buildJsonObject { put("min", 6); put("target", 8); put("max", 10) }
+    val prescriptionEffort = options["effortDefaults"] ?: buildJsonObject { put("rir", 2) }
     fun add(index: Int, candidate: PlanningCandidate) {
         val existing = sessions[index].first.firstOrNull { it["exerciseId"]?.jsonPrimitive?.content == candidate.exerciseId }
         if (existing != null) { val changed = existing.toMutableMap(); changed["sets"] = JsonPrimitive((changed["sets"]?.jsonPrimitive?.intOrNull ?: 0) + 1); sessions[index].first[sessions[index].first.indexOf(existing)] = JsonObject(changed); return }
         val n = sessions[index].first.size + 1
-        sessions[index].first += buildJsonObject { put("prescriptionId", "rx-${(index + 1).toString().padStart(2, '0')}-${n.toString().padStart(2, '0')}"); put("exerciseId", candidate.exerciseId); put("exerciseName", database.getExercise(candidate.exerciseId).source["name"]?.jsonPrimitive?.content ?: candidate.exerciseId); put("order", n); put("sets", 1); put("reps", buildJsonObject { put("min", 6); put("target", 8); put("max", 10) }); put("effort", buildJsonObject { put("rir", 2) }); put("setType", "working") }
+        sessions[index].first += buildJsonObject { put("prescriptionId", "rx-${(index + 1).toString().padStart(2, '0')}-${n.toString().padStart(2, '0')}"); put("exerciseId", candidate.exerciseId); put("exerciseName", database.getExercise(candidate.exerciseId).source["name"]?.jsonPrimitive?.content ?: candidate.exerciseId); put("order", n); put("sets", 1); put("reps", prescriptionReps); put("effort", prescriptionEffort); put("setType", "working") }
     }
     val required = requiredExerciseIds.toSet(); for (id in required.sorted()) {
         val candidate = candidates.firstOrNull { it.exerciseId == id } ?: return generationResult("unsatisfiable", null, null, listOf("NO_ELIGIBLE_EXERCISE"))

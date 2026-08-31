@@ -9,7 +9,7 @@
         "target": 3
       }
     },
-    "schemaVersion": "0.1.0"
+    "schemaVersion": "0.2.0"
   },
   "operation": "resolve_intent",
   "requestId": "app-invalid-conflict",

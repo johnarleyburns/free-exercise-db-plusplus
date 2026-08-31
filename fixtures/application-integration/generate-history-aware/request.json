@@ -70,10 +70,10 @@
         "target": 3
       }
     },
-    "schemaVersion": "0.1.0",
+    "schemaVersion": "0.2.0",
     "useHistory": true
   },
   "operation": "generate_from_intent",
-  "requestId": "app-generate-history-aware",
-  "schemaVersion": "0.1.0"
+    "requestId": "app-generate-history-aware",
+    "schemaVersion": "0.1.0"
 }

@@ -45,7 +45,7 @@ private object IntentPolicyCatalog {
 @Serializable data class ExerciseConstraints(val requiredExerciseIds: List<String> = emptyList(), val lockedExerciseIds: List<String> = emptyList(), val excludedExerciseIds: List<String> = emptyList(), val requiredFamilyIds: List<String> = emptyList(), val excludedFamilyIds: List<String> = emptyList())
 @Serializable data class WorkoutPreferences(val preferredExerciseIds: List<String> = emptyList(), val avoidedExerciseIds: List<String> = emptyList(), val preferredFamilyIds: List<String> = emptyList(), val avoidedFamilyIds: List<String> = emptyList())
 @Serializable data class EquipmentOverrides(val addEquipment: List<String> = emptyList(), val removeEquipment: List<String> = emptyList())
-@Serializable data class WorkoutIntent(val schemaVersion: String = "0.1.0", val intentId: String? = null, val subjectId: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val requestedPlanningPolicy: String? = null, val environment: String? = null, val schedule: WorkoutSchedule? = null, val sessionConstraints: SessionConstraints? = null, val exerciseConstraints: ExerciseConstraints? = null, val preferences: WorkoutPreferences? = null, val equipmentOverrides: EquipmentOverrides? = null, val continuity: String? = null, val useHistory: Boolean? = null, val historyWindow: String? = null)
+@Serializable data class WorkoutIntent(val schemaVersion: String = "0.2.0", val intentId: String? = null, val subjectId: String? = null, val goal: String? = null, val requestedGoalPolicy: String? = null, val requestedPlanningPolicy: String? = null, val environment: String? = null, val schedule: WorkoutSchedule? = null, val sessionConstraints: SessionConstraints? = null, val exerciseConstraints: ExerciseConstraints? = null, val preferences: WorkoutPreferences? = null, val equipmentOverrides: EquipmentOverrides? = null, val continuity: String? = null, val useHistory: Boolean? = null, val historyWindow: String? = null)
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable data class ExplicitOverrides(
     @EncodeDefault(EncodeDefault.Mode.ALWAYS) val goalPolicy: Boolean = false,
@@ -96,7 +96,7 @@ object IntentConflictSerializer : KSerializer<IntentConflict> {
 object WorkoutIntentValidator {
     val weekdays = listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
     fun validate(intent: WorkoutIntent, database: Database? = null, relationships: ExerciseRelationships? = null): List<String> {
-        val errors = mutableSetOf<String>(); if (intent.schemaVersion != "0.1.0") errors += "schemaVersion: must be 0.1.0"
+        val errors = mutableSetOf<String>(); if (intent.schemaVersion != "0.1.0" && intent.schemaVersion != "0.2.0") errors += "schemaVersion: must be 0.2.0"
         val s = intent.schedule; val days = (s?.preferredWeekdays.orEmpty() + s?.excludedWeekdays.orEmpty()).toSet()
         if (days.isNotEmpty() && s?.cycleLengthDays != 7) errors += "schedule weekday fields require cycleLengthDays of 7"
         if (s?.preferredWeekdays.orEmpty().toSet().intersect(s?.excludedWeekdays.orEmpty().toSet()).isNotEmpty()) errors += "schedule: preferredWeekdays and excludedWeekdays conflict"
@@ -176,7 +176,7 @@ object WorkoutIntentResolver {
         val resolvedProfile = buildJsonObject {
             val supplied = profile as? JsonObject
             supplied?.forEach { (key, value) -> put(key, value) }
-            put("schemaVersion", supplied?.get("schemaVersion") ?: JsonPrimitive("0.1.0"))
+            put("schemaVersion", supplied?.get("schemaVersion") ?: JsonPrimitive(intent.schemaVersion))
             put("profileId", supplied?.get("profileId") ?: JsonPrimitive("resolved-profile"))
             put("subjectId", intent.subjectId?.let(::JsonPrimitive) ?: supplied?.get("subjectId") ?: kotlinx.serialization.json.JsonNull)
             put("goals", kotlinx.serialization.json.buildJsonArray { add(buildJsonObject { put("type", JsonPrimitive(intent.goal!!)) }) })
@@ -252,8 +252,10 @@ fun resolveIntent(intent: WorkoutIntent, database: Database? = null, profile: Js
 fun generatePlanFromIntent(intent: WorkoutIntent, database: Database, profile: JsonElement? = null, target: JsonElement? = null, relationships: ExerciseRelationships? = null, history: JsonElement? = null, asOf: String? = null): JsonElement {
     val resolution = resolveIntent(intent, database, profile, target, relationships, history, asOf)
     if (resolution.status !in setOf("resolved", "resolved_with_defaults")) return buildJsonObject { put("resolution", fedbppJson.encodeToJsonElement(IntentResolutionResult.serializer(), resolution)); put("generation", kotlinx.serialization.json.JsonNull) }
+    val generationOptions = resolution.generationOptions as? JsonObject ?: JsonObject(emptyMap())
+    val options = JsonObject(generationOptions.toMutableMap().apply { remove("trainingState"); remove("requiredFamilyIds"); if (intent.goal != "endurance") { remove("repDefaults"); remove("effortDefaults") } })
     val generated = generatePlan(resolution.resolvedProfile!!, resolution.resolvedTarget!!, database, relationships,
-        intent.exerciseConstraints?.requiredExerciseIds.orEmpty() + intent.exerciseConstraints?.lockedExerciseIds.orEmpty())
+        intent.exerciseConstraints?.requiredExerciseIds.orEmpty() + intent.exerciseConstraints?.lockedExerciseIds.orEmpty(), options)
     return buildJsonObject { put("resolution", fedbppJson.encodeToJsonElement(IntentResolutionResult.serializer(), resolution)); put("generation", generated) }
 }
 fun resolveIntent(intent: WorkoutIntent, profile: JsonElement?, target: JsonElement?): IntentResolutionResult = WorkoutIntentResolver.resolve(intent, profile = profile, target = target)

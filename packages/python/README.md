@@ -2,6 +2,10 @@
 
 Standalone helpers for DB++, Workout ACTUAL, Workout PLAN 0.1/0.2, Volume TARGET, and derived analysis. Install from this directory with `pip install .` or use `pip install -e .` during development. Built wheels include their schemas and reference analysis implementation; they never import repository-level `src.*`. JSON Schema validation uses the optional `jsonschema` dependency.
 
+From the repository root, `scripts/setup_python_venv.sh` creates or repairs
+the project `.venv`, installs the PEP 517 build tools, and installs this
+package in editable mode.
+
 The application facade is `process_training_request()`. It accepts a
 `TrainingRequest` or the equivalent JSON-shaped dictionary and dispatches an
 explicit `resolve_intent`, `generate_from_intent`, `generate_plan`,

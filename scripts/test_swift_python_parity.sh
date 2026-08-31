@@ -47,7 +47,8 @@ let intentDir = root.appendingPathComponent("fixtures/cross-language/intent/flag
 let intent = try decoder.decode(WorkoutIntent.self, from: Data(contentsOf: intentDir.appendingPathComponent("input.json")))
 let resolution = intentEngine.resolveIntent(intent)
 try encoder.encode(resolution).write(to: out.appendingPathComponent("intent-resolution.json"))
-try encoder.encode(FreeExerciseDBPlusPlus.generatePlanFromIntent(intent, database: db)).write(to: out.appendingPathComponent("intent-generation.json"))
+let flagshipGeneration = FreeExerciseDBPlusPlus.generatePlanFromIntent(intent, database: db)
+try encoder.encode(flagshipGeneration).write(to: out.appendingPathComponent("intent-generation.json"))
 let intentRoot = root.appendingPathComponent("fixtures/cross-language/intent")
 for directory in try FileManager.default.contentsOfDirectory(at: intentRoot, includingPropertiesForKeys: [.isDirectoryKey]) where (try directory.resourceValues(forKeys: [.isDirectoryKey]).isDirectory == true) {
   let name = directory.lastPathComponent
@@ -56,6 +57,21 @@ for directory in try FileManager.default.contentsOfDirectory(at: intentRoot, inc
   let explicitTarget = name == "target-partial-override" ? try load("fixtures/cross-language/intent/target-partial-override/target.json") : nil
   let resolved = FreeExerciseDBPlusPlus.resolveIntent(input, database: db, target: explicitTarget, history: history, asOf: name == "history-aware" ? "2026-08-25T12:00:00Z" : nil)
   try encoder.encode(resolved).write(to: out.appendingPathComponent("intent-resolution-\(name).json"))
+  if FileManager.default.fileExists(atPath: directory.appendingPathComponent("expected-generation.json").path) {
+    let generated = FreeExerciseDBPlusPlus.generatePlanFromIntent(input, database: db, target: explicitTarget, history: history, asOf: name == "history-aware" ? "2026-08-25T12:00:00Z" : nil)
+    if let generatedObject = generated.objectValue,
+       let generation = generatedObject["generation"]?.objectValue,
+       let plan = generation["plan"],
+       let evaluation = generation["evaluation"],
+       let resolutionObject = generatedObject["resolution"]?.objectValue,
+       let profile = resolutionObject["resolvedProfile"],
+       let target = resolutionObject["resolvedTarget"],
+       evaluation != .null {
+      let standalone = intentEngine.evaluatePlan(plan, profile: profile, target: target)
+      if standalone != evaluation { throw NSError(domain: "Parity", code: 1, userInfo: [NSLocalizedDescriptionKey: "attached evaluation differs for intent \(name)"]) }
+    }
+    try encoder.encode(generated).write(to: out.appendingPathComponent("intent-generation-\(name).json"))
+  }
 }
 EOF
 swift run --package-path "$consumer" Parity "$repo" "$out" >/dev/null
@@ -71,4 +87,5 @@ for fixture in "$repo"/fixtures/cross-language/intent/*/expected-resolution.json
   echo "checking intent $name"
   python3 "$repo/tools/compare_canonical_json.py" "$fixture" "$out/intent-resolution-$name.json"
 done
+python3 "$repo/tools/compare_canonical_json.py" "$repo/fixtures/cross-language/intent/endurance/expected-generation.json" "$out/intent-generation-endurance.json"
 echo "Swift/Python parity goldens ok"

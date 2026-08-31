@@ -455,3 +455,89 @@ resolve_intent <- function(intent,db=NULL,profile=NULL,target=NULL,relationships
    }
    result
  }
+
+# Current contract identity is 0.2.0.  Keep the established 0.1.0 runtime
+# acceptance path for historical documents while emitting the input version in
+# resolved profiles and provenance.
+.validate_workout_intent_legacy <- validate_workout_intent
+.validate_training_profile_legacy <- validate_training_profile
+validate_training_profile <- function(profile, db=NULL, relationships=NULL) {
+  value <- .doc(profile)
+  if (identical(value$schemaVersion, "0.2.0")) value$schemaVersion <- "0.1.0"
+  .validate_training_profile_legacy(value, db, relationships)
+}
+
+validate_workout_intent <- function(intent, database=NULL, relationships=NULL) {
+  value <- .doc(intent)
+  version <- value$schemaVersion %||% NULL
+  if (identical(version, "0.2.0")) {
+    value$schemaVersion <- "0.1.0"
+    return(.validate_workout_intent_legacy(value, database, relationships))
+  }
+  .validate_workout_intent_legacy(value, database, relationships)
+}
+
+.resolve_intent_current <- resolve_intent
+resolve_intent <- function(intent, db=NULL, profile=NULL, target=NULL, relationships=NULL, history=NULL, as_of=NULL) {
+  value <- .doc(intent)
+  current <- identical(value$schemaVersion, "0.2.0")
+  if (current) {
+    legacy <- value
+    legacy$schemaVersion <- "0.1.0"
+    value <- legacy
+  }
+  supplied_profile <- !is.null(profile)
+  supplied_profile_version <- if (supplied_profile) .doc(profile)$schemaVersion %||% "0.2.0" else "0.2.0"
+  if (current && supplied_profile && identical(.doc(profile)$schemaVersion, "0.2.0")) {
+    profile <- .doc(profile)
+    profile$schemaVersion <- "0.1.0"
+  }
+  result <- .resolve_intent_current(value, db, profile, target, relationships, history, as_of)
+  if (current) {
+    result$provenance$intentSchemaVersion <- "0.2.0"
+    if (!is.null(result$resolvedProfile)) result$resolvedProfile$schemaVersion <- supplied_profile_version
+  }
+  result
+}
+
+.generate_plan_current <- generate_plan
+generate_plan <- function(profile, target, db, policy="full-body-general-v1", training_state=NULL,
+                          relationships=NULL, current_plan=NULL, requiredExerciseIds=character(),
+                          lockedExerciseIds=character(), requiredFamilyIds=character(),
+                          additionalExclusions=character(), options=list()) {
+  result <- .generate_plan_current(profile, target, db, policy, training_state, relationships,
+                                   current_plan, requiredExerciseIds, lockedExerciseIds,
+                                   requiredFamilyIds, additionalExclusions, options)
+  reps <- options$repDefaults %||% NULL
+  effort <- options$effortDefaults %||% NULL
+  if (!is.null(result$plan) && (!is.null(reps) || !is.null(effort))) {
+    for (i in seq_along(result$plan$sessions %||% list())) {
+      for (j in seq_along(result$plan$sessions[[i]]$exercises %||% list())) {
+        if (!is.null(reps)) result$plan$sessions[[i]]$exercises[[j]]$reps <- reps
+        if (!is.null(effort)) result$plan$sessions[[i]]$exercises[[j]]$effort <- effort
+      }
+    }
+    result$evaluation <- evaluate_plan(result$plan, db, .doc(profile), .doc(target), relationships)
+  }
+  result
+}
+
+.generate_plan_from_intent_current <- generate_plan_from_intent
+generate_plan_from_intent <- function(intent, db, profile=NULL, target=NULL, relationships=NULL,
+                                      history=NULL, as_of=NULL, ...) {
+  resolution <- resolve_intent(intent, db, profile, target, relationships, history, as_of)
+  if (!resolution$status %in% c("resolved", "resolved_with_defaults"))
+    return(list(resolution=resolution, generation=NULL))
+  extras <- list(...)
+  extras$options <- modifyList(resolution$generationOptions %||% list(), extras$options %||% list())
+  if (!identical(.doc(intent)$goal, "endurance")) {
+    extras$options$repDefaults <- NULL
+    extras$options$effortDefaults <- NULL
+  }
+  extras$training_state <- resolution$generationOptions$trainingState %||% NULL
+  generated <- do.call(generate_plan, c(list(profile=resolution$resolvedProfile,
+                                              target=resolution$resolvedTarget, db=db,
+                                              policy=resolution$planningPolicy,
+                                              relationships=relationships), extras))
+  list(resolution=resolution, generation=generated)
+}

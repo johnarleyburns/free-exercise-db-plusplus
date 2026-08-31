@@ -7,7 +7,7 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "profileId"],
   "properties": {
-    "schemaVersion": {"type": "string", "const": "0.1.0"},
+    "schemaVersion": {"type": "string", "const": "0.2.0"},
     "profileId": {"type": "string", "minLength": 1},
     "subjectId": {"type": ["string", "null"], "minLength": 1},
     "goals": {"type": "array", "items": {"$ref": "#/$defs/goal"}, "uniqueItems": true},

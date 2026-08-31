@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.15.3 - 2026-08-30
+
+- Contract-hardening patch: identify WorkoutIntent and TrainingProfile as
+  schema `0.2.0` after expanding the released goal vocabulary; runtime
+  consumers continue accepting historical `0.1.0` documents.
+- Add the canonical full endurance generation fixture and verify Python,
+  Swift, Kotlin/JVM, and R generation parity, including attached evaluation.
+- Preserve the v1.15.2 endurance policy and its 15--18--20 / RIR 2 defaults;
+  keep the immutable upstream release snapshot pinned.
+- No LLM, network, reticulate, Python-subprocess, or other external semantic
+  engine dependency was added.
+
 ## 1.15.2 - 2026-08-30
 
 - Add the evidence-backed `general-endurance-v1` goal policy with conservative
