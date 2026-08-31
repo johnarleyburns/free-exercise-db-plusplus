@@ -16,6 +16,16 @@
 
 # Changelog
 
+## 1.15.4 - 2026-08-30
+
+- Add public Swift `goalPolicy(_:)` accessors at the package and
+  `TrainingEngine` levels, returning immutable released goal-policy documents
+  and `nil` for unknown identifiers.
+- Add Swift coverage for all three released goal-policy identifiers and the
+  endurance policy's 15--18--20 repetition / RIR 2 defaults.
+- Preserve all exercise data, evidence, schemas, resolver behavior, and shared
+  cross-language fixtures unchanged.
+
 ## 1.15.3 - 2026-08-30
 
 - Contract-hardening patch: identify WorkoutIntent and TrainingProfile as

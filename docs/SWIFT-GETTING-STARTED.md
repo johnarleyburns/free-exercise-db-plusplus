@@ -10,11 +10,11 @@ In Xcode, choose **File → Add Package Dependencies** and enter:
 
 `https://github.com/johnarleyburns/free-exercise-db-plusplus.git`
 
-Choose **Up to Next Major Version** from `1.15.3`. In `Package.swift`:
+Choose **Up to Next Major Version** from `1.15.4`. In `Package.swift`:
 
 ```swift
 .package(url: "https://github.com/johnarleyburns/free-exercise-db-plusplus.git",
-         from: "1.15.3")
+         from: "1.15.4")
 ```
 
 Then `import FreeExerciseDBPlusPlus` and initialize `try TrainingEngine.bundled()`.

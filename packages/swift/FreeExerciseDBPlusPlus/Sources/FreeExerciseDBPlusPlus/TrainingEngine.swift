@@ -116,6 +116,10 @@ public struct TrainingEngine: Sendable {
     FreeExerciseDBPlusPlus.planningPolicy(policy)
   }
 
+  public func goalPolicy(_ policy: String) -> JSONValue? {
+    FreeExerciseDBPlusPlus.goalPolicy(policy)
+  }
+
   public func coachingPolicy(_ policy: String = "general-adaptive-v1") -> JSONValue? {
     FreeExerciseDBPlusPlus.coachingPolicy(policy)
   }

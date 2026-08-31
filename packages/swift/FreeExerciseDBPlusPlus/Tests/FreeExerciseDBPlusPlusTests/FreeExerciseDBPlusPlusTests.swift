@@ -534,6 +534,18 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertNil(engine.coachingPolicy("unknown-policy"))
   }
 
+  func testReleasedGoalPoliciesExposeCanonicalDocuments() {
+    let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
+    let endurance = engine.goalPolicy("general-endurance-v1")?.objectValue
+    XCTAssertEqual(endurance?["reps"], .object(["min": .number(15), "target": .number(18), "max": .number(20)]))
+    XCTAssertEqual(endurance?["effort"], .object(["rir": .number(2)]))
+
+    for id in ["general-strength-v1", "general-hypertrophy-v1", "general-endurance-v1"] {
+      XCTAssertNotNil(engine.goalPolicy(id), "missing released goal policy \(id)")
+    }
+    XCTAssertNil(engine.goalPolicy("nonexistent"))
+  }
+
   func testProductionGeneratorAppliesFamilyAndLockedPlacementFilters() {
     let press = Exercise(exerciseId: "press", annotation: ExerciseAnnotation(direct: ["chest"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Press")])
     let row = Exercise(exerciseId: "row", annotation: ExerciseAnnotation(direct: ["lats"], volumeEligible: true), source: ["equipment": .string("barbell"), "name": .string("Row")])

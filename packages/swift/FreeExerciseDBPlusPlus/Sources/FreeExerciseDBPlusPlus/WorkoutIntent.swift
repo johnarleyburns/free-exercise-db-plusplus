@@ -440,6 +440,9 @@ private enum IntentPolicyCatalog {
   static var environments: [String: JSONValue] { o(root["environmentPolicies"]) }
 }
 
+/// Return the immutable released goal-policy document for an id, or nil if unknown.
+public func goalPolicy(_ id: String) -> JSONValue? { IntentPolicyCatalog.goals[id] }
+
 public func deriveTrainingState(_ history: JSONValue, asOf: String, window: TrainingHistoryWindow = .last28Days, relationships: ExerciseRelationships? = nil, database: FEDatabase? = nil) -> JSONValue {
   let root = history.objectValue ?? [:]
   let plans = (root["plans"]?.arrayValues ?? []).compactMap { $0.objectValue }
