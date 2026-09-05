@@ -51,8 +51,8 @@ def test_full_golden_family_memberships():
 
 def test_deterministic_coverage_and_quality_reports():
     summary=load("reports/relationships/summary.json")
-    assert summary["totalExercises"]==873 and summary["assignedExercises"]==286 and summary["unassignedExercises"]==587
-    assert summary["familyCount"]==16 and summary["emptyFamilies"]==[] and summary["ambiguousCandidates"]==[]
+    assert summary["totalExercises"]==927 and summary["assignedExercises"]==341 and summary["unassignedExercises"]==586
+    assert summary["familyCount"]==37 and summary["emptyFamilies"]==[] and summary["ambiguousCandidates"]==[]
     assert all(key in summary for key in ("coverageByGenre","coverageByMovementPattern","coverageByEquipment","familyQuality","manualOverrides"))
     for name in ("unassigned.json","medium-confidence.json","family-sizes.json","review-candidates.json","ambiguous-candidates.json"):
         assert (ROOT/"reports/relationships"/name).is_file()

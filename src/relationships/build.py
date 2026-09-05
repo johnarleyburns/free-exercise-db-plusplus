@@ -66,8 +66,11 @@ def _phrase(text: str, expression: str) -> bool:
 
 def _family_for(eid: str, rec: dict[str, Any], *, candidates_only: bool = False) -> Any:
     text = _text(eid, rec)
-    if eid in CATALOG_FAMILY_OVERRIDES and not candidates_only:
-        return CATALOG_FAMILY_OVERRIDES[eid], "catalog_review", "high"
+    if eid in CATALOG_FAMILY_OVERRIDES:
+        family = CATALOG_FAMILY_OVERRIDES[eid]
+        if candidates_only:
+            return [(family, "high")]
+        return family, "catalog_review", "high"
     if eid in FAMILY_OVERRIDES and not candidates_only:
         return FAMILY_OVERRIDES[eid], "manual_review", "high"
     patterns = set(rec.get("annotation", {}).get("patterns", []))
