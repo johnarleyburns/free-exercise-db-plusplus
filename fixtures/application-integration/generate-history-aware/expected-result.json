@@ -44,8 +44,8 @@
     },
     "equipment": {
       "supportedExercises": [
+        "Alternating_Cable_Lat_Pulldown",
         "Alternating_Hang_Clean",
-        "Alternating_Kettlebell_Row",
         "Ball_Leg_Curl",
         "Barbell_Bench_Press_-_Medium_Grip"
       ],
@@ -84,12 +84,12 @@
             ]
           }
         },
-        "row": {
+        "vertical_pull": {
           "exerciseIds": [
-            "Alternating_Kettlebell_Row"
+            "Alternating_Cable_Lat_Pulldown"
           ],
-          "familyId": "row",
-          "name": "Row",
+          "familyId": "vertical_pull",
+          "name": "Vertical Pull",
           "plannedSetRanges": {
             "max": 6.0,
             "min": 6.0,
@@ -103,13 +103,13 @@
             "session-3"
           ],
           "variantDimensions": {
-            "Alternating_Kettlebell_Row": {
-              "equipment": "kettlebell"
+            "Alternating_Cable_Lat_Pulldown": {
+              "equipment": "cable"
             }
           },
           "variantDimensionsUsed": {
             "equipment": [
-              "kettlebell"
+              "cable"
             ]
           }
         }
@@ -216,7 +216,7 @@
         "target": 6
       },
       "middle_back": {
-        "actualEffectiveSets": 6.0,
+        "actualEffectiveSets": 3.0,
         "differenceFromTarget": null,
         "max": null,
         "maximum": null,
@@ -224,9 +224,9 @@
         "minimum": null,
         "periodDays": 7,
         "planEffectiveSetRange": {
-          "max": 6.0,
-          "min": 6.0,
-          "target": 6.0
+          "max": 3.0,
+          "min": 3.0,
+          "target": 3.0
         },
         "state": "not_targeted",
         "target": null
@@ -248,7 +248,7 @@
         "target": 6
       },
       "shoulders": {
-        "actualEffectiveSets": 6.0,
+        "actualEffectiveSets": 3.0,
         "differenceFromTarget": null,
         "max": null,
         "maximum": null,
@@ -256,9 +256,9 @@
         "minimum": null,
         "periodDays": 7,
         "planEffectiveSetRange": {
-          "max": 6.0,
-          "min": 6.0,
-          "target": 6.0
+          "max": 3.0,
+          "min": 3.0,
+          "target": 3.0
         },
         "state": "not_targeted",
         "target": null
@@ -366,8 +366,8 @@
             "effort": {
               "rir": 2
             },
-            "exerciseId": "Alternating_Kettlebell_Row",
-            "exerciseName": "Alternating Kettlebell Row",
+            "exerciseId": "Alternating_Cable_Lat_Pulldown",
+            "exerciseName": "Alternating Cable Lat Pulldown",
             "order": 2,
             "prescriptionId": "rx-01-02",
             "reps": {
@@ -421,8 +421,8 @@
             "effort": {
               "rir": 2
             },
-            "exerciseId": "Alternating_Kettlebell_Row",
-            "exerciseName": "Alternating Kettlebell Row",
+            "exerciseId": "Alternating_Cable_Lat_Pulldown",
+            "exerciseName": "Alternating Cable Lat Pulldown",
             "order": 1,
             "prescriptionId": "rx-02-01",
             "reps": {
@@ -508,8 +508,8 @@
             "effort": {
               "rir": 2
             },
-            "exerciseId": "Alternating_Kettlebell_Row",
-            "exerciseName": "Alternating Kettlebell Row",
+            "exerciseId": "Alternating_Cable_Lat_Pulldown",
+            "exerciseName": "Alternating Cable Lat Pulldown",
             "order": 3,
             "prescriptionId": "rx-03-03",
             "reps": {
