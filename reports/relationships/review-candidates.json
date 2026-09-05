@@ -321,6 +321,10 @@
       "reason": "medium_confidence_taxonomy_judgment"
     },
     {
+      "exerciseId": "Narrow_Stance_Hack_Squats",
+      "reason": "medium_confidence_taxonomy_judgment"
+    },
+    {
       "exerciseId": "Olympic_Squat",
       "reason": "medium_confidence_taxonomy_judgment"
     },
@@ -567,6 +571,19 @@
   ],
   "emptyFamilies": [],
   "singleMemberFamilies": [
-    "hip_thrust"
+    "back_extension",
+    "belt_squat",
+    "cable_push_pull",
+    "dip_triceps_bias",
+    "high_pull",
+    "hip_abduction",
+    "hip_flexion",
+    "knee_flexion",
+    "neck_conditioning",
+    "pullover",
+    "shoulder_abduction",
+    "tibialis_raise",
+    "torso_rotation",
+    "trunk_flexion"
   ]
 }

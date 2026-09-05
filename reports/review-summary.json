@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-08-31T17:08:04.174823+00:00",
+    "generatedAt": "2026-09-05T23:08:24.570112+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -406,6 +406,13 @@
           "doi": "10.1016/j.jelekin.2015.10.014",
           "url": "https://pubmed.ncbi.nlm.nih.gov/26589588/"
         },
+        "dorsiflexion_tibialis_emg_2019": {
+          "title": "Neuromuscular effects of dorsiflexor training with and without blood flow restriction",
+          "type": "experimental",
+          "pmid": "31467996",
+          "doi": "10.1016/j.heliyon.2019.e02341",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31467996/"
+        },
         "repetition_continuum_2021": {
           "title": "Loading Recommendations for Muscle Strength, Hypertrophy, and Local Endurance: A Re-Examination of the Repetition Continuum",
           "type": "narrative_review",
@@ -742,9 +749,11 @@
           ]
         },
         "dorsiflexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Dorsiflexion training studies directly record tibialis anterior activation during resisted dorsiflexion contractions.",
+          "references": [
+            "dorsiflexion_tibialis_emg_2019"
+          ]
         },
         "anti_extension": {
           "status": "supported",
@@ -1144,34 +1153,36 @@
       "rotator_cuff",
       "hip_flexors"
     ],
-    "sourceExerciseCount": 873,
-    "outputExerciseCount": 873,
+    "sourceExerciseCount": 927,
+    "upstreamExerciseCount": 873,
+    "curatedExerciseCount": 54,
+    "outputExerciseCount": 927,
     "completeness": "full"
   },
-  "eligibleExercises": 673,
+  "eligibleExercises": 724,
   "confidenceCounts": {
-    "high": 785,
-    "medium": 88
+    "high": 837,
+    "medium": 90
   },
   "reviewPriorityCounts": {
-    "reviewed": 585,
-    "excluded_verified": 200,
-    "rule_review": 88
+    "reviewed": 635,
+    "excluded_verified": 203,
+    "rule_review": 89
   },
   "reviewReasonCounts": {
     "non_volume_category:stretching": 123,
-    "complex_pattern_bookkeeping": 72,
+    "complex_pattern_bookkeeping": 73,
     "non_volume_category:plyometrics": 61,
-    "indirect_evidence_pattern": 13,
+    "indirect_evidence_pattern": 14,
     "non_volume_named_override": 2,
     "non_volume_category:cardio": 14,
     "isolation_primary_secondary_fallback": 3
   },
   "evidenceStatusCounts": {
-    "supported": 586,
-    "complex_supported": 72,
-    "indirect_support": 13
+    "supported": 645,
+    "complex_supported": 73,
+    "indirect_support": 14
   },
-  "reviewQueueSize": 88,
+  "reviewQueueSize": 89,
   "lowConfidenceIds": []
 }

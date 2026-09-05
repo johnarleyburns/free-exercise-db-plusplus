@@ -1,11 +1,11 @@
 # Free Exercise DB++ Review Report
 
-- Source exercises: **873**
-- Volume eligible: **673**
+- Source exercises: **927**
+- Volume eligible: **724**
 - Needs review: **0**
-- Rule review: **88**
-- Excluded / verified: **200**
-- Reviewed / high: **585**
+- Rule review: **89**
+- Excluded / verified: **203**
+- Reviewed / high: **635**
 
 ## Needs review
 

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "candidateFamilies": [
+      "shoulder_press",
+      "biceps_curl"
+    ],
+    "exerciseId": "Cable_Curl-to-Press",
+    "reason": "multiple_high_confidence_rules"
+  }
+]

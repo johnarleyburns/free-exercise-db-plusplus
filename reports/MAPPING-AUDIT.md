@@ -1,9 +1,9 @@
 # DB++ Exercise-Specific Mapping Audit
 
-- Audited non-high volume mappings: **88**
+- Audited non-high volume mappings: **89**
 - Upstream primary/secondary fallbacks: **3**
 - Indirect-evidence pattern mappings: **13**
-- Complex-supported pattern mappings: **72**
+- Complex-supported pattern mappings: **73**
 
 ## Remaining fallbacks
 

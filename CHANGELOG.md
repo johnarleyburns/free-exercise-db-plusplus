@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.16.0 - 2026-09-05
+
+- Add 54 original, vendor-neutral cable, functional-trainer, selectorized, and
+  plate-loaded exercise records discovered through current Keiser, Hammer
+  Strength/Cybex, Precor, Life Fitness, and Matrix catalogs.
+- Add the named `Cable_Push_Pull` movement, including aliases and a distinct
+  press/pull family, instead of collapsing it into cable chest press or row.
+- Add catalog review provenance, relationship assignments, annual update
+  procedure, and bundled Swift/Kotlin/R resource parity.
+- Add targeted tibialis dorsiflexion evidence and correct the two existing
+  narrow-stance machine classifications that were labeled as horizontal pulls.
+
 ## 1.15.4 - 2026-08-30
 
 - Add public Swift `goalPolicy(_:)` accessors at the package and

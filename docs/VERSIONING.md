@@ -33,8 +33,11 @@ Changes to exercise mappings, evidence, or classifications normally increment
 
 ## Exercise IDs
 
-`exerciseId` values inherit upstream Free Exercise DB IDs. If upstream removes or changes an ID,
-that is a compatibility event and must be surfaced by CI and reviewed before release.
+Upstream records retain their Free Exercise DB IDs. DB++-owned catalog additions
+use stable DB++ IDs from `src/catalog_additions.json`; they are kept separate
+from the upstream snapshot and are not replaced when upstream changes. If
+upstream removes or changes an ID, that is a compatibility event and must be
+surfaced by CI and reviewed before release.
 
 ## Release artifacts
 

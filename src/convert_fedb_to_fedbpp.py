@@ -26,6 +26,7 @@ from typing import Any
 SCHEMA_VERSION = "0.3.0"
 CONVERTER_VERSION = "0.8.1"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
+CURATED_MANIFEST_PATH = Path(__file__).with_name("catalog_additions.json")
 
 MUSCLES = [
     "abdominals","abductors","adductors","biceps","calves","chest",
@@ -40,6 +41,19 @@ EVIDENCE_REFERENCES = {'bench_systematic_review_2017': {'title': 'A systematic r
 
 PATTERN_EVIDENCE = {'horizontal_press': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'incline_press': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'decline_press': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'vertical_press': {'status': 'supported', 'summary': 'Shoulder-press EMG directly supports anterior/medial deltoid and triceps involvement across seated/standing and barbell/dumbbell variants.', 'references': ['shoulder_press_emg_2013']}, 'horizontal_press_triceps_bias': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'dip_chest_bias': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'dip_triceps_bias': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'horizontal_pull': {'status': 'supported', 'summary': 'Direct row-family EMG evidence across inverted, prone/barbell and suspension rows supports latissimus dorsi and mid/lower trapezius as major back contributors, with biceps and posterior deltoid also substantially recruited. DB++ retains biceps and shoulders as indirect because their relative contribution varies materially by row variant.', 'references': ['inverted_row_emg_2015', 'prone_barbell_row_emg_2025', 'suspension_row_emg_2020']}, 'vertical_pull': {'status': 'supported', 'summary': 'Direct pull-up EMG evidence supports latissimus dorsi and biceps as major contributors, with posterior shoulder and mid-trapezius involvement; this directly supports the vertical-pull family.', 'references': ['pullup_emg_2017']}, 'shrug': {'status': 'supported', 'summary': 'A standardized resistance-training EMG study directly measured reverse fly and shrug recruitment of deltoid/trapezius regions.', 'references': ['shoulder_training_emg_2012']}, 'reverse_fly': {'status': 'supported', 'summary': 'A standardized resistance-training EMG study directly measured reverse fly and shrug recruitment of deltoid/trapezius regions.', 'references': ['shoulder_training_emg_2012']}, 'shoulder_abduction': {'status': 'supported', 'summary': 'Resistance-exercise EMG directly supports deltoid recruitment in lateral/front raise families; lateral raises emphasize shoulder musculature and front raises emphasize anterior deltoid.', 'references': ['shoulder_training_emg_2012', 'lateral_raise_emg_2020']}, 'shoulder_external_rotation': {'status': 'supported', 'summary': 'Intramuscular/surface EMG directly supports infraspinatus and teres-minor as principal external rotators, with deltoid/scapular muscles contributing by position.', 'references': ['external_rotation_emg_2004', 'external_rotation_roles_2012']}, 'elbow_flexion': {'status': 'supported', 'summary': 'Curl studies directly support biceps brachii as a prime elbow flexor across dumbbell, straight-bar and EZ-bar variants.', 'references': ['biceps_curl_emg_2013', 'curl_variants_emg_2018']}, 'elbow_flexion_brachioradialis_bias': {'status': 'supported', 'summary': 'Curl-variant EMG directly supports substantial brachioradialis involvement and grip-dependent changes in elbow-flexor recruitment.', 'references': ['curl_variants_emg_2018']}, 'elbow_extension': {'status': 'supported', 'summary': 'Direct EMG evidence supports long- and lateral-head triceps recruitment during loaded elbow-extension exercises.', 'references': ['triceps_extension_emg_2017']}, 'wrist_flexion': {'status': 'provisional', 'summary': 'Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.', 'references': []}, 'wrist_extension': {'status': 'provisional', 'summary': 'Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.', 'references': []}, 'squat': {'status': 'supported', 'summary': 'Systematic-review evidence supports high gluteus-maximus activation across squats, lunges, step-ups and related loaded lower-body movements; quadriceps dominance is also well established in squat-family work.', 'references': ['glute_strength_review_2020']}, 'squat_quad_bias': {'status': 'supported', 'summary': 'Systematic-review evidence supports high gluteus-maximus activation across squats, lunges, step-ups and related loaded lower-body movements; quadriceps dominance is also well established in squat-family work.', 'references': ['glute_strength_review_2020']}, 'lunge': {'status': 'supported', 'summary': 'Systematic-review evidence supports high gluteus-maximus activation across squats, lunges, step-ups and related loaded lower-body movements; quadriceps dominance is also well established in squat-family work.', 'references': ['glute_strength_review_2020']}, 'step_up': {'status': 'supported', 'summary': 'Systematic-review evidence supports high gluteus-maximus activation across squats, lunges, step-ups and related loaded lower-body movements; quadriceps dominance is also well established in squat-family work.', 'references': ['glute_strength_review_2020']}, 'knee_extension': {'status': 'supported', 'summary': 'Longitudinal resistance-training studies show knee-extension training produces quadriceps hypertrophy, directly supporting quadriceps as the target muscle group.', 'references': ['leg_extension_hypertrophy_2021', 'leg_extension_comparison_2026']}, 'knee_flexion': {'status': 'supported', 'summary': 'Direct EMG evidence supports hamstring activation across leg curl, GHR, good morning and RDL variants.', 'references': ['hamstring_exercises_2014']}, 'hip_hinge': {'status': 'supported', 'summary': 'Deadlift systematic review supports substantial quadriceps, erector-spinae, gluteal and hamstring activation, with variant-specific differences.', 'references': ['deadlift_systematic_review_2020']}, 'hip_extension': {'status': 'supported', 'summary': 'Hip-thrust and hamstring exercise literature supports strong gluteal/hamstring contribution with variant-specific erector-spinae involvement.', 'references': ['hip_thrust_systematic_review_2019', 'hamstring_exercises_2014']}, 'glute_ham_raise': {'status': 'supported', 'summary': 'Hip-thrust and hamstring exercise literature supports strong gluteal/hamstring contribution with variant-specific erector-spinae involvement.', 'references': ['hip_thrust_systematic_review_2019', 'hamstring_exercises_2014']}, 'rack_pull': {'status': 'supported', 'summary': 'Deadlift systematic review supports substantial quadriceps, erector-spinae, gluteal and hamstring activation, with variant-specific differences.', 'references': ['deadlift_systematic_review_2020']}, 'anti_rotation': {'status': 'indirect_support', 'summary': 'Pallof-press research directly establishes a laterally loaded lumbopelvic postural-control task; related trunk-stabilization literature supports abdominal recruitment, but exact direct/indirect set roles remain an extrapolation.', 'references': ['pallof_press_postural_2025', 'bridge_stabilization_emg_2012']}, 'hip_abduction': {'status': 'supported', 'summary': 'Systematic-review evidence supports gluteal activation in hip-abduction/external-rotation exercise families; adduction mapping remains primarily anatomical.', 'references': ['hip_abduction_review_2015']}, 'hip_adduction': {'status': 'supported', 'summary': 'Systematic-review evidence supports gluteal activation in hip-abduction/external-rotation exercise families; adduction mapping remains primarily anatomical.', 'references': ['hip_abduction_review_2015']}, 'plantar_flexion_straight_knee': {'status': 'supported', 'summary': 'Standing/knee-extended calf-raise training produces gastrocnemius and soleus hypertrophy; EMG studies confirm triceps-surae recruitment during plantar flexion.', 'references': ['calf_raise_hypertrophy_2023', 'calf_raise_emg_2021']}, 'leg_press': {'status': 'supported', 'summary': 'Systematic-review evidence supports high gluteus-maximus activation across squats, lunges, step-ups and related loaded lower-body movements; quadriceps dominance is also well established in squat-family work.', 'references': ['glute_strength_review_2020']}, 'conventional_deadlift': {'status': 'supported', 'summary': 'Deadlift systematic review supports substantial quadriceps, erector-spinae, gluteal and hamstring activation, with variant-specific differences.', 'references': ['deadlift_systematic_review_2020']}, 'sumo_deadlift': {'status': 'supported', 'summary': 'Deadlift systematic review supports substantial quadriceps, erector-spinae, gluteal and hamstring activation, with variant-specific differences.', 'references': ['deadlift_systematic_review_2020']}, 'chest_fly': {'status': 'supported', 'summary': 'Bench-press literature supports pectoralis major and triceps as major prime movers with anterior deltoid contribution; inclination changes relative contribution.', 'references': ['bench_systematic_review_2017', 'bench_inclination_2020']}, 'pullover': {'status': 'supported', 'summary': 'Direct barbell-pullover EMG demonstrates pectoralis-major and latissimus-dorsi recruitment, with pectoralis activation exceeding latissimus in the tested setup.', 'references': ['pullover_emg_2011']}, 'upright_row': {'status': 'supported', 'summary': 'Direct upright-row EMG demonstrates deltoid and trapezius recruitment, with grip width altering relative activation.', 'references': ['upright_row_grip_emg_2012']}, 'face_pull': {'status': 'indirect_support', 'summary': 'No exact face-pull study was located in this pass; the mapping is supported indirectly by closely related external-rotation, reverse-fly and upper-back/shoulder EMG evidence.', 'references': ['external_rotation_emg_2004', 'shoulder_training_emg_2012']}, 'shoulder_flexion': {'status': 'supported', 'summary': 'Resistance-exercise EMG directly supports deltoid recruitment in lateral/front raise families; lateral raises emphasize shoulder musculature and front raises emphasize anterior deltoid.', 'references': ['shoulder_training_emg_2012', 'lateral_raise_emg_2020']}, 'shoulder_internal_rotation': {'status': 'supported', 'summary': 'EMG directly supports subscapularis as a major internal rotator, with arm position strongly affecting selective activation.', 'references': ['internal_rotation_emg_2003', 'subscapularis_exercise_2003']}, 'hip_flexion': {'status': 'supported', 'summary': 'A systematic review and fine-wire EMG evidence directly support iliopsoas and related hip-flexor recruitment during leg raises and loaded hip-flexion tasks.', 'references': ['hip_flexor_systematic_review_2024', 'psoas_aslr_emg_2010']}, 'plantar_flexion_bent_knee': {'status': 'supported', 'summary': 'Seated/bent-knee calf raises directly load the triceps surae, with comparatively greater soleus emphasis than straight-leg calf raising.', 'references': ['calf_raise_hypertrophy_2023', 'calf_raise_swelling_2023', 'calf_raise_emg_2021']}, 'dorsiflexion': {'status': 'provisional', 'summary': 'Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.', 'references': []}, 'anti_extension': {'status': 'supported', 'summary': 'Prone bridge/plank and rollout-style stabilization studies directly demonstrate substantial rectus-abdominis and oblique activation under anti-extension demands.', 'references': ['bridge_stabilization_emg_2012', 'bridge_surface_emg_2013']}, 'lateral_flexion': {'status': 'supported', 'summary': 'Side-bridge/lateral-trunk EMG studies directly demonstrate high internal/external oblique and abdominal recruitment.', 'references': ['side_bridge_oblique_emg_2020', 'side_bridge_asymmetry_2022']}, 'farmer_carry': {'status': 'complex_supported', 'summary': "Strongman EMG/biomechanics directly included the farmer's walk and documents substantial whole-body, hip and trunk loading; DB++ role labels summarize the event.", 'references': ['strongman_trunk_events_2009']}, 'loaded_carry': {'status': 'complex_supported', 'summary': 'Strongman EMG/biomechanics directly studied farmer, suitcase, keg and yoke-style carries and demonstrates large torso/hip stabilization demands.', 'references': ['strongman_trunk_events_2009']}, 'sled_push': {'status': 'supported', 'summary': 'Direct sled-push EMG shows lower-limb loading, with increasing resistance increasing vastus-lateralis and gastrocnemius activity.', 'references': ['sled_push_emg_2021']}, 'sled_pull': {'status': 'indirect_support', 'summary': 'Direct sled-push evidence supports resisted locomotor lower-limb loading, while strongman carry/drag biomechanics support the whole-body loading context; exact backward-pull muscle weighting remains extrapolated.', 'references': ['sled_push_emg_2021', 'strongman_trunk_events_2009']}, 'kettlebell_swing': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'olympic_clean_pull': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'olympic_clean': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'olympic_snatch_pull': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'olympic_snatch': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'olympic_jerk': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'olympic_clean_and_jerk': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'snatch_balance': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'push_press': {'status': 'complex_supported', 'summary': 'Olympic-lift literature supports rapid coordinated hip/knee/ankle extension and substantial lower-body/trapezius involvement; DB++ direct/indirect labels remain whole-exercise bookkeeping abstractions across phases.', 'references': ['olympic_emg_2026', 'olympic_position_2023', 'olympic_kinetics_2012']}, 'kettlebell_clean': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'kettlebell_snatch': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'kettlebell_jerk': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'kettlebell_windmill': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'kettlebell_sumo_high_pull': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'thruster': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'muscle_up': {'status': 'indirect_support', 'summary': 'Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.', 'references': ['pullup_emg_2017']}, 'rope_climb': {'status': 'indirect_support', 'summary': 'Pull-up EMG literature directly supports latissimus, biceps, posterior deltoid/mid-trapezius involvement; row/climb/muscle-up roles partly extrapolate from related pulling mechanics.', 'references': ['pullup_emg_2017']}, 'atlas_stone_load': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'loaded_object_load': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'tire_flip': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'strongman_overhead': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'strongman_carry': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'power_stairs': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'battle_ropes': {'status': 'supported', 'summary': 'Direct battle-rope EMG demonstrates moderate-to-high anterior-deltoid, oblique and lumbar-extensor activation, with additional studies confirming whole-body recruitment.', 'references': ['battle_rope_emg_2015', 'battle_rope_wbv_emg_2015']}, 'bent_press': {'status': 'indirect_support', 'summary': 'No targeted peer-reviewed bent-press EMG study was located; DB++ retains indirect support from strongman whole-body/trunk loading and lateral-trunk evidence.', 'references': ['strongman_trunk_events_2009', 'side_bridge_oblique_emg_2020']}, 'kettlebell_figure8': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'kettlebell_pirate_ships': {'status': 'complex_supported', 'summary': 'Kettlebell EMG/biomechanics literature supports whole-body ballistic loading with strong hip-extensor and trunk demands; exact set-credit roles remain model abstractions.', 'references': ['kettlebell_emg_2017', 'kettlebell_swing_2012']}, 'drag_with_press': {'status': 'complex_supported', 'summary': 'Strongman literature supports multi-phase whole-body loading. Pattern roles summarize the event rather than representing a single-joint stimulus.', 'references': ['atlas_stone_2021', 'tire_flip_2010', 'strongman_trunk_2009', 'strongman_review_2019']}, 'spider_crawl': {'status': 'indirect_support', 'summary': 'No exact spider-crawl EMG study was located in this pass; quadruped/plank stabilization evidence supports trunk involvement while upper-body roles remain movement-mechanics extrapolations.', 'references': ['bridge_stabilization_emg_2012', 'bridge_surface_emg_2013']}, 'medicine_ball_slam': {'status': 'indirect_support', 'summary': 'No exact medicine-ball-slam muscle-role trial was located in this pass; the mapping is supported indirectly by ballistic whole-body/trunk and shoulder activation evidence.', 'references': ['battle_rope_emg_2015', 'bridge_stabilization_emg_2012']}, 'trunk_flexion': {'status': 'supported', 'summary': 'Loaded crunch and sit/curl-up EMG studies directly support rectus abdominis and oblique recruitment during trunk-flexion exercise.', 'references': ['crunch_loaded_emg_2009', 'situp_curlup_emg_2008']}, 'trunk_extension': {'status': 'supported', 'summary': 'Roman-chair and machine back-extension EMG directly supports erector-spinae loading with meaningful gluteal and hamstring contribution depending on technique.', 'references': ['back_extension_roman_chair_2014', 'back_extension_comparison_2021']}, 'trunk_rotation': {'status': 'supported', 'summary': 'Rotational training increases internal/external oblique thickness, and flexion-rotation EMG directly demonstrates rectus-abdominis and internal-oblique loading.', 'references': ['trunk_rotation_rct_2021', 'flexion_rotation_emg_2020']}, 'neck_flexion': {'status': 'supported', 'summary': 'Isometric cervical EMG studies directly support neck-flexor recruitment during resisted flexion.', 'references': ['neck_isometric_emg_2002', 'neck_conditioning_emg_2008']}, 'neck_extension': {'status': 'supported', 'summary': 'Isometric cervical EMG studies directly support posterior neck-muscle recruitment during resisted extension.', 'references': ['neck_isometric_emg_2002', 'neck_conditioning_emg_2008']}, 'neck_lateral_flexion': {'status': 'supported', 'summary': 'Cervical EMG studies directly measure direction-specific neck-muscle recruitment during resisted lateral flexion.', 'references': ['neck_isometric_emg_2002']}, 'forearm_pronation': {'status': 'supported', 'summary': 'Direct EMG evidence supports pronator quadratus and pronator teres recruitment during resisted forearm pronation.', 'references': ['forearm_pronation_supination_emg_2026']}, 'forearm_supination': {'status': 'supported', 'summary': 'Direct EMG evidence supports supinator and load-dependent biceps recruitment during resisted forearm supination.', 'references': ['forearm_pronation_supination_emg_2026']}, 'grip': {'status': 'supported', 'summary': 'Direct handgrip EMG studies support substantial forearm flexor/extensor recruitment during loaded gripping and pinching tasks.', 'references': ['forearm_grip_emg_2019', 'power_grip_emg_2015']}}
 
+
+EVIDENCE_REFERENCES["dorsiflexion_tibialis_emg_2019"] = {
+    "title": "Neuromuscular effects of dorsiflexor training with and without blood flow restriction",
+    "type": "experimental",
+    "pmid": "31467996",
+    "doi": "10.1016/j.heliyon.2019.e02341",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31467996/",
+}
+PATTERN_EVIDENCE["dorsiflexion"] = {
+    "status": "supported",
+    "summary": "Dorsiflexion training studies directly record tibialis anterior activation during resisted dorsiflexion contractions.",
+    "references": ["dorsiflexion_tibialis_emg_2019"],
+}
 
 EVIDENCE_REFERENCES.update({
     "repetition_continuum_2021": {
@@ -525,6 +539,22 @@ OVERRIDES: dict[str, dict[str, Any]] = {
         "patterns": ["glute_ham_raise"],
         "direct": ["hamstrings", "glutes"],
         "indirect": ["calves"],
+        "stabilizers": [],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Narrow_Stance_Hack_Squats": {
+        "patterns": ["squat_quad_bias"],
+        "direct": ["quadriceps"],
+        "indirect": ["glutes", "adductors"],
+        "stabilizers": ["lower_back"],
+        "confidence": "high",
+        "reviewReasons": [],
+    },
+    "Narrow_Stance_Leg_Press": {
+        "patterns": ["leg_press"],
+        "direct": ["quadriceps", "glutes"],
+        "indirect": ["adductors"],
         "stabilizers": [],
         "confidence": "high",
         "reviewReasons": [],
@@ -1092,6 +1122,84 @@ def sha256_file(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+def _curated_source(entry: dict[str, Any]) -> dict[str, Any]:
+    """Build an original DB++ source-shaped record from the catalog manifest.
+
+    These records are intentionally separate from the pinned upstream snapshot.
+    They contain no vendor text or imagery; the manifest stores only our
+    canonical name, roles, and review provenance.
+    """
+    name = entry["name"]
+    equipment = entry["equipment"]
+    instructions = entry.get("instructions") or [
+        f"Set up the {equipment} station for {name} and choose a controlled load.",
+        f"Perform {name} through a comfortable range of motion with stable alignment.",
+        "Return to the starting position under control and follow the equipment safety instructions.",
+    ]
+    record = {
+        "id": entry["id"],
+        "name": name,
+        "force": entry.get("force"),
+        "level": entry.get("level", "intermediate"),
+        "mechanic": entry.get("mechanic", "compound"),
+        "equipment": equipment,
+        "primaryMuscles": entry["direct"],
+        "secondaryMuscles": entry["indirect"],
+        "instructions": instructions,
+        "category": entry.get("category", "strength"),
+        "images": [],
+    }
+    if entry.get("aliases"):
+        record["aliases"] = list(entry["aliases"])
+    return record
+
+
+def load_curated_manifest(path: Path = CURATED_MANIFEST_PATH) -> list[dict[str, Any]]:
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    if manifest.get("schemaVersion") != "1.0.0":
+        raise ValueError("Unsupported catalog additions manifest schema")
+    entries = manifest.get("entries")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError("Catalog additions manifest must contain entries")
+    ids = [entry.get("id") for entry in entries]
+    if any(not isinstance(eid, str) or not eid for eid in ids):
+        raise ValueError("Every catalog addition must have a non-empty id")
+    if len(ids) != len(set(ids)):
+        raise ValueError("Catalog addition IDs must be unique")
+    for entry in entries:
+        if not entry.get("patterns"):
+            raise ValueError(f"Catalog addition has no patterns: {entry['id']}")
+        unknown = set(entry["patterns"]) - set(PATTERNS)
+        if unknown:
+            raise ValueError(f"Unknown patterns for {entry['id']}: {sorted(unknown)}")
+        if entry.get("confidence", "high") == "high" and any(
+            PATTERN_EVIDENCE[p]["status"] in {"complex_supported", "indirect_support"}
+            for p in entry["patterns"]
+        ):
+            raise ValueError(f"High-confidence catalog addition uses complex/indirect evidence: {entry['id']}")
+    return entries
+
+
+def curated_annotation(entry: dict[str, Any]) -> dict[str, Any]:
+    confidence = entry.get("confidence", "high")
+    reasons = []
+    if confidence == "medium":
+        statuses = {PATTERN_EVIDENCE[p]["status"] for p in entry["patterns"]}
+        if "complex_supported" in statuses:
+            reasons.append("complex_pattern_bookkeeping")
+        if "indirect_support" in statuses:
+            reasons.append("indirect_evidence_pattern")
+    return {
+        "patterns": list(entry["patterns"]),
+        "direct": list(entry["direct"]),
+        "indirect": list(entry["indirect"]),
+        "stabilizers": list(entry["stabilizers"]),
+        "volumeEligible": entry.get("volumeEligible", True),
+        "confidence": confidence,
+        "reviewReasons": reasons,
+    }
+
+
 def convert(source_path: Path, completeness: str) -> dict[str, Any]:
     with source_path.open("r", encoding="utf-8") as f:
         source = json.load(f)
@@ -1099,6 +1207,7 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
     if not isinstance(source, list):
         raise ValueError("Expected upstream combined JSON to be an array of exercise objects")
 
+    curated = load_curated_manifest()
     exercises: dict[str, Any] = {}
     for item in source:
         exercise_id = item["id"]
@@ -1106,6 +1215,21 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
         annotation["evidenceRefs"] = evidence_refs_for_annotation(annotation)
         exercises[exercise_id] = {
             "exerciseId": exercise_id,
+            "classification": classify_exercise(item),
+            "annotation": annotation,
+            "source": item,
+        }
+
+    upstream_ids = set(exercises)
+    collisions = sorted(upstream_ids & {entry["id"] for entry in curated})
+    if collisions:
+        raise ValueError(f"Catalog additions collide with upstream IDs: {collisions}")
+    for entry in curated:
+        item = _curated_source(entry)
+        annotation = curated_annotation(entry)
+        annotation["evidenceRefs"] = evidence_refs_for_annotation(annotation)
+        exercises[item["id"]] = {
+            "exerciseId": item["id"],
             "classification": classify_exercise(item),
             "annotation": annotation,
             "source": item,
@@ -1139,7 +1263,9 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
                 "patterns": PATTERN_EVIDENCE,
             },
             "muscleOntology": MUSCLES,
-            "sourceExerciseCount": len(source),
+            "sourceExerciseCount": len(exercises),
+            "upstreamExerciseCount": len(source),
+            "curatedExerciseCount": len(curated),
             "outputExerciseCount": len(exercises),
             "completeness": completeness,
         },

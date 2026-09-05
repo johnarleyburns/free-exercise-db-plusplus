@@ -1,5 +1,15 @@
 {
   "families": {
+    "back_extension": {
+      "aliases": [],
+      "familyId": "back_extension",
+      "name": "Back Extension"
+    },
+    "belt_squat": {
+      "aliases": [],
+      "familyId": "belt_squat",
+      "name": "Belt Squat"
+    },
     "bench_press": {
       "aliases": [
         "bench press"
@@ -13,6 +23,13 @@
       ],
       "familyId": "biceps_curl",
       "name": "Biceps Curl"
+    },
+    "cable_push_pull": {
+      "aliases": [
+        "cable push pull"
+      ],
+      "familyId": "cable_push_pull",
+      "name": "Cable Push-Pull"
     },
     "calf_raise": {
       "aliases": [],
@@ -35,6 +52,11 @@
       "familyId": "chin_up",
       "name": "Chin-Up"
     },
+    "core_stability": {
+      "aliases": [],
+      "familyId": "core_stability",
+      "name": "Core Stability"
+    },
     "deadlift": {
       "aliases": [],
       "familyId": "deadlift",
@@ -45,10 +67,40 @@
       "familyId": "glute_bridge",
       "name": "Glute Bridge"
     },
+    "high_pull": {
+      "aliases": [],
+      "familyId": "high_pull",
+      "name": "High Pull"
+    },
+    "hip_abduction": {
+      "aliases": [],
+      "familyId": "hip_abduction",
+      "name": "Hip Abduction"
+    },
+    "hip_extension": {
+      "aliases": [],
+      "familyId": "hip_extension",
+      "name": "Hip Extension"
+    },
+    "hip_flexion": {
+      "aliases": [],
+      "familyId": "hip_flexion",
+      "name": "Hip Flexion"
+    },
     "hip_thrust": {
       "aliases": [],
       "familyId": "hip_thrust",
       "name": "Hip Thrust"
+    },
+    "horizontal_press": {
+      "aliases": [],
+      "familyId": "horizontal_press",
+      "name": "Horizontal Press"
+    },
+    "knee_flexion": {
+      "aliases": [],
+      "familyId": "knee_flexion",
+      "name": "Knee Flexion"
     },
     "leg_extension": {
       "aliases": [],
@@ -60,6 +112,16 @@
       "familyId": "leg_press",
       "name": "Leg Press"
     },
+    "lunge": {
+      "aliases": [],
+      "familyId": "lunge",
+      "name": "Lunge"
+    },
+    "neck_conditioning": {
+      "aliases": [],
+      "familyId": "neck_conditioning",
+      "name": "Neck Conditioning"
+    },
     "pull_up": {
       "aliases": [
         "pullup",
@@ -67,6 +129,11 @@
       ],
       "familyId": "pull_up",
       "name": "Pull-Up"
+    },
+    "pullover": {
+      "aliases": [],
+      "familyId": "pullover",
+      "name": "Pullover"
     },
     "romanian_deadlift": {
       "aliases": [
@@ -79,6 +146,11 @@
       "aliases": [],
       "familyId": "row",
       "name": "Row"
+    },
+    "shoulder_abduction": {
+      "aliases": [],
+      "familyId": "shoulder_abduction",
+      "name": "Shoulder Abduction"
     },
     "shoulder_press": {
       "aliases": [
@@ -93,6 +165,27 @@
       "familyId": "squat",
       "name": "Squat"
     },
+    "step_up": {
+      "aliases": [
+        "step up"
+      ],
+      "familyId": "step_up",
+      "name": "Step-Up"
+    },
+    "tibialis_raise": {
+      "aliases": [
+        "tibialis dorsiflexion"
+      ],
+      "familyId": "tibialis_raise",
+      "name": "Tibialis Raise"
+    },
+    "torso_rotation": {
+      "aliases": [
+        "rotary torso"
+      ],
+      "familyId": "torso_rotation",
+      "name": "Torso Rotation"
+    },
     "triceps_extension": {
       "aliases": [
         "skull crusher",
@@ -100,6 +193,18 @@
       ],
       "familyId": "triceps_extension",
       "name": "Triceps Extension"
+    },
+    "trunk_rotation": {
+      "aliases": [
+        "torso rotation"
+      ],
+      "familyId": "trunk_rotation",
+      "name": "Trunk Rotation"
+    },
+    "vertical_pull": {
+      "aliases": [],
+      "familyId": "vertical_pull",
+      "name": "Vertical Pull"
     }
   },
   "metadata": {
@@ -116,7 +221,7 @@
       "resistance_type"
     ],
     "generator": "src/relationships/build.py",
-    "projectRelease": "1.5.1",
+    "projectRelease": "1.16.0",
     "relationshipVocabulary": [
       "member_of_family",
       "variation_of",
@@ -128,10 +233,42 @@
     ],
     "semanticNotice": "Taxonomic/descriptive relationships do not imply physiological equivalence or substitution advice.",
     "sourceDatabaseSchemaVersion": "0.3.0",
-    "sourceExerciseCount": 873,
+    "sourceExerciseCount": 927,
     "sourceSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4"
   },
   "relationships": [
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "back_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Back_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "belt_squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Belt_Squat"
+    },
     {
       "confidence": "high",
       "dimensions": {
@@ -1304,6 +1441,22 @@
     {
       "confidence": "high",
       "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "cable_push_pull",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Push_Pull"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "body_position": "seated",
         "equipment": "barbell"
       },
@@ -1317,6 +1470,22 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Barbell_Seated_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Calf-Box_Raise"
     },
     {
       "confidence": "high",
@@ -1383,6 +1552,22 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Dumbbell_Seated_One-Leg_Calf_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "calf_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Horizontal_Calf_Raise"
     },
     {
       "confidence": "high",
@@ -1753,6 +1938,23 @@
     {
       "confidence": "high",
       "dimensions": {
+        "assistance": "assisted",
+        "equipment": "machine"
+      },
+      "familyId": "chin_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Assisted_Chin-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "equipment": "bodyweight"
       },
       "familyId": "chin_up",
@@ -1831,6 +2033,54 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Side_To_Side_Chins"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "core_stability",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Alternating_Jackknife"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "core_stability",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Jump_Slam"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "core_stability",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Side_Plank_with_Cable_Row"
     },
     {
       "confidence": "medium",
@@ -2153,6 +2403,23 @@
     {
       "confidence": "high",
       "dimensions": {
+        "assistance": "assisted",
+        "equipment": "machine"
+      },
+      "familyId": "dip_triceps_bias",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Assisted_Dip"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "equipment": "barbell"
       },
       "familyId": "glute_bridge",
@@ -2185,6 +2452,86 @@
     {
       "confidence": "high",
       "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "high_pull",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_High_Pull"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "hip_abduction",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Hip_Abduction"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "hip_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Hip_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "hip_extension",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Glute_Extension"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "hip_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Hip_Flexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "equipment": "barbell"
       },
       "familyId": "hip_thrust",
@@ -2197,6 +2544,90 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Barbell_Hip_Thrust"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "hip_thrust",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Hip_Thrust"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "flat",
+        "equipment": "cable"
+      },
+      "familyId": "horizontal_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Flat-Bench_Cable_Chest_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "angle": "incline",
+        "equipment": "cable"
+      },
+      "familyId": "horizontal_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Incline_Cable_Chest_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable"
+      },
+      "familyId": "horizontal_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Diagonal_Cable_Chest_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable"
+      },
+      "familyId": "knee_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Standing_Leg_Curl"
     },
     {
       "confidence": "high",
@@ -2278,6 +2709,70 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Smith_Machine_Leg_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "leg_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squat_Press_Machine"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "lunge",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Forward_Lunge"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "lunge",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Lateral_Lunge"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "neck_conditioning",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Four-Way_Neck_Machine"
     },
     {
       "confidence": "high",
@@ -2379,6 +2874,22 @@
     {
       "confidence": "high",
       "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "pullover",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Pullover"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "equipment": "barbell"
       },
       "familyId": "romanian_deadlift",
@@ -2407,6 +2918,23 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Romanian_Deadlift_from_Deficit"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "romanian_deadlift",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single-Leg_Single-Arm_Cable_Romanian_Deadlift"
     },
     {
       "confidence": "medium",
@@ -2439,6 +2967,23 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Alternating_Renegade_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "cable"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Seated_High-to-Low_Cable_Row"
     },
     {
       "confidence": "medium",
@@ -2754,6 +3299,120 @@
       "sourceExerciseId": "Lying_T-Bar_Row"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Chest-Supported_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Diverging_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_High_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Low_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Seated_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_T-Bar_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "One-Arm_Bent-Over_Cable_Row"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "dumbbell",
@@ -2905,6 +3564,24 @@
       "sourceExerciseId": "Smith_Machine_Bent_Over_Row"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable",
+        "laterality": "unilateral"
+      },
+      "familyId": "row",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_One-Arm_Cable_Row"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "barbell"
@@ -2968,6 +3645,23 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Two-Arm_Kettlebell_Row"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "machine"
+      },
+      "familyId": "shoulder_abduction",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Standing_Lateral_Raise"
     },
     {
       "confidence": "medium",
@@ -3066,6 +3760,22 @@
       "sourceExerciseId": "Bradford_Rocky_Presses"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Curl-to-Press"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "cable"
@@ -3162,6 +3872,23 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Kettlebell_Seesaw_Press"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_press",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Cable_Shoulder_Press"
     },
     {
       "confidence": "medium",
@@ -3598,6 +4325,55 @@
       "sourceExerciseId": "Box_Squat_with_Chains"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable",
+        "load_position": "front"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Front_Squat"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Squat"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Squat-to-Press"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "machine"
@@ -3864,6 +4640,23 @@
     {
       "confidence": "medium",
       "dimensions": {
+        "equipment": "machine",
+        "stance": "narrow"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/build.py",
+          "type": "rule"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Narrow_Stance_Hack_Squats"
+    },
+    {
+      "confidence": "medium",
+      "dimensions": {
         "equipment": "barbell"
       },
       "familyId": "squat",
@@ -3928,6 +4721,22 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Overhead_Squat"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Pendulum_Squat"
     },
     {
       "confidence": "medium",
@@ -4062,6 +4871,22 @@
       "sourceExerciseId": "Speed_Squats"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Squat-Lunge_Machine"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "barbell",
@@ -4127,6 +4952,22 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Squats_-_With_Bands"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "squat",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "V-Squat"
     },
     {
       "confidence": "medium",
@@ -4209,6 +5050,70 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Zercher_Squats"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "step_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Crossover_Step-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "step_up",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Step-Up"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "tibialis_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Tibialis_Dorsiflexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "torso_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Rotary_Torso"
     },
     {
       "confidence": "high",
@@ -4887,6 +5792,105 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Triceps_Pushdown_-_V-Bar_Attachment"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "trunk_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Oblique_Crunch"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable"
+      },
+      "familyId": "trunk_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Half-Kneeling_Cable_Lift"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "kneeling",
+        "equipment": "cable"
+      },
+      "familyId": "trunk_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Kneeling_Cable_Chop"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "cable"
+      },
+      "familyId": "trunk_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Cable_Rotation"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "vertical_pull",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Alternating_Cable_Lat_Pulldown"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "machine"
+      },
+      "familyId": "vertical_pull",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Machine_Lat_Pulldown"
     }
   ],
   "schemaVersion": "0.1.0"

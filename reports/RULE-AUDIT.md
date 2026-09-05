@@ -1,71 +1,72 @@
 # DB++ Rule Quality Audit
 
-- Recognized pattern uses: **671**
-- High-confidence recognized uses: **586**
-- Medium complex-supported uses: **72**
-- Medium indirect-support uses: **13**
+- Recognized pattern uses: **732**
+- High-confidence recognized uses: **645**
+- Medium complex-supported uses: **73**
+- Medium indirect-support uses: **14**
 - Medium provisional uses: **0**
 
 ## Pattern confidence distribution
 
 | Pattern | Evidence | Uses | High | Medium | Examples |
 |---|---|---:|---:|---:|---|
-| `elbow_flexion` | supported | 58 | 58 | 0 | Alternate Incline Dumbbell Curl, Barbell Curl, Barbell Curls Lying Against An Incline, Cable Preacher Curl |
-| `trunk_flexion` | supported | 48 | 48 | 0 | 3/4 Sit-Up, Ab Crunch Machine, Air Bike, Alternate Heel Touchers |
+| `elbow_flexion` | supported | 59 | 59 | 0 | Alternate Incline Dumbbell Curl, Barbell Curl, Barbell Curls Lying Against An Incline, Cable Preacher Curl |
+| `trunk_flexion` | supported | 50 | 50 | 0 | 3/4 Sit-Up, Ab Crunch Machine, Air Bike, Alternate Heel Touchers |
+| `squat` | supported | 49 | 49 | 0 | Barbell Full Squat, Barbell Squat, Barbell Squat To A Bench, Bodyweight Squat |
+| `horizontal_pull` | supported | 48 | 48 | 0 | Alternating Kettlebell Row, Alternating Renegade Row, Barbell Rear Delt Row, Bent Over Barbell Row |
 | `elbow_extension` | supported | 44 | 44 | 0 | Band Skull Crusher, Body-Up, Body Tricep Press, Cable Incline Pushdown |
-| `squat` | supported | 44 | 44 | 0 | Barbell Full Squat, Barbell Squat, Barbell Squat To A Bench, Bodyweight Squat |
-| `horizontal_pull` | supported | 39 | 39 | 0 | Alternating Kettlebell Row, Alternating Renegade Row, Barbell Rear Delt Row, Bent Over Barbell Row |
-| `horizontal_press` | supported | 33 | 33 | 0 | Barbell Bench Press - Medium Grip, Barbell Guillotine Bench Press, Bench Press - Powerlifting, Bench Press - With Bands |
-| `vertical_press` | supported | 30 | 30 | 0 | Alternating Cable Shoulder Press, Alternating Kettlebell Press, Anti-Gravity Press, Arnold Dumbbell Press |
-| `vertical_pull` | supported | 21 | 21 | 0 | Band Assisted Pull-Up, Chin-Up, Close-Grip Front Lat Pulldown, Full Range-Of-Motion Lat Pulldown |
+| `horizontal_press` | supported | 36 | 36 | 0 | Barbell Bench Press - Medium Grip, Barbell Guillotine Bench Press, Bench Press - Powerlifting, Bench Press - With Bands |
+| `vertical_press` | supported | 32 | 32 | 0 | Alternating Cable Shoulder Press, Alternating Kettlebell Press, Anti-Gravity Press, Arnold Dumbbell Press |
+| `vertical_pull` | supported | 24 | 24 | 0 | Band Assisted Pull-Up, Chin-Up, Close-Grip Front Lat Pulldown, Full Range-Of-Motion Lat Pulldown |
 | `conventional_deadlift` | supported | 17 | 17 | 0 | Axle Deadlift, Barbell Deadlift, Cable Deadlifts, Car Deadlift |
+| `incline_press` | supported | 16 | 16 | 0 | Barbell Incline Bench Press - Medium Grip, Hammer Grip Incline DB Bench Press, Incline Bench Pull, Incline Cable Chest Press |
+| `lunge` | supported | 16 | 16 | 0 | Barbell Lunge, Barbell Side Split Squat, Barbell Walking Lunge, Bodyweight Walking Lunge |
+| `shoulder_abduction` | supported | 16 | 16 | 0 | Alternating Deltoid Raise, Bent Over Low-Pulley Side Lateral, Cable Seated Lateral Raise, Dumbbell Lying One-Arm Rear Lateral Raise |
 | `chest_fly` | supported | 15 | 15 | 0 | Around The Worlds, Bodyweight Flyes, Butterfly, Cable Crossover |
-| `incline_press` | supported | 15 | 15 | 0 | Barbell Incline Bench Press - Medium Grip, Hammer Grip Incline DB Bench Press, Incline Bench Pull, Incline Cable Chest Press |
-| `shoulder_abduction` | supported | 15 | 15 | 0 | Alternating Deltoid Raise, Bent Over Low-Pulley Side Lateral, Cable Seated Lateral Raise, Dumbbell Lying One-Arm Rear Lateral Raise |
+| `hip_extension` | supported | 14 | 14 | 0 | Barbell Glute Bridge, Barbell Hip Thrust, Butt Lift (Bridge), Glute Kickback |
 | `horizontal_press_triceps_bias` | supported | 14 | 14 | 0 | Alternating Floor Press, Board Press, Chain Press, Close-Grip Dumbbell Press |
-| `lunge` | supported | 13 | 13 | 0 | Barbell Lunge, Barbell Side Split Squat, Barbell Walking Lunge, Bodyweight Walking Lunge |
+| `plantar_flexion_straight_knee` | supported | 13 | 13 | 0 | Calf Press, Calf Raise On A Dumbbell, Calf Raises - With Bands, Donkey Calf Raises |
+| `trunk_rotation` | supported | 13 | 13 | 0 | Cable Judo Flip, Cable Russian Twists, Landmine 180's, London Bridges |
+| `hip_hinge` | supported | 12 | 12 | 0 | Band Good Morning, Band Good Morning (Pull Through), Good Morning, Good Morning off Pins |
 | `shoulder_flexion` | supported | 12 | 12 | 0 | Barbell Incline Shoulder Raise, Dumbbell Incline Shoulder Raise, Dumbbell Raise, Front Cable Raise |
-| `hip_extension` | supported | 11 | 11 | 0 | Barbell Glute Bridge, Barbell Hip Thrust, Butt Lift (Bridge), Glute Kickback |
-| `hip_hinge` | supported | 11 | 11 | 0 | Band Good Morning, Band Good Morning (Pull Through), Good Morning, Good Morning off Pins |
-| `plantar_flexion_straight_knee` | supported | 11 | 11 | 0 | Calf Press, Calf Raise On A Dumbbell, Calf Raises - With Bands, Donkey Calf Raises |
 | `reverse_fly` | supported | 10 | 10 | 0 | Back Flyes - With Bands, Band Pull Apart, Bent Over Dumbbell Rear Delt Raise With Head On Bench, Cable Rear Delt Fly |
 | `shrug` | supported | 10 | 10 | 0 | Barbell Shrug, Barbell Shrug Behind The Back, Cable Shrugs, Calf-Machine Shoulder Shrug |
-| `trunk_rotation` | supported | 9 | 9 | 0 | Cable Judo Flip, Cable Russian Twists, Landmine 180's, London Bridges |
-| `anti_extension` | supported | 7 | 7 | 0 | Ab Roller, Barbell Ab Rollout, Barbell Ab Rollout - On Knees, Barbell Rollout from Bench |
+| `anti_extension` | supported | 8 | 8 | 0 | Ab Roller, Barbell Ab Rollout, Barbell Ab Rollout - On Knees, Barbell Rollout from Bench |
+| `knee_flexion` | supported | 8 | 8 | 0 | Ball Leg Curl, Floor Glute-Ham Raise, Lying Leg Curls, Platform Hamstring Slides |
+| `lateral_flexion` | supported | 8 | 8 | 0 | Barbell Side Bend, Bosu Ball Cable Crunch With Side Bends, Dumbbell Side Bend, One-Arm High-Pulley Cable Side Bends |
 | `decline_press` | supported | 7 | 7 | 0 | Decline Barbell Bench Press, Decline Dumbbell Bench Press, Decline Push-Up, Decline Smith Press |
-| `knee_flexion` | supported | 7 | 7 | 0 | Ball Leg Curl, Floor Glute-Ham Raise, Lying Leg Curls, Platform Hamstring Slides |
-| `lateral_flexion` | supported | 7 | 7 | 0 | Barbell Side Bend, Bosu Ball Cable Crunch With Side Bends, Dumbbell Side Bend, One-Arm High-Pulley Cable Side Bends |
 | `elbow_flexion_brachioradialis_bias` | supported | 6 | 6 | 0 | Alternate Hammer Curl, Cable Hammer Curls - Rope Attachment, Cross Body Hammer Curl, Hammer Curls |
-| `pullover` | supported | 5 | 5 | 0 | Bent-Arm Barbell Pullover, Bent-Arm Dumbbell Pullover, Front Raise And Pullover, Straight-Arm Dumbbell Pullover |
-| `upright_row` | supported | 5 | 5 | 0 | Dumbbell One-Arm Upright Row, Smith Machine One-Arm Upright Row, Smith Machine Upright Row, Standing Dumbbell Upright Row |
-| `dip_triceps_bias` | supported | 4 | 4 | 0 | Bench Dips, Dip Machine, Dips - Triceps Version, Weighted Bench Dip |
+| `pullover` | supported | 6 | 6 | 0 | Bent-Arm Barbell Pullover, Bent-Arm Dumbbell Pullover, Front Raise And Pullover, Straight-Arm Dumbbell Pullover |
+| `squat_quad_bias` | supported | 6 | 6 | 0 | Barbell Hack Squat, Front Squat (Clean Grip), Front Squats With Two Kettlebells, Hack Squat |
+| `upright_row` | supported | 6 | 6 | 0 | Dumbbell One-Arm Upright Row, Smith Machine One-Arm Upright Row, Smith Machine Upright Row, Standing Dumbbell Upright Row |
+| `dip_triceps_bias` | supported | 5 | 5 | 0 | Bench Dips, Dip Machine, Dips - Triceps Version, Weighted Bench Dip |
+| `hip_flexion` | supported | 5 | 5 | 0 | Flat Bench Lying Leg Raise, Flutter Kicks, Hanging Leg Raise, Hip Flexion with Band |
+| `leg_press` | supported | 5 | 5 | 0 | Calf Press On The Leg Press Machine, Leg Press, Narrow Stance Leg Press, Smith Machine Leg Press |
+| `step_up` | supported | 5 | 5 | 0 | Barbell Step Ups, Dumbbell Step Ups, Step-up with Knee Raise, Cable Step-Up |
+| `trunk_extension` | supported | 5 | 5 | 0 | Hyperextensions (Back Extensions), Hyperextensions With No Hyperextension Bench, Reverse Hyperextension, Weighted Ball Hyperextension |
 | `grip` | supported | 4 | 4 | 0 | Plate Pinch, Standing Olympic Plate Hand Squeeze, Wrist Roller, Wrist Rotations with Straight Bar |
-| `hip_flexion` | supported | 4 | 4 | 0 | Flat Bench Lying Leg Raise, Flutter Kicks, Hanging Leg Raise, Hip Flexion with Band |
+| `neck_extension` | supported | 4 | 4 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Down Plate Neck Resistance, Seated Head Harness Neck Resistance, Four-Way Neck Machine |
 | `shoulder_external_rotation` | supported | 4 | 4 | 0 | Cuban Press, External Rotation, External Rotation with Band, External Rotation with Cable |
-| `squat_quad_bias` | supported | 4 | 4 | 0 | Barbell Hack Squat, Front Squat (Clean Grip), Front Squats With Two Kettlebells, Hack Squat |
 | `sumo_deadlift` | supported | 4 | 4 | 0 | Reverse Band Sumo Deadlift, Sumo Deadlift, Sumo Deadlift with Bands, Sumo Deadlift with Chains |
-| `trunk_extension` | supported | 4 | 4 | 0 | Hyperextensions (Back Extensions), Hyperextensions With No Hyperextension Bench, Reverse Hyperextension, Weighted Ball Hyperextension |
 | `dip_chest_bias` | supported | 3 | 3 | 0 | Dips - Chest Version, Parallel Bar Dip, Ring Dips |
+| `hip_abduction` | supported | 3 | 3 | 0 | Monster Walk, Thigh Abductor, Cable Hip Abduction |
 | `hip_adduction` | supported | 3 | 3 | 0 | Band Hip Adductions, Cable Hip Adduction, Thigh Adductor |
-| `leg_press` | supported | 3 | 3 | 0 | Calf Press On The Leg Press Machine, Leg Press, Smith Machine Leg Press |
-| `neck_extension` | supported | 3 | 3 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Down Plate Neck Resistance, Seated Head Harness Neck Resistance |
-| `step_up` | supported | 3 | 3 | 0 | Barbell Step Ups, Dumbbell Step Ups, Step-up with Knee Raise |
+| `neck_flexion` | supported | 3 | 3 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Up Plate Neck Resistance, Four-Way Neck Machine |
 | `glute_ham_raise` | supported | 2 | 2 | 0 | Glute Ham Raise, Natural Glute Ham Raise |
-| `hip_abduction` | supported | 2 | 2 | 0 | Monster Walk, Thigh Abductor |
 | `knee_extension` | supported | 2 | 2 | 0 | Leg Extensions, Single-Leg Leg Extension |
-| `neck_flexion` | supported | 2 | 2 | 0 | Isometric Neck Exercise - Front And Back, Lying Face Up Plate Neck Resistance |
+| `neck_lateral_flexion` | supported | 2 | 2 | 0 | Isometric Neck Exercise - Sides, Four-Way Neck Machine |
 | `plantar_flexion_bent_knee` | supported | 2 | 2 | 0 | Barbell Seated Calf Raise, Seated Calf Raise |
 | `rack_pull` | supported | 2 | 2 | 0 | Rack Pull with Bands, Rack Pulls |
 | `shoulder_internal_rotation` | supported | 2 | 2 | 0 | Cable Internal Rotation, Internal Rotation with Band |
 | `battle_ropes` | supported | 1 | 1 | 0 | Battling Ropes |
+| `dorsiflexion` | supported | 1 | 1 | 0 | Machine Tibialis Dorsiflexion |
 | `forearm_pronation` | supported | 1 | 1 | 0 | Dumbbell Lying Pronation |
 | `forearm_supination` | supported | 1 | 1 | 0 | Dumbbell Lying Supination |
-| `neck_lateral_flexion` | supported | 1 | 1 | 0 | Isometric Neck Exercise - Sides |
 | `sled_push` | supported | 1 | 1 | 0 | Sled Push |
 | `olympic_clean` | complex_supported | 10 | 0 | 10 | Alternating Hang Clean, Clean, Clean from Blocks, Dumbbell Clean |
 | `kettlebell_clean` | complex_supported | 8 | 0 | 8 | Bottoms-Up Clean From The Hang Position, Double Kettlebell Alternating Hang Clean, Kettlebell Dead Clean, Kettlebell Hang Clean |
 | `olympic_snatch` | complex_supported | 8 | 0 | 8 | Hang Snatch, Hang Snatch - Below Knees, Muscle Snatch, Power Snatch |
-| `push_press` | complex_supported | 6 | 0 | 6 | Double Kettlebell Push Press, Landmine Linear Jammer, One-Arm Kettlebell Push Press, Push Press |
+| `push_press` | complex_supported | 7 | 0 | 7 | Double Kettlebell Push Press, Landmine Linear Jammer, One-Arm Kettlebell Push Press, Push Press |
 | `kettlebell_jerk` | complex_supported | 4 | 0 | 4 | Double Kettlebell Jerk, One-Arm Kettlebell Jerk, One-Arm Kettlebell Split Jerk, Two-Arm Kettlebell Jerk |
 | `sled_pull` | indirect_support | 4 | 0 | 4 | Backward Drag, Bear Crawl Sled Drags, Sled Drag - Harness, Sled Overhead Backward Walk |
 | `kettlebell_snatch` | complex_supported | 3 | 0 | 3 | Double Kettlebell Snatch, One-Arm Kettlebell Snatch, One-Arm Kettlebell Split Snatch |
@@ -78,6 +79,7 @@
 | `kettlebell_figure8` | complex_supported | 2 | 0 | 2 | Kettlebell Figure 8, Kettlebell Pass Between The Legs |
 | `loaded_carry` | complex_supported | 2 | 0 | 2 | Rickshaw Carry, Yoke Walk |
 | `loaded_object_load` | complex_supported | 2 | 0 | 2 | Keg Load, Sandbag Load |
+| `medicine_ball_slam` | indirect_support | 2 | 0 | 2 | One-Arm Medicine Ball Slam, Cable Jump Slam |
 | `muscle_up` | indirect_support | 2 | 0 | 2 | Kipping Muscle Up, Muscle Up |
 | `snatch_balance` | complex_supported | 2 | 0 | 2 | Heaving Snatch Balance, Snatch Balance |
 | `bent_press` | indirect_support | 1 | 0 | 1 | Bent Press |
@@ -87,7 +89,6 @@
 | `kettlebell_pirate_ships` | complex_supported | 1 | 0 | 1 | Kettlebell Pirate Ships |
 | `kettlebell_sumo_high_pull` | complex_supported | 1 | 0 | 1 | Kettlebell Sumo High Pull |
 | `kettlebell_swing` | complex_supported | 1 | 0 | 1 | One-Arm Kettlebell Swings |
-| `medicine_ball_slam` | indirect_support | 1 | 0 | 1 | One-Arm Medicine Ball Slam |
 | `olympic_clean_pull` | complex_supported | 1 | 0 | 1 | Clean Pull |
 | `olympic_snatch_pull` | complex_supported | 1 | 0 | 1 | Snatch Pull |
 | `power_stairs` | complex_supported | 1 | 0 | 1 | Power Stairs |

@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.15.4**
+Current release: **v1.16.0**
 
 ## Build an app with DB++
 
@@ -85,6 +85,12 @@ Each exercise preserves the complete upstream record under `source` and adds:
 - `volumeEligible`;
 - mapping confidence and review reasons;
 - evidence references.
+
+The vendor-neutral catalog expansion process is documented in
+[docs/CATALOG-EXPANSION.md](docs/CATALOG-EXPANSION.md). It includes the full
+reviewed catalog of additional cable, functional-trainer, selectorized, and
+plate-loaded exercises, including `Cable_Push_Pull`, plus the annual procedure
+for reviewing current manufacturer catalogs.
 
 DB++ uses one effective-set convention:
 
@@ -263,6 +269,7 @@ short and stable for consumers.
 - [Python package API](packages/python/README.md)
 - [R research API](docs/R-API.md)
 - [Methodology](docs/METHODOLOGY.md)
+- [Canonical catalog expansion](docs/CATALOG-EXPANSION.md)
 - [Design](docs/DESIGN.md)
 - [Evidence policy](docs/EVIDENCE.md)
 - [1.0 compatibility contract](docs/COMPATIBILITY.md)

@@ -137,6 +137,9 @@ jobs:
       - name: Verify release contract
         run: python tests/test_release_contract.py free-exercise-db-plusplus.json
 
+      - name: Verify catalog expansion contract
+        run: python tests/test_catalog_expansion.py free-exercise-db-plusplus.json exercise-relationships.json
+
       - name: Verify golden mappings
         run: python tests/test_golden_mappings.py free-exercise-db-plusplus.json
 

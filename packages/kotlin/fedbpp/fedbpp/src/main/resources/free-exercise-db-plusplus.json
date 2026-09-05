@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-08-30T04:49:41.794001+00:00",
+    "generatedAt": "2026-09-05T23:08:24.570112+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -406,6 +406,13 @@
           "doi": "10.1016/j.jelekin.2015.10.014",
           "url": "https://pubmed.ncbi.nlm.nih.gov/26589588/"
         },
+        "dorsiflexion_tibialis_emg_2019": {
+          "title": "Neuromuscular effects of dorsiflexor training with and without blood flow restriction",
+          "type": "experimental",
+          "pmid": "31467996",
+          "doi": "10.1016/j.heliyon.2019.e02341",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31467996/"
+        },
         "repetition_continuum_2021": {
           "title": "Loading Recommendations for Muscle Strength, Hypertrophy, and Local Endurance: A Re-Examination of the Repetition Continuum",
           "type": "narrative_review",
@@ -742,9 +749,11 @@
           ]
         },
         "dorsiflexion": {
-          "status": "provisional",
-          "summary": "Rule is biomechanically plausible but has not yet been assigned targeted pattern-level literature in DB++.",
-          "references": []
+          "status": "supported",
+          "summary": "Dorsiflexion training studies directly record tibialis anterior activation during resisted dorsiflexion contractions.",
+          "references": [
+            "dorsiflexion_tibialis_emg_2019"
+          ]
         },
         "anti_extension": {
           "status": "supported",
@@ -1144,8 +1153,10 @@
       "rotator_cuff",
       "hip_flexors"
     ],
-    "sourceExerciseCount": 873,
-    "outputExerciseCount": 873,
+    "sourceExerciseCount": 927,
+    "upstreamExerciseCount": 873,
+    "curatedExerciseCount": 54,
+    "outputExerciseCount": 927,
     "completeness": "full"
   },
   "exercises": {
@@ -29056,24 +29067,23 @@
       },
       "annotation": {
         "patterns": [
-          "horizontal_pull"
+          "squat_quad_bias"
         ],
         "direct": [
-          "middle_back",
-          "lats"
+          "quadriceps"
         ],
         "indirect": [
-          "biceps",
-          "shoulders"
+          "glutes",
+          "adductors"
         ],
         "stabilizers": [
-          "forearms"
+          "lower_back"
         ],
-        "volumeEligible": true,
         "confidence": "high",
         "reviewReasons": [],
+        "volumeEligible": true,
         "evidenceRefs": [
-          "pattern:horizontal_pull"
+          "pattern:squat_quad_bias"
         ]
       },
       "source": {
@@ -29123,24 +29133,21 @@
       },
       "annotation": {
         "patterns": [
-          "horizontal_pull"
+          "leg_press"
         ],
         "direct": [
-          "middle_back",
-          "lats"
+          "quadriceps",
+          "glutes"
         ],
         "indirect": [
-          "biceps",
-          "shoulders"
+          "adductors"
         ],
-        "stabilizers": [
-          "forearms"
-        ],
-        "volumeEligible": true,
+        "stabilizers": [],
         "confidence": "high",
         "reviewReasons": [],
+        "volumeEligible": true,
         "evidenceRefs": [
-          "pattern:horizontal_pull"
+          "pattern:leg_press"
         ]
       },
       "source": {
@@ -52868,6 +52875,3159 @@
           "Zottman_Preacher_Curl/1.jpg"
         ],
         "id": "Zottman_Preacher_Curl"
+      }
+    },
+    "Cable_Push_Pull": {
+      "exerciseId": "Cable_Push_Pull",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_press",
+          "horizontal_pull"
+        ],
+        "direct": [
+          "chest",
+          "middle_back"
+        ],
+        "indirect": [
+          "triceps",
+          "shoulders",
+          "lats",
+          "biceps"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "forearms",
+          "glutes",
+          "hamstrings"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_press",
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Cable_Push_Pull",
+        "name": "Cable Push-Pull",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "chest",
+          "middle_back"
+        ],
+        "secondaryMuscles": [
+          "triceps",
+          "shoulders",
+          "lats",
+          "biceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Push-Pull and choose a controlled load.",
+          "Perform Cable Push-Pull through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Cable Push Pull",
+          "Cable Cross Push-Pull",
+          "Split-Stance Cable Push-Pull"
+        ]
+      }
+    },
+    "Standing_Cable_Rotation": {
+      "exerciseId": "Standing_Cable_Rotation",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_rotation"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [],
+        "stabilizers": [
+          "glutes",
+          "shoulders"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_rotation"
+        ]
+      },
+      "source": {
+        "id": "Standing_Cable_Rotation",
+        "name": "Standing Cable Rotation",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the cable station for Standing Cable Rotation and choose a controlled load.",
+          "Perform Standing Cable Rotation through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Half-Kneeling_Cable_Lift": {
+      "exerciseId": "Half-Kneeling_Cable_Lift",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_rotation"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [
+          "shoulders"
+        ],
+        "stabilizers": [
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_rotation"
+        ]
+      },
+      "source": {
+        "id": "Half-Kneeling_Cable_Lift",
+        "name": "Half-Kneeling Cable Lift",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Half-Kneeling Cable Lift and choose a controlled load.",
+          "Perform Half-Kneeling Cable Lift through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Kneeling_Cable_Chop": {
+      "exerciseId": "Kneeling_Cable_Chop",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_rotation"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [
+          "shoulders"
+        ],
+        "stabilizers": [
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_rotation"
+        ]
+      },
+      "source": {
+        "id": "Kneeling_Cable_Chop",
+        "name": "Kneeling Cable Chop",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Kneeling Cable Chop and choose a controlled load.",
+          "Perform Kneeling Cable Chop through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_High_Pull": {
+      "exerciseId": "Cable_High_Pull",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "upright_row"
+        ],
+        "direct": [
+          "shoulders",
+          "traps"
+        ],
+        "indirect": [
+          "biceps"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:upright_row"
+        ]
+      },
+      "source": {
+        "id": "Cable_High_Pull",
+        "name": "Cable High Pull",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "shoulders",
+          "traps"
+        ],
+        "secondaryMuscles": [
+          "biceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable High Pull and choose a controlled load.",
+          "Perform Cable High Pull through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Standing_One-Arm_Cable_Row": {
+      "exerciseId": "Standing_One-Arm_Cable_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Standing_One-Arm_Cable_Row",
+        "name": "Standing One-Arm Cable Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Standing One-Arm Cable Row and choose a controlled load.",
+          "Perform Standing One-Arm Cable Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Standing Single-Arm Cable Row"
+        ]
+      }
+    },
+    "One-Arm_Bent-Over_Cable_Row": {
+      "exerciseId": "One-Arm_Bent-Over_Cable_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms",
+          "lower_back",
+          "hamstrings"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "One-Arm_Bent-Over_Cable_Row",
+        "name": "One-Arm Bent-Over Cable Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for One-Arm Bent-Over Cable Row and choose a controlled load.",
+          "Perform One-Arm Bent-Over Cable Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Single-Arm Bent-Over Cable Row"
+        ]
+      }
+    },
+    "Alternating_Cable_Lat_Pulldown": {
+      "exerciseId": "Alternating_Cable_Lat_Pulldown",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "vertical_pull"
+        ],
+        "direct": [
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "middle_back"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:vertical_pull"
+        ]
+      },
+      "source": {
+        "id": "Alternating_Cable_Lat_Pulldown",
+        "name": "Alternating Cable Lat Pulldown",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "middle_back"
+        ],
+        "instructions": [
+          "Set up the cable station for Alternating Cable Lat Pulldown and choose a controlled load.",
+          "Perform Alternating Cable Lat Pulldown through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Alternating_Seated_High-to-Low_Cable_Row": {
+      "exerciseId": "Alternating_Seated_High-to-Low_Cable_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms",
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Alternating_Seated_High-to-Low_Cable_Row",
+        "name": "Alternating Seated High-to-Low Cable Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Alternating Seated High-to-Low Cable Row and choose a controlled load.",
+          "Perform Alternating Seated High-to-Low Cable Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Alternating_Flat-Bench_Cable_Chest_Press": {
+      "exerciseId": "Alternating_Flat-Bench_Cable_Chest_Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_press"
+        ],
+        "direct": [
+          "chest"
+        ],
+        "indirect": [
+          "triceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_press"
+        ]
+      },
+      "source": {
+        "id": "Alternating_Flat-Bench_Cable_Chest_Press",
+        "name": "Alternating Flat-Bench Cable Chest Press",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "chest"
+        ],
+        "secondaryMuscles": [
+          "triceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Alternating Flat-Bench Cable Chest Press and choose a controlled load.",
+          "Perform Alternating Flat-Bench Cable Chest Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Alternating_Incline_Cable_Chest_Press": {
+      "exerciseId": "Alternating_Incline_Cable_Chest_Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "incline_press"
+        ],
+        "direct": [
+          "chest",
+          "shoulders"
+        ],
+        "indirect": [
+          "triceps"
+        ],
+        "stabilizers": [
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:incline_press"
+        ]
+      },
+      "source": {
+        "id": "Alternating_Incline_Cable_Chest_Press",
+        "name": "Alternating Incline Cable Chest Press",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "chest",
+          "shoulders"
+        ],
+        "secondaryMuscles": [
+          "triceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Alternating Incline Cable Chest Press and choose a controlled load.",
+          "Perform Alternating Incline Cable Chest Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Standing_Diagonal_Cable_Chest_Press": {
+      "exerciseId": "Standing_Diagonal_Cable_Chest_Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_press"
+        ],
+        "direct": [
+          "chest"
+        ],
+        "indirect": [
+          "triceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_press"
+        ]
+      },
+      "source": {
+        "id": "Standing_Diagonal_Cable_Chest_Press",
+        "name": "Standing Diagonal Cable Chest Press",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "chest"
+        ],
+        "secondaryMuscles": [
+          "triceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Standing Diagonal Cable Chest Press and choose a controlled load.",
+          "Perform Standing Diagonal Cable Chest Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Kneeling_Cable_Shoulder_Press": {
+      "exerciseId": "Kneeling_Cable_Shoulder_Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "vertical_press"
+        ],
+        "direct": [
+          "shoulders"
+        ],
+        "indirect": [
+          "triceps"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:vertical_press"
+        ]
+      },
+      "source": {
+        "id": "Kneeling_Cable_Shoulder_Press",
+        "name": "Kneeling Cable Shoulder Press",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "shoulders"
+        ],
+        "secondaryMuscles": [
+          "triceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Kneeling Cable Shoulder Press and choose a controlled load.",
+          "Perform Kneeling Cable Shoulder Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Curl-to-Press": {
+      "exerciseId": "Cable_Curl-to-Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "elbow_flexion",
+          "vertical_press"
+        ],
+        "direct": [
+          "biceps",
+          "shoulders"
+        ],
+        "indirect": [
+          "triceps"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:elbow_flexion",
+          "pattern:vertical_press"
+        ]
+      },
+      "source": {
+        "id": "Cable_Curl-to-Press",
+        "name": "Cable Curl-to-Press",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "secondaryMuscles": [
+          "triceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Curl-to-Press and choose a controlled load.",
+          "Perform Cable Curl-to-Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Hip_Flexion": {
+      "exerciseId": "Cable_Hip_Flexion",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_flexion"
+        ],
+        "direct": [
+          "hip_flexors"
+        ],
+        "indirect": [
+          "abdominals"
+        ],
+        "stabilizers": [
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_flexion"
+        ]
+      },
+      "source": {
+        "id": "Cable_Hip_Flexion",
+        "name": "Cable Hip Flexion",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "hip_flexors"
+        ],
+        "secondaryMuscles": [
+          "abdominals"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Hip Flexion and choose a controlled load.",
+          "Perform Cable Hip Flexion through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Hip_Abduction": {
+      "exerciseId": "Cable_Hip_Abduction",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_abduction"
+        ],
+        "direct": [
+          "abductors"
+        ],
+        "indirect": [
+          "glutes"
+        ],
+        "stabilizers": [
+          "abdominals"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_abduction"
+        ]
+      },
+      "source": {
+        "id": "Cable_Hip_Abduction",
+        "name": "Cable Hip Abduction",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abductors"
+        ],
+        "secondaryMuscles": [
+          "glutes"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Hip Abduction and choose a controlled load.",
+          "Perform Cable Hip Abduction through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Standing_Leg_Curl": {
+      "exerciseId": "Cable_Standing_Leg_Curl",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "knee_flexion"
+        ],
+        "direct": [
+          "hamstrings"
+        ],
+        "indirect": [
+          "calves"
+        ],
+        "stabilizers": [
+          "glutes"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:knee_flexion"
+        ]
+      },
+      "source": {
+        "id": "Cable_Standing_Leg_Curl",
+        "name": "Cable Standing Leg Curl",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "hamstrings"
+        ],
+        "secondaryMuscles": [
+          "calves"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Standing Leg Curl and choose a controlled load.",
+          "Perform Cable Standing Leg Curl through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Hip_Extension": {
+      "exerciseId": "Cable_Hip_Extension",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_extension"
+        ],
+        "direct": [
+          "glutes"
+        ],
+        "indirect": [
+          "hamstrings"
+        ],
+        "stabilizers": [
+          "lower_back"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_extension"
+        ]
+      },
+      "source": {
+        "id": "Cable_Hip_Extension",
+        "name": "Cable Hip Extension",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "hamstrings"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Hip Extension and choose a controlled load.",
+          "Perform Cable Hip Extension through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Squat": {
+      "exerciseId": "Cable_Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "lower_back",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat"
+        ]
+      },
+      "source": {
+        "id": "Cable_Squat",
+        "name": "Cable Squat",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Squat and choose a controlled load.",
+          "Perform Cable Squat through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Front_Squat": {
+      "exerciseId": "Cable_Front_Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "lower_back",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat"
+        ]
+      },
+      "source": {
+        "id": "Cable_Front_Squat",
+        "name": "Cable Front Squat",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Front Squat and choose a controlled load.",
+          "Perform Cable Front Squat through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Squat-to-Press": {
+      "exerciseId": "Cable_Squat-to-Press",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "push_press"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes",
+          "shoulders",
+          "triceps"
+        ],
+        "indirect": [
+          "hamstrings",
+          "calves"
+        ],
+        "stabilizers": [
+          "abdominals",
+          "traps"
+        ],
+        "volumeEligible": true,
+        "confidence": "medium",
+        "reviewReasons": [
+          "complex_pattern_bookkeeping"
+        ],
+        "evidenceRefs": [
+          "pattern:push_press"
+        ]
+      },
+      "source": {
+        "id": "Cable_Squat-to-Press",
+        "name": "Cable Squat-to-Press",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes",
+          "shoulders",
+          "triceps"
+        ],
+        "secondaryMuscles": [
+          "hamstrings",
+          "calves"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Squat-to-Press and choose a controlled load.",
+          "Perform Cable Squat-to-Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Forward_Lunge": {
+      "exerciseId": "Cable_Forward_Lunge",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "lunge"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:lunge"
+        ]
+      },
+      "source": {
+        "id": "Cable_Forward_Lunge",
+        "name": "Cable Forward Lunge",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Forward Lunge and choose a controlled load.",
+          "Perform Cable Forward Lunge through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Lateral_Lunge": {
+      "exerciseId": "Cable_Lateral_Lunge",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "lunge"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:lunge"
+        ]
+      },
+      "source": {
+        "id": "Cable_Lateral_Lunge",
+        "name": "Cable Lateral Lunge",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Lateral Lunge and choose a controlled load.",
+          "Perform Cable Lateral Lunge through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Step-Up": {
+      "exerciseId": "Cable_Step-Up",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "step_up"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "calves",
+          "hamstrings"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:step_up"
+        ]
+      },
+      "source": {
+        "id": "Cable_Step-Up",
+        "name": "Cable Step-Up",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Step-Up and choose a controlled load.",
+          "Perform Cable Step-Up through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Crossover_Step-Up": {
+      "exerciseId": "Cable_Crossover_Step-Up",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "step_up"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "calves",
+          "hamstrings"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:step_up"
+        ]
+      },
+      "source": {
+        "id": "Cable_Crossover_Step-Up",
+        "name": "Cable Crossover Step-Up",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Crossover Step-Up and choose a controlled load.",
+          "Perform Cable Crossover Step-Up through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Single-Leg_Single-Arm_Cable_Romanian_Deadlift": {
+      "exerciseId": "Single-Leg_Single-Arm_Cable_Romanian_Deadlift",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_hinge"
+        ],
+        "direct": [
+          "hamstrings",
+          "glutes"
+        ],
+        "indirect": [],
+        "stabilizers": [
+          "lower_back",
+          "forearms",
+          "abdominals",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_hinge"
+        ]
+      },
+      "source": {
+        "id": "Single-Leg_Single-Arm_Cable_Romanian_Deadlift",
+        "name": "Single-Leg Single-Arm Cable Romanian Deadlift",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "hamstrings",
+          "glutes"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the cable station for Single-Leg Single-Arm Cable Romanian Deadlift and choose a controlled load.",
+          "Perform Single-Leg Single-Arm Cable Romanian Deadlift through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Jump_Slam": {
+      "exerciseId": "Cable_Jump_Slam",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "medicine_ball_slam"
+        ],
+        "direct": [
+          "abdominals",
+          "lats"
+        ],
+        "indirect": [
+          "shoulders"
+        ],
+        "stabilizers": [
+          "glutes",
+          "quadriceps"
+        ],
+        "volumeEligible": false,
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
+        "evidenceRefs": [
+          "pattern:medicine_ball_slam"
+        ]
+      },
+      "source": {
+        "id": "Cable_Jump_Slam",
+        "name": "Cable Jump Slam",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Jump Slam and choose a controlled load.",
+          "Perform Cable Jump Slam through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Side_Plank_with_Cable_Row": {
+      "exerciseId": "Side_Plank_with_Cable_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "anti_extension",
+          "horizontal_pull"
+        ],
+        "direct": [
+          "abdominals",
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps"
+        ],
+        "stabilizers": [
+          "shoulders",
+          "forearms",
+          "glutes"
+        ],
+        "volumeEligible": false,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:anti_extension",
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Side_Plank_with_Cable_Row",
+        "name": "Side Plank with Cable Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals",
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps"
+        ],
+        "instructions": [
+          "Set up the cable station for Side Plank with Cable Row and choose a controlled load.",
+          "Perform Side Plank with Cable Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Alternating_Jackknife": {
+      "exerciseId": "Cable_Alternating_Jackknife",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_flexion"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [
+          "hip_flexors"
+        ],
+        "stabilizers": [
+          "shoulders"
+        ],
+        "volumeEligible": false,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_flexion"
+        ]
+      },
+      "source": {
+        "id": "Cable_Alternating_Jackknife",
+        "name": "Cable Alternating Jackknife",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [
+          "hip_flexors"
+        ],
+        "instructions": [
+          "Set up the cable station for Cable Alternating Jackknife and choose a controlled load.",
+          "Perform Cable Alternating Jackknife through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Cable_Calf-Box_Raise": {
+      "exerciseId": "Cable_Calf-Box_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "cable"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "plantar_flexion_straight_knee"
+        ],
+        "direct": [
+          "calves"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:plantar_flexion_straight_knee"
+        ]
+      },
+      "source": {
+        "id": "Cable_Calf-Box_Raise",
+        "name": "Cable Calf-Box Raise",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "cable",
+        "primaryMuscles": [
+          "calves"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the cable station for Cable Calf-Box Raise and choose a controlled load.",
+          "Perform Cable Calf-Box Raise through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Lat_Pulldown": {
+      "exerciseId": "Machine_Lat_Pulldown",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "vertical_pull"
+        ],
+        "direct": [
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "middle_back"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:vertical_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_Lat_Pulldown",
+        "name": "Machine Lat Pulldown",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "middle_back"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Lat Pulldown and choose a controlled load.",
+          "Perform Machine Lat Pulldown through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Seated_Row": {
+      "exerciseId": "Machine_Seated_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_Seated_Row",
+        "name": "Machine Seated Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Seated Row and choose a controlled load.",
+          "Perform Machine Seated Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Selectorized Seated Row"
+        ]
+      }
+    },
+    "Machine_Low_Row": {
+      "exerciseId": "Machine_Low_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_Low_Row",
+        "name": "Machine Low Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Low Row and choose a controlled load.",
+          "Perform Machine Low Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_High_Row": {
+      "exerciseId": "Machine_High_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_High_Row",
+        "name": "Machine High Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine High Row and choose a controlled load.",
+          "Perform Machine High Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Iso-Lateral High Row"
+        ]
+      }
+    },
+    "Machine_Chest-Supported_Row": {
+      "exerciseId": "Machine_Chest-Supported_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_Chest-Supported_Row",
+        "name": "Machine Chest-Supported Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Chest-Supported Row and choose a controlled load.",
+          "Perform Machine Chest-Supported Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Diverging_Row": {
+      "exerciseId": "Machine_Diverging_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_Diverging_Row",
+        "name": "Machine Diverging Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Diverging Row and choose a controlled load.",
+          "Perform Machine Diverging Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Independent-Arm Row",
+          "DY Row"
+        ]
+      }
+    },
+    "Machine_Pullover": {
+      "exerciseId": "Machine_Pullover",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "pullover"
+        ],
+        "direct": [
+          "lats"
+        ],
+        "indirect": [
+          "chest"
+        ],
+        "stabilizers": [
+          "triceps"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:pullover"
+        ]
+      },
+      "source": {
+        "id": "Machine_Pullover",
+        "name": "Machine Pullover",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "chest"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Pullover and choose a controlled load.",
+          "Perform Machine Pullover through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Back_Extension": {
+      "exerciseId": "Machine_Back_Extension",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_extension"
+        ],
+        "direct": [
+          "lower_back"
+        ],
+        "indirect": [
+          "glutes",
+          "hamstrings"
+        ],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_extension"
+        ]
+      },
+      "source": {
+        "id": "Machine_Back_Extension",
+        "name": "Machine Back Extension",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "lower_back"
+        ],
+        "secondaryMuscles": [
+          "glutes",
+          "hamstrings"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Back Extension and choose a controlled load.",
+          "Perform Machine Back Extension through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Rotary_Torso": {
+      "exerciseId": "Machine_Rotary_Torso",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_rotation"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_rotation"
+        ]
+      },
+      "source": {
+        "id": "Machine_Rotary_Torso",
+        "name": "Machine Rotary Torso",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the machine station for Machine Rotary Torso and choose a controlled load.",
+          "Perform Machine Rotary Torso through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Rotary Torso Machine",
+          "Torso Rotation Machine"
+        ]
+      }
+    },
+    "Machine_Oblique_Crunch": {
+      "exerciseId": "Machine_Oblique_Crunch",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "trunk_flexion",
+          "lateral_flexion"
+        ],
+        "direct": [
+          "abdominals"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:trunk_flexion",
+          "pattern:lateral_flexion"
+        ]
+      },
+      "source": {
+        "id": "Machine_Oblique_Crunch",
+        "name": "Machine Oblique Crunch",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "abdominals"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the machine station for Machine Oblique Crunch and choose a controlled load.",
+          "Perform Machine Oblique Crunch through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Glute_Extension": {
+      "exerciseId": "Machine_Glute_Extension",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_extension"
+        ],
+        "direct": [
+          "glutes"
+        ],
+        "indirect": [
+          "hamstrings"
+        ],
+        "stabilizers": [
+          "lower_back"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_extension"
+        ]
+      },
+      "source": {
+        "id": "Machine_Glute_Extension",
+        "name": "Machine Glute Extension",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "hamstrings"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Glute Extension and choose a controlled load.",
+          "Perform Machine Glute Extension through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Glute Machine"
+        ]
+      }
+    },
+    "Machine_Hip_Thrust": {
+      "exerciseId": "Machine_Hip_Thrust",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_extension"
+        ],
+        "direct": [
+          "glutes"
+        ],
+        "indirect": [
+          "hamstrings"
+        ],
+        "stabilizers": [
+          "lower_back"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_extension"
+        ]
+      },
+      "source": {
+        "id": "Machine_Hip_Thrust",
+        "name": "Machine Hip Thrust",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "hamstrings"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Hip Thrust and choose a controlled load.",
+          "Perform Machine Hip Thrust through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Glute Drive"
+        ]
+      }
+    },
+    "Belt_Squat": {
+      "exerciseId": "Belt_Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat"
+        ]
+      },
+      "source": {
+        "id": "Belt_Squat",
+        "name": "Belt Squat",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the machine station for Belt Squat and choose a controlled load.",
+          "Perform Belt Squat through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "V-Squat": {
+      "exerciseId": "V-Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "lower_back",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat"
+        ]
+      },
+      "source": {
+        "id": "V-Squat",
+        "name": "V-Squat",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the machine station for V-Squat and choose a controlled load.",
+          "Perform V-Squat through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Pendulum_Squat": {
+      "exerciseId": "Pendulum_Squat",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat_quad_bias"
+        ],
+        "direct": [
+          "quadriceps"
+        ],
+        "indirect": [
+          "glutes",
+          "adductors"
+        ],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat_quad_bias"
+        ]
+      },
+      "source": {
+        "id": "Pendulum_Squat",
+        "name": "Pendulum Squat",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "quadriceps"
+        ],
+        "secondaryMuscles": [
+          "glutes",
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the machine station for Pendulum Squat and choose a controlled load.",
+          "Perform Pendulum Squat through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Squat_Press_Machine": {
+      "exerciseId": "Squat_Press_Machine",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "leg_press"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:leg_press"
+        ]
+      },
+      "source": {
+        "id": "Squat_Press_Machine",
+        "name": "Machine Squat Press",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Squat Press and choose a controlled load.",
+          "Perform Machine Squat Press through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Squat-Lunge_Machine": {
+      "exerciseId": "Squat-Lunge_Machine",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "squat",
+          "lunge"
+        ],
+        "direct": [
+          "quadriceps",
+          "glutes"
+        ],
+        "indirect": [
+          "adductors"
+        ],
+        "stabilizers": [
+          "hamstrings",
+          "calves"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:squat",
+          "pattern:lunge"
+        ]
+      },
+      "source": {
+        "id": "Squat-Lunge_Machine",
+        "name": "Machine Squat-Lunge",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "quadriceps",
+          "glutes"
+        ],
+        "secondaryMuscles": [
+          "adductors"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Squat-Lunge and choose a controlled load.",
+          "Perform Machine Squat-Lunge through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_T-Bar_Row": {
+      "exerciseId": "Machine_T-Bar_Row",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "horizontal_pull"
+        ],
+        "direct": [
+          "middle_back",
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "shoulders"
+        ],
+        "stabilizers": [
+          "forearms",
+          "lower_back"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:horizontal_pull"
+        ]
+      },
+      "source": {
+        "id": "Machine_T-Bar_Row",
+        "name": "Machine T-Bar Row",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "middle_back",
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine T-Bar Row and choose a controlled load.",
+          "Perform Machine T-Bar Row through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Standing_Lateral_Raise": {
+      "exerciseId": "Machine_Standing_Lateral_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "shoulder_abduction"
+        ],
+        "direct": [
+          "shoulders"
+        ],
+        "indirect": [
+          "traps"
+        ],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_abduction"
+        ]
+      },
+      "source": {
+        "id": "Machine_Standing_Lateral_Raise",
+        "name": "Machine Standing Lateral Raise",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "shoulders"
+        ],
+        "secondaryMuscles": [
+          "traps"
+        ],
+        "instructions": [
+          "Set up the machine station for Machine Standing Lateral Raise and choose a controlled load.",
+          "Perform Machine Standing Lateral Raise through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Assisted_Dip": {
+      "exerciseId": "Assisted_Dip",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dip_triceps_bias"
+        ],
+        "direct": [
+          "triceps",
+          "chest"
+        ],
+        "indirect": [
+          "shoulders"
+        ],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dip_triceps_bias"
+        ]
+      },
+      "source": {
+        "id": "Assisted_Dip",
+        "name": "Assisted Dip",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "triceps",
+          "chest"
+        ],
+        "secondaryMuscles": [
+          "shoulders"
+        ],
+        "instructions": [
+          "Set up the machine station for Assisted Dip and choose a controlled load.",
+          "Perform Assisted Dip through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Assisted_Chin-Up": {
+      "exerciseId": "Assisted_Chin-Up",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "vertical_pull"
+        ],
+        "direct": [
+          "lats"
+        ],
+        "indirect": [
+          "biceps",
+          "middle_back"
+        ],
+        "stabilizers": [
+          "forearms"
+        ],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:vertical_pull"
+        ]
+      },
+      "source": {
+        "id": "Assisted_Chin-Up",
+        "name": "Assisted Chin-Up",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "lats"
+        ],
+        "secondaryMuscles": [
+          "biceps",
+          "middle_back"
+        ],
+        "instructions": [
+          "Set up the machine station for Assisted Chin-Up and choose a controlled load.",
+          "Perform Assisted Chin-Up through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Four-Way_Neck_Machine": {
+      "exerciseId": "Four-Way_Neck_Machine",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "neck_flexion",
+          "neck_extension",
+          "neck_lateral_flexion"
+        ],
+        "direct": [
+          "neck"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:neck_flexion",
+          "pattern:neck_extension",
+          "pattern:neck_lateral_flexion"
+        ]
+      },
+      "source": {
+        "id": "Four-Way_Neck_Machine",
+        "name": "Four-Way Neck Machine",
+        "force": null,
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "neck"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the machine station for Four-Way Neck Machine and choose a controlled load.",
+          "Perform Four-Way Neck Machine through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Tibialis_Dorsiflexion": {
+      "exerciseId": "Machine_Tibialis_Dorsiflexion",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dorsiflexion"
+        ],
+        "direct": [
+          "tibialis"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dorsiflexion"
+        ]
+      },
+      "source": {
+        "id": "Machine_Tibialis_Dorsiflexion",
+        "name": "Machine Tibialis Dorsiflexion",
+        "force": "pull",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "tibialis"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the machine station for Machine Tibialis Dorsiflexion and choose a controlled load.",
+          "Perform Machine Tibialis Dorsiflexion through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
+      }
+    },
+    "Machine_Horizontal_Calf_Raise": {
+      "exerciseId": "Machine_Horizontal_Calf_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "machine"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "plantar_flexion_straight_knee"
+        ],
+        "direct": [
+          "calves"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:plantar_flexion_straight_knee"
+        ]
+      },
+      "source": {
+        "id": "Machine_Horizontal_Calf_Raise",
+        "name": "Machine Horizontal Calf Raise",
+        "force": "push",
+        "level": "intermediate",
+        "mechanic": "compound",
+        "equipment": "machine",
+        "primaryMuscles": [
+          "calves"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Set up the machine station for Machine Horizontal Calf Raise and choose a controlled load.",
+          "Perform Machine Horizontal Calf Raise through a comfortable range of motion with stable alignment.",
+          "Return to the starting position under control and follow the equipment safety instructions."
+        ],
+        "category": "strength",
+        "images": []
       }
     }
   }

@@ -29,6 +29,31 @@ FAMILIES = {
     "chest_fly": ("Chest Fly", ("flye", "flyes")),
     "hip_thrust": ("Hip Thrust", ()),
     "glute_bridge": ("Glute Bridge", ()),
+    "cable_push_pull": ("Cable Push-Pull", ("cable push pull",)),
+    "horizontal_press": ("Horizontal Press", ()),
+    "vertical_pull": ("Vertical Pull", ()),
+    "high_pull": ("High Pull", ()),
+    "trunk_rotation": ("Trunk Rotation", ("torso rotation",)),
+    "back_extension": ("Back Extension", ()),
+    "torso_rotation": ("Torso Rotation", ("rotary torso",)),
+    "hip_extension": ("Hip Extension", ()),
+    "hip_flexion": ("Hip Flexion", ()),
+    "hip_abduction": ("Hip Abduction", ()),
+    "knee_flexion": ("Knee Flexion", ()),
+    "lunge": ("Lunge", ()),
+    "step_up": ("Step-Up", ("step up",)),
+    "pullover": ("Pullover", ()),
+    "belt_squat": ("Belt Squat", ()),
+    "shoulder_abduction": ("Shoulder Abduction", ()),
+    "core_stability": ("Core Stability", ()),
+    "neck_conditioning": ("Neck Conditioning", ()),
+    "tibialis_raise": ("Tibialis Raise", ("tibialis dorsiflexion",)),
+}
+
+CATALOG_MANIFEST = Path(__file__).resolve().parents[1] / "catalog_additions.json"
+CATALOG_FAMILY_OVERRIDES = {
+    entry["id"]: entry["family"]
+    for entry in json.loads(CATALOG_MANIFEST.read_text(encoding="utf-8"))["entries"]
 }
 
 def _text(eid: str, rec: dict[str, Any]) -> str:
@@ -39,6 +64,8 @@ def _phrase(text: str, expression: str) -> bool:
 
 def _family_for(eid: str, rec: dict[str, Any], *, candidates_only: bool = False) -> Any:
     text = _text(eid, rec)
+    if eid in CATALOG_FAMILY_OVERRIDES and not candidates_only:
+        return CATALOG_FAMILY_OVERRIDES[eid], "catalog_review", "high"
     if eid in FAMILY_OVERRIDES and not candidates_only:
         return FAMILY_OVERRIDES[eid], "manual_review", "high"
     patterns = set(rec.get("annotation", {}).get("patterns", []))
@@ -107,10 +134,10 @@ def build_relationship_document(db: dict[str, Any], *, generated_from: str | Non
     for eid in sorted(exercises):
         family, source_kind, confidence = _family_for(eid, exercises[eid])
         if family is None: continue
-        assignments.append({"sourceExerciseId": eid, "familyId": family, "relationship": "member_of_family", "dimensions": _dimensions(eid, exercises[eid]), "confidence": confidence, "provenance": [{"type": source_kind, "source": "src/relationships/overrides.py" if source_kind == "manual_review" else "src/relationships/build.py", "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata."}]})
+        assignments.append({"sourceExerciseId": eid, "familyId": family, "relationship": "member_of_family", "dimensions": _dimensions(eid, exercises[eid]), "confidence": confidence, "provenance": [{"type": source_kind, "source": "src/catalog_additions.json" if source_kind == "catalog_review" else ("src/relationships/overrides.py" if source_kind == "manual_review" else "src/relationships/build.py"), "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata."}]})
     assignments.sort(key=lambda x: (x["relationship"], x["familyId"], x["sourceExerciseId"], x.get("targetExerciseId", "")))
     upstream_sha = db.get("metadata", {}).get("upstream", {}).get("sha256")
-    return {"schemaVersion": SCHEMA_VERSION, "metadata": {"artifact": "exercise-relationships", "projectRelease": "1.5.1", "sourceDatabaseSchemaVersion": db.get("metadata", {}).get("schemaVersion"), "sourceExerciseCount": len(exercises), "generator": "src/relationships/build.py", "sourceSha256": generated_from or upstream_sha, "relationshipVocabulary": list(RELATIONSHIPS), "dimensionVocabulary": ["equipment", "grip", "stance", "angle", "laterality", "body_position", "load_position", "assistance", "resistance_type"], "semanticNotice": "Taxonomic/descriptive relationships do not imply physiological equivalence or substitution advice."}, "families": families, "relationships": assignments}
+    return {"schemaVersion": SCHEMA_VERSION, "metadata": {"artifact": "exercise-relationships", "projectRelease": "1.16.0", "sourceDatabaseSchemaVersion": db.get("metadata", {}).get("schemaVersion"), "sourceExerciseCount": len(exercises), "generator": "src/relationships/build.py", "sourceSha256": generated_from or upstream_sha, "relationshipVocabulary": list(RELATIONSHIPS), "dimensionVocabulary": ["equipment", "grip", "stance", "angle", "laterality", "body_position", "load_position", "assistance", "resistance_type"], "semanticNotice": "Taxonomic/descriptive relationships do not imply physiological equivalence or substitution advice."}, "families": families, "relationships": assignments}
 
 def main() -> None:
     import argparse

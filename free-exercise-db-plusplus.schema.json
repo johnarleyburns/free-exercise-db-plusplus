@@ -259,6 +259,14 @@
           "type": "integer",
           "minimum": 0
         },
+        "upstreamExerciseCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "curatedExerciseCount": {
+          "type": "integer",
+          "minimum": 0
+        },
         "outputExerciseCount": {
           "type": "integer",
           "minimum": 0
