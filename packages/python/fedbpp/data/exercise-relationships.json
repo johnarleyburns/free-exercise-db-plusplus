@@ -62,6 +62,13 @@
       "familyId": "deadlift",
       "name": "Deadlift"
     },
+    "dip_triceps_bias": {
+      "aliases": [
+        "triceps dip"
+      ],
+      "familyId": "dip_triceps_bias",
+      "name": "Dip (Triceps Bias)"
+    },
     "glute_bridge": {
       "aliases": [],
       "familyId": "glute_bridge",
@@ -193,6 +200,13 @@
       ],
       "familyId": "triceps_extension",
       "name": "Triceps Extension"
+    },
+    "trunk_flexion": {
+      "aliases": [
+        "torso flexion"
+      ],
+      "familyId": "trunk_flexion",
+      "name": "Trunk Flexion"
     },
     "trunk_rotation": {
       "aliases": [

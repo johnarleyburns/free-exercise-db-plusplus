@@ -594,7 +594,7 @@
     }
   },
   "emptyFamilies": [],
-  "familyCount": 35,
+  "familyCount": 37,
   "familyQuality": {
     "back_extension": {
       "categories": {
@@ -740,6 +740,17 @@
       "movementPatterns": {
         "conventional_deadlift": 15,
         "sumo_deadlift": 4
+      }
+    },
+    "dip_triceps_bias": {
+      "categories": {
+        "strength": 1
+      },
+      "equipment": {
+        "machine": 1
+      },
+      "movementPatterns": {
+        "dip_triceps_bias": 1
       }
     },
     "glute_bridge": {
@@ -1036,6 +1047,18 @@
       },
       "movementPatterns": {
         "elbow_extension": 40
+      }
+    },
+    "trunk_flexion": {
+      "categories": {
+        "strength": 1
+      },
+      "equipment": {
+        "machine": 1
+      },
+      "movementPatterns": {
+        "lateral_flexion": 1,
+        "trunk_flexion": 1
       }
     },
     "trunk_rotation": {
