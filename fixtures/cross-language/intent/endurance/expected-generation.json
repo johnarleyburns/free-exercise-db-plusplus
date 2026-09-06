@@ -42,9 +42,9 @@
       },
       "equipment": {
         "supportedExercises": [
-          "Alternating_Floor_Press",
+          "Alternating_Cable_Lat_Pulldown",
+          "Alternating_Flat-Bench_Cable_Chest_Press",
           "Alternating_Hang_Clean",
-          "Alternating_Kettlebell_Row",
           "Ball_Leg_Curl"
         ],
         "unknownEquipmentExercises": [],
@@ -158,7 +158,7 @@
           "target": 6
         },
         "middle_back": {
-          "actualEffectiveSets": 6.0,
+          "actualEffectiveSets": 3.0,
           "differenceFromTarget": null,
           "max": null,
           "maximum": null,
@@ -166,9 +166,9 @@
           "minimum": null,
           "periodDays": 7,
           "planEffectiveSetRange": {
-            "max": 6.0,
-            "min": 6.0,
-            "target": 6.0
+            "max": 3.0,
+            "min": 3.0,
+            "target": 3.0
           },
           "state": "not_targeted",
           "target": null
@@ -190,7 +190,7 @@
           "target": 6
         },
         "shoulders": {
-          "actualEffectiveSets": 6.0,
+          "actualEffectiveSets": 3.0,
           "differenceFromTarget": null,
           "max": null,
           "maximum": null,
@@ -198,9 +198,9 @@
           "minimum": null,
           "periodDays": 7,
           "planEffectiveSetRange": {
-            "max": 6.0,
-            "min": 6.0,
-            "target": 6.0
+            "max": 3.0,
+            "min": 3.0,
+            "target": 3.0
           },
           "state": "not_targeted",
           "target": null
@@ -222,7 +222,7 @@
           "target": null
         },
         "triceps": {
-          "actualEffectiveSets": 6.0,
+          "actualEffectiveSets": 3.0,
           "differenceFromTarget": null,
           "max": null,
           "maximum": null,
@@ -230,9 +230,9 @@
           "minimum": null,
           "periodDays": 7,
           "planEffectiveSetRange": {
-            "max": 6.0,
-            "min": 6.0,
-            "target": 6.0
+            "max": 3.0,
+            "min": 3.0,
+            "target": 3.0
           },
           "state": "not_targeted",
           "target": null
@@ -289,8 +289,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
+              "exerciseId": "Alternating_Flat-Bench_Cable_Chest_Press",
+              "exerciseName": "Alternating Flat-Bench Cable Chest Press",
               "order": 1,
               "prescriptionId": "rx-01-01",
               "reps": {
@@ -305,8 +305,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
+              "exerciseId": "Alternating_Cable_Lat_Pulldown",
+              "exerciseName": "Alternating Cable Lat Pulldown",
               "order": 2,
               "prescriptionId": "rx-01-02",
               "reps": {
@@ -360,8 +360,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
+              "exerciseId": "Alternating_Cable_Lat_Pulldown",
+              "exerciseName": "Alternating Cable Lat Pulldown",
               "order": 1,
               "prescriptionId": "rx-02-01",
               "reps": {
@@ -392,8 +392,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
+              "exerciseId": "Alternating_Flat-Bench_Cable_Chest_Press",
+              "exerciseName": "Alternating Flat-Bench Cable Chest Press",
               "order": 3,
               "prescriptionId": "rx-02-03",
               "reps": {
@@ -431,8 +431,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Floor_Press",
-              "exerciseName": "Alternating Floor Press",
+              "exerciseId": "Alternating_Flat-Bench_Cable_Chest_Press",
+              "exerciseName": "Alternating Flat-Bench Cable Chest Press",
               "order": 2,
               "prescriptionId": "rx-03-02",
               "reps": {
@@ -447,8 +447,8 @@
               "effort": {
                 "rir": 2
               },
-              "exerciseId": "Alternating_Kettlebell_Row",
-              "exerciseName": "Alternating Kettlebell Row",
+              "exerciseId": "Alternating_Cable_Lat_Pulldown",
+              "exerciseName": "Alternating Cable Lat Pulldown",
               "order": 3,
               "prescriptionId": "rx-03-03",
               "reps": {
@@ -512,19 +512,19 @@
     },
     "selectionRationale": [
       {
-        "exerciseId": "Alternating_Floor_Press",
+        "exerciseId": "Alternating_Cable_Lat_Pulldown",
+        "reasonCodes": [
+          "TARGET_COVERAGE"
+        ]
+      },
+      {
+        "exerciseId": "Alternating_Flat-Bench_Cable_Chest_Press",
         "reasonCodes": [
           "TARGET_COVERAGE"
         ]
       },
       {
         "exerciseId": "Alternating_Hang_Clean",
-        "reasonCodes": [
-          "TARGET_COVERAGE"
-        ]
-      },
-      {
-        "exerciseId": "Alternating_Kettlebell_Row",
         "reasonCodes": [
           "TARGET_COVERAGE"
         ]
