@@ -74,7 +74,7 @@ public enum HealthInterop {
         let envelope = HealthInteropEnvelope(target: target, recordId: sessionId, canonicalWorkout: workout,
                                              projection: projection,
                                              warnings: ["Persist the canonical sidecar with the native record; target APIs do not represent every DB++ field."])
-        return try encode(envelope)
+        return try JSONEncoder().encode(envelope)
     }
 
     public static func importWorkoutJSON(_ externalJSON: Data, target: HealthInteropTarget,
