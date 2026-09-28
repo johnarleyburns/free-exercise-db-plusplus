@@ -1,6 +1,6 @@
 # DB++ interoperability audit
 
-Review date: 2026-08-25. This document records capability, not an exporter. v1.2 maps stable DB++ concepts to the reviewed target and reports loss explicitly; v1.3 may add operational adapters.
+Review date: 2026-08-25. This document records the underlying FIT capability and mapping. Operational lossless DB++ round trips are implemented in the adapters described in [`HEALTH-DATA-ADAPTERS.md`](HEALTH-DATA-ADAPTERS.md); they require the official Garmin FIT SDK and preserve the canonical ACTUAL as developer data.
 
 Capability labels: `lossless`, `representable_with_conversion`, `representable_with_extension`, `lossy`, `unsupported`, `not_applicable`, `unknown`. A notes/metadata string is not treated as lossless support.
 
@@ -8,7 +8,7 @@ Capability labels: `lossless`, `representable_with_conversion`, `representable_w
 
 Specification/API: current public FIT SDK documentation reviewed 2026-08-25.
 
-FIT has Activity sessions and Workout/Workout Step prescriptions; set-like strength detail is profile/device dependent. Timestamps, duration, distance, repetitions and weight are representable with conversion. DB++ exerciseId, RIR, tempo, set type, laterality, substitutions, PLAN linkage and rep telemetry require developer fields or are unsupported. Custom developer data is the extension mechanism. Round-trip is normalized or lossy.
+FIT has Activity sessions and Workout/Workout Step prescriptions; set-like strength detail is profile/device dependent. Timestamps, duration, distance, repetitions and weight are representable with conversion. DB++ exerciseId, RIR, tempo, set type, laterality, substitutions, PLAN linkage and rep telemetry require developer fields. The adapter uses custom developer data for these fields and the complete canonical ACTUAL, so a DB++ round trip is lossless when the sidecar is retained; native-only FIT files remain lossy for DB++ import.
 
 Authoritative reference: [https://developer.garmin.com/fit/overview/](https://developer.garmin.com/fit/overview/)
 

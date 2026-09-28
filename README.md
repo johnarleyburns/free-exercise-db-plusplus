@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.16.0**
+Current release: **v1.17.0**
 
 ## Build an app with DB++
 
@@ -353,9 +353,9 @@ its own independent schema version and is not required by existing analysis.
 
 ## Interoperability (v1.3)
 
-v1.2 provides mapping and capability infrastructure: audited standards documents, structural ACTUAL/category mappings, the reviewed Garmin FIT exercise identity crosswalk, JSON schemas, loss semantics, and deterministic coverage reports. Health Connect session categories are not advertised as exercise identities. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`. Operational import/export serializers remain deferred to v1.3.
+v1.3 provides operational import/export adapters for the DB++ health-data boundary. The adapters preserve the complete canonical ACTUAL document in a target-native sidecar while emitting a useful Garmin FIT, HealthKit, or Health Connect projection. Health Connect session categories are not advertised as exercise identities. Inspect `mappings/`, `docs/interop/`, and `reports/interop/`.
 
-Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("garmin-fit", "exercise_name.bench_press.DUMBBELL_BENCH_PRESS")`. Operational FHIR conversion is available with `from fedbpp import import_workout, export_workout`; strict mode is the default. See [import/export](docs/interop/IMPORT-EXPORT.md) and the [CLI](docs/interop/CLI.md). FIT binary, Health Connect, and HealthKit remain explicitly bounded by their API/licensing limitations.
+Python lookup: `from fedbpp import MappingRegistry; registry = MappingRegistry.load(); registry.lookup_external("garmin-fit", "exercise_name.bench_press.DUMBBELL_BENCH_PRESS")`. Operational FHIR and health-data conversion are available with `from fedbpp import import_workout, export_workout`; strict mode is the default. Garmin FIT binary support is optional because Garmin’s SDK is separately licensed; install the Python extra with `pip install '.[fit]'` from `packages/python`. Swift also exposes native HealthKit and FIT targets, while Kotlin/JVM, R, and C expose host-neutral sidecar contracts for Android, Apple, Garmin-C-SDK, or other platform hosts. See [import/export](docs/interop/IMPORT-EXPORT.md), the [health-data adapter guide](docs/interop/HEALTH-DATA-ADAPTERS.md), and the [CLI](docs/interop/CLI.md).
 
 ## CI and releases
 

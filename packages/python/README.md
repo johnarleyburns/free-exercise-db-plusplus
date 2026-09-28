@@ -2,6 +2,12 @@
 
 Standalone helpers for DB++, Workout ACTUAL, Workout PLAN 0.1/0.2, Volume TARGET, and derived analysis. Install from this directory with `pip install .` or use `pip install -e .` during development. Built wheels include their schemas and reference analysis implementation; they never import repository-level `src.*`. JSON Schema validation uses the optional `jsonschema` dependency.
 
+Health interop projections for Garmin FIT, HealthKit, and Health Connect are
+available through `export_health_workout`/`import_health_workout` and preserve
+the exact ACTUAL as a sidecar. Install `pip install '.[fit]'` to enable the
+official Garmin FIT binary encoder/decoder, then use `export_garmin_fit` and
+`import_garmin_fit`.
+
 From the repository root, `scripts/setup_python_venv.sh` creates or repairs
 the project `.venv`, installs the PEP 517 build tools, and installs this
 package in editable mode.

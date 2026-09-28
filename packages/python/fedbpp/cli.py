@@ -17,6 +17,7 @@ from .intent import resolve_intent, generate_plan_from_intent
 from .training_state import derive_training_state
 from .progression import suggest_progression
 from .conversion import ConversionError, export_workout, import_workout
+from .health_interop import export_garmin_fit
 from .interop import MappingRegistry
 from .relationships import RelationshipRegistry
 from .coaching import adapt_plan
@@ -158,8 +159,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("training-state"); p.add_argument("history", nargs="?"); p.add_argument("--history", dest="history_option"); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--relationships"); p.add_argument("--target"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("progress"); p.add_argument("plan", nargs="?"); p.add_argument("--plan", dest="plan_option"); p.add_argument("--history", required=True); p.add_argument("--db", required=True); p.add_argument("--as-of", required=True); p.add_argument("--window", default="last_28_days"); p.add_argument("--timezone"); p.add_argument("--policy", default="double-progression-v1"); p.add_argument("--increment"); p.add_argument("--output"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("research-export"); p.add_argument("history"); p.add_argument("--db", required=True); p.add_argument("--period", default="calendar_week"); p.add_argument("--start"); p.add_argument("--end"); p.add_argument("--timezone"); p.add_argument("--output", required=True); p.add_argument("--table", choices=("muscle", "session", "exercise"), default="muscle")
-    p = sub.add_parser("import"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
-    p = sub.add_parser("export"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
+    p = sub.add_parser("import"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); p.add_argument("--binary", action="store_true", help="read a binary Garmin FIT file"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
+    p = sub.add_parser("export"); p.add_argument("format"); p.add_argument("input"); p.add_argument("--output"); p.add_argument("--report"); p.add_argument("--binary", action="store_true", help="write a binary Garmin FIT file"); mode = p.add_mutually_exclusive_group(); mode.add_argument("--strict", action="store_true"); mode.add_argument("--allow-lossy", action="store_true")
     p = sub.add_parser("mapping"); ms = p.add_subparsers(dest="mapping_kind", required=True)
     p = ms.add_parser("external"); p.add_argument("system"); p.add_argument("external_id")
     p = ms.add_parser("dbpp"); p.add_argument("exercise_id"); p.add_argument("--system")
@@ -286,9 +287,22 @@ def main(argv: list[str] | None = None) -> int:
                 registry.db = Database.load(args.db); result = registry.compare_exercise_coverage(args.exercise_a, args.exercise_b)
             _dump(result); return 0
         mode = "allow-lossy" if args.allow_lossy else "strict"
-        if args.command == "import": result = import_workout(args.format, args.input, mode=mode)
-        else: result = export_workout(args.format, _load_json(args.input), mode=mode)
-        _dump(result.document, args.output); _conversion_report(result, args.report); return 0
+        if args.command == "import":
+            source = Path(args.input).read_bytes() if args.binary else args.input
+            result = import_workout(args.format, source, mode=mode)
+            _dump(result.document, args.output)
+        else:
+            workout = _load_json(args.input)
+            if args.binary:
+                if args.format.lower() not in {"fit", "garmin", "garmin-fit"}: raise ValueError("--binary is supported only for Garmin FIT export")
+                data = export_garmin_fit(workout)
+                if args.output: Path(args.output).write_bytes(data)
+                else: sys.stdout.buffer.write(data)
+                result = export_workout(args.format, workout, mode=mode)
+            else:
+                result = export_workout(args.format, workout, mode=mode)
+                _dump(result.document, args.output)
+        _conversion_report(result, args.report); return 0
     except (OSError, ValueError, KeyError, json.JSONDecodeError, ConversionError) as exc:
         print(f"fedbpp: {exc}", file=sys.stderr); return 1
 

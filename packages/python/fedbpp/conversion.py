@@ -249,6 +249,9 @@ def _fhir_output(workout: Any, mode: str, registry: MappingRegistry) -> Conversi
 
 def import_workout(format: str, external_document: Any, *, mode: str = "strict", registry: MappingRegistry | None = None) -> ConversionResult:
     _mode(mode); registry = registry or MappingRegistry.load()
+    if format.lower() in {"garmin-fit", "garmin", "fit", "healthkit", "health-connect", "health_connect", "healthconnect"}:
+        from .health_interop import import_health_workout
+        return import_health_workout(format, external_document, mode=mode)
     if format.lower() == "fhir":
         try: return _fhir_input(_read(external_document), mode, registry)
         except ConversionError: raise
@@ -258,6 +261,9 @@ def import_workout(format: str, external_document: Any, *, mode: str = "strict",
 
 def export_workout(format: str, workout: Any, *, mode: str = "strict", registry: MappingRegistry | None = None) -> ConversionResult:
     _mode(mode); registry = registry or MappingRegistry.load()
+    if format.lower() in {"garmin-fit", "garmin", "fit", "healthkit", "health-connect", "health_connect", "healthconnect"}:
+        from .health_interop import export_health_workout
+        return export_health_workout(format, workout, mode=mode)
     if format.lower() == "fhir": return _fhir_output(workout, mode, registry)
     raise ConversionError(f"unsupported export format: {format}")
 

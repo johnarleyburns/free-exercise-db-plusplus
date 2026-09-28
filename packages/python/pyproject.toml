@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fedbpp"
-version = "1.16.0"
+version = "1.17.0"
 description = "Python helpers for Free Exercise DB++"
 requires-python = ">=3.12"
 dependencies = ["jsonschema>=4.20"]
@@ -14,6 +14,7 @@ fedbpp = "fedbpp.cli:main"
 
 [project.optional-dependencies]
 validation = []
+fit = ["garmin-fit-sdk>=21.217.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]

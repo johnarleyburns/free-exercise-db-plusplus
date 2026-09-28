@@ -1,5 +1,6 @@
 export(load_database, load_relationships, family_for, family_members, related_exercises,
        read_workout, load_workout, write_workout, validate_workout, migrate_workout,
+       export_health_workout, import_health_workout,
        read_workout_plan, write_workout_plan, validate_plan,
        read_volume_target, write_volume_target, validate_target,
        read_training_profile, write_training_profile, validate_training_profile,

@@ -9,9 +9,9 @@ DB++ ACTUAL → schema validation, with the reverse pipeline for export.
 | Format | Import | Export | Identity mapping | Loss report | Notes |
 |---|---:|---:|---|---:|---|
 | FHIR R4 Bundle | yes | yes | reviewed exact DB++ coding subset | yes | FHIR Physical Activity IG 1.0.0 STU1; strength detail uses documented extensions/projections |
-| Garmin FIT | planned/optional | planned/optional | reviewed v1.2 crosswalk retained | n/a | no FIT SDK is vendored; binary support is not claimed |
-| Health Connect | projection model | projection model | category only | yes | API ecosystem, not a portable file format |
-| HealthKit | projection model | projection model | no standard exercise identity | yes | API ecosystem, not a portable file format |
+| Garmin FIT | yes with official SDK | yes with official SDK | reviewed exact subset plus DB++ developer sidecar | yes | Python SDK is optional; Swift FIT target and C host ABI are provided |
+| Health Connect | yes through host API + sidecar | yes through host API + sidecar | category only | yes | API ecosystem, not a portable file format |
+| HealthKit | yes through host API + sidecar | yes through host API + sidecar | no standard exercise identity | yes | API ecosystem, not a portable file format |
 
 FHIR input is a `Bundle` of `Observation` resources. Exercise identity is read
 only from the reviewed DB++ FHIR coding registry; names are never fuzzy matched.

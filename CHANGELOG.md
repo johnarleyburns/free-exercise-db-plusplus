@@ -16,6 +16,15 @@
 
 # Changelog
 
+## 1.17.0 - 2026-09-28
+
+- Add full DB++ health-data import/export round trips for Garmin FIT, Apple
+  HealthKit, and Android Health Connect through exact canonical ACTUAL sidecars.
+- Add the portable C health bridge, Swift HealthKit/FIT adapters, Python FIT
+  binary support, Kotlin Health Connect envelopes, and R sidecar helpers.
+- Add strict native-only import protection, CLI FIT binary support, adapter
+  documentation, and cross-language interoperability tests.
+
 ## 1.16.0 - 2026-09-05
 
 - Add 54 original, vendor-neutral cable, functional-trainer, selectorized, and

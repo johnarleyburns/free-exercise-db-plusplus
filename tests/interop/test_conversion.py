@@ -60,3 +60,32 @@ def test_invalid_actual_rejected():
     except ConversionError:
         return
     raise AssertionError("invalid ACTUAL must be rejected")
+
+
+def test_health_targets_round_trip_full_actual_through_sidecar():
+    workout = {
+        "schemaVersion": "0.3.0", "sessionId": "health-session",
+        "startTime": "2026-08-24T14:00:00Z", "endTime": "2026-08-24T15:00:00Z",
+        "exercises": [{"exerciseId": "Dumbbell_Bench_Press", "order": 1, "laterality": "bilateral", "sets": [{
+            "setNumber": 1, "setType": "working", "reps": 8,
+            "load": {"value": 80, "unit": "kg"}, "rpe": 8, "rir": 2,
+            "completed": True, "tempo": "3010", "toFailure": False,
+            "repetitions": [{"repNumber": 1, "meanVelocity": {"value": 0.4, "unit": "m/s"}}]
+        }]}]
+    }
+    for target in ("garmin-fit", "healthkit", "health-connect"):
+        exported = export_workout(target, workout)
+        assert exported.status == "lossless"
+        assert exported.document["fidelity"] == "lossless_with_sidecar"
+        imported = import_workout(target, exported.document)
+        assert imported.status == "lossless"
+        assert imported.document == workout
+
+
+def test_health_native_only_import_is_rejected_in_strict_mode():
+    try:
+        import_workout("healthkit", {"recordId": "hk-1", "projection": {"startDate": "2026-08-24T14:00:00Z"}})
+    except ConversionError as exc:
+        assert exc.result is not None and exc.result.status == "lossy"
+        return
+    raise AssertionError("native-only HealthKit import must fail in strict mode")

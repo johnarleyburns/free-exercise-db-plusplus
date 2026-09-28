@@ -33,6 +33,41 @@ related_exercises <- function(relationships,exercise_id,same_family=TRUE){f<-fam
 
 read_workout <- function(path,validate=TRUE){x<-.read_json(path);if(validate)validate_workout(x);.copy_class(x,"fedbpp_workout")}; load_workout<-read_workout
 write_workout <- function(workout,path=NULL,pretty=TRUE).write_json(.doc(workout),path,pretty)
+
+export_health_workout <- function(workout, target=c("garmin-fit","healthkit","health-connect"), pretty=TRUE) {
+  target <- match.arg(target); w <- .doc(workout); validate_workout(w)
+  canonical <- paste0(as.character(jsonlite::toJSON(.json_prepare(w), auto_unbox=TRUE, null="null", pretty=FALSE, na="null", digits=15, force=TRUE)))
+  projection <- if (target == "healthkit") {
+    list(workoutActivityType="traditionalStrengthTraining", startDate=w$startTime, endDate=w$endTime %||% NULL,
+         metadata=setNames(list(w$sessionId, canonical), c("org.free-exercise-db-plusplus.sessionId", "org.free-exercise-db-plusplus.canonicalWorkoutJSON")))
+  } else if (target == "garmin-fit") {
+    list(fileType="activity", fileId=list(type="activity", timeCreated=w$startTime, number=w$sessionId),
+         session=list(startTime=w$startTime, endTime=w$endTime %||% NULL, sport="strength_training"),
+         developerData=list(namespace="org.free-exercise-db-plusplus", canonicalWorkoutJSON=canonical))
+  } else {
+    segments <- list(); for (e in w$exercises %||% list()) for (i in seq_along(e$sets %||% list())) {
+      s <- e$sets[[i]]; row <- list(exerciseType="strength_training", exerciseId=e$exerciseId %||% NULL,
+        exerciseName=e$exerciseName %||% NULL, startTime=w$startTime, endTime=w$endTime %||% w$startTime,
+        repetitions=s$reps %||% NULL, setIndex=s$setNumber %||% i, rateOfPerceivedExertion=s$rpe %||% NULL)
+      if (!is.null(s$load) && identical(s$load$unit, "kg")) row$weightKg <- s$load$value
+      segments[[length(segments)+1L]] <- row
+    }
+    list(startTime=w$startTime, endTime=w$endTime %||% w$startTime, exerciseType="strength_training",
+         metadata=list(clientRecordId=w$sessionId, clientRecordVersion=1L,
+                       `org.free-exercise-db-plusplus.canonicalWorkoutJSON`=canonical), segments=segments)
+  }
+  .copy_class(list(interopVersion="0.1.0", target=target, recordId=w$sessionId, canonicalWorkout=w,
+                   projection=projection, fidelity="lossless_with_sidecar", losses=list(),
+                   warnings="Persist canonicalWorkout with the native record; target APIs do not represent every DB++ field."), "fedbpp_health_envelope")
+}
+
+import_health_workout <- function(envelope, target=c("garmin-fit","healthkit","health-connect"), mode=c("strict","allow-lossy")) {
+  target <- match.arg(target); mode <- match.arg(mode); x <- .doc(envelope)
+  if (!is.null(x$canonicalWorkout)) { validate_workout(x$canonicalWorkout); return(.copy_class(x$canonicalWorkout, "fedbpp_workout")) }
+  loss <- list(list(path="canonicalWorkout", reason="native record has no DB++ sidecar", destination="full DB++ ACTUAL"))
+  if (identical(mode, "strict")) stop("strict health import refused information loss")
+  stop("native-only health import cannot reconstruct the full DB++ ACTUAL; preserve the canonical sidecar")
+}
 validate_workout <- function(workout){if(!is.list(workout))return("<root>: must be an object");req<-c("schemaVersion","sessionId","startTime","exercises");missing<-req[!(req%in%names(workout))];e<-if(length(missing))paste0(missing,": is required")else character();if(!is.null(workout$schemaVersion)&&!workout$schemaVersion%in%c("0.2.0","0.3.0"))e<-c(e,"schemaVersion: unsupported");if(!is.null(workout$exercises)&&!is.list(workout$exercises))e<-c(e,"exercises: must be an array");if(length(e))stop(paste(sort(unique(e)),collapse="; "));invisible(TRUE)}
 migrate_workout <- function(workout){if(workout$schemaVersion%in%c("0.2.0","0.3.0"))return(workout);if(!startsWith(workout$schemaVersion%||%"","0.1."))stop("unsupported workout schema");workout$schemaVersion<-"0.2.0";workout}
 
@@ -146,7 +181,7 @@ adherence_observations<-function(state){x<-.doc(state)$adherenceState$sessionAdh
 coach_decision_observations<-function(decisions){d<-.doc(decisions);if(is.list(d)&&!is.null(d$decisions))d<-d$decisions;if(!length(d))return(data.frame());do.call(rbind,lapply(d,function(x)data.frame(decision_id=x$decisionId%||%NA_character_,decision_type=x$decisionType%||%NA_character_,policy_id=x$policyId%||%NA_character_,prescription_id=x$prescriptionId%||%NA_character_,exercise_id=x$exerciseId%||%NA_character_,reason_codes=paste(.strings(x$reasonCodes),collapse="|"),stringsAsFactors=FALSE)))}
 plan_evaluation_observations<-function(evaluation){e<-.doc(evaluation);rows<-lapply(names(e$muscleCoverage%||%list()),function(k){x<-e$muscleCoverage[[k]];data.frame(muscle_id=k,actual_effective_sets=x$actualEffectiveSets%||%NA_real_,target=x$target%||%NA_real_,state=x$state%||%NA_character_,stringsAsFactors=FALSE)});if(length(rows))do.call(rbind,rows)else data.frame()}
 longitudinal_volume<-function(workouts,database){ws<-if(is.list(workouts)&&!is.null(workouts$schemaVersion))list(workouts)else workouts;rows<-lapply(ws,function(w){x<-effective_sets(w,database);if(!nrow(x))return(NULL);a<-aggregate(x$effective_sets,list(x$muscle),sum);data.frame(session_id=w$sessionId,start_time=w$startTime,muscle=a$Group.1,effective_sets=a$x,stringsAsFactors=FALSE)});rows<-Filter(Negate(is.null),rows);if(length(rows))do.call(rbind,rows)else .empty_df(session_id=character(),start_time=character(),muscle=character(),effective_sets=numeric())}
-analysis_provenance<-function(db=NULL,state=NULL,as_of=NULL,window=NULL)list(packageVersion="1.16.0",dbSchemaVersion=db$metadata$schemaVersion%||%NULL,dbConverterVersion=db$metadata$converterVersion%||%NULL,setCredits=if(!is.null(db)) .set_credits(db)else NULL,asOf=as_of%||%state$asOf%||%NULL,historyWindow=window%||%state$historyWindow%||%NULL)
+analysis_provenance<-function(db=NULL,state=NULL,as_of=NULL,window=NULL)list(packageVersion="1.17.0",dbSchemaVersion=db$metadata$schemaVersion%||%NULL,dbConverterVersion=db$metadata$converterVersion%||%NULL,setCredits=if(!is.null(db)) .set_credits(db)else NULL,asOf=as_of%||%state$asOf%||%NULL,historyWindow=window%||%state$historyWindow%||%NULL)
 
 read_training_request <- function(path) .copy_class(.read_json(path), "fedbpp_training_request")
 write_training_request <- function(request, path=NULL, pretty=TRUE) .write_json(.doc(request), path, pretty)

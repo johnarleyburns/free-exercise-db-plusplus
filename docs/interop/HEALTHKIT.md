@@ -1,6 +1,6 @@
 # DB++ interoperability audit
 
-Review date: 2026-08-25. This document records capability, not an exporter. v1.2 maps stable DB++ concepts to the reviewed target and reports loss explicitly; v1.3 may add operational adapters.
+Review date: 2026-08-25. This document records the underlying HealthKit capability and mapping. The operational Swift adapter is described in [`HEALTH-DATA-ADAPTERS.md`](HEALTH-DATA-ADAPTERS.md); it preserves the canonical ACTUAL as metadata/application sidecar because HealthKit is an API rather than a portable file format.
 
 Capability labels: `lossless`, `representable_with_conversion`, `representable_with_extension`, `lossy`, `unsupported`, `not_applicable`, `unknown`. A notes/metadata string is not treated as lossless support.
 

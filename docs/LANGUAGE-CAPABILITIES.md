@@ -17,6 +17,12 @@ integration contract over all four engines.
 | Progression and CoachDecision | full | full native | full native | full native |
 | Adaptive coaching | full | full native | full native | full native |
 | Application request/result facade | full | full typed | full typed | full named-list |
+| Full health-data sidecar interop (FIT/HealthKit/Health Connect) | full projections; optional Garmin FIT binary SDK | full envelope + HealthKit bridge + FIT target | full envelope/projection; Android host bridge required | full sidecar envelope helpers |
+
+The repository also now includes a small portable C ABI under `packages/c` for
+retaining the canonical sidecar and dispatching to host-native SDKs. C is not
+one of the four semantic engine implementations and cannot call HealthKit or
+Health Connect directly.
 
 Python, Swift, Kotlin, and R are offline and do not invoke network services or an
 LLM. Swift, Kotlin, and R include policy defaults, weekday mapping, deterministic equipment
