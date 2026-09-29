@@ -29,12 +29,21 @@ swift test --package-path packages/swift/FreeExerciseDBPlusPlus
 
 Do not use `swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios15.0` as the iOS validation command. SwiftPM compiles `Package.swift` for the host before compiling package targets; combining the host manifest target with the iPhoneOS SDK produces the misleading `using sysroot for 'iPhoneOS' but targeting 'MacOSX'` / `unable to load standard library` failure.
 
-For a direct iOS target check, use Xcode's compiler, SDK, and generated SwiftPM resource accessor:
+For a direct iOS target check, first let SwiftPM generate its resource accessor in an isolated scratch directory. Keep the host SDK on the manifest invocation and pass the iPhoneOS SDK to the target compiler; this avoids contaminating the normal host-test build directory:
 
 ```sh
 IOS_SDK="$(xcrun --sdk iphoneos --show-sdk-path)"
+MAC_SDK="$(xcrun --sdk macosx --show-sdk-path)"
+IOS_SCRATCH="$(mktemp -d "${TMPDIR:-/tmp}/fedbpp-ios-build.XXXXXX")"
+swift build \
+  --package-path packages/swift/FreeExerciseDBPlusPlus \
+  --scratch-path "$IOS_SCRATCH" \
+  --sdk "$MAC_SDK" \
+  --triple arm64-apple-ios15.0 \
+  -Xswiftc -sdk -Xswiftc "$IOS_SDK" \
+  -Xlinker -sdk -Xlinker "$IOS_SDK"
 SWIFT_SOURCES=(packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/*.swift)
-RESOURCE_ACCESSOR=packages/swift/FreeExerciseDBPlusPlus/.build/arm64-apple-ios/debug/FreeExerciseDBPlusPlus.build/DerivedSources/resource_bundle_accessor.swift
+RESOURCE_ACCESSOR="$IOS_SCRATCH/arm64-apple-ios/debug/FreeExerciseDBPlusPlus.build/DerivedSources/resource_bundle_accessor.swift"
 xcrun --sdk iphoneos swiftc \
   -typecheck -parse-as-library \
   -target arm64-apple-ios15.0 -sdk "$IOS_SDK" \
