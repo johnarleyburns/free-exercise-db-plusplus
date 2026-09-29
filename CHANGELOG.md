@@ -16,6 +16,14 @@
 
 # Changelog
 
+## 1.17.1 - 2026-09-29
+
+- Fix Swift 6 compilation of the HealthKit adapter by making asynchronous
+  continuation result types explicit.
+- Correct the HealthKit adapter's macOS availability annotation and avoid the
+  `end` parameter/local-name collision in workout export.
+- Preserve the v1.17.0 health-data adapter API and wire format unchanged.
+
 ## 1.17.0 - 2026-09-28
 
 - Add full DB++ health-data import/export round trips for Garmin FIT, Apple

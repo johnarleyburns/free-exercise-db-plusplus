@@ -160,7 +160,7 @@ import HealthKit
 /// Real HealthKit bridge. It saves the DB++ JSON in metadata and writes the
 /// standard session summary as an HKWorkout. Apps must still request the
 /// HealthKit entitlement and user authorization themselves.
-@available(iOS 15.0, macOS 12.0, watchOS 8.0, *)
+@available(iOS 15.0, macOS 13.0, watchOS 8.0, *)
 public final class HealthKitAdapter: @unchecked Sendable {
     public let store: HKHealthStore
 
@@ -168,7 +168,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
 
     public func requestAuthorization() async throws {
         let workoutType = HKObjectType.workoutType()
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             store.requestAuthorization(toShare: [workoutType], read: [workoutType]) { success, error in
                 if let error { continuation.resume(throwing: error) }
                 else if success { continuation.resume() }
@@ -184,7 +184,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
               let start = ISO8601DateFormatter().date(from: startText) else {
             throw HealthInteropError.invalidWorkout("startTime must be an ISO-8601 timestamp")
         }
-        let end: Date = if case .string(let text)? = fields["endTime"], let parsed = ISO8601DateFormatter().date(from: text) { parsed } else { start }
+        let endDate: Date = if case .string(let text)? = fields["endTime"], let parsed = ISO8601DateFormatter().date(from: text) { parsed } else { start }
         let configuration = HKWorkoutConfiguration()
         configuration.activityType = .traditionalStrengthTraining
         let builder = HKWorkoutBuilder(healthStore: store, configuration: configuration, device: nil)
@@ -192,12 +192,12 @@ public final class HealthKitAdapter: @unchecked Sendable {
         let canonical = String(data: workoutJSON, encoding: .utf8) ?? ""
         try await addMetadata(builder, metadata: [HealthInterop.canonicalMetadataKey: canonical,
                                                   "org.free-exercise-db-plusplus.sessionId": (fields["sessionId"]?.stringValue ?? "")])
-        try await end(builder, end: end)
+        try await end(builder, end: endDate)
         return try await finish(builder)
     }
 
     public func importCanonicalWorkouts() async throws -> [Data] {
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[Data], Error>) in
             let query = HKSampleQuery(sampleType: HKObjectType.workoutType(), predicate: nil,
                                       limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, error in
                 if let error { continuation.resume(throwing: error); return }
@@ -211,7 +211,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
     }
 
     private func begin(_ builder: HKWorkoutBuilder, start: Date) async throws {
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             builder.beginCollection(withStart: start) { success, error in
                 if let error { continuation.resume(throwing: error) }
                 else if success { continuation.resume() }
@@ -221,7 +221,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
     }
 
     private func addMetadata(_ builder: HKWorkoutBuilder, metadata: [String: Any]) async throws {
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             builder.addMetadata(metadata) { success, error in
                 if let error { continuation.resume(throwing: error) }
                 else if success { continuation.resume() }
@@ -231,7 +231,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
     }
 
     private func end(_ builder: HKWorkoutBuilder, end: Date) async throws {
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             builder.endCollection(withEnd: end) { success, error in
                 if let error { continuation.resume(throwing: error) }
                 else if success { continuation.resume() }
@@ -241,7 +241,7 @@ public final class HealthKitAdapter: @unchecked Sendable {
     }
 
     private func finish(_ builder: HKWorkoutBuilder) async throws -> HKWorkout {
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<HKWorkout, Error>) in
             builder.finishWorkout { workout, error in
                 if let error { continuation.resume(throwing: error) }
                 else if let workout { continuation.resume(returning: workout) }
