@@ -19,3 +19,27 @@ Before finishing a phase:
 
 `current_status.md` is a local working handoff file. Never stage, commit, or push it. Check the staged file list before every commit to enforce this rule.
 
+## Swift and iOS validation
+
+Run the package's host-side tests with:
+
+```sh
+swift test --package-path packages/swift/FreeExerciseDBPlusPlus
+```
+
+Do not use `swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios15.0` as the iOS validation command. SwiftPM compiles `Package.swift` for the host before compiling package targets; combining the host manifest target with the iPhoneOS SDK produces the misleading `using sysroot for 'iPhoneOS' but targeting 'MacOSX'` / `unable to load standard library` failure.
+
+For a direct iOS target check, use Xcode's compiler, SDK, and generated SwiftPM resource accessor:
+
+```sh
+IOS_SDK="$(xcrun --sdk iphoneos --show-sdk-path)"
+SWIFT_SOURCES=(packages/swift/FreeExerciseDBPlusPlus/Sources/FreeExerciseDBPlusPlus/*.swift)
+RESOURCE_ACCESSOR=packages/swift/FreeExerciseDBPlusPlus/.build/arm64-apple-ios/debug/FreeExerciseDBPlusPlus.build/DerivedSources/resource_bundle_accessor.swift
+xcrun --sdk iphoneos swiftc \
+  -typecheck -parse-as-library \
+  -target arm64-apple-ios15.0 -sdk "$IOS_SDK" \
+  -module-name FreeExerciseDBPlusPlus \
+  "$RESOURCE_ACCESSOR" "${SWIFT_SOURCES[@]}"
+```
+
+The authoritative consumer validation is an Xcode build of the iOS app or framework that consumes this package, using `xcodebuild -sdk iphoneos` or an iOS device destination. A generic device build may still stop at app signing or provisioning; report that separately from compiler or SDK failures.
