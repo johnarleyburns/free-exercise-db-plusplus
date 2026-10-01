@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T15:56:33.564226+00:00",
+    "generatedAt": "2026-10-01T16:52:53.873322+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1154,7 +1154,7 @@
       "catalogs": {
         "es": {
           "source": "translations/es.json",
-          "sha256": "f0b5d0a9f047be9264f0c444ff00e6b901944279cd14055ff01f1f45f1caeec6",
+          "sha256": "64921b3b77894e5ad735da62e1937ff40800df9bfb7bdfb2cd7645c5119b450f",
           "entryCount": 927,
           "reviewedCount": 1,
           "provisionalCount": 926,
@@ -1162,7 +1162,7 @@
         },
         "de": {
           "source": "translations/de.json",
-          "sha256": "e183bb657422d0749c9ae3fcb3da10ed16a541883c2302487f53dfced34218f9",
+          "sha256": "e88f847de68bcd24885c7331e5d574972b1cc1ebcc892a38ee808fa709b1a1f6",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1170,7 +1170,7 @@
         },
         "zh-Hans": {
           "source": "translations/zh-Hans.json",
-          "sha256": "7105b0cf7ace6d882d47a2ab78f189bd27f82bdaf10ef728c6f88a97ac0049fe",
+          "sha256": "7e50ecf490bd96a479305fbd2a53cde5dffad277bbacac9a67e8f9c75393ac80",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1178,7 +1178,7 @@
         },
         "zh-Hant": {
           "source": "translations/zh-Hant.json",
-          "sha256": "97a1682e8eee74847af152590996e978e7f63a93c63ff98ed01384a30330347b",
+          "sha256": "b5703fc50b088d7e2a593b95953d4971993d036001faf781cc37323533c55408",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1186,7 +1186,7 @@
         },
         "pt-BR": {
           "source": "translations/pt-BR.json",
-          "sha256": "82107bb76cfb9fb6de9643cabb24b8467fe59f8756073c4b7927c629af1e2285",
+          "sha256": "8f04bb9773f677c47d1358dd87b8b6ddcae2d47b5c2b9915dbb03540d0be887f",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1194,7 +1194,7 @@
         },
         "fr": {
           "source": "translations/fr.json",
-          "sha256": "e9d76bd29e4f71cfb7746462e50e1a5911160445be386dceadc4032880d30fdb",
+          "sha256": "387cf8eaaf6b13039edd277eb0f155b952c8627dbd965fccee68eba5668382f2",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1202,7 +1202,7 @@
         },
         "ja": {
           "source": "translations/ja.json",
-          "sha256": "72c130be8a71a322bafe133feae6623e768b5c44ef2e0feade68a15543f70211",
+          "sha256": "6ff5734bf283b3b1490f0e744eb4e6e295bf2e6d1ef27e413c82f46340ac1f4a",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1210,7 +1210,7 @@
         },
         "ko": {
           "source": "translations/ko.json",
-          "sha256": "e7e6d2ff083440863f78b92619d934f29f285a8122b6e3c1ea9d9d699b01bbb7",
+          "sha256": "da3408380ada1fbbea5a59c142bbef5ebe7ab6cf88ce76119d51fd9399868aa3",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1218,7 +1218,7 @@
         },
         "hi": {
           "source": "translations/hi.json",
-          "sha256": "e3a907705d7f2f431371e554990b5a28deecbbf36a2e2c88ebf77a5a809b514e",
+          "sha256": "e02fef7a4167e47b44583956bf92bb4b203c1dd16b2a7c80f85b79adbbd5e9ae",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1226,7 +1226,7 @@
         },
         "ar": {
           "source": "translations/ar.json",
-          "sha256": "c0554ba3477035170b8573bb572c046f84ac55afc01c9ac87729929b940bad68",
+          "sha256": "511e86ecf866ee8514aad070755a48b32bfc907c0febf3c501a1641651bff892",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1234,7 +1234,7 @@
         },
         "he": {
           "source": "translations/he.json",
-          "sha256": "4d83ecc69fd3007b1d1d5bb74439829e9c2d3b292dfee33db6507727119945e2",
+          "sha256": "7b762bf9716e475bc4e4006659fe3918180aede5aeba4d07d46df4a1f17809e2",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1242,7 +1242,7 @@
         },
         "ru": {
           "source": "translations/ru.json",
-          "sha256": "abf5359d3b44050071f0b34b8d5e4c8dd4fa0dd2eb01b2cac30e4df29bb295db",
+          "sha256": "f10a26463b73de75310139601a70993b45eeda8e7fd469d69c0825c12edf582e",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1250,7 +1250,7 @@
         },
         "nl": {
           "source": "translations/nl.json",
-          "sha256": "ae4f0e569547fa6efe688f766b8b0b3bc484ff742df74a260eff5c103339fa4e",
+          "sha256": "02becd3c1c1ce9fa7a2e25086f90aaab4d07e6484ac8eff790c131e640bf83f7",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1258,7 +1258,7 @@
         },
         "it": {
           "source": "translations/it.json",
-          "sha256": "61fff73939bff472eea419bb504ae18db4ed54ce5c0abb0137560673cb36fdc7",
+          "sha256": "d9dfa2ea4296fdf3a4db5dd9f564f930ad4b85ae5c0207f9b52f0200f902c127",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
