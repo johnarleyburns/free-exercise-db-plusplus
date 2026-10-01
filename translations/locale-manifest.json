@@ -8,7 +8,8 @@
     "zh-Hans",
     "zh-Hant",
     "pt-BR",
-    "fr"
+    "fr",
+    "ja"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
@@ -17,6 +18,7 @@
     "zh-Hans": "translations/zh-Hans.json",
     "zh-Hant": "translations/zh-Hant.json",
     "pt-BR": "translations/pt-BR.json",
-    "fr": "translations/fr.json"
+    "fr": "translations/fr.json",
+    "ja": "translations/ja.json"
   }
 }
