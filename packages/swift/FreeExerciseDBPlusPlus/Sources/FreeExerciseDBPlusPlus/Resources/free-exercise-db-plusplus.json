@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:47:57.318698+00:00",
+    "generatedAt": "2026-10-01T16:50:48.655284+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1258,11 +1258,11 @@
         },
         "it": {
           "source": "translations/it.json",
-          "sha256": "7ba1e7511c522ffeb66643ce3e93ccd19324606059f37c41b5e0ad479b2b5692",
+          "sha256": "d9dfa2ea4296fdf3a4db5dd9f564f930ad4b85ae5c0207f9b52f0200f902c127",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 775,
-          "untranslatedCount": 152
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         }
       }
     },
@@ -1621,12 +1621,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "90/90 hamstring",
+          "preferred": "Ischiocrurali 90/90",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -2124,12 +2124,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Adductor",
+          "preferred": "Adduttori",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -2288,12 +2288,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Adductor/groin",
+          "preferred": "Adduttori/inguine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -2468,12 +2468,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Advanced kettlebell windmill",
+          "preferred": "Mulino avanzato con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -2643,7 +2643,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -4885,12 +4885,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Ankle circles",
+          "preferred": "Circonduzioni delle caviglie",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -5210,12 +5210,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "Automassaggio del tibiale anteriore",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -6085,12 +6085,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "Allenamento con pietra Atlas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -6278,12 +6278,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Atlas stones",
+          "preferred": "Pietre Atlas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -6822,12 +6822,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Backward drag",
+          "preferred": "Trascinamento all’indietro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -7152,12 +7152,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Balance board",
+          "preferred": "Tavola propriocettiva",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -13118,12 +13118,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Battling ropes",
+          "preferred": "Corde da combattimento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -16626,12 +16626,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Bicycling",
+          "preferred": "Ciclismo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -16792,12 +16792,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "Cyclette",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -17141,12 +17141,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Body-up",
+          "preferred": "Sollevamento del corpo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -18536,12 +18536,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Bottoms up",
+          "preferred": "Kettlebell con la base verso l’alto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -18876,12 +18876,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Box skip",
+          "preferred": "Salto alternato sul box",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -19588,12 +19588,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Brachialis-smr",
+          "preferred": "Automassaggio del brachiale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -19764,12 +19764,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "Spinte Bradford/Rocky",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -19933,12 +19933,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Butt-ups",
+          "preferred": "Sollevamenti dei glutei",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -20282,7 +20282,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -25740,12 +25740,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Calves-smr",
+          "preferred": "Automassaggio dei polpacci",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -26094,12 +26094,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Car drivers",
+          "preferred": "Rotazioni del volante",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -26264,12 +26264,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Carioca quick step",
+          "preferred": "Passo carioca rapido",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -27453,12 +27453,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Chair squat",
+          "preferred": "Squat sulla sedia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -29312,12 +29312,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Circus bell",
+          "preferred": "Campana da circo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -32368,12 +32368,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Cocoons",
+          "preferred": "Crunch a cocoon",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -32554,12 +32554,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Conan's wheel",
+          "preferred": "Ruota di Conan",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -32727,12 +32727,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Concentration curls",
+          "preferred": "Curl concentrato",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -32896,12 +32896,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Cross-body crunch",
+          "preferred": "Crunch incrociato",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -33581,12 +33581,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Crucifix",
+          "preferred": "Crocifisso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -34605,7 +34605,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -37739,12 +37739,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Dips — triceps version",
+          "preferred": "Dip per i tricipiti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -39163,12 +39163,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Downward facing balance",
+          "preferred": "Equilibrio prono",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -39341,7 +39341,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -45550,12 +45550,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Elbow circles",
+          "preferred": "Circonduzioni dei gomiti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -46405,12 +46405,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Elliptical trainer",
+          "preferred": "Ellittica",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -47779,12 +47779,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Farmer's walk",
+          "preferred": "Camminata del contadino",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -47948,12 +47948,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Fast skipping",
+          "preferred": "Salto rapido con la corda",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -48118,12 +48118,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Finger curls",
+          "preferred": "Curl delle dita",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -49499,12 +49499,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Flutter kicks",
+          "preferred": "Calci alternati",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -49661,12 +49661,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Foot-smr",
+          "preferred": "Automassaggio del piede",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -50031,12 +50031,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Frankenstein squat",
+          "preferred": "Squat Frankenstein",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -50378,12 +50378,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Frog hops",
+          "preferred": "Salti della rana",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -50549,12 +50549,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Frog sit-ups",
+          "preferred": "Sit-up a rana",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -53138,12 +53138,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "Trazioni allo sterno di Gironda",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -53671,7 +53671,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -53848,7 +53848,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -54191,12 +54191,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Gorilla chin/crunch",
+          "preferred": "Chin-up/crunch del gorilla",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -54517,12 +54517,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Groiners",
+          "preferred": "Stretching dinamico dell’inguine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -54702,7 +54702,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -55207,12 +55207,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Hamstring-smr",
+          "preferred": "Automassaggio degli ischiocrurali",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -56485,12 +56485,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Hanging bar good morning",
+          "preferred": "Good morning alla sbarra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -56824,12 +56824,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Hanging pike",
+          "preferred": "Pike sospeso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -57176,12 +57176,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "Spinta con sacco pesante",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -58198,12 +58198,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Hug a ball",
+          "preferred": "Abbraccio della palla",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -58533,12 +58533,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Hurdle hops",
+          "preferred": "Salti degli ostacoli",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -59209,12 +59209,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "Automassaggio del tratto ileotibiale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -59379,7 +59379,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -63344,12 +63344,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Iron cross",
+          "preferred": "Croce di ferro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -64190,12 +64190,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Isometric wipers",
+          "preferred": "Wiper isometrici",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -64885,12 +64885,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Jefferson squats",
+          "preferred": "Squat Jefferson",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -65412,12 +65412,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "Jogging sul tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -65605,12 +65605,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Keg load",
+          "preferred": "Sollevamento del barile",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -66139,12 +66139,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell figure 8",
+          "preferred": "Otto con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -66857,12 +66857,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell pirate ships",
+          "preferred": "Navi pirata con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -67037,12 +67037,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell pistol squat",
+          "preferred": "Pistol squat con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -67749,12 +67749,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell thruster",
+          "preferred": "Thruster con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -68107,12 +68107,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell turkish get-up squat style",
+          "preferred": "Turkish get-up con kettlebell in stile squat",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -68287,12 +68287,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kettlebell windmill",
+          "preferred": "Mulino con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -68477,12 +68477,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Kipping muscle up",
+          "preferred": "Muscle-up con slancio",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -68808,12 +68808,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Knee circles",
+          "preferred": "Circonduzioni delle ginocchia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -70869,12 +70869,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Landmine 180's",
+          "preferred": "Rotazione di 180 gradi con landmine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -71055,12 +71055,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "Spinta lineare con landmine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -71226,12 +71226,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Lateral bound",
+          "preferred": "Balzo laterale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -71567,12 +71567,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Lateral cone hops",
+          "preferred": "Salti laterali sopra i coni",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -71899,12 +71899,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "Automassaggio del gran dorsale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -74484,12 +74484,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "Tecnica di partenza lineare in tre parti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -74652,12 +74652,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "Esercizio di accelerazione lineare al muro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -75012,12 +75012,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Log lift",
+          "preferred": "Sollevamento del tronco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -75184,12 +75184,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "London bridges",
+          "preferred": "Ponti di Londra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -75346,12 +75346,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Looking at ceiling",
+          "preferred": "Guardare il soffitto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -81996,12 +81996,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Mixed grip chin",
+          "preferred": "Trazione a presa mista",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -82165,12 +82165,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Monster walk",
+          "preferred": "Camminata del mostro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -82497,12 +82497,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Moving claw series",
+          "preferred": "Serie dell’artiglio in movimento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -82874,12 +82874,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Muscle up",
+          "preferred": "Muscle-up",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -83054,12 +83054,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "Hack squat a posizione stretta",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -83411,12 +83411,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Narrow stance squats",
+          "preferred": "Squat a posizione stretta",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -84094,12 +84094,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Oblique crunches",
+          "preferred": "Crunch obliqui",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -84443,12 +84443,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Olympic squat",
+          "preferred": "Squat olimpico",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -90418,12 +90418,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "One half locust",
+          "preferred": "Mezza posizione della locusta",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -91284,12 +91284,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Otis-up",
+          "preferred": "Crunch Otis",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -93525,12 +93525,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Parallel bar dip",
+          "preferred": "Dip alle parallele",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -93850,12 +93850,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Peroneals-smr",
+          "preferred": "Automassaggio dei peronei",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -94366,12 +94366,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Pin presses",
+          "preferred": "Spinta dai supporti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -94528,12 +94528,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Piriformis-smr",
+          "preferred": "Automassaggio del piriforme",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -94701,7 +94701,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -94865,12 +94865,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Plate pinch",
+          "preferred": "Pinza dei dischi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -95206,12 +95206,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "Scivolate degli ischiocrurali sulla piattaforma",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -95560,12 +95560,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Plyo kettlebell pushups",
+          "preferred": "Piegamenti pliometrici con kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -97388,12 +97388,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Preacher curl",
+          "preferred": "Curl alla panca Scott",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -97901,12 +97901,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "Esercizio manuale per gli ischiocrurali proni",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -98071,12 +98071,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Prowler sprint",
+          "preferred": "Sprint con slitta Prowler",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -98421,12 +98421,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Pullups",
+          "preferred": "Trazioni",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -99831,12 +99831,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Pushups",
+          "preferred": "Piegamenti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -100169,12 +100169,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Pyramid",
+          "preferred": "Piramide",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -100493,12 +100493,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "Automassaggio del quadricipite",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -100660,12 +100660,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Quick leap",
+          "preferred": "Salto rapido",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -100844,12 +100844,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Rack delivery",
+          "preferred": "Portata in posizione di rack",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -101205,12 +101205,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Rack pulls",
+          "preferred": "Stacco dai supporti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -101534,12 +101534,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Recumbent bike",
+          "preferred": "Cyclette reclinata",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -104864,12 +104864,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "Automassaggio dei romboidi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -105047,12 +105047,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Rickshaw carry",
+          "preferred": "Trasporto del risciò",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -105405,12 +105405,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Ring dips",
+          "preferred": "Dip agli anelli",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -107306,12 +107306,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Rowing, stationary",
+          "preferred": "Vogatore stazionario",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -107637,12 +107637,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Running, treadmill",
+          "preferred": "Corsa sul tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -108001,12 +108001,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Sandbag load",
+          "preferred": "Sollevamento del sacco di sabbia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -108341,12 +108341,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Scissor kick",
+          "preferred": "Calcio a forbice",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -120392,12 +120392,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Sit squats",
+          "preferred": "Squat fino a sedersi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -120560,12 +120560,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Skating",
+          "preferred": "Skater",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -121791,12 +121791,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "Slanci con mazza",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -126600,12 +126600,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Speed box squat",
+          "preferred": "Box squat dinamico",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -126782,12 +126782,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Speed squats",
+          "preferred": "Squat dinamici",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -126953,12 +126953,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -127132,12 +127132,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Spider crawl",
+          "preferred": "Camminata del ragno",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -127310,7 +127310,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -129637,12 +129637,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -137968,12 +137968,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Step mill",
+          "preferred": "Stepper",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -138670,12 +138670,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Stomach vacuum",
+          "preferred": "Vacuum addominale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -140273,7 +140273,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -142503,12 +142503,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Thigh abductor",
+          "preferred": "Abduzione della coscia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -142674,12 +142674,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Thigh adductor",
+          "preferred": "Adduzione della coscia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -142866,12 +142866,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Tire flip",
+          "preferred": "Ribaltamento del pneumatico",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -143032,12 +143032,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Toe touchers",
+          "preferred": "Tocchi delle punte dei piedi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -143360,12 +143360,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Trail running/walking",
+          "preferred": "Corsa o camminata su sentiero",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -144880,12 +144880,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Tuck crunch",
+          "preferred": "Crunch raccolto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -147138,12 +147138,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "V-bar pulldown",
+          "preferred": "Lat machine con barra a V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -147316,12 +147316,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "V-bar pullup",
+          "preferred": "Trazioni con barra a V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -147484,12 +147484,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Vertical swing",
+          "preferred": "Slancio verticale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -147650,12 +147650,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Walking, treadmill",
+          "preferred": "Camminata sul tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -150977,12 +150977,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Wind sprints",
+          "preferred": "Sprint",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -151144,12 +151144,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Windmills",
+          "preferred": "Mulini a vento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -151474,12 +151474,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Wrist circles",
+          "preferred": "Circonduzioni dei polsi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -151645,12 +151645,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Wrist roller",
+          "preferred": "Rullo per polsi",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -151997,12 +151997,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Yoke walk",
+          "preferred": "Camminata con giogo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -152178,12 +152178,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Zercher squats",
+          "preferred": "Squat Zercher",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -152354,12 +152354,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Zottman curl",
+          "preferred": "Curl Zottman",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -152528,12 +152528,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Zottman preacher curl",
+          "preferred": "Curl Zottman alla panca Scott",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -159972,7 +159972,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -160146,7 +160146,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -160316,7 +160316,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
@@ -161169,12 +161169,12 @@
           "reviewStatus": "provisional"
         },
         "it": {
-          "preferred": "Assisted dip",
+          "preferred": "Dip assistiti",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         }
       }
     },
