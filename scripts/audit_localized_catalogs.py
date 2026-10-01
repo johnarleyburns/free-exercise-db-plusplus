@@ -61,6 +61,8 @@ def audit(root: Path) -> tuple[str, int]:
         flags = []
         untranslated = []
         unchanged = []
+        overlap_candidates = []
+        overlap_tokens = {}
         counts = {"reviewed": 0, "provisional": 0, "untranslated": 0}
         for exercise_id, entry in catalog["exercises"].items():
             status = entry["reviewStatus"]
@@ -68,12 +70,18 @@ def audit(root: Path) -> tuple[str, int]:
             source = db["exercises"][exercise_id]["source"]["name"]
             if status != "untranslated" and norm(entry["preferred"]) == norm(source):
                 unchanged.append((exercise_id, entry["preferred"]))
+            source_tokens = {token.casefold() for token in TOKEN.findall(source)}
+            preferred_tokens = {token.casefold() for token in TOKEN.findall(entry["preferred"])}
+            overlap = sorted(source_tokens & preferred_tokens - ALLOWED_LOANWORDS)
+            if overlap and status != "untranslated":
+                overlap_candidates.append((exercise_id, entry["preferred"], overlap))
+                for token in overlap:
+                    overlap_tokens[token] = overlap_tokens.get(token, 0) + 1
             if status == "untranslated":
                 untranslated.append((exercise_id, entry["preferred"]))
                 if norm(entry["preferred"]) != norm(source):
                     flags.append((exercise_id, "untranslated-status-mismatch", entry["preferred"]))
                 continue
-            source_tokens = {token.casefold() for token in TOKEN.findall(source)}
             residual = []
             for token in TOKEN.findall(entry["preferred"]):
                 lowered = token.casefold()
@@ -103,6 +111,23 @@ def audit(root: Path) -> tuple[str, int]:
             "These are explicit international/proper-term candidates, not proof that a native translation is unnecessary."
         )
         lines.append("")
+        lines.append(
+            f"Semantic review candidates: {len(overlap_candidates)} entries retain source-language tokens "
+            "outside the loanword allowlist. This queue is advisory and may include valid local loanwords; "
+            "it must be resolved by native domain review before release."
+        )
+        if overlap_tokens:
+            top_tokens = sorted(overlap_tokens.items(), key=lambda item: (-item[1], item[0]))[:20]
+            lines.append("Top retained source tokens: " + ", ".join(f"`{token}` ({count})" for token, count in top_tokens) + ".")
+        lines.append("")
+        if overlap_candidates:
+            lines.append("First semantic-review candidates:")
+            lines.append("")
+            lines.append("| exerciseId | preferred | retained source tokens |")
+            lines.append("|---|---|---|")
+            for exercise_id, preferred, overlap in overlap_candidates[:25]:
+                lines.append(f"| `{exercise_id}` | {preferred.replace('|', '\\|')} | {', '.join(overlap)} |")
+            lines.append("")
         if unchanged:
             lines.append("| exerciseId | unchanged preferred name |")
             lines.append("|---|---|")
