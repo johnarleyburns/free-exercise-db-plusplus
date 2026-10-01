@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:43:26.103785+00:00",
+    "generatedAt": "2026-10-01T16:44:50.368993+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1242,11 +1242,11 @@
         },
         "ru": {
           "source": "translations/ru.json",
-          "sha256": "556b2c94b7ac5004cc658feb2d3f28d2ce3f7772705f6e23f14d1ee4c46886ce",
+          "sha256": "f10a26463b73de75310139601a70993b45eeda8e7fd469d69c0825c12edf582e",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 801,
-          "untranslatedCount": 126
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         },
         "nl": {
           "source": "translations/nl.json",
@@ -1605,12 +1605,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "90/90 hamstring",
+          "preferred": "Растяжка задней поверхности бедра 90/90",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "90/90 hamstring",
@@ -2108,12 +2108,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Adductor",
+          "preferred": "Приводящие мышцы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Adductor",
@@ -2272,12 +2272,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Adductor/groin",
+          "preferred": "Приводящие мышцы/пах",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Adductor/groin",
@@ -2622,12 +2622,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Air bike",
+          "preferred": "Велотренажёр с воздушным сопротивлением",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Air bike",
@@ -4869,12 +4869,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Ankle circles",
+          "preferred": "Вращения стопами",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Ankle circles",
@@ -5194,12 +5194,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "Самомассаж передней большеберцовой мышцы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Anterior tibialis-smr",
@@ -6069,12 +6069,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "Тренировка с камнем Атласа",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Atlas stone trainer",
@@ -6262,12 +6262,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Atlas stones",
+          "preferred": "Камни Атласа",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Atlas stones",
@@ -6806,12 +6806,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Backward drag",
+          "preferred": "Обратная тяга",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Backward drag",
@@ -7136,12 +7136,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Balance board",
+          "preferred": "Балансировочная платформа",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Balance board",
@@ -13102,12 +13102,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Battling ropes",
+          "preferred": "Канаты",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Battling ropes",
@@ -16610,12 +16610,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Bicycling",
+          "preferred": "Велоспорт",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Bicycling",
@@ -16776,12 +16776,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "Велотренажёр",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Bicycling, stationary",
@@ -17125,12 +17125,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Body-up",
+          "preferred": "Подъём тела",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Body-up",
@@ -18520,12 +18520,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Bottoms up",
+          "preferred": "Гиря дном вверх",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Bottoms up",
@@ -18860,12 +18860,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Box skip",
+          "preferred": "Прыжки через короб",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Box skip",
@@ -19572,12 +19572,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Brachialis-smr",
+          "preferred": "Самомассаж плечевой мышцы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Brachialis-smr",
@@ -19748,12 +19748,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "Жимы Брэдфорда/Рокки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Bradford/rocky presses",
@@ -19917,12 +19917,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Butt-ups",
+          "preferred": "Подъём таза",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Butt-ups",
@@ -20261,12 +20261,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Butterfly",
+          "preferred": "Баттерфляй",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Butterfly",
@@ -25724,12 +25724,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Calves-smr",
+          "preferred": "Самомассаж икроножных мышц",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Calves-smr",
@@ -26078,12 +26078,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Car drivers",
+          "preferred": "Вращение руля",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Car drivers",
@@ -26248,12 +26248,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Carioca quick step",
+          "preferred": "Быстрый шаг кариока",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Carioca quick step",
@@ -28765,12 +28765,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Child's pose",
+          "preferred": "Поза ребёнка",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Kindhouding",
@@ -29296,12 +29296,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Circus bell",
+          "preferred": "Цирковой колокол",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Circus bell",
@@ -32352,12 +32352,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Cocoons",
+          "preferred": "Кокон",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Cocoons",
@@ -32538,12 +32538,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Conan's wheel",
+          "preferred": "Колесо Конана",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Conan's wheel",
@@ -32711,12 +32711,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Concentration curls",
+          "preferred": "Концентрированные сгибания рук",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Concentration curls",
@@ -33565,12 +33565,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Crucifix",
+          "preferred": "Крест",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Crucifix",
@@ -34584,12 +34584,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Dead bug",
+          "preferred": "Мёртвый жук",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Dead bug",
@@ -37723,12 +37723,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Dips — triceps version",
+          "preferred": "Отжимания на брусьях для трицепса",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Dips — triceps version",
@@ -39147,12 +39147,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Downward facing balance",
+          "preferred": "Баланс лицом вниз",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Downward facing balance",
@@ -45534,12 +45534,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Elbow circles",
+          "preferred": "Вращения локтями",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Elbow circles",
@@ -46389,12 +46389,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Elliptical trainer",
+          "preferred": "Эллиптический тренажёр",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Elliptical trainer",
@@ -47763,12 +47763,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Farmer's walk",
+          "preferred": "Прогулка фермера",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Farmer's walk",
@@ -47932,12 +47932,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Fast skipping",
+          "preferred": "Быстрое вращение скакалки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Fast skipping",
@@ -48102,12 +48102,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Finger curls",
+          "preferred": "Сгибания пальцев",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Finger curls",
@@ -49483,12 +49483,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Flutter kicks",
+          "preferred": "Попеременные махи ногами",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Flutter kicks",
@@ -49645,12 +49645,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Foot-smr",
+          "preferred": "Самомассаж стопы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Foot-smr",
@@ -50362,12 +50362,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Frog hops",
+          "preferred": "Прыжки лягушки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Frog hops",
@@ -50533,12 +50533,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Frog sit-ups",
+          "preferred": "Скручивания лягушки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Frog sit-ups",
@@ -53122,12 +53122,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "Подтягивания к груди по Джиронде",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Gironda sternum chins",
@@ -54501,12 +54501,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Groiners",
+          "preferred": "Динамическая растяжка паха",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Groiners",
@@ -54851,12 +54851,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Hammer curls",
+          "preferred": "Сгибания рук молотком",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Hammer curls",
@@ -55191,12 +55191,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Hamstring-smr",
+          "preferred": "Самомассаж задней поверхности бедра",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Hamstring-smr",
@@ -56808,12 +56808,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Hanging pike",
+          "preferred": "Пайк в висе",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Hanging pike",
@@ -57160,12 +57160,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "Толчок тяжёлого мешка",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Heavy bag thrust",
@@ -58182,12 +58182,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Hug a ball",
+          "preferred": "Объятие мяча",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Hug a ball",
@@ -58517,12 +58517,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Hurdle hops",
+          "preferred": "Прыжки через барьеры",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Hurdle hops",
@@ -59193,12 +59193,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "Самомассаж подвздошно-большеберцового тракта",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Iliotibial tract-smr",
@@ -59358,12 +59358,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Inchworm",
+          "preferred": "Червяк",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Inchworm",
@@ -63328,12 +63328,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Iron cross",
+          "preferred": "Железный крест",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Iron cross",
@@ -64174,12 +64174,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Isometric wipers",
+          "preferred": "Изометрические дворники",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Isometric wipers",
@@ -64869,12 +64869,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Jefferson squats",
+          "preferred": "Приседания Джефферсона",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Jefferson squats",
@@ -65396,12 +65396,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "Бег трусцой на дорожке",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Jogging, treadmill",
@@ -65589,12 +65589,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Keg load",
+          "preferred": "Подъём бочонка",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Keg load",
@@ -68461,12 +68461,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Kipping muscle up",
+          "preferred": "Масл-ап с раскачкой",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Kipping muscle up",
@@ -68792,12 +68792,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Knee circles",
+          "preferred": "Вращения коленями",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Knee circles",
@@ -70853,12 +70853,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Landmine 180's",
+          "preferred": "Повороты на 180 градусов с лэндмайном",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Landmine 180's",
@@ -71039,12 +71039,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "Линейный жим с лэндмайном",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Landmine linear jammer",
@@ -71210,12 +71210,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Lateral bound",
+          "preferred": "Боковые прыжки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Lateral bound",
@@ -71551,12 +71551,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Lateral cone hops",
+          "preferred": "Боковые прыжки через конусы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Lateral cone hops",
@@ -71883,12 +71883,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "Самомассаж широчайшей мышцы спины",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Latissimus dorsi-smr",
@@ -74468,12 +74468,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "Линейная техника старта из трёх частей",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Linear 3-part start technique",
@@ -74636,12 +74636,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "Настенное упражнение на линейное ускорение",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Linear acceleration wall drill",
@@ -74996,12 +74996,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Log lift",
+          "preferred": "Подъём бревна",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Log lift",
@@ -75168,12 +75168,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "London bridges",
+          "preferred": "Лондонские мосты",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "London bridges",
@@ -75330,12 +75330,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Looking at ceiling",
+          "preferred": "Взгляд на потолок",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Looking at ceiling",
@@ -81980,12 +81980,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Mixed grip chin",
+          "preferred": "Подтягивание смешанным хватом",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Mixed grip chin",
@@ -82149,12 +82149,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Monster walk",
+          "preferred": "Прогулка монстра",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Monster walk",
@@ -82315,12 +82315,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Mountain climbers",
+          "preferred": "Скалолаз",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Bergbeklimmer",
@@ -82481,12 +82481,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Moving claw series",
+          "preferred": "Серия движущихся когтей",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Moving claw series",
@@ -82858,12 +82858,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Muscle up",
+          "preferred": "Масл-ап",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Muscle up",
@@ -83038,12 +83038,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "Гакк-приседания с узкой постановкой ног",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Narrow stance hack squats",
@@ -83395,12 +83395,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Narrow stance squats",
+          "preferred": "Приседания с узкой постановкой ног",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Narrow stance squats",
@@ -84078,12 +84078,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Oblique crunches",
+          "preferred": "Косые скручивания",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Oblique crunches",
@@ -90402,12 +90402,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "One half locust",
+          "preferred": "Полупоза саранчи",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "One half locust",
@@ -91268,12 +91268,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Otis-up",
+          "preferred": "Скручивания Отиса",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Otis-up",
@@ -93509,12 +93509,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Parallel bar dip",
+          "preferred": "Отжимания на параллельных брусьях",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Parallel bar dip",
@@ -93834,12 +93834,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Peroneals-smr",
+          "preferred": "Самомассаж малоберцовых мышц",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Peroneals-smr",
@@ -94350,12 +94350,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Pin presses",
+          "preferred": "Жим с упоров",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Pin presses",
@@ -94512,12 +94512,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Piriformis-smr",
+          "preferred": "Самомассаж грушевидной мышцы",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Piriformis-smr",
@@ -94849,12 +94849,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Plate pinch",
+          "preferred": "Сведение дисков пальцами",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Plate pinch",
@@ -95190,12 +95190,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "Скольжение задней поверхностью бедра по платформе",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Platform hamstring slides",
@@ -97885,12 +97885,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "Ручное упражнение для задней поверхности бедра лёжа на животе",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Prone manual hamstring",
@@ -98055,12 +98055,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Prowler sprint",
+          "preferred": "Спринт с санями Prowler",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Prowler sprint",
@@ -98405,12 +98405,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Pullups",
+          "preferred": "Подтягивания",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Pullups",
@@ -99815,12 +99815,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Pushups",
+          "preferred": "Отжимания",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Pushups",
@@ -100153,12 +100153,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Pyramid",
+          "preferred": "Пирамида",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Pyramid",
@@ -100477,12 +100477,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "Самомассаж квадрицепса",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Quadriceps-smr",
@@ -100644,12 +100644,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Quick leap",
+          "preferred": "Быстрый прыжок",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Quick leap",
@@ -100828,12 +100828,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Rack delivery",
+          "preferred": "Подача в положение стойки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Rack delivery",
@@ -101189,12 +101189,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Rack pulls",
+          "preferred": "Становая тяга с упоров",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Rack pulls",
@@ -101518,12 +101518,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Recumbent bike",
+          "preferred": "Лежачий велотренажёр",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Recumbent bike",
@@ -104848,12 +104848,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "Самомассаж ромбовидных мышц",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Rhomboids-smr",
@@ -105031,12 +105031,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Rickshaw carry",
+          "preferred": "Переноска рикши",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Rickshaw carry",
@@ -105389,12 +105389,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Ring dips",
+          "preferred": "Отжимания на кольцах",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Ring dips",
@@ -107290,12 +107290,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Rowing, stationary",
+          "preferred": "Гребля на тренажёре",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Rowing, stationary",
@@ -107621,12 +107621,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Running, treadmill",
+          "preferred": "Бег на дорожке",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Running, treadmill",
@@ -107985,12 +107985,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Sandbag load",
+          "preferred": "Подъём мешка с песком",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Sandbag load",
@@ -108325,12 +108325,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Scissor kick",
+          "preferred": "Ножницы ногами",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Scissor kick",
@@ -120376,12 +120376,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Sit squats",
+          "preferred": "Приседания до сидения",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Sit squats",
@@ -120544,12 +120544,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Skating",
+          "preferred": "Конькобежец",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Skating",
@@ -121775,12 +121775,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "Махи кувалдой",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Sledgehammer swings",
@@ -126766,12 +126766,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Speed squats",
+          "preferred": "Скоростные приседания",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Speed squats",
@@ -126937,12 +126937,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Spell caster",
@@ -127116,12 +127116,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Spider crawl",
+          "preferred": "Паучья ходьба",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Spider crawl",
@@ -129621,12 +129621,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Stairmaster",
@@ -137952,12 +137952,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Step mill",
+          "preferred": "Степпер",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Step mill",
@@ -138654,12 +138654,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Stomach vacuum",
+          "preferred": "Вакуум живота",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Stomach vacuum",
@@ -140252,12 +140252,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Superman",
+          "preferred": "Супермен",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Superman",
@@ -142487,12 +142487,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Thigh abductor",
+          "preferred": "Отведение бедра",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Thigh abductor",
@@ -142658,12 +142658,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Thigh adductor",
+          "preferred": "Приведение бедра",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Thigh adductor",
@@ -142850,12 +142850,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Tire flip",
+          "preferred": "Переворот покрышки",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Tire flip",
@@ -143016,12 +143016,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Toe touchers",
+          "preferred": "Касания пальцев ног",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Toe touchers",
@@ -143344,12 +143344,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Trail running/walking",
+          "preferred": "Бег или ходьба по пересечённой местности",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Trail running/walking",
@@ -147122,12 +147122,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "V-bar pulldown",
+          "preferred": "Тяга верхнего блока с V-рукоятью",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "V-bar pulldown",
@@ -147300,12 +147300,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "V-bar pullup",
+          "preferred": "Подтягивания с V-рукоятью",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "V-bar pullup",
@@ -147634,12 +147634,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Walking, treadmill",
+          "preferred": "Ходьба на дорожке",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Walking, treadmill",
@@ -150961,12 +150961,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Wind sprints",
+          "preferred": "Спринтерские ускорения",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Wind sprints",
@@ -151128,12 +151128,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Windmills",
+          "preferred": "Мельница",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Windmills",
@@ -151458,12 +151458,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Wrist circles",
+          "preferred": "Вращения кистями",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Wrist circles",
@@ -151629,12 +151629,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Wrist roller",
+          "preferred": "Ролик для запястий",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Wrist roller",
@@ -151981,12 +151981,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Yoke walk",
+          "preferred": "Ходьба с коромыслом",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Yoke walk",
@@ -152162,12 +152162,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Zercher squats",
+          "preferred": "Приседания Зерхера",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Zercher squats",
@@ -161153,12 +161153,12 @@
           "reviewStatus": "provisional"
         },
         "ru": {
-          "preferred": "Assisted dip",
+          "preferred": "Отжимания на брусьях с помощью",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "nl": {
           "preferred": "Assisted dip",
