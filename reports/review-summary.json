@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T18:25:45.708129+00:00",
+    "generatedAt": "2026-10-01T18:33:52.023770+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1194,7 +1194,7 @@
         },
         "fr": {
           "source": "translations/fr.json",
-          "sha256": "387cf8eaaf6b13039edd277eb0f155b952c8627dbd965fccee68eba5668382f2",
+          "sha256": "1279d69dbcf0434d91e639206b15b86b33387fdfa9f722feebdcd470d8b94922",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
