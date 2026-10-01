@@ -15,7 +15,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ab_Crunch_Machine": {
       "preferred": "एब क्रंच मशीन",
@@ -39,7 +39,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Adductor_Groin": {
       "preferred": "Adductor/groin",
@@ -47,7 +47,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Advanced_Kettlebell_Windmill": {
       "preferred": "Advanced केटलबेल windmill",
@@ -63,7 +63,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "All_Fours_Quad_Stretch": {
       "preferred": "All fours quad स्ट्रेचिंग",
@@ -167,7 +167,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ankle_On_The_Knee": {
       "preferred": "Ankle पर knee",
@@ -183,7 +183,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Anti-Gravity_Press": {
       "preferred": "Anti-gravity प्रेस",
@@ -223,7 +223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Atlas_Stones": {
       "preferred": "Atlas stones",
@@ -231,7 +231,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Axle_Deadlift": {
       "preferred": "Axle डेडलिफ्ट",
@@ -255,7 +255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Backward_Medicine_Ball_Throw": {
       "preferred": "Backward मेडिसिन बॉल throw",
@@ -271,7 +271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ball_Leg_Curl": {
       "preferred": "Ball लेग कर्ल",
@@ -482,7 +482,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Shrug_Behind_The_Back": {
-      "preferred": "बारबेल श्रग behind बैक",
+      "preferred": "बारबेल श्रग पीठ के पीछे",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -543,7 +543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bear_Crawl_Sled_Drags": {
       "preferred": "Bear crawl स्लेड drags",
@@ -554,7 +554,7 @@
       "reviewStatus": "provisional"
     },
     "Behind_Head_Chest_Stretch": {
-      "preferred": "Behind head चेस्ट स्ट्रेचिंग",
+      "preferred": "सिर के पीछे चेस्ट स्ट्रेचिंग",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -642,7 +642,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench": {
-      "preferred": "झुककर डंबल रियर डेल्ट रेज़ के साथ head पर बेंच",
+      "preferred": "झुककर डंबल रियर डेल्ट रेज़ के साथ बेंच पर सिर रखकर",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -703,7 +703,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bicycling_Stationary": {
       "preferred": "Bicycling, stationary",
@@ -711,7 +711,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Board_Press": {
       "preferred": "Board प्रेस",
@@ -727,7 +727,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Body_Tricep_Press": {
       "preferred": "Body ट्राइसेप्स प्रेस",
@@ -791,10 +791,10 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Box_Jump_Multiple_Response": {
-      "preferred": "बॉक्स जंप multiple response",
+      "preferred": "बॉक्स जंप मल्टीपल रिस्पॉन्स",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -807,7 +807,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Box_Squat": {
       "preferred": "Box स्क्वाट",
@@ -839,7 +839,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bradford_Rocky_Presses": {
       "preferred": "Bradford/rocky presses",
@@ -847,7 +847,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Butt-Ups": {
       "preferred": "Butt-ups",
@@ -855,7 +855,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Butt_Lift_Bridge": {
       "preferred": "Butt lift ब्रिज",
@@ -871,7 +871,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cable_Chest_Press": {
       "preferred": "केबल चेस्ट प्रेस",
@@ -1082,7 +1082,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Press_On_The_Leg_Press_Machine": {
-      "preferred": "काफ प्रेस पर लेग प्रेस मशीन",
+      "preferred": "लेग प्रेस मशीन पर पिंडलियों का व्यायाम",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1127,7 +1127,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Car_Deadlift": {
       "preferred": "Car डेडलिफ्ट",
@@ -1143,7 +1143,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Carioca_Quick_Step": {
       "preferred": "Carioca quick step",
@@ -1151,7 +1151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cat_Stretch": {
       "preferred": "Cat स्ट्रेचिंग",
@@ -1218,7 +1218,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_And_Front_Of_Shoulder_Stretch": {
-      "preferred": "चेस्ट और फ्रंट of शोल्डर स्ट्रेचिंग",
+      "preferred": "चेस्ट और शोल्डर फ्रंट स्ट्रेच",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1234,7 +1234,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_multiple_response": {
-      "preferred": "चेस्ट पुश multiple response",
+      "preferred": "चेस्ट पुश मल्टीपल रिस्पॉन्स",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1242,7 +1242,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_single_response": {
-      "preferred": "चेस्ट पुश सिंगल response",
+      "preferred": "चेस्ट पुश सिंगल रिस्पॉन्स",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1250,7 +1250,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_with_Run_Release": {
-      "preferred": "चेस्ट पुश के साथ run release",
+      "preferred": "चेस्ट पुश के साथ रन रिलीज़",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1271,7 +1271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Chin-Up": {
       "preferred": "चिन-अप",
@@ -1295,7 +1295,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Clean": {
       "preferred": "क्लीन",
@@ -1410,7 +1410,7 @@
       "reviewStatus": "provisional"
     },
     "Close-Grip_Push-Up_off_of_a_Dumbbell": {
-      "preferred": "क्लोज़ ग्रिप पुश-अप off of a डंबल",
+      "preferred": "डंबल पर क्लोज़-ग्रिप पुश-अप",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1431,7 +1431,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Conans_Wheel": {
       "preferred": "Conan's wheel",
@@ -1439,7 +1439,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Concentration_Curls": {
       "preferred": "Concentration curls",
@@ -1447,7 +1447,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cross-Body_Crunch": {
       "preferred": "Cross-body क्रंच",
@@ -1487,7 +1487,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Crunch_-_Hands_Overhead": {
       "preferred": "क्रंच — hands ओवरहेड",
@@ -1511,7 +1511,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cuban_Press": {
       "preferred": "Cuban प्रेस",
@@ -1535,7 +1535,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Deadlift_with_Bands": {
       "preferred": "डेडलिफ्ट के साथ रेज़िस्टेंस बैंड",
@@ -1666,7 +1666,7 @@
       "reviewStatus": "provisional"
     },
     "Dips_-_Chest_Version": {
-      "preferred": "Dips — चेस्ट version",
+      "preferred": "छाती के लिए डिप्स",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1679,7 +1679,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Donkey_Calf_Raises": {
       "preferred": "Donkey काफ raises",
@@ -1743,7 +1743,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Drag_Curl": {
       "preferred": "Drag कर्ल",
@@ -2039,7 +2039,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Elbow_to_Knee": {
       "preferred": "Elbow तक knee",
@@ -2079,7 +2079,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Exercise_Ball_Crunch": {
       "preferred": "एक्सरसाइज़ बॉल क्रंच",
@@ -2143,7 +2143,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Fast_Skipping": {
       "preferred": "Fast skipping",
@@ -2151,7 +2151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Finger_Curls": {
       "preferred": "Finger curls",
@@ -2159,7 +2159,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Flat_Bench_Cable_Flyes": {
       "preferred": "Flat बेंच केबल फ्लाई",
@@ -2223,7 +2223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Foot-SMR": {
       "preferred": "Foot-smr",
@@ -2231,7 +2231,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Forward_Drag_with_Press": {
       "preferred": "Forward drag के साथ प्रेस",
@@ -2263,7 +2263,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Frog_Sit-Ups": {
       "preferred": "Frog sit-ups",
@@ -2271,7 +2271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Front_Barbell_Squat": {
       "preferred": "फ्रंट बारबेल स्क्वाट",
@@ -2306,7 +2306,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Cone_Hops_or_hurdle_hops": {
-      "preferred": "फ्रंट cone hops or hurdle hops",
+      "preferred": "कोन या हर्डल के ऊपर फ्रंट हॉप्स",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2362,7 +2362,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Squats_With_Two_Kettlebells": {
-      "preferred": "फ्रंट squats के साथ two kettlebells",
+      "preferred": "दो केटलबेल फ्रंट स्क्वाट",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2391,7 +2391,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Glute_Ham_Raise": {
       "preferred": "ग्लूट ham रेज़",
@@ -2426,7 +2426,7 @@
       "reviewStatus": "provisional"
     },
     "Good_Morning_off_Pins": {
-      "preferred": "गुड मॉर्निंग off pins",
+      "preferred": "पिन से गुड मॉर्निंग",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2455,7 +2455,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hack_Squat": {
       "preferred": "Hack स्क्वाट",
@@ -2471,7 +2471,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hammer_Grip_Incline_DB_Bench_Press": {
       "preferred": "Hammer grip इनक्लाइन db बेंच प्रेस",
@@ -2487,7 +2487,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hamstring_Stretch": {
       "preferred": "Hamstring स्ट्रेचिंग",
@@ -2559,7 +2559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Heaving_Snatch_Balance": {
       "preferred": "Heaving स्नैच balance",
@@ -2575,7 +2575,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "High_Cable_Curls": {
       "preferred": "हाई केबल curls",
@@ -2623,7 +2623,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hug_Knees_To_Chest": {
       "preferred": "Hug knees तक चेस्ट",
@@ -2639,7 +2639,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hyperextensions_Back_Extensions": {
       "preferred": "Hyperextensions बैक extensions",
@@ -2671,7 +2671,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Inchworm": {
       "preferred": "Inchworm",
@@ -2679,7 +2679,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Incline_Barbell_Triceps_Extension": {
       "preferred": "इनक्लाइन बारबेल ट्राइसेप्स एक्सटेंशन",
@@ -2863,7 +2863,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Iron_Crosses_stretch": {
       "preferred": "Iron crosses स्ट्रेचिंग",
@@ -2903,7 +2903,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "JM_Press": {
       "preferred": "Jm प्रेस",
@@ -2935,7 +2935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Jerk_Balance": {
       "preferred": "जर्क balance",
@@ -2959,7 +2959,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Keg_Load": {
       "preferred": "Keg load",
@@ -2967,7 +2967,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Kettlebell_Arnold_Press": {
       "preferred": "केटलबेल arnold प्रेस",
@@ -3095,7 +3095,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Knee_Across_The_Body": {
       "preferred": "Knee across body",
@@ -3111,7 +3111,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Knee_Hip_Raise_On_Parallel_Bars": {
       "preferred": "Knee/हिप रेज़ पर parallel bars",
@@ -3138,7 +3138,7 @@
       "reviewStatus": "provisional"
     },
     "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists": {
-      "preferred": "घुटनों के बल केबल क्रंच के साथ बारी-बारी oblique twists",
+      "preferred": "घुटनों के बल केबल क्रंच और बारी-बारी ओब्लिक ट्विस्ट",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3207,7 +3207,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Landmine_Linear_Jammer": {
       "preferred": "Landmine linear jammer",
@@ -3215,7 +3215,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Bound": {
       "preferred": "Lateral bound",
@@ -3223,7 +3223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Box_Jump": {
       "preferred": "Lateral बॉक्स जंप",
@@ -3239,7 +3239,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Raise_-_With_Bands": {
       "preferred": "लेटरल रेज़ — के साथ रेज़िस्टेंस बैंड",
@@ -3255,7 +3255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Leg-Over_Floor_Press": {
       "preferred": "लेग-over फ्लोर प्रेस",
@@ -3375,7 +3375,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Linear_Acceleration_Wall_Drill": {
       "preferred": "Linear acceleration wall drill",
@@ -3383,7 +3383,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Linear_Depth_Jump": {
       "preferred": "Linear depth जंप",
@@ -3399,7 +3399,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "London_Bridges": {
       "preferred": "London bridges",
@@ -3407,7 +3407,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Looking_At_Ceiling": {
       "preferred": "Looking at ceiling",
@@ -3415,7 +3415,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Low_Cable_Crossover": {
       "preferred": "लो केबल क्रॉसओवर",
@@ -3727,7 +3727,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Monster_Walk": {
       "preferred": "Monster walk",
@@ -3735,7 +3735,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Mountain_Climbers": {
       "preferred": "Mountain climbers",
@@ -3743,7 +3743,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Moving_Claw_Series": {
       "preferred": "Moving claw series",
@@ -3751,7 +3751,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Muscle_Snatch": {
       "preferred": "Muscle स्नैच",
@@ -3767,7 +3767,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Narrow_Stance_Hack_Squats": {
       "preferred": "Narrow stance hack squats",
@@ -3775,7 +3775,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Narrow_Stance_Leg_Press": {
       "preferred": "Narrow stance लेग प्रेस",
@@ -3791,7 +3791,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Natural_Glute_Ham_Raise": {
       "preferred": "Natural ग्लूट ham रेज़",
@@ -3823,7 +3823,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Oblique_Crunches_-_On_The_Floor": {
       "preferred": "Oblique crunches — पर फ्लोर",
@@ -4111,7 +4111,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "One_Handed_Hang": {
       "preferred": "One handed हैंग",
@@ -4151,7 +4151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Overhead_Cable_Curl": {
       "preferred": "ओवरहेड केबल कर्ल",
@@ -4255,7 +4255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pelvic_Tilt_Into_Bridge": {
       "preferred": "Pelvic tilt into ब्रिज",
@@ -4271,7 +4271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Peroneals_Stretch": {
       "preferred": "Peroneals स्ट्रेचिंग",
@@ -4295,7 +4295,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Piriformis-SMR": {
       "preferred": "Piriformis-smr",
@@ -4303,7 +4303,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plank": {
       "preferred": "प्लैंक",
@@ -4319,7 +4319,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plate_Twist": {
       "preferred": "Plate ट्विस्ट",
@@ -4335,7 +4335,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plie_Dumbbell_Squat": {
       "preferred": "Plie डंबल स्क्वाट",
@@ -4455,7 +4455,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Prowler_Sprint": {
       "preferred": "Prowler sprint",
@@ -4463,7 +4463,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pull_Through": {
       "preferred": "पुल through",
@@ -4479,7 +4479,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Push-Up_Wide": {
       "preferred": "पुश-अप wide",
@@ -4543,7 +4543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pushups_Close_and_Wide_Hand_Positions": {
       "preferred": "Pushups close और wide hand positions",
@@ -4559,7 +4559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Quad_Stretch": {
       "preferred": "Quad स्ट्रेचिंग",
@@ -4575,7 +4575,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Quick_Leap": {
       "preferred": "Quick leap",
@@ -4583,7 +4583,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rack_Delivery": {
       "preferred": "Rack delivery",
@@ -4591,7 +4591,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rack_Pull_with_Bands": {
       "preferred": "Rack पुल के साथ रेज़िस्टेंस बैंड",
@@ -4607,7 +4607,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rear_Leg_Raises": {
       "preferred": "रियर लेग raises",
@@ -4623,7 +4623,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Return_Push_from_Stance": {
       "preferred": "Return पुश से stance",
@@ -4775,7 +4775,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rickshaw_Carry": {
       "preferred": "Rickshaw carry",
@@ -4783,7 +4783,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rickshaw_Deadlift": {
       "preferred": "Rickshaw डेडलिफ्ट",
@@ -4799,7 +4799,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rocket_Jump": {
       "preferred": "Rocket जंप",
@@ -4887,7 +4887,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Runners_Stretch": {
       "preferred": "Runner's स्ट्रेचिंग",
@@ -4903,7 +4903,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Russian_Twist": {
       "preferred": "रशियन ट्विस्ट",
@@ -4919,7 +4919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Scapular_Pull-Up": {
       "preferred": "Scapular पुल-अप",
@@ -4935,7 +4935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Scissors_Jump": {
       "preferred": "Scissors जंप",
@@ -5138,7 +5138,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Head_Harness_Neck_Resistance": {
-      "preferred": "बैठकर head harness नेक resistance",
+      "preferred": "बैठकर हेड हार्नेस नेक रेज़िस्टेंस",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5234,7 +5234,7 @@
       "reviewStatus": "provisional"
     },
     "See-Saw_Press_Alternating_Side_Press": {
-      "preferred": "See-saw प्रेस बारी-बारी साइड प्रेस",
+      "preferred": "बारी-बारी साइड प्रेस",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5362,7 +5362,7 @@
       "reviewStatus": "provisional"
     },
     "Side_To_Side_Chins": {
-      "preferred": "साइड तक साइड chins",
+      "preferred": "साइड-टू-साइड चिन-अप",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5378,7 +5378,7 @@
       "reviewStatus": "provisional"
     },
     "Side_to_Side_Box_Shuffle": {
-      "preferred": "साइड तक साइड box shuffle",
+      "preferred": "बॉक्स के बीच साइड शफल",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5503,7 +5503,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Skating": {
       "preferred": "Skating",
@@ -5511,7 +5511,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Sled_Drag_-_Harness": {
       "preferred": "स्लेड drag — harness",
@@ -5567,7 +5567,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Smith_Incline_Shoulder_Raise": {
       "preferred": "Smith इनक्लाइन शोल्डर रेज़",
@@ -5578,7 +5578,7 @@
       "reviewStatus": "provisional"
     },
     "Smith_Machine_Behind_the_Back_Shrug": {
-      "preferred": "Smith मशीन behind बैक श्रग",
+      "preferred": "Smith मशीन पीठ के पीछे श्रग",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5791,7 +5791,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spell_Caster": {
       "preferred": "Spell caster",
@@ -5799,7 +5799,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spider_Crawl": {
       "preferred": "Spider crawl",
@@ -5807,7 +5807,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spider_Curl": {
       "preferred": "Spider कर्ल",
@@ -5919,7 +5919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Standing_Alternating_Dumbbell_Press": {
       "preferred": "खड़े होकर बारी-बारी डंबल प्रेस",
@@ -5938,7 +5938,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Barbell_Press_Behind_Neck": {
-      "preferred": "खड़े होकर बारबेल प्रेस behind नेक",
+      "preferred": "गर्दन के पीछे बारबेल प्रेस",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6050,7 +6050,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head": {
-      "preferred": "खड़े होकर डंबल straight-आर्म फ्रंट delt रेज़ above head",
+      "preferred": "सिर के ऊपर सीधे हाथों से डंबल फ्रंट रेज़",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6082,7 +6082,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Front_Barbell_Raise_Over_Head": {
-      "preferred": "खड़े होकर फ्रंट बारबेल रेज़ over head",
+      "preferred": "सिर के ऊपर बारबेल फ्रंट रेज़",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6234,7 +6234,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl": {
-      "preferred": "खड़े होकर palms-up बारबेल behind बैक wrist कर्ल",
+      "preferred": "खड़े होकर palms-up बारबेल पीठ के पीछे wrist कर्ल",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6274,7 +6274,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Towel_Triceps_Extension": {
-      "preferred": "खड़े होकर towel ट्राइसेप्स एक्सटेंशन",
+      "preferred": "स्टैंडिंग टॉवल ट्राइसेप्स एक्सटेंशन",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6311,7 +6311,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Stiff-Legged_Barbell_Deadlift": {
       "preferred": "Stiff-legged बारबेल डेडलिफ्ट",
@@ -6343,7 +6343,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Straight-Arm_Dumbbell_Pullover": {
       "preferred": "Straight-आर्म डंबल पुलओवर",
@@ -6415,7 +6415,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Supine_Chest_Throw": {
       "preferred": "Supine चेस्ट throw",
@@ -6519,7 +6519,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Thigh_Adductor": {
       "preferred": "Thigh adductor",
@@ -6527,7 +6527,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Tire_Flip": {
       "preferred": "Tire flip",
@@ -6535,7 +6535,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Toe_Touchers": {
       "preferred": "Toe touchers",
@@ -6543,7 +6543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Torso_Rotation": {
       "preferred": "Torso रोटेशन",
@@ -6559,7 +6559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Trap_Bar_Deadlift": {
       "preferred": "Trap bar डेडलिफ्ट",
@@ -6735,7 +6735,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "V-Bar_Pullup": {
       "preferred": "V-bar pullup",
@@ -6743,7 +6743,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Vertical_Swing": {
       "preferred": "Vertical स्विंग",
@@ -6759,7 +6759,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Weighted_Ball_Hyperextension": {
       "preferred": "वेटेड ball hyperextension",
@@ -6911,7 +6911,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Windmills": {
       "preferred": "Windmills",
@@ -6919,7 +6919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Worlds_Greatest_Stretch": {
       "preferred": "World's greatest स्ट्रेचिंग",
@@ -6935,7 +6935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Wrist_Roller": {
       "preferred": "Wrist roller",
@@ -6943,7 +6943,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Wrist_Rotations_with_Straight_Bar": {
       "preferred": "Wrist rotations के साथ straight bar",
@@ -6959,7 +6959,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Zercher_Squats": {
       "preferred": "Zercher squats",
@@ -6967,7 +6967,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Zottman_Curl": {
       "preferred": "Zottman कर्ल",
@@ -7383,7 +7383,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Assisted_Chin-Up": {
       "preferred": "Assisted चिन-अप",

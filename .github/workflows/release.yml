@@ -66,6 +66,21 @@ jobs:
             --schema free-exercise-db-plusplus.schema.json \
             --completeness full
           python tests/test_release_contract.py free-exercise-db-plusplus.json
+          python tests/test_localization.py free-exercise-db-plusplus.json
+          python scripts/audit_localized_catalogs.py --fail-on-flags
+          python - <<'PY'
+          import json
+          db = json.load(open("free-exercise-db-plusplus.json"))
+          pending = []
+          for exercise_id, exercise in db["exercises"].items():
+              for locale, name in exercise.get("localizedNames", {}).items():
+                  if locale != "en" and name["reviewStatus"] != "reviewed":
+                      pending.append((locale, exercise_id, name["reviewStatus"]))
+          assert not pending, (
+              "Release blocked: every non-English name must be native-reviewed; "
+              f"pending entries: {len(pending)}"
+          )
+          PY
           python tests/test_golden_mappings.py free-exercise-db-plusplus.json
           python tests/test_medium_policy.py free-exercise-db-plusplus.json
           python src/verify_reproducible_build.py exercises.json \
@@ -140,6 +155,7 @@ jobs:
 
       - name: Create checksums
         run: |
+          tar -czf translations.tar.gz translations
           sha256sum \
             free-exercise-db-plusplus.json \
             free-exercise-db-plusplus.schema.json \
@@ -157,6 +173,7 @@ jobs:
             exercise-relationships.json \
             exercise-relationships.schema.json \
             family-interop-mapping.schema.json > SHA256SUMS
+          sha256sum translations.tar.gz >> SHA256SUMS
           (cd reports/interop && sha256sum garmin-fit-families.json) >> SHA256SUMS
           (cd reports/relationships && sha256sum summary.json) >> SHA256SUMS
 
@@ -181,6 +198,7 @@ jobs:
             exercise-relationships.json \
             exercise-relationships.schema.json \
             family-interop-mapping.schema.json \
+            translations.tar.gz \
             reports/interop/garmin-fit-families.json \
             reports/relationships/summary.json \
             reports/relationships/v1.5-conformance.md \

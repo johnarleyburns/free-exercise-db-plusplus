@@ -15,7 +15,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ab_Crunch_Machine": {
       "preferred": "بطن كرنش آلة",
@@ -39,7 +39,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Adductor_Groin": {
       "preferred": "Adductor/groin",
@@ -47,7 +47,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Advanced_Kettlebell_Windmill": {
       "preferred": "Advanced كيتل بيل windmill",
@@ -63,7 +63,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "All_Fours_Quad_Stretch": {
       "preferred": "All fours quad تمدد",
@@ -167,7 +167,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ankle_On_The_Knee": {
       "preferred": "Ankle على knee",
@@ -183,7 +183,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Anti-Gravity_Press": {
       "preferred": "Anti-gravity ضغط",
@@ -223,7 +223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Atlas_Stones": {
       "preferred": "Atlas stones",
@@ -231,7 +231,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Axle_Deadlift": {
       "preferred": "Axle رفعة ميتة",
@@ -255,7 +255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Backward_Medicine_Ball_Throw": {
       "preferred": "Backward كرة طبية throw",
@@ -271,7 +271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Ball_Leg_Curl": {
       "preferred": "Ball ثني الساق",
@@ -482,7 +482,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Shrug_Behind_The_Back": {
-      "preferred": "بار رفع الكتفين behind ظهر",
+      "preferred": "بار رفع الكتفين خلف الظهر",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -543,7 +543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bear_Crawl_Sled_Drags": {
       "preferred": "Bear crawl زلاجة drags",
@@ -554,7 +554,7 @@
       "reviewStatus": "provisional"
     },
     "Behind_Head_Chest_Stretch": {
-      "preferred": "Behind head صدر تمدد",
+      "preferred": "خلف الرأس صدر تمدد",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -642,7 +642,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench": {
-      "preferred": "منحنٍ دمبل رفع خلفي للكتف مع head على مقعد",
+      "preferred": "منحنٍ دمبل رفع خلفي للكتف مع والرأس على المقعد",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -703,7 +703,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bicycling_Stationary": {
       "preferred": "Bicycling, stationary",
@@ -711,7 +711,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Board_Press": {
       "preferred": "Board ضغط",
@@ -727,7 +727,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Body_Tricep_Press": {
       "preferred": "Body ترايسبس ضغط",
@@ -791,10 +791,10 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Box_Jump_Multiple_Response": {
-      "preferred": "قفز الصندوق multiple response",
+      "preferred": "قفز الصندوق استجابة متعددة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -807,7 +807,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Box_Squat": {
       "preferred": "Box سكوات",
@@ -839,7 +839,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Bradford_Rocky_Presses": {
       "preferred": "Bradford/rocky presses",
@@ -847,7 +847,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Butt-Ups": {
       "preferred": "Butt-ups",
@@ -855,7 +855,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Butt_Lift_Bridge": {
       "preferred": "Butt lift جسر",
@@ -871,7 +871,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cable_Chest_Press": {
       "preferred": "كابل ضغط الصدر",
@@ -1082,7 +1082,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Press_On_The_Leg_Press_Machine": {
-      "preferred": "سمانة ضغط على ضغط الأرجل آلة",
+      "preferred": "تمرين عضلات الساق على جهاز ضغط الأرجل",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1127,7 +1127,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Car_Deadlift": {
       "preferred": "Car رفعة ميتة",
@@ -1143,7 +1143,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Carioca_Quick_Step": {
       "preferred": "Carioca quick step",
@@ -1151,7 +1151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cat_Stretch": {
       "preferred": "Cat تمدد",
@@ -1218,7 +1218,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_And_Front_Of_Shoulder_Stretch": {
-      "preferred": "صدر و أمامي of كتف تمدد",
+      "preferred": "تمدد الصدر والكتف الأمامي",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1234,7 +1234,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_multiple_response": {
-      "preferred": "صدر دفع multiple response",
+      "preferred": "صدر دفع استجابة متعددة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1242,7 +1242,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_single_response": {
-      "preferred": "صدر دفع مفرد response",
+      "preferred": "صدر دفع استجابة مفردة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1250,7 +1250,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Push_with_Run_Release": {
-      "preferred": "صدر دفع مع run release",
+      "preferred": "صدر دفع مع الجري والتحرير",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1295,7 +1295,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Clean": {
       "preferred": "كلين",
@@ -1402,7 +1402,7 @@
       "reviewStatus": "provisional"
     },
     "Close-Grip_Front_Lat_Pulldown": {
-      "preferred": "قبضة ضيقة أمامي سحب أمامي",
+      "preferred": "سحب أمامي للظهر بقبضة ضيقة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1410,7 +1410,7 @@
       "reviewStatus": "provisional"
     },
     "Close-Grip_Push-Up_off_of_a_Dumbbell": {
-      "preferred": "قبضة ضيقة ضغط off of a دمبل",
+      "preferred": "تمرين ضغط بقبضة ضيقة على دمبل",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1431,7 +1431,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Conans_Wheel": {
       "preferred": "Conan's wheel",
@@ -1439,7 +1439,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Concentration_Curls": {
       "preferred": "Concentration curls",
@@ -1447,7 +1447,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Cross-Body_Crunch": {
       "preferred": "Cross-body كرنش",
@@ -1487,7 +1487,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Crunch_-_Hands_Overhead": {
       "preferred": "كرنش — hands فوق الرأس",
@@ -1535,7 +1535,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Deadlift_with_Bands": {
       "preferred": "رفعة ميتة مع أحبال مطاطية",
@@ -1666,7 +1666,7 @@
       "reviewStatus": "provisional"
     },
     "Dips_-_Chest_Version": {
-      "preferred": "Dips — صدر version",
+      "preferred": "متوازي للصدر",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1679,7 +1679,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Donkey_Calf_Raises": {
       "preferred": "Donkey سمانة raises",
@@ -1706,7 +1706,7 @@
       "reviewStatus": "provisional"
     },
     "Double_Kettlebell_Push_Press": {
-      "preferred": "مزدوج كيتل بيل دفع ضغط",
+      "preferred": "دفع كيتل بيل مزدوج",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1743,7 +1743,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Drag_Curl": {
       "preferred": "Drag ثني",
@@ -2039,7 +2039,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Elbow_to_Knee": {
       "preferred": "Elbow إلى knee",
@@ -2079,7 +2079,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Exercise_Ball_Crunch": {
       "preferred": "كرة تمارين كرنش",
@@ -2143,7 +2143,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Fast_Skipping": {
       "preferred": "Fast skipping",
@@ -2151,7 +2151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Finger_Curls": {
       "preferred": "Finger curls",
@@ -2159,7 +2159,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Flat_Bench_Cable_Flyes": {
       "preferred": "Flat مقعد كابل فراشة",
@@ -2223,7 +2223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Foot-SMR": {
       "preferred": "Foot-smr",
@@ -2231,7 +2231,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Forward_Drag_with_Press": {
       "preferred": "Forward drag مع ضغط",
@@ -2263,7 +2263,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Frog_Sit-Ups": {
       "preferred": "Frog sit-ups",
@@ -2271,7 +2271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Front_Barbell_Squat": {
       "preferred": "أمامي بار سكوات",
@@ -2306,7 +2306,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Cone_Hops_or_hurdle_hops": {
-      "preferred": "أمامي cone hops or hurdle hops",
+      "preferred": "قفز أمامي فوق الأقماع أو الحواجز",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2362,7 +2362,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Squats_With_Two_Kettlebells": {
-      "preferred": "أمامي squats مع two kettlebells",
+      "preferred": "سكوات أمامي بكيتل بيلين",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2391,7 +2391,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Glute_Ham_Raise": {
       "preferred": "مؤخرة ham رفع",
@@ -2426,7 +2426,7 @@
       "reviewStatus": "provisional"
     },
     "Good_Morning_off_Pins": {
-      "preferred": "صباح الخير off pins",
+      "preferred": "صباح الخير من الدعامات",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2455,7 +2455,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hack_Squat": {
       "preferred": "Hack سكوات",
@@ -2471,7 +2471,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hammer_Grip_Incline_DB_Bench_Press": {
       "preferred": "Hammer grip مائل db ضغط الصدر",
@@ -2487,7 +2487,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hamstring_Stretch": {
       "preferred": "Hamstring تمدد",
@@ -2559,7 +2559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Heaving_Snatch_Balance": {
       "preferred": "Heaving خطف balance",
@@ -2575,7 +2575,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "High_Cable_Curls": {
       "preferred": "عالٍ كابل curls",
@@ -2623,7 +2623,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hug_Knees_To_Chest": {
       "preferred": "Hug knees إلى صدر",
@@ -2639,7 +2639,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Hyperextensions_Back_Extensions": {
       "preferred": "Hyperextensions ظهر extensions",
@@ -2671,7 +2671,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Inchworm": {
       "preferred": "Inchworm",
@@ -2679,7 +2679,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Incline_Barbell_Triceps_Extension": {
       "preferred": "مائل بار تمديد الترايسبس",
@@ -2863,7 +2863,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Iron_Crosses_stretch": {
       "preferred": "Iron crosses تمدد",
@@ -2903,7 +2903,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "JM_Press": {
       "preferred": "Jm ضغط",
@@ -2935,7 +2935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Jerk_Balance": {
       "preferred": "جيرك balance",
@@ -2959,7 +2959,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Keg_Load": {
       "preferred": "Keg load",
@@ -2967,7 +2967,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Kettlebell_Arnold_Press": {
       "preferred": "كيتل بيل arnold ضغط",
@@ -3095,7 +3095,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Knee_Across_The_Body": {
       "preferred": "Knee across body",
@@ -3111,7 +3111,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Knee_Hip_Raise_On_Parallel_Bars": {
       "preferred": "Knee/ورك رفع على parallel bars",
@@ -3207,7 +3207,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Landmine_Linear_Jammer": {
       "preferred": "Landmine linear jammer",
@@ -3215,7 +3215,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Bound": {
       "preferred": "Lateral bound",
@@ -3223,7 +3223,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Box_Jump": {
       "preferred": "Lateral قفز الصندوق",
@@ -3239,7 +3239,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Lateral_Raise_-_With_Bands": {
       "preferred": "رفع جانبي — مع أحبال مطاطية",
@@ -3255,7 +3255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Leg-Over_Floor_Press": {
       "preferred": "ساق-over أرضية ضغط",
@@ -3375,7 +3375,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Linear_Acceleration_Wall_Drill": {
       "preferred": "Linear acceleration wall drill",
@@ -3383,7 +3383,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Linear_Depth_Jump": {
       "preferred": "Linear depth قفز",
@@ -3399,7 +3399,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "London_Bridges": {
       "preferred": "London bridges",
@@ -3407,7 +3407,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Looking_At_Ceiling": {
       "preferred": "Looking at ceiling",
@@ -3415,7 +3415,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Low_Cable_Crossover": {
       "preferred": "منخفض تقاطع الكابل",
@@ -3727,7 +3727,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Monster_Walk": {
       "preferred": "Monster walk",
@@ -3735,7 +3735,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Mountain_Climbers": {
       "preferred": "متسلقو الجبال",
@@ -3751,7 +3751,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Muscle_Snatch": {
       "preferred": "Muscle خطف",
@@ -3767,7 +3767,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Narrow_Stance_Hack_Squats": {
       "preferred": "Narrow stance hack squats",
@@ -3775,7 +3775,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Narrow_Stance_Leg_Press": {
       "preferred": "Narrow stance ضغط الأرجل",
@@ -3791,7 +3791,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Natural_Glute_Ham_Raise": {
       "preferred": "Natural مؤخرة ham رفع",
@@ -3823,7 +3823,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Oblique_Crunches_-_On_The_Floor": {
       "preferred": "Oblique crunches — على أرضية",
@@ -3938,7 +3938,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_Kettlebell_Push_Press": {
-      "preferred": "ذراع واحدة كيتل بيل دفع ضغط",
+      "preferred": "دفع كيتل بيل بذراع واحدة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4111,7 +4111,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "One_Handed_Hang": {
       "preferred": "One handed تعليق",
@@ -4151,7 +4151,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Overhead_Cable_Curl": {
       "preferred": "فوق الرأس كابل ثني",
@@ -4255,7 +4255,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pelvic_Tilt_Into_Bridge": {
       "preferred": "Pelvic tilt into جسر",
@@ -4271,7 +4271,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Peroneals_Stretch": {
       "preferred": "Peroneals تمدد",
@@ -4295,7 +4295,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Piriformis-SMR": {
       "preferred": "Piriformis-smr",
@@ -4303,7 +4303,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plank": {
       "preferred": "لوح الساعد",
@@ -4319,7 +4319,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plate_Twist": {
       "preferred": "Plate لف",
@@ -4335,7 +4335,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Plie_Dumbbell_Squat": {
       "preferred": "Plie دمبل سكوات",
@@ -4455,7 +4455,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Prowler_Sprint": {
       "preferred": "Prowler sprint",
@@ -4463,7 +4463,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pull_Through": {
       "preferred": "سحب through",
@@ -4479,7 +4479,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Push-Up_Wide": {
       "preferred": "ضغط wide",
@@ -4514,7 +4514,7 @@
       "reviewStatus": "provisional"
     },
     "Push_Press": {
-      "preferred": "دفع ضغط",
+      "preferred": "دفع بالاستفادة من الساقين",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4522,7 +4522,7 @@
       "reviewStatus": "provisional"
     },
     "Push_Press_-_Behind_the_Neck": {
-      "preferred": "دفع ضغط — خلف الرقبة",
+      "preferred": "دفع بالاستفادة من الساقين — خلف الرقبة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4543,7 +4543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Pushups_Close_and_Wide_Hand_Positions": {
       "preferred": "Pushups close و wide hand positions",
@@ -4559,7 +4559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Quad_Stretch": {
       "preferred": "Quad تمدد",
@@ -4575,7 +4575,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Quick_Leap": {
       "preferred": "Quick leap",
@@ -4583,7 +4583,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rack_Delivery": {
       "preferred": "Rack delivery",
@@ -4591,7 +4591,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rack_Pull_with_Bands": {
       "preferred": "Rack سحب مع أحبال مطاطية",
@@ -4607,7 +4607,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rear_Leg_Raises": {
       "preferred": "خلفي ساق raises",
@@ -4623,7 +4623,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Return_Push_from_Stance": {
       "preferred": "Return دفع من stance",
@@ -4775,7 +4775,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rickshaw_Carry": {
       "preferred": "Rickshaw carry",
@@ -4783,7 +4783,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rickshaw_Deadlift": {
       "preferred": "Rickshaw رفعة ميتة",
@@ -4799,7 +4799,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Rocket_Jump": {
       "preferred": "Rocket قفز",
@@ -4887,7 +4887,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Runners_Stretch": {
       "preferred": "Runner's تمدد",
@@ -4903,7 +4903,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Russian_Twist": {
       "preferred": "لف روسي",
@@ -4919,7 +4919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Scapular_Pull-Up": {
       "preferred": "Scapular عقلة",
@@ -4935,7 +4935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Scissors_Jump": {
       "preferred": "Scissors قفز",
@@ -5138,7 +5138,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Head_Harness_Neck_Resistance": {
-      "preferred": "جلوس head harness رقبة resistance",
+      "preferred": "جلوس مقاومة الرقبة بحزام الرأس",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5210,7 +5210,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Side_Lateral_Raise": {
-      "preferred": "جلوس جانبي رفع جانبي",
+      "preferred": "رفع جانبي أثناء الجلوس",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5234,7 +5234,7 @@
       "reviewStatus": "provisional"
     },
     "See-Saw_Press_Alternating_Side_Press": {
-      "preferred": "See-saw ضغط متناوب جانبي ضغط",
+      "preferred": "ضغط جانبي بالتناوب",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5314,7 +5314,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Lateral_Raise": {
-      "preferred": "جانبي رفع جانبي",
+      "preferred": "رفع جانبي",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5362,7 +5362,7 @@
       "reviewStatus": "provisional"
     },
     "Side_To_Side_Chins": {
-      "preferred": "جانبي إلى جانبي chins",
+      "preferred": "عقلة من جانب إلى آخر",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5378,7 +5378,7 @@
       "reviewStatus": "provisional"
     },
     "Side_to_Side_Box_Shuffle": {
-      "preferred": "جانبي إلى جانبي box shuffle",
+      "preferred": "تحرك جانبي بين الصناديق",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5503,7 +5503,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Skating": {
       "preferred": "Skating",
@@ -5511,7 +5511,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Sled_Drag_-_Harness": {
       "preferred": "زلاجة drag — harness",
@@ -5567,7 +5567,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Smith_Incline_Shoulder_Raise": {
       "preferred": "Smith مائل كتف رفع",
@@ -5578,7 +5578,7 @@
       "reviewStatus": "provisional"
     },
     "Smith_Machine_Behind_the_Back_Shrug": {
-      "preferred": "Smith آلة behind ظهر رفع الكتفين",
+      "preferred": "Smith آلة خلف الظهر رفع الكتفين",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5791,7 +5791,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spell_Caster": {
       "preferred": "Spell caster",
@@ -5799,7 +5799,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spider_Crawl": {
       "preferred": "Spider crawl",
@@ -5807,7 +5807,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Spider_Curl": {
       "preferred": "Spider ثني",
@@ -5919,7 +5919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Standing_Alternating_Dumbbell_Press": {
       "preferred": "وقوف متناوب دمبل ضغط",
@@ -5938,7 +5938,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Barbell_Press_Behind_Neck": {
-      "preferred": "وقوف بار ضغط behind رقبة",
+      "preferred": "ضغط بالبار خلف الرقبة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6050,7 +6050,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head": {
-      "preferred": "وقوف دمبل straight-ذراع أمامي delt رفع above head",
+      "preferred": "رفع أمامي بالدمبل والذراع مستقيمة فوق الرأس",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6082,7 +6082,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Front_Barbell_Raise_Over_Head": {
-      "preferred": "وقوف أمامي بار رفع over head",
+      "preferred": "رفع أمامي بالبار فوق الرأس",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6234,7 +6234,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl": {
-      "preferred": "وقوف palms-up بار behind ظهر wrist ثني",
+      "preferred": "وقوف palms-up بار خلف الظهر wrist ثني",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6274,7 +6274,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Towel_Triceps_Extension": {
-      "preferred": "وقوف towel تمديد الترايسبس",
+      "preferred": "تمديد الترايسبس واقفاً بالمنشفة",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6311,7 +6311,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Stiff-Legged_Barbell_Deadlift": {
       "preferred": "Stiff-legged بار رفعة ميتة",
@@ -6343,7 +6343,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Straight-Arm_Dumbbell_Pullover": {
       "preferred": "Straight-ذراع دمبل سحب فوقي",
@@ -6415,7 +6415,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Supine_Chest_Throw": {
       "preferred": "Supine صدر throw",
@@ -6519,7 +6519,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Thigh_Adductor": {
       "preferred": "Thigh adductor",
@@ -6527,7 +6527,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Tire_Flip": {
       "preferred": "Tire flip",
@@ -6535,7 +6535,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Toe_Touchers": {
       "preferred": "Toe touchers",
@@ -6543,7 +6543,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Torso_Rotation": {
       "preferred": "Torso دوران",
@@ -6559,7 +6559,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Trap_Bar_Deadlift": {
       "preferred": "Trap bar رفعة ميتة",
@@ -6735,7 +6735,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "V-Bar_Pullup": {
       "preferred": "V-bar pullup",
@@ -6743,7 +6743,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Vertical_Swing": {
       "preferred": "Vertical تأرجح",
@@ -6759,7 +6759,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Weighted_Ball_Hyperextension": {
       "preferred": "بوزن ball hyperextension",
@@ -6911,7 +6911,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Windmills": {
       "preferred": "Windmills",
@@ -6919,7 +6919,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Worlds_Greatest_Stretch": {
       "preferred": "World's greatest تمدد",
@@ -6935,7 +6935,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Wrist_Roller": {
       "preferred": "Wrist roller",
@@ -6943,7 +6943,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Wrist_Rotations_with_Straight_Bar": {
       "preferred": "Wrist rotations مع straight bar",
@@ -6959,7 +6959,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Zercher_Squats": {
       "preferred": "Zercher squats",
@@ -6967,7 +6967,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Zottman_Curl": {
       "preferred": "Zottman ثني",
@@ -7383,7 +7383,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "provisional"
+      "reviewStatus": "untranslated"
     },
     "Assisted_Chin-Up": {
       "preferred": "Assisted عقلة قبضة عكسية",

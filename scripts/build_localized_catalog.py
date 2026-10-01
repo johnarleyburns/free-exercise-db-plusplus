@@ -380,6 +380,268 @@ PROFILES.update({
 })
 
 
+# High-risk compound names get explicit domain phrases instead of being
+# assembled from isolated words. These are the cases most likely to become
+# misleading when a source record contains a sport-specific modifier.
+COMPOUND_FIXES = {
+    "es": {
+        "behind the back": "detrás de la espalda", "behind head": "detrás de la cabeza", "head on bench": "con la cabeza en el banco",
+        "head harness neck resistance": "resistencia cervical con arnés de cabeza", "chest and front of shoulder stretch": "estiramiento de pecho y hombro frontal",
+        "run release": "carrera y liberación", "multiple response": "respuesta múltiple", "single response": "respuesta única", "dips chest version": "fondos, variante de pecho",
+        "front cone hops or hurdle hops": "saltos frontales sobre conos o vallas", "front squats with two kettlebells": "sentadilla frontal con dos pesas rusas",
+        "good morning off pins": "buenos días desde soportes", "side to side chins": "dominadas de lado a lado", "side to side box shuffle": "desplazamiento lateral entre cajas",
+        "double kettlebell push press": "push press con dos pesas rusas", "one-arm kettlebell push press": "push press con pesa rusa a un brazo", "push press": "push press",
+        "weighted sit-ups with bands": "abdominales lastrados con bandas", "standing towel triceps extension": "extensión de tríceps de pie con toalla",
+    },
+    "de": {
+        "behind the back": "hinter dem Rücken", "behind head": "hinter dem Kopf", "head on bench": "mit dem Kopf auf der Bank",
+        "head harness neck resistance": "Nackenwiderstand mit Kopfgurt", "chest and front of shoulder stretch": "Dehnung von Brust und vorderer Schulter",
+        "run release": "Lauf und Abwurf", "multiple response": "mehrfache Reaktion", "single response": "einmalige Reaktion", "dips chest version": "Dips, Brustvariante",
+        "front cone hops or hurdle hops": "Sprünge über Kegel oder Hürden", "front squats with two kettlebells": "Frontkniebeuge mit zwei Kettlebells",
+        "good morning off pins": "Good Morning aus den Ablagen", "side to side chins": "Klimmzüge von Seite zu Seite", "side to side box shuffle": "seitliches Box-Shuffle",
+        "double kettlebell push press": "Push Press mit zwei Kettlebells", "one-arm kettlebell push press": "einarmiger Kettlebell Push Press", "push press": "Push Press",
+        "weighted sit-ups with bands": "Sit-ups mit Gewicht und Bändern", "standing towel triceps extension": "stehendes Trizepsstrecken mit Handtuch",
+    },
+    "zh-Hans": {
+        "behind the back": "背后", "behind head": "头后", "head on bench": "头部放在长凳上", "head harness neck resistance": "头带颈部抗阻",
+        "chest and front of shoulder stretch": "胸部和肩前侧拉伸", "run release": "跑动释放", "multiple response": "多次反应", "single response": "单次反应", "dips chest version": "胸部版双杠臂屈伸",
+        "front cone hops or hurdle hops": "前向跨锥桶或跨栏跳", "front squats with two kettlebells": "双壶铃前蹲", "good morning off pins": "从支撑架起始的早安式",
+        "side to side chins": "左右移动引体向上", "side to side box shuffle": "左右箱间侧向移动", "double kettlebell push press": "双壶铃推举", "one-arm kettlebell push press": "单臂壶铃推举", "push press": "借力推举",
+        "weighted sit-ups with bands": "弹力带负重仰卧起坐", "standing towel triceps extension": "站姿毛巾肱三头肌伸展",
+    },
+    "zh-Hant": {
+        "behind the back": "背後", "behind head": "頭後", "head on bench": "頭部放在長凳上", "head harness neck resistance": "頭帶頸部抗阻",
+        "chest and front of shoulder stretch": "胸部和肩前側伸展", "run release": "跑動釋放", "multiple response": "多次反應", "single response": "單次反應", "dips chest version": "胸部版雙槓臂屈伸",
+        "front cone hops or hurdle hops": "前向跨錐桶或跨欄跳", "front squats with two kettlebells": "雙壺鈴前蹲", "good morning off pins": "從支撐架開始的早安式",
+        "side to side chins": "左右移動引體向上", "side to side box shuffle": "左右箱間側向移動", "double kettlebell push press": "雙壺鈴推舉", "one-arm kettlebell push press": "單臂壺鈴推舉", "push press": "借力推舉",
+        "weighted sit-ups with bands": "彈力帶負重仰臥起坐", "standing towel triceps extension": "站姿毛巾肱三頭肌伸展",
+    },
+    "pt-BR": {
+        "behind the back": "atrás das costas", "behind head": "atrás da cabeça", "head on bench": "com a cabeça no banco", "head harness neck resistance": "resistência cervical com arnês de cabeça",
+        "chest and front of shoulder stretch": "alongamento do peito e da frente do ombro", "run release": "corrida e soltura", "multiple response": "resposta múltipla", "single response": "resposta única", "dips chest version": "mergulho para peito",
+        "front cone hops or hurdle hops": "saltos frontais sobre cones ou barreiras", "front squats with two kettlebells": "agachamento frontal com dois kettlebells", "good morning off pins": "bom dia saindo dos suportes",
+        "side to side chins": "barra fixa de um lado para o outro", "side to side box shuffle": "deslocamento lateral entre caixas", "double kettlebell push press": "push press com dois kettlebells", "one-arm kettlebell push press": "push press unilateral com kettlebell", "push press": "push press",
+        "weighted sit-ups with bands": "abdominal com peso e faixas", "standing towel triceps extension": "extensão de tríceps em pé com toalha",
+    },
+    "fr": {
+        "behind the back": "derrière le dos", "behind head": "derrière la tête", "head on bench": "tête posée sur le banc", "head harness neck resistance": "résistance cervicale avec harnais de tête",
+        "chest and front of shoulder stretch": "étirement des pectoraux et de l’avant d’épaule", "run release": "course et relâchement", "multiple response": "réponse multiple", "single response": "réponse unique", "dips chest version": "dips, version pectoraux",
+        "front cone hops or hurdle hops": "sauts frontaux par-dessus cônes ou haies", "front squats with two kettlebells": "front squat avec deux kettlebells", "good morning off pins": "good morning depuis les supports",
+        "side to side chins": "tractions de côté à côté", "side to side box shuffle": "déplacement latéral entre boxes", "double kettlebell push press": "push press avec deux kettlebells", "one-arm kettlebell push press": "push press unilatéral avec kettlebell", "push press": "push press",
+        "weighted sit-ups with bands": "relevés de buste lestés avec élastiques", "standing towel triceps extension": "extension triceps debout avec serviette",
+    },
+}
+for _locale, _phrases in COMPOUND_FIXES.items():
+    PROFILES[_locale]["phrases"].update(_phrases)
+
+# A small set of source records contains modifier combinations for which
+# isolated word substitution produces an unnatural or partly English result.
+# Keep these as full-name overrides so they can be reviewed independently of
+# the general terminology inventory.
+EXACT_FIXES = {
+    "es": {
+        "bent over low-pulley side lateral": "Elevación lateral inclinada en polea baja",
+        "dips - chest version": "Fondos para pecho",
+        "seated side lateral raise": "Elevación lateral sentado",
+        "see-saw press alternating side press": "Press de sierra alterno",
+        "side lateral raise": "Elevación lateral",
+        "standing barbell press behind neck": "Press militar con barra tras nuca",
+        "standing dumbbell straight-arm front delt raise above head": "Elevación frontal con mancuerna y brazo recto por encima de la cabeza",
+        "standing front barbell raise over head": "Elevación frontal con barra por encima de la cabeza",
+        "side to side chins": "Dominadas laterales",
+    },
+    "de": {
+        "dips - chest version": "Brustdips",
+        "see-saw press alternating side press": "Wechselndes Seitheben mit Druck",
+        "standing barbell press behind neck": "Nackendrücken mit Langhantel",
+        "standing dumbbell straight-arm front delt raise above head": "Frontheben mit Kurzhantel und gestrecktem Arm über Kopf",
+        "standing front barbell raise over head": "Frontheben mit Langhantel über Kopf",
+        "side to side chins": "Seitliche Klimmzüge",
+    },
+    "zh-Hans": {
+        "close-grip push-up off of a dumbbell": "窄握哑铃俯卧撑",
+        "dips - chest version": "胸部双杠臂屈伸",
+        "standing barbell press behind neck": "站姿颈后杠铃推举",
+        "standing dumbbell straight-arm front delt raise above head": "站姿直臂哑铃前平举至头顶",
+        "standing front barbell raise over head": "站姿杠铃前平举过头",
+        "standing calf raises": "站姿提踵",
+        "see-saw press alternating side press": "交替侧向推举",
+    },
+    "zh-Hant": {
+        "close-grip push-up off of a dumbbell": "窄握啞鈴伏地挺身",
+        "dips - chest version": "胸部雙槓臂屈伸",
+        "standing barbell press behind neck": "站姿頸後槓鈴推舉",
+        "standing dumbbell straight-arm front delt raise above head": "站姿直臂啞鈴前平舉至頭頂",
+        "standing front barbell raise over head": "站姿槓鈴前平舉過頭",
+        "standing calf raises": "站姿提踵",
+        "see-saw press alternating side press": "交替側向推舉",
+    },
+    "pt-BR": {
+        "ab crunch machine": "Abdominal na máquina",
+        "bent over dumbbell rear delt raise with head on bench": "Elevação posterior com halteres inclinado, cabeça no banco",
+        "bent over low-pulley side lateral": "Elevação lateral inclinada na polia baixa",
+        "bent over two-dumbbell row with palms in": "Remada curvada com dois halteres, palmas voltadas para dentro",
+        "calf press on the leg press machine": "Prensa de panturrilhas na máquina de leg press",
+        "chest and front of shoulder stretch": "Alongamento do peito e da parte frontal do ombro",
+        "close-grip push-up off of a dumbbell": "Flexão fechada sobre um halter",
+        "dips - chest version": "Mergulho para peito",
+        "dumbbell bench press with neutral grip": "Supino com halteres e pegada neutra",
+        "seated side lateral raise": "Elevação lateral sentado",
+        "see-saw press alternating side press": "Press alternado lateral",
+        "side lateral raise": "Elevação lateral",
+        "standing barbell press behind neck": "Desenvolvimento com barra atrás da nuca",
+        "standing dumbbell straight-arm front delt raise above head": "Elevação frontal com halter e braço estendido acima da cabeça",
+        "standing front barbell raise over head": "Elevação frontal com barra acima da cabeça",
+        "weighted jump squat": "Agachamento com salto com peso",
+        "weighted sit-ups - with bands": "Abdominal com peso e faixas",
+    },
+    "fr": {
+        "box jump multiple response": "Saut sur box à réponses multiples",
+        "chest push multiple response": "Poussée pectorale à réponses multiples",
+        "clean and press": "Épaulé-développé",
+        "close-grip push-up off of a dumbbell": "Pompes à prise serrée sur haltère",
+        "decline barbell bench press": "Développé couché décliné à la barre",
+        "decline dumbbell bench press": "Développé couché décliné avec haltères",
+        "decline smith press": "Développé décliné à la machine Smith",
+        "dips - chest version": "Dips pour les pectoraux",
+        "dumbbell bench press with neutral grip": "Développé couché avec haltères, prise neutre",
+        "dumbbell lying one-arm rear lateral raise": "Élévation latérale arrière à un bras avec haltère, couché",
+        "dumbbell lying rear lateral raise": "Élévation latérale arrière avec haltère, couché",
+        "seated side lateral raise": "Élévation latérale assis",
+        "see-saw press alternating side press": "Développé en alternance d’un côté à l’autre",
+        "side lateral raise": "Élévation latérale",
+        "side to side chins": "Tractions latérales",
+        "smith machine decline press": "Développé décliné à la machine Smith",
+        "standing barbell press behind neck": "Développé à la barre derrière la nuque",
+        "standing dumbbell straight-arm front delt raise above head": "Élévation frontale avec haltère, bras tendu au-dessus de la tête",
+        "standing front barbell raise over head": "Élévation frontale avec barre au-dessus de la tête",
+        "wide-grip decline barbell bench press": "Développé couché décliné à la barre, prise large",
+        "single-leg single-arm cable romanian deadlift": "Soulevé de terre roumain à une jambe et un bras à la poulie",
+        "chest and front of shoulder stretch": "Étirement des pectoraux et de l’avant de l’épaule",
+    },
+    "ja": {
+        "close-grip push-up off of a dumbbell": "ダンベルを使ったナローグリッププッシュアップ",
+        "dips - chest version": "胸部ディップス",
+        "standing barbell press behind neck": "スタンディングバーベルビハインドネックプレス",
+        "standing dumbbell straight-arm front delt raise above head": "スタンディングダンベルストレートアームフロントレイズオーバーヘッド",
+        "standing front barbell raise over head": "スタンディングバーベルフロントレイズオーバーヘッド",
+        "see-saw press alternating side press": "シーソープレス（交互のサイドプレス）",
+    },
+    "ko": {
+        "close-grip push-up off of a dumbbell": "덤벨을 이용한 클로즈그립 푸시업",
+        "dips - chest version": "가슴 딥스",
+        "standing barbell press behind neck": "스탠딩 바벨 비하인드 넥 프레스",
+        "standing dumbbell straight-arm front delt raise above head": "스탠딩 덤벨 스트레이트 암 프론트 레이즈 오버헤드",
+        "standing front barbell raise over head": "스탠딩 바벨 프론트 레이즈 오버헤드",
+        "low pulley row to neck": "낮은 도르래로 목 당기기",
+        "seated side lateral raise": "시티드 사이드 레터럴 레이즈",
+        "side lateral raise": "사이드 레터럴 레이즈",
+        "alternating seated high-to-low cable row": "얼터네이팅 시티드 하이에서 로우 케이블 당기기",
+        "machine low row": "머신 로우",
+        "see-saw press alternating side press": "얼터네이팅 사이드 프레스",
+    },
+    "hi": {
+        "close-grip push-up off of a dumbbell": "डंबल पर क्लोज़-ग्रिप पुश-अप",
+        "dips - chest version": "छाती के लिए डिप्स",
+        "standing barbell press behind neck": "गर्दन के पीछे बारबेल प्रेस",
+        "standing dumbbell straight-arm front delt raise above head": "सिर के ऊपर सीधे हाथों से डंबल फ्रंट रेज़",
+        "standing front barbell raise over head": "सिर के ऊपर बारबेल फ्रंट रेज़",
+        "calf press on the leg press machine": "लेग प्रेस मशीन पर काफ प्रेस",
+        "kneeling cable crunch with alternating oblique twists": "घुटनों के बल केबल क्रंच और बारी-बारी ओब्लिक ट्विस्ट",
+        "see-saw press alternating side press": "बारी-बारी साइड प्रेस",
+        "calf press on the leg press machine": "लेग प्रेस मशीन पर पिंडलियों का व्यायाम",
+    },
+    "ar": {
+        "close-grip push-up off of a dumbbell": "تمرين ضغط بقبضة ضيقة على دمبل",
+        "dips - chest version": "متوازي للصدر",
+        "standing barbell press behind neck": "ضغط بالبار خلف الرقبة",
+        "standing dumbbell straight-arm front delt raise above head": "رفع أمامي بالدمبل والذراع مستقيمة فوق الرأس",
+        "standing front barbell raise over head": "رفع أمامي بالبار فوق الرأس",
+        "calf press on the leg press machine": "ضغط عضلات الساق على جهاز ضغط الأرجل",
+        "close-grip front lat pulldown": "سحب أمامي للظهر بقبضة ضيقة",
+        "seated side lateral raise": "رفع جانبي أثناء الجلوس",
+        "see-saw press alternating side press": "ضغط جانبي بالتناوب",
+        "side lateral raise": "رفع جانبي",
+        "calf press on the leg press machine": "تمرين عضلات الساق على جهاز ضغط الأرجل",
+    },
+    "he": {
+        "close-grip push-up off of a dumbbell": "שכיבות סמיכה באחיזה צרה על משקולת",
+        "dips - chest version": "מקבילים לחזה",
+        "standing barbell press behind neck": "לחיצת מוט מאחורי הצוואר",
+        "standing dumbbell straight-arm front delt raise above head": "הרמה קדמית עם משקולת וזרוע ישרה מעל הראש",
+        "standing front barbell raise over head": "הרמה קדמית עם מוט מעל הראש",
+        "ab crunch machine": "כפיפות בטן במכונה",
+        "bent over dumbbell rear delt raise with head on bench": "הרמה אחורית עם משקולת בהטיית גו, הראש על הספסל",
+        "bent over two-dumbbell row with palms in": "חתירה בהטיית גו עם שתי משקולות, כפות הידיים פנימה",
+        "dumbbell bench press with neutral grip": "לחיצת חזה עם משקולות באחיזה ניטרלית",
+        "see-saw press alternating side press": "לחיצה צידית לסירוגין",
+        "weighted sit-ups - with bands": "כפיפות בטן עם משקל וגומיות",
+    },
+    "ru": {
+        "close-grip push-up off of a dumbbell": "Отжимания узким хватом на гантели",
+        "dips - chest version": "Отжимания на брусьях для груди",
+        "standing barbell press behind neck": "Жим штанги из-за головы",
+        "standing dumbbell straight-arm front delt raise above head": "Подъём гантели перед собой прямой рукой над головой",
+        "standing front barbell raise over head": "Подъём штанги перед собой над головой",
+        "bent over barbell row": "Тяга штанги в наклоне",
+        "bent over dumbbell rear delt raise with head on bench": "Разведение гантелей на заднюю дельту в наклоне, голова на скамье",
+        "bent over two-dumbbell row": "Тяга двух гантелей в наклоне",
+        "bent over two-dumbbell row with palms in": "Тяга двух гантелей в наклоне ладонями внутрь",
+        "calf press on the leg press machine": "Жим носками на тренажёре для жима ногами",
+        "calf raise on a dumbbell": "Подъём на носки на гантели",
+        "kneeling cable triceps extension": "Разгибание рук на трицепс на коленях в блоке",
+        "oblique crunches - on the floor": "Косые скручивания на полу",
+        "see-saw press alternating side press": "Попеременный боковой жим",
+        "smith machine overhead shoulder press": "Жим на плечи над головой в тренажёре Смита",
+        "weighted sit-ups - with bands": "Скручивания с отягощением и резинками",
+        "bent over dumbbell rear delt raise with head on bench": "Разведение гантелей на заднюю дельту, голова на скамье",
+        "calf raise on a dumbbell": "Подъём на носки с опорой на гантель",
+        "kneeling cable triceps extension": "Разгибание рук на трицепс в блоке с колен",
+    },
+    "nl": {
+        "bent over dumbbell rear delt raise with head on bench": "Voorovergebogen achterwaartse schouderheffing met dumbbell, hoofd op de bank",
+        "bent over two-dumbbell row with palms in": "Voorovergebogen roeien met twee dumbbells, handpalmen naar binnen",
+        "calf press on the leg press machine": "Kuitdrukken op de legpressmachine",
+        "close-grip push-up off of a dumbbell": "Smalle-greep opdrukken op een dumbbell",
+        "dips - chest version": "Dips voor de borst",
+        "dumbbell bench press with neutral grip": "Bankdrukken met dumbbells met neutrale greep",
+        "see-saw press alternating side press": "Afwisselende zijwaartse druk",
+        "standing barbell press behind neck": "Staande halterstangdruk achter de nek",
+        "standing dumbbell straight-arm front delt raise above head": "Staande voorwaartse heffing met dumbbell, gestrekte arm boven het hoofd",
+        "standing front barbell raise over head": "Staande voorwaartse heffing met halterstang boven het hoofd",
+        "weighted sit-ups - with bands": "Buikspieroefeningen met gewicht en banden",
+        "alternating seated high-to-low cable row": "Afwisselend zittend kabelroeien van hoog naar laag",
+        "dumbbell bench press with neutral grip": "Bankdrukken met dumbbells en neutrale greep",
+    },
+    "it": {
+        "chest and front of shoulder stretch": "Allungamento del petto e parte anteriore della spalla",
+        "close-grip push-up off of a dumbbell": "Piegamenti a presa stretta su un manubrio",
+        "dips - chest version": "Dip per il petto",
+        "double kettlebell push press": "Push press con due kettlebell",
+        "one-arm kettlebell push press": "Push press con kettlebell a un braccio",
+        "push press - behind the neck": "Push press dietro il collo",
+        "see-saw press alternating side press": "Push press alternato laterale",
+        "standing barbell press behind neck": "Spinte in piedi con bilanciere dietro il collo",
+        "standing dumbbell straight-arm front delt raise above head": "Alzata frontale con manubrio e braccio teso sopra la testa",
+        "standing front barbell raise over head": "Alzata frontale con bilanciere sopra la testa",
+        "machine lat pulldown": "Lat machine",
+    },
+}
+
+COMPOUND_FIXES.update({
+    "ja": {"behind the back": "背中側", "behind head": "頭の後ろ", "head on bench": "ベンチに頭を乗せて", "head harness neck resistance": "ヘッドハーネスネックレジスタンス", "chest and front of shoulder stretch": "胸と肩前部のストレッチ", "run release": "ランリリース", "multiple response": "マルチレスポンス", "single response": "シングルレスポンス", "dips chest version": "胸部向けディップス", "front cone hops or hurdle hops": "コーンまたはハードルの前方ホップ", "front squats with two kettlebells": "ツーケトルベルフロントスクワット", "good morning off pins": "ラックからのグッドモーニング", "side to side chins": "左右チニング", "side to side box shuffle": "ボックス間サイドシャッフル", "double kettlebell push press": "ダブルケトルベルプッシュプレス", "one-arm kettlebell push press": "ワンアームケトルベルプッシュプレス", "push press": "プッシュプレス", "weighted sit-ups with bands": "バンド付きウェイトシットアップ", "standing towel triceps extension": "スタンディングタオルトライセプスエクステンション"},
+    "ko": {"behind the back": "등 뒤", "behind head": "머리 뒤", "head on bench": "벤치에 머리를 대고", "head harness neck resistance": "헤드 하네스 목 저항", "chest and front of shoulder stretch": "가슴과 어깨 앞쪽 스트레칭", "run release": "런 릴리스", "multiple response": "멀티 리스폰스", "single response": "싱글 리스폰스", "dips chest version": "가슴용 딥스", "front cone hops or hurdle hops": "콘 또는 허들 앞쪽 점프", "front squats with two kettlebells": "더블 케틀벨 프론트 스쿼트", "good morning off pins": "핀에서 시작하는 굿모닝", "side to side chins": "좌우 친업", "side to side box shuffle": "박스 사이드 셔플", "double kettlebell push press": "더블 케틀벨 푸시프레스", "one-arm kettlebell push press": "원암 케틀벨 푸시프레스", "push press": "푸시프레스", "weighted sit-ups with bands": "밴드 웨이티드 싯업", "standing towel triceps extension": "스탠딩 타월 트라이셉스 익스텐션"},
+    "hi": {"behind the back": "पीठ के पीछे", "behind head": "सिर के पीछे", "head on bench": "बेंच पर सिर रखकर", "head harness neck resistance": "हेड हार्नेस नेक रेज़िस्टेंस", "chest and front of shoulder stretch": "चेस्ट और शोल्डर फ्रंट स्ट्रेच", "run release": "रन रिलीज़", "multiple response": "मल्टीपल रिस्पॉन्स", "single response": "सिंगल रिस्पॉन्स", "dips chest version": "चेस्ट डिप्स", "front cone hops or hurdle hops": "कोन या हर्डल के ऊपर फ्रंट हॉप्स", "front squats with two kettlebells": "दो केटलबेल फ्रंट स्क्वाट", "good morning off pins": "पिन से गुड मॉर्निंग", "side to side chins": "साइड-टू-साइड चिन-अप", "side to side box shuffle": "बॉक्स के बीच साइड शफल", "double kettlebell push press": "डबल केटलबेल पुश प्रेस", "one-arm kettlebell push press": "एक हाथ केटलबेल पुश प्रेस", "push press": "पुश प्रेस", "weighted sit-ups with bands": "बैंड के साथ वेटेड सिट-अप", "standing towel triceps extension": "स्टैंडिंग टॉवल ट्राइसेप्स एक्सटेंशन"},
+    "ar": {"behind the back": "خلف الظهر", "behind head": "خلف الرأس", "head on bench": "والرأس على المقعد", "head harness neck resistance": "مقاومة الرقبة بحزام الرأس", "chest and front of shoulder stretch": "تمدد الصدر والكتف الأمامي", "run release": "الجري والتحرير", "multiple response": "استجابة متعددة", "single response": "استجابة مفردة", "dips chest version": "متوازي للصدر", "front cone hops or hurdle hops": "قفز أمامي فوق الأقماع أو الحواجز", "front squats with two kettlebells": "سكوات أمامي بكيتل بيلين", "good morning off pins": "صباح الخير من الدعامات", "side to side chins": "عقلة من جانب إلى آخر", "side to side box shuffle": "تحرك جانبي بين الصناديق", "double kettlebell push press": "دفع كيتل بيل مزدوج", "one-arm kettlebell push press": "دفع كيتل بيل بذراع واحدة", "push press": "دفع بالاستفادة من الساقين", "weighted sit-ups with bands": "تمرين بطن بوزن وحبال مطاطية", "standing towel triceps extension": "تمديد الترايسبس واقفاً بالمنشفة"},
+    "he": {"behind the back": "מאחורי הגב", "behind head": "מאחורי הראש", "head on bench": "עם הראש על הספסל", "head harness neck resistance": "התנגדות צוואר עם רתמת ראש", "chest and front of shoulder stretch": "מתיחת חזה וכתף קדמית", "run release": "ריצה ושחרור", "multiple response": "תגובה מרובה", "single response": "תגובה יחידה", "dips chest version": "מקבילים לחזה", "front cone hops or hurdle hops": "קפיצות קדימה מעל קונוסים או משוכות", "front squats with two kettlebells": "סקוואט קדמי עם שני קטלבלים", "good morning off pins": "בוקר טוב מהתומכים", "side to side chins": "מתח מצד לצד", "side to side box shuffle": "שאפֶל צדדי בין קופסאות", "double kettlebell push press": "פוש פרס עם שני קטלבלים", "one-arm kettlebell push press": "פוש פרס עם קטלבל ביד אחת", "push press": "פוש פרס", "weighted sit-ups with bands": "כפיפות בטן עם משקל וגומיות", "standing towel triceps extension": "פשיטת מרפקים בעמידה עם מגבת"},
+    "ru": {"behind the back": "за спиной", "behind head": "за головой", "head on bench": "головой на скамье", "head harness neck resistance": "сопротивление шеи с головным ремнём", "chest and front of shoulder stretch": "растяжка груди и передней дельты", "run release": "бег и выпуск", "multiple response": "множественная реакция", "single response": "одиночная реакция", "dips chest version": "отжимания на брусьях для груди", "front cone hops or hurdle hops": "прыжки вперёд через конусы или барьеры", "front squats with two kettlebells": "фронтальный присед с двумя гирями", "good morning off pins": "доброе утро со стоек", "side to side chins": "подтягивания из стороны в сторону", "side to side box shuffle": "боковое перемещение между тумбами", "double kettlebell push press": "двойной толчковый жим с гирями", "one-arm kettlebell push press": "толчковый жим гири одной рукой", "push press": "толчковый жим", "weighted sit-ups with bands": "скручивания с весом и резинками", "standing towel triceps extension": "разгибание трицепса стоя с полотенцем"},
+    "nl": {"behind the back": "achter de rug", "behind head": "achter het hoofd", "head on bench": "met het hoofd op de bank", "head harness neck resistance": "nekweerstand met hoofdband", "chest and front of shoulder stretch": "rekken van borst en voorkant schouder", "run release": "lopen en loslaten", "multiple response": "meervoudige reactie", "single response": "enkele reactie", "dips chest version": "borstdips", "front cone hops or hurdle hops": "voorwaartse sprongen over kegels of horden", "front squats with two kettlebells": "front squat met twee kettlebells", "good morning off pins": "good morning vanaf steunen", "side to side chins": "optrekken van links naar rechts", "side to side box shuffle": "zijwaartse box shuffle", "double kettlebell push press": "push press met twee kettlebells", "one-arm kettlebell push press": "eenarmige kettlebell push press", "push press": "push press", "weighted sit-ups with bands": "sit-ups met gewicht en banden", "standing towel triceps extension": "staande tricepsstrekking met handdoek"},
+    "it": {"behind the back": "dietro la schiena", "behind head": "dietro la testa", "head on bench": "con la testa sulla panca", "head harness neck resistance": "resistenza cervicale con imbracatura per la testa", "chest and front of shoulder stretch": "stretching del petto e della parte anteriore della spalla", "run release": "corsa e rilascio", "multiple response": "risposta multipla", "single response": "risposta singola", "dips chest version": "dip per il petto", "front cone hops or hurdle hops": "salti frontali su coni o ostacoli", "front squats with two kettlebells": "front squat con due kettlebell", "good morning off pins": "good morning dai supporti", "side to side chins": "trazioni da un lato all'altro", "side to side box shuffle": "spostamento laterale tra i box", "double kettlebell push press": "push press con due kettlebell", "one-arm kettlebell push press": "push press con kettlebell a un braccio", "push press": "push press", "weighted sit-ups with bands": "addominali zavorrati con elastici", "standing towel triceps extension": "estensione dei tricipiti in piedi con asciugamano"},
+})
+for _locale, _phrases in COMPOUND_FIXES.items():
+    PROFILES[_locale]["phrases"].update(_phrases)
+
+
 def normalize(value: str) -> str:
     value = value.lower().replace("–", "-").replace("—", "-")
     value = re.sub(r"[()]+", " ", value)
@@ -444,18 +706,23 @@ def build(locale: str, wger_path: Path | None) -> dict[str, Any]:
     entries: dict[str, Any] = {}
     for exercise_id, exercise in db["exercises"].items():
         source_name = exercise["source"]["name"]
+        exact = EXACT_FIXES.get(locale, {}).get(normalize(source_name))
         localized = wger.get(normalize(source_name))
-        if localized and normalize(localized) != normalize(source_name):
+        if exact:
+            preferred = exact
+            source_refs = ["repo-domain-terminology"]
+        elif localized and normalize(localized) != normalize(source_name):
             preferred = localized
             source_refs = ["wger-api"]
         else:
             preferred = compose(source_name, profile, locale)
             source_refs = ["repo-domain-terminology"]
+        status = "untranslated" if normalize(preferred) == normalize(source_name) else "provisional"
         entries[exercise_id] = {
             "preferred": preferred,
             "aliases": [],
             "sourceRefs": source_refs,
-            "reviewStatus": "provisional",
+            "reviewStatus": status,
         }
 
     existing = TRANSLATIONS / f"{locale}.json"

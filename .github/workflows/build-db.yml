@@ -142,6 +142,9 @@ jobs:
       - name: Verify localized-name contract
         run: python tests/test_localization.py free-exercise-db-plusplus.json
 
+      - name: Audit localized exercise names
+        run: python scripts/audit_localized_catalogs.py --fail-on-flags
+
       - name: Verify catalog expansion contract
         run: python tests/test_catalog_expansion.py free-exercise-db-plusplus.json exercise-relationships.json
 

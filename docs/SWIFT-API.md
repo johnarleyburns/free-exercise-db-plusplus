@@ -13,6 +13,19 @@ import FreeExerciseDBPlusPlus
 let engine = try TrainingEngine.bundled()
 ```
 
+For direct exercise lookup, the bundled `FEDatabase` exposes locale-aware
+names without changing canonical IDs:
+
+```swift
+let database = try FEDatabase.bundled()
+let bench = database.findExercises(containing: "banca", locale: Locale(identifier: "es-MX"))
+let displayName = bench.first?.preferredName(locale: Locale(identifier: "es-MX"))
+```
+
+Swift callers can use Apple locale identifiers such as `es-ES`, `es-MX`,
+`zh-Hans`, and `zh-Hant`; the database applies deterministic base-language and
+English fallback. `exerciseId` remains the persistence and research key.
+
 `bundled()` loads the immutable DB++ database and relationship resources needed
 by the engine; the package also ships the versioned policy/schema artifacts used
 for offline distribution and validation. A custom database remains available

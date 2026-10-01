@@ -16,6 +16,18 @@
 
 # Changelog
 
+## 1.18.0 (unreleased)
+
+- Add locale-aware exercise names and aliases with stable canonical exercise IDs,
+  source provenance, review status, and deterministic locale fallback.
+- Add Spanish, German, Simplified Chinese, Traditional Chinese, Brazilian
+  Portuguese, French, Japanese, Korean, Hindi, Arabic, Hebrew, Russian, Dutch,
+  and Italian catalogs covering all 927 records; untranslated fallbacks remain
+  explicitly marked.
+- Add Python, Swift, and Kotlin localized-name lookup/search APIs, bundled
+  resource parity, BCP-47 locale handling, and localization CI contracts.
+- Add the research/mobile localization plan and catalog evidence policy.
+
 ## 1.17.1 - 2026-09-29
 
 - Fix Swift 6 compilation of the HealthKit adapter by making asynchronous

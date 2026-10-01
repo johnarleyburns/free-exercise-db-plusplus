@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.17.0**
+Next release candidate: **v1.18.0**
 
 ## Build an app with DB++
 
@@ -74,6 +74,21 @@ https://github.com/johnarleyburns/free-exercise-db-plusplus/releases
 
 Consumers need only `free-exercise-db-plusplus.json` at runtime. The schemas are optional
 validation tools; evidence provenance is embedded directly in the database.
+
+## Multilingual exercise names
+
+The database keeps stable English `exerciseId` values and adds semantic,
+locale-specific names under `localizedNames`. The v1.18.0 catalog registers
+`es`, `de`, `zh-Hans`, `zh-Hant`, `pt-BR`, `fr`, `ja`, `ko`, `hi`, `ar`, `he`,
+`ru`, `nl`, and `it`, with deterministic fallback from a requested locale to
+its base language and then English. Names retain source references and an
+explicit `reviewStatus`; native-reviewed, provisional, and untranslated
+fallback entries are never conflated.
+
+Python, Swift, and Kotlin expose locale-aware preferred-name, alias, and search
+helpers. The locale tags are BCP-47 compatible, including Android per-app
+language tags and Apple/iPhone localization tags. See
+[the localization plan and provenance policy](docs/MULTILINGUAL-EXERCISE-NAMES-PLAN.md).
 
 ## What DB++ adds
 

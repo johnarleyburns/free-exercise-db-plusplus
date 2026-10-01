@@ -32,6 +32,19 @@ val plan = generated.generation?.plan
 val evaluation = plan?.let { engine.evaluatePlan(it) }
 ```
 
+Exercise display names and search are locale-aware and use the same BCP-47
+tags Android exposes for per-app language preferences:
+
+```kotlin
+val database = Database.bundled()
+val locale = Locale.forLanguageTag("es-MX")
+val bench = database.findExercises("banca", locale).first()
+val displayName = bench.preferredName(locale)
+```
+
+Use `exerciseId` as the stable persisted/research identity; localized names are
+display and search fields with deterministic base-language and English fallback.
+
 For transport-neutral JSON, decode a request with kotlinx.serialization and
 dispatch it explicitly:
 

@@ -136,6 +136,12 @@ public struct FEDatabase: Sendable {
         do { let doc = try JSONDecoder().decode(DatabaseDocument.self, from: data); return FEDatabase(metadata: doc.metadata ?? [:], exercises: doc.exercises) }
         catch { throw FEDBError.invalidDocument("Unable to decode database: \(error)") }
     }
+    public static func bundled() throws -> FEDatabase {
+        guard let url = Bundle.module.url(forResource: "free-exercise-db-plusplus", withExtension: "json") else {
+            throw FEDBError.invalidDocument("bundled database resource is missing")
+        }
+        return try load(url: url)
+    }
     public init(metadata: [String: JSONValue] = [:], exercises: [String: Exercise]) {
         self.metadata = metadata
         self.exercises = exercises

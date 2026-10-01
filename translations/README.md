@@ -17,3 +17,12 @@ coverage for native review coverage.
 
 Locale files use BCP-47 tags. The planned release locales are listed in
 `locale-manifest.json`.
+
+## Source and attribution
+
+Some provisional names are sourced from the Wger exercise-information API;
+those entries retain the `wger-api` source reference and are subject to the
+Creative Commons Attribution-ShareAlike 4.0 terms recorded in `evidence.json`.
+The remaining provisional candidates are composed from the repository-owned
+domain terminology inventory. No external translation service is called by the
+build.

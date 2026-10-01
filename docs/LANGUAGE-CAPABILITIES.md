@@ -37,3 +37,18 @@ future observations.
 
 The fixture oracle is `fixtures/cross-language/`; Python remains the semantic
 oracle. Swift, Kotlin, and R consume the same canonical fixtures.
+
+## Localized exercise names
+
+The v1.18.0 database preserves canonical English exercise IDs while exposing
+locale-specific `preferred`, `aliases`, `searchOnly`, `sourceRefs`, and
+`reviewStatus` values. Supported locale tags are:
+
+`en`, `es`, `de`, `zh-Hans`, `zh-Hant`, `pt-BR`, `fr`, `ja`, `ko`, `hi`, `ar`,
+`he`, `ru`, `nl`, and `it`.
+
+Python `Database`, Swift `FEDatabase`, and Kotlin `Database` provide preferred
+name, alias, and locale-aware search helpers. Locale resolution is
+`requested locale -> base language -> en`; Chinese region tags select the
+appropriate Simplified or Traditional script. Canonical IDs remain the stable
+research key, so localized display names never replace identity.
