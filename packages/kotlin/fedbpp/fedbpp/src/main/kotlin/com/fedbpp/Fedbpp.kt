@@ -10,6 +10,8 @@ import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
+import java.text.Normalizer
+import java.util.Locale
 
 class ValidationException(message: String): IllegalArgumentException(message)
 class ExerciseNotFoundException(id: String): NoSuchElementException("Exercise not found: $id")
@@ -27,7 +29,14 @@ class Database private constructor(private val document: DatabaseDocument) {
     val exercises get() = document.exercises.toSortedMap()
     val equipmentVocabulary get() = document.exercises.values.mapNotNull { it.source["equipment"]?.jsonPrimitive?.contentOrNull }.toSet()
     fun getExercise(id: String): Exercise = document.exercises[id] ?: throw ExerciseNotFoundException(id)
-    fun findExercises(query: String): List<Exercise> = document.exercises.values.filter { it.exerciseId.contains(query, ignoreCase = true) }.sortedBy { it.exerciseId }
+    fun findExercises(query: String, locale: Locale = Locale.getDefault()): List<Exercise> {
+        val needle = searchable(query)
+        return document.exercises.values.filter { exercise ->
+            val values = listOf(exercise.exerciseId, exercise.preferredName(locale)) + exercise.aliases(locale) +
+                listOf(exercise.source["name"]?.jsonPrimitive?.contentOrNull ?: "")
+            values.any { searchable(it).contains(needle) }
+        }.sortedBy { it.exerciseId }
+    }
     fun exercisesForMuscle(muscle: String): List<Exercise> = document.exercises.values.filter { muscle in it.annotation.direct || muscle in it.annotation.indirect }.sortedBy { it.exerciseId }
     /** Return an immutable database view with explicit metadata overrides. */
     fun withSetCredits(credits: JsonObject): Database = Database(DatabaseDocument(document.metadata + ("setCredits" to credits), document.exercises))
@@ -39,6 +48,12 @@ class Database private constructor(private val document: DatabaseDocument) {
             ?.use(::load) ?: throw ValidationException("bundled database resource is missing")
     }
 }
+
+private fun searchable(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFKD)
+    .replace("\\p{M}".toRegex(), "")
+    .lowercase(Locale.ROOT)
+    .replace("\\s+".toRegex(), " ")
+    .trim()
 
 fun loadRelationships(file: File): ExerciseRelationships = file.inputStream().use { input ->
     try { fedbppJson.decodeFromString(ExerciseRelationships.serializer(), input.reader().readText()) }

@@ -20,6 +20,7 @@ import datetime as dt
 import hashlib
 import os
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -27,6 +28,10 @@ SCHEMA_VERSION = "0.3.0"
 CONVERTER_VERSION = "0.8.1"
 UPSTREAM_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
 CURATED_MANIFEST_PATH = Path(__file__).with_name("catalog_additions.json")
+LOCALIZATION_ROOT = Path(__file__).resolve().parents[1] / "translations"
+LOCALIZATION_MANIFEST_PATH = LOCALIZATION_ROOT / "locale-manifest.json"
+LOCALIZATION_EVIDENCE_PATH = LOCALIZATION_ROOT / "evidence.json"
+LOCALE_TAG = re.compile(r"^[a-z]{2,3}(?:-[A-Za-z]{4})?(?:-[A-Z]{2}|-[0-9]{3})?$")
 
 MUSCLES = [
     "abdominals","abductors","adductors","biceps","calves","chest",
@@ -1122,6 +1127,100 @@ def sha256_file(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+
+def load_localization(exercise_ids: set[str]) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
+    """Load reviewed localized-name catalogs and return metadata plus names.
+
+    Catalogs are deliberately source-controlled and local. The build never
+    reaches out to a translation service, which keeps generated artifacts
+    offline and reproducible.
+    """
+    if not LOCALIZATION_MANIFEST_PATH.exists():
+        return {
+            "defaultLocale": "en",
+            "supportedLocales": ["en"],
+            "fallbackPolicy": "locale -> base language -> en",
+            "catalogs": {},
+        }, {}
+
+    manifest = json.loads(LOCALIZATION_MANIFEST_PATH.read_text(encoding="utf-8"))
+    evidence = (
+        json.loads(LOCALIZATION_EVIDENCE_PATH.read_text(encoding="utf-8"))
+        if LOCALIZATION_EVIDENCE_PATH.exists()
+        else {"sources": {}}
+    )
+    supported = manifest.get("supportedLocales")
+    if not isinstance(supported, list) or not supported:
+        raise ValueError("Localization manifest must contain supportedLocales")
+    if manifest.get("defaultLocale") != "en":
+        raise ValueError("Localization defaultLocale must be en")
+    if manifest.get("fallbackPolicy") != "locale -> base language -> en":
+        raise ValueError("Unsupported localization fallback policy")
+    if len(supported) != len(set(supported)) or any(
+        not isinstance(locale, str) or not LOCALE_TAG.fullmatch(locale)
+        for locale in supported
+    ):
+        raise ValueError("Localization supportedLocales must contain unique BCP-47 tags")
+
+    catalogs: dict[str, Any] = {}
+    localized: dict[str, dict[str, Any]] = {}
+    for locale in supported:
+        if locale == "en":
+            continue
+        relative = manifest.get("catalogs", {}).get(locale)
+        if not isinstance(relative, str):
+            raise ValueError(f"Missing localization catalog path for {locale}")
+        path = LOCALIZATION_ROOT.parent / relative
+        if not path.exists():
+            raise ValueError(f"Localization catalog does not exist: {path}")
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        if catalog.get("locale") != locale:
+            raise ValueError(f"Localization catalog locale mismatch: {path}")
+        entries = catalog.get("exercises")
+        if not isinstance(entries, dict):
+            raise ValueError(f"Localization catalog exercises must be an object: {path}")
+
+        counts = {"reviewed": 0, "provisional": 0, "untranslated": 0}
+        for exercise_id, entry in entries.items():
+            if exercise_id not in exercise_ids:
+                raise ValueError(f"Unknown exerciseId in {locale} localization: {exercise_id}")
+            if not isinstance(entry, dict):
+                raise ValueError(f"Localization entry must be an object: {locale}/{exercise_id}")
+            preferred = entry.get("preferred")
+            aliases = entry.get("aliases", [])
+            source_refs = entry.get("sourceRefs")
+            status = entry.get("reviewStatus")
+            if not isinstance(preferred, str) or not preferred.strip():
+                raise ValueError(f"Missing preferred localized name: {locale}/{exercise_id}")
+            if not isinstance(aliases, list) or len(aliases) != len(set(aliases)) or any(
+                not isinstance(alias, str) or not alias.strip() for alias in aliases
+            ):
+                raise ValueError(f"Invalid localized aliases: {locale}/{exercise_id}")
+            if not isinstance(source_refs, list) or not source_refs:
+                raise ValueError(f"Missing localized sourceRefs: {locale}/{exercise_id}")
+            if not all(ref in evidence.get("sources", {}) for ref in source_refs):
+                raise ValueError(f"Unknown localized sourceRef: {locale}/{exercise_id}")
+            if status not in {"reviewed", "provisional", "untranslated"}:
+                raise ValueError(f"Invalid localized reviewStatus: {locale}/{exercise_id}")
+            counts[status] += 1
+            localized.setdefault(exercise_id, {})[locale] = entry
+
+        catalogs[locale] = {
+            "source": relative,
+            "sha256": sha256_file(path),
+            "entryCount": len(entries),
+            "reviewedCount": counts["reviewed"],
+            "provisionalCount": counts["provisional"],
+            "untranslatedCount": counts["untranslated"],
+        }
+
+    return {
+        "defaultLocale": "en",
+        "supportedLocales": supported,
+        "fallbackPolicy": "locale -> base language -> en",
+        "catalogs": catalogs,
+    }, localized
+
 def _curated_source(entry: dict[str, Any]) -> dict[str, Any]:
     """Build an original DB++ source-shaped record from the catalog manifest.
 
@@ -1235,6 +1334,10 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
             "source": item,
         }
 
+    localization_metadata, localized_names = load_localization(set(exercises))
+    for exercise_id, names in localized_names.items():
+        exercises[exercise_id]["localizedNames"] = names
+
     return {
         "metadata": {
             "schemaVersion": SCHEMA_VERSION,
@@ -1262,6 +1365,7 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
                 "references": EVIDENCE_REFERENCES,
                 "patterns": PATTERN_EVIDENCE,
             },
+            "localization": localization_metadata,
             "muscleOntology": MUSCLES,
             "sourceExerciseCount": len(exercises),
             "upstreamExerciseCount": len(source),

@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 from typing import Any, Iterator
 
+from .localization import locale_candidates, searchable
+
 @dataclass(frozen=True)
 class Exercise:
     exercise_id: str
@@ -15,6 +17,30 @@ class Exercise:
     @property
     def volume_eligible(self) -> bool:
         return bool(self.annotation.get("volumeEligible", False))
+
+    @property
+    def localized_names(self) -> dict[str, dict[str, Any]]:
+        return self.data.get("localizedNames", {})
+
+    def localized_name(self, locale: str | None = "en") -> dict[str, Any] | None:
+        for candidate in locale_candidates(locale):
+            value = self.localized_names.get(candidate)
+            if isinstance(value, dict):
+                return value
+        return None
+
+    def preferred_name(self, locale: str | None = "en") -> str:
+        entry = self.localized_name(locale)
+        if entry and isinstance(entry.get("preferred"), str):
+            return entry["preferred"]
+        return str(self.data.get("source", {}).get("name", self.exercise_id))
+
+    def aliases(self, locale: str | None = "en") -> list[str]:
+        entry = self.localized_name(locale)
+        if not entry:
+            return []
+        values = list(entry.get("aliases", [])) + list(entry.get("searchOnly", []))
+        return [value for value in values if isinstance(value, str)]
 
 class Database:
     """Read-only access to a Free Exercise DB++ JSON document."""
@@ -38,9 +64,15 @@ class Database:
         except KeyError as exc:
             raise KeyError(f"unknown exerciseId: {exercise_id}") from exc
 
-    def find_exercises(self, query: str) -> list[Exercise]:
-        needle = query.casefold()
-        return [e for e in self._exercises.values() if needle in e.exercise_id.casefold() or needle in str(e.data.get("name", "")).casefold()]
+    def find_exercises(self, query: str, locale: str | None = "en") -> list[Exercise]:
+        needle = searchable(query)
+        result = []
+        for exercise in self._exercises.values():
+            values = [exercise.exercise_id, exercise.data.get("source", {}).get("name", ""), exercise.preferred_name(locale)]
+            values.extend(exercise.aliases(locale))
+            if any(needle in searchable(str(value)) for value in values):
+                result.append(exercise)
+        return result
 
     def exercises_for_muscle(self, muscle: str, role: str | None = None) -> list[Exercise]:
         if role is not None and role not in {"direct", "indirect", "stabilizers"}:

@@ -62,14 +62,67 @@ public struct ExerciseAnnotation: Codable, Sendable, Equatable {
     public init(direct: [String] = [], indirect: [String] = [], stabilizers: [String] = [], volumeEligible: Bool = false, confidence: String? = nil) { self.direct = direct; self.indirect = indirect; self.stabilizers = stabilizers; self.patterns = []; self.volumeEligible = volumeEligible; self.confidence = confidence }
 }
 
+public struct LocalizedExerciseName: Codable, Sendable, Equatable {
+    public let preferred: String
+    public let aliases: [String]
+    public let searchOnly: [String]
+    public let region: String?
+    public let sourceRefs: [String]
+    public let reviewStatus: String
+    public init(preferred: String, aliases: [String] = [], searchOnly: [String] = [], region: String? = nil, sourceRefs: [String] = [], reviewStatus: String = "provisional") {
+        self.preferred = preferred; self.aliases = aliases; self.searchOnly = searchOnly; self.region = region; self.sourceRefs = sourceRefs; self.reviewStatus = reviewStatus
+    }
+    private enum CodingKeys: String, CodingKey { case preferred, aliases, searchOnly, region, sourceRefs, reviewStatus }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        preferred = try container.decode(String.self, forKey: .preferred)
+        aliases = try container.decodeIfPresent([String].self, forKey: .aliases) ?? []
+        searchOnly = try container.decodeIfPresent([String].self, forKey: .searchOnly) ?? []
+        region = try container.decodeIfPresent(String.self, forKey: .region)
+        sourceRefs = try container.decodeIfPresent([String].self, forKey: .sourceRefs) ?? []
+        reviewStatus = try container.decodeIfPresent(String.self, forKey: .reviewStatus) ?? "provisional"
+    }
+}
+
 public struct Exercise: Codable, Sendable, Equatable, Identifiable {
     public let exerciseId: String
     public let annotation: ExerciseAnnotation
     public let source: [String: JSONValue]?
-    public init(exerciseId: String, annotation: ExerciseAnnotation, source: [String: JSONValue]? = nil) {
-        self.exerciseId = exerciseId; self.annotation = annotation; self.source = source
+    public let localizedNames: [String: LocalizedExerciseName]?
+    public init(exerciseId: String, annotation: ExerciseAnnotation, source: [String: JSONValue]? = nil, localizedNames: [String: LocalizedExerciseName]? = nil) {
+        self.exerciseId = exerciseId; self.annotation = annotation; self.source = source; self.localizedNames = localizedNames
     }
     public var id: String { exerciseId }
+    private func localeCandidates(_ locale: Locale) -> [String] {
+        let requested = locale.identifier.replacingOccurrences(of: "_", with: "-")
+        let parts = requested.split(separator: "-").map(String.init)
+        let base = parts.first ?? requested
+        var scriptLocale: String?
+        if base == "zh" {
+            if let script = parts.dropFirst().first(where: { $0.count == 4 }) {
+                scriptLocale = "zh-\(script)"
+            } else if let region = parts.dropFirst().first(where: { $0.count == 2 }) {
+                if ["CN", "SG", "MY"].contains(region) { scriptLocale = "zh-Hans" }
+                if ["TW", "HK", "MO"].contains(region) { scriptLocale = "zh-Hant" }
+            }
+        }
+        var result: [String] = []
+        for candidate in [requested, scriptLocale, base, "en"].compactMap({ $0 }) where !result.contains(candidate) { result.append(candidate) }
+        return result
+    }
+    public func localizedName(for locale: Locale = .current) -> LocalizedExerciseName? {
+        for candidate in localeCandidates(locale) { if let value = localizedNames?[candidate] { return value } }
+        return nil
+    }
+    public func preferredName(locale: Locale = .current) -> String {
+        if let value = localizedName(for: locale)?.preferred { return value }
+        if case .string(let name)? = source?["name"] { return name }
+        return exerciseId
+    }
+    public func aliases(locale: Locale = .current) -> [String] {
+        guard let value = localizedName(for: locale) else { return [] }
+        return value.aliases + value.searchOnly
+    }
 }
 
 private struct DatabaseDocument: Codable, Sendable { let metadata: [String: JSONValue]?; let exercises: [String: Exercise] }
@@ -98,7 +151,17 @@ public struct FEDatabase: Sendable {
         return (number("direct", 1), number("indirect", 0.5), number("stabilizer", 0))
     }
     public func getExercise(_ id: String) throws -> Exercise { guard let e = exercises[id] else { throw FEDBError.exerciseNotFound(id) }; return e }
-    public func findExercises(containing query: String) -> [Exercise] { let q = query.lowercased(); return indexes.all.filter { $0.exerciseId.lowercased().contains(q) } }
+    public func findExercises(containing query: String, locale: Locale = .current) -> [Exercise] {
+        let q = query.precomposedStringWithCanonicalMapping.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: locale)
+        return indexes.all.filter { exercise in
+            let values = [exercise.exerciseId, exercise.preferredName(locale: locale)] + exercise.aliases(locale: locale) + [
+                (exercise.source?["name"].flatMap { if case .string(let value) = $0 { return value }; return nil } ?? "")
+            ]
+            return values.contains { value in
+                value.precomposedStringWithCanonicalMapping.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: locale).contains(q)
+            }
+        }
+    }
     public func exercisesForMuscle(_ muscle: String) -> [Exercise] { indexes.byMuscle[muscle, default: []].compactMap { exercises[$0] } }
     public func exercisesForMovementPattern(_ pattern: String) -> [Exercise] { indexes.byMovementPattern[pattern, default: []].compactMap { exercises[$0] } }
     public func exercisesForEquipment(_ equipment: String) -> [Exercise] { indexes.byEquipment[equipment, default: []].compactMap { exercises[$0] } }

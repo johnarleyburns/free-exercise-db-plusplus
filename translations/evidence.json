@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.1.0",
+  "sources": {
+    "wger-api": {
+      "title": "Wger exercise information API",
+      "url": "https://wger.de/api/v2/exerciseinfo/",
+      "license": "Creative Commons Attribution Share Alike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "use": "Candidate exercise terminology and aliases; each imported entry must retain its exercise and translation identifiers."
+    },
+    "spanish-sports-council": {
+      "title": "Consejo Superior de Deportes exercise terminology",
+      "url": "https://www.csd.gob.es/sites/default/files/media/files/2021-06/Bolet%C3%ADn%20M%20y%20D%20octubre%202018.pdf",
+      "use": "Spanish domain terminology reference."
+    },
+    "repo-domain-terminology": {
+      "title": "DB++ locale terminology inventory",
+      "url": "https://github.com/johnarleyburns/free-exercise-db-plusplus/tree/main/translations",
+      "license": "MIT",
+      "use": "Repository-owned terminology composition rules. Candidates generated from domain terms remain provisional until native fitness review."
+    }
+  }
+}

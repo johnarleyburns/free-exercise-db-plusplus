@@ -1,0 +1,19 @@
+# Localized exercise names
+
+These files are the source catalogs for localized exercise names. The converter
+embeds them into `free-exercise-db-plusplus.json` under each exercise's
+`localizedNames` field so runtime consumers remain self-contained.
+
+Names are semantic fitness terminology, not mechanical translations. Each entry
+must have at least one source reference and a status of `reviewed`, `provisional`,
+or `untranslated`.
+
+`untranslated` entries are explicit English fallbacks and do not count as
+completed localization coverage. `provisional` entries are usable candidates
+from a licensed terminology source or the repository's domain-term rules, but
+must not be presented as native-reviewed terminology. Both statuses remain
+visible in generated metadata so release review cannot mistake candidate
+coverage for native review coverage.
+
+Locale files use BCP-47 tags. The planned release locales are listed in
+`locale-manifest.json`.

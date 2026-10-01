@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "translations/**"
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
@@ -37,6 +38,7 @@ on:
   pull_request:
     paths:
       - "src/**"
+      - "translations/**"
       - "tests/**"
       - "free-exercise-db-plusplus.schema.json"
       - "workout.schema.json"
@@ -136,6 +138,9 @@ jobs:
 
       - name: Verify release contract
         run: python tests/test_release_contract.py free-exercise-db-plusplus.json
+
+      - name: Verify localized-name contract
+        run: python tests/test_localization.py free-exercise-db-plusplus.json
 
       - name: Verify catalog expansion contract
         run: python tests/test_catalog_expansion.py free-exercise-db-plusplus.json exercise-relationships.json

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "defaultLocale": "en",
+  "supportedLocales": [
+    "en",
+    "es"
+  ],
+  "fallbackPolicy": "locale -> base language -> en",
+  "catalogs": {
+    "es": "translations/es.json"
+  }
+}
