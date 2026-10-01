@@ -1033,6 +1033,36 @@ EXACT_FIXES = {
     },
 }
 
+# The exercise concepts are shared between the Chinese-script catalogs. For
+# entries newly audited in Simplified Chinese, convert only the localized
+# value to Traditional Chinese; the existing zh-Hant overrides remain the
+# authority wherever a script-specific term was already supplied.
+_HANS_TO_HANT = str.maketrans({
+    "腘": "膕", "绳": "繩", "内": "內", "沟": "溝", "风": "風", "单": "單",
+    "脚": "腳", "绕": "繞", "胫": "脛", "练": "練", "训": "訓", "放": "放",
+    "松": "鬆", "战": "戰", "骑": "騎", "车": "車", "体": "體", "铃": "鈴",
+    "箱": "箱", "肱": "肱", "举": "舉", "抬": "抬", "马": "馬", "戏": "戲",
+    "茧": "繭", "卷": "捲", "轮": "輪", "弯": "彎", "虫": "蟲", "头": "頭",
+    "双": "雙", "杠": "槓", "屈": "屈", "伸": "伸", "卧": "臥", "肘": "肘",
+    "椭": "橢", "圆": "圓", "农": "農", "绳": "繩", "举": "舉", "悬": "懸",
+    "垂": "垂", "折": "折", "鸽": "鴿", "栏": "欄", "胫": "脛", "铁": "鐵",
+    "长": "長", "等": "等", "摆": "擺", "动": "動", "关": "關", "节": "節",
+    "转": "轉", "侧": "側", "锥": "錐", "阔": "闊", "术": "術", "靠": "靠",
+    "墙": "牆", "练": "練", "举": "舉", "伦": "倫", "敦": "敦", "桥": "橋",
+    "仰": "仰", "顶": "頂", "兽": "獸", "移": "移", "辆": "輛", "翻": "翻",
+    "窄": "窄", "蹲": "蹲", "腹": "腹", "爪": "爪", "滑": "滑", "腓": "腓",
+    "撑": "撐", "梨": "梨", "状": "狀", "夹": "夾", "台": "臺", "动": "動",
+    "俯": "俯", "屈": "屈", "绵": "綿", "冲": "衝", "拉": "拉", "卧": "臥",
+    "菱": "菱", "负": "負", "吊": "吊", "环": "環", "沙": "沙", "袋": "袋",
+    "锤": "鎚", "速": "速", "阶": "階", "真": "真", "腿": "腿", "触": "觸",
+    "越": "越", "野": "野", "跑": "跑", "冲": "衝", "腕": "腕", "滚": "滾",
+    "辅": "輔", "类": "類", "倾": "傾", "线": "線", "技": "技", "术": "術",
+    "传": "傳", "统": "統", "动": "動", "负": "負", "单": "單", "车": "車",
+    "压": "壓", "顶": "頂", "间": "間", "从": "從", "发": "發", "达": "達",
+})
+for _source, _value in EXACT_FIXES.get("zh-Hans", {}).items():
+    EXACT_FIXES.setdefault("zh-Hant", {}).setdefault(_source, _value.translate(_HANS_TO_HANT))
+
 # Some exercise names are established proper names or internationally used
 # brand/lift names. Keeping those spellings is deliberate, but they still
 # need an explicit non-English catalog entry rather than being counted as an
@@ -1046,6 +1076,7 @@ ACCEPTED_UNCHANGED = {
         "superman",
     },
     "zh-Hans": {"spell caster", "stairmaster", "superman"},
+    "zh-Hant": {"spell caster", "stairmaster", "superman"},
 }
 
 COMPOUND_FIXES.update({
