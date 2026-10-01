@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:39:09.869482+00:00",
+    "generatedAt": "2026-10-01T16:40:39.230710+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1226,11 +1226,11 @@
         },
         "ar": {
           "source": "translations/ar.json",
-          "sha256": "d928b8403fb3aaf66b8e84c9b4d02f6c0dad93859743356ea9606a8e4eb19d55",
+          "sha256": "511e86ecf866ee8514aad070755a48b32bfc907c0febf3c501a1641651bff892",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 803,
-          "untranslatedCount": 124
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         },
         "he": {
           "source": "translations/he.json",
@@ -1589,12 +1589,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "90/90 hamstring",
+          "preferred": "تمدد أوتار الركبة 90/90",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "90/90 hamstring",
@@ -2092,12 +2092,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Adductor",
+          "preferred": "العضلات المقربة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Adductor",
@@ -2256,12 +2256,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Adductor/groin",
+          "preferred": "العضلات المقربة/الأربية",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Adductor/groin",
@@ -2606,12 +2606,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Air bike",
+          "preferred": "دراجة مقاومة للهواء",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Air bike",
@@ -4853,12 +4853,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Ankle circles",
+          "preferred": "تدوير الكاحل",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Ankle circles",
@@ -5178,12 +5178,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "تحرير لفافي ذاتي للظنبوب الأمامي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Anterior tibialis-smr",
@@ -6053,12 +6053,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "تدريب حجر أطلس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Atlas stone trainer",
@@ -6246,12 +6246,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Atlas stones",
+          "preferred": "أحجار أطلس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Atlas stones",
@@ -6790,12 +6790,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Backward drag",
+          "preferred": "سحب للخلف",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Backward drag",
@@ -7120,12 +7120,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Balance board",
+          "preferred": "لوح التوازن",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Balance board",
@@ -13086,12 +13086,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Battling ropes",
+          "preferred": "حبال المعركة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Battling ropes",
@@ -16594,12 +16594,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Bicycling",
+          "preferred": "ركوب الدراجة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Bicycling",
@@ -16760,12 +16760,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "دراجة ثابتة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Bicycling, stationary",
@@ -17109,12 +17109,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Body-up",
+          "preferred": "رفع الجسم",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Body-up",
@@ -18504,12 +18504,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Bottoms up",
+          "preferred": "كيتلبيل والقاعدة للأعلى",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Bottoms up",
@@ -18844,12 +18844,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Box skip",
+          "preferred": "قفز متبادل فوق الصندوق",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Box skip",
@@ -19556,12 +19556,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Brachialis-smr",
+          "preferred": "تحرير عضلة العضدية لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Brachialis-smr",
@@ -19732,12 +19732,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "ضغط برادفورد/روكي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Bradford/rocky presses",
@@ -19901,12 +19901,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Butt-ups",
+          "preferred": "رفع الأرداف",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Butt-ups",
@@ -20245,12 +20245,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Butterfly",
+          "preferred": "الفراشة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Butterfly",
@@ -25708,12 +25708,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Calves-smr",
+          "preferred": "تحرير عضلات الساق لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Calves-smr",
@@ -26062,12 +26062,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Car drivers",
+          "preferred": "تدوير عجلة القيادة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Car drivers",
@@ -26232,12 +26232,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Carioca quick step",
+          "preferred": "خطوة كاريـوكا سريعة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Carioca quick step",
@@ -29280,12 +29280,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Circus bell",
+          "preferred": "جرس السيرك",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Circus bell",
@@ -32336,12 +32336,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Cocoons",
+          "preferred": "تمرين الشرنقة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Cocoons",
@@ -32522,12 +32522,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Conan's wheel",
+          "preferred": "عجلة كونان",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Conan's wheel",
@@ -32695,12 +32695,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Concentration curls",
+          "preferred": "ثني الذراعين بالتركيز",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Concentration curls",
@@ -33549,12 +33549,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Crucifix",
+          "preferred": "الصليب",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Crucifix",
@@ -34568,12 +34568,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Dead bug",
+          "preferred": "الحشرة الميتة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Dead bug",
@@ -37707,12 +37707,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Dips — triceps version",
+          "preferred": "غطس للترايسبس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Dips — triceps version",
@@ -39131,12 +39131,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Downward facing balance",
+          "preferred": "توازن على البطن",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Downward facing balance",
@@ -45518,12 +45518,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Elbow circles",
+          "preferred": "تدوير المرفقين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Elbow circles",
@@ -46373,12 +46373,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Elliptical trainer",
+          "preferred": "جهاز إليبتيكال",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Elliptical trainer",
@@ -47747,12 +47747,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Farmer's walk",
+          "preferred": "مشية المزارع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Farmer's walk",
@@ -47916,12 +47916,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Fast skipping",
+          "preferred": "نط الحبل السريع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Fast skipping",
@@ -48086,12 +48086,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Finger curls",
+          "preferred": "ثني الأصابع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Finger curls",
@@ -49467,12 +49467,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Flutter kicks",
+          "preferred": "ركلات الرفرفة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Flutter kicks",
@@ -49629,12 +49629,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Foot-smr",
+          "preferred": "تحرير القدم لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Foot-smr",
@@ -50346,12 +50346,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Frog hops",
+          "preferred": "قفز الضفدع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Frog hops",
@@ -50517,12 +50517,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Frog sit-ups",
+          "preferred": "تمرين بطن الضفدع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Frog sit-ups",
@@ -53106,12 +53106,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "عقلة إلى عظم القص من جيروندا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Gironda sternum chins",
@@ -54485,12 +54485,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Groiners",
+          "preferred": "تمدد ديناميكي للأربية",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Groiners",
@@ -54835,12 +54835,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Hammer curls",
+          "preferred": "ثني المطرقة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Hammer curls",
@@ -55175,12 +55175,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Hamstring-smr",
+          "preferred": "تحرير أوتار الركبة لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Hamstring-smr",
@@ -56792,12 +56792,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Hanging pike",
+          "preferred": "بايك معلق",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Hanging pike",
@@ -57144,12 +57144,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "دفع الكيس الثقيل",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Heavy bag thrust",
@@ -58166,12 +58166,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Hug a ball",
+          "preferred": "احتضان الكرة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Hug a ball",
@@ -58501,12 +58501,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Hurdle hops",
+          "preferred": "قفز فوق الحواجز",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Hurdle hops",
@@ -59177,12 +59177,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "تحرير السبيل الحرقفي الظنبوبي لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Iliotibial tract-smr",
@@ -59342,12 +59342,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Inchworm",
+          "preferred": "دودة البوصة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Inchworm",
@@ -63312,12 +63312,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Iron cross",
+          "preferred": "الصليب الحديدي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Iron cross",
@@ -64158,12 +64158,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Isometric wipers",
+          "preferred": "مساحات زجاج متساوية القياس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Isometric wipers",
@@ -64853,12 +64853,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Jefferson squats",
+          "preferred": "سكوات جيفرسون",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Jefferson squats",
@@ -65380,12 +65380,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "هرولة على جهاز المشي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Jogging, treadmill",
@@ -65573,12 +65573,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Keg load",
+          "preferred": "رفع البرميل",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Keg load",
@@ -68445,12 +68445,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Kipping muscle up",
+          "preferred": "ماسِل أب مع دفع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Kipping muscle up",
@@ -68776,12 +68776,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Knee circles",
+          "preferred": "تدوير الركبتين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Knee circles",
@@ -70837,12 +70837,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Landmine 180's",
+          "preferred": "دوران 180 درجة باللاندماين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Landmine 180's",
@@ -71023,12 +71023,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "دفع خطي باللاندماين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Landmine linear jammer",
@@ -71194,12 +71194,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Lateral bound",
+          "preferred": "قفز جانبي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Lateral bound",
@@ -71535,12 +71535,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Lateral cone hops",
+          "preferred": "قفز جانبي فوق الأقماع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Lateral cone hops",
@@ -71867,12 +71867,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "تحرير العضلة الظهرية العريضة لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Latissimus dorsi-smr",
@@ -74452,12 +74452,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "تقنية بداية خطية من ثلاثة أجزاء",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Linear 3-part start technique",
@@ -74620,12 +74620,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "تمرين تسارع خطي على الحائط",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Linear acceleration wall drill",
@@ -74980,12 +74980,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Log lift",
+          "preferred": "رفع الجذع الخشبي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Log lift",
@@ -75152,12 +75152,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "London bridges",
+          "preferred": "جسور لندن",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "London bridges",
@@ -75314,12 +75314,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Looking at ceiling",
+          "preferred": "النظر إلى السقف",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Looking at ceiling",
@@ -81964,12 +81964,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Mixed grip chin",
+          "preferred": "عقلة بقبضة مختلطة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Mixed grip chin",
@@ -82133,12 +82133,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Monster walk",
+          "preferred": "مشية الوحش",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Monster walk",
@@ -82465,12 +82465,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Moving claw series",
+          "preferred": "سلسلة المخلب المتحرك",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Moving claw series",
@@ -82842,12 +82842,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Muscle up",
+          "preferred": "ماسِل أب",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Muscle up",
@@ -83022,12 +83022,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "هاك سكوات بوقفة ضيقة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Narrow stance hack squats",
@@ -83379,12 +83379,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Narrow stance squats",
+          "preferred": "سكوات بوقفة ضيقة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Narrow stance squats",
@@ -84062,12 +84062,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Oblique crunches",
+          "preferred": "تمرين البطن الجانبي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Oblique crunches",
@@ -90386,12 +90386,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "One half locust",
+          "preferred": "نصف وضعية الجرادة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "One half locust",
@@ -91252,12 +91252,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Otis-up",
+          "preferred": "تمرين بطن أوتيس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Otis-up",
@@ -93493,12 +93493,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Parallel bar dip",
+          "preferred": "غطس على القضبان المتوازية",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Parallel bar dip",
@@ -93818,12 +93818,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Peroneals-smr",
+          "preferred": "تحرير العضلات الشظوية لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Peroneals-smr",
@@ -94334,12 +94334,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Pin presses",
+          "preferred": "ضغط من الدعامات",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Pin presses",
@@ -94496,12 +94496,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Piriformis-smr",
+          "preferred": "تحرير العضلة الكمثرية لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Piriformis-smr",
@@ -94833,12 +94833,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Plate pinch",
+          "preferred": "قرص الأوزان بالقبضة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Plate pinch",
@@ -95174,12 +95174,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "انزلاق أوتار الركبة على المنصة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Platform hamstring slides",
@@ -97869,12 +97869,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "تمرين أوتار الركبة اليدوي على البطن",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Prone manual hamstring",
@@ -98039,12 +98039,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Prowler sprint",
+          "preferred": "عدو بزلاجة براولر",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Prowler sprint",
@@ -98389,12 +98389,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Pullups",
+          "preferred": "تمرين العقلة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Pullups",
@@ -99799,12 +99799,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Pushups",
+          "preferred": "تمرين الضغط",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Pushups",
@@ -100137,12 +100137,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Pyramid",
+          "preferred": "هرم",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Pyramid",
@@ -100461,12 +100461,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "تحرير العضلة رباعية الرؤوس لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Quadriceps-smr",
@@ -100628,12 +100628,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Quick leap",
+          "preferred": "قفزة سريعة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Quick leap",
@@ -100812,12 +100812,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Rack delivery",
+          "preferred": "إيصال إلى وضع الراك",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Rack delivery",
@@ -101173,12 +101173,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Rack pulls",
+          "preferred": "سحب ميت من الدعامات",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Rack pulls",
@@ -101502,12 +101502,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Recumbent bike",
+          "preferred": "دراجة راقدة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Recumbent bike",
@@ -104832,12 +104832,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "تحرير العضلات المعينية لفافيًا",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Rhomboids-smr",
@@ -105015,12 +105015,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Rickshaw carry",
+          "preferred": "حمل عربة الريكشو",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Rickshaw carry",
@@ -105373,12 +105373,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Ring dips",
+          "preferred": "غطس على الحلقات",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Ring dips",
@@ -107274,12 +107274,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Rowing, stationary",
+          "preferred": "تجديف ثابت",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Rowing, stationary",
@@ -107605,12 +107605,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Running, treadmill",
+          "preferred": "جري على جهاز المشي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Running, treadmill",
@@ -107969,12 +107969,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Sandbag load",
+          "preferred": "رفع كيس الرمل",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Sandbag load",
@@ -108309,12 +108309,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Scissor kick",
+          "preferred": "ركلة المقص",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Scissor kick",
@@ -120360,12 +120360,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Sit squats",
+          "preferred": "سكوات حتى الجلوس",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Sit squats",
@@ -120528,12 +120528,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Skating",
+          "preferred": "المتزحلق",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Skating",
@@ -121759,12 +121759,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "تأرجح المطرقة الثقيلة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Sledgehammer swings",
@@ -126750,12 +126750,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Speed squats",
+          "preferred": "سكوات السرعة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Speed squats",
@@ -126921,12 +126921,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Spell caster",
@@ -127100,12 +127100,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Spider crawl",
+          "preferred": "زحف العنكبوت",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Spider crawl",
@@ -129605,12 +129605,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Stairmaster",
@@ -137936,12 +137936,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Step mill",
+          "preferred": "جهاز صعود الدرج",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Step mill",
@@ -138638,12 +138638,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Stomach vacuum",
+          "preferred": "شفط البطن",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Stomach vacuum",
@@ -140236,12 +140236,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Superman",
+          "preferred": "سوبرمان",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Superman",
@@ -142471,12 +142471,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Thigh abductor",
+          "preferred": "إبعاد الفخذ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Thigh abductor",
@@ -142642,12 +142642,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Thigh adductor",
+          "preferred": "ضم الفخذ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Thigh adductor",
@@ -142834,12 +142834,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Tire flip",
+          "preferred": "قلب الإطار",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Tire flip",
@@ -143000,12 +143000,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Toe touchers",
+          "preferred": "لمس أصابع القدمين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Toe touchers",
@@ -143328,12 +143328,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Trail running/walking",
+          "preferred": "جري أو مشي على المسار",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Trail running/walking",
@@ -147106,12 +147106,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "V-bar pulldown",
+          "preferred": "سحب لأسفل بقضيب V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "V-bar pulldown",
@@ -147284,12 +147284,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "V-bar pullup",
+          "preferred": "عقلة بقضيب V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "V-bar pullup",
@@ -147618,12 +147618,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Walking, treadmill",
+          "preferred": "مشي على جهاز المشي",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Walking, treadmill",
@@ -150945,12 +150945,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Wind sprints",
+          "preferred": "عدو قصير سريع",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Wind sprints",
@@ -151112,12 +151112,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Windmills",
+          "preferred": "طواحين الهواء",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Windmills",
@@ -151442,12 +151442,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Wrist circles",
+          "preferred": "تدوير الرسغين",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Wrist circles",
@@ -151613,12 +151613,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Wrist roller",
+          "preferred": "بكرة الرسغ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Wrist roller",
@@ -151965,12 +151965,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Yoke walk",
+          "preferred": "المشي بحامل الأثقال",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Yoke walk",
@@ -152146,12 +152146,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Zercher squats",
+          "preferred": "سكوات زيرشر",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Zercher squats",
@@ -161137,12 +161137,12 @@
           "reviewStatus": "provisional"
         },
         "ar": {
-          "preferred": "Assisted dip",
+          "preferred": "غطس بمساعدة",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "he": {
           "preferred": "Assisted dip",
