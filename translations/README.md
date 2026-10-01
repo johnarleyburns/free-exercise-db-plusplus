@@ -26,3 +26,8 @@ Creative Commons Attribution-ShareAlike 4.0 terms recorded in `evidence.json`.
 The remaining provisional candidates are composed from the repository-owned
 domain terminology inventory. No external translation service is called by the
 build.
+
+The Spanish catalog also includes exact English-name matches from the
+[Kinetic Exercises Spanish catalog](https://github.com/kinetic-place/exercises-json)
+under its MIT license. These entries use the `es-reference-terminology` source
+reference and remain provisional until native fitness review.

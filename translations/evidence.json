@@ -18,6 +18,13 @@
       "url": "https://github.com/johnarleyburns/free-exercise-db-plusplus/tree/main/translations",
       "license": "MIT",
       "use": "Repository-owned terminology composition rules. Candidates generated from domain terms remain provisional until native fitness review."
+    },
+    "es-reference-terminology": {
+      "title": "Kinetic Exercises Spanish catalog",
+      "url": "https://github.com/kinetic-place/exercises-json",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/kinetic-place/exercises-json/blob/main/LICENSE",
+      "use": "Spanish exercise names matched by exact English source name; retained as provisional until native fitness review."
     }
   }
 }

@@ -18,6 +18,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "free-exercise-db-plusplus.json"
 TRANSLATIONS = ROOT / "translations"
+TERMINOLOGY = TRANSLATIONS / "terminology"
 
 
 PROFILES: dict[str, dict[str, Any]] = {
@@ -433,6 +434,167 @@ COMPOUND_FIXES = {
 }
 for _locale, _phrases in COMPOUND_FIXES.items():
     PROFILES[_locale]["phrases"].update(_phrases)
+
+# Spanish compound names that cannot be safely assembled from isolated
+# dictionary words. These are kept as full fitness-community phrases so the
+# fallback builder cannot emit mixed English/Spanish names.
+SPANISH_COMPOUND_FIXES = {
+    "advanced kettlebell windmill": "Molino avanzado con pesa rusa",
+    "all fours quad stretch": "Estiramiento de cuádriceps a cuatro apoyos",
+    "alternate leg diagonal bound": "Salto diagonal alterno a una pierna",
+    "ankle on the knee": "Tobillo sobre la rodilla",
+    "around the worlds": "Vueltas alrededor del mundo",
+    "backward medicine ball throw": "Lanzamiento hacia atrás con balón medicinal",
+    "barbell curls lying against an incline": "Curl con barra tumbado contra banco inclinado",
+    "barbell step ups": "Subidas al cajón con barra",
+    "bear crawl sled drags": "Arrastre de trineo caminando como oso",
+    "bent over one-arm long bar row": "Remo inclinado a un brazo con barra larga",
+    "bent over two-arm long bar row": "Remo inclinado con dos brazos y barra larga",
+    "bent over two-dumbbell row with palms in": "Remo inclinado con dos mancuernas y palmas hacia dentro",
+    "bosu ball cable crunch with side bends": "Abdominales en Bosu con polea y flexiones laterales",
+    "bottoms-up clean from the hang position": "Cargada desde suspensión con la pesa rusa invertida",
+    "box squat with chains": "Sentadilla a caja con cadenas",
+    "butt lift bridge": "Elevación de glúteos (puente)",
+    "cable hammer curls - rope attachment": "Curl martillo con cuerda en polea",
+    "cable iron cross": "Cruz de hierro en polea",
+    "cable judo flip": "Volteo de judo en polea",
+    "cable russian twists": "Giros rusos en polea",
+    "calf stretch elbows against wall": "Estiramiento de pantorrillas con codos contra la pared",
+    "calf stretch hands against wall": "Estiramiento de pantorrillas con manos contra la pared",
+    "catch and overhead throw": "Recepción y lanzamiento por encima de la cabeza",
+    "chain handle extension": "Extensión con asa de cadena",
+    "chair leg extended stretch": "Estiramiento de pierna extendida en silla",
+    "chair lower back stretch": "Estiramiento lumbar en silla",
+    "chair upper body stretch": "Estiramiento de la parte superior del cuerpo en silla",
+    "chest push from 3 point stance": "Empuje de pecho desde posición de tres apoyos",
+    "chest stretch on stability ball": "Estiramiento de pecho sobre pelota de estabilidad",
+    "cross body hammer curl": "Curl martillo cruzado",
+    "cross over - with bands": "Cruce con bandas elásticas",
+    "depth jump leap": "Salto de profundidad con salto largo",
+    "donkey calf raises": "Elevación de talones tipo burro",
+    "double leg butt kick": "Patada de glúteo con ambas piernas",
+    "dumbbell step ups": "Subidas al cajón con mancuernas",
+    "elbow to knee": "Codo a rodilla",
+    "elevated cable rows": "Remo elevado en polea",
+    "extended range one-arm kettlebell floor press": "Press de suelo con pesa rusa a un brazo y recorrido ampliado",
+    "flexor incline dumbbell curls": "Curl inclinado de flexores con mancuernas",
+    "forward drag with press": "Arrastre hacia delante con press",
+    "full range-of-motion lat pulldown": "Jalón al pecho con recorrido completo",
+    "gorilla chin/crunch": "Dominada de gorila y abdominal",
+    "hang clean - below the knees": "Cargada desde suspensión por debajo de las rodillas",
+    "hang snatch - below knees": "Arrancada desde suspensión por debajo de las rodillas",
+    "hanging bar good morning": "Buenos días colgado de la barra",
+    "heaving snatch balance": "Balanceo de arrancada con impulso",
+    "hip circles prone": "Círculos de cadera boca abajo",
+    "hug knees to chest": "Abrazar las rodillas al pecho",
+    "hyperextensions back extensions": "Hiperextensiones (extensiones de espalda)",
+    "hyperextensions with no hyperextension bench": "Hiperextensiones sin banco de hiperextensión",
+    "incline dumbbell bench with palms facing in": "Press inclinado con mancuernas y palmas enfrentadas",
+    "intermediate groin stretch": "Estiramiento intermedio de ingle",
+    "intermediate hip flexor and quad stretch": "Estiramiento intermedio de flexores de cadera y cuádriceps",
+    "inverted row with straps": "Remo invertido con correas",
+    "iron crosses stretch": "Cruz de hierro (estiramiento)",
+    "isometric chest squeezes": "Compresiones isométricas de pecho",
+    "isometric neck exercise - front and back": "Ejercicio isométrico de cuello, delante y atrás",
+    "isometric neck exercise - sides": "Ejercicio isométrico de cuello, laterales",
+    "kettlebell pass between the legs": "Paso de pesa rusa entre las piernas",
+    "kettlebell pirate ships": "Barcos pirata con pesas rusas",
+    "kettlebell sumo high pull": "Tirón alto sumo con pesa rusa",
+    "kettlebell turkish get-up lunge style": "Levantamiento turco con pesa rusa, estilo zancada",
+    "kettlebell turkish get-up squat style": "Levantamiento turco con pesa rusa, estilo sentadilla",
+    "knee across the body": "Rodilla cruzando el cuerpo",
+    "knee/hip raise on parallel bars": "Elevación de rodillas y cadera en barras paralelas",
+    "knee tuck jump": "Salto con recogimiento de rodillas",
+    "kneeling cable crunch with alternating oblique twists": "Abdominales de rodillas en polea con giros oblicuos alternos",
+    "lateral bound": "Salto lateral",
+    "lateral cone hops": "Saltos laterales sobre conos",
+    "leverage iso row": "Remo isométrico en máquina de palanca",
+    "linear depth jump": "Salto de profundidad lineal",
+    "lunge pass through": "Zancada con paso a través",
+    "lying bent leg groin": "Estiramiento de ingle tumbado con pierna flexionada",
+    "lying close-grip bar curl on high pulley": "Curl con barra de agarre cerrado tumbado en polea alta",
+    "lying close-grip barbell triceps press to chin": "Press de tríceps con barra de agarre cerrado tumbado hacia la barbilla",
+    "lying face down plate neck resistance": "Resistencia cervical tumbado boca abajo con disco",
+    "lying face up plate neck resistance": "Resistencia cervical tumbado boca arriba con disco",
+    "lying prone quadriceps": "Cuádriceps tumbado boca abajo",
+    "machine preacher curls": "Curl predicador en máquina",
+    "medicine ball scoop throw": "Lanzamiento de pala con balón medicinal",
+    "narrow stance leg press": "Prensa de piernas con postura estrecha",
+    "natural glute ham raise": "Elevación natural de glúteos e isquiotibiales",
+    "oblique crunches - on the floor": "Abdominales oblicuos en el suelo",
+    "on your side quad stretch": "Estiramiento lateral de cuádriceps",
+    "one-arm flat bench dumbbell flye": "Apertura con mancuerna a un brazo en banco plano",
+    "one-arm long bar row": "Remo a un brazo con barra larga",
+    "one-arm open palm kettlebell clean": "Cargada con pesa rusa a un brazo y palma abierta",
+    "one-legged cable kickback": "Patada de glúteo a una pierna en polea",
+    "one arm against wall": "Un brazo contra la pared",
+    "one handed hang": "Suspensión a una mano",
+    "one knee to chest": "Una rodilla al pecho",
+    "open palm kettlebell clean": "Cargada con pesa rusa y palma abierta",
+    "palms-down dumbbell wrist curl over a bench": "Curl de muñeca con mancuerna y palmas hacia abajo sobre un banco",
+    "palms-down wrist curl over a bench": "Curl de muñeca con palmas hacia abajo sobre un banco",
+    "palms-up barbell wrist curl over a bench": "Curl de muñeca con barra y palmas hacia arriba sobre un banco",
+    "palms-up dumbbell wrist curl over a bench": "Curl de muñeca con mancuerna y palmas hacia arriba sobre un banco",
+    "pelvic tilt into bridge": "Inclinación pélvica hasta formar un puente",
+    "plyo kettlebell pushups": "Flexiones pliométricas con pesas rusas",
+    "posterior tibialis stretch": "Estiramiento del tibial posterior",
+    "prowler sprint": "Sprint con trineo Prowler",
+    "push-ups - close triceps position": "Flexiones con posición cerrada de tríceps",
+    "push-ups with feet elevated": "Flexiones con los pies elevados",
+    "push-ups with feet on an exercise ball": "Flexiones con los pies sobre una pelota de ejercicios",
+    "pushups close and wide hand positions": "Flexiones con posiciones de manos cerrada y amplia",
+    "return push from stance": "Empuje de retorno desde la postura",
+    "reverse barbell preacher curls": "Curl predicador inverso con barra",
+    "reverse grip bent-over rows": "Remo inclinado con agarre inverso",
+    "reverse plate curls": "Curl inverso con disco",
+    "romanian deadlift from deficit": "Peso muerto rumano desde déficit",
+    "round the world shoulder stretch": "Estiramiento de hombros alrededor del mundo",
+    "seated dumbbell palms-down wrist curl": "Curl de muñeca sentado con mancuerna y palmas hacia abajo",
+    "seated dumbbell palms-up wrist curl": "Curl de muñeca sentado con mancuerna y palmas hacia arriba",
+    "seated one-arm dumbbell palms-down wrist curl": "Curl de muñeca sentado a un brazo con mancuerna y palmas hacia abajo",
+    "seated one-arm dumbbell palms-up wrist curl": "Curl de muñeca sentado a un brazo con mancuerna y palmas hacia arriba",
+    "seated one-arm cable pulley rows": "Remo sentado a un brazo en polea",
+    "seated palm-up barbell wrist curl": "Curl de muñeca sentado con barra y palma hacia arriba",
+    "seated palms-down barbell wrist curl": "Curl de muñeca sentado con barra y palmas hacia abajo",
+    "seated two-arm palms-up low-pulley wrist curl": "Curl de muñeca sentado a dos brazos en polea baja con palmas hacia arriba",
+    "single-arm linear jammer": "Empuje lineal unilateral en jammer",
+    "single-cone sprint drill": "Ejercicio de sprint con un cono",
+    "single-leg hop progression": "Progresión de saltos a una pierna",
+    "single-leg lateral hop": "Salto lateral a una pierna",
+    "single leg butt kick": "Patada de glúteo a una pierna",
+    "sled drag - harness": "Arrastre de trineo con arnés",
+    "sled overhead backward walk": "Caminata hacia atrás con trineo por encima de la cabeza",
+    "speed band overhead triceps": "Extensión rápida de tríceps por encima de la cabeza con banda",
+    "speed box squat": "Sentadilla rápida a caja",
+    "squat with plate movers": "Sentadilla con traslado de discos",
+    "standing cable wood chop": "Corte de leña de pie en polea",
+    "standing elevated quad stretch": "Estiramiento de cuádriceps elevado de pie",
+    "standing olympic plate hand squeeze": "Compresión de disco olímpico con la mano de pie",
+    "standing palms-up barbell behind the back wrist curl": "Curl de muñeca de pie con barra detrás de la espalda y palmas hacia arriba",
+    "standing pelvic tilt": "Inclinación pélvica de pie",
+    "standing soleus and achilles stretch": "Estiramiento de sóleo y tendón de Aquiles de pie",
+    "standing toe touches": "Toques de los dedos de los pies de pie",
+    "step-up with knee raise": "Subida al cajón con elevación de rodilla",
+    "straight bar bench mid rows": "Remo medio en banco con barra recta",
+    "straight raises on incline bench": "Elevaciones con brazos rectos en banco inclinado",
+    "stride jump crossover": "Salto de zancada cruzado",
+    "sumo deadlift with chains": "Peso muerto sumo con cadenas",
+    "supine chest throw": "Lanzamiento de pecho tumbado boca arriba",
+    "supine one-arm overhead throw": "Lanzamiento por encima de la cabeza a un brazo tumbado boca arriba",
+    "supine two-arm overhead throw": "Lanzamiento por encima de la cabeza a dos brazos tumbado boca arriba",
+    "t-bar row with handle": "Remo con barra T y asa",
+    "trap bar deadlift": "Peso muerto con barra hexagonal",
+    "triceps pushdown - v-bar attachment": "Extensión de tríceps en polea con accesorio de barra V",
+    "underhand cable pulldowns": "Jalones en polea con agarre supino",
+    "upper back-leg grab": "Agarre de espalda alta y pierna",
+    "weighted ball hyperextension": "Hiperextensión con pelota y peso",
+    "wide stance barbell squat": "Sentadilla con barra y postura amplia",
+    "wide stance stiff legs": "Piernas rígidas con postura amplia",
+    "world's greatest stretch": "El estiramiento más grande del mundo",
+    "wrist rotations with straight bar": "Rotaciones de muñeca con barra recta",
+    "machine rotary torso": "Rotación de torso en máquina",
+    "machine tibialis dorsiflexion": "Dorsiflexión del tibial en máquina",
+}
 
 # A small set of source records contains modifier combinations for which
 # isolated word substitution produces an unnatural or partly English result.
@@ -2429,6 +2591,63 @@ EXACT_FIXES = {
     },
 }
 
+EXACT_FIXES["es"].update(SPANISH_COMPOUND_FIXES)
+EXACT_FIXES["es"].update({
+    "clean": "Cargada",
+    "3/4 sit-up": "Abdominal 3/4",
+    "ab crunch machine": "Máquina de abdominales",
+    "alternating renegade row": "Remo renegado alterno",
+    "band good morning pull through": "Buenos días con banda y extensión de cadera",
+    "barbell ab rollout": "Rueda abdominal con barra",
+    "barbell ab rollout - on knees": "Rueda abdominal con barra de rodillas",
+    "barbell hip thrust": "Empuje de cadera con barra",
+    "barbell lunge": "Zancada con barra",
+    "barbell rollout from bench": "Rueda abdominal con barra desde el banco",
+    "barbell walking lunge": "Zancada caminando con barra",
+    "bodyweight walking lunge": "Zancada caminando con peso corporal",
+    "cable incline pushdown": "Extensión inclinada de tríceps en polea",
+    "cable reverse crunch": "Abdominal inverso en polea",
+    "cable seated crunch": "Abdominal sentado en polea",
+    "cross-body crunch": "Abdominal cruzado",
+    "crossover reverse lunge": "Zancada inversa cruzada",
+    "crunch - hands overhead": "Abdominal con las manos por encima de la cabeza",
+    "crunch - legs on exercise ball": "Abdominal con las piernas sobre pelota de ejercicios",
+    "crunches": "Abdominales",
+    "decline crunch": "Abdominal declinado",
+    "decline oblique crunch": "Abdominal oblicuo declinado",
+    "decline reverse crunch": "Abdominal inverso declinado",
+    "dumbbell lunges": "Zancadas con mancuernas",
+    "ez-bar skullcrusher": "Extensión de tríceps tumbado con barra EZ",
+    "exercise ball crunch": "Abdominales en pelota de ejercicios",
+    "hanging pike": "Flexión en pica colgado",
+    "jerk balance": "Equilibrio de envión",
+    "kettlebell pistol squat": "Sentadilla a una pierna con pesa rusa",
+    "kneeling hip flexor": "Flexor de cadera arrodillado",
+    "muscle snatch": "Arrancada de fuerza",
+    "muscle up": "Muscle-up",
+    "pull through": "Extensión de cadera en polea baja",
+    "push press": "Press con impulso",
+    "reverse crunch": "Abdominal inverso",
+    "reverse grip triceps pushdown": "Extensión de tríceps en polea con agarre inverso",
+    "rope crunch": "Abdominal con cuerda",
+    "sit-up": "Abdominal",
+    "snatch": "Arrancada",
+    "split jerk": "Envión en tijera",
+    "split snatch": "Arrancada en tijera",
+    "split squat": "Sentadilla dividida",
+    "split squats": "Sentadillas divididas",
+    "the straddle": "Apertura a horcajadas",
+    "triceps pushdown": "Extensión de tríceps en polea",
+    "triceps pushdown - rope attachment": "Extensión de tríceps en polea con cuerda",
+    "tuck crunch": "Abdominal recogido",
+    "weighted crunches": "Abdominales con peso",
+    "weighted sit-ups - with bands": "Abdominales con peso y bandas",
+    "calf press on the leg press machine": "Prensa de pantorrillas usando la máquina de piernas",
+    "depth jump leap": "Salto de profundidad con zancada larga",
+    "single-leg leg extension": "Extensión unilateral de pierna",
+    "standing toe touches": "Toques de dedos de pie",
+})
+
 # The exercise concepts are shared between the Chinese-script catalogs. For
 # entries newly audited in Simplified Chinese, convert only the localized
 # value to Traditional Chinese; the existing zh-Hant overrides remain the
@@ -2535,6 +2754,15 @@ def load_wger(path: Path | None, language: int) -> dict[str, str]:
     return result
 
 
+def load_reference_names(locale: str) -> dict[str, str]:
+    """Load checked-in, license-attributed domain names for a locale."""
+    path = TERMINOLOGY / f"{locale}.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {normalize(source): preferred for source, preferred in data.items()}
+
+
 def compose(source_name: str, profile: dict[str, Any], locale: str) -> str:
     text = normalize(source_name)
     for source, target in sorted(profile["phrases"].items(), key=lambda item: len(item[0]), reverse=True):
@@ -2575,6 +2803,7 @@ def build(locale: str, wger_path: Path | None) -> dict[str, Any]:
     profile = PROFILES[locale]
     db = json.loads(DB_PATH.read_text(encoding="utf-8"))
     wger = load_wger(wger_path, profile["wgerLanguage"])
+    reference_names = load_reference_names(locale)
     entries: dict[str, Any] = {}
     for exercise_id, exercise in db["exercises"].items():
         source_name = exercise["source"]["name"]
@@ -2583,6 +2812,9 @@ def build(locale: str, wger_path: Path | None) -> dict[str, Any]:
         if exact:
             preferred = exact
             source_refs = ["repo-domain-terminology"]
+        elif normalize(source_name) in reference_names:
+            preferred = reference_names[normalize(source_name)]
+            source_refs = [f"{locale}-reference-terminology"]
         elif localized and normalize(localized) != normalize(source_name):
             preferred = localized
             source_refs = ["wger-api"]

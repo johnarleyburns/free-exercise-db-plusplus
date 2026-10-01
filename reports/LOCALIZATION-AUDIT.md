@@ -11,38 +11,38 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 3. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 468 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `lateral` (16), `wrist` (15), `a` (10), `curls` (9), `bar` (8), `hamstring` (8), `leverage` (8), `triceps` (8), `bent-over` (7), `knee` (7), `plate` (7), `raises` (7), `throw` (7), `chains` (6), `over` (6), `palms-up` (6), `preacher` (6), `quad` (6), `rows` (6), `ball` (5).
+Semantic review candidates: 103 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `lateral` (15), `sumo` (5), `sprint` (4), `crunch` (3), `hack` (3), `lunge` (3), `push` (3), `split` (3), `atlas` (2), `bradford` (2), `diagonal` (2), `landmine` (2), `rack` (2), `rickshaw` (2), `sit-up` (2), `step-up` (2), `torso` (2), `zottman` (2), `abduction` (1), `anterior` (1).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Advanced_Kettlebell_Windmill` | Advanced pesa rusa windmill | advanced, windmill |
-| `All_Fours_Quad_Stretch` | All fours quad estiramiento | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | Pierna diagonal bound alterno | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle en el knee | ankle, knee |
+| `Alternate_Leg_Diagonal_Bound` | Salto diagonal alterno a una pierna | diagonal |
 | `Anterior_Tibialis-SMR` | Liberación miofascial del tibial anterior | anterior |
-| `Arm_Circles` | Brazo circles | circles |
-| `Around_The_Worlds` | Around el worlds | around, worlds |
 | `Atlas_Stone_Trainer` | Entrenamiento con piedra Atlas | atlas |
 | `Atlas_Stones` | Piedras Atlas | atlas |
-| `Axle_Deadlift` | Axle peso muerto | axle |
-| `Backward_Medicine_Ball_Throw` | Backward balón medicinal throw | backward, throw |
-| `Ball_Leg_Curl` | Ball curl de piernas | ball |
-| `Band_Assisted_Pull-Up` | Assisted dominada con banda elástica | assisted |
-| `Band_Good_Morning_Pull_Through` | Buenos días tirón through con banda elástica | through |
-| `Band_Hip_Adductions` | Cadera adductions con banda elástica | adductions |
-| `Band_Pull_Apart` | Tirón apart con banda elástica | apart |
-| `Barbell_Ab_Rollout` | Rollout Abdominal con Barra | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | Rueda abdominal — en knees con barra | knees |
-| `Barbell_Curls_Lying_Against_An_Incline` | Curls tumbado against an inclinado con barra | against, an, curls |
-| `Barbell_Guillotine_Bench_Press` | Guillotine press de banca con barra | guillotine |
-| `Barbell_Hack_Squat` | Hack sentadilla con barra | hack |
-| `Barbell_Rear_Delt_Row` | Delt remo con barra posterior | delt |
-| `Barbell_Rollout_from_Bench` | Rollout desde banco con barra | rollout |
-| `Barbell_Squat_To_A_Bench` | Sentadilla con barra a a banco | a |
-| `Barbell_Step_Ups` | Step ups con barra | step, ups |
+| `Barbell_Hack_Squat` | Sentadilla Hack con Barra | hack |
+| `Bench_Press_-_Powerlifting` | Press de Banca - Powerlifting | powerlifting |
+| `Bench_Sprint` | Sprint en Banco | sprint |
+| `Bent_Over_Low-Pulley_Side_Lateral` | Elevación lateral inclinada en polea baja | lateral |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Abdominales en Bosu con polea y flexiones laterales | bosu |
+| `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
+| `Cable_Crunch` | Crunch en Polea | crunch |
+| `Cable_Judo_Flip` | Volteo de judo en polea | judo |
+| `Cable_Seated_Lateral_Raise` | Elevación Lateral Sentado en Polea | lateral |
+| `Carioca_Quick_Step` | Paso carioca rápido | carioca |
+| `Double_Kettlebell_Push_Press` | Push Press con Dos Pesas Rusas | push |
+| `Dumbbell_Lying_One-Arm_Rear_Lateral_Raise` | Elevación Lateral Posterior Acostado a Un Brazo | lateral |
+| `Dumbbell_Lying_Rear_Lateral_Raise` | Elevación Lateral Posterior Acostado con Mancuerna | lateral |
+| `Dumbbell_Rear_Lunge` | Lunge Trasero con Mancuerna | lunge |
+| `Elevated_Back_Lunge` | Lunge Trasero Elevado | lunge |
+| `Frankenstein_Squat` | Sentadilla Frankenstein | frankenstein |
+| `Gironda_Sternum_Chins` | Dominadas al esternón de Gironda | gironda |
+| `Goblet_Squat` | Sentadilla Goblet | goblet |
+| `Hack_Squat` | Sentadilla Hack | hack |
+| `IT_Band_and_Glute_Stretch` | Estiramiento de Banda IT y Glúteo | it |
+| `Iliotibial_Tract-SMR` | Liberación miofascial de la cintilla iliotibial | iliotibial |
 
 | exerciseId | unchanged preferred name |
 |---|---|
