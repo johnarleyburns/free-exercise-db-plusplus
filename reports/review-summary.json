@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-09-29T20:01:09.734298+00:00",
+    "generatedAt": "2026-10-01T15:56:33.564226+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1128,6 +1128,141 @@
             "forearm_grip_emg_2019",
             "power_grip_emg_2015"
           ]
+        }
+      }
+    },
+    "localization": {
+      "defaultLocale": "en",
+      "supportedLocales": [
+        "en",
+        "es",
+        "de",
+        "zh-Hans",
+        "zh-Hant",
+        "pt-BR",
+        "fr",
+        "ja",
+        "ko",
+        "hi",
+        "ar",
+        "he",
+        "ru",
+        "nl",
+        "it"
+      ],
+      "fallbackPolicy": "locale -> base language -> en",
+      "catalogs": {
+        "es": {
+          "source": "translations/es.json",
+          "sha256": "f0b5d0a9f047be9264f0c444ff00e6b901944279cd14055ff01f1f45f1caeec6",
+          "entryCount": 927,
+          "reviewedCount": 1,
+          "provisionalCount": 926,
+          "untranslatedCount": 0
+        },
+        "de": {
+          "source": "translations/de.json",
+          "sha256": "e183bb657422d0749c9ae3fcb3da10ed16a541883c2302487f53dfced34218f9",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "zh-Hans": {
+          "source": "translations/zh-Hans.json",
+          "sha256": "7105b0cf7ace6d882d47a2ab78f189bd27f82bdaf10ef728c6f88a97ac0049fe",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "zh-Hant": {
+          "source": "translations/zh-Hant.json",
+          "sha256": "97a1682e8eee74847af152590996e978e7f63a93c63ff98ed01384a30330347b",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "pt-BR": {
+          "source": "translations/pt-BR.json",
+          "sha256": "82107bb76cfb9fb6de9643cabb24b8467fe59f8756073c4b7927c629af1e2285",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "fr": {
+          "source": "translations/fr.json",
+          "sha256": "e9d76bd29e4f71cfb7746462e50e1a5911160445be386dceadc4032880d30fdb",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "ja": {
+          "source": "translations/ja.json",
+          "sha256": "72c130be8a71a322bafe133feae6623e768b5c44ef2e0feade68a15543f70211",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "ko": {
+          "source": "translations/ko.json",
+          "sha256": "e7e6d2ff083440863f78b92619d934f29f285a8122b6e3c1ea9d9d699b01bbb7",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "hi": {
+          "source": "translations/hi.json",
+          "sha256": "e3a907705d7f2f431371e554990b5a28deecbbf36a2e2c88ebf77a5a809b514e",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "ar": {
+          "source": "translations/ar.json",
+          "sha256": "c0554ba3477035170b8573bb572c046f84ac55afc01c9ac87729929b940bad68",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "he": {
+          "source": "translations/he.json",
+          "sha256": "4d83ecc69fd3007b1d1d5bb74439829e9c2d3b292dfee33db6507727119945e2",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "ru": {
+          "source": "translations/ru.json",
+          "sha256": "abf5359d3b44050071f0b34b8d5e4c8dd4fa0dd2eb01b2cac30e4df29bb295db",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "nl": {
+          "source": "translations/nl.json",
+          "sha256": "ae4f0e569547fa6efe688f766b8b0b3bc484ff742df74a260eff5c103339fa4e",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
+        },
+        "it": {
+          "source": "translations/it.json",
+          "sha256": "61fff73939bff472eea419bb504ae18db4ed54ce5c0abb0137560673cb36fdc7",
+          "entryCount": 927,
+          "reviewedCount": 0,
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         }
       }
     },
