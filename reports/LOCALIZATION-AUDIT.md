@@ -291,38 +291,38 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 11. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 520 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `triceps` (37), `extension` (33), `crunch` (20), `wrist` (15), `box` (11), `a` (9), `curls` (9), `rotation` (9), `hamstring` (8), `leverage` (8), `bar` (7), `bent-over` (7), `knee` (7), `plate` (7), `raises` (7), `throw` (7), `chains` (6), `morning` (6), `over` (6), `palms-up` (6).
+Semantic review candidates: 406 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `triceps` (37), `extension` (33), `box` (11), `rotation` (9), `a` (8), `leverage` (8), `curls` (7), `crunch` (6), `morning` (6), `biceps` (5), `flat` (5), `military` (5), `sumo` (5), `blocks` (4), `dips` (4), `double` (4), `elevated` (4), `groin` (4), `lateral` (4), `oblique` (4).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Ab_Crunch_Machine` | Abdos crunch machine | crunch |
-| `Ab_Roller` | Abdos roller | roller |
 | `Air_Bike` | Vélo à résistance à air | air |
-| `All_Fours_Quad_Stretch` | All fours quad étirement | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | Alterné jambe diagonal bound | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle sur knee | ankle, knee |
-| `Anti-Gravity_Press` | Anti-gravity développé | anti-gravity |
-| `Arm_Circles` | Bras circles | circles |
-| `Around_The_Worlds` | Around worlds | around, worlds |
+| `Alternate_Leg_Diagonal_Bound` | Bond diagonal alterné sur une jambe | diagonal |
 | `Atlas_Stone_Trainer` | Entraînement avec pierre Atlas | atlas |
 | `Atlas_Stones` | Pierres Atlas | atlas |
-| `Axle_Deadlift` | Axle soulevé de terre | axle |
-| `Backward_Medicine_Ball_Throw` | Backward medecine-ball throw | backward, throw |
-| `Ball_Leg_Curl` | Ball jambe curl | ball |
-| `Band_Assisted_Pull-Up` | Élastique assisted tractions | assisted |
-| `Band_Good_Morning` | Élastique good morning | morning |
-| `Band_Good_Morning_Pull_Through` | Élastique good morning tirage through | morning, through |
-| `Band_Hip_Adductions` | Élastique hanche adductions | adductions |
-| `Band_Pull_Apart` | Élastique tirage apart | apart |
-| `Barbell_Ab_Rollout` | Rollout abdominal à la barre | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | Barre abdos rollout — sur knees | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | Barre curls allongé against an incliné | against, an, curls |
-| `Barbell_Guillotine_Bench_Press` | Barre guillotine développé couché | guillotine |
-| `Barbell_Hack_Squat` | Barre hack squat | hack |
-| `Barbell_Hip_Thrust` | Barre hanche thrust | thrust |
+| `Ball_Leg_Curl` | Leg curl avec ballon | leg |
+| `Band_Good_Morning` | Good morning avec élastique | morning |
+| `Band_Good_Morning_Pull_Through` | Good morning avec élastique et extension de hanche | morning |
+| `Band_Hip_Adductions` | Adductions de hanche avec élastique | adductions |
+| `Barbell_Guillotine_Bench_Press` | Développé couché barre en guillotine | guillotine |
+| `Barbell_Hack_Squat` | Hack squat avec barre | hack |
+| `Barbell_Hip_Thrust` | Hip thrust avec barre | thrust |
+| `Bench_Dips` | Dips sur banc | dips |
+| `Bench_Press_-_Powerlifting` | Développé couché — powerlifting | powerlifting |
+| `Bench_Sprint` | Banc sprint | sprint |
+| `Bent_Press` | Bent développé | bent |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Crunch à la poulie sur BOSU avec flexions latérales | bosu, crunch |
+| `Bottoms-Up_Clean_From_The_Hang_Position` | Bottoms-up épaulé depuis suspendu position | bottoms-up, position |
+| `Box_Jump_Multiple_Response` | Saut sur box à réponses multiples | box |
+| `Box_Skip` | Saut alterné sur box | box |
+| `Box_Squat` | Squat sur box | box |
+| `Box_Squat_with_Bands` | Squat sur box avec élastiques | box |
+| `Box_Squat_with_Chains` | Squat sur box avec chaînes | box |
+| `Bradford_Rocky_Presses` | Développés Bradford/Rocky | bradford |
+| `Butterfly` | Butterfly | butterfly |
+| `Cable_Hip_Adduction` | Poulie hanche adduction | adduction |
 
 | exerciseId | unchanged preferred name |
 |---|---|
