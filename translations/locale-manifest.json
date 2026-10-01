@@ -10,7 +10,8 @@
     "pt-BR",
     "fr",
     "ja",
-    "ko"
+    "ko",
+    "hi"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
@@ -21,6 +22,7 @@
     "pt-BR": "translations/pt-BR.json",
     "fr": "translations/fr.json",
     "ja": "translations/ja.json",
-    "ko": "translations/ko.json"
+    "ko": "translations/ko.json",
+    "hi": "translations/hi.json"
   }
 }
