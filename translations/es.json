@@ -10,12 +10,12 @@
       "reviewStatus": "provisional"
     },
     "90_90_Hamstring": {
-      "preferred": "90/90 hamstring",
+      "preferred": "Isquiotibiales 90/90",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Ab_Crunch_Machine": {
       "preferred": "Abdominales en máquina",
@@ -34,20 +34,20 @@
       "reviewStatus": "provisional"
     },
     "Adductor": {
-      "preferred": "Adductor",
+      "preferred": "Aductores",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Adductor_Groin": {
-      "preferred": "Adductor/groin",
+      "preferred": "Aductores e ingle",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Advanced_Kettlebell_Windmill": {
       "preferred": "Advanced pesa rusa windmill",
@@ -58,12 +58,12 @@
       "reviewStatus": "provisional"
     },
     "Air_Bike": {
-      "preferred": "Air bike",
+      "preferred": "Bicicleta de aire",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "All_Fours_Quad_Stretch": {
       "preferred": "All fours quad estiramiento",
@@ -162,12 +162,12 @@
       "reviewStatus": "provisional"
     },
     "Ankle_Circles": {
-      "preferred": "Ankle circles",
+      "preferred": "Círculos de tobillo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Ankle_On_The_Knee": {
       "preferred": "Ankle en el knee",
@@ -178,20 +178,20 @@
       "reviewStatus": "provisional"
     },
     "Anterior_Tibialis-SMR": {
-      "preferred": "Anterior tibialis-smr",
+      "preferred": "Liberación miofascial del tibial anterior",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Anti-Gravity_Press": {
-      "preferred": "Anti-gravity press",
+      "preferred": "Press antigravedad",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Arm_Circles": {
       "preferred": "Brazo circles",
@@ -218,20 +218,20 @@
       "reviewStatus": "provisional"
     },
     "Atlas_Stone_Trainer": {
-      "preferred": "Atlas stone trainer",
+      "preferred": "Entrenamiento con piedra Atlas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Atlas_Stones": {
-      "preferred": "Atlas stones",
+      "preferred": "Piedras Atlas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Axle_Deadlift": {
       "preferred": "Axle peso muerto",
@@ -250,12 +250,12 @@
       "reviewStatus": "provisional"
     },
     "Backward_Drag": {
-      "preferred": "Backward drag",
+      "preferred": "Arrastre hacia atrás",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Backward_Medicine_Ball_Throw": {
       "preferred": "Backward balón medicinal throw",
@@ -266,12 +266,12 @@
       "reviewStatus": "provisional"
     },
     "Balance_Board": {
-      "preferred": "Balance board",
+      "preferred": "Tabla de equilibrio",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Ball_Leg_Curl": {
       "preferred": "Ball curl de piernas",
@@ -541,12 +541,12 @@
       "reviewStatus": "provisional"
     },
     "Battling_Ropes": {
-      "preferred": "Battling ropes",
+      "preferred": "Cuerdas de batalla",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Bear_Crawl_Sled_Drags": {
       "preferred": "Bear crawl trineo drags",
@@ -693,44 +693,44 @@
       "reviewStatus": "provisional"
     },
     "Bent_Press": {
-      "preferred": "Bent press",
+      "preferred": "Press inclinado",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Bicycling": {
-      "preferred": "Bicycling",
+      "preferred": "Ciclismo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Bicycling_Stationary": {
-      "preferred": "Bicycling, stationary",
+      "preferred": "Ciclismo estacionario",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Board_Press": {
-      "preferred": "Board press",
+      "preferred": "Press con tabla",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Body-Up": {
-      "preferred": "Body-up",
+      "preferred": "Elevación de cuerpo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Body_Tricep_Press": {
       "preferred": "Body tríceps press",
@@ -789,12 +789,12 @@
       "reviewStatus": "provisional"
     },
     "Bottoms_Up": {
-      "preferred": "Bottoms up",
+      "preferred": "Pesa rusa de abajo arriba",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Box_Jump_Multiple_Response": {
       "preferred": "Salto al cajón respuesta múltiple",
@@ -805,12 +805,12 @@
       "reviewStatus": "provisional"
     },
     "Box_Skip": {
-      "preferred": "Box skip",
+      "preferred": "Salto alterno al cajón",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Box_Squat": {
       "preferred": "Sentadilla al Cajón",
@@ -837,28 +837,28 @@
       "reviewStatus": "provisional"
     },
     "Brachialis-SMR": {
-      "preferred": "Brachialis-smr",
+      "preferred": "Liberación miofascial del braquial",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Bradford_Rocky_Presses": {
-      "preferred": "Bradford/rocky presses",
+      "preferred": "Press Bradford/Rocky",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Butt-Ups": {
-      "preferred": "Butt-ups",
+      "preferred": "Elevaciones de glúteos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Butt_Lift_Bridge": {
       "preferred": "Butt lift puente",
@@ -1125,12 +1125,12 @@
       "reviewStatus": "provisional"
     },
     "Calves-SMR": {
-      "preferred": "Calves-smr",
+      "preferred": "Liberación miofascial de pantorrillas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Car_Deadlift": {
       "preferred": "Car peso muerto",
@@ -1141,20 +1141,20 @@
       "reviewStatus": "provisional"
     },
     "Car_Drivers": {
-      "preferred": "Car drivers",
+      "preferred": "Giros de volante",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Carioca_Quick_Step": {
-      "preferred": "Carioca quick step",
+      "preferred": "Paso carioca rápido",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Cat_Stretch": {
       "preferred": "Cat estiramiento",
@@ -1181,12 +1181,12 @@
       "reviewStatus": "provisional"
     },
     "Chain_Press": {
-      "preferred": "Chain press",
+      "preferred": "Press con cadenas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Chair_Leg_Extended_Stretch": {
       "preferred": "Chair pierna extended estiramiento",
@@ -1293,12 +1293,12 @@
       "reviewStatus": "provisional"
     },
     "Circus_Bell": {
-      "preferred": "Circus bell",
+      "preferred": "Pesa de circo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Clean": {
       "preferred": "Cargada",
@@ -1429,28 +1429,28 @@
       "reviewStatus": "provisional"
     },
     "Cocoons": {
-      "preferred": "Cocoons",
+      "preferred": "Abdominales en capullo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Conans_Wheel": {
-      "preferred": "Conan's wheel",
+      "preferred": "Rueda de Conan",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Concentration_Curls": {
-      "preferred": "Concentration curls",
+      "preferred": "Curl de concentración",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Cross-Body_Crunch": {
       "preferred": "Cross-body abdominal",
@@ -1485,12 +1485,12 @@
       "reviewStatus": "provisional"
     },
     "Crucifix": {
-      "preferred": "Crucifix",
+      "preferred": "Crucifijo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Crunch_-_Hands_Overhead": {
       "preferred": "Abdominal — hands por encima de la cabeza",
@@ -1517,12 +1517,12 @@
       "reviewStatus": "provisional"
     },
     "Cuban_Press": {
-      "preferred": "Cuban press",
+      "preferred": "Press cubano",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Dancers_Stretch": {
       "preferred": "Dancer's estiramiento",
@@ -1533,12 +1533,12 @@
       "reviewStatus": "provisional"
     },
     "Dead_Bug": {
-      "preferred": "Dead bug",
+      "preferred": "Bicho muerto",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Deadlift_with_Bands": {
       "preferred": "Peso muerto con bandas elásticas",
@@ -1677,12 +1677,12 @@
       "reviewStatus": "provisional"
     },
     "Dips_-_Triceps_Version": {
-      "preferred": "Dips — triceps version",
+      "preferred": "Fondos, variante de tríceps",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Donkey_Calf_Raises": {
       "preferred": "Donkey pantorrilla raises",
@@ -1741,20 +1741,20 @@
       "reviewStatus": "provisional"
     },
     "Downward_Facing_Balance": {
-      "preferred": "Downward facing balance",
+      "preferred": "Equilibrio boca abajo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Drag_Curl": {
-      "preferred": "Drag curl",
+      "preferred": "Curl de arrastre",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Drop_Push": {
       "preferred": "Drop empuje",
@@ -2037,12 +2037,12 @@
       "reviewStatus": "provisional"
     },
     "Elbow_Circles": {
-      "preferred": "Elbow circles",
+      "preferred": "Círculos de codos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Elbow_to_Knee": {
       "preferred": "Elbow a knee",
@@ -2077,12 +2077,12 @@
       "reviewStatus": "provisional"
     },
     "Elliptical_Trainer": {
-      "preferred": "Elliptical trainer",
+      "preferred": "Entrenador elíptico",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Exercise_Ball_Crunch": {
       "preferred": "Fitball abdominal",
@@ -2141,28 +2141,28 @@
       "reviewStatus": "provisional"
     },
     "Farmers_Walk": {
-      "preferred": "Farmer's walk",
+      "preferred": "Paseo del granjero",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Fast_Skipping": {
-      "preferred": "Fast skipping",
+      "preferred": "Saltos rápidos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Finger_Curls": {
-      "preferred": "Finger curls",
+      "preferred": "Curl de dedos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Flat_Bench_Cable_Flyes": {
       "preferred": "Flat banco polea aperturas",
@@ -2229,12 +2229,12 @@
       "reviewStatus": "provisional"
     },
     "Foot-SMR": {
-      "preferred": "Foot-smr",
+      "preferred": "Liberación miofascial del pie",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Forward_Drag_with_Press": {
       "preferred": "Forward drag con press",
@@ -2261,20 +2261,20 @@
       "reviewStatus": "provisional"
     },
     "Frog_Hops": {
-      "preferred": "Frog hops",
+      "preferred": "Saltos de rana",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Frog_Sit-Ups": {
-      "preferred": "Frog sit-ups",
+      "preferred": "Abdominales de rana",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Front_Barbell_Squat": {
       "preferred": "Sentadilla con barra frontal",
@@ -2389,12 +2389,12 @@
       "reviewStatus": "provisional"
     },
     "Gironda_Sternum_Chins": {
-      "preferred": "Gironda sternum chins",
+      "preferred": "Dominadas al esternón de Gironda",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Glute_Ham_Raise": {
       "preferred": "Glúteo ham elevación",
@@ -2453,12 +2453,12 @@
       "reviewStatus": "provisional"
     },
     "Groiners": {
-      "preferred": "Groiners",
+      "preferred": "Estiramiento de aductores",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Hack_Squat": {
       "preferred": "Hack sentadilla",
@@ -2485,12 +2485,12 @@
       "reviewStatus": "provisional"
     },
     "Hamstring-SMR": {
-      "preferred": "Hamstring-smr",
+      "preferred": "Liberación miofascial de isquiotibiales",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Hamstring_Stretch": {
       "preferred": "Hamstring estiramiento",
@@ -2557,12 +2557,12 @@
       "reviewStatus": "provisional"
     },
     "Hanging_Pike": {
-      "preferred": "Hanging pike",
+      "preferred": "Pike colgado",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Heaving_Snatch_Balance": {
       "preferred": "Heaving arrancada balance",
@@ -2573,12 +2573,12 @@
       "reviewStatus": "provisional"
     },
     "Heavy_Bag_Thrust": {
-      "preferred": "Heavy bag thrust",
+      "preferred": "Empuje con saco pesado",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "High_Cable_Curls": {
       "preferred": "Alto polea curls",
@@ -2621,12 +2621,12 @@
       "reviewStatus": "provisional"
     },
     "Hug_A_Ball": {
-      "preferred": "Hug a ball",
+      "preferred": "Abrazo de balón",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Hug_Knees_To_Chest": {
       "preferred": "Hug knees a pecho",
@@ -2637,12 +2637,12 @@
       "reviewStatus": "provisional"
     },
     "Hurdle_Hops": {
-      "preferred": "Hurdle hops",
+      "preferred": "Saltos de vallas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Hyperextensions_Back_Extensions": {
       "preferred": "Hyperextensions espalda extensions",
@@ -2669,20 +2669,20 @@
       "reviewStatus": "provisional"
     },
     "Iliotibial_Tract-SMR": {
-      "preferred": "Iliotibial tract-smr",
+      "preferred": "Liberación miofascial de la cintilla iliotibial",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Inchworm": {
-      "preferred": "Inchworm",
+      "preferred": "Gusano",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Incline_Barbell_Triceps_Extension": {
       "preferred": "Barra extensión de tríceps inclinado",
@@ -2861,12 +2861,12 @@
       "reviewStatus": "provisional"
     },
     "Iron_Cross": {
-      "preferred": "Iron cross",
+      "preferred": "Cruz de hierro",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Iron_Crosses_stretch": {
       "preferred": "Iron crosses estiramiento",
@@ -2909,12 +2909,12 @@
       "reviewStatus": "provisional"
     },
     "JM_Press": {
-      "preferred": "Jm press",
+      "preferred": "Press JM",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Jackknife_Sit-Up": {
       "preferred": "Navaja abdominal",
@@ -2933,12 +2933,12 @@
       "reviewStatus": "provisional"
     },
     "Jefferson_Squats": {
-      "preferred": "Jefferson squats",
+      "preferred": "Sentadilla Jefferson",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Jerk_Balance": {
       "preferred": "Envión balance",
@@ -2957,20 +2957,20 @@
       "reviewStatus": "provisional"
     },
     "Jogging_Treadmill": {
-      "preferred": "Jogging, treadmill",
+      "preferred": "Trote en cinta",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Keg_Load": {
-      "preferred": "Keg load",
+      "preferred": "Carga de barril",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Kettlebell_Arnold_Press": {
       "preferred": "Pesa rusa arnold press",
@@ -3093,12 +3093,12 @@
       "reviewStatus": "provisional"
     },
     "Kipping_Muscle_Up": {
-      "preferred": "Kipping muscle up",
+      "preferred": "Muscle-up con impulso",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Knee_Across_The_Body": {
       "preferred": "Knee across el body",
@@ -3109,12 +3109,12 @@
       "reviewStatus": "provisional"
     },
     "Knee_Circles": {
-      "preferred": "Knee circles",
+      "preferred": "Círculos de rodilla",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Knee_Hip_Raise_On_Parallel_Bars": {
       "preferred": "Knee/cadera elevación en parallel bars",
@@ -3205,20 +3205,20 @@
       "reviewStatus": "provisional"
     },
     "Landmine_180s": {
-      "preferred": "Landmine 180's",
+      "preferred": "Rotaciones de 180 grados con landmine",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Landmine_Linear_Jammer": {
-      "preferred": "Landmine linear jammer",
+      "preferred": "Empuje lineal con landmine",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Lateral_Bound": {
       "preferred": "Bound lateral",
@@ -3253,12 +3253,12 @@
       "reviewStatus": "provisional"
     },
     "Latissimus_Dorsi-SMR": {
-      "preferred": "Latissimus dorsi-smr",
+      "preferred": "Liberación miofascial del dorsal ancho",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Leg-Over_Floor_Press": {
       "preferred": "Pierna-over suelo press",
@@ -3373,20 +3373,20 @@
       "reviewStatus": "provisional"
     },
     "Linear_3-Part_Start_Technique": {
-      "preferred": "Linear 3-part start technique",
+      "preferred": "Técnica de salida lineal en tres fases",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Linear_Acceleration_Wall_Drill": {
-      "preferred": "Linear acceleration wall drill",
+      "preferred": "Ejercicio de aceleración lineal contra la pared",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Linear_Depth_Jump": {
       "preferred": "Linear depth salto",
@@ -3397,28 +3397,28 @@
       "reviewStatus": "provisional"
     },
     "Log_Lift": {
-      "preferred": "Log lift",
+      "preferred": "Levantamiento de tronco",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "London_Bridges": {
-      "preferred": "London bridges",
+      "preferred": "Puentes de Londres",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Looking_At_Ceiling": {
-      "preferred": "Looking at ceiling",
+      "preferred": "Mirando al techo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Low_Cable_Crossover": {
       "preferred": "Bajo cruce de poleas",
@@ -3725,20 +3725,20 @@
       "reviewStatus": "provisional"
     },
     "Mixed_Grip_Chin": {
-      "preferred": "Mixed grip chin",
+      "preferred": "Dominada con agarre mixto",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Monster_Walk": {
-      "preferred": "Monster walk",
+      "preferred": "Caminata del monstruo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Mountain_Climbers": {
       "preferred": "Montañeros",
@@ -3749,12 +3749,12 @@
       "reviewStatus": "provisional"
     },
     "Moving_Claw_Series": {
-      "preferred": "Moving claw series",
+      "preferred": "Serie de garras en movimiento",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Muscle_Snatch": {
       "preferred": "Muscle arrancada",
@@ -3773,12 +3773,12 @@
       "reviewStatus": "provisional"
     },
     "Narrow_Stance_Hack_Squats": {
-      "preferred": "Narrow stance hack squats",
+      "preferred": "Hack squat con postura estrecha",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Narrow_Stance_Leg_Press": {
       "preferred": "Narrow stance prensa de piernas",
@@ -3789,12 +3789,12 @@
       "reviewStatus": "provisional"
     },
     "Narrow_Stance_Squats": {
-      "preferred": "Narrow stance squats",
+      "preferred": "Sentadilla con postura estrecha",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Natural_Glute_Ham_Raise": {
       "preferred": "Natural glúteo ham elevación",
@@ -3821,12 +3821,12 @@
       "reviewStatus": "provisional"
     },
     "Oblique_Crunches": {
-      "preferred": "Oblique crunches",
+      "preferred": "Abdominales oblicuos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Oblique_Crunches_-_On_The_Floor": {
       "preferred": "Oblique crunches — en el suelo",
@@ -4109,12 +4109,12 @@
       "reviewStatus": "provisional"
     },
     "One_Half_Locust": {
-      "preferred": "One half locust",
+      "preferred": "Media langosta",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "One_Handed_Hang": {
       "preferred": "One handed suspensión",
@@ -4149,12 +4149,12 @@
       "reviewStatus": "provisional"
     },
     "Otis-Up": {
-      "preferred": "Otis-up",
+      "preferred": "Abdominal Otis",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Overhead_Cable_Curl": {
       "preferred": "Por encima de la cabeza polea curl",
@@ -4205,12 +4205,12 @@
       "reviewStatus": "provisional"
     },
     "Pallof_Press": {
-      "preferred": "Pallof press",
+      "preferred": "Press Pallof",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Pallof_Press_With_Rotation": {
       "preferred": "Pallof press con rotación",
@@ -4253,12 +4253,12 @@
       "reviewStatus": "provisional"
     },
     "Parallel_Bar_Dip": {
-      "preferred": "Parallel bar dip",
+      "preferred": "Fondos en paralelas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Pelvic_Tilt_Into_Bridge": {
       "preferred": "Pelvic tilt into puente",
@@ -4269,12 +4269,12 @@
       "reviewStatus": "provisional"
     },
     "Peroneals-SMR": {
-      "preferred": "Peroneals-smr",
+      "preferred": "Liberación miofascial de los peroneos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Peroneals_Stretch": {
       "preferred": "Peroneals estiramiento",
@@ -4293,20 +4293,20 @@
       "reviewStatus": "provisional"
     },
     "Pin_Presses": {
-      "preferred": "Pin presses",
+      "preferred": "Press desde soportes",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Piriformis-SMR": {
-      "preferred": "Piriformis-smr",
+      "preferred": "Liberación miofascial del piriforme",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Plank": {
       "preferred": "Plancha de antebrazo",
@@ -4317,12 +4317,12 @@
       "reviewStatus": "provisional"
     },
     "Plate_Pinch": {
-      "preferred": "Plate pinch",
+      "preferred": "Pinza de discos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Plate_Twist": {
       "preferred": "Plate giro",
@@ -4333,12 +4333,12 @@
       "reviewStatus": "provisional"
     },
     "Platform_Hamstring_Slides": {
-      "preferred": "Platform hamstring slides",
+      "preferred": "Deslizamientos de isquiotibiales en plataforma",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Plie_Dumbbell_Squat": {
       "preferred": "Plie mancuerna sentadilla",
@@ -4429,12 +4429,12 @@
       "reviewStatus": "provisional"
     },
     "Preacher_Curl": {
-      "preferred": "Preacher curl",
+      "preferred": "Curl predicador",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Preacher_Hammer_Dumbbell_Curl": {
       "preferred": "Preacher curl martillo con mancuerna",
@@ -4453,20 +4453,20 @@
       "reviewStatus": "provisional"
     },
     "Prone_Manual_Hamstring": {
-      "preferred": "Prone manual hamstring",
+      "preferred": "Curl manual de isquiotibiales boca abajo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Prowler_Sprint": {
-      "preferred": "Prowler sprint",
+      "preferred": "Sprint con trineo Prowler",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Pull_Through": {
       "preferred": "Tirón through",
@@ -4477,12 +4477,12 @@
       "reviewStatus": "provisional"
     },
     "Pullups": {
-      "preferred": "Pullups",
+      "preferred": "Dominadas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Push-Up_Wide": {
       "preferred": "Flexión wide",
@@ -4541,12 +4541,12 @@
       "reviewStatus": "provisional"
     },
     "Pushups": {
-      "preferred": "Pushups",
+      "preferred": "Flexiones",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Pushups_Close_and_Wide_Hand_Positions": {
       "preferred": "Pushups close y wide hand positions",
@@ -4557,12 +4557,12 @@
       "reviewStatus": "provisional"
     },
     "Pyramid": {
-      "preferred": "Pyramid",
+      "preferred": "Pirámide",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Quad_Stretch": {
       "preferred": "Quad estiramiento",
@@ -4573,28 +4573,28 @@
       "reviewStatus": "provisional"
     },
     "Quadriceps-SMR": {
-      "preferred": "Quadriceps-smr",
+      "preferred": "Liberación miofascial de cuádriceps",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Quick_Leap": {
-      "preferred": "Quick leap",
+      "preferred": "Salto rápido",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rack_Delivery": {
-      "preferred": "Rack delivery",
+      "preferred": "Entrega desde el rack",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rack_Pull_with_Bands": {
       "preferred": "Rack tirón con bandas elásticas",
@@ -4605,12 +4605,12 @@
       "reviewStatus": "provisional"
     },
     "Rack_Pulls": {
-      "preferred": "Rack pulls",
+      "preferred": "Peso muerto desde soportes",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rear_Leg_Raises": {
       "preferred": "Pierna raises posterior",
@@ -4621,12 +4621,12 @@
       "reviewStatus": "provisional"
     },
     "Recumbent_Bike": {
-      "preferred": "Recumbent bike",
+      "preferred": "Bicicleta reclinada",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Return_Push_from_Stance": {
       "preferred": "Return empuje desde stance",
@@ -4773,20 +4773,20 @@
       "reviewStatus": "provisional"
     },
     "Rhomboids-SMR": {
-      "preferred": "Rhomboids-smr",
+      "preferred": "Liberación miofascial de los romboides",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rickshaw_Carry": {
-      "preferred": "Rickshaw carry",
+      "preferred": "Transporte de rickshaw",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rickshaw_Deadlift": {
       "preferred": "Rickshaw peso muerto",
@@ -4797,12 +4797,12 @@
       "reviewStatus": "provisional"
     },
     "Ring_Dips": {
-      "preferred": "Ring dips",
+      "preferred": "Fondos en anillas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Rocket_Jump": {
       "preferred": "Rocket salto",
@@ -4885,12 +4885,12 @@
       "reviewStatus": "provisional"
     },
     "Rowing_Stationary": {
-      "preferred": "Rowing, stationary",
+      "preferred": "Remo estacionario",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Runners_Stretch": {
       "preferred": "Runner's estiramiento",
@@ -4901,12 +4901,12 @@
       "reviewStatus": "provisional"
     },
     "Running_Treadmill": {
-      "preferred": "Running, treadmill",
+      "preferred": "Carrera en cinta",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Russian_Twist": {
       "preferred": "Abdominales rusas",
@@ -4917,12 +4917,12 @@
       "reviewStatus": "provisional"
     },
     "Sandbag_Load": {
-      "preferred": "Sandbag load",
+      "preferred": "Carga de saco de arena",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Scapular_Pull-Up": {
       "preferred": "Scapular dominada",
@@ -4933,12 +4933,12 @@
       "reviewStatus": "provisional"
     },
     "Scissor_Kick": {
-      "preferred": "Scissor kick",
+      "preferred": "Patada de tijera",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Scissors_Jump": {
       "preferred": "Scissors salto",
@@ -5501,20 +5501,20 @@
       "reviewStatus": "provisional"
     },
     "Sit_Squats": {
-      "preferred": "Sit squats",
+      "preferred": "Sentadilla a sentado",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Skating": {
-      "preferred": "Skating",
+      "preferred": "Patinaje",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Sled_Drag_-_Harness": {
       "preferred": "Trineo drag — harness",
@@ -5565,12 +5565,12 @@
       "reviewStatus": "provisional"
     },
     "Sledgehammer_Swings": {
-      "preferred": "Sledgehammer swings",
+      "preferred": "Balanceos con maza",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Smith_Incline_Shoulder_Raise": {
       "preferred": "Hombro elevación en máquina Smith inclinado",
@@ -5789,12 +5789,12 @@
       "reviewStatus": "provisional"
     },
     "Speed_Squats": {
-      "preferred": "Speed squats",
+      "preferred": "Sentadillas rápidas",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Spell_Caster": {
       "preferred": "Spell caster",
@@ -5802,15 +5802,15 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Spider_Crawl": {
-      "preferred": "Spider crawl",
+      "preferred": "Gateo de araña",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Spider_Curl": {
       "preferred": "Curl Araña",
@@ -5917,12 +5917,12 @@
       "reviewStatus": "provisional"
     },
     "Stairmaster": {
-      "preferred": "Stairmaster",
+      "preferred": "Escaladora StairMaster",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Standing_Alternating_Dumbbell_Press": {
       "preferred": "De pie alterno mancuerna press",
@@ -6309,12 +6309,12 @@
       "reviewStatus": "provisional"
     },
     "Step_Mill": {
-      "preferred": "Step mill",
+      "preferred": "Escaladora",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Stiff-Legged_Barbell_Deadlift": {
       "preferred": "Con piernas rígidas peso muerto con barra",
@@ -6341,12 +6341,12 @@
       "reviewStatus": "provisional"
     },
     "Stomach_Vacuum": {
-      "preferred": "Stomach vacuum",
+      "preferred": "Vacío abdominal",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Straight-Arm_Dumbbell_Pullover": {
       "preferred": "Straight-brazo mancuerna pullover",
@@ -6418,7 +6418,7 @@
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Supine_Chest_Throw": {
       "preferred": "Supine pecho throw",
@@ -6485,12 +6485,12 @@
       "reviewStatus": "provisional"
     },
     "Svend_Press": {
-      "preferred": "Svend press",
+      "preferred": "Press Svend",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "T-Bar_Row_with_Handle": {
       "preferred": "T-bar remo con handle",
@@ -6501,12 +6501,12 @@
       "reviewStatus": "provisional"
     },
     "Tate_Press": {
-      "preferred": "Tate press",
+      "preferred": "Press Tate",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "The_Straddle": {
       "preferred": "El straddle",
@@ -6517,36 +6517,36 @@
       "reviewStatus": "provisional"
     },
     "Thigh_Abductor": {
-      "preferred": "Thigh abductor",
+      "preferred": "Abducción de muslos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Thigh_Adductor": {
-      "preferred": "Thigh adductor",
+      "preferred": "Aducción de muslos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Tire_Flip": {
-      "preferred": "Tire flip",
+      "preferred": "Volteo de neumático",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Toe_Touchers": {
-      "preferred": "Toe touchers",
+      "preferred": "Toques de dedos de los pies",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Torso_Rotation": {
       "preferred": "Torso rotación",
@@ -6557,12 +6557,12 @@
       "reviewStatus": "provisional"
     },
     "Trail_Running_Walking": {
-      "preferred": "Trail running/walking",
+      "preferred": "Carrera o caminata por sendero",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Trap_Bar_Deadlift": {
       "preferred": "Trap bar peso muerto",
@@ -6733,20 +6733,20 @@
       "reviewStatus": "provisional"
     },
     "V-Bar_Pulldown": {
-      "preferred": "V-bar pulldown",
+      "preferred": "Jalón con barra V",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "V-Bar_Pullup": {
-      "preferred": "V-bar pullup",
+      "preferred": "Dominada con barra V",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Vertical_Swing": {
       "preferred": "Vertical balanceo",
@@ -6757,12 +6757,12 @@
       "reviewStatus": "provisional"
     },
     "Walking_Treadmill": {
-      "preferred": "Walking, treadmill",
+      "preferred": "Caminata en cinta",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Weighted_Ball_Hyperextension": {
       "preferred": "Ball hyperextension con peso",
@@ -6909,20 +6909,20 @@
       "reviewStatus": "provisional"
     },
     "Wind_Sprints": {
-      "preferred": "Wind sprints",
+      "preferred": "Sprints",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Windmills": {
-      "preferred": "Windmills",
+      "preferred": "Molinos de viento",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Worlds_Greatest_Stretch": {
       "preferred": "World's greatest estiramiento",
@@ -6933,20 +6933,20 @@
       "reviewStatus": "provisional"
     },
     "Wrist_Circles": {
-      "preferred": "Wrist circles",
+      "preferred": "Círculos de muñeca",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Wrist_Roller": {
-      "preferred": "Wrist roller",
+      "preferred": "Rodillo de muñeca",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Wrist_Rotations_with_Straight_Bar": {
       "preferred": "Wrist rotaciones con straight bar",
@@ -6957,20 +6957,20 @@
       "reviewStatus": "provisional"
     },
     "Yoke_Walk": {
-      "preferred": "Yoke walk",
+      "preferred": "Caminata con yugo",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Zercher_Squats": {
-      "preferred": "Zercher squats",
+      "preferred": "Sentadilla Zercher",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Zottman_Curl": {
       "preferred": "Curl Zottman",
@@ -6981,12 +6981,12 @@
       "reviewStatus": "provisional"
     },
     "Zottman_Preacher_Curl": {
-      "preferred": "Zottman preacher curl",
+      "preferred": "Curl Zottman en banco predicador",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Cable_Push_Pull": {
       "preferred": "Empuje-tirón en polea",
@@ -7381,12 +7381,12 @@
       "reviewStatus": "provisional"
     },
     "Assisted_Dip": {
-      "preferred": "Assisted dip",
+      "preferred": "Fondos asistidos",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
-      "reviewStatus": "untranslated"
+      "reviewStatus": "provisional"
     },
     "Assisted_Chin-Up": {
       "preferred": "Assisted dominada supina",
