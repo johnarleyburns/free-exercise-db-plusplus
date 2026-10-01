@@ -1,0 +1,7421 @@
+{
+  "locale": "he",
+  "exercises": {
+    "3_4_Sit-Up": {
+      "preferred": "3/4 כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "90_90_Hamstring": {
+      "preferred": "90/90 hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ab_Crunch_Machine": {
+      "preferred": "בטן כפיפות בטן מכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ab_Roller": {
+      "preferred": "בטן roller",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Adductor": {
+      "preferred": "Adductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Adductor_Groin": {
+      "preferred": "Adductor/groin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Advanced_Kettlebell_Windmill": {
+      "preferred": "Advanced קטלבל windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Air_Bike": {
+      "preferred": "Air bike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "All_Fours_Quad_Stretch": {
+      "preferred": "All fours quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Hammer_Curl": {
+      "preferred": "לסירוגין כפיפת מרפקים פטיש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Heel_Touchers": {
+      "preferred": "לסירוגין נגיעות בעקב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Incline_Dumbbell_Curl": {
+      "preferred": "לסירוגין בשיפוע חיובי משקולת כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Leg_Diagonal_Bound": {
+      "preferred": "לסירוגין רגל diagonal bound",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Cable_Shoulder_Press": {
+      "preferred": "לסירוגין כבל לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Deltoid_Raise": {
+      "preferred": "לסירוגין דלתא הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Floor_Press": {
+      "preferred": "לסירוגין רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Hang_Clean": {
+      "preferred": "לסירוגין תלייה קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Kettlebell_Press": {
+      "preferred": "לסירוגין קטלבל לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Kettlebell_Row": {
+      "preferred": "לסירוגין קטלבל חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Renegade_Row": {
+      "preferred": "לסירוגין רנגייד חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ankle_Circles": {
+      "preferred": "Ankle circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ankle_On_The_Knee": {
+      "preferred": "Ankle על knee",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Anterior_Tibialis-SMR": {
+      "preferred": "Anterior tibialis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Anti-Gravity_Press": {
+      "preferred": "Anti-gravity לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Arm_Circles": {
+      "preferred": "זרוע circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Arnold_Dumbbell_Press": {
+      "preferred": "Arnold משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Around_The_Worlds": {
+      "preferred": "Around worlds",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Atlas_Stone_Trainer": {
+      "preferred": "Atlas stone trainer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Atlas_Stones": {
+      "preferred": "Atlas stones",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Axle_Deadlift": {
+      "preferred": "Axle דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Back_Flyes_-_With_Bands": {
+      "preferred": "גב פרפר — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Backward_Drag": {
+      "preferred": "Backward drag",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Backward_Medicine_Ball_Throw": {
+      "preferred": "Backward כדור כוח throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Balance_Board": {
+      "preferred": "Balance board",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ball_Leg_Curl": {
+      "preferred": "Ball כפיפת ברך",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Assisted_Pull-Up": {
+      "preferred": "גומייה assisted מתח",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Good_Morning": {
+      "preferred": "גומייה בוקר טוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Good_Morning_Pull_Through": {
+      "preferred": "גומייה בוקר טוב משיכה through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Hip_Adductions": {
+      "preferred": "גומייה אגן adductions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Pull_Apart": {
+      "preferred": "גומייה משיכה apart",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Skull_Crusher": {
+      "preferred": "גומייה פשיטת מרפקים בשכיבה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Ab_Rollout": {
+      "preferred": "מוט בטן rollout",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Ab_Rollout_-_On_Knees": {
+      "preferred": "מוט בטן rollout — על knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Bench_Press_-_Medium_Grip": {
+      "preferred": "לחיצת חזה עם מוט — אחיזה בינונית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Curl": {
+      "preferred": "מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Curls_Lying_Against_An_Incline": {
+      "preferred": "מוט curls בשכיבה against an בשיפוע חיובי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Deadlift": {
+      "preferred": "מוט דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Full_Squat": {
+      "preferred": "מוט full סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Glute_Bridge": {
+      "preferred": "מוט גשר ישבן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Guillotine_Bench_Press": {
+      "preferred": "מוט guillotine לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Hack_Squat": {
+      "preferred": "מוט hack סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Hip_Thrust": {
+      "preferred": "מוט דחיקת אגן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Incline_Bench_Press_-_Medium_Grip": {
+      "preferred": "מוט בשיפוע חיובי לחיצת חזה — אחיזה בינונית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Incline_Shoulder_Raise": {
+      "preferred": "מוט בשיפוע חיובי כתף הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Lunge": {
+      "preferred": "מוט מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Rear_Delt_Row": {
+      "preferred": "מוט אחורי delt חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Rollout_from_Bench": {
+      "preferred": "מוט rollout מ ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Seated_Calf_Raise": {
+      "preferred": "מוט בישיבה הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shoulder_Press": {
+      "preferred": "מוט לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shrug": {
+      "preferred": "מוט הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shrug_Behind_The_Back": {
+      "preferred": "מוט הרחקת כתפיים כלפי מעלה behind גב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Side_Bend": {
+      "preferred": "מוט כפיפה צידית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Side_Split_Squat": {
+      "preferred": "מוט צידי סקוואט מפוצל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Squat": {
+      "preferred": "מוט סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Squat_To_A_Bench": {
+      "preferred": "מוט סקוואט ל a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Step_Ups": {
+      "preferred": "מוט step ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Walking_Lunge": {
+      "preferred": "מוט מכרעים בהליכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Battling_Ropes": {
+      "preferred": "Battling ropes",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bear_Crawl_Sled_Drags": {
+      "preferred": "Bear crawl מזחלת drags",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Behind_Head_Chest_Stretch": {
+      "preferred": "Behind head חזה מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Dips": {
+      "preferred": "ספסל dips",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Jump": {
+      "preferred": "ספסל קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_-_Powerlifting": {
+      "preferred": "לחיצת חזה — powerlifting",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_-_With_Bands": {
+      "preferred": "לחיצת חזה — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_with_Chains": {
+      "preferred": "לחיצת חזה עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Sprint": {
+      "preferred": "ספסל sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Arm_Barbell_Pullover": {
+      "preferred": "Bent-זרוע מוט פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Arm_Dumbbell_Pullover": {
+      "preferred": "Bent-זרוע משקולת פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Knee_Hip_Raise": {
+      "preferred": "Bent-knee אגן הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Barbell_Row": {
+      "preferred": "בהטיית גו חתירה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench": {
+      "preferred": "בהטיית גו משקולת הרמה אחורית עם head על ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Low-Pulley_Side_Lateral": {
+      "preferred": "בהטיית גו נמוך-pulley צידי lateral",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_One-Arm_Long_Bar_Row": {
+      "preferred": "בהטיית גו יד אחת long bar חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Arm_Long_Bar_Row": {
+      "preferred": "בהטיית גו שתי ידיים long bar חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Dumbbell_Row": {
+      "preferred": "בהטיית גו two-חתירה עם משקולת",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Dumbbell_Row_With_Palms_In": {
+      "preferred": "בהטיית גו two-חתירה עם משקולת עם palms in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Press": {
+      "preferred": "Bent לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bicycling": {
+      "preferred": "Bicycling",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bicycling_Stationary": {
+      "preferred": "Bicycling, stationary",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Board_Press": {
+      "preferred": "Board לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Body-Up": {
+      "preferred": "Body-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Body_Tricep_Press": {
+      "preferred": "Body תלת-ראשי לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Flyes": {
+      "preferred": "משקל גוף פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Mid_Row": {
+      "preferred": "משקל גוף mid חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Squat": {
+      "preferred": "משקל גוף סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Walking_Lunge": {
+      "preferred": "משקל גוף מכרעים בהליכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bosu_Ball_Cable_Crunch_With_Side_Bends": {
+      "preferred": "Bosu ball כבל כפיפות בטן עם צידי bends",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bottoms-Up_Clean_From_The_Hang_Position": {
+      "preferred": "Bottoms-up קלין מ תלייה position",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bottoms_Up": {
+      "preferred": "Bottoms up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Jump_Multiple_Response": {
+      "preferred": "קפיצה על קופסה multiple response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Skip": {
+      "preferred": "Box skip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat": {
+      "preferred": "Box סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat_with_Bands": {
+      "preferred": "Box סקוואט עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat_with_Chains": {
+      "preferred": "Box סקוואט עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Brachialis-SMR": {
+      "preferred": "Brachialis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bradford_Rocky_Presses": {
+      "preferred": "Bradford/rocky presses",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butt-Ups": {
+      "preferred": "Butt-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butt_Lift_Bridge": {
+      "preferred": "Butt lift גשר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butterfly": {
+      "preferred": "Butterfly",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Chest_Press": {
+      "preferred": "כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crossover": {
+      "preferred": "קרוסאובר בכבלים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crunch": {
+      "preferred": "כבל כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Deadlifts": {
+      "preferred": "כבל deadlifts",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hammer_Curls_-_Rope_Attachment": {
+      "preferred": "כבל hammer curls — חבל attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Adduction": {
+      "preferred": "כבל אגן adduction",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Incline_Pushdown": {
+      "preferred": "כבל בשיפוע חיובי pushdown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Incline_Triceps_Extension": {
+      "preferred": "כבל בשיפוע חיובי פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Internal_Rotation": {
+      "preferred": "כבל internal סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Iron_Cross": {
+      "preferred": "כבל iron cross",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Judo_Flip": {
+      "preferred": "כבל judo flip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Lying_Triceps_Extension": {
+      "preferred": "כבל בשכיבה פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_One_Arm_Tricep_Extension": {
+      "preferred": "כבל יד אחת תלת-ראשי פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Preacher_Curl": {
+      "preferred": "כבל preacher כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rear_Delt_Fly": {
+      "preferred": "כבל אחורי delt פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Reverse_Crunch": {
+      "preferred": "כבל הפוך כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rope_Overhead_Triceps_Extension": {
+      "preferred": "כבל חבל פשיטת מרפקים מעל הראש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rope_Rear-Delt_Rows": {
+      "preferred": "כבל חבל אחורי-delt rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Russian_Twists": {
+      "preferred": "כבל russian twists",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Seated_Crunch": {
+      "preferred": "כבל בישיבה כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Seated_Lateral_Raise": {
+      "preferred": "כבל בישיבה הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Shoulder_Press": {
+      "preferred": "כבל לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Shrugs": {
+      "preferred": "כבל shrugs",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Wrist_Curl": {
+      "preferred": "כבל wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf-Machine_Shoulder_Shrug": {
+      "preferred": "תאומים-מכונה כתף הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Press": {
+      "preferred": "תאומים לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Press_On_The_Leg_Press_Machine": {
+      "preferred": "תאומים לחיצה על לחיצת רגליים מכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Raise_On_A_Dumbbell": {
+      "preferred": "הרמת תאומים על a משקולת",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Raises_-_With_Bands": {
+      "preferred": "תאומים raises — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Stretch_Elbows_Against_Wall": {
+      "preferred": "תאומים מתיחה elbows against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Stretch_Hands_Against_Wall": {
+      "preferred": "תאומים מתיחה hands against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calves-SMR": {
+      "preferred": "Calves-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Car_Deadlift": {
+      "preferred": "Car דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Car_Drivers": {
+      "preferred": "Car drivers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Carioca_Quick_Step": {
+      "preferred": "Carioca quick step",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cat_Stretch": {
+      "preferred": "Cat מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Catch_and_Overhead_Throw": {
+      "preferred": "Catch ו מעל הראש throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chain_Handle_Extension": {
+      "preferred": "Chain handle פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chain_Press": {
+      "preferred": "Chain לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Leg_Extended_Stretch": {
+      "preferred": "Chair רגל extended מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Lower_Back_Stretch": {
+      "preferred": "Chair lower גב מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Squat": {
+      "preferred": "Chair סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Upper_Body_Stretch": {
+      "preferred": "Chair upper body מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_And_Front_Of_Shoulder_Stretch": {
+      "preferred": "חזה ו קדמי of כתף מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_from_3_point_stance": {
+      "preferred": "חזה דחיפה מ 3 point stance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_multiple_response": {
+      "preferred": "חזה דחיפה multiple response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_single_response": {
+      "preferred": "חזה דחיפה יחיד response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_with_Run_Release": {
+      "preferred": "חזה דחיפה עם run release",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Stretch_on_Stability_Ball": {
+      "preferred": "חזה מתיחה על stability ball",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Childs_Pose": {
+      "preferred": "תנוחת הילד",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chin-Up": {
+      "preferred": "מתח באחיזה הפוכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chin_To_Chest_Stretch": {
+      "preferred": "Chin ל חזה מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Circus_Bell": {
+      "preferred": "Circus bell",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean": {
+      "preferred": "קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Deadlift": {
+      "preferred": "קלין דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Pull": {
+      "preferred": "קלין משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Shrug": {
+      "preferred": "קלין הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_and_Jerk": {
+      "preferred": "קלין וג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_and_Press": {
+      "preferred": "קלין ו לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_from_Blocks": {
+      "preferred": "קלין מ blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clock_Push-Up": {
+      "preferred": "Clock שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Barbell_Bench_Press": {
+      "preferred": "אחיזה צרה לחיצת חזה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Dumbbell_Press": {
+      "preferred": "אחיזה צרה משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ-Bar_Curl_with_Band": {
+      "preferred": "אחיזה צרה מוט EZ כפיפה עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ-Bar_Press": {
+      "preferred": "אחיזה צרה מוט EZ לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ_Bar_Curl": {
+      "preferred": "אחיזה צרה מוט EZ כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Front_Lat_Pulldown": {
+      "preferred": "אחיזה צרה קדמי משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Push-Up_off_of_a_Dumbbell": {
+      "preferred": "אחיזה צרה שכיבות סמיכה off of a משקולת",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Standing_Barbell_Curl": {
+      "preferred": "אחיזה צרה בעמידה מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cocoons": {
+      "preferred": "Cocoons",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Conans_Wheel": {
+      "preferred": "Conan's wheel",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Concentration_Curls": {
+      "preferred": "Concentration curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross-Body_Crunch": {
+      "preferred": "Cross-body כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross_Body_Hammer_Curl": {
+      "preferred": "Cross body כפיפת מרפקים פטיש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross_Over_-_With_Bands": {
+      "preferred": "Cross over — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crossover_Reverse_Lunge": {
+      "preferred": "Crossover מכרע לאחור",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crucifix": {
+      "preferred": "Crucifix",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunch_-_Hands_Overhead": {
+      "preferred": "כפיפות בטן — hands מעל הראש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunch_-_Legs_On_Exercise_Ball": {
+      "preferred": "כפיפות בטן — רגליים על כדור פיזיו",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunches": {
+      "preferred": "כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cuban_Press": {
+      "preferred": "Cuban לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dancers_Stretch": {
+      "preferred": "Dancer's מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dead_Bug": {
+      "preferred": "Dead bug",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deadlift_with_Bands": {
+      "preferred": "דדליפט עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deadlift_with_Chains": {
+      "preferred": "דדליפט עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Barbell_Bench_Press": {
+      "preferred": "בשיפוע שלילי לחיצת חזה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Close-Grip_Bench_To_Skull_Crusher": {
+      "preferred": "בשיפוע שלילי אחיזה צרה ספסל ל פשיטת מרפקים בשכיבה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Crunch": {
+      "preferred": "בשיפוע שלילי כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Bench_Press": {
+      "preferred": "בשיפוע שלילי לחיצת חזה עם משקולות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Flyes": {
+      "preferred": "בשיפוע שלילי משקולת פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Triceps_Extension": {
+      "preferred": "בשיפוע שלילי משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_EZ_Bar_Triceps_Extension": {
+      "preferred": "בשיפוע שלילי מוט EZ פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Oblique_Crunch": {
+      "preferred": "בשיפוע שלילי oblique כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Push-Up": {
+      "preferred": "בשיפוע שלילי שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Reverse_Crunch": {
+      "preferred": "בשיפוע שלילי הפוך כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Smith_Press": {
+      "preferred": "בשיפוע שלילי smith לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deficit_Deadlift": {
+      "preferred": "Deficit דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Depth_Jump_Leap": {
+      "preferred": "Depth קפיצה leap",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dip_Machine": {
+      "preferred": "Dip מכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dips_-_Chest_Version": {
+      "preferred": "Dips — חזה version",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dips_-_Triceps_Version": {
+      "preferred": "Dips — triceps version",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Donkey_Calf_Raises": {
+      "preferred": "Donkey תאומים raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Alternating_Hang_Clean": {
+      "preferred": "כפול קטלבל לסירוגין תלייה קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Jerk": {
+      "preferred": "כפול קטלבל ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Push_Press": {
+      "preferred": "כפול קטלבל דחיפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Snatch": {
+      "preferred": "כפול קטלבל סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Windmill": {
+      "preferred": "כפול קטלבל windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Leg_Butt_Kick": {
+      "preferred": "כפול רגל butt kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Downward_Facing_Balance": {
+      "preferred": "Downward facing balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Drag_Curl": {
+      "preferred": "Drag כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Drop_Push": {
+      "preferred": "Drop דחיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Alternate_Bicep_Curl": {
+      "preferred": "משקולת לסירוגין דו-ראשי כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bench_Press": {
+      "preferred": "לחיצת חזה עם משקולות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bench_Press_with_Neutral_Grip": {
+      "preferred": "לחיצת חזה עם משקולות עם neutral grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bicep_Curl": {
+      "preferred": "משקולת דו-ראשי כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Clean": {
+      "preferred": "משקולת קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Floor_Press": {
+      "preferred": "משקולת רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Flyes": {
+      "preferred": "משקולת פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Incline_Row": {
+      "preferred": "משקולת בשיפוע חיובי חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Incline_Shoulder_Raise": {
+      "preferred": "משקולת בשיפוע חיובי כתף הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lunges": {
+      "preferred": "משקולת lunges",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise": {
+      "preferred": "משקולת בשכיבה יד אחת אחורי הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Pronation": {
+      "preferred": "משקולת בשכיבה pronation",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Rear_Lateral_Raise": {
+      "preferred": "משקולת בשכיבה אחורי הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Supination": {
+      "preferred": "משקולת בשכיבה supination",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Shoulder_Press": {
+      "preferred": "משקולת יד אחת לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Triceps_Extension": {
+      "preferred": "משקולת יד אחת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Upright_Row": {
+      "preferred": "משקולת יד אחת חתירה זקופה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Prone_Incline_Curl": {
+      "preferred": "משקולת prone בשיפוע חיובי כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Raise": {
+      "preferred": "משקולת הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Rear_Lunge": {
+      "preferred": "משקולת אחורי מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Scaption": {
+      "preferred": "משקולת scaption",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Seated_Box_Jump": {
+      "preferred": "משקולת בישיבה קפיצה על קופסה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Seated_One-Leg_Calf_Raise": {
+      "preferred": "משקולת בישיבה one-רגל הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Shoulder_Press": {
+      "preferred": "משקולת לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Shrug": {
+      "preferred": "משקולת הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Side_Bend": {
+      "preferred": "משקולת כפיפה צידית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Squat": {
+      "preferred": "משקולת סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Squat_To_A_Bench": {
+      "preferred": "משקולת סקוואט ל a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Step_Ups": {
+      "preferred": "משקולת step ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Tricep_Extension_-Pronated_Grip": {
+      "preferred": "משקולת תלת-ראשי פשיטה — pronated grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dynamic_Back_Stretch": {
+      "preferred": "Dynamic גב מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dynamic_Chest_Stretch": {
+      "preferred": "Dynamic חזה מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "EZ-Bar_Curl": {
+      "preferred": "מוט EZ כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "EZ-Bar_Skullcrusher": {
+      "preferred": "מוט EZ skullcrusher",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbow_Circles": {
+      "preferred": "Elbow circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbow_to_Knee": {
+      "preferred": "Elbow ל knee",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbows_Back": {
+      "preferred": "Elbows גב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elevated_Back_Lunge": {
+      "preferred": "Elevated גב מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elevated_Cable_Rows": {
+      "preferred": "Elevated כבל rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elliptical_Trainer": {
+      "preferred": "Elliptical trainer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Exercise_Ball_Crunch": {
+      "preferred": "כדור פיזיו כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Exercise_Ball_Pull-In": {
+      "preferred": "כדור פיזיו משיכה-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Extended_Range_One-Arm_Kettlebell_Floor_Press": {
+      "preferred": "Extended range יד אחת קטלבל רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation": {
+      "preferred": "External סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation_with_Band": {
+      "preferred": "External סיבוב עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation_with_Cable": {
+      "preferred": "External סיבוב עם כבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Face_Pull": {
+      "preferred": "Face משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Farmers_Walk": {
+      "preferred": "Farmer's walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Fast_Skipping": {
+      "preferred": "Fast skipping",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Finger_Curls": {
+      "preferred": "Finger curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Cable_Flyes": {
+      "preferred": "Flat ספסל כבל פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Leg_Pull-In": {
+      "preferred": "Flat ספסל רגל משיכה-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Lying_Leg_Raise": {
+      "preferred": "Flat ספסל בשכיבה רגל הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flexor_Incline_Dumbbell_Curls": {
+      "preferred": "Flexor בשיפוע חיובי משקולת curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Glute-Ham_Raise": {
+      "preferred": "רצפה ישבן-ham הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Press": {
+      "preferred": "רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Press_with_Chains": {
+      "preferred": "רצפה לחיצה עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flutter_Kicks": {
+      "preferred": "Flutter kicks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Foot-SMR": {
+      "preferred": "Foot-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Forward_Drag_with_Press": {
+      "preferred": "Forward drag עם לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frankenstein_Squat": {
+      "preferred": "Frankenstein סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Freehand_Jump_Squat": {
+      "preferred": "Freehand סקוואט בקפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frog_Hops": {
+      "preferred": "Frog hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frog_Sit-Ups": {
+      "preferred": "Frog sit-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Barbell_Squat": {
+      "preferred": "קדמי מוט סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Barbell_Squat_To_A_Bench": {
+      "preferred": "קדמי מוט סקוואט ל a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Box_Jump": {
+      "preferred": "קדמי קפיצה על קופסה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Cable_Raise": {
+      "preferred": "קדמי כבל הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Cone_Hops_or_hurdle_hops": {
+      "preferred": "קדמי cone hops or hurdle hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Dumbbell_Raise": {
+      "preferred": "קדמי משקולת הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Incline_Dumbbell_Raise": {
+      "preferred": "קדמי בשיפוע חיובי משקולת הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Leg_Raises": {
+      "preferred": "קדמי רגל raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Plate_Raise": {
+      "preferred": "קדמי plate הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Raise_And_Pullover": {
+      "preferred": "הרמה קדמית ו פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Squat_Clean_Grip": {
+      "preferred": "סקוואט קדמי קלין grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Squats_With_Two_Kettlebells": {
+      "preferred": "קדמי squats עם two kettlebells",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Two-Dumbbell_Raise": {
+      "preferred": "קדמי two-משקולת הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Full_Range-Of-Motion_Lat_Pulldown": {
+      "preferred": "Full range-of-motion משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Gironda_Sternum_Chins": {
+      "preferred": "Gironda sternum chins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Glute_Ham_Raise": {
+      "preferred": "ישבן ham הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Glute_Kickback": {
+      "preferred": "ישבן kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Goblet_Squat": {
+      "preferred": "Goblet סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Good_Morning": {
+      "preferred": "בוקר טוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Good_Morning_off_Pins": {
+      "preferred": "בוקר טוב off pins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Gorilla_Chin_Crunch": {
+      "preferred": "Gorilla chin/כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Groin_and_Back_Stretch": {
+      "preferred": "Groin ו גב מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Groiners": {
+      "preferred": "Groiners",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hack_Squat": {
+      "preferred": "Hack סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hammer_Curls": {
+      "preferred": "Hammer curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hammer_Grip_Incline_DB_Bench_Press": {
+      "preferred": "Hammer grip בשיפוע חיובי db לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hamstring-SMR": {
+      "preferred": "Hamstring-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hamstring_Stretch": {
+      "preferred": "Hamstring מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Handstand_Push-Ups": {
+      "preferred": "Handstand דחיפה-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Clean": {
+      "preferred": "תלייה קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Clean_-_Below_the_Knees": {
+      "preferred": "תלייה קלין — below knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Snatch": {
+      "preferred": "תלייה סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Snatch_-_Below_Knees": {
+      "preferred": "תלייה סנאץ׳ — below knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Bar_Good_Morning": {
+      "preferred": "Hanging bar בוקר טוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Leg_Raise": {
+      "preferred": "Hanging רגל הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Pike": {
+      "preferred": "Hanging pike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Heaving_Snatch_Balance": {
+      "preferred": "Heaving סנאץ׳ balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Heavy_Bag_Thrust": {
+      "preferred": "Heavy bag thrust",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "High_Cable_Curls": {
+      "preferred": "גבוה כבל curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Circles_prone": {
+      "preferred": "אגן circles prone",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Extension_with_Bands": {
+      "preferred": "אגן פשיטה עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Flexion_with_Band": {
+      "preferred": "אגן flexion עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Lift_with_Band": {
+      "preferred": "אגן lift עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hug_A_Ball": {
+      "preferred": "Hug a ball",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hug_Knees_To_Chest": {
+      "preferred": "Hug knees ל חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hurdle_Hops": {
+      "preferred": "Hurdle hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hyperextensions_Back_Extensions": {
+      "preferred": "Hyperextensions גב extensions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hyperextensions_With_No_Hyperextension_Bench": {
+      "preferred": "Hyperextensions עם no hyperextension ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "IT_Band_and_Glute_Stretch": {
+      "preferred": "It גומייה ו ישבן מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iliotibial_Tract-SMR": {
+      "preferred": "Iliotibial tract-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inchworm": {
+      "preferred": "Inchworm",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Barbell_Triceps_Extension": {
+      "preferred": "בשיפוע חיובי מוט פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Bench_Pull": {
+      "preferred": "בשיפוע חיובי ספסל משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Cable_Chest_Press": {
+      "preferred": "בשיפוע חיובי כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Cable_Flye": {
+      "preferred": "בשיפוע חיובי כבל flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Bench_With_Palms_Facing_In": {
+      "preferred": "בשיפוע חיובי משקולת ספסל עם palms facing in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Curl": {
+      "preferred": "בשיפוע חיובי משקולת כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Flyes": {
+      "preferred": "בשיפוע חיובי משקולת פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Flyes_-_With_A_Twist": {
+      "preferred": "בשיפוע חיובי משקולת פרפר — עם a סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Press": {
+      "preferred": "בשיפוע חיובי משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Hammer_Curls": {
+      "preferred": "בשיפוע חיובי hammer curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Inner_Biceps_Curl": {
+      "preferred": "בשיפוע חיובי inner כפיפת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Close-Grip": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה אחיזה צרה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Depth_Jump": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה depth קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Medium": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה medium",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Reverse_Grip": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה הפוך grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Wide": {
+      "preferred": "בשיפוע חיובי שכיבות סמיכה wide",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Intermediate_Groin_Stretch": {
+      "preferred": "Intermediate groin מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Intermediate_Hip_Flexor_and_Quad_Stretch": {
+      "preferred": "Intermediate אגן flexor ו quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Internal_Rotation_with_Band": {
+      "preferred": "Internal סיבוב עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inverted_Row": {
+      "preferred": "Inverted חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inverted_Row_with_Straps": {
+      "preferred": "Inverted חתירה עם straps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iron_Cross": {
+      "preferred": "Iron cross",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iron_Crosses_stretch": {
+      "preferred": "Iron crosses מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Chest_Squeezes": {
+      "preferred": "Isometric חזה squeezes",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Neck_Exercise_-_Front_And_Back": {
+      "preferred": "Isometric צוואר exercise — קדמי ו גב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Neck_Exercise_-_Sides": {
+      "preferred": "Isometric צוואר exercise — sides",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Wipers": {
+      "preferred": "Isometric wipers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "JM_Press": {
+      "preferred": "Jm לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jackknife_Sit-Up": {
+      "preferred": "סכין כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Janda_Sit-Up": {
+      "preferred": "Janda כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jefferson_Squats": {
+      "preferred": "Jefferson squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jerk_Balance": {
+      "preferred": "ג'רק balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jerk_Dip_Squat": {
+      "preferred": "ג'רק dip סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jogging_Treadmill": {
+      "preferred": "Jogging, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Keg_Load": {
+      "preferred": "Keg load",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Arnold_Press": {
+      "preferred": "קטלבל arnold לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Dead_Clean": {
+      "preferred": "קטלבל dead קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Figure_8": {
+      "preferred": "קטלבל figure 8",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Hang_Clean": {
+      "preferred": "קטלבל תלייה קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_One-Legged_Deadlift": {
+      "preferred": "קטלבל one-legged דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pass_Between_The_Legs": {
+      "preferred": "קטלבל pass between רגליים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pirate_Ships": {
+      "preferred": "קטלבל pirate ships",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pistol_Squat": {
+      "preferred": "קטלבל pistol סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Seated_Press": {
+      "preferred": "קטלבל בישיבה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Seesaw_Press": {
+      "preferred": "קטלבל seesaw לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Sumo_High_Pull": {
+      "preferred": "קטלבל sumo גבוה משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Thruster": {
+      "preferred": "קטלבל thruster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Turkish_Get-Up_Lunge_style": {
+      "preferred": "קטלבל turkish get-up מכרע style",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Turkish_Get-Up_Squat_style": {
+      "preferred": "קטלבל turkish get-up סקוואט style",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Windmill": {
+      "preferred": "קטלבל windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kipping_Muscle_Up": {
+      "preferred": "Kipping muscle up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Across_The_Body": {
+      "preferred": "Knee across body",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Circles": {
+      "preferred": "Knee circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Hip_Raise_On_Parallel_Bars": {
+      "preferred": "Knee/אגן הרמה על parallel bars",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Tuck_Jump": {
+      "preferred": "Knee tuck קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Arm_Drill": {
+      "preferred": "בכריעה זרוע drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists": {
+      "preferred": "בכריעה כבל כפיפות בטן עם לסירוגין oblique twists",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Triceps_Extension": {
+      "preferred": "בכריעה כבל פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Forearm_Stretch": {
+      "preferred": "בכריעה forearm מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_High_Pulley_Row": {
+      "preferred": "בכריעה גבוה pulley חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Hip_Flexor": {
+      "preferred": "בכריעה אגן flexor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Jump_Squat": {
+      "preferred": "בכריעה סקוואט בקפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Single-Arm_High_Pulley_Row": {
+      "preferred": "בכריעה יחיד-זרוע גבוה pulley חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Squat": {
+      "preferred": "בכריעה סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Landmine_180s": {
+      "preferred": "Landmine 180's",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Landmine_Linear_Jammer": {
+      "preferred": "Landmine linear jammer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Bound": {
+      "preferred": "Lateral bound",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Box_Jump": {
+      "preferred": "Lateral קפיצה על קופסה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Cone_Hops": {
+      "preferred": "Lateral cone hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Raise_-_With_Bands": {
+      "preferred": "הרחקת כתפיים — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Latissimus_Dorsi-SMR": {
+      "preferred": "Latissimus dorsi-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg-Over_Floor_Press": {
+      "preferred": "רגל-over רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg-Up_Hamstring_Stretch": {
+      "preferred": "רגל-up hamstring מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Extensions": {
+      "preferred": "רגל extensions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Lift": {
+      "preferred": "רגל lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Press": {
+      "preferred": "לחיצת רגליים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Pull-In": {
+      "preferred": "רגל משיכה-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Chest_Press": {
+      "preferred": "Leverage לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Deadlift": {
+      "preferred": "Leverage דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Decline_Chest_Press": {
+      "preferred": "Leverage בשיפוע שלילי לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_High_Row": {
+      "preferred": "Leverage גבוה חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Incline_Chest_Press": {
+      "preferred": "Leverage בשיפוע חיובי לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Iso_Row": {
+      "preferred": "Leverage iso חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Shoulder_Press": {
+      "preferred": "Leverage לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Shrug": {
+      "preferred": "Leverage הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_3-Part_Start_Technique": {
+      "preferred": "Linear 3-part start technique",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_Acceleration_Wall_Drill": {
+      "preferred": "Linear acceleration wall drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_Depth_Jump": {
+      "preferred": "Linear depth קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Log_Lift": {
+      "preferred": "Log lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "London_Bridges": {
+      "preferred": "London bridges",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Looking_At_Ceiling": {
+      "preferred": "Looking at ceiling",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Cable_Crossover": {
+      "preferred": "נמוך קרוסאובר בכבלים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Cable_Triceps_Extension": {
+      "preferred": "נמוך כבל פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Pulley_Row_To_Neck": {
+      "preferred": "נמוך pulley חתירה ל צוואר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lower_Back-SMR": {
+      "preferred": "Lower גב-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lower_Back_Curl": {
+      "preferred": "Lower גב כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lunge_Pass_Through": {
+      "preferred": "מכרע pass through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lunge_Sprint": {
+      "preferred": "מכרע sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Bent_Leg_Groin": {
+      "preferred": "בשכיבה bent רגל groin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Cable_Curl": {
+      "preferred": "בשכיבה כבל כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Cambered_Barbell_Row": {
+      "preferred": "בשכיבה cambered חתירה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Bar_Curl_On_High_Pulley": {
+      "preferred": "בשכיבה אחיזה צרה bar כפיפה על גבוה pulley",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head": {
+      "preferred": "בשכיבה אחיזה צרה מוט פשיטת מרפקים מאחורי הראש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin": {
+      "preferred": "בשכיבה אחיזה צרה מוט triceps לחיצה ל chin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Crossover": {
+      "preferred": "בשכיבה crossover",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Dumbbell_Tricep_Extension": {
+      "preferred": "בשכיבה משקולת תלת-ראשי פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Face_Down_Plate_Neck_Resistance": {
+      "preferred": "בשכיבה face down plate צוואר resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Face_Up_Plate_Neck_Resistance": {
+      "preferred": "בשכיבה face up plate צוואר resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Glute": {
+      "preferred": "בשכיבה ישבן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Hamstring": {
+      "preferred": "בשכיבה hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_High_Bench_Barbell_Curl": {
+      "preferred": "בשכיבה גבוה ספסל מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Leg_Curls": {
+      "preferred": "בשכיבה רגל curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Machine_Squat": {
+      "preferred": "בשכיבה מכונה סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_One-Arm_Lateral_Raise": {
+      "preferred": "בשכיבה יד אחת הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Prone_Quadriceps": {
+      "preferred": "בשכיבה prone quadriceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Rear_Delt_Raise": {
+      "preferred": "בשכיבה הרמה אחורית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Supine_Dumbbell_Curl": {
+      "preferred": "בשכיבה supine משקולת כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_T-Bar_Row": {
+      "preferred": "בשכיבה t-bar חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Triceps_Press": {
+      "preferred": "בשכיבה triceps לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Bench_Press": {
+      "preferred": "מכונה לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Bicep_Curl": {
+      "preferred": "מכונה דו-ראשי כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Preacher_Curls": {
+      "preferred": "מכונה preacher curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Shoulder_Military_Press": {
+      "preferred": "מכונה כתף military לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Triceps_Extension": {
+      "preferred": "מכונה פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Chest_Pass": {
+      "preferred": "כדור כוח חזה pass",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Full_Twist": {
+      "preferred": "כדור כוח full סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Scoop_Throw": {
+      "preferred": "כדור כוח scoop throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Middle_Back_Shrug": {
+      "preferred": "Middle גב הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Middle_Back_Stretch": {
+      "preferred": "Middle גב מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Mixed_Grip_Chin": {
+      "preferred": "Mixed grip chin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Monster_Walk": {
+      "preferred": "Monster walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Mountain_Climbers": {
+      "preferred": "מטפסי ההרים",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Moving_Claw_Series": {
+      "preferred": "Moving claw series",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Muscle_Snatch": {
+      "preferred": "Muscle סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Muscle_Up": {
+      "preferred": "Muscle up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Hack_Squats": {
+      "preferred": "Narrow stance hack squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Leg_Press": {
+      "preferred": "Narrow stance לחיצת רגליים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Squats": {
+      "preferred": "Narrow stance squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Natural_Glute_Ham_Raise": {
+      "preferred": "Natural ישבן ham הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Neck-SMR": {
+      "preferred": "צוואר-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Neck_Press": {
+      "preferred": "צוואר לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Oblique_Crunches": {
+      "preferred": "Oblique crunches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Oblique_Crunches_-_On_The_Floor": {
+      "preferred": "Oblique crunches — על רצפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Olympic_Squat": {
+      "preferred": "Olympic סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "On-Your-Back_Quad_Stretch": {
+      "preferred": "על-your-גב quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "On_Your_Side_Quad_Stretch": {
+      "preferred": "על your צידי quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Dumbbell_Row": {
+      "preferred": "יד אחת חתירה עם משקולת",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Flat_Bench_Dumbbell_Flye": {
+      "preferred": "יד אחת flat ספסל משקולת flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_High-Pulley_Cable_Side_Bends": {
+      "preferred": "יד אחת גבוה-pulley כבל צידי bends",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Incline_Lateral_Raise": {
+      "preferred": "יד אחת בשיפוע חיובי הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Clean": {
+      "preferred": "יד אחת קטלבל קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Clean_and_Jerk": {
+      "preferred": "יד אחת קטלבל קלין וג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Floor_Press": {
+      "preferred": "יד אחת קטלבל רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Jerk": {
+      "preferred": "יד אחת קטלבל ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Military_Press_To_The_Side": {
+      "preferred": "יד אחת קטלבל military לחיצה ל צידי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Para_Press": {
+      "preferred": "יד אחת קטלבל para לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Push_Press": {
+      "preferred": "יד אחת קטלבל דחיפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Row": {
+      "preferred": "יד אחת קטלבל חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Snatch": {
+      "preferred": "יד אחת קטלבל סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Split_Jerk": {
+      "preferred": "יד אחת קטלבל מפוצל ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Split_Snatch": {
+      "preferred": "יד אחת קטלבל מפוצל סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Swings": {
+      "preferred": "יד אחת קטלבל swings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Long_Bar_Row": {
+      "preferred": "יד אחת long bar חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Medicine_Ball_Slam": {
+      "preferred": "יד אחת כדור כוח slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Open_Palm_Kettlebell_Clean": {
+      "preferred": "יד אחת open palm קטלבל קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Overhead_Kettlebell_Squats": {
+      "preferred": "יד אחת מעל הראש קטלבל squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Side_Deadlift": {
+      "preferred": "יד אחת צידי דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Side_Laterals": {
+      "preferred": "יד אחת צידי laterals",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Legged_Cable_Kickback": {
+      "preferred": "One-legged כבל kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Against_Wall": {
+      "preferred": "יד אחת against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Chin-Up": {
+      "preferred": "יד אחת מתח באחיזה הפוכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Dumbbell_Bench_Press": {
+      "preferred": "יד אחת לחיצת חזה עם משקולות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Dumbbell_Preacher_Curl": {
+      "preferred": "יד אחת משקולת preacher כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Floor_Press": {
+      "preferred": "יד אחת רצפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Lat_Pulldown": {
+      "preferred": "יד אחת משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Pronated_Dumbbell_Triceps_Extension": {
+      "preferred": "יד אחת pronated משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Supinated_Dumbbell_Triceps_Extension": {
+      "preferred": "יד אחת supinated משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Half_Locust": {
+      "preferred": "One half locust",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Handed_Hang": {
+      "preferred": "One handed תלייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Knee_To_Chest": {
+      "preferred": "One knee ל חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Leg_Barbell_Squat": {
+      "preferred": "One רגל מוט סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Open_Palm_Kettlebell_Clean": {
+      "preferred": "Open palm קטלבל קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Otis-Up": {
+      "preferred": "Otis-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Cable_Curl": {
+      "preferred": "מעל הראש כבל כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Lat": {
+      "preferred": "מעל הראש lat",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Slam": {
+      "preferred": "מעל הראש slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Squat": {
+      "preferred": "סקוואט מעל הראש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Stretch": {
+      "preferred": "מעל הראש מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Triceps": {
+      "preferred": "מעל הראש triceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pallof_Press": {
+      "preferred": "Pallof לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pallof_Press_With_Rotation": {
+      "preferred": "Pallof לחיצה עם סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-down משקולת wrist כפיפה over a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Down_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-down wrist כפיפה over a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-up מוט wrist כפיפה over a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-up משקולת wrist כפיפה over a ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Parallel_Bar_Dip": {
+      "preferred": "Parallel bar dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pelvic_Tilt_Into_Bridge": {
+      "preferred": "Pelvic tilt into גשר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Peroneals-SMR": {
+      "preferred": "Peroneals-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Peroneals_Stretch": {
+      "preferred": "Peroneals מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Physioball_Hip_Bridge": {
+      "preferred": "Physioball אגן גשר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pin_Presses": {
+      "preferred": "Pin presses",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Piriformis-SMR": {
+      "preferred": "Piriformis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plank": {
+      "preferred": "פלאנק",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plate_Pinch": {
+      "preferred": "Plate pinch",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plate_Twist": {
+      "preferred": "Plate סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Platform_Hamstring_Slides": {
+      "preferred": "Platform hamstring slides",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plie_Dumbbell_Squat": {
+      "preferred": "Plie משקולת סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plyo_Kettlebell_Pushups": {
+      "preferred": "Plyo קטלבל pushups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plyo_Push-up": {
+      "preferred": "Plyo שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Posterior_Tibialis_Stretch": {
+      "preferred": "Posterior tibialis מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Clean": {
+      "preferred": "פאוור קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Clean_from_Blocks": {
+      "preferred": "פאוור קלין מ blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Jerk": {
+      "preferred": "כוח ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Partials": {
+      "preferred": "כוח partials",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Snatch": {
+      "preferred": "כוח סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Snatch_from_Blocks": {
+      "preferred": "כוח סנאץ׳ מ blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Stairs": {
+      "preferred": "כוח stairs",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Preacher_Curl": {
+      "preferred": "Preacher כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Preacher_Hammer_Dumbbell_Curl": {
+      "preferred": "Preacher hammer משקולת כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Press_Sit-Up": {
+      "preferred": "לחיצה כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Prone_Manual_Hamstring": {
+      "preferred": "Prone manual hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Prowler_Sprint": {
+      "preferred": "Prowler sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pull_Through": {
+      "preferred": "משיכה through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pullups": {
+      "preferred": "Pullups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Up_Wide": {
+      "preferred": "שכיבות סמיכה wide",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_-_Close_Triceps_Position": {
+      "preferred": "דחיפה-ups — close triceps position",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_With_Feet_Elevated": {
+      "preferred": "דחיפה-ups עם feet elevated",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_With_Feet_On_An_Exercise_Ball": {
+      "preferred": "דחיפה-ups עם feet על an כדור פיזיו",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Press": {
+      "preferred": "דחיפה לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Press_-_Behind_the_Neck": {
+      "preferred": "דחיפה לחיצה — מאחורי העורף",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Up_to_Side_Plank": {
+      "preferred": "שכיבות סמיכה ל צידי פלאנק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pushups": {
+      "preferred": "Pushups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pushups_Close_and_Wide_Hand_Positions": {
+      "preferred": "Pushups close ו wide hand positions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pyramid": {
+      "preferred": "Pyramid",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quad_Stretch": {
+      "preferred": "Quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quadriceps-SMR": {
+      "preferred": "Quadriceps-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quick_Leap": {
+      "preferred": "Quick leap",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Delivery": {
+      "preferred": "Rack delivery",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Pull_with_Bands": {
+      "preferred": "Rack משיכה עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Pulls": {
+      "preferred": "Rack pulls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rear_Leg_Raises": {
+      "preferred": "אחורי רגל raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Recumbent_Bike": {
+      "preferred": "Recumbent bike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Return_Push_from_Stance": {
+      "preferred": "Return דחיפה מ stance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Bench_Press": {
+      "preferred": "הפוך גומייה לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Box_Squat": {
+      "preferred": "הפוך גומייה box סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Deadlift": {
+      "preferred": "הפוך גומייה דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Power_Squat": {
+      "preferred": "הפוך גומייה כוח סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Sumo_Deadlift": {
+      "preferred": "הפוך גומייה sumo דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Barbell_Curl": {
+      "preferred": "הפוך מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Barbell_Preacher_Curls": {
+      "preferred": "הפוך מוט preacher curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Cable_Curl": {
+      "preferred": "הפוך כבל כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Crunch": {
+      "preferred": "הפוך כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Flyes": {
+      "preferred": "הפוך פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Flyes_With_External_Rotation": {
+      "preferred": "הפוך פרפר עם external סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Grip_Bent-Over_Rows": {
+      "preferred": "הפוך grip bent-over rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Grip_Triceps_Pushdown": {
+      "preferred": "הפוך grip פשיטת מרפקים בפולי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Hyperextension": {
+      "preferred": "הפוך hyperextension",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Machine_Flyes": {
+      "preferred": "הפוך מכונה פרפר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Plate_Curls": {
+      "preferred": "הפוך plate curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Triceps_Bench_Press": {
+      "preferred": "הפוך triceps לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rhomboids-SMR": {
+      "preferred": "Rhomboids-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rickshaw_Carry": {
+      "preferred": "Rickshaw carry",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rickshaw_Deadlift": {
+      "preferred": "Rickshaw דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ring_Dips": {
+      "preferred": "Ring dips",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocket_Jump": {
+      "preferred": "Rocket קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocking_Standing_Calf_Raise": {
+      "preferred": "Rocking בעמידה הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocky_Pull-Ups_Pulldowns": {
+      "preferred": "Rocky משיכה-ups/pulldowns",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Romanian_Deadlift": {
+      "preferred": "Romanian דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Romanian_Deadlift_from_Deficit": {
+      "preferred": "Romanian דדליפט מ deficit",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Climb": {
+      "preferred": "חבל climb",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Crunch": {
+      "preferred": "חבל כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Jumping": {
+      "preferred": "חבל jumping",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Straight-Arm_Pulldown": {
+      "preferred": "חבל straight-זרוע pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Round_The_World_Shoulder_Stretch": {
+      "preferred": "Round world כתף מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rowing_Stationary": {
+      "preferred": "Rowing, stationary",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Runners_Stretch": {
+      "preferred": "Runner's מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Running_Treadmill": {
+      "preferred": "Running, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Russian_Twist": {
+      "preferred": "סיבוב רוסי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sandbag_Load": {
+      "preferred": "Sandbag load",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scapular_Pull-Up": {
+      "preferred": "Scapular מתח",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scissor_Kick": {
+      "preferred": "Scissor kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scissors_Jump": {
+      "preferred": "Scissors קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Band_Hamstring_Curl": {
+      "preferred": "בישיבה גומייה hamstring כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Barbell_Military_Press": {
+      "preferred": "בישיבה מוט military לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Barbell_Twist": {
+      "preferred": "בישיבה מוט סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "בישיבה bent-over יד אחת משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_Rear_Delt_Raise": {
+      "preferred": "בישיבה bent-over הרמה אחורית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "בישיבה bent-over שתי ידיים משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Biceps": {
+      "preferred": "בישיבה biceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Cable_Rows": {
+      "preferred": "בישיבה כבל rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Cable_Shoulder_Press": {
+      "preferred": "בישיבה כבל לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Calf_Raise": {
+      "preferred": "בישיבה הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Calf_Stretch": {
+      "preferred": "בישיבה תאומים מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Close-Grip_Concentration_Barbell_Curl": {
+      "preferred": "בישיבה אחיזה צרה concentration מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Curl": {
+      "preferred": "בישיבה משקולת כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Inner_Biceps_Curl": {
+      "preferred": "בישיבה משקולת inner כפיפת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Palms-Down_Wrist_Curl": {
+      "preferred": "בישיבה משקולת palms-down wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Palms-Up_Wrist_Curl": {
+      "preferred": "בישיבה משקולת palms-up wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Press": {
+      "preferred": "בישיבה משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Flat_Bench_Leg_Pull-In": {
+      "preferred": "בישיבה flat ספסל רגל משיכה-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Floor_Hamstring_Stretch": {
+      "preferred": "בישיבה רצפה hamstring מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Front_Deltoid": {
+      "preferred": "בישיבה קדמי דלתא",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Glute": {
+      "preferred": "בישיבה ישבן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Good_Mornings": {
+      "preferred": "בישיבה good mornings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hamstring": {
+      "preferred": "בישיבה hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hamstring_and_Calf_Stretch": {
+      "preferred": "בישיבה hamstring ו תאומים מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Head_Harness_Neck_Resistance": {
+      "preferred": "בישיבה head harness צוואר resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Leg_Curl": {
+      "preferred": "בישיבה כפיפת ברך",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Leg_Tucks": {
+      "preferred": "בישיבה רגל tucks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl": {
+      "preferred": "בישיבה יד אחת משקולת palms-down wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl": {
+      "preferred": "בישיבה יד אחת משקולת palms-up wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-arm_Cable_Pulley_Rows": {
+      "preferred": "בישיבה יד אחת כבל pulley rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Overhead_Stretch": {
+      "preferred": "בישיבה מעל הראש מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Palm-Up_Barbell_Wrist_Curl": {
+      "preferred": "בישיבה palm-up מוט wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Palms-Down_Barbell_Wrist_Curl": {
+      "preferred": "בישיבה palms-down מוט wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Side_Lateral_Raise": {
+      "preferred": "בישיבה צידי הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Triceps_Press": {
+      "preferred": "בישיבה triceps לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl": {
+      "preferred": "בישיבה שתי ידיים palms-up נמוך-pulley wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "See-Saw_Press_Alternating_Side_Press": {
+      "preferred": "See-saw לחיצה לסירוגין צידי לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shotgun_Row": {
+      "preferred": "Shotgun חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Circles": {
+      "preferred": "כתף circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Press_-_With_Bands": {
+      "preferred": "לחיצת כתפיים — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Raise": {
+      "preferred": "כתף הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Stretch": {
+      "preferred": "כתף מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Floor_Stretch": {
+      "preferred": "צידי-בשכיבה רצפה מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Bridge": {
+      "preferred": "צידי גשר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Hop-Sprint": {
+      "preferred": "צידי hop-sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Jackknife": {
+      "preferred": "צידי סכין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Lateral_Raise": {
+      "preferred": "צידי הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Laterals_to_Front_Raise": {
+      "preferred": "צידי laterals ל הרמה קדמית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Leg_Raises": {
+      "preferred": "צידי רגל raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Lying_Groin_Stretch": {
+      "preferred": "צידי בשכיבה groin מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Neck_Stretch": {
+      "preferred": "צידי צוואר מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Standing_Long_Jump": {
+      "preferred": "צידי בעמידה long קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_To_Side_Chins": {
+      "preferred": "צידי ל צידי chins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Wrist_Pull": {
+      "preferred": "צידי wrist משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_to_Side_Box_Shuffle": {
+      "preferred": "צידי ל צידי box shuffle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Cable_Crossover": {
+      "preferred": "יחיד-זרוע קרוסאובר בכבלים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Linear_Jammer": {
+      "preferred": "יחיד-זרוע linear jammer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Push-Up": {
+      "preferred": "יחיד-זרוע שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Cone_Sprint_Drill": {
+      "preferred": "יחיד-cone sprint drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_High_Box_Squat": {
+      "preferred": "יחיד-רגל גבוה box סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Hop_Progression": {
+      "preferred": "יחיד-רגל hop progression",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Lateral_Hop": {
+      "preferred": "יחיד-רגל lateral hop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Leg_Extension": {
+      "preferred": "יחיד-רגל פשיטת ברך",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Stride_Jump": {
+      "preferred": "יחיד-רגל stride קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Dumbbell_Raise": {
+      "preferred": "יחיד משקולת הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Butt_Kick": {
+      "preferred": "יחיד רגל butt kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Glute_Bridge": {
+      "preferred": "יחיד רגל גשר ישבן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Push-off": {
+      "preferred": "יחיד רגל דחיפה-off",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sit-Up": {
+      "preferred": "כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sit_Squats": {
+      "preferred": "Sit squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Skating": {
+      "preferred": "Skating",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Drag_-_Harness": {
+      "preferred": "מזחלת drag — harness",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Overhead_Backward_Walk": {
+      "preferred": "מזחלת מעל הראש backward walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Overhead_Triceps_Extension": {
+      "preferred": "מזחלת פשיטת מרפקים מעל הראש",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Push": {
+      "preferred": "מזחלת דחיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Reverse_Flye": {
+      "preferred": "מזחלת הפוך flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Row": {
+      "preferred": "מזחלת חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sledgehammer_Swings": {
+      "preferred": "Sledgehammer swings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Incline_Shoulder_Raise": {
+      "preferred": "Smith בשיפוע חיובי כתף הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Behind_the_Back_Shrug": {
+      "preferred": "Smith מכונה behind גב הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Bench_Press": {
+      "preferred": "Smith מכונה לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Bent_Over_Row": {
+      "preferred": "Smith מכונה בהטיית גו חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Calf_Raise": {
+      "preferred": "Smith מכונה הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Close-Grip_Bench_Press": {
+      "preferred": "Smith מכונה אחיזה צרה לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Decline_Press": {
+      "preferred": "Smith מכונה בשיפוע שלילי לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Hang_Power_Clean": {
+      "preferred": "Smith מכונה תלייה פאוור קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Hip_Raise": {
+      "preferred": "Smith מכונה אגן הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Incline_Bench_Press": {
+      "preferred": "Smith מכונה בשיפוע חיובי לחיצת חזה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Leg_Press": {
+      "preferred": "Smith מכונה לחיצת רגליים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_One-Arm_Upright_Row": {
+      "preferred": "Smith מכונה יד אחת חתירה זקופה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Overhead_Shoulder_Press": {
+      "preferred": "Smith מכונה מעל הראש לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Pistol_Squat": {
+      "preferred": "Smith מכונה pistol סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Reverse_Calf_Raises": {
+      "preferred": "Smith מכונה הפוך תאומים raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Squat": {
+      "preferred": "Smith מכונה סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Stiff-Legged_Deadlift": {
+      "preferred": "Smith מכונה stiff-legged דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Upright_Row": {
+      "preferred": "Smith מכונה חתירה זקופה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Single-Leg_Split_Squat": {
+      "preferred": "Smith יחיד-רגל סקוואט מפוצל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch": {
+      "preferred": "סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Balance": {
+      "preferred": "סנאץ׳ balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Deadlift": {
+      "preferred": "סנאץ׳ דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Pull": {
+      "preferred": "סנאץ׳ משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Shrug": {
+      "preferred": "סנאץ׳ הרחקת כתפיים כלפי מעלה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_from_Blocks": {
+      "preferred": "סנאץ׳ מ blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Band_Overhead_Triceps": {
+      "preferred": "Speed גומייה מעל הראש triceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Box_Squat": {
+      "preferred": "Speed box סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Squats": {
+      "preferred": "Speed squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spell_Caster": {
+      "preferred": "Spell caster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spider_Crawl": {
+      "preferred": "Spider crawl",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spider_Curl": {
+      "preferred": "Spider כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spinal_Stretch": {
+      "preferred": "Spinal מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Clean": {
+      "preferred": "מפוצל קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Jerk": {
+      "preferred": "מפוצל ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Jump": {
+      "preferred": "מפוצל קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Snatch": {
+      "preferred": "מפוצל סנאץ׳",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Squat_with_Dumbbells": {
+      "preferred": "סקוואט מפוצל עם dumbbells",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Squats": {
+      "preferred": "מפוצל squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_Jerk": {
+      "preferred": "סקוואט ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Bands": {
+      "preferred": "סקוואט עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Chains": {
+      "preferred": "סקוואט עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Plate_Movers": {
+      "preferred": "סקוואט עם plate movers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squats_-_With_Bands": {
+      "preferred": "Squats — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stairmaster": {
+      "preferred": "Stairmaster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Alternating_Dumbbell_Press": {
+      "preferred": "בעמידה לסירוגין משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Barbell_Calf_Raise": {
+      "preferred": "בעמידה מוט הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Barbell_Press_Behind_Neck": {
+      "preferred": "בעמידה מוט לחיצה behind צוואר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "בעמידה bent-over יד אחת משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "בעמידה bent-over שתי ידיים משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Biceps_Cable_Curl": {
+      "preferred": "בעמידה biceps כבל כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Biceps_Stretch": {
+      "preferred": "בעמידה biceps מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bradford_Press": {
+      "preferred": "בעמידה bradford לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Chest_Press": {
+      "preferred": "בעמידה כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Lift": {
+      "preferred": "בעמידה כבל lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Wood_Chop": {
+      "preferred": "בעמידה כבל wood chop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Calf_Raises": {
+      "preferred": "בעמידה תאומים raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Concentration_Curl": {
+      "preferred": "בעמידה concentration כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Calf_Raise": {
+      "preferred": "בעמידה משקולת הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Press": {
+      "preferred": "בעמידה משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Reverse_Curl": {
+      "preferred": "בעמידה משקולת הפוך כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head": {
+      "preferred": "בעמידה משקולת straight-זרוע קדמי delt הרמה above head",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Triceps_Extension": {
+      "preferred": "בעמידה משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Upright_Row": {
+      "preferred": "בעמידה משקולת חתירה זקופה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Elevated_Quad_Stretch": {
+      "preferred": "בעמידה elevated quad מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Front_Barbell_Raise_Over_Head": {
+      "preferred": "בעמידה קדמי מוט הרמה over head",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Gastrocnemius_Calf_Stretch": {
+      "preferred": "בעמידה gastrocnemius תאומים מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hamstring_and_Calf_Stretch": {
+      "preferred": "בעמידה hamstring ו תאומים מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Circles": {
+      "preferred": "בעמידה אגן circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexors": {
+      "preferred": "בעמידה אגן flexors",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Inner-Biceps_Curl": {
+      "preferred": "בעמידה inner-כפיפת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Lateral_Stretch": {
+      "preferred": "בעמידה lateral מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Leg_Curl": {
+      "preferred": "בעמידה כפיפת ברך",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Long_Jump": {
+      "preferred": "בעמידה long קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Low-Pulley_Deltoid_Raise": {
+      "preferred": "בעמידה נמוך-pulley דלתא הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Low-Pulley_One-Arm_Triceps_Extension": {
+      "preferred": "בעמידה נמוך-pulley יד אחת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Military_Press": {
+      "preferred": "בעמידה military לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Olympic_Plate_Hand_Squeeze": {
+      "preferred": "בעמידה olympic plate hand squeeze",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Cable_Curl": {
+      "preferred": "בעמידה יד אחת כבל כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench": {
+      "preferred": "בעמידה יד אחת משקולת כפיפה over בשיפוע חיובי ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "בעמידה יד אחת משקולת פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Overhead_Barbell_Triceps_Extension": {
+      "preferred": "בעמידה מעל הראש מוט פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palm-In_One-Arm_Dumbbell_Press": {
+      "preferred": "בעמידה palm-in יד אחת משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palms-In_Dumbbell_Press": {
+      "preferred": "בעמידה palms-in משקולת לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl": {
+      "preferred": "בעמידה palms-up מוט behind גב wrist כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Pelvic_Tilt": {
+      "preferred": "בעמידה pelvic tilt",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Rope_Crunch": {
+      "preferred": "בעמידה חבל כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Soleus_And_Achilles_Stretch": {
+      "preferred": "בעמידה soleus ו achilles מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Touches": {
+      "preferred": "בעמידה toe touches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Towel_Triceps_Extension": {
+      "preferred": "בעמידה towel פשיטת מרפקים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Two-Arm_Overhead_Throw": {
+      "preferred": "בעמידה שתי ידיים מעל הראש throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Star_Jump": {
+      "preferred": "Star קפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Step-up_with_Knee_Raise": {
+      "preferred": "Step-up עם knee הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Step_Mill": {
+      "preferred": "Step mill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff-Legged_Barbell_Deadlift": {
+      "preferred": "Stiff-legged מוט דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff-Legged_Dumbbell_Deadlift": {
+      "preferred": "Stiff-legged משקולת דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff_Leg_Barbell_Good_Morning": {
+      "preferred": "Stiff רגל מוט בוקר טוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stomach_Vacuum": {
+      "preferred": "Stomach vacuum",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight-Arm_Dumbbell_Pullover": {
+      "preferred": "Straight-זרוע משקולת פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight-Arm_Pulldown": {
+      "preferred": "Straight-זרוע pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight_Bar_Bench_Mid_Rows": {
+      "preferred": "Straight bar ספסל mid rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight_Raises_on_Incline_Bench": {
+      "preferred": "Straight raises על בשיפוע חיובי ספסל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stride_Jump_Crossover": {
+      "preferred": "Stride קפיצה crossover",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift": {
+      "preferred": "Sumo דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift_with_Bands": {
+      "preferred": "Sumo דדליפט עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift_with_Chains": {
+      "preferred": "Sumo דדליפט עם chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Superman": {
+      "preferred": "Superman",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Chest_Throw": {
+      "preferred": "Supine חזה throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_One-Arm_Overhead_Throw": {
+      "preferred": "Supine יד אחת מעל הראש throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Two-Arm_Overhead_Throw": {
+      "preferred": "Supine שתי ידיים מעל הראש throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Fallout": {
+      "preferred": "תלוי fallout",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Push-Up": {
+      "preferred": "תלוי שכיבות סמיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Reverse_Crunch": {
+      "preferred": "תלוי הפוך כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Row": {
+      "preferred": "תלוי חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Split_Squat": {
+      "preferred": "תלוי סקוואט מפוצל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Svend_Press": {
+      "preferred": "Svend לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "T-Bar_Row_with_Handle": {
+      "preferred": "T-bar חתירה עם handle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tate_Press": {
+      "preferred": "Tate לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "The_Straddle": {
+      "preferred": "Straddle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Thigh_Abductor": {
+      "preferred": "Thigh abductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Thigh_Adductor": {
+      "preferred": "Thigh adductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tire_Flip": {
+      "preferred": "Tire flip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Toe_Touchers": {
+      "preferred": "Toe touchers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Torso_Rotation": {
+      "preferred": "Torso סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Trail_Running_Walking": {
+      "preferred": "Trail running/walking",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Trap_Bar_Deadlift": {
+      "preferred": "Trap bar דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tricep_Dumbbell_Kickback": {
+      "preferred": "תלת-ראשי משקולת kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tricep_Side_Stretch": {
+      "preferred": "תלת-ראשי צידי מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Overhead_Extension_with_Rope": {
+      "preferred": "Triceps מעל הראש פשיטה עם חבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown": {
+      "preferred": "פשיטת מרפקים בפולי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown_-_Rope_Attachment": {
+      "preferred": "פשיטת מרפקים בפולי — חבל attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown_-_V-Bar_Attachment": {
+      "preferred": "פשיטת מרפקים בפולי — v-bar attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Stretch": {
+      "preferred": "Triceps מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tuck_Crunch": {
+      "preferred": "Tuck כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Dumbbell_Preacher_Curl": {
+      "preferred": "שתי ידיים משקולת preacher כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Clean": {
+      "preferred": "שתי ידיים קטלבל קלין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Jerk": {
+      "preferred": "שתי ידיים קטלבל ג'רק",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Military_Press": {
+      "preferred": "שתי ידיים קטלבל military לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Row": {
+      "preferred": "שתי ידיים קטלבל חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Underhand_Cable_Pulldowns": {
+      "preferred": "Underhand כבל pulldowns",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upper_Back-Leg_Grab": {
+      "preferred": "Upper גב-רגל grab",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upper_Back_Stretch": {
+      "preferred": "Upper גב מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Barbell_Row": {
+      "preferred": "Upright חתירה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Cable_Row": {
+      "preferred": "Upright חתירה בכבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Row_-_With_Bands": {
+      "preferred": "חתירה זקופה — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upward_Stretch": {
+      "preferred": "Upward מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Bar_Pulldown": {
+      "preferred": "V-bar pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Bar_Pullup": {
+      "preferred": "V-bar pullup",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Vertical_Swing": {
+      "preferred": "Vertical הנפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Walking_Treadmill": {
+      "preferred": "Walking, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Ball_Hyperextension": {
+      "preferred": "עם משקל ball hyperextension",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Ball_Side_Bend": {
+      "preferred": "עם משקל ball כפיפה צידית",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Bench_Dip": {
+      "preferred": "עם משקל ספסל dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Crunches": {
+      "preferred": "עם משקל crunches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Jump_Squat": {
+      "preferred": "עם משקל סקוואט בקפיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Pull_Ups": {
+      "preferred": "עם משקל משיכה ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Sissy_Squat": {
+      "preferred": "עם משקל sissy סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Sit-Ups_-_With_Bands": {
+      "preferred": "עם משקל sit-ups — עם גומיות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Squat": {
+      "preferred": "עם משקל סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Barbell_Bench_Press": {
+      "preferred": "אחיזה רחבה לחיצת חזה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Decline_Barbell_Bench_Press": {
+      "preferred": "אחיזה רחבה בשיפוע שלילי לחיצת חזה עם מוט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Decline_Barbell_Pullover": {
+      "preferred": "אחיזה רחבה בשיפוע שלילי מוט פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Lat_Pulldown": {
+      "preferred": "אחיזה רחבה משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Pulldown_Behind_The_Neck": {
+      "preferred": "אחיזה רחבה pulldown מאחורי העורף",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Rear_Pull-Up": {
+      "preferred": "אחיזה רחבה אחורי מתח",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Standing_Barbell_Curl": {
+      "preferred": "אחיזה רחבה בעמידה מוט כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide_Stance_Barbell_Squat": {
+      "preferred": "Wide stance מוט סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide_Stance_Stiff_Legs": {
+      "preferred": "Wide stance stiff רגליים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wind_Sprints": {
+      "preferred": "Wind sprints",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Windmills": {
+      "preferred": "Windmills",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Worlds_Greatest_Stretch": {
+      "preferred": "World's greatest מתיחה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Circles": {
+      "preferred": "Wrist circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Roller": {
+      "preferred": "Wrist roller",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Rotations_with_Straight_Bar": {
+      "preferred": "Wrist rotations עם straight bar",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Yoke_Walk": {
+      "preferred": "Yoke walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zercher_Squats": {
+      "preferred": "Zercher squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zottman_Curl": {
+      "preferred": "Zottman כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zottman_Preacher_Curl": {
+      "preferred": "Zottman preacher כפיפה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Push_Pull": {
+      "preferred": "כבל דחיפה-משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Rotation": {
+      "preferred": "בעמידה כבל סיבוב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Half-Kneeling_Cable_Lift": {
+      "preferred": "Half-בכריעה כבל lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Chop": {
+      "preferred": "בכריעה כבל chop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_High_Pull": {
+      "preferred": "כבל גבוה משיכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Cable_Row": {
+      "preferred": "בעמידה יד אחת חתירה בכבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Bent-Over_Cable_Row": {
+      "preferred": "יד אחת bent-over חתירה בכבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Cable_Lat_Pulldown": {
+      "preferred": "לסירוגין כבל משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Seated_High-to-Low_Cable_Row": {
+      "preferred": "לסירוגין בישיבה גבוה-ל-נמוך חתירה בכבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Flat-Bench_Cable_Chest_Press": {
+      "preferred": "לסירוגין flat-ספסל כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Incline_Cable_Chest_Press": {
+      "preferred": "לסירוגין בשיפוע חיובי כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Diagonal_Cable_Chest_Press": {
+      "preferred": "בעמידה diagonal כבל לחיצת חזה במכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Shoulder_Press": {
+      "preferred": "בכריעה כבל לחיצת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Curl-to-Press": {
+      "preferred": "כבל כפיפה-ל-לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Flexion": {
+      "preferred": "כבל אגן flexion",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Abduction": {
+      "preferred": "כבל אגן abduction",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Standing_Leg_Curl": {
+      "preferred": "כבל בעמידה כפיפת ברך",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Extension": {
+      "preferred": "כבל אגן פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Squat": {
+      "preferred": "כבל סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Front_Squat": {
+      "preferred": "כבל סקוואט קדמי",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Squat-to-Press": {
+      "preferred": "כבל סקוואט-ל-לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Forward_Lunge": {
+      "preferred": "כבל forward מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Lateral_Lunge": {
+      "preferred": "כבל lateral מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Step-Up": {
+      "preferred": "כבל step-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crossover_Step-Up": {
+      "preferred": "קרוסאובר בכבלים step-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Single-Arm_Cable_Romanian_Deadlift": {
+      "preferred": "יחיד-רגל יחיד-זרוע כבל romanian דדליפט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Jump_Slam": {
+      "preferred": "כבל קפיצה slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Plank_with_Cable_Row": {
+      "preferred": "צידי פלאנק עם חתירה בכבל",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Alternating_Jackknife": {
+      "preferred": "כבל לסירוגין סכין",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Calf-Box_Raise": {
+      "preferred": "כבל תאומים-box הרמה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Lat_Pulldown": {
+      "preferred": "מכונה משיכה עליונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Seated_Row": {
+      "preferred": "מכונה בישיבה חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Low_Row": {
+      "preferred": "מכונה נמוך חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_High_Row": {
+      "preferred": "מכונה גבוה חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Chest-Supported_Row": {
+      "preferred": "מכונה חזה-supported חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Diverging_Row": {
+      "preferred": "מכונה diverging חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Pullover": {
+      "preferred": "מכונה פולאובר",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Back_Extension": {
+      "preferred": "מכונה גב פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Rotary_Torso": {
+      "preferred": "מכונה rotary torso",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Oblique_Crunch": {
+      "preferred": "מכונה oblique כפיפות בטן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Glute_Extension": {
+      "preferred": "מכונה ישבן פשיטה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Hip_Thrust": {
+      "preferred": "מכונה דחיקת אגן",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Belt_Squat": {
+      "preferred": "Belt סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Squat": {
+      "preferred": "V-סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pendulum_Squat": {
+      "preferred": "Pendulum סקוואט",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_Press_Machine": {
+      "preferred": "מכונה סקוואט לחיצה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat-Lunge_Machine": {
+      "preferred": "מכונה סקוואט-מכרע",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_T-Bar_Row": {
+      "preferred": "מכונה t-bar חתירה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Standing_Lateral_Raise": {
+      "preferred": "מכונה בעמידה הרחקת כתפיים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Assisted_Dip": {
+      "preferred": "Assisted dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Assisted_Chin-Up": {
+      "preferred": "Assisted מתח באחיזה הפוכה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Four-Way_Neck_Machine": {
+      "preferred": "Four-way צוואר מכונה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Tibialis_Dorsiflexion": {
+      "preferred": "מכונה tibialis dorsiflexion",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Horizontal_Calf_Raise": {
+      "preferred": "מכונה horizontal הרמת תאומים",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    }
+  }
+}
