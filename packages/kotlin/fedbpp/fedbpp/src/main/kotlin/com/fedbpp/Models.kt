@@ -1,6 +1,8 @@
 package com.fedbpp
 
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 import java.util.Locale
 
 @Serializable data class ExerciseAnnotation(
