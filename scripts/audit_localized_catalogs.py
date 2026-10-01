@@ -60,11 +60,14 @@ def audit(root: Path) -> tuple[str, int]:
         catalog = json.loads((root / manifest["catalogs"][locale]).read_text(encoding="utf-8"))
         flags = []
         untranslated = []
+        unchanged = []
         counts = {"reviewed": 0, "provisional": 0, "untranslated": 0}
         for exercise_id, entry in catalog["exercises"].items():
             status = entry["reviewStatus"]
             counts[status] += 1
             source = db["exercises"][exercise_id]["source"]["name"]
+            if status != "untranslated" and norm(entry["preferred"]) == norm(source):
+                unchanged.append((exercise_id, entry["preferred"]))
             if status == "untranslated":
                 untranslated.append((exercise_id, entry["preferred"]))
                 if norm(entry["preferred"]) != norm(source):
@@ -94,6 +97,17 @@ def audit(root: Path) -> tuple[str, int]:
             lines.append("")
         else:
             lines.append("No automated fallback/composition flags.")
+            lines.append("")
+        lines.append(
+            f"Unchanged spelling candidates: {len(unchanged)}. "
+            "These are explicit international/proper-term candidates, not proof that a native translation is unnecessary."
+        )
+        lines.append("")
+        if unchanged:
+            lines.append("| exerciseId | unchanged preferred name |")
+            lines.append("|---|---|")
+            for exercise_id, preferred in unchanged:
+                lines.append(f"| `{exercise_id}` | {preferred.replace('|', '\\|')} |")
             lines.append("")
         lines.append(f"Untranslated fallback entries: {len(untranslated)}. These remain English source names and require target-language review before being called localized.")
         lines.append("")
