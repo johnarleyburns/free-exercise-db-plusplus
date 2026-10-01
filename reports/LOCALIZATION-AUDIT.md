@@ -60,38 +60,38 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 35. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 493 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `crunch` (18), `wrist` (15), `a` (10), `curls` (9), `hamstring` (8), `shrug` (8), `triceps` (8), `bar` (7), `bent-over` (7), `knee` (7), `leverage` (7), `plate` (7), `preacher` (7), `raises` (7), `rotation` (7), `throw` (7), `ball` (6), `box` (6), `chains` (6), `morning` (6).
+Semantic review candidates: 286 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `crunch` (16), `rotation` (7), `morning` (6), `ball` (5), `curls` (5), `shrug` (5), `box` (4), `chair` (4), `crunches` (4), `flat` (4), `groin` (4), `lateral` (4), `push` (4), `sit-up` (4), `split` (4), `sumo` (4), `supine` (4), `attachment` (3), `balance` (3), `body` (3).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
 | `3_4_Sit-Up` | 3/4-Sit-up | sit-up |
-| `Ab_Crunch_Machine` | Bauch Crunch Maschine | crunch |
-| `Ab_Roller` | Bauch roller | roller |
-| `All_Fours_Quad_Stretch` | All fours quad Dehnung | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | Bein diagonal bound abwechselnd | bound, diagonal |
-| `Alternating_Renegade_Row` | Renegade Rudern abwechselnd | renegade |
-| `Ankle_On_The_Knee` | Ankle auf der knee | ankle, knee |
-| `Anti-Gravity_Press` | Anti-gravity Drücken | anti-gravity |
-| `Around_The_Worlds` | Around der worlds | around, worlds |
-| `Axle_Deadlift` | Axle Kreuzheben | axle |
-| `Backward_Medicine_Ball_Throw` | Backward Medizinball throw | backward, throw |
-| `Ball_Leg_Curl` | Ball Beinbeugen | ball |
-| `Band_Assisted_Pull-Up` | Band assisted Klimmzug | assisted |
+| `Ball_Leg_Curl` | Beinbeugen mit dem Ball | ball |
 | `Band_Good_Morning` | Good Morning mit Band | morning |
-| `Band_Good_Morning_Pull_Through` | Band Good Morning Ziehen through | morning, through |
-| `Band_Hip_Adductions` | Band Hüfte adductions | adductions |
-| `Band_Pull_Apart` | Band Ziehen apart | apart |
-| `Barbell_Ab_Rollout` | Rollout mit der Langhantel | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | Bauch rollout — auf knees mit Langhantel | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | Curls liegend against an Schräg mit Langhantel | against, an, curls |
+| `Band_Good_Morning_Pull_Through` | Good Morning mit Band und Hüftstreckung | morning |
+| `Barbell_Curls_Lying_Against_An_Incline` | Langhantelcurls im Liegen an der Schrägbank | an |
 | `Barbell_Glute_Bridge` | Glute Bridge mit Langhantel | bridge, glute |
-| `Barbell_Guillotine_Bench_Press` | Guillotine Bankdrücken mit Langhantel | guillotine |
 | `Barbell_Hack_Squat` | Hack Kniebeuge mit Langhantel | hack |
 | `Barbell_Hip_Thrust` | Hip Thrust mit Langhantel | thrust |
-| `Barbell_Rear_Delt_Row` | Hinteres delt Rudern mit Langhantel | delt |
+| `Barbell_Side_Split_Squat` | Seitlicher Split Squat mit Langhantel | split |
+| `Bench_Dips` | Dips an der Bank | dips |
+| `Bench_Press_-_Powerlifting` | Bankdrücken — Powerlifting | powerlifting |
+| `Bench_Sprint` | Bank Sprint | sprint |
+| `Bent_Press` | Seitliches Drücken (Bent Press) | bent |
+| `Board_Press` | Board Drücken | board |
+| `Body_Tricep_Press` | Body Trizeps Drücken | body |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Bosu Ball Kabel Crunch mit seitlich bends | ball, bends, bosu, crunch |
+| `Bottoms-Up_Clean_From_The_Hang_Position` | Bottoms-up Umsetzen aus der Hängen position | bottoms-up, position |
+| `Box_Squat` | Box Kniebeuge | box |
+| `Box_Squat_with_Bands` | Box Kniebeuge mit Bänder | box |
+| `Brachialis-SMR` | Brachialis-SMR | brachialis-smr |
+| `Butt_Lift_Bridge` | Butt Heben Brücke | butt |
+| `Butterfly` | Butterfly | butterfly |
+| `Cable_Crunch` | Kabel Crunch | crunch |
+| `Cable_Deadlifts` | Kabel deadlifts | deadlifts |
+| `Cable_Hammer_Curls_-_Rope_Attachment` | Kabel hammer Curls — Seil attachment | attachment, curls |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -100,11 +100,11 @@ First semantic-review candidates:
 | `Bottoms_Up` | Bottoms-up |
 | `Brachialis-SMR` | Brachialis-SMR |
 | `Butterfly` | Butterfly |
-| `Cross_Body_Hammer_Curl` | Cross body Hammercurl |
 | `Crunches` | Crunches |
 | `Dead_Bug` | Dead Bug |
 | `Drag_Curl` | Drag-Curl |
 | `Farmers_Walk` | Farmer's Walk |
+| `Glute_Ham_Raise` | Glute-Ham-Raise |
 | `Good_Morning` | Good Morning |
 | `Hammer_Curls` | Hammercurls |
 | `Janda_Sit-Up` | Janda-Sit-up |
@@ -113,10 +113,10 @@ First semantic-review candidates:
 | `London_Bridges` | London Bridges |
 | `Monster_Walk` | Monster Walk |
 | `Muscle_Up` | Muscle-up |
+| `Natural_Glute_Ham_Raise` | Natural Glute-Ham-Raise |
 | `Otis-Up` | Otis-up |
 | `Piriformis-SMR` | Piriformis-SMR |
 | `Plank` | Plank |
-| `Power_Stairs` | Power Stairs |
 | `Preacher_Curl` | Preacher-Curl |
 | `Prowler_Sprint` | Prowler-Sprint |
 | `Push_Press` | Push Press |
