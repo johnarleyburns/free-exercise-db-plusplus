@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:37:42.690033+00:00",
+    "generatedAt": "2026-10-01T16:39:09.869482+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1218,11 +1218,11 @@
         },
         "hi": {
           "source": "translations/hi.json",
-          "sha256": "95460d04baf1adc2bfcd85fd4c782c37b17097b51e8d4f3c630a5a4217261cec",
+          "sha256": "e02fef7a4167e47b44583956bf92bb4b203c1dd16b2a7c80f85b79adbbd5e9ae",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 800,
-          "untranslatedCount": 127
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         },
         "ar": {
           "source": "translations/ar.json",
@@ -1581,12 +1581,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "90/90 hamstring",
+          "preferred": "90/90 हैमस्ट्रिंग स्ट्रेच",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "90/90 hamstring",
@@ -2084,12 +2084,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Adductor",
+          "preferred": "एडक्टर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Adductor",
@@ -2248,12 +2248,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Adductor/groin",
+          "preferred": "एडक्टर/ग्रोइन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Adductor/groin",
@@ -2598,12 +2598,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Air bike",
+          "preferred": "एयर बाइक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Air bike",
@@ -4845,12 +4845,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Ankle circles",
+          "preferred": "टखने घुमाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Ankle circles",
@@ -5170,12 +5170,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "एंटीरियर टिबियलिस SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Anterior tibialis-smr",
@@ -6045,12 +6045,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "एटलस स्टोन प्रशिक्षण",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Atlas stone trainer",
@@ -6238,12 +6238,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Atlas stones",
+          "preferred": "एटलस स्टोन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Atlas stones",
@@ -6782,12 +6782,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Backward drag",
+          "preferred": "पीछे की ओर खींचना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Backward drag",
@@ -7112,12 +7112,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Balance board",
+          "preferred": "बैलेंस बोर्ड",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Balance board",
@@ -13078,12 +13078,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Battling ropes",
+          "preferred": "बैटल रोप्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Battling ropes",
@@ -16586,12 +16586,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Bicycling",
+          "preferred": "साइक्लिंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Bicycling",
@@ -16752,12 +16752,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "स्टेशनरी साइकिल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Bicycling, stationary",
@@ -17101,12 +17101,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Body-up",
+          "preferred": "बॉडी-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Body-up",
@@ -18496,12 +18496,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Bottoms up",
+          "preferred": "बॉटम्स-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Bottoms up",
@@ -18836,12 +18836,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Box skip",
+          "preferred": "बॉक्स स्किप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Box skip",
@@ -19548,12 +19548,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Brachialis-smr",
+          "preferred": "ब्रैकियलिस SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Brachialis-smr",
@@ -19724,12 +19724,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "ब्रैडफोर्ड/रॉकी प्रेस",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Bradford/rocky presses",
@@ -19893,12 +19893,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Butt-ups",
+          "preferred": "ग्लूट लिफ्ट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Butt-ups",
@@ -20237,12 +20237,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Butterfly",
+          "preferred": "बटरफ्लाई",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Butterfly",
@@ -25700,12 +25700,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Calves-smr",
+          "preferred": "पिंडली की SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Calves-smr",
@@ -26054,12 +26054,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Car drivers",
+          "preferred": "कार ड्राइवर्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Car drivers",
@@ -26224,12 +26224,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Carioca quick step",
+          "preferred": "कैरिओका क्विक स्टेप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Carioca quick step",
@@ -28741,12 +28741,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Child's pose",
+          "preferred": "बालासन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "وضعية الطفل",
@@ -29272,12 +29272,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Circus bell",
+          "preferred": "सर्कस बेल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Circus bell",
@@ -32328,12 +32328,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Cocoons",
+          "preferred": "कोकून",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Cocoons",
@@ -32514,12 +32514,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Conan's wheel",
+          "preferred": "कोनन व्हील",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Conan's wheel",
@@ -32687,12 +32687,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Concentration curls",
+          "preferred": "कंसंट्रेशन कर्ल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Concentration curls",
@@ -33541,12 +33541,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Crucifix",
+          "preferred": "क्रूसिफिक्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Crucifix",
@@ -34051,12 +34051,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Crunches",
+          "preferred": "क्रंच",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "الطحن",
@@ -34560,12 +34560,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Dead bug",
+          "preferred": "डेड बग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Dead bug",
@@ -37699,12 +37699,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Dips — triceps version",
+          "preferred": "ट्राइसेप्स डिप्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Dips — triceps version",
@@ -39123,12 +39123,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Downward facing balance",
+          "preferred": "पेट के बल संतुलन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Downward facing balance",
@@ -45510,12 +45510,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Elbow circles",
+          "preferred": "कोहनी घुमाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Elbow circles",
@@ -46365,12 +46365,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Elliptical trainer",
+          "preferred": "एलिप्टिकल मशीन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Elliptical trainer",
@@ -47739,12 +47739,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Farmer's walk",
+          "preferred": "किसान चाल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Farmer's walk",
@@ -47908,12 +47908,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Fast skipping",
+          "preferred": "तेज़ रस्सी कूद",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Fast skipping",
@@ -48078,12 +48078,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Finger curls",
+          "preferred": "उंगली कर्ल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Finger curls",
@@ -49459,12 +49459,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Flutter kicks",
+          "preferred": "फ्लटर किक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Flutter kicks",
@@ -49621,12 +49621,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Foot-smr",
+          "preferred": "पैर की SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Foot-smr",
@@ -50338,12 +50338,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Frog hops",
+          "preferred": "मेंढक छलांग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Frog hops",
@@ -50509,12 +50509,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Frog sit-ups",
+          "preferred": "मेंढक सिट-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Frog sit-ups",
@@ -53098,12 +53098,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "गिरोंडा स्टर्नम चिन-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Gironda sternum chins",
@@ -54477,12 +54477,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Groiners",
+          "preferred": "ग्रोइन डायनेमिक स्ट्रेच",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Groiners",
@@ -54827,12 +54827,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Hammer curls",
+          "preferred": "हैमर कर्ल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Hammer curls",
@@ -55167,12 +55167,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Hamstring-smr",
+          "preferred": "हैमस्ट्रिंग SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Hamstring-smr",
@@ -56784,12 +56784,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Hanging pike",
+          "preferred": "हैंगिंग पाइक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Hanging pike",
@@ -57136,12 +57136,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "भारी बैग थ्रस्ट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Heavy bag thrust",
@@ -58158,12 +58158,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Hug a ball",
+          "preferred": "बॉल को गले लगाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Hug a ball",
@@ -58493,12 +58493,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Hurdle hops",
+          "preferred": "हर्डल हॉप्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Hurdle hops",
@@ -59169,12 +59169,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "इलियोटिबियल ट्रैक्ट SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Iliotibial tract-smr",
@@ -59334,12 +59334,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Inchworm",
+          "preferred": "इंचवर्म",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Inchworm",
@@ -63304,12 +63304,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Iron cross",
+          "preferred": "आयरन क्रॉस",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Iron cross",
@@ -64150,12 +64150,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Isometric wipers",
+          "preferred": "आइसोमेट्रिक वाइपर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Isometric wipers",
@@ -64845,12 +64845,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Jefferson squats",
+          "preferred": "जेफरसन स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Jefferson squats",
@@ -65372,12 +65372,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "ट्रेडमिल जॉगिंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Jogging, treadmill",
@@ -65565,12 +65565,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Keg load",
+          "preferred": "केग उठाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Keg load",
@@ -68437,12 +68437,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Kipping muscle up",
+          "preferred": "किपिंग मसल-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Kipping muscle up",
@@ -68768,12 +68768,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Knee circles",
+          "preferred": "घुटने घुमाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Knee circles",
@@ -70829,12 +70829,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Landmine 180's",
+          "preferred": "लैंडमाइन 180 डिग्री घुमाव",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Landmine 180's",
@@ -71015,12 +71015,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "लैंडमाइन लीनियर जैमर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Landmine linear jammer",
@@ -71186,12 +71186,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Lateral bound",
+          "preferred": "लेटरल बाउंड",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Lateral bound",
@@ -71527,12 +71527,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Lateral cone hops",
+          "preferred": "लेटरल कोन हॉप्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Lateral cone hops",
@@ -71859,12 +71859,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "लैटिसिमस डॉर्सी SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Latissimus dorsi-smr",
@@ -74444,12 +74444,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "लीनियर 3-पार्ट स्टार्ट तकनीक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Linear 3-part start technique",
@@ -74612,12 +74612,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "दीवार पर लीनियर एक्सेलेरेशन ड्रिल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Linear acceleration wall drill",
@@ -74972,12 +74972,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Log lift",
+          "preferred": "लॉग लिफ्ट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Log lift",
@@ -75144,12 +75144,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "London bridges",
+          "preferred": "लंदन ब्रिज",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "London bridges",
@@ -75306,12 +75306,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Looking at ceiling",
+          "preferred": "छत की ओर देखना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Looking at ceiling",
@@ -81956,12 +81956,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Mixed grip chin",
+          "preferred": "मिक्स्ड ग्रिप चिन-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Mixed grip chin",
@@ -82125,12 +82125,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Monster walk",
+          "preferred": "मॉन्स्टर वॉक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Monster walk",
@@ -82291,12 +82291,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Mountain climbers",
+          "preferred": "माउंटेन क्लाइंबर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "متسلقو الجبال",
@@ -82457,12 +82457,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Moving claw series",
+          "preferred": "मूविंग क्लॉ सीरीज़",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Moving claw series",
@@ -82834,12 +82834,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Muscle up",
+          "preferred": "मसल-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Muscle up",
@@ -83014,12 +83014,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "नैरो स्टांस हैक स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Narrow stance hack squats",
@@ -83371,12 +83371,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Narrow stance squats",
+          "preferred": "नैरो स्टांस स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Narrow stance squats",
@@ -84054,12 +84054,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Oblique crunches",
+          "preferred": "ऑब्लिक क्रंच",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Oblique crunches",
@@ -90378,12 +90378,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "One half locust",
+          "preferred": "हाफ लोकस्ट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "One half locust",
@@ -91244,12 +91244,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Otis-up",
+          "preferred": "ओटिस-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Otis-up",
@@ -93485,12 +93485,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Parallel bar dip",
+          "preferred": "पैरेलल बार डिप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Parallel bar dip",
@@ -93810,12 +93810,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Peroneals-smr",
+          "preferred": "पेरोनियल SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Peroneals-smr",
@@ -94326,12 +94326,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Pin presses",
+          "preferred": "पिन प्रेस",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Pin presses",
@@ -94488,12 +94488,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Piriformis-smr",
+          "preferred": "पिरिफॉर्मिस SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Piriformis-smr",
@@ -94825,12 +94825,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Plate pinch",
+          "preferred": "प्लेट पिंच",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Plate pinch",
@@ -95166,12 +95166,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "प्लेटफॉर्म हैमस्ट्रिंग स्लाइड",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Platform hamstring slides",
@@ -97861,12 +97861,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "प्रोन मैनुअल हैमस्ट्रिंग व्यायाम",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Prone manual hamstring",
@@ -98031,12 +98031,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Prowler sprint",
+          "preferred": "प्रॉलर स्प्रिंट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Prowler sprint",
@@ -98381,12 +98381,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Pullups",
+          "preferred": "पुल-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Pullups",
@@ -99791,12 +99791,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Pushups",
+          "preferred": "पुश-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Pushups",
@@ -100129,12 +100129,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Pyramid",
+          "preferred": "पिरामिड",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Pyramid",
@@ -100453,12 +100453,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "क्वाड्रिसेप्स SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Quadriceps-smr",
@@ -100620,12 +100620,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Quick leap",
+          "preferred": "क्विक लीप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Quick leap",
@@ -100804,12 +100804,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Rack delivery",
+          "preferred": "रैक डिलीवरी",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Rack delivery",
@@ -101165,12 +101165,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Rack pulls",
+          "preferred": "रैक पुल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Rack pulls",
@@ -101494,12 +101494,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Recumbent bike",
+          "preferred": "रिकम्बेंट बाइक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Recumbent bike",
@@ -104824,12 +104824,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "रॉम्बॉइड्स SMR",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Rhomboids-smr",
@@ -105007,12 +105007,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Rickshaw carry",
+          "preferred": "रिक्शा कैरी",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Rickshaw carry",
@@ -105365,12 +105365,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Ring dips",
+          "preferred": "रिंग डिप्स",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Ring dips",
@@ -107266,12 +107266,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Rowing, stationary",
+          "preferred": "स्टेशनरी रोइंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Rowing, stationary",
@@ -107597,12 +107597,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Running, treadmill",
+          "preferred": "ट्रेडमिल रनिंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Running, treadmill",
@@ -107961,12 +107961,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Sandbag load",
+          "preferred": "सैंडबैग उठाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Sandbag load",
@@ -108301,12 +108301,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Scissor kick",
+          "preferred": "सिज़र किक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Scissor kick",
@@ -120352,12 +120352,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Sit squats",
+          "preferred": "सिट स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Sit squats",
@@ -120520,12 +120520,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Skating",
+          "preferred": "स्केटर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Skating",
@@ -121751,12 +121751,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "स्लेजहैमर स्विंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Sledgehammer swings",
@@ -126742,12 +126742,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Speed squats",
+          "preferred": "स्पीड स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Speed squats",
@@ -126913,12 +126913,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Spell caster",
@@ -127092,12 +127092,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Spider crawl",
+          "preferred": "स्पाइडर क्रॉल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Spider crawl",
@@ -129597,12 +129597,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Stairmaster",
@@ -137928,12 +137928,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Step mill",
+          "preferred": "स्टेप मिल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Step mill",
@@ -138630,12 +138630,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Stomach vacuum",
+          "preferred": "स्टमक वैक्यूम",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Stomach vacuum",
@@ -140228,12 +140228,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Superman",
+          "preferred": "सुपरमैन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Superman",
@@ -142463,12 +142463,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Thigh abductor",
+          "preferred": "जांघ का एब्डक्शन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Thigh abductor",
@@ -142634,12 +142634,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Thigh adductor",
+          "preferred": "जांघ का एडडक्शन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Thigh adductor",
@@ -142826,12 +142826,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Tire flip",
+          "preferred": "टायर पलटना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Tire flip",
@@ -142992,12 +142992,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Toe touchers",
+          "preferred": "पैर की उंगलियों को छूना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Toe touchers",
@@ -143320,12 +143320,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Trail running/walking",
+          "preferred": "ट्रेल रनिंग/वॉकिंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Trail running/walking",
@@ -147098,12 +147098,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "V-bar pulldown",
+          "preferred": "V-बार पुलडाउन",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "V-bar pulldown",
@@ -147276,12 +147276,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "V-bar pullup",
+          "preferred": "V-बार पुल-अप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "V-bar pullup",
@@ -147610,12 +147610,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Walking, treadmill",
+          "preferred": "ट्रेडमिल वॉकिंग",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Walking, treadmill",
@@ -150937,12 +150937,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Wind sprints",
+          "preferred": "विंड स्प्रिंट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Wind sprints",
@@ -151104,12 +151104,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Windmills",
+          "preferred": "विंडमिल",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Windmills",
@@ -151434,12 +151434,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Wrist circles",
+          "preferred": "कलाई घुमाना",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Wrist circles",
@@ -151605,12 +151605,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Wrist roller",
+          "preferred": "रिस्ट रोलर",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Wrist roller",
@@ -151957,12 +151957,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Yoke walk",
+          "preferred": "योक वॉक",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Yoke walk",
@@ -152138,12 +152138,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Zercher squats",
+          "preferred": "ज़रचर स्क्वाट",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Zercher squats",
@@ -161129,12 +161129,12 @@
           "reviewStatus": "provisional"
         },
         "hi": {
-          "preferred": "Assisted dip",
+          "preferred": "असिस्टेड डिप",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ar": {
           "preferred": "Assisted dip",
