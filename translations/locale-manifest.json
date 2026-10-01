@@ -15,7 +15,8 @@
     "ar",
     "he",
     "ru",
-    "nl"
+    "nl",
+    "it"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
@@ -31,6 +32,7 @@
     "ar": "translations/ar.json",
     "he": "translations/he.json",
     "ru": "translations/ru.json",
-    "nl": "translations/nl.json"
+    "nl": "translations/nl.json",
+    "it": "translations/it.json"
   }
 }
