@@ -5,7 +5,7 @@
       "preferred": "3/4 仰卧起坐",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -26,7 +26,7 @@
       "reviewStatus": "provisional"
     },
     "Ab_Roller": {
-      "preferred": "腹部 roller",
+      "preferred": "健腹轮",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -50,7 +50,7 @@
       "reviewStatus": "provisional"
     },
     "Advanced_Kettlebell_Windmill": {
-      "preferred": "Advanced 壶铃 windmill",
+      "preferred": "高级壶铃风车",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -66,7 +66,7 @@
       "reviewStatus": "provisional"
     },
     "All_Fours_Quad_Stretch": {
-      "preferred": "All fours quad 拉伸",
+      "preferred": "四点跪姿股四头肌拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -82,10 +82,10 @@
       "reviewStatus": "provisional"
     },
     "Alternate_Heel_Touchers": {
-      "preferred": "交替 触踵",
+      "preferred": "交替触脚跟",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -98,7 +98,7 @@
       "reviewStatus": "provisional"
     },
     "Alternate_Leg_Diagonal_Bound": {
-      "preferred": "交替 腿 diagonal bound",
+      "preferred": "交替单腿对角跳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -170,7 +170,7 @@
       "reviewStatus": "provisional"
     },
     "Ankle_On_The_Knee": {
-      "preferred": "Ankle 在 knee",
+      "preferred": "脚踝搭在膝盖上",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -186,7 +186,7 @@
       "reviewStatus": "provisional"
     },
     "Anti-Gravity_Press": {
-      "preferred": "Anti-gravity 推举",
+      "preferred": "反重力推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -194,7 +194,7 @@
       "reviewStatus": "provisional"
     },
     "Arm_Circles": {
-      "preferred": "手臂 circles",
+      "preferred": "手臂绕环",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -210,7 +210,7 @@
       "reviewStatus": "provisional"
     },
     "Around_The_Worlds": {
-      "preferred": "Around worlds",
+      "preferred": "绕世界",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -218,7 +218,7 @@
       "reviewStatus": "provisional"
     },
     "Atlas_Stone_Trainer": {
-      "preferred": "Atlas石训练",
+      "preferred": "阿特拉斯石训练",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -226,7 +226,7 @@
       "reviewStatus": "provisional"
     },
     "Atlas_Stones": {
-      "preferred": "Atlas石",
+      "preferred": "阿特拉斯石",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -234,7 +234,7 @@
       "reviewStatus": "provisional"
     },
     "Axle_Deadlift": {
-      "preferred": "Axle 硬拉",
+      "preferred": "轴杠硬拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -258,7 +258,7 @@
       "reviewStatus": "provisional"
     },
     "Backward_Medicine_Ball_Throw": {
-      "preferred": "Backward 药球 throw",
+      "preferred": "向后药球投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -274,7 +274,7 @@
       "reviewStatus": "provisional"
     },
     "Ball_Leg_Curl": {
-      "preferred": "Ball 腿弯举",
+      "preferred": "健身球腿弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -282,10 +282,10 @@
       "reviewStatus": "provisional"
     },
     "Band_Assisted_Pull-Up": {
-      "preferred": "弹力带 assisted 引体向上",
+      "preferred": "弹力带辅助引体向上",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -298,7 +298,7 @@
       "reviewStatus": "provisional"
     },
     "Band_Good_Morning_Pull_Through": {
-      "preferred": "弹力带 早安式 下拉 through",
+      "preferred": "弹力带早安式穿胯",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -306,7 +306,7 @@
       "reviewStatus": "provisional"
     },
     "Band_Hip_Adductions": {
-      "preferred": "弹力带 髋 adductions",
+      "preferred": "弹力带髋内收",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -314,7 +314,7 @@
       "reviewStatus": "provisional"
     },
     "Band_Pull_Apart": {
-      "preferred": "弹力带 下拉 apart",
+      "preferred": "弹力带拉开",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -330,7 +330,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Ab_Rollout": {
-      "preferred": "杠铃 腹部 rollout",
+      "preferred": "杠铃腹肌滚轮",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -338,7 +338,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Ab_Rollout_-_On_Knees": {
-      "preferred": "杠铃 腹部 rollout — 在 knees",
+      "preferred": "跪姿杠铃腹肌滚轮",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -354,15 +354,15 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Curl": {
-      "preferred": "杠铃 弯举",
+      "preferred": "杠铃弯举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Curls_Lying_Against_An_Incline": {
-      "preferred": "杠铃 curls 仰卧 against an 上斜",
+      "preferred": "斜板仰卧杠铃弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -370,42 +370,42 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Deadlift": {
-      "preferred": "杠铃 硬拉",
+      "preferred": "杠铃硬拉",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Full_Squat": {
-      "preferred": "杠铃 full 深蹲",
+      "preferred": "杠铃全蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Glute_Bridge": {
-      "preferred": "杠铃 臀桥",
+      "preferred": "杠铃臀桥",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Guillotine_Bench_Press": {
-      "preferred": "杠铃 guillotine 卧推",
+      "preferred": "杠铃断头台卧推",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Hack_Squat": {
-      "preferred": "杠铃 hack 深蹲",
+      "preferred": "杠铃哈克深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -426,31 +426,31 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Incline_Shoulder_Raise": {
-      "preferred": "杠铃 上斜 肩 举",
+      "preferred": "杠铃上斜肩胛前伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Lunge": {
-      "preferred": "杠铃 弓步",
+      "preferred": "杠铃弓步",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Rear_Delt_Row": {
-      "preferred": "杠铃 后侧 delt 划船",
+      "preferred": "杠铃后束划船",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Barbell_Rollout_from_Bench": {
-      "preferred": "杠铃 rollout 从 长凳",
+      "preferred": "从长凳开始的杠铃滚轮",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -458,10 +458,10 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Seated_Calf_Raise": {
-      "preferred": "杠铃 坐姿 提踵",
+      "preferred": "杠铃坐姿提踵",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -474,10 +474,10 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Shrug": {
-      "preferred": "杠铃 耸肩",
+      "preferred": "杠铃耸肩",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -498,10 +498,10 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Side_Split_Squat": {
-      "preferred": "杠铃 侧向 分腿蹲",
+      "preferred": "杠铃侧向分腿深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -514,7 +514,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Squat_To_A_Bench": {
-      "preferred": "杠铃 深蹲 至 a 长凳",
+      "preferred": "杠铃深蹲至长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -522,7 +522,7 @@
       "reviewStatus": "provisional"
     },
     "Barbell_Step_Ups": {
-      "preferred": "杠铃 step ups",
+      "preferred": "杠铃上凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -546,7 +546,7 @@
       "reviewStatus": "provisional"
     },
     "Bear_Crawl_Sled_Drags": {
-      "preferred": "Bear crawl 雪橇 drags",
+      "preferred": "熊爬拖雪橇",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -554,15 +554,15 @@
       "reviewStatus": "provisional"
     },
     "Behind_Head_Chest_Stretch": {
-      "preferred": "头后 胸 拉伸",
+      "preferred": "双手置于脑后胸肌拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Bench_Dips": {
-      "preferred": "长凳 dips",
+      "preferred": "凳上臂屈伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -578,7 +578,7 @@
       "reviewStatus": "provisional"
     },
     "Bench_Press_-_Powerlifting": {
-      "preferred": "卧推 — powerlifting",
+      "preferred": "力量举卧推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -594,7 +594,7 @@
       "reviewStatus": "provisional"
     },
     "Bench_Press_with_Chains": {
-      "preferred": "卧推 带 chains",
+      "preferred": "链条卧推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -602,7 +602,7 @@
       "reviewStatus": "provisional"
     },
     "Bench_Sprint": {
-      "preferred": "长凳 sprint",
+      "preferred": "凳上冲刺",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -626,7 +626,7 @@
       "reviewStatus": "provisional"
     },
     "Bent-Knee_Hip_Raise": {
-      "preferred": "Bent-knee 髋 举",
+      "preferred": "屈膝髋举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -650,7 +650,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_Low-Pulley_Side_Lateral": {
-      "preferred": "俯身 低位-pulley 侧向 lateral",
+      "preferred": "俯身低位绳索侧平举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -658,7 +658,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_One-Arm_Long_Bar_Row": {
-      "preferred": "俯身 单臂 long bar 划船",
+      "preferred": "俯身单臂长杆划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -666,7 +666,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_Two-Arm_Long_Bar_Row": {
-      "preferred": "俯身 双臂 long bar 划船",
+      "preferred": "俯身双臂长杆划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -682,7 +682,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Over_Two-Dumbbell_Row_With_Palms_In": {
-      "preferred": "俯身 two-哑铃划船 带 palms in",
+      "preferred": "俯身双哑铃划船（掌心相对）",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -690,7 +690,7 @@
       "reviewStatus": "provisional"
     },
     "Bent_Press": {
-      "preferred": "Bent 推举",
+      "preferred": "侧压举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -714,7 +714,7 @@
       "reviewStatus": "provisional"
     },
     "Board_Press": {
-      "preferred": "Board 推举",
+      "preferred": "木板卧推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -730,7 +730,7 @@
       "reviewStatus": "provisional"
     },
     "Body_Tricep_Press": {
-      "preferred": "Body 肱三头肌 推举",
+      "preferred": "自重肱三头肌推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -746,7 +746,7 @@
       "reviewStatus": "provisional"
     },
     "Bodyweight_Mid_Row": {
-      "preferred": "自重 mid 划船",
+      "preferred": "自重中位划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -770,7 +770,7 @@
       "reviewStatus": "provisional"
     },
     "Bosu_Ball_Cable_Crunch_With_Side_Bends": {
-      "preferred": "Bosu ball 绳索 卷腹 带 侧向 bends",
+      "preferred": "BOSU球绳索侧屈卷腹",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -778,7 +778,7 @@
       "reviewStatus": "provisional"
     },
     "Bottoms-Up_Clean_From_The_Hang_Position": {
-      "preferred": "Bottoms-up 翻 从 悬垂 position",
+      "preferred": "悬垂位壶铃底朝上翻举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -810,7 +810,7 @@
       "reviewStatus": "provisional"
     },
     "Box_Squat": {
-      "preferred": "Box 深蹲",
+      "preferred": "箱式深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -818,7 +818,7 @@
       "reviewStatus": "provisional"
     },
     "Box_Squat_with_Bands": {
-      "preferred": "Box 深蹲 带 弹力带",
+      "preferred": "弹力带箱式深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -826,7 +826,7 @@
       "reviewStatus": "provisional"
     },
     "Box_Squat_with_Chains": {
-      "preferred": "Box 深蹲 带 chains",
+      "preferred": "链条箱式深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -858,7 +858,7 @@
       "reviewStatus": "provisional"
     },
     "Butt_Lift_Bridge": {
-      "preferred": "Butt lift 桥",
+      "preferred": "臀桥",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -898,7 +898,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Deadlifts": {
-      "preferred": "绳索 deadlifts",
+      "preferred": "绳索硬拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -906,7 +906,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Hammer_Curls_-_Rope_Attachment": {
-      "preferred": "绳索 hammer curls — 绳 attachment",
+      "preferred": "绳索锤式弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -914,31 +914,31 @@
       "reviewStatus": "provisional"
     },
     "Cable_Hip_Adduction": {
-      "preferred": "绳索 髋 adduction",
+      "preferred": "绳索髋内收",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Cable_Incline_Pushdown": {
-      "preferred": "绳索 上斜 pushdown",
+      "preferred": "绳索上斜下压",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Cable_Incline_Triceps_Extension": {
-      "preferred": "绳索 上斜 肱三头肌伸展",
+      "preferred": "绳索上斜肱三头肌臂屈伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Cable_Internal_Rotation": {
-      "preferred": "绳索 internal 旋转",
+      "preferred": "绳索肩内旋",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -946,7 +946,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Iron_Cross": {
-      "preferred": "绳索 iron cross",
+      "preferred": "绳索铁十字",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -954,10 +954,10 @@
       "reviewStatus": "provisional"
     },
     "Cable_Judo_Flip": {
-      "preferred": "绳索 judo flip",
+      "preferred": "绳索柔道翻转卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -978,15 +978,15 @@
       "reviewStatus": "provisional"
     },
     "Cable_Preacher_Curl": {
-      "preferred": "绳索 preacher 弯举",
+      "preferred": "绳索牧师凳弯举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Cable_Rear_Delt_Fly": {
-      "preferred": "绳索 后侧 delt 飞鸟",
+      "preferred": "绳索后三角飞鸟",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -994,10 +994,10 @@
       "reviewStatus": "provisional"
     },
     "Cable_Reverse_Crunch": {
-      "preferred": "绳索 反向 卷腹",
+      "preferred": "绳索反向卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1010,7 +1010,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Rope_Rear-Delt_Rows": {
-      "preferred": "绳索 绳 后侧-delt rows",
+      "preferred": "绳索后三角划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1026,10 +1026,10 @@
       "reviewStatus": "provisional"
     },
     "Cable_Seated_Crunch": {
-      "preferred": "绳索 坐姿 卷腹",
+      "preferred": "绳索坐姿卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1042,10 +1042,10 @@
       "reviewStatus": "provisional"
     },
     "Cable_Shoulder_Press": {
-      "preferred": "绳索 肩部推举",
+      "preferred": "绳索肩部推举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1058,10 +1058,10 @@
       "reviewStatus": "provisional"
     },
     "Cable_Wrist_Curl": {
-      "preferred": "绳索 wrist 弯举",
+      "preferred": "绳索腕弯举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1090,7 +1090,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Raise_On_A_Dumbbell": {
-      "preferred": "提踵 在 a 哑铃",
+      "preferred": "提踵 在 哑铃",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1098,7 +1098,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Raises_-_With_Bands": {
-      "preferred": "小腿 raises — 带 弹力带",
+      "preferred": "小腿 举 — 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1106,7 +1106,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Stretch_Elbows_Against_Wall": {
-      "preferred": "小腿 拉伸 elbows against wall",
+      "preferred": "小腿 拉伸 elbows 靠 wall",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1114,7 +1114,7 @@
       "reviewStatus": "provisional"
     },
     "Calf_Stretch_Hands_Against_Wall": {
-      "preferred": "小腿 拉伸 hands against wall",
+      "preferred": "小腿 拉伸 hands 靠 wall",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1162,7 +1162,7 @@
       "reviewStatus": "provisional"
     },
     "Catch_and_Overhead_Throw": {
-      "preferred": "Catch 和 过顶 throw",
+      "preferred": "Catch 和 过顶 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1186,15 +1186,15 @@
       "reviewStatus": "provisional"
     },
     "Chair_Leg_Extended_Stretch": {
-      "preferred": "Chair 腿 extended 拉伸",
+      "preferred": "椅上直腿拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Chair_Lower_Back_Stretch": {
-      "preferred": "Chair lower 背 拉伸",
+      "preferred": "椅上 lower 背 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1202,7 +1202,7 @@
       "reviewStatus": "provisional"
     },
     "Chair_Squat": {
-      "preferred": "Chair 深蹲",
+      "preferred": "椅上 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1210,7 +1210,7 @@
       "reviewStatus": "provisional"
     },
     "Chair_Upper_Body_Stretch": {
-      "preferred": "Chair upper body 拉伸",
+      "preferred": "椅上 upper 身体 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1218,15 +1218,15 @@
       "reviewStatus": "provisional"
     },
     "Chest_And_Front_Of_Shoulder_Stretch": {
-      "preferred": "胸部和肩前侧拉伸",
+      "preferred": "胸部和肩部前部伸展",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Chest_Push_from_3_point_stance": {
-      "preferred": "胸 推 从 3 point stance",
+      "preferred": "胸 推 从 3 point 站距",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1258,7 +1258,7 @@
       "reviewStatus": "provisional"
     },
     "Chest_Stretch_on_Stability_Ball": {
-      "preferred": "胸 拉伸 在 stability ball",
+      "preferred": "胸 拉伸 在 stability 球",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1266,23 +1266,23 @@
       "reviewStatus": "provisional"
     },
     "Childs_Pose": {
-      "preferred": "婴儿式",
-      "aliases": [],
-      "sourceRefs": [
-        "wger-api"
-      ],
-      "reviewStatus": "provisional"
-    },
-    "Chin-Up": {
-      "preferred": "反手引体向上",
+      "preferred": "儿童式",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
     },
+    "Chin-Up": {
+      "preferred": "反握引体向上",
+      "aliases": [],
+      "sourceRefs": [
+        "zh-Hans-reference-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
     "Chin_To_Chest_Stretch": {
-      "preferred": "Chin 至 胸 拉伸",
+      "preferred": "下巴 至 胸 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1346,7 +1346,7 @@
       "reviewStatus": "provisional"
     },
     "Clean_from_Blocks": {
-      "preferred": "翻 从 blocks",
+      "preferred": "翻 从 垫块",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1354,10 +1354,10 @@
       "reviewStatus": "provisional"
     },
     "Clock_Push-Up": {
-      "preferred": "Clock 俯卧撑",
+      "preferred": "时钟俯卧撑",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1450,7 +1450,7 @@
       "reviewStatus": "provisional"
     },
     "Cross-Body_Crunch": {
-      "preferred": "Cross-body 卷腹",
+      "preferred": "十字-身体 卷腹",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1458,7 +1458,7 @@
       "reviewStatus": "provisional"
     },
     "Cross_Body_Hammer_Curl": {
-      "preferred": "Cross body 锤式弯举",
+      "preferred": "十字 身体 锤式弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1466,7 +1466,7 @@
       "reviewStatus": "provisional"
     },
     "Cross_Over_-_With_Bands": {
-      "preferred": "Cross over — 带 弹力带",
+      "preferred": "十字 过顶 — 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1474,7 +1474,7 @@
       "reviewStatus": "provisional"
     },
     "Crossover_Reverse_Lunge": {
-      "preferred": "Crossover 反向弓步",
+      "preferred": "交叉 反向弓步",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1506,10 +1506,10 @@
       "reviewStatus": "provisional"
     },
     "Crunches": {
-      "preferred": "仰卧起坐",
+      "preferred": "卷腹",
       "aliases": [],
       "sourceRefs": [
-        "wger-api"
+        "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1546,7 +1546,7 @@
       "reviewStatus": "provisional"
     },
     "Deadlift_with_Chains": {
-      "preferred": "硬拉 带 chains",
+      "preferred": "硬拉 带 链条",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1570,10 +1570,10 @@
       "reviewStatus": "provisional"
     },
     "Decline_Crunch": {
-      "preferred": "下斜 卷腹",
+      "preferred": "下斜卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1610,7 +1610,7 @@
       "reviewStatus": "provisional"
     },
     "Decline_Oblique_Crunch": {
-      "preferred": "下斜 oblique 卷腹",
+      "preferred": "下斜 斜 卷腹",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1618,10 +1618,10 @@
       "reviewStatus": "provisional"
     },
     "Decline_Push-Up": {
-      "preferred": "下斜 俯卧撑",
+      "preferred": "下斜俯卧撑",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1682,7 +1682,7 @@
       "reviewStatus": "provisional"
     },
     "Donkey_Calf_Raises": {
-      "preferred": "Donkey 小腿 raises",
+      "preferred": "Donkey 小腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1730,7 +1730,7 @@
       "reviewStatus": "provisional"
     },
     "Double_Leg_Butt_Kick": {
-      "preferred": "双 腿 butt kick",
+      "preferred": "双 腿 臀部 kick",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -1773,7 +1773,7 @@
       "preferred": "哑铃卧推",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1794,10 +1794,10 @@
       "reviewStatus": "provisional"
     },
     "Dumbbell_Clean": {
-      "preferred": "哑铃 翻",
+      "preferred": "哑铃翻举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1818,18 +1818,18 @@
       "reviewStatus": "provisional"
     },
     "Dumbbell_Incline_Row": {
-      "preferred": "哑铃 上斜 划船",
+      "preferred": "哑铃上斜划船",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Incline_Shoulder_Raise": {
-      "preferred": "哑铃 上斜 肩 举",
+      "preferred": "哑铃上斜肩胛上推",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1850,26 +1850,26 @@
       "reviewStatus": "provisional"
     },
     "Dumbbell_Lying_Pronation": {
-      "preferred": "哑铃 仰卧 pronation",
+      "preferred": "哑铃侧卧前臂旋前",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Lying_Rear_Lateral_Raise": {
-      "preferred": "哑铃 仰卧 后侧 侧平举",
+      "preferred": "哑铃俯卧后束侧平举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Lying_Supination": {
-      "preferred": "哑铃 仰卧 supination",
+      "preferred": "哑铃侧卧前臂旋后",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1898,26 +1898,26 @@
       "reviewStatus": "provisional"
     },
     "Dumbbell_Prone_Incline_Curl": {
-      "preferred": "哑铃 prone 上斜 弯举",
+      "preferred": "哑铃俯卧上斜弯举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Raise": {
-      "preferred": "哑铃 举",
+      "preferred": "哑铃侧平举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Rear_Lunge": {
-      "preferred": "哑铃 后侧 弓步",
+      "preferred": "哑铃后撤弓步",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -1954,31 +1954,31 @@
       "reviewStatus": "provisional"
     },
     "Dumbbell_Shrug": {
-      "preferred": "哑铃 耸肩",
+      "preferred": "哑铃耸肩",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Side_Bend": {
-      "preferred": "哑铃 侧屈",
+      "preferred": "哑铃侧弯",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Squat": {
-      "preferred": "哑铃 深蹲",
+      "preferred": "哑铃深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Dumbbell_Squat_To_A_Bench": {
-      "preferred": "哑铃 深蹲 至 a 长凳",
+      "preferred": "哑铃 深蹲 至 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2042,7 +2042,7 @@
       "reviewStatus": "provisional"
     },
     "Elbow_to_Knee": {
-      "preferred": "Elbow 至 knee",
+      "preferred": "Elbow 至 膝",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2058,7 +2058,7 @@
       "reviewStatus": "provisional"
     },
     "Elevated_Back_Lunge": {
-      "preferred": "Elevated 背 弓步",
+      "preferred": "抬高 背 弓步",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2066,7 +2066,7 @@
       "reviewStatus": "provisional"
     },
     "Elevated_Cable_Rows": {
-      "preferred": "Elevated 绳索 rows",
+      "preferred": "抬高 绳索 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2090,7 +2090,7 @@
       "reviewStatus": "provisional"
     },
     "Exercise_Ball_Pull-In": {
-      "preferred": "健身球 下拉-in",
+      "preferred": "健身球 下拉-内",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2106,7 +2106,7 @@
       "reviewStatus": "provisional"
     },
     "External_Rotation": {
-      "preferred": "External 旋转",
+      "preferred": "外旋 旋转",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2114,7 +2114,7 @@
       "reviewStatus": "provisional"
     },
     "External_Rotation_with_Band": {
-      "preferred": "External 旋转 带 弹力带",
+      "preferred": "外旋 旋转 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2122,7 +2122,7 @@
       "reviewStatus": "provisional"
     },
     "External_Rotation_with_Cable": {
-      "preferred": "External 旋转 带 绳索",
+      "preferred": "外旋 旋转 带 绳索",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2162,7 +2162,7 @@
       "reviewStatus": "provisional"
     },
     "Flat_Bench_Cable_Flyes": {
-      "preferred": "Flat 长凳 绳索 飞鸟",
+      "preferred": "平板 长凳 绳索 飞鸟",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2170,7 +2170,7 @@
       "reviewStatus": "provisional"
     },
     "Flat_Bench_Leg_Pull-In": {
-      "preferred": "Flat 长凳 腿 下拉-in",
+      "preferred": "平板 长凳 腿 下拉-内",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2178,7 +2178,7 @@
       "reviewStatus": "provisional"
     },
     "Flat_Bench_Lying_Leg_Raise": {
-      "preferred": "Flat 长凳 仰卧 腿 举",
+      "preferred": "平板 长凳 仰卧 腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2186,7 +2186,7 @@
       "reviewStatus": "provisional"
     },
     "Flexor_Incline_Dumbbell_Curls": {
-      "preferred": "Flexor 上斜 哑铃 curls",
+      "preferred": "Flexor 上斜 哑铃 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2210,7 +2210,7 @@
       "reviewStatus": "provisional"
     },
     "Floor_Press_with_Chains": {
-      "preferred": "地板 推举 带 chains",
+      "preferred": "地板 推举 带 链条",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2242,10 +2242,10 @@
       "reviewStatus": "provisional"
     },
     "Frankenstein_Squat": {
-      "preferred": "Frankenstein 深蹲",
+      "preferred": "弗兰肯斯坦深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2282,7 +2282,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Barbell_Squat_To_A_Bench": {
-      "preferred": "前侧 杠铃 深蹲 至 a 长凳",
+      "preferred": "前侧 杠铃 深蹲 至 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2330,7 +2330,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Leg_Raises": {
-      "preferred": "前侧 腿 raises",
+      "preferred": "前侧 腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2338,7 +2338,7 @@
       "reviewStatus": "provisional"
     },
     "Front_Plate_Raise": {
-      "preferred": "前侧 plate 举",
+      "preferred": "前侧 杠铃片 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2378,7 +2378,7 @@
       "reviewStatus": "provisional"
     },
     "Full_Range-Of-Motion_Lat_Pulldown": {
-      "preferred": "Full range-of-motion 高位下拉",
+      "preferred": "完整 range-of-motion 高位下拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2434,7 +2434,7 @@
       "reviewStatus": "provisional"
     },
     "Gorilla_Chin_Crunch": {
-      "preferred": "Gorilla chin/卷腹",
+      "preferred": "Gorilla 下巴/卷腹",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2442,7 +2442,7 @@
       "reviewStatus": "provisional"
     },
     "Groin_and_Back_Stretch": {
-      "preferred": "Groin 和 背 拉伸",
+      "preferred": "腹股沟 和 背 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2458,7 +2458,7 @@
       "reviewStatus": "provisional"
     },
     "Hack_Squat": {
-      "preferred": "Hack 深蹲",
+      "preferred": "哈克 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2490,10 +2490,10 @@
       "reviewStatus": "provisional"
     },
     "Hamstring_Stretch": {
-      "preferred": "Hamstring 拉伸",
+      "preferred": "腘绳肌拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2538,7 +2538,7 @@
       "reviewStatus": "provisional"
     },
     "Hanging_Bar_Good_Morning": {
-      "preferred": "Hanging bar 早安式",
+      "preferred": "Hanging 杠铃杆 早安式",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2546,10 +2546,10 @@
       "reviewStatus": "provisional"
     },
     "Hanging_Leg_Raise": {
-      "preferred": "Hanging 腿 举",
+      "preferred": "悬垂举腿",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2562,7 +2562,7 @@
       "reviewStatus": "provisional"
     },
     "Heaving_Snatch_Balance": {
-      "preferred": "Heaving 抓举 balance",
+      "preferred": "Heaving 抓举 平衡",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2578,7 +2578,7 @@
       "reviewStatus": "provisional"
     },
     "High_Cable_Curls": {
-      "preferred": "高位 绳索 curls",
+      "preferred": "高位 绳索 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2586,7 +2586,7 @@
       "reviewStatus": "provisional"
     },
     "Hip_Circles_prone": {
-      "preferred": "髋 circles prone",
+      "preferred": "髋 绕环 prone",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2610,7 +2610,7 @@
       "reviewStatus": "provisional"
     },
     "Hip_Lift_with_Band": {
-      "preferred": "髋 lift 带 弹力带",
+      "preferred": "髋 抬升 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2714,7 +2714,7 @@
       "reviewStatus": "provisional"
     },
     "Incline_Dumbbell_Bench_With_Palms_Facing_In": {
-      "preferred": "上斜 哑铃 长凳 带 palms facing in",
+      "preferred": "上斜 哑铃 长凳 带 掌心 facing 内",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2738,7 +2738,7 @@
       "reviewStatus": "provisional"
     },
     "Incline_Dumbbell_Flyes_-_With_A_Twist": {
-      "preferred": "上斜 哑铃 飞鸟 — 带 a 转体",
+      "preferred": "上斜 哑铃 飞鸟 — 带 转体",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2754,7 +2754,7 @@
       "reviewStatus": "provisional"
     },
     "Incline_Hammer_Curls": {
-      "preferred": "上斜 hammer curls",
+      "preferred": "上斜 hammer 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2770,10 +2770,10 @@
       "reviewStatus": "provisional"
     },
     "Incline_Push-Up": {
-      "preferred": "上斜 俯卧撑",
+      "preferred": "上斜俯卧撑",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2810,7 +2810,7 @@
       "reviewStatus": "provisional"
     },
     "Incline_Push-Up_Wide": {
-      "preferred": "上斜 俯卧撑 wide",
+      "preferred": "上斜 俯卧撑 宽",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2818,7 +2818,7 @@
       "reviewStatus": "provisional"
     },
     "Intermediate_Groin_Stretch": {
-      "preferred": "Intermediate groin 拉伸",
+      "preferred": "Intermediate 腹股沟 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2826,15 +2826,15 @@
       "reviewStatus": "provisional"
     },
     "Intermediate_Hip_Flexor_and_Quad_Stretch": {
-      "preferred": "Intermediate 髋 flexor 和 quad 拉伸",
+      "preferred": "中级髋屈肌与股四头肌拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Internal_Rotation_with_Band": {
-      "preferred": "Internal 旋转 带 弹力带",
+      "preferred": "内旋 旋转 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2842,18 +2842,18 @@
       "reviewStatus": "provisional"
     },
     "Inverted_Row": {
-      "preferred": "Inverted 划船",
+      "preferred": "反向划船",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Inverted_Row_with_Straps": {
-      "preferred": "Inverted 划船 带 straps",
+      "preferred": "悬吊带反向划船",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2866,7 +2866,7 @@
       "reviewStatus": "provisional"
     },
     "Iron_Crosses_stretch": {
-      "preferred": "Iron crosses 拉伸",
+      "preferred": "铁 crosses 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2914,18 +2914,18 @@
       "reviewStatus": "provisional"
     },
     "Jackknife_Sit-Up": {
-      "preferred": "折刀 仰卧起坐",
+      "preferred": "折刀式仰卧起坐",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Janda_Sit-Up": {
-      "preferred": "Janda 仰卧起坐",
+      "preferred": "詹达仰卧起坐",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2938,7 +2938,7 @@
       "reviewStatus": "provisional"
     },
     "Jerk_Balance": {
-      "preferred": "挺举 balance",
+      "preferred": "挺举 平衡",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -2970,10 +2970,10 @@
       "reviewStatus": "provisional"
     },
     "Kettlebell_Arnold_Press": {
-      "preferred": "壶铃 arnold 推举",
+      "preferred": "壶铃阿诺德推举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -2986,18 +2986,18 @@
       "reviewStatus": "provisional"
     },
     "Kettlebell_Figure_8": {
-      "preferred": "壶铃 figure 8",
+      "preferred": "壶铃8字绕腿",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kettlebell_Hang_Clean": {
-      "preferred": "壶铃 悬垂 翻",
+      "preferred": "壶铃悬垂翻举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -3026,42 +3026,42 @@
       "reviewStatus": "provisional"
     },
     "Kettlebell_Pistol_Squat": {
-      "preferred": "壶铃 手枪式 深蹲",
+      "preferred": "壶铃手枪深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kettlebell_Seated_Press": {
-      "preferred": "壶铃 坐姿 推举",
+      "preferred": "壶铃坐姿推举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kettlebell_Seesaw_Press": {
-      "preferred": "壶铃 seesaw 推举",
+      "preferred": "壶铃跷跷板推举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kettlebell_Sumo_High_Pull": {
-      "preferred": "壶铃 sumo 高位 下拉",
+      "preferred": "壶铃相扑高拉",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kettlebell_Thruster": {
-      "preferred": "壶铃 thruster",
+      "preferred": "壶铃深蹲推举",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -3082,10 +3082,10 @@
       "reviewStatus": "provisional"
     },
     "Kettlebell_Windmill": {
-      "preferred": "壶铃 windmill",
+      "preferred": "壶铃风车",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -3098,7 +3098,7 @@
       "reviewStatus": "provisional"
     },
     "Knee_Across_The_Body": {
-      "preferred": "Knee across body",
+      "preferred": "膝 across 身体",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3114,7 +3114,7 @@
       "reviewStatus": "provisional"
     },
     "Knee_Hip_Raise_On_Parallel_Bars": {
-      "preferred": "Knee/髋 举 在 parallel bars",
+      "preferred": "膝/髋 举 在 parallel bars",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3122,7 +3122,7 @@
       "reviewStatus": "provisional"
     },
     "Knee_Tuck_Jump": {
-      "preferred": "Knee tuck 跳",
+      "preferred": "膝 tuck 跳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3138,7 +3138,7 @@
       "reviewStatus": "provisional"
     },
     "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists": {
-      "preferred": "跪姿 绳索 卷腹 带 交替 oblique twists",
+      "preferred": "跪姿 绳索 卷腹 带 交替 斜 twists",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3162,7 +3162,7 @@
       "reviewStatus": "provisional"
     },
     "Kneeling_High_Pulley_Row": {
-      "preferred": "跪姿 高位 pulley 划船",
+      "preferred": "跪姿 高位 滑轮 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3178,15 +3178,15 @@
       "reviewStatus": "provisional"
     },
     "Kneeling_Jump_Squat": {
-      "preferred": "跪姿 跳深蹲",
+      "preferred": "跪跳深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Kneeling_Single-Arm_High_Pulley_Row": {
-      "preferred": "跪姿 单-手臂 高位 pulley 划船",
+      "preferred": "跪姿 单-手臂 高位 滑轮 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3226,7 +3226,7 @@
       "reviewStatus": "provisional"
     },
     "Lateral_Box_Jump": {
-      "preferred": "Lateral 箱式跳跃",
+      "preferred": "侧向 箱式跳跃",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3258,7 +3258,7 @@
       "reviewStatus": "provisional"
     },
     "Leg-Over_Floor_Press": {
-      "preferred": "腿-over 地板 推举",
+      "preferred": "腿-过顶 地板 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3266,7 +3266,7 @@
       "reviewStatus": "provisional"
     },
     "Leg-Up_Hamstring_Stretch": {
-      "preferred": "腿-up hamstring 拉伸",
+      "preferred": "腿-up 腘绳肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3282,7 +3282,7 @@
       "reviewStatus": "provisional"
     },
     "Leg_Lift": {
-      "preferred": "腿 lift",
+      "preferred": "腿 抬升",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3298,7 +3298,7 @@
       "reviewStatus": "provisional"
     },
     "Leg_Pull-In": {
-      "preferred": "腿 下拉-in",
+      "preferred": "腿 下拉-内",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3306,7 +3306,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Chest_Press": {
-      "preferred": "Leverage 胸推",
+      "preferred": "杠杆 胸推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3314,7 +3314,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Deadlift": {
-      "preferred": "Leverage 硬拉",
+      "preferred": "杠杆 硬拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3322,7 +3322,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Decline_Chest_Press": {
-      "preferred": "Leverage 下斜 胸推",
+      "preferred": "杠杆 下斜 胸推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3330,7 +3330,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_High_Row": {
-      "preferred": "Leverage 高位 划船",
+      "preferred": "杠杆 高位 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3338,7 +3338,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Incline_Chest_Press": {
-      "preferred": "Leverage 上斜 胸推",
+      "preferred": "杠杆 上斜 胸推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3346,7 +3346,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Iso_Row": {
-      "preferred": "Leverage iso 划船",
+      "preferred": "杠杆 iso 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3354,7 +3354,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Shoulder_Press": {
-      "preferred": "Leverage 肩部推举",
+      "preferred": "杠杆 肩部推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3362,7 +3362,7 @@
       "reviewStatus": "provisional"
     },
     "Leverage_Shrug": {
-      "preferred": "Leverage 耸肩",
+      "preferred": "杠杆 耸肩",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3434,7 +3434,7 @@
       "reviewStatus": "provisional"
     },
     "Low_Pulley_Row_To_Neck": {
-      "preferred": "低位 pulley 划船 至 颈部",
+      "preferred": "低位 滑轮 划船 至 颈部",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3450,10 +3450,10 @@
       "reviewStatus": "provisional"
     },
     "Lower_Back_Curl": {
-      "preferred": "Lower 背 弯举",
+      "preferred": "俯卧下背卷曲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -3466,7 +3466,7 @@
       "reviewStatus": "provisional"
     },
     "Lunge_Sprint": {
-      "preferred": "弓步 sprint",
+      "preferred": "弓步 冲刺",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3474,7 +3474,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Bent_Leg_Groin": {
-      "preferred": "仰卧 bent 腿 groin",
+      "preferred": "仰卧 bent 腿 腹股沟",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3498,7 +3498,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Close-Grip_Bar_Curl_On_High_Pulley": {
-      "preferred": "仰卧 窄握 bar 弯举 在 高位 pulley",
+      "preferred": "仰卧 窄握 杠铃杆 弯举 在 高位 滑轮",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3514,7 +3514,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin": {
-      "preferred": "仰卧 窄握 杠铃 triceps 推举 至 chin",
+      "preferred": "仰卧 窄握 杠铃 肱三头肌 推举 至 下巴",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3522,7 +3522,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Crossover": {
-      "preferred": "仰卧 crossover",
+      "preferred": "仰卧 交叉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3538,7 +3538,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Face_Down_Plate_Neck_Resistance": {
-      "preferred": "仰卧 face down plate 颈部 resistance",
+      "preferred": "仰卧 face down 杠铃片 颈部 resistance",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3546,7 +3546,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Face_Up_Plate_Neck_Resistance": {
-      "preferred": "仰卧 face up plate 颈部 resistance",
+      "preferred": "仰卧 face up 杠铃片 颈部 resistance",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3562,7 +3562,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Hamstring": {
-      "preferred": "仰卧 hamstring",
+      "preferred": "仰卧 腘绳肌",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3578,7 +3578,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Leg_Curls": {
-      "preferred": "仰卧 腿 curls",
+      "preferred": "仰卧 腿 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3618,7 +3618,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Supine_Dumbbell_Curl": {
-      "preferred": "仰卧 supine 哑铃 弯举",
+      "preferred": "仰卧哑铃弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3626,7 +3626,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_T-Bar_Row": {
-      "preferred": "仰卧 t-bar 划船",
+      "preferred": "仰卧 t-杠铃杆 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3634,7 +3634,7 @@
       "reviewStatus": "provisional"
     },
     "Lying_Triceps_Press": {
-      "preferred": "仰卧 triceps 推举",
+      "preferred": "仰卧 肱三头肌 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3658,7 +3658,7 @@
       "reviewStatus": "provisional"
     },
     "Machine_Preacher_Curls": {
-      "preferred": "器械 preacher curls",
+      "preferred": "器械 牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3666,7 +3666,7 @@
       "reviewStatus": "provisional"
     },
     "Machine_Shoulder_Military_Press": {
-      "preferred": "器械 肩 military 推举",
+      "preferred": "器械 肩 肩上 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3682,15 +3682,15 @@
       "reviewStatus": "provisional"
     },
     "Medicine_Ball_Chest_Pass": {
-      "preferred": "药球 胸 pass",
+      "preferred": "药球胸前传球",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Medicine_Ball_Full_Twist": {
-      "preferred": "药球 full 转体",
+      "preferred": "药球 完整 转体",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3698,7 +3698,7 @@
       "reviewStatus": "provisional"
     },
     "Medicine_Ball_Scoop_Throw": {
-      "preferred": "药球 scoop throw",
+      "preferred": "药球 scoop 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3738,10 +3738,10 @@
       "reviewStatus": "provisional"
     },
     "Mountain_Climbers": {
-      "preferred": "登山者式",
+      "preferred": "登山者",
       "aliases": [],
       "sourceRefs": [
-        "wger-api"
+        "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -3778,7 +3778,7 @@
       "reviewStatus": "provisional"
     },
     "Narrow_Stance_Leg_Press": {
-      "preferred": "Narrow stance 腿举",
+      "preferred": "Narrow 站距 腿举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3826,7 +3826,7 @@
       "reviewStatus": "provisional"
     },
     "Oblique_Crunches_-_On_The_Floor": {
-      "preferred": "Oblique crunches — 在 地板",
+      "preferred": "斜 crunches — 在 地板",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3842,7 +3842,7 @@
       "reviewStatus": "provisional"
     },
     "On-Your-Back_Quad_Stretch": {
-      "preferred": "在-your-背 quad 拉伸",
+      "preferred": "在-your-背 股四头肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3850,7 +3850,7 @@
       "reviewStatus": "provisional"
     },
     "On_Your_Side_Quad_Stretch": {
-      "preferred": "在 your 侧向 quad 拉伸",
+      "preferred": "在 your 侧向 股四头肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3866,7 +3866,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_Flat_Bench_Dumbbell_Flye": {
-      "preferred": "单臂 flat 长凳 哑铃 flye",
+      "preferred": "单臂 平板 长凳 哑铃 flye",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3874,7 +3874,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_High-Pulley_Cable_Side_Bends": {
-      "preferred": "单臂 高位-pulley 绳索 侧向 bends",
+      "preferred": "单臂 高位-滑轮 绳索 侧向 侧屈",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3922,7 +3922,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_Kettlebell_Military_Press_To_The_Side": {
-      "preferred": "单臂 壶铃 military 推举 至 侧向",
+      "preferred": "单臂 壶铃 肩上 推举 至 侧向",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -3986,7 +3986,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_Long_Bar_Row": {
-      "preferred": "单臂 long bar 划船",
+      "preferred": "单臂 长杆 杠铃杆 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4042,18 +4042,18 @@
       "reviewStatus": "provisional"
     },
     "One_Arm_Against_Wall": {
-      "preferred": "单臂 against wall",
+      "preferred": "单臂推墙",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "One_Arm_Chin-Up": {
-      "preferred": "单臂 反手引体向上",
+      "preferred": "单臂反手引体向上",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4066,7 +4066,7 @@
       "reviewStatus": "provisional"
     },
     "One_Arm_Dumbbell_Preacher_Curl": {
-      "preferred": "单臂 哑铃 preacher 弯举",
+      "preferred": "单臂 哑铃 牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4122,7 +4122,7 @@
       "reviewStatus": "provisional"
     },
     "One_Knee_To_Chest": {
-      "preferred": "One knee 至 胸",
+      "preferred": "One 膝 至 胸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4194,7 +4194,7 @@
       "reviewStatus": "provisional"
     },
     "Overhead_Triceps": {
-      "preferred": "过顶 triceps",
+      "preferred": "过顶 肱三头肌",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4218,7 +4218,7 @@
       "reviewStatus": "provisional"
     },
     "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench": {
-      "preferred": "Palms-down 哑铃 wrist 弯举 over a 长凳",
+      "preferred": "掌心-down 哑铃 腕 弯举 过顶 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4226,7 +4226,7 @@
       "reviewStatus": "provisional"
     },
     "Palms-Down_Wrist_Curl_Over_A_Bench": {
-      "preferred": "Palms-down wrist 弯举 over a 长凳",
+      "preferred": "掌心-down 腕 弯举 过顶 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4234,7 +4234,7 @@
       "reviewStatus": "provisional"
     },
     "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench": {
-      "preferred": "Palms-up 杠铃 wrist 弯举 over a 长凳",
+      "preferred": "掌心-up 杠铃 腕 弯举 过顶 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4242,7 +4242,7 @@
       "reviewStatus": "provisional"
     },
     "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench": {
-      "preferred": "Palms-up 哑铃 wrist 弯举 over a 长凳",
+      "preferred": "掌心-up 哑铃 腕 弯举 过顶 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4258,10 +4258,10 @@
       "reviewStatus": "provisional"
     },
     "Pelvic_Tilt_Into_Bridge": {
-      "preferred": "Pelvic tilt into 桥",
+      "preferred": "骨盆倾斜成桥",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4274,10 +4274,10 @@
       "reviewStatus": "provisional"
     },
     "Peroneals_Stretch": {
-      "preferred": "Peroneals 拉伸",
+      "preferred": "腓骨肌拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4309,7 +4309,7 @@
       "preferred": "平板支撑",
       "aliases": [],
       "sourceRefs": [
-        "wger-api"
+        "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4322,7 +4322,7 @@
       "reviewStatus": "provisional"
     },
     "Plate_Twist": {
-      "preferred": "Plate 转体",
+      "preferred": "杠铃片 转体",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4362,23 +4362,23 @@
       "reviewStatus": "provisional"
     },
     "Posterior_Tibialis_Stretch": {
-      "preferred": "Posterior tibialis 拉伸",
+      "preferred": "胫骨后肌拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Power_Clean": {
-      "preferred": "高翻",
+      "preferred": "杠铃高翻",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Power_Clean_from_Blocks": {
-      "preferred": "高翻 从 blocks",
+      "preferred": "高翻 从 垫块",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4410,7 +4410,7 @@
       "reviewStatus": "provisional"
     },
     "Power_Snatch_from_Blocks": {
-      "preferred": "力量 抓举 从 blocks",
+      "preferred": "力量 抓举 从 垫块",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4426,7 +4426,7 @@
       "reviewStatus": "provisional"
     },
     "Preacher_Curl": {
-      "preferred": "Preacher 弯举",
+      "preferred": "牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4434,7 +4434,7 @@
       "reviewStatus": "provisional"
     },
     "Preacher_Hammer_Dumbbell_Curl": {
-      "preferred": "Preacher hammer 哑铃 弯举",
+      "preferred": "牧师凳 hammer 哑铃 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4482,7 +4482,7 @@
       "reviewStatus": "provisional"
     },
     "Push-Up_Wide": {
-      "preferred": "俯卧撑 wide",
+      "preferred": "俯卧撑 宽",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4490,7 +4490,7 @@
       "reviewStatus": "provisional"
     },
     "Push-Ups_-_Close_Triceps_Position": {
-      "preferred": "推-ups — close triceps position",
+      "preferred": "推-ups — close 肱三头肌 姿势",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4498,7 +4498,7 @@
       "reviewStatus": "provisional"
     },
     "Push-Ups_With_Feet_Elevated": {
-      "preferred": "推-ups 带 feet elevated",
+      "preferred": "推-ups 带 feet 抬高",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4546,7 +4546,7 @@
       "reviewStatus": "provisional"
     },
     "Pushups_Close_and_Wide_Hand_Positions": {
-      "preferred": "Pushups close 和 wide hand positions",
+      "preferred": "Pushups close 和 宽 hand positions",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4562,7 +4562,7 @@
       "reviewStatus": "provisional"
     },
     "Quad_Stretch": {
-      "preferred": "Quad 拉伸",
+      "preferred": "股四头肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4610,7 +4610,7 @@
       "reviewStatus": "provisional"
     },
     "Rear_Leg_Raises": {
-      "preferred": "后侧 腿 raises",
+      "preferred": "后侧 腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4626,7 +4626,7 @@
       "reviewStatus": "provisional"
     },
     "Return_Push_from_Stance": {
-      "preferred": "Return 推 从 stance",
+      "preferred": "Return 推 从 站距",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4642,7 +4642,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Band_Box_Squat": {
-      "preferred": "反向 弹力带 box 深蹲",
+      "preferred": "反向 弹力带 箱式 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4666,7 +4666,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Band_Sumo_Deadlift": {
-      "preferred": "反向 弹力带 sumo 硬拉",
+      "preferred": "反向 弹力带 相扑 硬拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4682,7 +4682,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Barbell_Preacher_Curls": {
-      "preferred": "反向 杠铃 preacher curls",
+      "preferred": "反向 杠铃 牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4698,10 +4698,10 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Crunch": {
-      "preferred": "反向 卷腹",
+      "preferred": "反向卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4714,7 +4714,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Flyes_With_External_Rotation": {
-      "preferred": "反向 飞鸟 带 external 旋转",
+      "preferred": "反向 飞鸟 带 外旋 旋转",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4722,7 +4722,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Grip_Bent-Over_Rows": {
-      "preferred": "反向 grip bent-over rows",
+      "preferred": "反向 grip 俯身 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4754,7 +4754,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Plate_Curls": {
-      "preferred": "反向 plate curls",
+      "preferred": "反向 杠铃片 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4762,7 +4762,7 @@
       "reviewStatus": "provisional"
     },
     "Reverse_Triceps_Bench_Press": {
-      "preferred": "反向 triceps 卧推",
+      "preferred": "反向 肱三头肌 卧推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4842,10 +4842,10 @@
       "reviewStatus": "provisional"
     },
     "Rope_Climb": {
-      "preferred": "绳 climb",
+      "preferred": "绳索攀爬",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4909,7 +4909,7 @@
       "preferred": "俄罗斯转体",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4922,10 +4922,10 @@
       "reviewStatus": "provisional"
     },
     "Scapular_Pull-Up": {
-      "preferred": "Scapular 引体向上",
+      "preferred": "肩胛骨引体向上",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -4946,7 +4946,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Band_Hamstring_Curl": {
-      "preferred": "坐姿 弹力带 hamstring 弯举",
+      "preferred": "坐姿 弹力带 腘绳肌 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4954,7 +4954,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Barbell_Military_Press": {
-      "preferred": "坐姿 杠铃 military 推举",
+      "preferred": "坐姿 杠铃 肩上 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4970,7 +4970,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
-      "preferred": "坐姿 bent-over 单臂 哑铃 肱三头肌伸展",
+      "preferred": "坐姿 俯身 单臂 哑铃 肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4978,7 +4978,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Bent-Over_Rear_Delt_Raise": {
-      "preferred": "坐姿 bent-over 俯身后束飞鸟",
+      "preferred": "坐姿 俯身 俯身后束飞鸟",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4986,7 +4986,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
-      "preferred": "坐姿 bent-over 双臂 哑铃 肱三头肌伸展",
+      "preferred": "坐姿 俯身 双臂 哑铃 肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -4994,7 +4994,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Biceps": {
-      "preferred": "坐姿 biceps",
+      "preferred": "坐姿 肱二头肌",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5002,7 +5002,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Cable_Rows": {
-      "preferred": "坐姿 绳索 rows",
+      "preferred": "坐姿 绳索 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5058,7 +5058,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Dumbbell_Palms-Down_Wrist_Curl": {
-      "preferred": "坐姿 哑铃 palms-down wrist 弯举",
+      "preferred": "坐姿 哑铃 掌心-down 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5066,7 +5066,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Dumbbell_Palms-Up_Wrist_Curl": {
-      "preferred": "坐姿 哑铃 palms-up wrist 弯举",
+      "preferred": "坐姿 哑铃 掌心-up 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5082,7 +5082,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Flat_Bench_Leg_Pull-In": {
-      "preferred": "坐姿 flat 长凳 腿 下拉-in",
+      "preferred": "坐姿 平板 长凳 腿 下拉-内",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5090,7 +5090,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Floor_Hamstring_Stretch": {
-      "preferred": "坐姿 地板 hamstring 拉伸",
+      "preferred": "坐姿 地板 腘绳肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5122,7 +5122,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Hamstring": {
-      "preferred": "坐姿 hamstring",
+      "preferred": "坐姿 腘绳肌",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5130,7 +5130,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Hamstring_and_Calf_Stretch": {
-      "preferred": "坐姿 hamstring 和 小腿 拉伸",
+      "preferred": "坐姿 腘绳肌 和 小腿 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5162,7 +5162,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl": {
-      "preferred": "坐姿 单臂 哑铃 palms-down wrist 弯举",
+      "preferred": "坐姿 单臂 哑铃 掌心-down 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5170,7 +5170,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl": {
-      "preferred": "坐姿 单臂 哑铃 palms-up wrist 弯举",
+      "preferred": "坐姿 单臂 哑铃 掌心-up 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5178,7 +5178,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_One-arm_Cable_Pulley_Rows": {
-      "preferred": "坐姿 单臂 绳索 pulley rows",
+      "preferred": "坐姿 单臂 绳索 滑轮 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5194,7 +5194,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Palm-Up_Barbell_Wrist_Curl": {
-      "preferred": "坐姿 palm-up 杠铃 wrist 弯举",
+      "preferred": "坐姿 palm-up 杠铃 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5202,7 +5202,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Palms-Down_Barbell_Wrist_Curl": {
-      "preferred": "坐姿 palms-down 杠铃 wrist 弯举",
+      "preferred": "坐姿 掌心-down 杠铃 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5218,7 +5218,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Triceps_Press": {
-      "preferred": "坐姿 triceps 推举",
+      "preferred": "坐姿 肱三头肌 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5226,7 +5226,7 @@
       "reviewStatus": "provisional"
     },
     "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl": {
-      "preferred": "坐姿 双臂 palms-up 低位-pulley wrist 弯举",
+      "preferred": "坐姿 双臂 掌心-up 低位-滑轮 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5250,7 +5250,7 @@
       "reviewStatus": "provisional"
     },
     "Shoulder_Circles": {
-      "preferred": "肩 circles",
+      "preferred": "肩 绕环",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5298,7 +5298,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Hop-Sprint": {
-      "preferred": "侧向 hop-sprint",
+      "preferred": "侧向 hop-冲刺",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5330,7 +5330,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Leg_Raises": {
-      "preferred": "侧向 腿 raises",
+      "preferred": "侧向 腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5338,7 +5338,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Lying_Groin_Stretch": {
-      "preferred": "侧向 仰卧 groin 拉伸",
+      "preferred": "侧向 仰卧 腹股沟 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5354,7 +5354,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Standing_Long_Jump": {
-      "preferred": "侧向 站姿 long 跳",
+      "preferred": "侧向 站姿 长杆 跳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5370,7 +5370,7 @@
       "reviewStatus": "provisional"
     },
     "Side_Wrist_Pull": {
-      "preferred": "侧向 wrist 下拉",
+      "preferred": "侧向 腕 下拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5410,7 +5410,7 @@
       "reviewStatus": "provisional"
     },
     "Single-Cone_Sprint_Drill": {
-      "preferred": "单-cone sprint drill",
+      "preferred": "单-cone 冲刺 drill",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5418,7 +5418,7 @@
       "reviewStatus": "provisional"
     },
     "Single-Leg_High_Box_Squat": {
-      "preferred": "单腿 高位 box 深蹲",
+      "preferred": "单腿 高位 箱式 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5434,7 +5434,7 @@
       "reviewStatus": "provisional"
     },
     "Single-Leg_Lateral_Hop": {
-      "preferred": "单腿 lateral hop",
+      "preferred": "单腿 侧向 hop",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5466,7 +5466,7 @@
       "reviewStatus": "provisional"
     },
     "Single_Leg_Butt_Kick": {
-      "preferred": "单 腿 butt kick",
+      "preferred": "单 腿 臀部 kick",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5682,7 +5682,7 @@
       "reviewStatus": "provisional"
     },
     "Smith_Machine_Reverse_Calf_Raises": {
-      "preferred": "Smith 器械 反向 小腿 raises",
+      "preferred": "Smith 器械 反向 小腿 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5730,7 +5730,7 @@
       "reviewStatus": "provisional"
     },
     "Snatch_Balance": {
-      "preferred": "抓举 balance",
+      "preferred": "抓举 平衡",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5746,10 +5746,10 @@
       "reviewStatus": "provisional"
     },
     "Snatch_Pull": {
-      "preferred": "抓举 下拉",
+      "preferred": "抓举高拉",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -5762,7 +5762,7 @@
       "reviewStatus": "provisional"
     },
     "Snatch_from_Blocks": {
-      "preferred": "抓举 从 blocks",
+      "preferred": "抓举 从 垫块",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5770,7 +5770,7 @@
       "reviewStatus": "provisional"
     },
     "Speed_Band_Overhead_Triceps": {
-      "preferred": "Speed 弹力带 过顶 triceps",
+      "preferred": "Speed 弹力带 过顶 肱三头肌",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5778,7 +5778,7 @@
       "reviewStatus": "provisional"
     },
     "Speed_Box_Squat": {
-      "preferred": "Speed box 深蹲",
+      "preferred": "Speed 箱式 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5866,18 +5866,18 @@
       "reviewStatus": "provisional"
     },
     "Split_Squats": {
-      "preferred": "分腿 squats",
+      "preferred": "分腿深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Squat_Jerk": {
-      "preferred": "深蹲 挺举",
+      "preferred": "下蹲挺（Squat Jerk）",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -5890,7 +5890,7 @@
       "reviewStatus": "provisional"
     },
     "Squat_with_Chains": {
-      "preferred": "深蹲 带 chains",
+      "preferred": "深蹲 带 链条",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5898,7 +5898,7 @@
       "reviewStatus": "provisional"
     },
     "Squat_with_Plate_Movers": {
-      "preferred": "深蹲 带 plate movers",
+      "preferred": "深蹲 带 杠铃片 movers",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5946,7 +5946,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
-      "preferred": "站姿 bent-over 单臂 哑铃 肱三头肌伸展",
+      "preferred": "站姿 俯身 单臂 哑铃 肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5954,7 +5954,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
-      "preferred": "站姿 bent-over 双臂 哑铃 肱三头肌伸展",
+      "preferred": "站姿 俯身 双臂 哑铃 肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5962,7 +5962,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Biceps_Cable_Curl": {
-      "preferred": "站姿 biceps 绳索 弯举",
+      "preferred": "站姿 肱二头肌 绳索 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5970,7 +5970,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Biceps_Stretch": {
-      "preferred": "站姿 biceps 拉伸",
+      "preferred": "站姿 肱二头肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -5994,7 +5994,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Cable_Lift": {
-      "preferred": "站姿 绳索 lift",
+      "preferred": "站姿 绳索 抬升",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6074,7 +6074,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Elevated_Quad_Stretch": {
-      "preferred": "站姿 elevated quad 拉伸",
+      "preferred": "站姿 抬高 股四头肌 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6098,7 +6098,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Hamstring_and_Calf_Stretch": {
-      "preferred": "站姿 hamstring 和 小腿 拉伸",
+      "preferred": "站姿 腘绳肌 和 小腿 拉伸",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6106,7 +6106,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Hip_Circles": {
-      "preferred": "站姿 髋 circles",
+      "preferred": "站姿 髋 绕环",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6130,10 +6130,10 @@
       "reviewStatus": "provisional"
     },
     "Standing_Lateral_Stretch": {
-      "preferred": "站姿 lateral 拉伸",
+      "preferred": "站立侧向拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6146,7 +6146,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Long_Jump": {
-      "preferred": "站姿 long 跳",
+      "preferred": "站姿 长杆 跳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6154,7 +6154,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Low-Pulley_Deltoid_Raise": {
-      "preferred": "站姿 低位-pulley 三角肌 举",
+      "preferred": "站姿 低位-滑轮 三角肌 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6162,7 +6162,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Low-Pulley_One-Arm_Triceps_Extension": {
-      "preferred": "站姿 低位-pulley 单臂 肱三头肌伸展",
+      "preferred": "站姿 低位-滑轮 单臂 肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6170,7 +6170,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Military_Press": {
-      "preferred": "站姿 military 推举",
+      "preferred": "站姿 肩上 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6178,7 +6178,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Olympic_Plate_Hand_Squeeze": {
-      "preferred": "站姿 olympic plate hand squeeze",
+      "preferred": "站姿 olympic 杠铃片 hand squeeze",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6194,7 +6194,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench": {
-      "preferred": "站姿 单臂 哑铃 弯举 over 上斜 长凳",
+      "preferred": "站姿 单臂 哑铃 弯举 过顶 上斜 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6218,7 +6218,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Palm-In_One-Arm_Dumbbell_Press": {
-      "preferred": "站姿 palm-in 单臂 哑铃 推举",
+      "preferred": "站姿 palm-内 单臂 哑铃 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6226,7 +6226,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Palms-In_Dumbbell_Press": {
-      "preferred": "站姿 palms-in 哑铃 推举",
+      "preferred": "站姿 掌心-内 哑铃 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6234,7 +6234,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl": {
-      "preferred": "站姿 palms-up 杠铃 背后 wrist 弯举",
+      "preferred": "站姿 掌心-up 杠铃 背后 腕 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6242,10 +6242,10 @@
       "reviewStatus": "provisional"
     },
     "Standing_Pelvic_Tilt": {
-      "preferred": "站姿 pelvic tilt",
+      "preferred": "站立骨盆倾斜",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6282,7 +6282,7 @@
       "reviewStatus": "provisional"
     },
     "Standing_Two-Arm_Overhead_Throw": {
-      "preferred": "站姿 双臂 过顶 throw",
+      "preferred": "站姿 双臂 过顶 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6298,7 +6298,7 @@
       "reviewStatus": "provisional"
     },
     "Step-up_with_Knee_Raise": {
-      "preferred": "Step-up 带 knee 举",
+      "preferred": "Step-up 带 膝 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6362,7 +6362,7 @@
       "reviewStatus": "provisional"
     },
     "Straight_Bar_Bench_Mid_Rows": {
-      "preferred": "Straight bar 长凳 mid rows",
+      "preferred": "Straight 杠铃杆 长凳 中位 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6370,7 +6370,7 @@
       "reviewStatus": "provisional"
     },
     "Straight_Raises_on_Incline_Bench": {
-      "preferred": "Straight raises 在 上斜 长凳",
+      "preferred": "Straight 举 在 上斜 长凳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6378,7 +6378,7 @@
       "reviewStatus": "provisional"
     },
     "Stride_Jump_Crossover": {
-      "preferred": "Stride 跳 crossover",
+      "preferred": "Stride 跳 交叉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6386,7 +6386,7 @@
       "reviewStatus": "provisional"
     },
     "Sumo_Deadlift": {
-      "preferred": "Sumo 硬拉",
+      "preferred": "相扑 硬拉",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6394,7 +6394,7 @@
       "reviewStatus": "provisional"
     },
     "Sumo_Deadlift_with_Bands": {
-      "preferred": "Sumo 硬拉 带 弹力带",
+      "preferred": "相扑 硬拉 带 弹力带",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6402,7 +6402,7 @@
       "reviewStatus": "provisional"
     },
     "Sumo_Deadlift_with_Chains": {
-      "preferred": "Sumo 硬拉 带 chains",
+      "preferred": "相扑 硬拉 带 链条",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6418,7 +6418,7 @@
       "reviewStatus": "provisional"
     },
     "Supine_Chest_Throw": {
-      "preferred": "Supine 胸 throw",
+      "preferred": "仰卧 胸 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6426,7 +6426,7 @@
       "reviewStatus": "provisional"
     },
     "Supine_One-Arm_Overhead_Throw": {
-      "preferred": "Supine 单臂 过顶 throw",
+      "preferred": "仰卧 单臂 过顶 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6434,7 +6434,7 @@
       "reviewStatus": "provisional"
     },
     "Supine_Two-Arm_Overhead_Throw": {
-      "preferred": "Supine 双臂 过顶 throw",
+      "preferred": "仰卧 双臂 过顶 投掷",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6450,34 +6450,34 @@
       "reviewStatus": "provisional"
     },
     "Suspended_Push-Up": {
-      "preferred": "悬吊 俯卧撑",
+      "preferred": "悬吊俯卧撑",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Suspended_Reverse_Crunch": {
-      "preferred": "悬吊 反向 卷腹",
+      "preferred": "悬吊带反向卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Suspended_Row": {
-      "preferred": "悬吊 划船",
+      "preferred": "悬吊划船",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Suspended_Split_Squat": {
-      "preferred": "悬吊 分腿蹲",
+      "preferred": "悬吊分腿深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6490,7 +6490,7 @@
       "reviewStatus": "provisional"
     },
     "T-Bar_Row_with_Handle": {
-      "preferred": "T-bar 划船 带 handle",
+      "preferred": "T-杠铃杆 划船 带 handle",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6562,10 +6562,10 @@
       "reviewStatus": "provisional"
     },
     "Trap_Bar_Deadlift": {
-      "preferred": "Trap bar 硬拉",
+      "preferred": "六角杠硬拉",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6586,7 +6586,7 @@
       "reviewStatus": "provisional"
     },
     "Triceps_Overhead_Extension_with_Rope": {
-      "preferred": "Triceps 过顶 伸展 带 绳",
+      "preferred": "肱三头肌 过顶 伸展 带 绳",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6602,7 +6602,7 @@
       "reviewStatus": "provisional"
     },
     "Triceps_Pushdown_-_Rope_Attachment": {
-      "preferred": "绳索下压 — 绳 attachment",
+      "preferred": "绳索下压 — 绳 附件",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6610,7 +6610,7 @@
       "reviewStatus": "provisional"
     },
     "Triceps_Pushdown_-_V-Bar_Attachment": {
-      "preferred": "绳索下压 — v-bar attachment",
+      "preferred": "绳索下压 — v-杠铃杆 附件",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6618,23 +6618,23 @@
       "reviewStatus": "provisional"
     },
     "Triceps_Stretch": {
-      "preferred": "Triceps 拉伸",
+      "preferred": "肱三头肌伸展",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Tuck_Crunch": {
-      "preferred": "Tuck 卷腹",
+      "preferred": "团身卷腹",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
     "Two-Arm_Dumbbell_Preacher_Curl": {
-      "preferred": "双臂 哑铃 preacher 弯举",
+      "preferred": "双臂 哑铃 牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6658,7 +6658,7 @@
       "reviewStatus": "provisional"
     },
     "Two-Arm_Kettlebell_Military_Press": {
-      "preferred": "双臂 壶铃 military 推举",
+      "preferred": "双臂 壶铃 肩上 推举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6690,10 +6690,10 @@
       "reviewStatus": "provisional"
     },
     "Upper_Back_Stretch": {
-      "preferred": "Upper 背 拉伸",
+      "preferred": "上背部拉伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6762,7 +6762,7 @@
       "reviewStatus": "provisional"
     },
     "Weighted_Ball_Hyperextension": {
-      "preferred": "负重 ball hyperextension",
+      "preferred": "负重 球 hyperextension",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6770,7 +6770,7 @@
       "reviewStatus": "provisional"
     },
     "Weighted_Ball_Side_Bend": {
-      "preferred": "负重 ball 侧屈",
+      "preferred": "负重 球 侧屈",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6778,10 +6778,10 @@
       "reviewStatus": "provisional"
     },
     "Weighted_Bench_Dip": {
-      "preferred": "负重 长凳 dip",
+      "preferred": "负重凳上臂屈伸",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6810,10 +6810,10 @@
       "reviewStatus": "provisional"
     },
     "Weighted_Sissy_Squat": {
-      "preferred": "负重 sissy 深蹲",
+      "preferred": "负重西斯深蹲（Weighted Sissy Squat）",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6826,10 +6826,10 @@
       "reviewStatus": "provisional"
     },
     "Weighted_Squat": {
-      "preferred": "负重 深蹲",
+      "preferred": "负重深蹲",
       "aliases": [],
       "sourceRefs": [
-        "repo-domain-terminology"
+        "zh-Hans-reference-terminology"
       ],
       "reviewStatus": "provisional"
     },
@@ -6890,7 +6890,7 @@
       "reviewStatus": "provisional"
     },
     "Wide_Stance_Barbell_Squat": {
-      "preferred": "Wide stance 杠铃 深蹲",
+      "preferred": "宽 站距 杠铃 深蹲",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6898,7 +6898,7 @@
       "reviewStatus": "provisional"
     },
     "Wide_Stance_Stiff_Legs": {
-      "preferred": "Wide stance stiff 腿",
+      "preferred": "宽 站距 stiff 腿",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6946,7 +6946,7 @@
       "reviewStatus": "provisional"
     },
     "Wrist_Rotations_with_Straight_Bar": {
-      "preferred": "Wrist 旋转 带 straight bar",
+      "preferred": "腕 旋转 带 straight 杠铃杆",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -6978,7 +6978,7 @@
       "reviewStatus": "provisional"
     },
     "Zottman_Preacher_Curl": {
-      "preferred": "Zottman preacher 弯举",
+      "preferred": "Zottman 牧师凳 弯举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7002,7 +7002,7 @@
       "reviewStatus": "provisional"
     },
     "Half-Kneeling_Cable_Lift": {
-      "preferred": "Half-跪姿 绳索 lift",
+      "preferred": "Half-跪姿 绳索 抬升",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7034,7 +7034,7 @@
       "reviewStatus": "provisional"
     },
     "One-Arm_Bent-Over_Cable_Row": {
-      "preferred": "单臂 bent-over 坐姿绳索划船",
+      "preferred": "单臂 俯身 坐姿绳索划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7058,7 +7058,7 @@
       "reviewStatus": "provisional"
     },
     "Alternating_Flat-Bench_Cable_Chest_Press": {
-      "preferred": "交替 flat-长凳 绳索 胸推",
+      "preferred": "交替 平板-长凳 绳索 胸推",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7162,7 +7162,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Lateral_Lunge": {
-      "preferred": "绳索 lateral 弓步",
+      "preferred": "绳索 侧向 弓步",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7218,7 +7218,7 @@
       "reviewStatus": "provisional"
     },
     "Cable_Calf-Box_Raise": {
-      "preferred": "绳索 小腿-box 举",
+      "preferred": "绳索 小腿-箱式 举",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7298,7 +7298,7 @@
       "reviewStatus": "provisional"
     },
     "Machine_Oblique_Crunch": {
-      "preferred": "器械 oblique 卷腹",
+      "preferred": "器械 斜 卷腹",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7362,7 +7362,7 @@
       "reviewStatus": "provisional"
     },
     "Machine_T-Bar_Row": {
-      "preferred": "器械 t-bar 划船",
+      "preferred": "器械 t-杠铃杆 划船",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"
@@ -7386,7 +7386,7 @@
       "reviewStatus": "provisional"
     },
     "Assisted_Chin-Up": {
-      "preferred": "Assisted 反手引体向上",
+      "preferred": "辅助 反手引体向上",
       "aliases": [],
       "sourceRefs": [
         "repo-domain-terminology"

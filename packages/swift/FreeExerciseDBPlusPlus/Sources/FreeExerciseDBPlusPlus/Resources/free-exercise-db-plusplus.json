@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T17:50:43.026423+00:00",
+    "generatedAt": "2026-10-01T18:03:37.906111+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1170,7 +1170,7 @@
         },
         "zh-Hans": {
           "source": "translations/zh-Hans.json",
-          "sha256": "7e50ecf490bd96a479305fbd2a53cde5dffad277bbacac9a67e8f9c75393ac80",
+          "sha256": "b840fe2a5c423e87ad1f012b085c447ee9b46fc1781c61c62047ded9525d9532",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1178,7 +1178,7 @@
         },
         "zh-Hant": {
           "source": "translations/zh-Hant.json",
-          "sha256": "b5703fc50b088d7e2a593b95953d4971993d036001faf781cc37323533c55408",
+          "sha256": "723f2434545c27b075ff64a161116eea65d0327ac608f3f6a2595ded8db47e1b",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1370,7 +1370,7 @@
           "preferred": "3/4 仰卧起坐",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -1873,7 +1873,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "腹部 roller",
+          "preferred": "健腹轮",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -1881,7 +1881,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "腹部 roller",
+          "preferred": "健腹輪",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2380,7 +2380,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Advanced 壶铃 windmill",
+          "preferred": "高级壶铃风车",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2388,7 +2388,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Advanced 壺鈴 windmill",
+          "preferred": "高级壶鈴風車",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2715,7 +2715,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "All fours quad 拉伸",
+          "preferred": "四点跪姿股四头肌拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2723,7 +2723,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "All fours quad 伸展",
+          "preferred": "四点跪姿股四頭肌拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -3057,10 +3057,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "交替 触踵",
+          "preferred": "交替触脚跟",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -3400,7 +3400,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "交替 腿 diagonal bound",
+          "preferred": "交替单腿对角跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -3408,7 +3408,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "交替 腿 diagonal bound",
+          "preferred": "交替單腿对角跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -4960,7 +4960,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Ankle 在 knee",
+          "preferred": "脚踝搭在膝盖上",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -4968,7 +4968,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Ankle 在 knee",
+          "preferred": "腳踝搭在膝盖上",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5298,7 +5298,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Anti-gravity 推举",
+          "preferred": "反重力推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5306,7 +5306,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Anti-gravity 推舉",
+          "preferred": "反重力推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5463,7 +5463,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "手臂 circles",
+          "preferred": "手臂绕环",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5471,7 +5471,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "手臂 circles",
+          "preferred": "手臂繞環",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5809,7 +5809,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Around worlds",
+          "preferred": "绕世界",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5817,7 +5817,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Around worlds",
+          "preferred": "繞世界",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5997,7 +5997,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Atlas石训练",
+          "preferred": "阿特拉斯石训练",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6005,7 +6005,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Atlas石訓練",
+          "preferred": "阿特拉斯石訓練",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6190,7 +6190,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Atlas石",
+          "preferred": "阿特拉斯石",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6198,7 +6198,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Atlas石",
+          "preferred": "阿特拉斯石",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6375,7 +6375,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Axle 硬拉",
+          "preferred": "轴杠硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6383,7 +6383,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Axle 硬舉",
+          "preferred": "轴槓硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6898,7 +6898,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Backward 药球 throw",
+          "preferred": "向后药球投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6906,7 +6906,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Backward 藥球 throw",
+          "preferred": "向后药球投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7238,7 +7238,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Ball 腿弯举",
+          "preferred": "健身球腿弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7246,7 +7246,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Ball 腿彎舉",
+          "preferred": "健身球腿彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7415,15 +7415,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "弹力带 assisted 引体向上",
+          "preferred": "弹力带辅助引体向上",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "彈力帶 assisted 引體向上",
+          "preferred": "彈力帶 輔助 引體向上",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7767,7 +7767,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "弹力带 早安式 下拉 through",
+          "preferred": "弹力带早安式穿胯",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7775,7 +7775,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "彈力帶 早安式 下拉 through",
+          "preferred": "弹力带早安式穿胯",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7937,7 +7937,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "弹力带 髋 adductions",
+          "preferred": "弹力带髋内收",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7945,7 +7945,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "彈力帶 髖 adductions",
+          "preferred": "弹力带髋內收",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8111,7 +8111,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "弹力带 下拉 apart",
+          "preferred": "弹力带拉开",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8119,7 +8119,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "彈力帶 下拉 apart",
+          "preferred": "弹力带拉开",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8451,7 +8451,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 腹部 rollout",
+          "preferred": "杠铃腹肌滚轮",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8459,7 +8459,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 腹部 rollout",
+          "preferred": "槓鈴腹肌滾輪",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8624,7 +8624,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 腹部 rollout — 在 knees",
+          "preferred": "跪姿杠铃腹肌滚轮",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8632,7 +8632,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 腹部 rollout — 在 knees",
+          "preferred": "跪姿槓鈴腹肌滾輪",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8975,10 +8975,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 弯举",
+          "preferred": "杠铃弯举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -9145,7 +9145,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 curls 仰卧 against an 上斜",
+          "preferred": "斜板仰卧杠铃弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9153,7 +9153,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 curls 仰臥 against an 上斜",
+          "preferred": "斜板仰臥槓鈴彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9331,10 +9331,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 硬拉",
+          "preferred": "杠铃硬拉",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -9513,15 +9513,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 full 深蹲",
+          "preferred": "杠铃全蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 full 深蹲",
+          "preferred": "槓鈴 完整 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9689,10 +9689,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 臀桥",
+          "preferred": "杠铃臀桥",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -9864,15 +9864,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 guillotine 卧推",
+          "preferred": "杠铃断头台卧推",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 guillotine 臥推",
+          "preferred": "槓鈴 斷頭台 臥推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10041,15 +10041,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 hack 深蹲",
+          "preferred": "杠铃哈克深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 hack 深蹲",
+          "preferred": "槓鈴 哈克 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10562,10 +10562,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 上斜 肩 举",
+          "preferred": "杠铃上斜肩胛前伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -10741,10 +10741,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 弓步",
+          "preferred": "杠铃弓步",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -10920,15 +10920,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 后侧 delt 划船",
+          "preferred": "杠铃后束划船",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 後側 delt 划船",
+          "preferred": "槓鈴 後側 三角肌 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -11094,7 +11094,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 rollout 从 长凳",
+          "preferred": "从长凳开始的杠铃滚轮",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -11102,7 +11102,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 rollout 從 長凳",
+          "preferred": "從長凳开始的槓鈴滾輪",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -11264,10 +11264,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 坐姿 提踵",
+          "preferred": "杠铃坐姿提踵",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -11610,10 +11610,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 耸肩",
+          "preferred": "杠铃耸肩",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -12131,10 +12131,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 侧向 分腿蹲",
+          "preferred": "杠铃侧向分腿深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -12497,7 +12497,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 深蹲 至 a 长凳",
+          "preferred": "杠铃深蹲至长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12505,7 +12505,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 深蹲 至 a 長凳",
+          "preferred": "槓鈴深蹲至長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12675,7 +12675,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "杠铃 step ups",
+          "preferred": "杠铃上凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12683,7 +12683,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "槓鈴 step ups",
+          "preferred": "槓鈴上凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13211,7 +13211,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Bear crawl 雪橇 drags",
+          "preferred": "熊爬拖雪橇",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13219,7 +13219,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Bear crawl 雪橇 drags",
+          "preferred": "熊爬拖雪橇",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13377,10 +13377,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "头后 胸 拉伸",
+          "preferred": "双手置于脑后胸肌拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -13551,7 +13551,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "长凳 dips",
+          "preferred": "凳上臂屈伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13559,7 +13559,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "長凳 dips",
+          "preferred": "凳上臂屈伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13900,7 +13900,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "卧推 — powerlifting",
+          "preferred": "力量举卧推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13908,7 +13908,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "臥推 — powerlifting",
+          "preferred": "力量舉臥推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14256,7 +14256,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "卧推 带 chains",
+          "preferred": "链条卧推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14264,7 +14264,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "臥推 帶 chains",
+          "preferred": "链条臥推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14424,7 +14424,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "长凳 sprint",
+          "preferred": "凳上冲刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14432,7 +14432,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "長凳 sprint",
+          "preferred": "凳上衝刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14949,7 +14949,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Bent-knee 髋 举",
+          "preferred": "屈膝髋举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14957,7 +14957,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Bent-knee 髖 舉",
+          "preferred": "屈膝髋舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15474,7 +15474,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "俯身 低位-pulley 侧向 lateral",
+          "preferred": "俯身低位绳索侧平举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15482,7 +15482,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "俯身 低位-pulley 側向 lateral",
+          "preferred": "俯身低位繩索側平舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15655,7 +15655,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "俯身 单臂 long bar 划船",
+          "preferred": "俯身单臂长杆划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15663,7 +15663,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "俯身 單臂 long bar 划船",
+          "preferred": "俯身單臂長杆划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15834,7 +15834,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "俯身 双臂 long bar 划船",
+          "preferred": "俯身双臂长杆划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15842,7 +15842,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "俯身 雙臂 long bar 划船",
+          "preferred": "俯身雙臂長杆划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16189,7 +16189,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "俯身 two-哑铃划船 带 palms in",
+          "preferred": "俯身双哑铃划船（掌心相对）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16197,7 +16197,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "俯身 two-啞鈴划船 帶 palms in",
+          "preferred": "俯身雙哑鈴划船（掌心相对）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16373,7 +16373,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Bent 推举",
+          "preferred": "侧压举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16381,7 +16381,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Bent 推舉",
+          "preferred": "側壓舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16882,7 +16882,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Board 推举",
+          "preferred": "木板卧推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16890,7 +16890,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Board 推舉",
+          "preferred": "木板臥推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17222,7 +17222,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Body 肱三头肌 推举",
+          "preferred": "自重肱三头肌推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17230,7 +17230,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Body 肱三頭肌 推舉",
+          "preferred": "自重肱三頭肌推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17573,7 +17573,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "自重 mid 划船",
+          "preferred": "自重中位划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17581,7 +17581,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "自重 mid 划船",
+          "preferred": "自重中位划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18102,7 +18102,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Bosu ball 绳索 卷腹 带 侧向 bends",
+          "preferred": "BOSU球绳索侧屈卷腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18110,7 +18110,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Bosu ball 繩索 捲腹 帶 側向 bends",
+          "preferred": "BOSU球繩索側屈捲腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18281,7 +18281,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Bottoms-up 翻 从 悬垂 position",
+          "preferred": "悬垂位壶铃底朝上翻举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18289,7 +18289,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Bottoms-up 翻 從 懸垂 position",
+          "preferred": "懸垂位壶鈴底朝上翻舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18971,7 +18971,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Box 深蹲",
+          "preferred": "箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18979,7 +18979,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Box 深蹲",
+          "preferred": "箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19155,7 +19155,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Box 深蹲 带 弹力带",
+          "preferred": "弹力带箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19163,7 +19163,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Box 深蹲 帶 彈力帶",
+          "preferred": "弹力带箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19338,7 +19338,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Box 深蹲 带 chains",
+          "preferred": "链条箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19346,7 +19346,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Box 深蹲 帶 chains",
+          "preferred": "链条箱式深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20018,7 +20018,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Butt lift 桥",
+          "preferred": "臀桥",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20026,7 +20026,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Butt lift 橋",
+          "preferred": "臀橋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20887,7 +20887,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 deadlifts",
+          "preferred": "绳索硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20895,7 +20895,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 deadlifts",
+          "preferred": "繩索硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21059,7 +21059,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 hammer curls — 绳 attachment",
+          "preferred": "绳索锤式弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21067,7 +21067,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 hammer curls — 繩 attachment",
+          "preferred": "繩索鎚式彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21230,10 +21230,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 髋 adduction",
+          "preferred": "绳索髋内收",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -21399,10 +21399,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 上斜 pushdown",
+          "preferred": "绳索上斜下压",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -21568,10 +21568,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 上斜 肱三头肌伸展",
+          "preferred": "绳索上斜肱三头肌臂屈伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -21737,7 +21737,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 internal 旋转",
+          "preferred": "绳索肩内旋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21745,7 +21745,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 internal 旋轉",
+          "preferred": "繩索肩內旋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21909,7 +21909,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 iron cross",
+          "preferred": "绳索铁十字",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21917,7 +21917,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 iron cross",
+          "preferred": "繩索鐵十字",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22078,10 +22078,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 judo flip",
+          "preferred": "绳索柔道翻转卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -22592,15 +22592,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 preacher 弯举",
+          "preferred": "绳索牧师凳弯举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 preacher 彎舉",
+          "preferred": "繩索 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22763,7 +22763,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 后侧 delt 飞鸟",
+          "preferred": "绳索后三角飞鸟",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22771,7 +22771,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 後側 delt 飛鳥",
+          "preferred": "繩索后三角飞鸟",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22933,10 +22933,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 反向 卷腹",
+          "preferred": "绳索反向卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -23283,7 +23283,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 绳 后侧-delt rows",
+          "preferred": "绳索后三角划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23291,7 +23291,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 繩 後側-delt rows",
+          "preferred": "繩索后三角划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23623,10 +23623,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 坐姿 卷腹",
+          "preferred": "绳索坐姿卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -23973,10 +23973,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 肩部推举",
+          "preferred": "绳索肩部推举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -24316,15 +24316,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 wrist 弯举",
+          "preferred": "绳索腕弯举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 wrist 彎舉",
+          "preferred": "繩索 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -24995,7 +24995,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "提踵 在 a 哑铃",
+          "preferred": "提踵 在 哑铃",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25003,7 +25003,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "提踵 在 a 啞鈴",
+          "preferred": "提踵 在 啞鈴",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25164,7 +25164,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "小腿 raises — 带 弹力带",
+          "preferred": "小腿 举 — 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25172,7 +25172,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "小腿 raises — 帶 彈力帶",
+          "preferred": "小腿 舉 — 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25327,7 +25327,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "小腿 拉伸 elbows against wall",
+          "preferred": "小腿 拉伸 elbows 靠 wall",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25335,7 +25335,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "小腿 伸展 elbows against wall",
+          "preferred": "小腿 伸展 elbows 靠 wall",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25490,7 +25490,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "小腿 拉伸 hands against wall",
+          "preferred": "小腿 拉伸 hands 靠 wall",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25498,7 +25498,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "小腿 伸展 hands against wall",
+          "preferred": "小腿 伸展 hands 靠 wall",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26509,7 +26509,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Catch 和 过顶 throw",
+          "preferred": "Catch 和 过顶 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26517,7 +26517,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Catch 和 過頂 throw",
+          "preferred": "Catch 和 過頂 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27019,15 +27019,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Chair 腿 extended 拉伸",
+          "preferred": "椅上直腿拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Chair 腿 extended 伸展",
+          "preferred": "椅上 腿 extended 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27184,7 +27184,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Chair lower 背 拉伸",
+          "preferred": "椅上 lower 背 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27192,7 +27192,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Chair lower 背 伸展",
+          "preferred": "椅上 lower 背 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27365,7 +27365,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Chair 深蹲",
+          "preferred": "椅上 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27373,7 +27373,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Chair 深蹲",
+          "preferred": "椅上 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27530,7 +27530,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Chair upper body 拉伸",
+          "preferred": "椅上 upper 身体 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27538,7 +27538,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Chair upper body 伸展",
+          "preferred": "椅上 upper 身體 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27695,10 +27695,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "胸部和肩前侧拉伸",
+          "preferred": "胸部和肩部前部伸展",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -27862,7 +27862,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "胸 推 从 3 point stance",
+          "preferred": "胸 推 从 3 point 站距",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27870,7 +27870,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "胸 推 從 3 point stance",
+          "preferred": "胸 推 從 3 point 站距",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -28527,7 +28527,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "胸 拉伸 在 stability ball",
+          "preferred": "胸 拉伸 在 stability 球",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -28535,7 +28535,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "胸 伸展 在 stability ball",
+          "preferred": "胸 伸展 在 stability 球",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -28693,18 +28693,18 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "婴儿式",
+          "preferred": "儿童式",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "婴儿式",
+          "preferred": "儿童式",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -28871,10 +28871,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反手引体向上",
+          "preferred": "反握引体向上",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -29035,7 +29035,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Chin 至 胸 拉伸",
+          "preferred": "下巴 至 胸 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -29043,7 +29043,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Chin 至 胸 伸展",
+          "preferred": "下巴 至 胸 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30539,7 +30539,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "翻 从 blocks",
+          "preferred": "翻 从 垫块",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30547,7 +30547,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "翻 從 blocks",
+          "preferred": "翻 從 墊塊",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30715,10 +30715,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Clock 俯卧撑",
+          "preferred": "时钟俯卧撑",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -32808,7 +32808,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Cross-body 卷腹",
+          "preferred": "十字-身体 卷腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32816,7 +32816,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Cross-body 捲腹",
+          "preferred": "十字-身體 捲腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32979,7 +32979,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Cross body 锤式弯举",
+          "preferred": "十字 身体 锤式弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32987,7 +32987,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Cross body 錘式彎舉",
+          "preferred": "十字 身體 錘式彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33154,7 +33154,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Cross over — 带 弹力带",
+          "preferred": "十字 过顶 — 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33162,7 +33162,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Cross over — 帶 彈力帶",
+          "preferred": "十字 過頂 — 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33323,7 +33323,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Crossover 反向弓步",
+          "preferred": "交叉 反向弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33331,7 +33331,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Crossover 反向弓步",
+          "preferred": "交叉 反向弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34003,18 +34003,18 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧起坐",
+          "preferred": "卷腹",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰卧起坐",
+          "preferred": "捲腹",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -34881,7 +34881,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "硬拉 带 chains",
+          "preferred": "硬拉 带 链条",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34889,7 +34889,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "硬舉 帶 chains",
+          "preferred": "硬舉 帶 鏈條",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -35401,10 +35401,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "下斜 卷腹",
+          "preferred": "下斜卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -36256,7 +36256,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "下斜 oblique 卷腹",
+          "preferred": "下斜 斜 卷腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36264,7 +36264,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "下斜 oblique 捲腹",
+          "preferred": "下斜 斜 捲腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36430,10 +36430,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "下斜 俯卧撑",
+          "preferred": "下斜俯卧撑",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -37820,7 +37820,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Donkey 小腿 raises",
+          "preferred": "Donkey 小腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37828,7 +37828,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Donkey 小腿 raises",
+          "preferred": "Donkey 小腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -38905,7 +38905,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "双 腿 butt kick",
+          "preferred": "双 腿 臀部 kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -38913,7 +38913,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "雙 腿 butt kick",
+          "preferred": "雙 腿 臀部 kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -39765,7 +39765,7 @@
           "preferred": "哑铃卧推",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -40297,10 +40297,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 翻",
+          "preferred": "哑铃翻举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -40822,10 +40822,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 上斜 划船",
+          "preferred": "哑铃上斜划船",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -40993,10 +40993,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 上斜 肩 举",
+          "preferred": "哑铃上斜肩胛上推",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -41514,10 +41514,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 仰卧 pronation",
+          "preferred": "哑铃侧卧前臂旋前",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -41685,10 +41685,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 仰卧 后侧 侧平举",
+          "preferred": "哑铃俯卧后束侧平举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -41857,10 +41857,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 仰卧 supination",
+          "preferred": "哑铃侧卧前臂旋后",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -42552,10 +42552,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 prone 上斜 弯举",
+          "preferred": "哑铃俯卧上斜弯举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -42722,10 +42722,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 举",
+          "preferred": "哑铃侧平举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -42900,10 +42900,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 后侧 弓步",
+          "preferred": "哑铃后撤弓步",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -43755,10 +43755,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 耸肩",
+          "preferred": "哑铃耸肩",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -43923,10 +43923,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 侧屈",
+          "preferred": "哑铃侧弯",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -44104,10 +44104,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 深蹲",
+          "preferred": "哑铃深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -44285,7 +44285,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "哑铃 深蹲 至 a 长凳",
+          "preferred": "哑铃 深蹲 至 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44293,7 +44293,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "啞鈴 深蹲 至 a 長凳",
+          "preferred": "啞鈴 深蹲 至 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45629,7 +45629,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Elbow 至 knee",
+          "preferred": "Elbow 至 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45637,7 +45637,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Elbow 至 knee",
+          "preferred": "Elbow 至 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45971,7 +45971,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Elevated 背 弓步",
+          "preferred": "抬高 背 弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45979,7 +45979,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Elevated 背 弓步",
+          "preferred": "抬高 背 弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46151,7 +46151,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Elevated 绳索 rows",
+          "preferred": "抬高 绳索 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46159,7 +46159,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Elevated 繩索 rows",
+          "preferred": "抬高 繩索 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46655,7 +46655,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "健身球 下拉-in",
+          "preferred": "健身球 下拉-内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46663,7 +46663,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "健身球 下拉-in",
+          "preferred": "健身球 下拉-內",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46997,7 +46997,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "External 旋转",
+          "preferred": "外旋 旋转",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47005,7 +47005,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "External 旋轉",
+          "preferred": "外旋 旋轉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47166,7 +47166,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "External 旋转 带 弹力带",
+          "preferred": "外旋 旋转 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47174,7 +47174,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "External 旋轉 帶 彈力帶",
+          "preferred": "外旋 旋轉 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47334,7 +47334,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "External 旋转 带 绳索",
+          "preferred": "外旋 旋转 带 绳索",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47342,7 +47342,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "External 旋轉 帶 繩索",
+          "preferred": "外旋 旋轉 帶 繩索",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48203,7 +48203,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Flat 长凳 绳索 飞鸟",
+          "preferred": "平板 长凳 绳索 飞鸟",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48211,7 +48211,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Flat 長凳 繩索 飛鳥",
+          "preferred": "平板 長凳 繩索 飛鳥",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48372,7 +48372,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Flat 长凳 腿 下拉-in",
+          "preferred": "平板 长凳 腿 下拉-内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48380,7 +48380,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Flat 長凳 腿 下拉-in",
+          "preferred": "平板 長凳 腿 下拉-內",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48542,7 +48542,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Flat 长凳 仰卧 腿 举",
+          "preferred": "平板 长凳 仰卧 腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48550,7 +48550,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Flat 長凳 仰臥 腿 舉",
+          "preferred": "平板 長凳 仰臥 腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48714,7 +48714,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Flexor 上斜 哑铃 curls",
+          "preferred": "Flexor 上斜 哑铃 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48722,7 +48722,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Flexor 上斜 啞鈴 curls",
+          "preferred": "Flexor 上斜 啞鈴 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49238,7 +49238,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "地板 推举 带 chains",
+          "preferred": "地板 推举 带 链条",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49246,7 +49246,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "地板 推舉 帶 chains",
+          "preferred": "地板 推舉 帶 鏈條",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49943,10 +49943,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Frankenstein 深蹲",
+          "preferred": "弗兰肯斯坦深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -50823,7 +50823,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "前侧 杠铃 深蹲 至 a 长凳",
+          "preferred": "前侧 杠铃 深蹲 至 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -50831,7 +50831,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "前側 槓鈴 深蹲 至 a 長凳",
+          "preferred": "前側 槓鈴 深蹲 至 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -51832,7 +51832,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "前侧 腿 raises",
+          "preferred": "前侧 腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -51840,7 +51840,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "前側 腿 raises",
+          "preferred": "前側 腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52000,7 +52000,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "前侧 plate 举",
+          "preferred": "前侧 杠铃片 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52008,7 +52008,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "前側 plate 舉",
+          "preferred": "前側 槓鈴片 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52872,7 +52872,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Full range-of-motion 高位下拉",
+          "preferred": "完整 range-of-motion 高位下拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52880,7 +52880,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Full range-of-motion 高位下拉",
+          "preferred": "完整 range-of-motion 高位下拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54103,7 +54103,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Gorilla chin/卷腹",
+          "preferred": "Gorilla 下巴/卷腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54111,7 +54111,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Gorilla chin/捲腹",
+          "preferred": "Gorilla 下巴/捲腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54266,7 +54266,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Groin 和 背 拉伸",
+          "preferred": "腹股沟 和 背 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54274,7 +54274,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Groin 和 背 伸展",
+          "preferred": "腹股溝 和 背 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54609,7 +54609,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Hack 深蹲",
+          "preferred": "哈克 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54617,7 +54617,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Hack 深蹲",
+          "preferred": "哈克 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55282,15 +55282,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Hamstring 拉伸",
+          "preferred": "腘绳肌拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Hamstring 伸展",
+          "preferred": "腘繩肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56397,7 +56397,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Hanging bar 早安式",
+          "preferred": "Hanging 杠铃杆 早安式",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56405,7 +56405,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Hanging bar 早安式",
+          "preferred": "Hanging 槓鈴桿 早安式",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56567,10 +56567,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Hanging 腿 举",
+          "preferred": "悬垂举腿",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -56921,7 +56921,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Heaving 抓举 balance",
+          "preferred": "Heaving 抓举 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56929,7 +56929,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Heaving 抓舉 balance",
+          "preferred": "Heaving 抓舉 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57258,7 +57258,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "高位 绳索 curls",
+          "preferred": "高位 绳索 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57266,7 +57266,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "高位 繩索 curls",
+          "preferred": "高位 繩索 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57423,7 +57423,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "髋 circles prone",
+          "preferred": "髋 绕环 prone",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57431,7 +57431,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "髖 circles prone",
+          "preferred": "髖 繞環 prone",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57944,7 +57944,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "髋 lift 带 弹力带",
+          "preferred": "髋 抬升 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57952,7 +57952,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "髖 lift 帶 彈力帶",
+          "preferred": "髖 抬升 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60159,7 +60159,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "上斜 哑铃 长凳 带 palms facing in",
+          "preferred": "上斜 哑铃 长凳 带 掌心 facing 内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60167,7 +60167,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "上斜 啞鈴 長凳 帶 palms facing in",
+          "preferred": "上斜 啞鈴 長凳 帶 掌心 facing 內",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60677,7 +60677,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "上斜 哑铃 飞鸟 — 带 a 转体",
+          "preferred": "上斜 哑铃 飞鸟 — 带 转体",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60685,7 +60685,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "上斜 啞鈴 飛鳥 — 帶 a 轉體",
+          "preferred": "上斜 啞鈴 飛鳥 — 帶 轉體",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61022,7 +61022,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "上斜 hammer curls",
+          "preferred": "上斜 hammer 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61030,7 +61030,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "上斜 hammer curls",
+          "preferred": "上斜 hammer 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61366,10 +61366,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "上斜 俯卧撑",
+          "preferred": "上斜俯卧撑",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -62236,7 +62236,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "上斜 俯卧撑 wide",
+          "preferred": "上斜 俯卧撑 宽",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62244,7 +62244,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "上斜 伏地挺身 wide",
+          "preferred": "上斜 伏地挺身 寬",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62398,7 +62398,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Intermediate groin 拉伸",
+          "preferred": "Intermediate 腹股沟 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62406,7 +62406,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Intermediate groin 伸展",
+          "preferred": "Intermediate 腹股溝 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62560,15 +62560,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Intermediate 髋 flexor 和 quad 拉伸",
+          "preferred": "中级髋屈肌与股四头肌拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Intermediate 髖 flexor 和 quad 伸展",
+          "preferred": "Intermediate 髖 flexor 和 股四頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62729,7 +62729,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Internal 旋转 带 弹力带",
+          "preferred": "内旋 旋转 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62737,7 +62737,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Internal 旋轉 帶 彈力帶",
+          "preferred": "內旋 旋轉 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62906,10 +62906,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Inverted 划船",
+          "preferred": "反向划船",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -63083,10 +63083,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Inverted 划船 带 straps",
+          "preferred": "悬吊带反向划船",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -63420,7 +63420,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Iron crosses 拉伸",
+          "preferred": "铁 crosses 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63428,7 +63428,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Iron crosses 伸展",
+          "preferred": "鐵 crosses 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -64445,10 +64445,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "折刀 仰卧起坐",
+          "preferred": "折刀式仰卧起坐",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -64613,10 +64613,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Janda 仰卧起坐",
+          "preferred": "詹达仰卧起坐",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -64981,7 +64981,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "挺举 balance",
+          "preferred": "挺举 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -64989,7 +64989,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "挺舉 balance",
+          "preferred": "挺舉 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -65690,10 +65690,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 arnold 推举",
+          "preferred": "壶铃阿诺德推举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -66051,10 +66051,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 figure 8",
+          "preferred": "壶铃8字绕腿",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -66234,10 +66234,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 悬垂 翻",
+          "preferred": "壶铃悬垂翻举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -66949,10 +66949,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 手枪式 深蹲",
+          "preferred": "壶铃手枪深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -67122,10 +67122,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 坐姿 推举",
+          "preferred": "壶铃坐姿推举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -67295,10 +67295,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 seesaw 推举",
+          "preferred": "壶铃跷跷板推举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -67479,15 +67479,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 sumo 高位 下拉",
+          "preferred": "壶铃相扑高拉",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "壺鈴 sumo 高位 下拉",
+          "preferred": "壺鈴 相撲 高位 下拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67661,10 +67661,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 thruster",
+          "preferred": "壶铃深蹲推举",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -68199,10 +68199,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "壶铃 windmill",
+          "preferred": "壶铃风车",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -68554,7 +68554,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Knee across body",
+          "preferred": "膝 across 身体",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68562,7 +68562,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Knee across body",
+          "preferred": "膝 across 身體",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68889,7 +68889,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Knee/髋 举 在 parallel bars",
+          "preferred": "膝/髋 举 在 parallel bars",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68897,7 +68897,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Knee/髖 舉 在 parallel bars",
+          "preferred": "膝/髖 舉 在 parallel bars",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69058,7 +69058,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Knee tuck 跳",
+          "preferred": "膝 tuck 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69066,7 +69066,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Knee tuck 跳",
+          "preferred": "膝 tuck 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69397,7 +69397,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "跪姿 绳索 卷腹 带 交替 oblique twists",
+          "preferred": "跪姿 绳索 卷腹 带 交替 斜 twists",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69405,7 +69405,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "跪姿 繩索 捲腹 帶 交替 oblique twists",
+          "preferred": "跪姿 繩索 捲腹 帶 交替 斜 twists",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69906,7 +69906,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "跪姿 高位 pulley 划船",
+          "preferred": "跪姿 高位 滑轮 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69914,7 +69914,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "跪姿 高位 pulley 划船",
+          "preferred": "跪姿 高位 滑輪 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -70251,10 +70251,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "跪姿 跳深蹲",
+          "preferred": "跪跳深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -70428,7 +70428,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "跪姿 单-手臂 高位 pulley 划船",
+          "preferred": "跪姿 单-手臂 高位 滑轮 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -70436,7 +70436,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "跪姿 單-手臂 高位 pulley 划船",
+          "preferred": "跪姿 單-手臂 高位 滑輪 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71309,7 +71309,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Lateral 箱式跳跃",
+          "preferred": "侧向 箱式跳跃",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71317,7 +71317,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Lateral 箱式跳躍",
+          "preferred": "側向 箱式跳躍",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71984,7 +71984,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "腿-over 地板 推举",
+          "preferred": "腿-过顶 地板 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71992,7 +71992,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "腿-over 地板 推舉",
+          "preferred": "腿-過頂 地板 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72147,7 +72147,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "腿-up hamstring 拉伸",
+          "preferred": "腿-up 腘绳肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72155,7 +72155,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "腿-up hamstring 伸展",
+          "preferred": "腿-up 腘繩肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72490,7 +72490,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "腿 lift",
+          "preferred": "腿 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72498,7 +72498,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "腿 lift",
+          "preferred": "腿 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72834,7 +72834,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "腿 下拉-in",
+          "preferred": "腿 下拉-内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72842,7 +72842,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "腿 下拉-in",
+          "preferred": "腿 下拉-內",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73008,7 +73008,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 胸推",
+          "preferred": "杠杆 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73016,7 +73016,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 胸推",
+          "preferred": "槓桿 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73185,7 +73185,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 硬拉",
+          "preferred": "杠杆 硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73193,7 +73193,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 硬舉",
+          "preferred": "槓桿 硬舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73358,7 +73358,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 下斜 胸推",
+          "preferred": "杠杆 下斜 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73366,7 +73366,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 下斜 胸推",
+          "preferred": "槓桿 下斜 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73534,7 +73534,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 高位 划船",
+          "preferred": "杠杆 高位 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73542,7 +73542,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 高位 划船",
+          "preferred": "槓桿 高位 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73707,7 +73707,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 上斜 胸推",
+          "preferred": "杠杆 上斜 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73715,7 +73715,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 上斜 胸推",
+          "preferred": "槓桿 上斜 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73883,7 +73883,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage iso 划船",
+          "preferred": "杠杆 iso 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73891,7 +73891,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage iso 划船",
+          "preferred": "槓桿 iso 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74056,7 +74056,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 肩部推举",
+          "preferred": "杠杆 肩部推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74064,7 +74064,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 肩部推舉",
+          "preferred": "槓桿 肩部推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74229,7 +74229,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Leverage 耸肩",
+          "preferred": "杠杆 耸肩",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74237,7 +74237,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Leverage 聳肩",
+          "preferred": "槓桿 聳肩",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75779,7 +75779,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "低位 pulley 划船 至 颈部",
+          "preferred": "低位 滑轮 划船 至 颈部",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75787,7 +75787,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "低位 pulley 划船 至 頸部",
+          "preferred": "低位 滑輪 划船 至 頸部",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76103,10 +76103,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Lower 背 弯举",
+          "preferred": "俯卧下背卷曲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -76460,7 +76460,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "弓步 sprint",
+          "preferred": "弓步 冲刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76468,7 +76468,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "弓步 sprint",
+          "preferred": "弓步 衝刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76623,7 +76623,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 bent 腿 groin",
+          "preferred": "仰卧 bent 腿 腹股沟",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76631,7 +76631,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 bent 腿 groin",
+          "preferred": "仰臥 bent 腿 腹股溝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77146,7 +77146,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 窄握 bar 弯举 在 高位 pulley",
+          "preferred": "仰卧 窄握 杠铃杆 弯举 在 高位 滑轮",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77154,7 +77154,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 窄握 bar 彎舉 在 高位 pulley",
+          "preferred": "仰臥 窄握 槓鈴桿 彎舉 在 高位 滑輪",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77484,7 +77484,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 窄握 杠铃 triceps 推举 至 chin",
+          "preferred": "仰卧 窄握 杠铃 肱三头肌 推举 至 下巴",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77492,7 +77492,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 窄握 槓鈴 triceps 推舉 至 chin",
+          "preferred": "仰臥 窄握 槓鈴 肱三頭肌 推舉 至 下巴",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77648,7 +77648,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 crossover",
+          "preferred": "仰卧 交叉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77656,7 +77656,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 crossover",
+          "preferred": "仰臥 交叉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77987,7 +77987,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 face down plate 颈部 resistance",
+          "preferred": "仰卧 face down 杠铃片 颈部 resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77995,7 +77995,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 face down plate 頸部 resistance",
+          "preferred": "仰臥 face down 槓鈴片 頸部 resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78155,7 +78155,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 face up plate 颈部 resistance",
+          "preferred": "仰卧 face up 杠铃片 颈部 resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78163,7 +78163,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 face up plate 頸部 resistance",
+          "preferred": "仰臥 face up 槓鈴片 頸部 resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78486,7 +78486,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 hamstring",
+          "preferred": "仰卧 腘绳肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78494,7 +78494,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 hamstring",
+          "preferred": "仰臥 腘繩肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78826,7 +78826,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 腿 curls",
+          "preferred": "仰卧 腿 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78834,7 +78834,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 腿 curls",
+          "preferred": "仰臥 腿 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79685,7 +79685,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 supine 哑铃 弯举",
+          "preferred": "仰卧哑铃弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79693,7 +79693,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 supine 啞鈴 彎舉",
+          "preferred": "仰臥哑鈴彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79864,7 +79864,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 t-bar 划船",
+          "preferred": "仰卧 t-杠铃杆 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79872,7 +79872,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 t-bar 划船",
+          "preferred": "仰臥 t-槓鈴桿 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80033,7 +80033,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "仰卧 triceps 推举",
+          "preferred": "仰卧 肱三头肌 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80041,7 +80041,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "仰臥 triceps 推舉",
+          "preferred": "仰臥 肱三頭肌 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80551,7 +80551,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "器械 preacher curls",
+          "preferred": "器械 牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80559,7 +80559,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "器械 preacher curls",
+          "preferred": "器械 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80726,7 +80726,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "器械 肩 military 推举",
+          "preferred": "器械 肩 肩上 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80734,7 +80734,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "器械 肩 military 推舉",
+          "preferred": "器械 肩 肩上 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81062,10 +81062,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "药球 胸 pass",
+          "preferred": "药球胸前传球",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -81228,7 +81228,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "药球 full 转体",
+          "preferred": "药球 完整 转体",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81236,7 +81236,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "藥球 full 轉體",
+          "preferred": "藥球 完整 轉體",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81395,7 +81395,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "药球 scoop throw",
+          "preferred": "药球 scoop 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81403,7 +81403,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "藥球 scoop throw",
+          "preferred": "藥球 scoop 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -82243,18 +82243,18 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "登山者式",
+          "preferred": "登山者",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "登山者式",
+          "preferred": "登山者",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -83142,7 +83142,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Narrow stance 腿举",
+          "preferred": "Narrow 站距 腿举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -83150,7 +83150,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Narrow stance 腿舉",
+          "preferred": "Narrow 站距 腿舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84175,7 +84175,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Oblique crunches — 在 地板",
+          "preferred": "斜 crunches — 在 地板",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84183,7 +84183,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Oblique crunches — 在 地板",
+          "preferred": "斜 crunches — 在 地板",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84519,7 +84519,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "在-your-背 quad 拉伸",
+          "preferred": "在-your-背 股四头肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84527,7 +84527,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "在-your-背 quad 伸展",
+          "preferred": "在-your-背 股四頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84681,7 +84681,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "在 your 侧向 quad 拉伸",
+          "preferred": "在 your 侧向 股四头肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84689,7 +84689,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "在 your 側向 quad 伸展",
+          "preferred": "在 your 側向 股四頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85034,7 +85034,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 flat 长凳 哑铃 flye",
+          "preferred": "单臂 平板 长凳 哑铃 flye",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85042,7 +85042,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 flat 長凳 啞鈴 flye",
+          "preferred": "單臂 平板 長凳 啞鈴 flye",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85206,7 +85206,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 高位-pulley 绳索 侧向 bends",
+          "preferred": "单臂 高位-滑轮 绳索 侧向 侧屈",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85214,7 +85214,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 高位-pulley 繩索 側向 bends",
+          "preferred": "單臂 高位-滑輪 繩索 側向 側屈",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -86271,7 +86271,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 壶铃 military 推举 至 侧向",
+          "preferred": "单臂 壶铃 肩上 推举 至 侧向",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -86279,7 +86279,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 壺鈴 military 推舉 至 側向",
+          "preferred": "單臂 壺鈴 肩上 推舉 至 側向",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87703,7 +87703,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 long bar 划船",
+          "preferred": "单臂 长杆 杠铃杆 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87711,7 +87711,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 long bar 划船",
+          "preferred": "單臂 長桿 槓鈴桿 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88940,15 +88940,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 against wall",
+          "preferred": "单臂推墙",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 against wall",
+          "preferred": "單臂 靠 wall",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -89120,10 +89120,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 反手引体向上",
+          "preferred": "单臂反手引体向上",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -89468,7 +89468,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 哑铃 preacher 弯举",
+          "preferred": "单臂 哑铃 牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -89476,7 +89476,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 啞鈴 preacher 彎舉",
+          "preferred": "單臂 啞鈴 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90660,7 +90660,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "One knee 至 胸",
+          "preferred": "One 膝 至 胸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90668,7 +90668,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "One knee 至 胸",
+          "preferred": "One 膝 至 胸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92216,7 +92216,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "过顶 triceps",
+          "preferred": "过顶 肱三头肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92224,7 +92224,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "過頂 triceps",
+          "preferred": "過頂 肱三頭肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92744,7 +92744,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Palms-down 哑铃 wrist 弯举 over a 长凳",
+          "preferred": "掌心-down 哑铃 腕 弯举 过顶 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92752,7 +92752,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Palms-down 啞鈴 wrist 彎舉 over a 長凳",
+          "preferred": "掌心-down 啞鈴 腕 彎舉 過頂 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92917,7 +92917,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Palms-down wrist 弯举 over a 长凳",
+          "preferred": "掌心-down 腕 弯举 过顶 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92925,7 +92925,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Palms-down wrist 彎舉 over a 長凳",
+          "preferred": "掌心-down 腕 彎舉 過頂 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93090,7 +93090,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Palms-up 杠铃 wrist 弯举 over a 长凳",
+          "preferred": "掌心-up 杠铃 腕 弯举 过顶 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93098,7 +93098,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Palms-up 槓鈴 wrist 彎舉 over a 長凳",
+          "preferred": "掌心-up 槓鈴 腕 彎舉 過頂 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93263,7 +93263,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Palms-up 哑铃 wrist 弯举 over a 长凳",
+          "preferred": "掌心-up 哑铃 腕 弯举 过顶 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93271,7 +93271,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Palms-up 啞鈴 wrist 彎舉 over a 長凳",
+          "preferred": "掌心-up 啞鈴 腕 彎舉 過頂 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93600,10 +93600,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Pelvic tilt into 桥",
+          "preferred": "骨盆倾斜成桥",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -93924,10 +93924,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Peroneals 拉伸",
+          "preferred": "腓骨肌拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -94611,15 +94611,15 @@
           "preferred": "平板支撑",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "平板支撑",
+          "preferred": "平板支撐",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -94946,7 +94946,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Plate 转体",
+          "preferred": "杠铃片 转体",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -94954,7 +94954,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Plate 轉體",
+          "preferred": "槓鈴片 轉體",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -95803,10 +95803,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Posterior tibialis 拉伸",
+          "preferred": "胫骨后肌拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -96013,10 +96013,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "高翻",
+          "preferred": "杠铃高翻",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -96198,7 +96198,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "高翻 从 blocks",
+          "preferred": "高翻 从 垫块",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96206,7 +96206,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "高翻 從 blocks",
+          "preferred": "高翻 從 墊塊",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96942,7 +96942,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "力量 抓举 从 blocks",
+          "preferred": "力量 抓举 从 垫块",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96950,7 +96950,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "力量 抓舉 從 blocks",
+          "preferred": "力量 抓舉 從 墊塊",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97300,7 +97300,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Preacher 弯举",
+          "preferred": "牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97308,7 +97308,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Preacher 彎舉",
+          "preferred": "牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97472,7 +97472,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Preacher hammer 哑铃 弯举",
+          "preferred": "牧师凳 hammer 哑铃 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97480,7 +97480,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Preacher hammer 啞鈴 彎舉",
+          "preferred": "牧師椅 hammer 啞鈴 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98508,7 +98508,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "俯卧撑 wide",
+          "preferred": "俯卧撑 宽",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98516,7 +98516,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "伏地挺身 wide",
+          "preferred": "伏地挺身 寬",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98682,7 +98682,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "推-ups — close triceps position",
+          "preferred": "推-ups — close 肱三头肌 姿势",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98690,7 +98690,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "推-ups — close triceps position",
+          "preferred": "推-ups — close 肱三頭肌 姿勢",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98857,7 +98857,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "推-ups 带 feet elevated",
+          "preferred": "推-ups 带 feet 抬高",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98865,7 +98865,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "推-ups 帶 feet elevated",
+          "preferred": "推-ups 帶 feet 抬高",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -99917,7 +99917,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Pushups close 和 wide hand positions",
+          "preferred": "Pushups close 和 宽 hand positions",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -99925,7 +99925,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Pushups close 和 wide hand positions",
+          "preferred": "Pushups close 和 寬 hand positions",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100243,7 +100243,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Quad 拉伸",
+          "preferred": "股四头肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100251,7 +100251,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Quad 伸展",
+          "preferred": "股四頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101279,7 +101279,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "后侧 腿 raises",
+          "preferred": "后侧 腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101287,7 +101287,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "後側 腿 raises",
+          "preferred": "後側 腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101614,7 +101614,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Return 推 从 stance",
+          "preferred": "Return 推 从 站距",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101622,7 +101622,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Return 推 從 stance",
+          "preferred": "Return 推 從 站距",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101980,7 +101980,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 弹力带 box 深蹲",
+          "preferred": "反向 弹力带 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101988,7 +101988,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 彈力帶 box 深蹲",
+          "preferred": "反向 彈力帶 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102537,7 +102537,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 弹力带 sumo 硬拉",
+          "preferred": "反向 弹力带 相扑 硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102545,7 +102545,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 彈力帶 sumo 硬舉",
+          "preferred": "反向 彈力帶 相撲 硬舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102882,7 +102882,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 杠铃 preacher curls",
+          "preferred": "反向 杠铃 牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102890,7 +102890,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 槓鈴 preacher curls",
+          "preferred": "反向 槓鈴 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103223,10 +103223,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 卷腹",
+          "preferred": "反向卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -103570,7 +103570,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 飞鸟 带 external 旋转",
+          "preferred": "反向 飞鸟 带 外旋 旋转",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103578,7 +103578,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 飛鳥 帶 external 旋轉",
+          "preferred": "反向 飛鳥 帶 外旋 旋轉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103749,7 +103749,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 grip bent-over rows",
+          "preferred": "反向 grip 俯身 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103757,7 +103757,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 grip bent-over rows",
+          "preferred": "反向 grip 俯身 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104437,7 +104437,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 plate curls",
+          "preferred": "反向 杠铃片 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104445,7 +104445,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 plate curls",
+          "preferred": "反向 槓鈴片 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104612,7 +104612,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "反向 triceps 卧推",
+          "preferred": "反向 肱三头肌 卧推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104620,7 +104620,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "反向 triceps 臥推",
+          "preferred": "反向 肱三頭肌 臥推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106372,10 +106372,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳 climb",
+          "preferred": "绳索攀爬",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -107723,7 +107723,7 @@
           "preferred": "俄罗斯转体",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -108088,10 +108088,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Scapular 引体向上",
+          "preferred": "肩胛骨引体向上",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -108590,7 +108590,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 弹力带 hamstring 弯举",
+          "preferred": "坐姿 弹力带 腘绳肌 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108598,7 +108598,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 彈力帶 hamstring 彎舉",
+          "preferred": "坐姿 彈力帶 腘繩肌 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108765,7 +108765,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 杠铃 military 推举",
+          "preferred": "坐姿 杠铃 肩上 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108773,7 +108773,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 槓鈴 military 推舉",
+          "preferred": "坐姿 槓鈴 肩上 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109106,7 +109106,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 bent-over 单臂 哑铃 肱三头肌伸展",
+          "preferred": "坐姿 俯身 单臂 哑铃 肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109114,7 +109114,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 bent-over 單臂 啞鈴 肱三頭肌伸展",
+          "preferred": "坐姿 俯身 單臂 啞鈴 肱三頭肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109279,7 +109279,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 bent-over 俯身后束飞鸟",
+          "preferred": "坐姿 俯身 俯身后束飞鸟",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109287,7 +109287,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 bent-over 俯身後束飛鳥",
+          "preferred": "坐姿 俯身 俯身後束飛鳥",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109449,7 +109449,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 bent-over 双臂 哑铃 肱三头肌伸展",
+          "preferred": "坐姿 俯身 双臂 哑铃 肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109457,7 +109457,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 bent-over 雙臂 啞鈴 肱三頭肌伸展",
+          "preferred": "坐姿 俯身 雙臂 啞鈴 肱三頭肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109615,7 +109615,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 biceps",
+          "preferred": "坐姿 肱二头肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109623,7 +109623,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 biceps",
+          "preferred": "坐姿 肱二頭肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109794,7 +109794,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 绳索 rows",
+          "preferred": "坐姿 绳索 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109802,7 +109802,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 繩索 rows",
+          "preferred": "坐姿 繩索 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -110992,7 +110992,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 哑铃 palms-down wrist 弯举",
+          "preferred": "坐姿 哑铃 掌心-down 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111000,7 +111000,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 啞鈴 palms-down wrist 彎舉",
+          "preferred": "坐姿 啞鈴 掌心-down 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111165,7 +111165,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 哑铃 palms-up wrist 弯举",
+          "preferred": "坐姿 哑铃 掌心-up 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111173,7 +111173,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 啞鈴 palms-up wrist 彎舉",
+          "preferred": "坐姿 啞鈴 掌心-up 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111509,7 +111509,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 flat 长凳 腿 下拉-in",
+          "preferred": "坐姿 平板 长凳 腿 下拉-内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111517,7 +111517,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 flat 長凳 腿 下拉-in",
+          "preferred": "坐姿 平板 長凳 腿 下拉-內",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111673,7 +111673,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 地板 hamstring 拉伸",
+          "preferred": "坐姿 地板 腘绳肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111681,7 +111681,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 地板 hamstring 伸展",
+          "preferred": "坐姿 地板 腘繩肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112344,7 +112344,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 hamstring",
+          "preferred": "坐姿 腘绳肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112352,7 +112352,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 hamstring",
+          "preferred": "坐姿 腘繩肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112508,7 +112508,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 hamstring 和 小腿 拉伸",
+          "preferred": "坐姿 腘绳肌 和 小腿 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112516,7 +112516,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 hamstring 和 小腿 伸展",
+          "preferred": "坐姿 腘繩肌 和 小腿 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113189,7 +113189,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 单臂 哑铃 palms-down wrist 弯举",
+          "preferred": "坐姿 单臂 哑铃 掌心-down 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113197,7 +113197,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 單臂 啞鈴 palms-down wrist 彎舉",
+          "preferred": "坐姿 單臂 啞鈴 掌心-down 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113361,7 +113361,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 单臂 哑铃 palms-up wrist 弯举",
+          "preferred": "坐姿 单臂 哑铃 掌心-up 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113369,7 +113369,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 單臂 啞鈴 palms-up wrist 彎舉",
+          "preferred": "坐姿 單臂 啞鈴 掌心-up 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113541,7 +113541,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 单臂 绳索 pulley rows",
+          "preferred": "坐姿 单臂 绳索 滑轮 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113549,7 +113549,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 單臂 繩索 pulley rows",
+          "preferred": "坐姿 單臂 繩索 滑輪 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113876,7 +113876,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 palm-up 杠铃 wrist 弯举",
+          "preferred": "坐姿 palm-up 杠铃 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113884,7 +113884,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 palm-up 槓鈴 wrist 彎舉",
+          "preferred": "坐姿 palm-up 槓鈴 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114047,7 +114047,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 palms-down 杠铃 wrist 弯举",
+          "preferred": "坐姿 掌心-down 杠铃 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114055,7 +114055,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 palms-down 槓鈴 wrist 彎舉",
+          "preferred": "坐姿 掌心-down 槓鈴 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114385,7 +114385,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 triceps 推举",
+          "preferred": "坐姿 肱三头肌 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114393,7 +114393,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 triceps 推舉",
+          "preferred": "坐姿 肱三頭肌 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114560,7 +114560,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "坐姿 双臂 palms-up 低位-pulley wrist 弯举",
+          "preferred": "坐姿 双臂 掌心-up 低位-滑轮 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114568,7 +114568,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "坐姿 雙臂 palms-up 低位-pulley wrist 彎舉",
+          "preferred": "坐姿 雙臂 掌心-up 低位-滑輪 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -115077,7 +115077,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "肩 circles",
+          "preferred": "肩 绕环",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -115085,7 +115085,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "肩 circles",
+          "preferred": "肩 繞環",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116069,7 +116069,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "侧向 hop-sprint",
+          "preferred": "侧向 hop-冲刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116077,7 +116077,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "側向 hop-sprint",
+          "preferred": "側向 hop-衝刺",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116739,7 +116739,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "侧向 腿 raises",
+          "preferred": "侧向 腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116747,7 +116747,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "側向 腿 raises",
+          "preferred": "側向 腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116904,7 +116904,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "侧向 仰卧 groin 拉伸",
+          "preferred": "侧向 仰卧 腹股沟 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116912,7 +116912,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "側向 仰臥 groin 伸展",
+          "preferred": "側向 仰臥 腹股溝 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117233,7 +117233,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "侧向 站姿 long 跳",
+          "preferred": "侧向 站姿 长杆 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117241,7 +117241,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "側向 站姿 long 跳",
+          "preferred": "側向 站姿 長桿 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117579,7 +117579,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "侧向 wrist 下拉",
+          "preferred": "侧向 腕 下拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117587,7 +117587,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "側向 wrist 下拉",
+          "preferred": "側向 腕 下拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118440,7 +118440,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单-cone sprint drill",
+          "preferred": "单-cone 冲刺 drill",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118448,7 +118448,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單-cone sprint drill",
+          "preferred": "單-cone 衝刺 drill",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118617,7 +118617,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单腿 高位 box 深蹲",
+          "preferred": "单腿 高位 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118625,7 +118625,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單腿 高位 box 深蹲",
+          "preferred": "單腿 高位 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118955,7 +118955,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单腿 lateral hop",
+          "preferred": "单腿 侧向 hop",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118963,7 +118963,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單腿 lateral hop",
+          "preferred": "單腿 側向 hop",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119628,7 +119628,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单 腿 butt kick",
+          "preferred": "单 腿 臀部 kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119636,7 +119636,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單 腿 butt kick",
+          "preferred": "單 腿 臀部 kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124329,7 +124329,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Smith 器械 反向 小腿 raises",
+          "preferred": "Smith 器械 反向 小腿 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124337,7 +124337,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Smith 器械 反向 小腿 raises",
+          "preferred": "Smith 器械 反向 小腿 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125427,7 +125427,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "抓举 balance",
+          "preferred": "抓举 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125435,7 +125435,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "抓舉 balance",
+          "preferred": "抓舉 平衡",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125796,10 +125796,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "抓举 下拉",
+          "preferred": "抓举高拉",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -126162,7 +126162,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "抓举 从 blocks",
+          "preferred": "抓举 从 垫块",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126170,7 +126170,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "抓舉 從 blocks",
+          "preferred": "抓舉 從 墊塊",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126330,7 +126330,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Speed 弹力带 过顶 triceps",
+          "preferred": "Speed 弹力带 过顶 肱三头肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126338,7 +126338,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Speed 彈力帶 過頂 triceps",
+          "preferred": "Speed 彈力帶 過頂 肱三頭肌",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126512,7 +126512,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Speed box 深蹲",
+          "preferred": "Speed 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126520,7 +126520,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Speed box 深蹲",
+          "preferred": "Speed 箱式 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -128470,10 +128470,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "分腿 squats",
+          "preferred": "分腿深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -128650,10 +128650,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "深蹲 挺举",
+          "preferred": "下蹲挺（Squat Jerk）",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -129016,7 +129016,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "深蹲 带 chains",
+          "preferred": "深蹲 带 链条",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129024,7 +129024,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "深蹲 帶 chains",
+          "preferred": "深蹲 帶 鏈條",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129201,7 +129201,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "深蹲 带 plate movers",
+          "preferred": "深蹲 带 杠铃片 movers",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129209,7 +129209,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "深蹲 帶 plate movers",
+          "preferred": "深蹲 帶 槓鈴片 movers",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130241,7 +130241,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 bent-over 单臂 哑铃 肱三头肌伸展",
+          "preferred": "站姿 俯身 单臂 哑铃 肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130249,7 +130249,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 bent-over 單臂 啞鈴 肱三頭肌伸展",
+          "preferred": "站姿 俯身 單臂 啞鈴 肱三頭肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130409,7 +130409,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 bent-over 双臂 哑铃 肱三头肌伸展",
+          "preferred": "站姿 俯身 双臂 哑铃 肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130417,7 +130417,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 bent-over 雙臂 啞鈴 肱三頭肌伸展",
+          "preferred": "站姿 俯身 雙臂 啞鈴 肱三頭肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130579,7 +130579,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 biceps 绳索 弯举",
+          "preferred": "站姿 肱二头肌 绳索 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130587,7 +130587,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 biceps 繩索 彎舉",
+          "preferred": "站姿 肱二頭肌 繩索 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130744,7 +130744,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 biceps 拉伸",
+          "preferred": "站姿 肱二头肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130752,7 +130752,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 biceps 伸展",
+          "preferred": "站姿 肱二頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131268,7 +131268,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 绳索 lift",
+          "preferred": "站姿 绳索 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131276,7 +131276,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 繩索 lift",
+          "preferred": "站姿 繩索 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -132972,7 +132972,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 elevated quad 拉伸",
+          "preferred": "站姿 抬高 股四头肌 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -132980,7 +132980,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 elevated quad 伸展",
+          "preferred": "站姿 抬高 股四頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133469,7 +133469,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 hamstring 和 小腿 拉伸",
+          "preferred": "站姿 腘绳肌 和 小腿 拉伸",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133477,7 +133477,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 hamstring 和 小腿 伸展",
+          "preferred": "站姿 腘繩肌 和 小腿 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133635,7 +133635,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 髋 circles",
+          "preferred": "站姿 髋 绕环",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133643,7 +133643,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 髖 circles",
+          "preferred": "站姿 髖 繞環",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134134,15 +134134,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 lateral 拉伸",
+          "preferred": "站立侧向拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 lateral 伸展",
+          "preferred": "站姿 側向 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134473,7 +134473,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 long 跳",
+          "preferred": "站姿 长杆 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134481,7 +134481,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 long 跳",
+          "preferred": "站姿 長桿 跳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134647,7 +134647,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 低位-pulley 三角肌 举",
+          "preferred": "站姿 低位-滑轮 三角肌 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134655,7 +134655,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 低位-pulley 三角肌 舉",
+          "preferred": "站姿 低位-滑輪 三角肌 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134819,7 +134819,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 低位-pulley 单臂 肱三头肌伸展",
+          "preferred": "站姿 低位-滑轮 单臂 肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134827,7 +134827,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 低位-pulley 單臂 肱三頭肌伸展",
+          "preferred": "站姿 低位-滑輪 單臂 肱三頭肌伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134995,7 +134995,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 military 推举",
+          "preferred": "站姿 肩上 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135003,7 +135003,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 military 推舉",
+          "preferred": "站姿 肩上 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135165,7 +135165,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 olympic plate hand squeeze",
+          "preferred": "站姿 olympic 杠铃片 hand squeeze",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135173,7 +135173,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 olympic plate hand squeeze",
+          "preferred": "站姿 olympic 槓鈴片 hand squeeze",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135510,7 +135510,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 单臂 哑铃 弯举 over 上斜 长凳",
+          "preferred": "站姿 单臂 哑铃 弯举 过顶 上斜 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135518,7 +135518,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 單臂 啞鈴 彎舉 over 上斜 長凳",
+          "preferred": "站姿 單臂 啞鈴 彎舉 過頂 上斜 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136031,7 +136031,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 palm-in 单臂 哑铃 推举",
+          "preferred": "站姿 palm-内 单臂 哑铃 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136039,7 +136039,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 palm-in 單臂 啞鈴 推舉",
+          "preferred": "站姿 palm-內 單臂 啞鈴 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136205,7 +136205,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 palms-in 哑铃 推举",
+          "preferred": "站姿 掌心-内 哑铃 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136213,7 +136213,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 palms-in 啞鈴 推舉",
+          "preferred": "站姿 掌心-內 啞鈴 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136377,7 +136377,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 palms-up 杠铃 背后 wrist 弯举",
+          "preferred": "站姿 掌心-up 杠铃 背后 腕 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136385,7 +136385,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 palms-up 槓鈴 背後 wrist 彎舉",
+          "preferred": "站姿 掌心-up 槓鈴 背後 腕 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136542,10 +136542,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 pelvic tilt",
+          "preferred": "站立骨盆倾斜",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -137371,7 +137371,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "站姿 双臂 过顶 throw",
+          "preferred": "站姿 双臂 过顶 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137379,7 +137379,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "站姿 雙臂 過頂 throw",
+          "preferred": "站姿 雙臂 過頂 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137714,7 +137714,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Step-up 带 knee 举",
+          "preferred": "Step-up 带 膝 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137722,7 +137722,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Step-up 帶 knee 舉",
+          "preferred": "Step-up 帶 膝 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139110,7 +139110,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Straight bar 长凳 mid rows",
+          "preferred": "Straight 杠铃杆 长凳 中位 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139118,7 +139118,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Straight bar 長凳 mid rows",
+          "preferred": "Straight 槓鈴桿 長凳 中位 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139283,7 +139283,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Straight raises 在 上斜 长凳",
+          "preferred": "Straight 举 在 上斜 长凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139291,7 +139291,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Straight raises 在 上斜 長凳",
+          "preferred": "Straight 舉 在 上斜 長凳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139452,7 +139452,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Stride 跳 crossover",
+          "preferred": "Stride 跳 交叉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139460,7 +139460,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Stride 跳 crossover",
+          "preferred": "Stride 跳 交叉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139638,7 +139638,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Sumo 硬拉",
+          "preferred": "相扑 硬拉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139646,7 +139646,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Sumo 硬舉",
+          "preferred": "相撲 硬舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139825,7 +139825,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Sumo 硬拉 带 弹力带",
+          "preferred": "相扑 硬拉 带 弹力带",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139833,7 +139833,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Sumo 硬舉 帶 彈力帶",
+          "preferred": "相撲 硬舉 帶 彈力帶",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140013,7 +140013,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Sumo 硬拉 带 chains",
+          "preferred": "相扑 硬拉 带 链条",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140021,7 +140021,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Sumo 硬舉 帶 chains",
+          "preferred": "相撲 硬舉 帶 鏈條",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140347,7 +140347,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Supine 胸 throw",
+          "preferred": "仰卧 胸 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140355,7 +140355,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Supine 胸 throw",
+          "preferred": "仰臥 胸 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140514,7 +140514,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Supine 单臂 过顶 throw",
+          "preferred": "仰卧 单臂 过顶 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140522,7 +140522,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Supine 單臂 過頂 throw",
+          "preferred": "仰臥 單臂 過頂 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140682,7 +140682,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Supine 双臂 过顶 throw",
+          "preferred": "仰卧 双臂 过顶 投掷",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140690,7 +140690,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Supine 雙臂 過頂 throw",
+          "preferred": "仰臥 雙臂 過頂 投擲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -141029,10 +141029,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "悬吊 俯卧撑",
+          "preferred": "悬吊俯卧撑",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -141197,10 +141197,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "悬吊 反向 卷腹",
+          "preferred": "悬吊带反向卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -141373,10 +141373,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "悬吊 划船",
+          "preferred": "悬吊划船",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -141553,10 +141553,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "悬吊 分腿蹲",
+          "preferred": "悬吊分腿深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -141906,7 +141906,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "T-bar 划船 带 handle",
+          "preferred": "T-杠铃杆 划船 带 handle",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -141914,7 +141914,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "T-bar 划船 帶 handle",
+          "preferred": "T-槓鈴桿 划船 帶 handle",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143451,15 +143451,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Trap bar 硬拉",
+          "preferred": "六角杠硬拉",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Trap bar 硬舉",
+          "preferred": "Trap 槓鈴桿 硬舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143951,7 +143951,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Triceps 过顶 伸展 带 绳",
+          "preferred": "肱三头肌 过顶 伸展 带 绳",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143959,7 +143959,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Triceps 過頂 伸展 帶 繩",
+          "preferred": "肱三頭肌 過頂 伸展 帶 繩",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144290,7 +144290,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索下压 — 绳 attachment",
+          "preferred": "绳索下压 — 绳 附件",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144298,7 +144298,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索下壓 — 繩 attachment",
+          "preferred": "繩索下壓 — 繩 附件",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144459,7 +144459,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索下压 — v-bar attachment",
+          "preferred": "绳索下压 — v-杠铃杆 附件",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144467,7 +144467,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索下壓 — v-bar attachment",
+          "preferred": "繩索下壓 — v-槓鈴桿 附件",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144622,15 +144622,15 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Triceps 拉伸",
+          "preferred": "肱三头肌伸展",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Triceps 伸展",
+          "preferred": "肱三頭肌 伸展",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144792,10 +144792,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Tuck 卷腹",
+          "preferred": "团身卷腹",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -144962,7 +144962,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "双臂 哑铃 preacher 弯举",
+          "preferred": "双臂 哑铃 牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144970,7 +144970,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "雙臂 啞鈴 preacher 彎舉",
+          "preferred": "雙臂 啞鈴 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -145497,7 +145497,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "双臂 壶铃 military 推举",
+          "preferred": "双臂 壶铃 肩上 推举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -145505,7 +145505,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "雙臂 壺鈴 military 推舉",
+          "preferred": "雙臂 壺鈴 肩上 推舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146179,10 +146179,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Upper 背 拉伸",
+          "preferred": "上背部拉伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -147737,7 +147737,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "负重 ball hyperextension",
+          "preferred": "负重 球 hyperextension",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147745,7 +147745,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "負重 ball hyperextension",
+          "preferred": "負重 球 hyperextension",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147908,7 +147908,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "负重 ball 侧屈",
+          "preferred": "负重 球 侧屈",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147916,7 +147916,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "負重 ball 側屈",
+          "preferred": "負重 球 側屈",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148083,10 +148083,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "负重 长凳 dip",
+          "preferred": "负重凳上臂屈伸",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -148787,10 +148787,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "负重 sissy 深蹲",
+          "preferred": "负重西斯深蹲（Weighted Sissy Squat）",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -149135,10 +149135,10 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "负重 深蹲",
+          "preferred": "负重深蹲",
           "aliases": [],
           "sourceRefs": [
-            "repo-domain-terminology"
+            "zh-Hans-reference-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -150549,7 +150549,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Wide stance 杠铃 深蹲",
+          "preferred": "宽 站距 杠铃 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150557,7 +150557,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Wide stance 槓鈴 深蹲",
+          "preferred": "寬 站距 槓鈴 深蹲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150725,7 +150725,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Wide stance stiff 腿",
+          "preferred": "宽 站距 stiff 腿",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150733,7 +150733,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Wide stance stiff 腿",
+          "preferred": "寬 站距 stiff 腿",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -151724,7 +151724,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Wrist 旋转 带 straight bar",
+          "preferred": "腕 旋转 带 straight 杠铃杆",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -151732,7 +151732,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Wrist 旋轉 帶 straight bar",
+          "preferred": "腕 旋轉 帶 straight 槓鈴桿",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152440,7 +152440,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Zottman preacher 弯举",
+          "preferred": "Zottman 牧师凳 弯举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152448,7 +152448,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Zottman preacher 彎舉",
+          "preferred": "Zottman 牧師椅 彎舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152965,7 +152965,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Half-跪姿 绳索 lift",
+          "preferred": "Half-跪姿 绳索 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152973,7 +152973,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Half-跪姿 繩索 lift",
+          "preferred": "Half-跪姿 繩索 抬升",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -153664,7 +153664,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "单臂 bent-over 坐姿绳索划船",
+          "preferred": "单臂 俯身 坐姿绳索划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -153672,7 +153672,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "單臂 bent-over 坐姿繩索划船",
+          "preferred": "單臂 俯身 坐姿繩索划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -154184,7 +154184,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "交替 flat-长凳 绳索 胸推",
+          "preferred": "交替 平板-长凳 绳索 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -154192,7 +154192,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "交替 flat-長凳 繩索 胸推",
+          "preferred": "交替 平板-長凳 繩索 胸推",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156430,7 +156430,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 lateral 弓步",
+          "preferred": "绳索 侧向 弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156438,7 +156438,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 lateral 弓步",
+          "preferred": "繩索 側向 弓步",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -157634,7 +157634,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "绳索 小腿-box 举",
+          "preferred": "绳索 小腿-箱式 举",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -157642,7 +157642,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "繩索 小腿-box 舉",
+          "preferred": "繩索 小腿-箱式 舉",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159360,7 +159360,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "器械 oblique 卷腹",
+          "preferred": "器械 斜 卷腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159368,7 +159368,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "器械 oblique 捲腹",
+          "preferred": "器械 斜 捲腹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160743,7 +160743,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "器械 t-bar 划船",
+          "preferred": "器械 t-杠铃杆 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160751,7 +160751,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "器械 t-bar 划船",
+          "preferred": "器械 t-槓鈴桿 划船",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161253,7 +161253,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hans": {
-          "preferred": "Assisted 反手引体向上",
+          "preferred": "辅助 反手引体向上",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161261,7 +161261,7 @@
           "reviewStatus": "provisional"
         },
         "zh-Hant": {
-          "preferred": "Assisted 反手引體向上",
+          "preferred": "輔助 反手引體向上",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"

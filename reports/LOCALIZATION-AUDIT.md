@@ -139,46 +139,48 @@ Counts: reviewed=0, provisional=927, untranslated=0; flags=0.
 
 No automated fallback/composition flags.
 
-Unchanged spelling candidates: 3. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
+Unchanged spelling candidates: 5. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 462 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `bent-over` (7), `knee` (7), `plate` (7), `raises` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
+Semantic review candidates: 226 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `depth` (3), `drag` (3), `face` (3), `flye` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `knees` (3), `one` (3), `pulldown` (3), `romanian` (3), `slam` (3), `step-up` (3), `straight` (3), `below` (2), `bradford` (2), `chain` (2), `chop` (2), `close` (2), `concentration` (2).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Ab_Roller` | 腹部 roller | roller |
-| `Advanced_Kettlebell_Windmill` | Advanced 壶铃 windmill | advanced, windmill |
-| `All_Fours_Quad_Stretch` | All fours quad 拉伸 | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | 交替 腿 diagonal bound | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle 在 knee | ankle, knee |
-| `Anti-Gravity_Press` | Anti-gravity 推举 | anti-gravity |
-| `Arm_Circles` | 手臂 circles | circles |
-| `Around_The_Worlds` | Around worlds | around, worlds |
-| `Atlas_Stone_Trainer` | Atlas石训练 | atlas |
-| `Atlas_Stones` | Atlas石 | atlas |
-| `Axle_Deadlift` | Axle 硬拉 | axle |
-| `Backward_Medicine_Ball_Throw` | Backward 药球 throw | backward, throw |
-| `Ball_Leg_Curl` | Ball 腿弯举 | ball |
-| `Band_Assisted_Pull-Up` | 弹力带 assisted 引体向上 | assisted |
-| `Band_Good_Morning_Pull_Through` | 弹力带 早安式 下拉 through | through |
-| `Band_Hip_Adductions` | 弹力带 髋 adductions | adductions |
-| `Band_Pull_Apart` | 弹力带 下拉 apart | apart |
-| `Barbell_Ab_Rollout` | 杠铃 腹部 rollout | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | 杠铃 腹部 rollout — 在 knees | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | 杠铃 curls 仰卧 against an 上斜 | against, an, curls |
-| `Barbell_Full_Squat` | 杠铃 full 深蹲 | full |
-| `Barbell_Guillotine_Bench_Press` | 杠铃 guillotine 卧推 | guillotine |
-| `Barbell_Hack_Squat` | 杠铃 hack 深蹲 | hack |
-| `Barbell_Rear_Delt_Row` | 杠铃 后侧 delt 划船 | delt |
-| `Barbell_Rollout_from_Bench` | 杠铃 rollout 从 长凳 | rollout |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | BOSU球绳索侧屈卷腹 | bosu |
+| `Bradford_Rocky_Presses` | Bradford/Rocky推举 | bradford |
+| `Cable_Russian_Twists` | 绳索 russian twists | russian, twists |
+| `Cable_Shrugs` | 绳索 shrugs | shrugs |
+| `Calf_Stretch_Elbows_Against_Wall` | 小腿 拉伸 elbows 靠 wall | elbows, wall |
+| `Calf_Stretch_Hands_Against_Wall` | 小腿 拉伸 hands 靠 wall | hands, wall |
+| `Car_Deadlift` | Car 硬拉 | car |
+| `Cat_Stretch` | Cat 拉伸 | cat |
+| `Catch_and_Overhead_Throw` | Catch 和 过顶 投掷 | catch |
+| `Chain_Handle_Extension` | Chain handle 伸展 | chain, handle |
+| `Chain_Press` | Chain 推举 | chain |
+| `Chair_Lower_Back_Stretch` | 椅上 lower 背 拉伸 | lower |
+| `Chair_Upper_Body_Stretch` | 椅上 upper 身体 拉伸 | upper |
+| `Chest_Push_from_3_point_stance` | 胸 推 从 3 point 站距 | point |
+| `Chest_Stretch_on_Stability_Ball` | 胸 拉伸 在 stability 球 | stability |
+| `Crunch_-_Hands_Overhead` | 卷腹 — hands 过顶 | hands |
+| `Cuban_Press` | Cuban 推举 | cuban |
+| `Dancers_Stretch` | Dancer's 拉伸 | dancer's |
+| `Deficit_Deadlift` | Deficit 硬拉 | deficit |
+| `Depth_Jump_Leap` | Depth 跳 leap | depth, leap |
+| `Donkey_Calf_Raises` | Donkey 小腿 举 | donkey |
+| `Double_Kettlebell_Windmill` | 双 壶铃 windmill | windmill |
+| `Double_Leg_Butt_Kick` | 双 腿 臀部 kick | kick |
+| `Drag_Curl` | Drag 弯举 | drag |
+| `Drop_Push` | Drop 推 | drop |
 
 | exerciseId | unchanged preferred name |
 |---|---|
 | `Spell_Caster` | Spell Caster |
+| `Squat_Jerk` | 下蹲挺（Squat Jerk） |
 | `Stairmaster` | StairMaster |
 | `Superman` | Superman |
+| `Weighted_Sissy_Squat` | 负重西斯深蹲（Weighted Sissy Squat） |
 
 Untranslated fallback entries: 0. These remain English source names and require target-language review before being called localized.
 
@@ -190,38 +192,38 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 3. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 462 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `bent-over` (7), `knee` (7), `plate` (7), `raises` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
+Semantic review candidates: 257 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `depth` (3), `drag` (3), `face` (3), `flexor` (3), `flye` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `knees` (3), `lower` (3), `one` (3), `pass` (3), `prone` (3), `pulldown` (3), `romanian` (3), `slam` (3), `squats` (3), `step-up` (3), `straight` (3), `upper` (3).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Ab_Roller` | 腹部 roller | roller |
-| `Advanced_Kettlebell_Windmill` | Advanced 壺鈴 windmill | advanced, windmill |
-| `All_Fours_Quad_Stretch` | All fours quad 伸展 | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | 交替 腿 diagonal bound | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle 在 knee | ankle, knee |
-| `Anti-Gravity_Press` | Anti-gravity 推舉 | anti-gravity |
-| `Arm_Circles` | 手臂 circles | circles |
-| `Around_The_Worlds` | Around worlds | around, worlds |
-| `Atlas_Stone_Trainer` | Atlas石訓練 | atlas |
-| `Atlas_Stones` | Atlas石 | atlas |
-| `Axle_Deadlift` | Axle 硬舉 | axle |
-| `Backward_Medicine_Ball_Throw` | Backward 藥球 throw | backward, throw |
-| `Ball_Leg_Curl` | Ball 腿彎舉 | ball |
-| `Band_Assisted_Pull-Up` | 彈力帶 assisted 引體向上 | assisted |
-| `Band_Good_Morning_Pull_Through` | 彈力帶 早安式 下拉 through | through |
-| `Band_Hip_Adductions` | 彈力帶 髖 adductions | adductions |
-| `Band_Pull_Apart` | 彈力帶 下拉 apart | apart |
-| `Barbell_Ab_Rollout` | 槓鈴 腹部 rollout | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | 槓鈴 腹部 rollout — 在 knees | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | 槓鈴 curls 仰臥 against an 上斜 | against, an, curls |
-| `Barbell_Full_Squat` | 槓鈴 full 深蹲 | full |
-| `Barbell_Guillotine_Bench_Press` | 槓鈴 guillotine 臥推 | guillotine |
-| `Barbell_Hack_Squat` | 槓鈴 hack 深蹲 | hack |
-| `Barbell_Rear_Delt_Row` | 槓鈴 後側 delt 划船 | delt |
-| `Barbell_Rollout_from_Bench` | 槓鈴 rollout 從 長凳 | rollout |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | BOSU球繩索側屈捲腹 | bosu |
+| `Bradford_Rocky_Presses` | Bradford/Rocky推舉 | bradford |
+| `Cable_Hip_Adduction` | 繩索 髖 adduction | adduction |
+| `Cable_Incline_Pushdown` | 繩索 上斜 pushdown | pushdown |
+| `Cable_Judo_Flip` | 繩索 judo flip | flip, judo |
+| `Cable_Russian_Twists` | 繩索 russian twists | russian, twists |
+| `Cable_Shrugs` | 繩索 shrugs | shrugs |
+| `Calf_Stretch_Elbows_Against_Wall` | 小腿 伸展 elbows 靠 wall | elbows, wall |
+| `Calf_Stretch_Hands_Against_Wall` | 小腿 伸展 hands 靠 wall | hands, wall |
+| `Car_Deadlift` | Car 硬舉 | car |
+| `Cat_Stretch` | Cat 伸展 | cat |
+| `Catch_and_Overhead_Throw` | Catch 和 過頂 投擲 | catch |
+| `Chain_Handle_Extension` | Chain handle 伸展 | chain, handle |
+| `Chain_Press` | Chain 推舉 | chain |
+| `Chair_Leg_Extended_Stretch` | 椅上 腿 extended 伸展 | extended |
+| `Chair_Lower_Back_Stretch` | 椅上 lower 背 伸展 | lower |
+| `Chair_Upper_Body_Stretch` | 椅上 upper 身體 伸展 | upper |
+| `Chest_Push_from_3_point_stance` | 胸 推 從 3 point 站距 | point |
+| `Chest_Stretch_on_Stability_Ball` | 胸 伸展 在 stability 球 | stability |
+| `Clock_Push-Up` | Clock 伏地挺身 | clock |
+| `Crunch_-_Hands_Overhead` | 捲腹 — hands 過頂 | hands |
+| `Cuban_Press` | Cuban 推舉 | cuban |
+| `Dancers_Stretch` | Dancer's 伸展 | dancer's |
+| `Deficit_Deadlift` | Deficit 硬舉 | deficit |
+| `Depth_Jump_Leap` | Depth 跳 leap | depth, leap |
 
 | exerciseId | unchanged preferred name |
 |---|---|

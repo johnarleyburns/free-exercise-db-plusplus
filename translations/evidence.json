@@ -25,6 +25,13 @@
       "license": "MIT",
       "licenseUrl": "https://github.com/kinetic-place/exercises-json/blob/main/LICENSE",
       "use": "Spanish exercise names matched by exact English source name; retained as provisional until native fitness review."
+    },
+    "zh-Hans-reference-terminology": {
+      "title": "Exercises Dataset Chinese locale catalog",
+      "url": "https://github.com/muxuezzz/exercises-dataset-zh-cn",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/muxuezzz/exercises-dataset-zh-cn/blob/main/LICENSE",
+      "use": "Simplified Chinese exercise names matched by exact English source name; retained as provisional until native fitness review."
     }
   }
 }
