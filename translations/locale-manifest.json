@@ -6,13 +6,15 @@
     "es",
     "de",
     "zh-Hans",
-    "zh-Hant"
+    "zh-Hant",
+    "pt-BR"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
     "es": "translations/es.json",
     "de": "translations/de.json",
     "zh-Hans": "translations/zh-Hans.json",
-    "zh-Hant": "translations/zh-Hant.json"
+    "zh-Hant": "translations/zh-Hant.json",
+    "pt-BR": "translations/pt-BR.json"
   }
 }
