@@ -21,6 +21,9 @@ ALLOWED_LOANWORDS = {
     "arnold", "band", "bench", "cable", "clean", "conan", "curl", "deadlift", "dip", "ez", "fly",
     "good", "grip", "hammer", "hip", "jackknife", "jerk", "kettlebell", "machine", "pallof", "press",
     "pullover", "rocky", "row", "skull", "smith", "snatch", "squat", "stretch", "trx", "twist",
+    # Established equipment/proper-name tokens conventionally kept in Latin
+    # script in Japanese exercise catalogs.
+    "bosu", "jm",
 }
 DUPLICATE_STOPWORDS = {
     "a", "à", "al", "and", "au", "aux", "avec", "com", "con", "da", "das", "de", "del", "der",

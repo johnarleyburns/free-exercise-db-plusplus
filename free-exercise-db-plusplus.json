@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T18:33:52.023770+00:00",
+    "generatedAt": "2026-10-01T18:47:53.282320+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1202,7 +1202,7 @@
         },
         "ja": {
           "source": "translations/ja.json",
-          "sha256": "6ff5734bf283b3b1490f0e744eb4e6e295bf2e6d1ef27e413c82f46340ac1f4a",
+          "sha256": "a1cf36c463efa9ee956b8f3ce295193619c99c16698777b4931b49e047d2e47b",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1905,7 +1905,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "腹部 roller",
+          "preferred": "腹部 ローラー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2412,7 +2412,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Advanced ケトルベル windmill",
+          "preferred": "アドバンスト ケトルベル ウインドミル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2747,7 +2747,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "All fours quad ストレッチ",
+          "preferred": "四つ這い 大腿四頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -3432,7 +3432,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "オルタネイト 脚 diagonal bound",
+          "preferred": "オルタネイト 脚 ダイアゴナル バウンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -4992,7 +4992,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Ankle 上 knee",
+          "preferred": "足首を反対の膝に乗せる",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5154,7 +5154,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "前脛骨筋SMR",
+          "preferred": "前脛骨筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5330,7 +5330,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Anti-gravity プレス",
+          "preferred": "アンチグラビティ プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5495,7 +5495,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "腕 circles",
+          "preferred": "腕 サークル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5670,7 +5670,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Arnold ダンベル プレス",
+          "preferred": "アーノルド ダンベル プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5841,7 +5841,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Around worlds",
+          "preferred": "アラウンド・ザ・ワールド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6407,7 +6407,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Axle デッドリフト",
+          "preferred": "アクスル デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6930,7 +6930,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Backward メディシンボール throw",
+          "preferred": "メディシンボール後方投げ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7270,7 +7270,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Ball レッグカール",
+          "preferred": "ボール レッグカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7447,7 +7447,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バンド assisted 懸垂",
+          "preferred": "バンドアシスト 懸垂",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7799,7 +7799,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バンド グッドモーニング プル through",
+          "preferred": "バンド・グッドモーニング・プルスルー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7969,7 +7969,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バンド ヒップ adductions",
+          "preferred": "バンド・ヒップアダクション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8143,7 +8143,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バンド プル apart",
+          "preferred": "バンドプルアパート",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8483,7 +8483,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル 腹部 rollout",
+          "preferred": "バーベル・アブローラー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8656,7 +8656,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル 腹部 rollout — 上 knees",
+          "preferred": "バーベル・アブローラー — 上 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9177,7 +9177,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル curls ライイング against an インクライン",
+          "preferred": "バーベル カール ライイング 対して インクライン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9545,7 +9545,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル full スクワット",
+          "preferred": "バーベル フル スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9896,7 +9896,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル guillotine ベンチプレス",
+          "preferred": "バーベル ギロチン ベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10073,7 +10073,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル hack スクワット",
+          "preferred": "バーベル ハック スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10952,7 +10952,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル リア delt ロウ",
+          "preferred": "バーベル 後方 三角筋 ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -11126,7 +11126,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル rollout から ベンチ",
+          "preferred": "バーベル ロールアウト から ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12529,7 +12529,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル スクワット へ a ベンチ",
+          "preferred": "バーベル スクワット へ ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12707,7 +12707,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バーベル step ups",
+          "preferred": "バーベル・ステップアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13243,7 +13243,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bear crawl ソリ drags",
+          "preferred": "ベアクロール・ソリ引き",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13583,7 +13583,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベンチ dips",
+          "preferred": "ベンチ ディップス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13932,7 +13932,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベンチプレス — powerlifting",
+          "preferred": "ベンチプレス — パワーリフティング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14288,7 +14288,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベンチプレス 付き chains",
+          "preferred": "ベンチプレス 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14456,7 +14456,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベンチ sprint",
+          "preferred": "ベンチ スプリント",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14634,7 +14634,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bent-腕 バーベル プルオーバー",
+          "preferred": "ベントアーム バーベル プルオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14812,7 +14812,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bent-腕 ダンベル プルオーバー",
+          "preferred": "ベントアーム ダンベル プルオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14981,7 +14981,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bent-knee ヒップ レイズ",
+          "preferred": "ベントニー ヒップ レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15506,7 +15506,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベントオーバー ロー-pulley サイド lateral",
+          "preferred": "ベントオーバー ロー-プーリー サイド ラテラル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15687,7 +15687,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベントオーバー ワンアーム long bar ロウ",
+          "preferred": "ベントオーバー ワンアーム ロング バー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15866,7 +15866,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベントオーバー ツーアーム long bar ロウ",
+          "preferred": "ベントオーバー ツーアーム ロング バー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16044,7 +16044,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベントオーバー two-ワンハンドロウ",
+          "preferred": "ベントオーバー・ツーダンベルロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16221,7 +16221,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ベントオーバー two-ワンハンドロウ 付き palms in",
+          "preferred": "手のひらを内側に向けたベントオーバー・ツーダンベルロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16405,7 +16405,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bent プレス",
+          "preferred": "ベント プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16914,7 +16914,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Board プレス",
+          "preferred": "ボード プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17254,7 +17254,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Body 上腕三頭筋 プレス",
+          "preferred": "体幹 上腕三頭筋 プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17605,7 +17605,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "自重 mid ロウ",
+          "preferred": "自重 ミドル ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18134,7 +18134,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bosu ball ケーブル クランチ 付き サイド bends",
+          "preferred": "BOSUボール・ケーブルクランチ（サイドベンド）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18313,7 +18313,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Bottoms-up クリーン から ハング position",
+          "preferred": "ボトムズアップ クリーン から ハング ポジション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19003,7 +19003,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Box スクワット",
+          "preferred": "ボックス スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19187,7 +19187,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Box スクワット 付き バンド",
+          "preferred": "ボックス スクワット 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19370,7 +19370,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Box スクワット 付き chains",
+          "preferred": "ボックス スクワット 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19532,7 +19532,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "上腕筋SMR",
+          "preferred": "上腕筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20050,7 +20050,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Butt lift ブリッジ",
+          "preferred": "ヒップ リフト ブリッジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20919,7 +20919,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル deadlifts",
+          "preferred": "ケーブル デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21091,7 +21091,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル hammer curls — ロープ attachment",
+          "preferred": "ケーブル ハンマー カール — ロープ アタッチメント",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21262,7 +21262,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル ヒップ adduction",
+          "preferred": "ケーブル ヒップ 内転",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21431,7 +21431,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル インクライン pushdown",
+          "preferred": "ケーブル インクライン プッシュダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21769,7 +21769,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル internal ローテーション",
+          "preferred": "ケーブル 内旋 ローテーション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21941,7 +21941,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル iron cross",
+          "preferred": "ケーブル・アイアンクロス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22110,7 +22110,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル judo flip",
+          "preferred": "ケーブル 柔道 フリップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22624,7 +22624,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル preacher カール",
+          "preferred": "ケーブル プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22795,7 +22795,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル リア delt フライ",
+          "preferred": "ケーブル 後方 三角筋 フライ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23315,7 +23315,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル ロープ リア-delt rows",
+          "preferred": "ケーブル ロープ 後方-三角筋 ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23486,7 +23486,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル russian twists",
+          "preferred": "ケーブル ロシアン ツイスト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -24176,7 +24176,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル shrugs",
+          "preferred": "ケーブル シュラッグ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -24348,7 +24348,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル wrist カール",
+          "preferred": "ケーブル 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25027,7 +25027,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "カーフレイズ 上 a ダンベル",
+          "preferred": "カーフレイズ 上 ダンベル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25196,7 +25196,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "カーフ raises — 付き バンド",
+          "preferred": "カーフ レイズ — 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25359,7 +25359,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "カーフ ストレッチ elbows against wall",
+          "preferred": "カーフ ストレッチ 肘 対して 壁",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25522,7 +25522,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "カーフ ストレッチ hands against wall",
+          "preferred": "カーフ ストレッチ 手 対して 壁",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25684,7 +25684,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ふくらはぎSMR",
+          "preferred": "ふくらはぎセルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25868,7 +25868,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Car デッドリフト",
+          "preferred": "カー デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26374,7 +26374,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Cat ストレッチ",
+          "preferred": "キャット ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26541,7 +26541,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Catch アンド オーバーヘッド throw",
+          "preferred": "キャッチ・アンド・オーバーヘッドスロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26710,7 +26710,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chain handle エクステンション",
+          "preferred": "チェーン ハンドル エクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26885,7 +26885,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chain プレス",
+          "preferred": "チェーン プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27051,7 +27051,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chair 脚 extended ストレッチ",
+          "preferred": "チェア 脚 伸展 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27216,7 +27216,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chair lower 背中 ストレッチ",
+          "preferred": "チェア・腰部ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27397,7 +27397,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chair スクワット",
+          "preferred": "チェア スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27562,7 +27562,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chair upper body ストレッチ",
+          "preferred": "チェア 上部 体幹 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27894,7 +27894,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "胸 プッシュ から 3 point stance",
+          "preferred": "胸 プッシュ から 3 ポイント スタンス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -28559,7 +28559,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "胸 ストレッチ 上 stability ball",
+          "preferred": "胸 ストレッチ 上 スタビリティ ボール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -29067,7 +29067,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Chin へ 胸 ストレッチ",
+          "preferred": "チン へ 胸 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30571,7 +30571,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "クリーン から blocks",
+          "preferred": "クリーン から ブロック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30747,7 +30747,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Clock 腕立て伏せ",
+          "preferred": "クロック 腕立て伏せ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -31270,7 +31270,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ナローグリップ EZバー カール 付き バンド",
+          "preferred": "バンド付きナローグリップEZバーカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -31445,7 +31445,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ナローグリップ EZバー プレス",
+          "preferred": "ナローグリップEZバープレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -31618,7 +31618,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ナローグリップ EZバー カール",
+          "preferred": "ナローグリップEZバーカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32840,7 +32840,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Cross-body クランチ",
+          "preferred": "クロスボディ クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33011,7 +33011,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Cross body ハンマーカール",
+          "preferred": "クロスボディ ハンマーカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33186,7 +33186,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Cross over — 付き バンド",
+          "preferred": "クロス 上 — 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33355,7 +33355,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Crossover リバースランジ",
+          "preferred": "クロスオーバー リバースランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33694,7 +33694,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "クランチ — hands オーバーヘッド",
+          "preferred": "クランチ — 手 オーバーヘッド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34206,7 +34206,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Cuban プレス",
+          "preferred": "キューバン プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34373,7 +34373,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Dancer's ストレッチ",
+          "preferred": "ダンサーズ ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34913,7 +34913,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "デッドリフト 付き chains",
+          "preferred": "デッドリフト 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36118,7 +36118,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "デクライン EZバー トライセプスエクステンション",
+          "preferred": "デクラインEZバートライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36288,7 +36288,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "デクライン oblique クランチ",
+          "preferred": "デクライン 腹斜筋 クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36806,7 +36806,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "デクライン smith プレス",
+          "preferred": "デクライン・スミスプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36990,7 +36990,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Deficit デッドリフト",
+          "preferred": "デフィシットデッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37160,7 +37160,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Depth ジャンプ leap",
+          "preferred": "デプスジャンプ リープ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37335,7 +37335,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Dip マシン",
+          "preferred": "ディップ マシン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37852,7 +37852,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Donkey カーフ raises",
+          "preferred": "ドンキー カーフ レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -38767,7 +38767,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダブル ケトルベル windmill",
+          "preferred": "ダブル ケトルベル ウインドミル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -38937,7 +38937,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダブル 脚 butt kick",
+          "preferred": "ダブル 脚 ヒップ キック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -39280,7 +39280,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Drag カール",
+          "preferred": "ドラッグ カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -39446,7 +39446,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Drop プッシュ",
+          "preferred": "ドロップ プッシュ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -39968,7 +39968,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベルベンチプレス 付き neutral grip",
+          "preferred": "ダンベルベンチプレス 付き ニュートラル グリップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -41203,7 +41203,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル lunges",
+          "preferred": "ダンベル ランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -41376,7 +41376,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル ライイング ワンアーム リア サイドレイズ",
+          "preferred": "ダンベル ライイング ワンアーム 後方 サイドレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -41546,7 +41546,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル ライイング pronation",
+          "preferred": "ダンベル ライイング 回内",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -41717,7 +41717,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル ライイング リア サイドレイズ",
+          "preferred": "ダンベル ライイング 後方 サイドレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -41889,7 +41889,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル ライイング supination",
+          "preferred": "ダンベル ライイング 回外",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -42584,7 +42584,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル prone インクライン カール",
+          "preferred": "ダンベル うつ伏せ インクライン カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -42932,7 +42932,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル リア ランジ",
+          "preferred": "ダンベル 後方 ランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -43103,7 +43103,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル scaption",
+          "preferred": "ダンベル スキャプション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -43441,7 +43441,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル シーテッド one-脚 カーフレイズ",
+          "preferred": "ダンベル シーテッド 片-脚 カーフレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44317,7 +44317,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル スクワット へ a ベンチ",
+          "preferred": "ダンベル スクワット へ ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44494,7 +44494,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル step ups",
+          "preferred": "ダンベル・ステップアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44662,7 +44662,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ダンベル 上腕三頭筋 エクステンション — pronated grip",
+          "preferred": "ダンベル 上腕三頭筋 エクステンション — 回内 グリップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44824,7 +44824,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Dynamic 背中 ストレッチ",
+          "preferred": "ダイナミック 背中 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44988,7 +44988,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Dynamic 胸 ストレッチ",
+          "preferred": "ダイナミック 胸 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45159,7 +45159,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "EZバー カール",
+          "preferred": "EZバーカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45329,7 +45329,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "EZバー skullcrusher",
+          "preferred": "EZバースカルクラッシャー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45661,7 +45661,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Elbow へ knee",
+          "preferred": "肘 へ 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45826,7 +45826,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Elbows 背中",
+          "preferred": "肘 背中",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46003,7 +46003,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Elevated 背中 ランジ",
+          "preferred": "エレベーテッド 背中 ランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46183,7 +46183,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Elevated ケーブル rows",
+          "preferred": "エレベーテッド ケーブル ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46687,7 +46687,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "バランスボール プル-in",
+          "preferred": "バランスボール プル-内向き",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46859,7 +46859,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Extended range ワンアーム ケトルベル フロア プレス",
+          "preferred": "伸展 可動域 ワンアーム ケトルベル フロア プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47029,7 +47029,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "External ローテーション",
+          "preferred": "外旋 ローテーション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47198,7 +47198,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "External ローテーション 付き バンド",
+          "preferred": "外旋 ローテーション 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47366,7 +47366,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "External ローテーション 付き ケーブル",
+          "preferred": "外旋 ローテーション 付き ケーブル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47541,7 +47541,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Face プル",
+          "preferred": "フェイス プル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48235,7 +48235,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Flat ベンチ ケーブル フライ",
+          "preferred": "フラット ベンチ ケーブル フライ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48404,7 +48404,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Flat ベンチ 脚 プル-in",
+          "preferred": "フラット ベンチ 脚 プル-内向き",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48574,7 +48574,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Flat ベンチ ライイング 脚 レイズ",
+          "preferred": "フラット ベンチ ライイング 脚 レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48746,7 +48746,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Flexor インクライン ダンベル curls",
+          "preferred": "屈筋 インクライン ダンベル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48919,7 +48919,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロア 臀部-ham レイズ",
+          "preferred": "フロア 臀部-ハムストリング レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49270,7 +49270,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロア プレス 付き chains",
+          "preferred": "フロア プレス 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49605,7 +49605,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "足部SMR",
+          "preferred": "足部セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49793,7 +49793,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Forward drag 付き プレス",
+          "preferred": "前方 ドラッグ 付き プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49975,7 +49975,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Frankenstein スクワット",
+          "preferred": "フランケンシュタインスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -50156,7 +50156,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Freehand ジャンプスクワット",
+          "preferred": "フリーハンドジャンプスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -50855,7 +50855,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロント バーベル スクワット へ a ベンチ",
+          "preferred": "フロント バーベル スクワット へ ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -51864,7 +51864,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロント 脚 raises",
+          "preferred": "フロント 脚 レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52032,7 +52032,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロント plate レイズ",
+          "preferred": "フロント プレート レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52386,7 +52386,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロントスクワット クリーン grip",
+          "preferred": "フロントスクワット クリーン グリップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52729,7 +52729,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "フロント two-ダンベル レイズ",
+          "preferred": "フロント・ツーダンベルレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52904,7 +52904,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Full range-of-motion ラットプルダウン",
+          "preferred": "フルレンジ・オブ・モーション ラットプルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -53257,7 +53257,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "臀部 ham レイズ",
+          "preferred": "臀部 ハムストリング レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -53431,7 +53431,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "臀部 kickback",
+          "preferred": "臀部 キックバック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -53610,7 +53610,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Goblet スクワット",
+          "preferred": "ゴブレット スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54135,7 +54135,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Gorilla chin/クランチ",
+          "preferred": "ゴリラチンニング・クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54298,7 +54298,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Groin アンド 背中 ストレッチ",
+          "preferred": "鼠径部 アンド 背中 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54641,7 +54641,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hack スクワット",
+          "preferred": "ハック スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54988,7 +54988,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hammer grip インクライン db ベンチプレス",
+          "preferred": "ハンマーグリップ・インクラインダンベルベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55151,7 +55151,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ハムストリングSMR",
+          "preferred": "ハムストリングセルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55314,7 +55314,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hamstring ストレッチ",
+          "preferred": "ハムストリングストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55488,7 +55488,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Handstand プッシュ-ups",
+          "preferred": "逆立ち腕立て伏せ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55867,7 +55867,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ハング クリーン — below knees",
+          "preferred": "ハング クリーン — 下 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56251,7 +56251,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ハング スナッチ — below knees",
+          "preferred": "ハング スナッチ — 下 膝",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56429,7 +56429,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hanging bar グッドモーニング",
+          "preferred": "ハンギング・バーベルグッドモーニング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56599,7 +56599,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hanging 脚 レイズ",
+          "preferred": "ハンギングレッグレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56953,7 +56953,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Heaving スナッチ balance",
+          "preferred": "ヘービング スナッチ バランス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57290,7 +57290,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ハイ ケーブル curls",
+          "preferred": "ハイ ケーブル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57455,7 +57455,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ヒップ circles prone",
+          "preferred": "ヒップ サークル うつ伏せ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57799,7 +57799,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ヒップ flexion 付き バンド",
+          "preferred": "ヒップ 屈曲 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57976,7 +57976,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ヒップ lift 付き バンド",
+          "preferred": "ヒップ リフト 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -58307,7 +58307,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hug knees へ 胸",
+          "preferred": "膝抱えストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -58653,7 +58653,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hyperextensions 背中 extensions",
+          "preferred": "ハイパーエクステンション 背中 エクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -58828,7 +58828,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Hyperextensions 付き no hyperextension ベンチ",
+          "preferred": "ハイパーエクステンションベンチなしのバックエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -58990,7 +58990,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "It バンド アンド 臀部 ストレッチ",
+          "preferred": "腸脛靭帯と臀部のストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -59153,7 +59153,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "腸脛靭帯SMR",
+          "preferred": "腸脛靭帯セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60014,7 +60014,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン ケーブル flye",
+          "preferred": "インクライン ケーブル フライ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60191,7 +60191,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン ダンベル ベンチ 付き palms facing in",
+          "preferred": "手のひらを内側に向けたインクラインダンベルベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60709,7 +60709,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン ダンベル フライ — 付き a ツイスト",
+          "preferred": "インクライン ダンベル フライ — 付き ツイスト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61054,7 +61054,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン hammer curls",
+          "preferred": "インクライン ハンマー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61225,7 +61225,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン inner アームカール",
+          "preferred": "インクライン 内側 アームカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61740,7 +61740,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン 腕立て伏せ depth ジャンプ",
+          "preferred": "インクライン 腕立て伏せ デプスジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61916,7 +61916,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン 腕立て伏せ medium",
+          "preferred": "インクライン 腕立て伏せ ミドル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62092,7 +62092,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン 腕立て伏せ リバース grip",
+          "preferred": "インクライン 腕立て伏せ リバース グリップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62268,7 +62268,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "インクライン 腕立て伏せ wide",
+          "preferred": "インクライン 腕立て伏せ ワイド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62430,7 +62430,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Intermediate groin ストレッチ",
+          "preferred": "中級者向け鼠径部ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62592,7 +62592,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Intermediate ヒップ flexor アンド quad ストレッチ",
+          "preferred": "中級者向け股関節屈筋・大腿四頭筋ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62761,7 +62761,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Internal ローテーション 付き バンド",
+          "preferred": "内旋 ローテーション 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62938,7 +62938,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Inverted ロウ",
+          "preferred": "インバーテッド ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63115,7 +63115,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Inverted ロウ 付き straps",
+          "preferred": "ストラップ付きインバーテッドロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63452,7 +63452,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Iron crosses ストレッチ",
+          "preferred": "アイアンクロスストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63620,7 +63620,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Isometric 胸 squeezes",
+          "preferred": "アイソメトリック・チェストスクイーズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63791,7 +63791,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Isometric ネック exercise — フロント アンド 背中",
+          "preferred": "アイソメトリック ネック エクササイズ — フロント アンド 背中",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63960,7 +63960,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Isometric ネック exercise — sides",
+          "preferred": "アイソメトリック ネック エクササイズ — 側方",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -64309,7 +64309,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Jm プレス",
+          "preferred": "JMプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -64645,7 +64645,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Janda 上体起こし",
+          "preferred": "ジャンダ 上体起こし",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -65013,7 +65013,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ジャーク balance",
+          "preferred": "ジャーク バランス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -65191,7 +65191,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ジャーク dip スクワット",
+          "preferred": "ジャーク ディップ スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -65722,7 +65722,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル arnold プレス",
+          "preferred": "ケトルベル アーノルド プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -65905,7 +65905,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル dead クリーン",
+          "preferred": "ケトルベル デッド クリーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -66083,7 +66083,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル figure 8",
+          "preferred": "ケトルベル フィギュア 8",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -66444,7 +66444,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル one-legged デッドリフト",
+          "preferred": "ケトルベル・ワンレッグデッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -66623,7 +66623,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル pass between 脚",
+          "preferred": "ケトルベル パス 間 脚",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -66801,7 +66801,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル pirate ships",
+          "preferred": "ケトルベル・パイレーツシップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -66981,7 +66981,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル pistol スクワット",
+          "preferred": "ケトルベル ピストル スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67327,7 +67327,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル seesaw プレス",
+          "preferred": "ケトルベル・シーソープレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67511,7 +67511,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル sumo ハイ プル",
+          "preferred": "ケトルベル 相撲 ハイ プル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67693,7 +67693,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル thruster",
+          "preferred": "ケトルベルスラスター",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67871,7 +67871,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル turkish get-up ランジ style",
+          "preferred": "ケトルベル・ターキッシュゲットアップ（ランジスタイル）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68051,7 +68051,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル turkish get-up スクワット style",
+          "preferred": "ケトルベル・ターキッシュゲットアップ（スクワットスタイル）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68231,7 +68231,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケトルベル windmill",
+          "preferred": "ケトルベル ウインドミル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68586,7 +68586,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Knee across body",
+          "preferred": "膝 横切る 体幹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68921,7 +68921,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Knee/ヒップ レイズ 上 parallel bars",
+          "preferred": "パラレルバー・ニー／ヒップレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69090,7 +69090,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Knee tuck ジャンプ",
+          "preferred": "ニー・タックジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69256,7 +69256,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング 腕 drill",
+          "preferred": "ニーリング 腕 ドリル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69429,7 +69429,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング ケーブル クランチ 付き オルタネイト oblique twists",
+          "preferred": "ニーリング ケーブル クランチ 付き オルタネイト 腹斜筋 ツイスト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69762,7 +69762,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング forearm ストレッチ",
+          "preferred": "ニーリング 前腕 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69938,7 +69938,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング ハイ pulley ロウ",
+          "preferred": "ニーリング ハイ プーリー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -70102,7 +70102,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング ヒップ flexor",
+          "preferred": "ニーリング ヒップ 屈筋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -70460,7 +70460,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング シングル-腕 ハイ pulley ロウ",
+          "preferred": "ニーリング 片脚-腕 ハイ プーリー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71341,7 +71341,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Lateral ボックスジャンプ",
+          "preferred": "ラテラル ボックスジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -71843,7 +71843,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "広背筋SMR",
+          "preferred": "広背筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72016,7 +72016,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "脚-over フロア プレス",
+          "preferred": "脚-上 フロア プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72179,7 +72179,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "脚-up hamstring ストレッチ",
+          "preferred": "レッグアップ・ハムストリングストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72347,7 +72347,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "脚 extensions",
+          "preferred": "脚 エクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72522,7 +72522,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "脚 lift",
+          "preferred": "脚 リフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72866,7 +72866,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "脚 プル-in",
+          "preferred": "脚 プル-内向き",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73040,7 +73040,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage チェストプレス",
+          "preferred": "レバレッジ チェストプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73217,7 +73217,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage デッドリフト",
+          "preferred": "レバレッジ デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73390,7 +73390,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage デクライン チェストプレス",
+          "preferred": "レバレッジ デクライン チェストプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73566,7 +73566,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage ハイ ロウ",
+          "preferred": "レバレッジ ハイ ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73739,7 +73739,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage インクライン チェストプレス",
+          "preferred": "レバレッジ インクライン チェストプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73915,7 +73915,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage iso ロウ",
+          "preferred": "レバレッジ・アイソロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74088,7 +74088,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage ショルダープレス",
+          "preferred": "レバレッジ ショルダープレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74261,7 +74261,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Leverage シュラッグ",
+          "preferred": "レバレッジ シュラッグ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74764,7 +74764,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Linear depth ジャンプ",
+          "preferred": "リニア デプスジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75811,7 +75811,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ロー pulley ロウ へ ネック",
+          "preferred": "ロー プーリー ロウ へ ネック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75973,7 +75973,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Lower 背中-smr",
+          "preferred": "下部 背中-セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76135,7 +76135,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Lower 背中 カール",
+          "preferred": "下部 背中 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76314,7 +76314,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ランジ pass through",
+          "preferred": "ランジ・パススルー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76492,7 +76492,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ランジ sprint",
+          "preferred": "ランジ スプリント",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76655,7 +76655,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング bent 脚 groin",
+          "preferred": "ライイング・ベントレッグ・グロインストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77005,7 +77005,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング cambered バーベルロウ",
+          "preferred": "ライイング・キャンバードバーベルロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77178,7 +77178,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング ナローグリップ bar カール 上 ハイ pulley",
+          "preferred": "ライイング ナローグリップ バー カール 上 ハイ プーリー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77516,7 +77516,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング ナローグリップ バーベル triceps プレス へ chin",
+          "preferred": "ライイング ナローグリップ バーベル 上腕三頭筋 プレス へ チン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77680,7 +77680,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング crossover",
+          "preferred": "ライイング クロスオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78019,7 +78019,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング face down plate ネック resistance",
+          "preferred": "うつ伏せプレート・ネックレジスタンス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78187,7 +78187,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング face up plate ネック resistance",
+          "preferred": "仰向けプレート・ネックレジスタンス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78518,7 +78518,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング hamstring",
+          "preferred": "ライイング ハムストリング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78858,7 +78858,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング 脚 curls",
+          "preferred": "ライイング 脚 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79374,7 +79374,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング prone quadriceps",
+          "preferred": "ライイング うつ伏せ 大腿四頭筋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79717,7 +79717,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング supine ダンベル カール",
+          "preferred": "ライイング 仰向け ダンベル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79896,7 +79896,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング t-bar ロウ",
+          "preferred": "ライイングTバーロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80065,7 +80065,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ライイング triceps プレス",
+          "preferred": "ライイング 上腕三頭筋 プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80583,7 +80583,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン preacher curls",
+          "preferred": "マシン プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80758,7 +80758,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン 肩 military プレス",
+          "preferred": "マシン 肩 ミリタリー プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81094,7 +81094,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "メディシンボール 胸 pass",
+          "preferred": "メディシンボール 胸 パス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81260,7 +81260,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "メディシンボール full ツイスト",
+          "preferred": "メディシンボール フル ツイスト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81427,7 +81427,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "メディシンボール scoop throw",
+          "preferred": "メディシンボール・スクープスロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81597,7 +81597,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Middle 背中 シュラッグ",
+          "preferred": "中部 背中 シュラッグ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81763,7 +81763,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Middle 背中 ストレッチ",
+          "preferred": "中部 背中 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -82629,7 +82629,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Muscle スナッチ",
+          "preferred": "マッスル スナッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -83174,7 +83174,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Narrow stance レッグプレス",
+          "preferred": "ナロー スタンス レッグプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -83530,7 +83530,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Natural 臀部 ham レイズ",
+          "preferred": "ナチュラル 臀部 ハムストリング レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -83692,7 +83692,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ネック-smr",
+          "preferred": "頸部セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84207,7 +84207,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Oblique crunches — 上 フロア",
+          "preferred": "腹斜筋 クランチ — 上 フロア",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84387,7 +84387,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Olympic スクワット",
+          "preferred": "オリンピック スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84551,7 +84551,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "上-your-背中 quad ストレッチ",
+          "preferred": "上-自分の-背中 大腿四頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84713,7 +84713,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "上 your サイド quad ストレッチ",
+          "preferred": "上 自分の サイド 大腿四頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85066,7 +85066,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム flat ベンチ ダンベル flye",
+          "preferred": "ワンアーム フラット ベンチ ダンベル フライ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85238,7 +85238,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム ハイ-pulley ケーブル サイド bends",
+          "preferred": "ワンアーム ハイ-プーリー ケーブル サイド ベンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -86303,7 +86303,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム ケトルベル military プレス へ サイド",
+          "preferred": "ワンアーム ケトルベル ミリタリー プレス へ サイド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -86476,7 +86476,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム ケトルベル para プレス",
+          "preferred": "ワンアーム・ケトルベルパラプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87557,7 +87557,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム ケトルベル swings",
+          "preferred": "ワンアーム・ケトルベルスイング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87735,7 +87735,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム long bar ロウ",
+          "preferred": "ワンアーム ロング バー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87914,7 +87914,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム メディシンボール slam",
+          "preferred": "ワンアーム メディシンボール スラム",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88098,7 +88098,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム open palm ケトルベル クリーン",
+          "preferred": "ワンアーム オープン 手のひら ケトルベル クリーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88277,7 +88277,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム オーバーヘッド ケトルベル squats",
+          "preferred": "ワンアーム オーバーヘッド ケトルベル スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88634,7 +88634,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム サイド laterals",
+          "preferred": "ワンアーム サイド ラテラルレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88810,7 +88810,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "One-legged ケーブル kickback",
+          "preferred": "ワンレッグ・ケーブルキックバック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88972,7 +88972,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム against wall",
+          "preferred": "壁を使った片腕ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -89500,7 +89500,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム ダンベル preacher カール",
+          "preferred": "ワンアーム ダンベル プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90023,7 +90023,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム pronated ダンベル トライセプスエクステンション",
+          "preferred": "ワンアーム 回内 ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90194,7 +90194,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム supinated ダンベル トライセプスエクステンション",
+          "preferred": "ワンアーム 回外 ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90525,7 +90525,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "One handed ハング",
+          "preferred": "片 片手 ハング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90692,7 +90692,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "One knee へ 胸",
+          "preferred": "片膝を胸に引き寄せるストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90874,7 +90874,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "One 脚 バーベル スクワット",
+          "preferred": "片 脚 バーベル スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -91056,7 +91056,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Open palm ケトルベル クリーン",
+          "preferred": "オープン 手のひら ケトルベル クリーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -91565,7 +91565,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "オーバーヘッド lat",
+          "preferred": "オーバーヘッドラットプル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -91729,7 +91729,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "オーバーヘッド slam",
+          "preferred": "オーバーヘッド スラム",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92248,7 +92248,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "オーバーヘッド triceps",
+          "preferred": "オーバーヘッド 上腕三頭筋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92424,7 +92424,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Pallof プレス",
+          "preferred": "パロフプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92603,7 +92603,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Pallof プレス 付き ローテーション",
+          "preferred": "パロフプレス（ローテーション付き）",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92776,7 +92776,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Palms-down ダンベル wrist カール over a ベンチ",
+          "preferred": "手のひら下向き ダンベル 手首 カール 上 ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92949,7 +92949,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Palms-down wrist カール over a ベンチ",
+          "preferred": "ベンチ上での手のひら下向きリストカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93122,7 +93122,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Palms-up バーベル wrist カール over a ベンチ",
+          "preferred": "手のひら上向き バーベル 手首 カール 上 ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93295,7 +93295,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Palms-up ダンベル wrist カール over a ベンチ",
+          "preferred": "手のひら上向き ダンベル 手首 カール 上 ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93632,7 +93632,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Pelvic tilt into ブリッジ",
+          "preferred": "骨盤後傾からのブリッジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93794,7 +93794,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "腓骨筋SMR",
+          "preferred": "腓骨筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93956,7 +93956,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Peroneals ストレッチ",
+          "preferred": "腓骨筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -94129,7 +94129,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Physioball ヒップ ブリッジ",
+          "preferred": "フィジオボール・ヒップブリッジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -94472,7 +94472,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "梨状筋SMR",
+          "preferred": "梨状筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -94978,7 +94978,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Plate ツイスト",
+          "preferred": "プレート ツイスト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -95331,7 +95331,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Plie ダンベル スクワット",
+          "preferred": "プリエ・ダンベルスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -95504,7 +95504,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Plyo ケトルベル pushups",
+          "preferred": "プライオメトリック・ケトルベルプッシュアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -95673,7 +95673,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Plyo 腕立て伏せ",
+          "preferred": "プライオ 腕立て伏せ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -95835,7 +95835,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Posterior tibialis ストレッチ",
+          "preferred": "後部 前脛骨筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96230,7 +96230,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "パワークリーン から blocks",
+          "preferred": "パワークリーン から ブロック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96589,7 +96589,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "パワー partials",
+          "preferred": "パワー パーシャル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96974,7 +96974,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "パワー スナッチ から blocks",
+          "preferred": "パワー スナッチ から ブロック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97161,7 +97161,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "パワー stairs",
+          "preferred": "パワーステップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97332,7 +97332,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Preacher カール",
+          "preferred": "プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97504,7 +97504,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Preacher hammer ダンベル カール",
+          "preferred": "プリーチャー ハンマー ダンベル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98188,7 +98188,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "プル through",
+          "preferred": "プルスルー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98540,7 +98540,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "腕立て伏せ wide",
+          "preferred": "腕立て伏せ ワイド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98714,7 +98714,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "プッシュ-ups — close triceps position",
+          "preferred": "プッシュ-アップ — クローズ 上腕三頭筋 ポジション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98889,7 +98889,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "プッシュ-ups 付き feet elevated",
+          "preferred": "プッシュ-アップ 付き 足 エレベーテッド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -99064,7 +99064,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "プッシュ-ups 付き feet 上 an バランスボール",
+          "preferred": "プッシュ-アップ 付き 足 上 バランスボール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -99949,7 +99949,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Pushups close アンド wide hand positions",
+          "preferred": "手幅を変えるプッシュアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100275,7 +100275,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Quad ストレッチ",
+          "preferred": "大腿四頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100437,7 +100437,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "大腿四頭筋SMR",
+          "preferred": "大腿四頭筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100969,7 +100969,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Rack プル 付き バンド",
+          "preferred": "バンド付きラックプル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101311,7 +101311,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リア 脚 raises",
+          "preferred": "後方 脚 レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101646,7 +101646,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Return プッシュ から stance",
+          "preferred": "スタンスからのリターンプッシュ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102012,7 +102012,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース バンド box スクワット",
+          "preferred": "リバース バンド ボックス スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102569,7 +102569,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース バンド sumo デッドリフト",
+          "preferred": "リバース バンド 相撲 デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102914,7 +102914,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース バーベル preacher curls",
+          "preferred": "リバース バーベル プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103602,7 +103602,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース フライ 付き external ローテーション",
+          "preferred": "リバース フライ 付き 外旋 ローテーション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103781,7 +103781,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース grip bent-over rows",
+          "preferred": "リバース グリップ ベント-上 ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103950,7 +103950,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース grip トライセプスプレスダウン",
+          "preferred": "リバース グリップ トライセプスプレスダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104125,7 +104125,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース hyperextension",
+          "preferred": "リバース ハイパーエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104469,7 +104469,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース plate curls",
+          "preferred": "リバース プレート カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104644,7 +104644,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "リバース triceps ベンチプレス",
+          "preferred": "リバース 上腕三頭筋 ベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104808,7 +104808,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "菱形筋SMR",
+          "preferred": "菱形筋セルフ筋膜リリース",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -105174,7 +105174,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Rickshaw デッドリフト",
+          "preferred": "リックショー デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -105515,7 +105515,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Rocket ジャンプ",
+          "preferred": "ロケット ジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -105687,7 +105687,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Rocking スタンディング カーフレイズ",
+          "preferred": "ロッキング スタンディング カーフレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -105866,7 +105866,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Rocky プル-ups/pulldowns",
+          "preferred": "ロッキー・プルアップ／プルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106043,7 +106043,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Romanian デッドリフト",
+          "preferred": "ルーマニアン デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106221,7 +106221,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Romanian デッドリフト から deficit",
+          "preferred": "ルーマニアン デッドリフト から デフィシット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106404,7 +106404,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ロープ climb",
+          "preferred": "ロープ クライム",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106740,7 +106740,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ロープ jumping",
+          "preferred": "ロープ ジャンピング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106914,7 +106914,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ロープ straight-腕 pulldown",
+          "preferred": "ロープ ストレートアーム・プルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -107080,7 +107080,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Round world 肩 ストレッチ",
+          "preferred": "ラウンド ワールド 肩 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -107415,7 +107415,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Runner's ストレッチ",
+          "preferred": "ランナーズストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108120,7 +108120,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Scapular 懸垂",
+          "preferred": "肩甲骨 懸垂",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108452,7 +108452,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Scissors ジャンプ",
+          "preferred": "シザーズ ジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108622,7 +108622,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド バンド hamstring カール",
+          "preferred": "シーテッド バンド ハムストリング カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108797,7 +108797,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド バーベル military プレス",
+          "preferred": "シーテッド バーベル ミリタリー プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109138,7 +109138,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド bent-over ワンアーム ダンベル トライセプスエクステンション",
+          "preferred": "シーテッド ベント-上 ワンアーム ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109311,7 +109311,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド bent-over リアレイズ",
+          "preferred": "シーテッド ベント-上 リアレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109481,7 +109481,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド bent-over ツーアーム ダンベル トライセプスエクステンション",
+          "preferred": "シーテッド ベント-上 ツーアーム ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109647,7 +109647,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド biceps",
+          "preferred": "シーテッド 上腕二頭筋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109826,7 +109826,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ケーブル rows",
+          "preferred": "シーテッド ケーブル ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -110508,7 +110508,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ナローグリップ concentration バーベル カール",
+          "preferred": "シーテッド ナローグリップ コンセントレーション バーベル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -110851,7 +110851,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ダンベル inner アームカール",
+          "preferred": "シーテッド ダンベル 内側 アームカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111024,7 +111024,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ダンベル palms-down wrist カール",
+          "preferred": "シーテッド ダンベル 手のひら下向き 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111197,7 +111197,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ダンベル palms-up wrist カール",
+          "preferred": "シーテッド ダンベル 手のひら上向き 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111541,7 +111541,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド flat ベンチ 脚 プル-in",
+          "preferred": "シーテッド フラット ベンチ 脚 プル-内向き",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111705,7 +111705,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド フロア hamstring ストレッチ",
+          "preferred": "シーテッド フロア ハムストリングストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112211,7 +112211,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド good mornings",
+          "preferred": "シーテッド・グッドモーニング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112376,7 +112376,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド hamstring",
+          "preferred": "シーテッド ハムストリング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112540,7 +112540,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド hamstring アンド カーフ ストレッチ",
+          "preferred": "シーテッド ハムストリング アンド カーフ ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113049,7 +113049,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド 脚 tucks",
+          "preferred": "シーテッド・レッグタック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113221,7 +113221,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ワンアーム ダンベル palms-down wrist カール",
+          "preferred": "シーテッド ワンアーム ダンベル 手のひら下向き 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113393,7 +113393,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ワンアーム ダンベル palms-up wrist カール",
+          "preferred": "シーテッド ワンアーム ダンベル 手のひら上向き 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113573,7 +113573,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ワンアーム ケーブル pulley rows",
+          "preferred": "シーテッド ワンアーム ケーブル プーリー ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113908,7 +113908,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド palm-up バーベル wrist カール",
+          "preferred": "シーテッド 手のひら上向き バーベル 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114079,7 +114079,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド palms-down バーベル wrist カール",
+          "preferred": "シーテッド 手のひら下向き バーベル 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114417,7 +114417,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド triceps プレス",
+          "preferred": "シーテッド 上腕三頭筋 プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114592,7 +114592,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シーテッド ツーアーム palms-up ロー-pulley wrist カール",
+          "preferred": "シーテッド ツーアーム 手のひら上向き ロー-プーリー 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114945,7 +114945,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Shotgun ロウ",
+          "preferred": "ショットガンロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -115109,7 +115109,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "肩 circles",
+          "preferred": "肩 サークル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116101,7 +116101,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド hop-sprint",
+          "preferred": "サイド ホップ-スプリント",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116608,7 +116608,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド laterals へ フロントレイズ",
+          "preferred": "サイド ラテラルレイズ へ フロントレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116771,7 +116771,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド 脚 raises",
+          "preferred": "サイド 脚 レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116936,7 +116936,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド ライイング groin ストレッチ",
+          "preferred": "サイド ライイング 鼠径部 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117265,7 +117265,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド スタンディング long ジャンプ",
+          "preferred": "サイド スタンディング ロング ジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117611,7 +117611,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サイド wrist プル",
+          "preferred": "サイド 手首 プル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117950,7 +117950,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-腕 ケーブルクロスオーバー",
+          "preferred": "片脚-腕 ケーブルクロスオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118131,7 +118131,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-腕 linear jammer",
+          "preferred": "シングルアーム・リニアジャマー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118305,7 +118305,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-腕 腕立て伏せ",
+          "preferred": "片脚-腕 腕立て伏せ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118472,7 +118472,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-cone sprint drill",
+          "preferred": "シングルコーン・スプリントドリル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118649,7 +118649,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 ハイ box スクワット",
+          "preferred": "片脚-脚 ハイ ボックス スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118818,7 +118818,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 hop progression",
+          "preferred": "片脚ホップの段階練習",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118987,7 +118987,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 lateral hop",
+          "preferred": "片脚ラテラルホップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119155,7 +119155,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 レッグエクステンション",
+          "preferred": "片脚-脚 レッグエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119323,7 +119323,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 stride ジャンプ",
+          "preferred": "片脚ストライドジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119493,7 +119493,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル ダンベル レイズ",
+          "preferred": "片脚 ダンベル レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119660,7 +119660,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル 脚 butt kick",
+          "preferred": "片脚 脚 ヒップ キック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119834,7 +119834,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル 脚 ヒップリフト",
+          "preferred": "片脚 脚 ヒップリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -120000,7 +120000,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル 脚 プッシュ-off",
+          "preferred": "シングルレッグ・プッシュオフ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -120685,7 +120685,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ソリ drag — harness",
+          "preferred": "ソリ ドラッグ — ハーネス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -120865,7 +120865,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ソリ オーバーヘッド backward walk",
+          "preferred": "ソリ・オーバーヘッド・バックワードウォーク",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -121386,7 +121386,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ソリ リバース flye",
+          "preferred": "ソリ リバース フライ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -121907,7 +121907,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith インクライン 肩 レイズ",
+          "preferred": "スミス・インクラインショルダーレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122080,7 +122080,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン 背中側 シュラッグ",
+          "preferred": "スミスマシン・ビハインドバックシュラッグ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122255,7 +122255,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ベンチプレス",
+          "preferred": "スミスマシン・ベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122435,7 +122435,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ベントオーバー ロウ",
+          "preferred": "スミスマシン・ベントオーバーロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122604,7 +122604,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン カーフレイズ",
+          "preferred": "スミスマシン・カーフレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122779,7 +122779,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ナローグリップ ベンチプレス",
+          "preferred": "スミスマシン・ナローグリップベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -122954,7 +122954,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン デクライン プレス",
+          "preferred": "スミスマシン・デクラインプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -123142,7 +123142,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ハング パワークリーン",
+          "preferred": "スミスマシン・ハングパワークリーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -123310,7 +123310,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ヒップ レイズ",
+          "preferred": "スミスマシン・ヒップレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -123485,7 +123485,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン インクライン ベンチプレス",
+          "preferred": "スミスマシン・インクラインベンチプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -123659,7 +123659,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン レッグプレス",
+          "preferred": "スミスマシン・レッグプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -123836,7 +123836,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン ワンアーム アップライトロウ",
+          "preferred": "スミスマシン・ワンアームアップライトロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124011,7 +124011,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン オーバーヘッド ショルダープレス",
+          "preferred": "スミスマシン・オーバーヘッドショルダープレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124191,7 +124191,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン pistol スクワット",
+          "preferred": "スミスマシン・ピストルスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124361,7 +124361,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン リバース カーフ raises",
+          "preferred": "スミスマシン・リバースカーフレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124543,7 +124543,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン スクワット",
+          "preferred": "スミスマシン・スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124719,7 +124719,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン stiff-legged デッドリフト",
+          "preferred": "スミスマシン・スティッフレッグドデッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124897,7 +124897,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith マシン アップライトロウ",
+          "preferred": "スミスマシン・アップライトロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125078,7 +125078,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Smith シングル-脚 スプリットスクワット",
+          "preferred": "スミス・シングルレッグスプリットスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125459,7 +125459,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スナッチ balance",
+          "preferred": "スナッチ バランス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126194,7 +126194,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スナッチ から blocks",
+          "preferred": "スナッチ から ブロック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126362,7 +126362,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Speed バンド オーバーヘッド triceps",
+          "preferred": "スピードバンド・オーバーヘッドトライセプス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126544,7 +126544,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Speed box スクワット",
+          "preferred": "スピードボックススクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126897,7 +126897,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Spell Caster",
+          "preferred": "スペルキャスター",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -127249,7 +127249,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Spider カール",
+          "preferred": "スパイダーカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -127418,7 +127418,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Spinal ストレッチ",
+          "preferred": "脊柱 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -128336,7 +128336,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スプリットスクワット 付き dumbbells",
+          "preferred": "ダンベル・スプリットスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -128502,7 +128502,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スプリット squats",
+          "preferred": "スプリット スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129048,7 +129048,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スクワット 付き chains",
+          "preferred": "スクワット 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129233,7 +129233,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スクワット 付き plate movers",
+          "preferred": "スクワット 付き プレート ムーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129414,7 +129414,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Squats — 付き バンド",
+          "preferred": "スクワット — 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129581,7 +129581,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "StairMaster",
+          "preferred": "ステアマスター",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130273,7 +130273,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング bent-over ワンアーム ダンベル トライセプスエクステンション",
+          "preferred": "スタンディング ベント-上 ワンアーム ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130441,7 +130441,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング bent-over ツーアーム ダンベル トライセプスエクステンション",
+          "preferred": "スタンディング ベント-上 ツーアーム ダンベル トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130611,7 +130611,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング biceps ケーブル カール",
+          "preferred": "スタンディング 上腕二頭筋 ケーブル カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130776,7 +130776,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング biceps ストレッチ",
+          "preferred": "スタンディング 上腕二頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130952,7 +130952,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング bradford プレス",
+          "preferred": "スタンディング ブラッドフォード プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131300,7 +131300,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ケーブル lift",
+          "preferred": "スタンディング ケーブル リフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131474,7 +131474,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ケーブル wood chop",
+          "preferred": "スタンディング ケーブル ウッド チョップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131643,7 +131643,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング カーフ raises",
+          "preferred": "スタンディング カーフ レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131815,7 +131815,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング concentration カール",
+          "preferred": "スタンディング コンセントレーション カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133004,7 +133004,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング elevated quad ストレッチ",
+          "preferred": "スタンディング エレベーテッド 大腿四頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133338,7 +133338,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング gastrocnemius カーフ ストレッチ",
+          "preferred": "スタンディング 腓腹筋 カーフ ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133501,7 +133501,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング hamstring アンド カーフ ストレッチ",
+          "preferred": "スタンディング ハムストリング アンド カーフ ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133667,7 +133667,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ヒップ circles",
+          "preferred": "スタンディング ヒップ サークル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133829,7 +133829,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ヒップ flexors",
+          "preferred": "スタンディング ヒップ 屈筋",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134002,7 +134002,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング inner-アームカール",
+          "preferred": "スタンディング 内側-アームカール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134166,7 +134166,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング lateral ストレッチ",
+          "preferred": "スタンディング ラテラル ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134505,7 +134505,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング long ジャンプ",
+          "preferred": "スタンディング ロング ジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134679,7 +134679,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ロー-pulley 三角筋 レイズ",
+          "preferred": "スタンディング ロー-プーリー 三角筋 レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134851,7 +134851,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ロー-pulley ワンアーム トライセプスエクステンション",
+          "preferred": "スタンディング ロー-プーリー ワンアーム トライセプスエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135027,7 +135027,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング military プレス",
+          "preferred": "スタンディング ミリタリー プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135197,7 +135197,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング olympic plate hand squeeze",
+          "preferred": "スタンディング オリンピック プレート 手 スクイーズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135542,7 +135542,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ワンアーム ダンベル カール over インクライン ベンチ",
+          "preferred": "スタンディング ワンアーム ダンベル カール 上 インクライン ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136063,7 +136063,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング palm-in ワンアーム ダンベル プレス",
+          "preferred": "スタンディング 手のひら内向き ワンアーム ダンベル プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136237,7 +136237,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング palms-in ダンベル プレス",
+          "preferred": "スタンディング・パームインダンベルプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136409,7 +136409,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング palms-up バーベル 背中側 wrist カール",
+          "preferred": "スタンディング 手のひら上向き バーベル 背中側 手首 カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136574,7 +136574,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング pelvic tilt",
+          "preferred": "スタンディング 骨盤 傾斜",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136905,7 +136905,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング soleus アンド achilles ストレッチ",
+          "preferred": "スタンディング ヒラメ筋 アンド アキレス腱 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137069,7 +137069,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング toe touches",
+          "preferred": "スタンディング・トータッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137403,7 +137403,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング ツーアーム オーバーヘッド throw",
+          "preferred": "スタンディング ツーアーム オーバーヘッド スロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137571,7 +137571,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Star ジャンプ",
+          "preferred": "スター ジャンプ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137746,7 +137746,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Step-up 付き knee レイズ",
+          "preferred": "ステップアップ・ニー レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -138092,7 +138092,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Stiff-legged バーベル デッドリフト",
+          "preferred": "スティッフレッグド バーベル デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -138272,7 +138272,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Stiff-legged ダンベル デッドリフト",
+          "preferred": "スティッフレッグド ダンベル デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -138449,7 +138449,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Stiff 脚 バーベル グッドモーニング",
+          "preferred": "スティッフ 脚 バーベル グッドモーニング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -138792,7 +138792,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Straight-腕 ダンベル プルオーバー",
+          "preferred": "ストレートアーム・ダンベルプルオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -138966,7 +138966,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Straight-腕 pulldown",
+          "preferred": "ストレートアーム・プルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139142,7 +139142,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Straight bar ベンチ mid rows",
+          "preferred": "ストレート バー ベンチ ミドル ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139315,7 +139315,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Straight raises 上 インクライン ベンチ",
+          "preferred": "ストレート レイズ 上 インクライン ベンチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139484,7 +139484,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Stride ジャンプ crossover",
+          "preferred": "ストライド ジャンプ クロスオーバー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139670,7 +139670,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Sumo デッドリフト",
+          "preferred": "相撲 デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139857,7 +139857,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Sumo デッドリフト 付き バンド",
+          "preferred": "相撲 デッドリフト 付き バンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140045,7 +140045,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Sumo デッドリフト 付き chains",
+          "preferred": "相撲 デッドリフト 付き チェーン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140379,7 +140379,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Supine 胸 throw",
+          "preferred": "仰向け 胸 スロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140546,7 +140546,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Supine ワンアーム オーバーヘッド throw",
+          "preferred": "仰向け片腕オーバーヘッドスロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140714,7 +140714,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Supine ツーアーム オーバーヘッド throw",
+          "preferred": "仰向け両腕オーバーヘッドスロー",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140887,7 +140887,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "サスペンデッド fallout",
+          "preferred": "サスペンデッド・フォールアウト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -141760,7 +141760,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Svend プレス",
+          "preferred": "スヴェンドプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -141938,7 +141938,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "T-bar ロウ 付き handle",
+          "preferred": "ハンドル付きTバーロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -142110,7 +142110,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Tate プレス",
+          "preferred": "テイト プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -142275,7 +142275,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Straddle",
+          "preferred": "ストラドル",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143138,7 +143138,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Torso ローテーション",
+          "preferred": "体幹 ローテーション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143483,7 +143483,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Trap bar デッドリフト",
+          "preferred": "トラップ バー デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143651,7 +143651,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "上腕三頭筋 ダンベル kickback",
+          "preferred": "上腕三頭筋 ダンベル キックバック",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143983,7 +143983,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Triceps オーバーヘッド エクステンション 付き ロープ",
+          "preferred": "上腕三頭筋 オーバーヘッド エクステンション 付き ロープ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144322,7 +144322,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "トライセプスプレスダウン — ロープ attachment",
+          "preferred": "トライセプスプレスダウン — ロープ アタッチメント",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144491,7 +144491,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "トライセプスプレスダウン — v-bar attachment",
+          "preferred": "Vバーアタッチメント・トライセプスプレスダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144654,7 +144654,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Triceps ストレッチ",
+          "preferred": "上腕三頭筋 ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144824,7 +144824,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Tuck クランチ",
+          "preferred": "タック クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144994,7 +144994,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ツーアーム ダンベル preacher カール",
+          "preferred": "ツーアーム ダンベル プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -145529,7 +145529,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ツーアーム ケトルベル military プレス",
+          "preferred": "ツーアーム ケトルベル ミリタリー プレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -145883,7 +145883,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Underhand ケーブル pulldowns",
+          "preferred": "アンダーグリップ・ケーブルプルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146048,7 +146048,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Upper 背中-脚 grab",
+          "preferred": "上部 背中-脚 グラブ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146211,7 +146211,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Upper 背中 ストレッチ",
+          "preferred": "上背部ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146387,7 +146387,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Upright バーベルロウ",
+          "preferred": "アップライトバーベルロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146563,7 +146563,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Upright シーテッドロウ",
+          "preferred": "アップライトケーブルロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -146903,7 +146903,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Upward ストレッチ",
+          "preferred": "上向き ストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147428,7 +147428,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Vertical スイング",
+          "preferred": "バーティカル スイング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147769,7 +147769,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き ball hyperextension",
+          "preferred": "ウェイト付き ボール ハイパーエクステンション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147940,7 +147940,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き ball サイドベンド",
+          "preferred": "ウェイト付き ボール サイドベンド",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148115,7 +148115,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き ベンチ dip",
+          "preferred": "ウェイト付き ベンチ ディップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148284,7 +148284,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き crunches",
+          "preferred": "ウェイト付き クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148640,7 +148640,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き プル ups",
+          "preferred": "ウェイト付き プル アップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148819,7 +148819,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き sissy スクワット",
+          "preferred": "ウェイト付き シシー スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -148987,7 +148987,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ウェイト付き sit-ups — 付き バンド",
+          "preferred": "バンド付きウェイトシットアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150050,7 +150050,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワイドグリップ pulldown ビハインドネック",
+          "preferred": "ワイドグリップ・ビハインドネックプルダウン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150228,7 +150228,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワイドグリップ リア 懸垂",
+          "preferred": "ワイドグリップ 後方 懸垂",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150581,7 +150581,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Wide stance バーベル スクワット",
+          "preferred": "ワイド スタンス バーベル スクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150757,7 +150757,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Wide stance stiff 脚",
+          "preferred": "ワイド スタンス スティッフ 脚",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -151255,7 +151255,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "World's greatest ストレッチ",
+          "preferred": "ワールドグレイテストストレッチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -151756,7 +151756,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Wrist rotations 付き straight bar",
+          "preferred": "ストレートバー・リストローテーション",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152298,7 +152298,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Zottman カール",
+          "preferred": "ゾットマン カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152472,7 +152472,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Zottman preacher カール",
+          "preferred": "ゾットマン プリーチャー カール",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152997,7 +152997,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Half-ニーリング ケーブル lift",
+          "preferred": "ハーフニーリング・ケーブルリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -153167,7 +153167,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ニーリング ケーブル chop",
+          "preferred": "ニーリング ケーブル チョップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -153696,7 +153696,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ワンアーム bent-over シーテッドロウ",
+          "preferred": "ワンアーム ベント-上 シーテッドロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -154216,7 +154216,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "オルタネイト flat-ベンチ ケーブル チェストプレス",
+          "preferred": "オルタネイト フラット-ベンチ ケーブル チェストプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -154561,7 +154561,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "スタンディング diagonal ケーブル チェストプレス",
+          "preferred": "スタンディング ダイアゴナル ケーブル チェストプレス",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -155077,7 +155077,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル ヒップ flexion",
+          "preferred": "ケーブル ヒップ 屈曲",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -155247,7 +155247,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル ヒップ abduction",
+          "preferred": "ケーブル ヒップ 外転",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156289,7 +156289,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル forward ランジ",
+          "preferred": "ケーブル 前方 ランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156462,7 +156462,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル lateral ランジ",
+          "preferred": "ケーブル ラテラル ランジ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156635,7 +156635,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル step-up",
+          "preferred": "ケーブル・ステップアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156808,7 +156808,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブルクロスオーバー step-up",
+          "preferred": "ケーブルクロスオーバー・ステップアップ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156979,7 +156979,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "シングル-脚 シングル-腕 ケーブル romanian デッドリフト",
+          "preferred": "片脚-脚 片脚-腕 ケーブル ルーマニアン デッドリフト",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -157154,7 +157154,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル ジャンプ slam",
+          "preferred": "ケーブル ジャンプ スラム",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -157666,7 +157666,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "ケーブル カーフ-box レイズ",
+          "preferred": "ケーブル カーフ-ボックス レイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -158540,7 +158540,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン 胸-supported ロウ",
+          "preferred": "マシン 胸-サポート ロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -158718,7 +158718,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン diverging ロウ",
+          "preferred": "マシン・ダイバージングロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159226,7 +159226,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン rotary torso",
+          "preferred": "マシン ローテーター 体幹",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159392,7 +159392,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン oblique クランチ",
+          "preferred": "マシン 腹斜筋 クランチ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159911,7 +159911,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Belt スクワット",
+          "preferred": "ベルトスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160085,7 +160085,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "V-スクワット",
+          "preferred": "Vスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160255,7 +160255,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Pendulum スクワット",
+          "preferred": "ペンデュラムスクワット",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160775,7 +160775,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン t-bar ロウ",
+          "preferred": "マシンTバーロウ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161285,7 +161285,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Assisted チンニング",
+          "preferred": "アシスト チンニング",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161453,7 +161453,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "Four-way ネック マシン",
+          "preferred": "フォーウェイ・ネックマシン",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161617,7 +161617,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン tibialis dorsiflexion",
+          "preferred": "マシン 前脛骨筋 背屈",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161781,7 +161781,7 @@
           "reviewStatus": "provisional"
         },
         "ja": {
-          "preferred": "マシン horizontal カーフレイズ",
+          "preferred": "マシン・ホリゾンタルカーフレイズ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"

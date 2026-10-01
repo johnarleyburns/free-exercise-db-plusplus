@@ -11,7 +11,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 3. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 103 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 101 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `lateral` (15), `sumo` (5), `sprint` (4), `crunch` (3), `hack` (3), `lunge` (3), `push` (3), `split` (3), `atlas` (2), `bradford` (2), `diagonal` (2), `landmine` (2), `rack` (2), `rickshaw` (2), `sit-up` (2), `step-up` (2), `torso` (2), `zottman` (2), `abduction` (1), `anterior` (1).
 
 First semantic-review candidates:
@@ -26,7 +26,6 @@ First semantic-review candidates:
 | `Bench_Press_-_Powerlifting` | Press de Banca - Powerlifting | powerlifting |
 | `Bench_Sprint` | Sprint en Banco | sprint |
 | `Bent_Over_Low-Pulley_Side_Lateral` | Elevación lateral inclinada en polea baja | lateral |
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Abdominales en Bosu con polea y flexiones laterales | bosu |
 | `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
 | `Cable_Crunch` | Crunch en Polea | crunch |
 | `Cable_Judo_Flip` | Volteo de judo en polea | judo |
@@ -43,6 +42,7 @@ First semantic-review candidates:
 | `Hack_Squat` | Sentadilla Hack | hack |
 | `IT_Band_and_Glute_Stretch` | Estiramiento de Banda IT y Glúteo | it |
 | `Iliotibial_Tract-SMR` | Liberación miofascial de la cintilla iliotibial | iliotibial |
+| `Janda_Sit-Up` | Sit-Up Janda | janda, sit-up |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -60,7 +60,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 35. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 286 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 285 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `crunch` (16), `rotation` (7), `morning` (6), `ball` (5), `curls` (5), `shrug` (5), `box` (4), `chair` (4), `crunches` (4), `flat` (4), `groin` (4), `lateral` (4), `push` (4), `sit-up` (4), `split` (4), `sumo` (4), `supine` (4), `attachment` (3), `balance` (3), `body` (3).
 
 First semantic-review candidates:
@@ -82,7 +82,7 @@ First semantic-review candidates:
 | `Bent_Press` | Seitliches Drücken (Bent Press) | bent |
 | `Board_Press` | Board Drücken | board |
 | `Body_Tricep_Press` | Body Trizeps Drücken | body |
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Bosu Ball Kabel Crunch mit seitlich bends | ball, bends, bosu, crunch |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Bosu Ball Kabel Crunch mit seitlich bends | ball, bends, crunch |
 | `Bottoms-Up_Clean_From_The_Hang_Position` | Bottoms-up Umsetzen aus der Hängen position | bottoms-up, position |
 | `Box_Squat` | Box Kniebeuge | box |
 | `Box_Squat_with_Bands` | Box Kniebeuge mit Bänder | box |
@@ -141,14 +141,13 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 5. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 226 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 224 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `depth` (3), `drag` (3), `face` (3), `flye` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `knees` (3), `one` (3), `pulldown` (3), `romanian` (3), `slam` (3), `step-up` (3), `straight` (3), `below` (2), `bradford` (2), `chain` (2), `chop` (2), `close` (2), `concentration` (2).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | BOSU球绳索侧屈卷腹 | bosu |
 | `Bradford_Rocky_Presses` | Bradford/Rocky推举 | bradford |
 | `Cable_Russian_Twists` | 绳索 russian twists | russian, twists |
 | `Cable_Shrugs` | 绳索 shrugs | shrugs |
@@ -173,6 +172,7 @@ First semantic-review candidates:
 | `Double_Leg_Butt_Kick` | 双 腿 臀部 kick | kick |
 | `Drag_Curl` | Drag 弯举 | drag |
 | `Drop_Push` | Drop 推 | drop |
+| `Dumbbell_Bench_Press_with_Neutral_Grip` | 哑铃卧推 带 neutral grip | neutral |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -192,14 +192,13 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 3. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 257 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 255 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `depth` (3), `drag` (3), `face` (3), `flexor` (3), `flye` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `knees` (3), `lower` (3), `one` (3), `pass` (3), `prone` (3), `pulldown` (3), `romanian` (3), `slam` (3), `squats` (3), `step-up` (3), `straight` (3), `upper` (3).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | BOSU球繩索側屈捲腹 | bosu |
 | `Bradford_Rocky_Presses` | Bradford/Rocky推舉 | bradford |
 | `Cable_Hip_Adduction` | 繩索 髖 adduction | adduction |
 | `Cable_Incline_Pushdown` | 繩索 上斜 pushdown | pushdown |
@@ -224,6 +223,7 @@ First semantic-review candidates:
 | `Dancers_Stretch` | Dancer's 伸展 | dancer's |
 | `Deficit_Deadlift` | Deficit 硬舉 | deficit |
 | `Depth_Jump_Leap` | Depth 跳 leap | depth, leap |
+| `Donkey_Calf_Raises` | Donkey 小腿 舉 | donkey |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -241,7 +241,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 4. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 265 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 263 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `lateral` (15), `linear` (5), `face` (3), `flexor` (3), `flye` (3), `hack` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `lower` (3), `one` (3), `pass` (3), `prone` (3), `pulldown` (3), `romanian` (3), `slam` (3), `squats` (3), `stiff-legged` (3), `straight` (3), `upper` (3).
 
 First semantic-review candidates:
@@ -256,7 +256,6 @@ First semantic-review candidates:
 | `Barbell_Hack_Squat` | Agachamento hack com barra | hack |
 | `Bench_Press_-_Powerlifting` | Supino — powerlifting | powerlifting |
 | `Bent_Over_Low-Pulley_Side_Lateral` | Elevação lateral inclinada na polia baixa | lateral |
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Abdominal na bola BOSU com polia e inclinações laterais | bosu |
 | `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
 | `Cable_Seated_Lateral_Raise` | Elevação lateral sentada na polia | lateral |
 | `Calf_Press_On_The_Leg_Press_Machine` | Prensa de panturrilhas na máquina de leg press | leg |
@@ -273,6 +272,7 @@ First semantic-review candidates:
 | `Depth_Jump_Leap` | Profundidade salto leap | leap |
 | `Donkey_Calf_Raises` | Donkey panturrilha elevações | donkey |
 | `Double_Kettlebell_Windmill` | Duplo kettlebell windmill | windmill |
+| `Double_Leg_Butt_Kick` | Duplo perna glúteos kick | kick |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -291,7 +291,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 11. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 406 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 405 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `triceps` (37), `extension` (33), `box` (11), `rotation` (9), `a` (8), `leverage` (8), `curls` (7), `crunch` (6), `morning` (6), `biceps` (5), `flat` (5), `military` (5), `sumo` (5), `blocks` (4), `dips` (4), `double` (4), `elevated` (4), `groin` (4), `lateral` (4), `oblique` (4).
 
 First semantic-review candidates:
@@ -313,7 +313,7 @@ First semantic-review candidates:
 | `Bench_Press_-_Powerlifting` | Développé couché — powerlifting | powerlifting |
 | `Bench_Sprint` | Banc sprint | sprint |
 | `Bent_Press` | Bent développé | bent |
-| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Crunch à la poulie sur BOSU avec flexions latérales | bosu, crunch |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Crunch à la poulie sur BOSU avec flexions latérales | crunch |
 | `Bottoms-Up_Clean_From_The_Hang_Position` | Bottoms-up épaulé depuis suspendu position | bottoms-up, position |
 | `Box_Jump_Multiple_Response` | Saut sur box à réponses multiples | box |
 | `Box_Skip` | Saut alterné sur box | box |
@@ -346,45 +346,9 @@ Counts: reviewed=0, provisional=927, untranslated=0; flags=0.
 
 No automated fallback/composition flags.
 
-Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
+Unchanged spelling candidates: 0. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 460 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
-
-First semantic-review candidates:
-
-| exerciseId | preferred | retained source tokens |
-|---|---|---|
-| `Ab_Roller` | 腹部 roller | roller |
-| `Advanced_Kettlebell_Windmill` | Advanced ケトルベル windmill | advanced, windmill |
-| `All_Fours_Quad_Stretch` | All fours quad ストレッチ | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | オルタネイト 脚 diagonal bound | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle 上 knee | ankle, knee |
-| `Anti-Gravity_Press` | Anti-gravity プレス | anti-gravity |
-| `Arm_Circles` | 腕 circles | circles |
-| `Around_The_Worlds` | Around worlds | around, worlds |
-| `Axle_Deadlift` | Axle デッドリフト | axle |
-| `Backward_Medicine_Ball_Throw` | Backward メディシンボール throw | backward, throw |
-| `Ball_Leg_Curl` | Ball レッグカール | ball |
-| `Band_Assisted_Pull-Up` | バンド assisted 懸垂 | assisted |
-| `Band_Good_Morning_Pull_Through` | バンド グッドモーニング プル through | through |
-| `Band_Hip_Adductions` | バンド ヒップ adductions | adductions |
-| `Band_Pull_Apart` | バンド プル apart | apart |
-| `Barbell_Ab_Rollout` | バーベル 腹部 rollout | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | バーベル 腹部 rollout — 上 knees | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | バーベル curls ライイング against an インクライン | against, an, curls |
-| `Barbell_Full_Squat` | バーベル full スクワット | full |
-| `Barbell_Guillotine_Bench_Press` | バーベル guillotine ベンチプレス | guillotine |
-| `Barbell_Hack_Squat` | バーベル hack スクワット | hack |
-| `Barbell_Rear_Delt_Row` | バーベル リア delt ロウ | delt |
-| `Barbell_Rollout_from_Bench` | バーベル rollout から ベンチ | rollout |
-| `Barbell_Squat_To_A_Bench` | バーベル スクワット へ a ベンチ | a |
-| `Barbell_Step_Ups` | バーベル step ups | step, ups |
-
-| exerciseId | unchanged preferred name |
-|---|---|
-| `Spell_Caster` | Spell Caster |
-| `Stairmaster` | StairMaster |
+Semantic review candidates: 0 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 
 Untranslated fallback entries: 0. These remain English source names and require target-language review before being called localized.
 
@@ -396,7 +360,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 460 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 459 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
 
 First semantic-review candidates:
@@ -444,7 +408,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 459 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 458 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
 
 First semantic-review candidates:
@@ -492,7 +456,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 460 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 459 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
 
 First semantic-review candidates:
@@ -540,7 +504,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 457 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 456 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
 
 First semantic-review candidates:
@@ -588,7 +552,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 2. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 457 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 456 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `wrist` (15), `curls` (9), `triceps` (9), `a` (8), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6), `rows` (6), `ball` (5).
 
 First semantic-review candidates:
@@ -636,7 +600,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 65. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 564 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 563 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `dumbbell` (79), `triceps` (36), `crunch` (19), `wrist` (15), `arm` (10), `curls` (10), `pulldown` (10), `a` (9), `box` (8), `hamstring` (8), `preacher` (8), `raises` (8), `bar` (7), `bent-over` (7), `crossover` (7), `knee` (7), `lat` (7), `plate` (7), `shrug` (7), `throw` (7).
 
 First semantic-review candidates:
@@ -747,7 +711,7 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 17. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 507 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Semantic review candidates: 506 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
 Top retained source tokens: `crunch` (20), `wrist` (15), `box` (12), `a` (10), `curls` (9), `hamstring` (8), `leverage` (8), `triceps` (8), `bar` (7), `bent-over` (7), `knee` (7), `lat` (7), `plate` (7), `raises` (7), `throw` (7), `chains` (6), `morning` (6), `over` (6), `palms-up` (6), `preacher` (6).
 
 First semantic-review candidates:
