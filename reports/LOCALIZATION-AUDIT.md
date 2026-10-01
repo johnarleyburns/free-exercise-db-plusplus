@@ -241,38 +241,38 @@ No automated fallback/composition flags.
 
 Unchanged spelling candidates: 4. These are explicit international/proper-term candidates, not proof that a native translation is unnecessary.
 
-Semantic review candidates: 488 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
-Top retained source tokens: `lateral` (15), `wrist` (15), `a` (9), `curls` (9), `triceps` (9), `bar` (8), `hamstring` (8), `leverage` (8), `preacher` (8), `raises` (8), `bent-over` (7), `crossover` (7), `knee` (7), `plate` (7), `throw` (7), `box` (6), `chains` (6), `over` (6), `palms-up` (6), `quad` (6).
+Semantic review candidates: 265 entries retain source-language tokens outside the loanword allowlist. This queue is advisory and may include valid local loanwords; it must be resolved by native domain review before release.
+Top retained source tokens: `lateral` (15), `linear` (5), `face` (3), `flexor` (3), `flye` (3), `hack` (3), `hyperextension` (3), `isometric` (3), `kickback` (3), `lower` (3), `one` (3), `pass` (3), `prone` (3), `pulldown` (3), `romanian` (3), `slam` (3), `squats` (3), `stiff-legged` (3), `straight` (3), `upper` (3).
 
 First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Ab_Roller` | Abdominal roller | roller |
-| `All_Fours_Quad_Stretch` | All fours quad alongamento | all, fours, quad |
-| `Alternate_Leg_Diagonal_Bound` | Alternado perna diagonal bound | bound, diagonal |
-| `Ankle_On_The_Knee` | Ankle no knee | ankle, knee |
+| `Alternate_Leg_Diagonal_Bound` | Salto diagonal alternado com uma perna | diagonal |
 | `Anterior_Tibialis-SMR` | Liberação miofascial do tibial anterior | anterior |
-| `Anti-Gravity_Press` | Anti-gravity pressão | anti-gravity |
-| `Arm_Circles` | Braço circles | circles |
-| `Around_The_Worlds` | Around worlds | around, worlds |
 | `Atlas_Stone_Trainer` | Treino com pedra Atlas | atlas |
 | `Atlas_Stones` | Pedras Atlas | atlas |
 | `Axle_Deadlift` | Axle levantamento terra | axle |
-| `Backward_Medicine_Ball_Throw` | Backward bola medicinal throw | backward, throw |
-| `Ball_Leg_Curl` | Ball flexão de pernas | ball |
-| `Band_Assisted_Pull-Up` | Faixa elástica assisted barra fixa | assisted |
-| `Band_Good_Morning_Pull_Through` | Faixa elástica bom dia puxada through | through |
-| `Band_Hip_Adductions` | Faixa elástica quadril adductions | adductions |
-| `Band_Pull_Apart` | Faixa elástica puxada apart | apart |
-| `Barbell_Ab_Rollout` | Barra abdominal rollout | rollout |
-| `Barbell_Ab_Rollout_-_On_Knees` | Barra abdominal rollout — no knees | knees, rollout |
-| `Barbell_Curls_Lying_Against_An_Incline` | Barra curls deitado against an inclinado | against, an, curls |
-| `Barbell_Full_Squat` | Barra full agachamento | full |
-| `Barbell_Guillotine_Bench_Press` | Barra guillotine supino | guillotine |
-| `Barbell_Hack_Squat` | Barra hack agachamento | hack |
-| `Barbell_Rear_Delt_Row` | Barra posterior delt remada | delt |
-| `Barbell_Rollout_from_Bench` | Barra rollout a partir de banco | rollout |
+| `Barbell_Hack_Squat` | Agachamento hack com barra | hack |
+| `Bench_Press_-_Powerlifting` | Supino — powerlifting | powerlifting |
+| `Bent_Over_Low-Pulley_Side_Lateral` | Elevação lateral inclinada na polia baixa | lateral |
+| `Bosu_Ball_Cable_Crunch_With_Side_Bends` | Abdominal na bola BOSU com polia e inclinações laterais | bosu |
+| `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
+| `Cable_Seated_Lateral_Raise` | Elevação lateral sentada na polia | lateral |
+| `Calf_Press_On_The_Leg_Press_Machine` | Prensa de panturrilhas na máquina de leg press | leg |
+| `Carioca_Quick_Step` | Passo carioca rápido | carioca |
+| `Chair_Leg_Extended_Stretch` | Cadeira perna extended alongamento | extended |
+| `Chair_Lower_Back_Stretch` | Cadeira lower costas alongamento | lower |
+| `Chair_Upper_Body_Stretch` | Cadeira upper corpo alongamento | upper |
+| `Chest_Push_from_3_point_stance` | Peito empurrada partir de 3 point base | point |
+| `Chest_Stretch_on_Stability_Ball` | Peito alongamento no stability bola | stability |
+| `Clock_Push-Up` | Clock flexão de braços | clock |
+| `Cuban_Press` | Cuban pressão | cuban |
+| `Dancers_Stretch` | Dancer's alongamento | dancer's |
+| `Deficit_Deadlift` | Deficit levantamento terra | deficit |
+| `Depth_Jump_Leap` | Profundidade salto leap | leap |
+| `Donkey_Calf_Raises` | Donkey panturrilha elevações | donkey |
+| `Double_Kettlebell_Windmill` | Duplo kettlebell windmill | windmill |
 
 | exerciseId | unchanged preferred name |
 |---|---|

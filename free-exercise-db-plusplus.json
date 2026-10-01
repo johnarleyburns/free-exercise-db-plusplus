@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T18:04:58.201156+00:00",
+    "generatedAt": "2026-10-01T18:14:16.986853+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1186,7 +1186,7 @@
         },
         "pt-BR": {
           "source": "translations/pt-BR.json",
-          "sha256": "8f04bb9773f677c47d1358dd87b8b6ddcae2d47b5c2b9915dbb03540d0be887f",
+          "sha256": "bdbe75bf7c268766c3c34fc2436ae8a9b3c2aa2a83afc7f48369e3fdf284d775",
           "entryCount": 927,
           "reviewedCount": 0,
           "provisionalCount": 927,
@@ -1889,7 +1889,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Abdominal roller",
+          "preferred": "Roda abdominal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -2731,7 +2731,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "All fours quad alongamento",
+          "preferred": "Alongamento de quadríceps em quatro apoios",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -3416,7 +3416,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Alternado perna diagonal bound",
+          "preferred": "Salto diagonal alternado com uma perna",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -4976,7 +4976,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ankle no knee",
+          "preferred": "Tornozelo sobre o joelho",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5314,7 +5314,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Anti-gravity pressão",
+          "preferred": "Pressão antigravitacional",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5479,7 +5479,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Braço circles",
+          "preferred": "Círculos com os braços",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -5825,7 +5825,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Around worlds",
+          "preferred": "Círculos ao redor do mundo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -6914,7 +6914,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Backward bola medicinal throw",
+          "preferred": "Arremesso para trás com bola medicinal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7254,7 +7254,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ball flexão de pernas",
+          "preferred": "Flexão de pernas com bola",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7431,7 +7431,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Faixa elástica assisted barra fixa",
+          "preferred": "Barra fixa assistida com faixa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7783,7 +7783,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Faixa elástica bom dia puxada through",
+          "preferred": "Bom dia com faixa e extensão de quadril",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -7953,7 +7953,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Faixa elástica quadril adductions",
+          "preferred": "Adução de quadril com faixa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8127,7 +8127,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Faixa elástica puxada apart",
+          "preferred": "Abertura da faixa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8467,7 +8467,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra abdominal rollout",
+          "preferred": "Roda abdominal com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -8640,7 +8640,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra abdominal rollout — no knees",
+          "preferred": "Roda abdominal com barra ajoelhado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9161,7 +9161,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra curls deitado against an inclinado",
+          "preferred": "Rosca com barra deitado no banco inclinado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9529,7 +9529,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra full agachamento",
+          "preferred": "Agachamento completo com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -9880,7 +9880,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra guillotine supino",
+          "preferred": "Supino guilhotina com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10057,7 +10057,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra hack agachamento",
+          "preferred": "Agachamento hack com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -10936,7 +10936,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra posterior delt remada",
+          "preferred": "Remada para deltoide posterior com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -11110,7 +11110,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra rollout a partir de banco",
+          "preferred": "Roda abdominal com barra a partir do banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12513,7 +12513,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra agachamento para a banco",
+          "preferred": "Agachamento com barra até o banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -12691,7 +12691,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Barra step ups",
+          "preferred": "Subida no banco com barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13227,7 +13227,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bear crawl trenó drags",
+          "preferred": "Arrasto de trenó em caminhada de urso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -13567,7 +13567,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Banco dips",
+          "preferred": "Tríceps no banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14272,7 +14272,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Supino com chains",
+          "preferred": "Supino com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14440,7 +14440,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Banco sprint",
+          "preferred": "Banco corrida",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -14965,7 +14965,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bent-knee quadril elevação",
+          "preferred": "Elevação de quadril com joelhos flexionados",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15671,7 +15671,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Curvado unilateral long bar remada",
+          "preferred": "Remada inclinada unilateral com barra longa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -15850,7 +15850,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Curvado com dois braços long bar remada",
+          "preferred": "Remada inclinada com dois braços e barra longa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16205,7 +16205,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Remada curvada com dois halteres, palmas voltadas para dentro",
+          "preferred": "Remada inclinada com dois halteres e palmas voltadas para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16389,7 +16389,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bent pressão",
+          "preferred": "Press inclinado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -16898,7 +16898,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Board pressão",
+          "preferred": "Supino com prancha",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17238,7 +17238,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Body tríceps pressão",
+          "preferred": "Press de tríceps com o peso corporal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -17589,7 +17589,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Peso corporal mid remada",
+          "preferred": "Remada média com o peso corporal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18118,7 +18118,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bosu ball cabo abdominal com lateral bends",
+          "preferred": "Abdominal na bola BOSU com polia e inclinações laterais",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18297,7 +18297,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bottoms-up arranco a partir de suspensão position",
+          "preferred": "Clean com kettlebell invertido a partir da suspensão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -18987,7 +18987,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Box agachamento",
+          "preferred": "Agachamento na caixa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19171,7 +19171,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Box agachamento com faixas elásticas",
+          "preferred": "Agachamento na caixa com faixas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -19354,7 +19354,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Box agachamento com chains",
+          "preferred": "Agachamento na caixa com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20034,7 +20034,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Butt lift ponte",
+          "preferred": "Elevação de glúteos (ponte)",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20552,7 +20552,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Crossover",
+          "preferred": "Cruzado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -20903,7 +20903,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo deadlifts",
+          "preferred": "Levantamento terra na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21075,7 +21075,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo hammer curls — corda attachment",
+          "preferred": "Rosca martelo na polia com corda",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21246,7 +21246,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo quadril adduction",
+          "preferred": "Adução de quadril na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21415,7 +21415,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo inclinado pushdown",
+          "preferred": "Extensão inclinada de tríceps na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21753,7 +21753,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo internal rotação",
+          "preferred": "Rotação interna do ombro na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -21925,7 +21925,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo iron cross",
+          "preferred": "Cruz de ferro na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22094,7 +22094,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo judo flip",
+          "preferred": "Virada de judô na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22608,7 +22608,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo preacher rosca",
+          "preferred": "Cabo Scott rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -22779,7 +22779,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo posterior delt crucifixo",
+          "preferred": "Crucifixo para deltoide posterior na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23299,7 +23299,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo corda posterior-delt rows",
+          "preferred": "Remada para deltoide posterior com corda na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23470,7 +23470,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo russian twists",
+          "preferred": "Abdominais russos na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -23815,7 +23815,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo sentado elevação lateral",
+          "preferred": "Elevação lateral sentada na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -24160,7 +24160,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo shrugs",
+          "preferred": "Encolhimento de ombros na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -24332,7 +24332,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo wrist rosca",
+          "preferred": "Cabo punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25011,7 +25011,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Elevação de panturrilhas no a halter",
+          "preferred": "Elevação de panturrilhas sobre um halter",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25180,7 +25180,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Panturrilha raises — com faixas elásticas",
+          "preferred": "Panturrilha elevações — com faixas elásticas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25343,7 +25343,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Panturrilha alongamento elbows against wall",
+          "preferred": "Alongamento de panturrilhas com os cotovelos na parede",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25506,7 +25506,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Panturrilha alongamento hands against wall",
+          "preferred": "Alongamento de panturrilhas com as mãos na parede",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -25852,7 +25852,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Car levantamento terra",
+          "preferred": "Levantamento terra com carro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26358,7 +26358,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cat alongamento",
+          "preferred": "Alongamento do gato",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26525,7 +26525,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Catch e acima da cabeça throw",
+          "preferred": "Recepção e arremesso acima da cabeça",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26694,7 +26694,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chain handle extensão",
+          "preferred": "Extensão com alça de corrente",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -26869,7 +26869,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chain pressão",
+          "preferred": "Corrente pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27035,7 +27035,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chair perna extended alongamento",
+          "preferred": "Cadeira perna extended alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27200,7 +27200,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chair lower costas alongamento",
+          "preferred": "Cadeira lower costas alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27381,7 +27381,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chair agachamento",
+          "preferred": "Cadeira agachamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27546,7 +27546,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chair upper body alongamento",
+          "preferred": "Cadeira upper corpo alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -27878,7 +27878,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Peito empurrada a partir de 3 point stance",
+          "preferred": "Peito empurrada partir de 3 point base",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -28543,7 +28543,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Peito alongamento no stability ball",
+          "preferred": "Peito alongamento no stability bola",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -29051,7 +29051,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Chin para peito alongamento",
+          "preferred": "Queixo para peito alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -30555,7 +30555,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Arranco a partir de blocks",
+          "preferred": "Arranco partir de blocos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32824,7 +32824,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cross-body abdominal",
+          "preferred": "Cruz-corpo abdominal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -32995,7 +32995,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cross body rosca martelo",
+          "preferred": "Cruz corpo rosca martelo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33170,7 +33170,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cross over — com faixas elásticas",
+          "preferred": "Cruz sobre — com faixas elásticas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33339,7 +33339,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Crossover avanço reverso",
+          "preferred": "Cruzado avanço reverso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -33678,7 +33678,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Abdominal — hands acima da cabeça",
+          "preferred": "Abdominal — mãos acima da cabeça",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -34897,7 +34897,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Levantamento terra com chains",
+          "preferred": "Levantamento terra com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -36272,7 +36272,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Declinado oblique abdominal",
+          "preferred": "Declinado oblíquo abdominal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37144,7 +37144,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Depth salto leap",
+          "preferred": "Profundidade salto leap",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -37836,7 +37836,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Donkey panturrilha raises",
+          "preferred": "Donkey panturrilha elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -38921,7 +38921,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Duplo perna butt kick",
+          "preferred": "Duplo perna glúteos kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -39264,7 +39264,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Drag rosca",
+          "preferred": "Arrasto rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -44301,7 +44301,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Halter agachamento para a banco",
+          "preferred": "Halter agachamento para banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45645,7 +45645,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Elbow para knee",
+          "preferred": "Elbow para joelho",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45810,7 +45810,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Elbows costas",
+          "preferred": "Cotovelos costas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -45987,7 +45987,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Elevated costas avanço",
+          "preferred": "Elevado costas avanço",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46167,7 +46167,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Elevated cabo rows",
+          "preferred": "Elevado cabo remadas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -46671,7 +46671,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bola suíça puxada-in",
+          "preferred": "Bola suíça puxada-para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47013,7 +47013,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "External rotação",
+          "preferred": "Externa rotação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47182,7 +47182,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "External rotação com faixa elástica",
+          "preferred": "Externa rotação com faixa elástica",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -47350,7 +47350,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "External rotação com cabo",
+          "preferred": "Externa rotação com cabo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48219,7 +48219,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Flat banco cabo crucifixo",
+          "preferred": "Plano banco cabo crucifixo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48388,7 +48388,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Flat banco perna puxada-in",
+          "preferred": "Plano banco perna puxada-para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48558,7 +48558,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Flat banco deitado perna elevação",
+          "preferred": "Plano banco deitado perna elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -48730,7 +48730,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Flexor inclinado halter curls",
+          "preferred": "Flexor inclinado halter roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49254,7 +49254,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "No chão pressão com chains",
+          "preferred": "No chão pressão com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -49777,7 +49777,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Forward drag com pressão",
+          "preferred": "Forward arrasto com pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -50839,7 +50839,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Frontal barra agachamento para a banco",
+          "preferred": "Frontal barra agachamento para banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -51848,7 +51848,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Frontal perna raises",
+          "preferred": "Frontal perna elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52016,7 +52016,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Frontal plate elevação",
+          "preferred": "Frontal disco elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -52888,7 +52888,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Full range-of-motion puxada na frente",
+          "preferred": "Completo range-of-motion puxada na frente",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54119,7 +54119,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Gorilla chin/abdominal",
+          "preferred": "Gorilla queixo/abdominal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -54282,7 +54282,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Groin e costas alongamento",
+          "preferred": "Virilha e costas alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55298,7 +55298,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Hamstring alongamento",
+          "preferred": "Posterior da coxa alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -55851,7 +55851,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Suspensão arranco — below knees",
+          "preferred": "Suspensão arranco — below joelhos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56235,7 +56235,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Suspensão arranco — below knees",
+          "preferred": "Suspensão arranco — below joelhos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56413,7 +56413,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Hanging bar bom dia",
+          "preferred": "Hanging barra bom dia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -56937,7 +56937,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Heaving arranco balance",
+          "preferred": "Heaving arranco equilíbrio",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57274,7 +57274,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Alto cabo curls",
+          "preferred": "Alto cabo roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57439,7 +57439,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Quadril circles prone",
+          "preferred": "Quadril círculos prone",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -57960,7 +57960,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Quadril lift com faixa elástica",
+          "preferred": "Quadril elevação com faixa elástica",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -58291,7 +58291,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Hug knees para peito",
+          "preferred": "Hug joelhos para peito",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60175,7 +60175,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inclinado halter banco com palms facing in",
+          "preferred": "Inclinado halter banco com palmas facing para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -60693,7 +60693,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inclinado halter crucifixo — com a torção",
+          "preferred": "Inclinado halter crucifixo — com torção",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61038,7 +61038,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inclinado hammer curls",
+          "preferred": "Inclinado hammer roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -61724,7 +61724,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inclinado flexão de braços depth salto",
+          "preferred": "Inclinado flexão de braços profundidade salto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62252,7 +62252,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inclinado flexão de braços wide",
+          "preferred": "Inclinado flexão de braços aberto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62414,7 +62414,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Intermediate groin alongamento",
+          "preferred": "Intermediate virilha alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62576,7 +62576,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Intermediate quadril flexor e quad alongamento",
+          "preferred": "Intermediate quadril flexor e quadríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -62745,7 +62745,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Internal rotação com faixa elástica",
+          "preferred": "Interna rotação com faixa elástica",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -63436,7 +63436,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Iron crosses alongamento",
+          "preferred": "Ferro crosses alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -64997,7 +64997,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Arremesso balance",
+          "preferred": "Arremesso equilíbrio",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -67495,7 +67495,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Kettlebell sumo alto puxada",
+          "preferred": "Kettlebell sumô alto puxada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68570,7 +68570,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Knee across body",
+          "preferred": "Joelho across corpo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -68905,7 +68905,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Knee/quadril elevação no parallel bars",
+          "preferred": "Joelho/quadril elevação no parallel bars",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69074,7 +69074,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Knee tuck salto",
+          "preferred": "Joelho tuck salto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69413,7 +69413,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ajoelhado cabo abdominal com alternado oblique twists",
+          "preferred": "Ajoelhado cabo abdominal com alternado oblíquo abdominais",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -69922,7 +69922,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ajoelhado alto pulley remada",
+          "preferred": "Ajoelhado alto polia remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -70444,7 +70444,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ajoelhado unilateral-braço alto pulley remada",
+          "preferred": "Ajoelhado unilateral-braço alto polia remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72000,7 +72000,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Perna-over no chão pressão",
+          "preferred": "Perna-sobre no chão pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72163,7 +72163,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Perna-up hamstring alongamento",
+          "preferred": "Perna-up posterior da coxa alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72506,7 +72506,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Perna lift",
+          "preferred": "Perna elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -72850,7 +72850,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Perna puxada-in",
+          "preferred": "Perna puxada-para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73024,7 +73024,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage supino na máquina",
+          "preferred": "Alavanca supino na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73201,7 +73201,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage levantamento terra",
+          "preferred": "Alavanca levantamento terra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73374,7 +73374,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage declinado supino na máquina",
+          "preferred": "Alavanca declinado supino na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73550,7 +73550,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage alto remada",
+          "preferred": "Alavanca alto remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73723,7 +73723,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage inclinado supino na máquina",
+          "preferred": "Alavanca inclinado supino na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -73899,7 +73899,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage iso remada",
+          "preferred": "Alavanca iso remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74072,7 +74072,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage desenvolvimento de ombros",
+          "preferred": "Alavanca desenvolvimento de ombros",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74245,7 +74245,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Leverage encolhimento de ombros",
+          "preferred": "Alavanca encolhimento de ombros",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -74748,7 +74748,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Linear depth salto",
+          "preferred": "Linear profundidade salto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75446,7 +75446,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Baixo crossover",
+          "preferred": "Baixo cruzado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -75795,7 +75795,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Baixo pulley remada para nuca",
+          "preferred": "Baixo polia remada para nuca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76298,7 +76298,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Avanço pass through",
+          "preferred": "Avanço pass passagem",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76476,7 +76476,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Avanço sprint",
+          "preferred": "Avanço corrida",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -76639,7 +76639,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado bent perna groin",
+          "preferred": "Deitado bent perna virilha",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77162,7 +77162,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado pegada fechada bar rosca no alto pulley",
+          "preferred": "Deitado pegada fechada barra rosca no alto polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77500,7 +77500,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado pegada fechada barra triceps pressão para chin",
+          "preferred": "Deitado pegada fechada barra tríceps pressão para queixo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -77664,7 +77664,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado crossover",
+          "preferred": "Deitado cruzado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78003,7 +78003,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado face down plate nuca resistance",
+          "preferred": "Deitado face down disco nuca resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78171,7 +78171,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado face up plate nuca resistance",
+          "preferred": "Deitado face up disco nuca resistance",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78502,7 +78502,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado hamstring",
+          "preferred": "Deitado posterior da coxa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -78842,7 +78842,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado perna curls",
+          "preferred": "Deitado perna roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79701,7 +79701,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado supine halter rosca",
+          "preferred": "Deitado supino halter rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -79880,7 +79880,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado t-bar remada",
+          "preferred": "Deitado t-barra remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80049,7 +80049,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Deitado triceps pressão",
+          "preferred": "Deitado tríceps pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80567,7 +80567,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina preacher curls",
+          "preferred": "Máquina Scott roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -80742,7 +80742,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina ombro military pressão",
+          "preferred": "Máquina ombro militar pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81244,7 +81244,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bola medicinal full torção",
+          "preferred": "Bola medicinal completo torção",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -81411,7 +81411,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Bola medicinal scoop throw",
+          "preferred": "Bola medicinal scoop arremesso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -83158,7 +83158,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Narrow stance perna pressão",
+          "preferred": "Narrow base perna pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84191,7 +84191,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Oblique crunches — no no chão",
+          "preferred": "Oblíquo crunches — no no chão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84535,7 +84535,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "No-your-costas quad alongamento",
+          "preferred": "No-your-costas quadríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -84697,7 +84697,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "No your lateral quad alongamento",
+          "preferred": "No your lateral quadríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85050,7 +85050,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral flat banco halter flye",
+          "preferred": "Unilateral plano banco halter flye",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -85222,7 +85222,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral alto-pulley cabo lateral bends",
+          "preferred": "Unilateral alto-polia cabo lateral inclinações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -86287,7 +86287,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral kettlebell military pressão para lateral",
+          "preferred": "Unilateral kettlebell militar pressão para lateral",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -87719,7 +87719,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral long bar remada",
+          "preferred": "Unilateral longa barra remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -88956,7 +88956,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral against wall",
+          "preferred": "Unilateral contra parede",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -89484,7 +89484,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral halter preacher rosca",
+          "preferred": "Unilateral halter Scott rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -90676,7 +90676,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "One knee para peito",
+          "preferred": "One joelho para peito",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92232,7 +92232,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Acima da cabeça triceps",
+          "preferred": "Acima da cabeça tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92760,7 +92760,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Palms-down halter wrist rosca over a banco",
+          "preferred": "Palmas-down halter punho rosca sobre banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -92933,7 +92933,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Palms-down wrist rosca over a banco",
+          "preferred": "Palmas-down punho rosca sobre banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93106,7 +93106,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Palms-up barra wrist rosca over a banco",
+          "preferred": "Palmas-up barra punho rosca sobre banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -93279,7 +93279,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Palms-up halter wrist rosca over a banco",
+          "preferred": "Palmas-up halter punho rosca sobre banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -94962,7 +94962,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Plate torção",
+          "preferred": "Disco torção",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96214,7 +96214,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Arranco a partir de blocks",
+          "preferred": "Arranco partir de blocos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -96958,7 +96958,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "De potência arranco a partir de blocks",
+          "preferred": "De potência arranco partir de blocos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97316,7 +97316,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Preacher rosca",
+          "preferred": "Scott rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -97488,7 +97488,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Preacher hammer halter rosca",
+          "preferred": "Scott hammer halter rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98172,7 +98172,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Puxada through",
+          "preferred": "Puxada passagem",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98524,7 +98524,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Flexão de braços wide",
+          "preferred": "Flexão de braços aberto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98698,7 +98698,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Empurrada-ups — close triceps position",
+          "preferred": "Empurrada-ups — close tríceps posição",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -98873,7 +98873,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Empurrada-ups com feet elevated",
+          "preferred": "Empurrada-ups com feet elevado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -99933,7 +99933,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Pushups close e wide hand positions",
+          "preferred": "Pushups close e aberto hand positions",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -100259,7 +100259,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Quad alongamento",
+          "preferred": "Quadríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101295,7 +101295,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Posterior perna raises",
+          "preferred": "Posterior perna elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101630,7 +101630,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Return empurrada a partir de stance",
+          "preferred": "Return empurrada partir de base",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -101996,7 +101996,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso faixa elástica box agachamento",
+          "preferred": "Inverso faixa elástica caixa agachamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102553,7 +102553,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso faixa elástica sumo levantamento terra",
+          "preferred": "Inverso faixa elástica sumô levantamento terra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -102898,7 +102898,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso barra preacher curls",
+          "preferred": "Inverso barra Scott roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103586,7 +103586,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso crucifixo com external rotação",
+          "preferred": "Inverso crucifixo com externa rotação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -103765,7 +103765,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso grip bent-over rows",
+          "preferred": "Inverso grip inclinado remadas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104453,7 +104453,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso plate curls",
+          "preferred": "Inverso disco roscas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -104628,7 +104628,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Inverso triceps supino",
+          "preferred": "Inverso tríceps supino",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -106205,7 +106205,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Romanian levantamento terra a partir de deficit",
+          "preferred": "Romanian levantamento terra partir de deficit",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108606,7 +108606,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado faixa elástica hamstring rosca",
+          "preferred": "Sentado faixa elástica posterior da coxa rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -108781,7 +108781,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado barra military pressão",
+          "preferred": "Sentado barra militar pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109122,7 +109122,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado bent-over unilateral halter extensão de tríceps",
+          "preferred": "Sentado inclinado unilateral halter extensão de tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109295,7 +109295,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado bent-over elevação posterior",
+          "preferred": "Sentado inclinado elevação posterior",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109465,7 +109465,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado bent-over com dois braços halter extensão de tríceps",
+          "preferred": "Sentado inclinado com dois braços halter extensão de tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109631,7 +109631,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado biceps",
+          "preferred": "Sentado bíceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -109810,7 +109810,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado cabo rows",
+          "preferred": "Sentado cabo remadas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111008,7 +111008,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado halter palms-down wrist rosca",
+          "preferred": "Sentado halter palmas-down punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111181,7 +111181,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado halter palms-up wrist rosca",
+          "preferred": "Sentado halter palmas-up punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111525,7 +111525,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado flat banco perna puxada-in",
+          "preferred": "Sentado plano banco perna puxada-para dentro",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -111689,7 +111689,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado no chão hamstring alongamento",
+          "preferred": "Sentado no chão posterior da coxa alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112360,7 +112360,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado hamstring",
+          "preferred": "Sentado posterior da coxa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -112524,7 +112524,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado hamstring e panturrilha alongamento",
+          "preferred": "Sentado posterior da coxa e panturrilha alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113205,7 +113205,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado unilateral halter palms-down wrist rosca",
+          "preferred": "Sentado unilateral halter palmas-down punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113377,7 +113377,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado unilateral halter palms-up wrist rosca",
+          "preferred": "Sentado unilateral halter palmas-up punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113557,7 +113557,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado unilateral cabo pulley rows",
+          "preferred": "Sentado unilateral cabo polia remadas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -113892,7 +113892,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado palm-up barra wrist rosca",
+          "preferred": "Sentado palm-up barra punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114063,7 +114063,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado palms-down barra wrist rosca",
+          "preferred": "Sentado palmas-down barra punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114401,7 +114401,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado triceps pressão",
+          "preferred": "Sentado tríceps pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -114576,7 +114576,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sentado com dois braços palms-up baixo-pulley wrist rosca",
+          "preferred": "Sentado com dois braços palmas-up baixo-polia punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -115093,7 +115093,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Ombro circles",
+          "preferred": "Ombro círculos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116085,7 +116085,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Lateral hop-sprint",
+          "preferred": "Lateral hop-corrida",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116755,7 +116755,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Lateral perna raises",
+          "preferred": "Lateral perna elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -116920,7 +116920,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Lateral deitado groin alongamento",
+          "preferred": "Lateral deitado virilha alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117249,7 +117249,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Lateral em pé long salto",
+          "preferred": "Lateral em pé longa salto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117595,7 +117595,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Lateral wrist puxada",
+          "preferred": "Lateral punho puxada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -117934,7 +117934,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral-braço crossover",
+          "preferred": "Unilateral-braço cruzado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118456,7 +118456,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral-cone sprint drill",
+          "preferred": "Unilateral-cone corrida drill",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -118633,7 +118633,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral-perna alto box agachamento",
+          "preferred": "Unilateral-perna alto caixa agachamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -119644,7 +119644,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral perna butt kick",
+          "preferred": "Unilateral perna glúteos kick",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -120669,7 +120669,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Trenó drag — harness",
+          "preferred": "Trenó arrasto — harness",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -120849,7 +120849,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Trenó acima da cabeça backward walk",
+          "preferred": "Trenó acima da cabeça para trás walk",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -124345,7 +124345,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Smith máquina inverso panturrilha raises",
+          "preferred": "Smith máquina inverso panturrilha elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -125443,7 +125443,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Arranco balance",
+          "preferred": "Arranco equilíbrio",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126178,7 +126178,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Arranco a partir de blocks",
+          "preferred": "Arranco partir de blocos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126346,7 +126346,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Speed faixa elástica acima da cabeça triceps",
+          "preferred": "Speed faixa elástica acima da cabeça tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -126528,7 +126528,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Speed box agachamento",
+          "preferred": "Speed caixa agachamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129032,7 +129032,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Agachamento com chains",
+          "preferred": "Agachamento com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -129217,7 +129217,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Agachamento com plate movers",
+          "preferred": "Agachamento com disco movers",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130257,7 +130257,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé bent-over unilateral halter extensão de tríceps",
+          "preferred": "Em pé inclinado unilateral halter extensão de tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130425,7 +130425,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé bent-over com dois braços halter extensão de tríceps",
+          "preferred": "Em pé inclinado com dois braços halter extensão de tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130595,7 +130595,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé biceps cabo rosca",
+          "preferred": "Em pé bíceps cabo rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -130760,7 +130760,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé biceps alongamento",
+          "preferred": "Em pé bíceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131284,7 +131284,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé cabo lift",
+          "preferred": "Em pé cabo elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -131627,7 +131627,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé panturrilha raises",
+          "preferred": "Em pé panturrilha elevações",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -132988,7 +132988,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé elevated quad alongamento",
+          "preferred": "Em pé elevado quadríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133485,7 +133485,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé hamstring e panturrilha alongamento",
+          "preferred": "Em pé posterior da coxa e panturrilha alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -133651,7 +133651,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé quadril circles",
+          "preferred": "Em pé quadril círculos",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134489,7 +134489,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé long salto",
+          "preferred": "Em pé longa salto",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134663,7 +134663,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé baixo-pulley deltoide elevação",
+          "preferred": "Em pé baixo-polia deltoide elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -134835,7 +134835,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé baixo-pulley unilateral extensão de tríceps",
+          "preferred": "Em pé baixo-polia unilateral extensão de tríceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135011,7 +135011,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé military pressão",
+          "preferred": "Em pé militar pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135181,7 +135181,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé olympic plate hand squeeze",
+          "preferred": "Em pé olympic disco hand squeeze",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -135526,7 +135526,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé unilateral halter rosca over inclinado banco",
+          "preferred": "Em pé unilateral halter rosca sobre inclinado banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136047,7 +136047,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé palm-in unilateral halter pressão",
+          "preferred": "Em pé palm-para dentro unilateral halter pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136221,7 +136221,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé palms-in halter pressão",
+          "preferred": "Em pé palmas-para dentro halter pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -136393,7 +136393,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé palms-up barra atrás das costas wrist rosca",
+          "preferred": "Em pé palmas-up barra atrás das costas punho rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137387,7 +137387,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Em pé com dois braços acima da cabeça throw",
+          "preferred": "Em pé com dois braços acima da cabeça arremesso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -137730,7 +137730,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Step-up com knee elevação",
+          "preferred": "Step-up com joelho elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139126,7 +139126,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Straight bar banco mid rows",
+          "preferred": "Straight barra banco médio remadas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139299,7 +139299,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Straight raises no inclinado banco",
+          "preferred": "Straight elevações no inclinado banco",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139468,7 +139468,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Stride salto crossover",
+          "preferred": "Stride salto cruzado",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139654,7 +139654,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sumo levantamento terra",
+          "preferred": "Sumô levantamento terra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -139841,7 +139841,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sumo levantamento terra com faixas elásticas",
+          "preferred": "Sumô levantamento terra com faixas elásticas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140029,7 +140029,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Sumo levantamento terra com chains",
+          "preferred": "Sumô levantamento terra com correntes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140363,7 +140363,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Supine peito throw",
+          "preferred": "Supino peito arremesso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140530,7 +140530,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Supine unilateral acima da cabeça throw",
+          "preferred": "Supino unilateral acima da cabeça arremesso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -140698,7 +140698,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Supine com dois braços acima da cabeça throw",
+          "preferred": "Supino com dois braços acima da cabeça arremesso",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -141922,7 +141922,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "T-bar remada com handle",
+          "preferred": "T-barra remada com alça",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143467,7 +143467,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Trap bar levantamento terra",
+          "preferred": "Trap barra levantamento terra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -143967,7 +143967,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Triceps acima da cabeça extensão com corda",
+          "preferred": "Tríceps acima da cabeça extensão com corda",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144306,7 +144306,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Tríceps na polia — corda attachment",
+          "preferred": "Tríceps na polia — corda acessório",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144475,7 +144475,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Tríceps na polia — v-bar attachment",
+          "preferred": "Tríceps na polia — v-barra acessório",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144638,7 +144638,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Triceps alongamento",
+          "preferred": "Tríceps alongamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -144978,7 +144978,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Com dois braços halter preacher rosca",
+          "preferred": "Com dois braços halter Scott rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -145513,7 +145513,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Com dois braços kettlebell military pressão",
+          "preferred": "Com dois braços kettlebell militar pressão",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147753,7 +147753,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Com peso ball hyperextension",
+          "preferred": "Com peso bola hyperextension",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -147924,7 +147924,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Com peso ball flexão lateral",
+          "preferred": "Com peso bola flexão lateral",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150565,7 +150565,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Wide stance barra agachamento",
+          "preferred": "Aberto base barra agachamento",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -150741,7 +150741,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Wide stance stiff pernas",
+          "preferred": "Aberto base stiff pernas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -151740,7 +151740,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Wrist rotations com straight bar",
+          "preferred": "Punho rotations com straight barra",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152456,7 +152456,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Zottman preacher rosca",
+          "preferred": "Zottman Scott rosca",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -152981,7 +152981,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Half-ajoelhado cabo lift",
+          "preferred": "Half-ajoelhado cabo elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -153680,7 +153680,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Unilateral bent-over remada baixa",
+          "preferred": "Unilateral inclinado remada baixa",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -154200,7 +154200,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Alternado flat-banco cabo supino na máquina",
+          "preferred": "Alternado plano-banco cabo supino na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156273,7 +156273,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo forward avanço",
+          "preferred": "Avanço para a frente na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156446,7 +156446,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo lateral avanço",
+          "preferred": "Avanço lateral na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156619,7 +156619,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo step-up",
+          "preferred": "Subida no banco na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -156792,7 +156792,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Crossover step-up",
+          "preferred": "Subida no banco cruzada na polia",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -157650,7 +157650,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Cabo panturrilha-box elevação",
+          "preferred": "Cabo panturrilha-caixa elevação",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -158702,7 +158702,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina diverging remada",
+          "preferred": "Remada divergente na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159210,7 +159210,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina rotary torso",
+          "preferred": "Rotação de tronco na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -159376,7 +159376,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina oblique abdominal",
+          "preferred": "Abdominal oblíquo na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160759,7 +160759,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina t-bar remada",
+          "preferred": "Máquina t-barra remada",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -160927,7 +160927,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina em pé elevação lateral",
+          "preferred": "Elevação lateral em pé na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161269,7 +161269,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Assisted barra fixa supinada",
+          "preferred": "Barra fixa supinada assistida",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161437,7 +161437,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Four-way nuca máquina",
+          "preferred": "Máquina de pescoço em quatro direções",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161601,7 +161601,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina tibialis dorsiflexion",
+          "preferred": "Dorsiflexão do tibial na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
@@ -161765,7 +161765,7 @@
           "reviewStatus": "provisional"
         },
         "pt-BR": {
-          "preferred": "Máquina horizontal elevação de panturrilhas",
+          "preferred": "Elevação horizontal de panturrilhas na máquina",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
