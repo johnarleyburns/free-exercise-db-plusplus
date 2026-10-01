@@ -1,0 +1,7421 @@
+{
+  "locale": "ru",
+  "exercises": {
+    "3_4_Sit-Up": {
+      "preferred": "3/4 подъём туловища",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "90_90_Hamstring": {
+      "preferred": "90/90 hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ab_Crunch_Machine": {
+      "preferred": "Пресс скручивания тренажёр",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ab_Roller": {
+      "preferred": "Пресс roller",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Adductor": {
+      "preferred": "Adductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Adductor_Groin": {
+      "preferred": "Adductor/groin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Advanced_Kettlebell_Windmill": {
+      "preferred": "Advanced гиря windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Air_Bike": {
+      "preferred": "Air bike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "All_Fours_Quad_Stretch": {
+      "preferred": "All fours quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Hammer_Curl": {
+      "preferred": "Поочерёдно молотковые сгибания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Heel_Touchers": {
+      "preferred": "Поочерёдно касания пяток",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Incline_Dumbbell_Curl": {
+      "preferred": "Поочерёдно наклонный гантель сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternate_Leg_Diagonal_Bound": {
+      "preferred": "Поочерёдно нога diagonal bound",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Cable_Shoulder_Press": {
+      "preferred": "Поочерёдно блок жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Deltoid_Raise": {
+      "preferred": "Поочерёдно дельта подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Floor_Press": {
+      "preferred": "Поочерёдно на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Hang_Clean": {
+      "preferred": "Поочерёдно в висе взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Kettlebell_Press": {
+      "preferred": "Поочерёдно гиря жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Kettlebell_Row": {
+      "preferred": "Поочерёдно гиря тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Renegade_Row": {
+      "preferred": "Поочерёдно ренегат тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ankle_Circles": {
+      "preferred": "Ankle circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ankle_On_The_Knee": {
+      "preferred": "Ankle на knee",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Anterior_Tibialis-SMR": {
+      "preferred": "Anterior tibialis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Anti-Gravity_Press": {
+      "preferred": "Anti-gravity жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Arm_Circles": {
+      "preferred": "Рука circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Arnold_Dumbbell_Press": {
+      "preferred": "Arnold гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Around_The_Worlds": {
+      "preferred": "Around worlds",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Atlas_Stone_Trainer": {
+      "preferred": "Atlas stone trainer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Atlas_Stones": {
+      "preferred": "Atlas stones",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Axle_Deadlift": {
+      "preferred": "Axle становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Back_Flyes_-_With_Bands": {
+      "preferred": "Спина разведение — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Backward_Drag": {
+      "preferred": "Backward drag",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Backward_Medicine_Ball_Throw": {
+      "preferred": "Backward медбол throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Balance_Board": {
+      "preferred": "Balance board",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ball_Leg_Curl": {
+      "preferred": "Ball сгибание ног",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Assisted_Pull-Up": {
+      "preferred": "Резинка assisted подтягивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Good_Morning": {
+      "preferred": "Резинка доброе утро",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Good_Morning_Pull_Through": {
+      "preferred": "Резинка доброе утро тяга through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Hip_Adductions": {
+      "preferred": "Резинка таз adductions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Pull_Apart": {
+      "preferred": "Резинка тяга apart",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_Skull_Crusher": {
+      "preferred": "Резинка французский жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Ab_Rollout": {
+      "preferred": "Штанга пресс rollout",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Ab_Rollout_-_On_Knees": {
+      "preferred": "Штанга пресс rollout — на knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Bench_Press_-_Medium_Grip": {
+      "preferred": "Жим штанги лёжа — средний хват",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Curl": {
+      "preferred": "Штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Curls_Lying_Against_An_Incline": {
+      "preferred": "Штанга curls лёжа against an наклонный",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Deadlift": {
+      "preferred": "Штанга становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Full_Squat": {
+      "preferred": "Штанга full приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Glute_Bridge": {
+      "preferred": "Штанга ягодичный мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Guillotine_Bench_Press": {
+      "preferred": "Штанга guillotine жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Hack_Squat": {
+      "preferred": "Штанга hack приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Hip_Thrust": {
+      "preferred": "Штанга ягодичный мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Incline_Bench_Press_-_Medium_Grip": {
+      "preferred": "Штанга наклонный жим лёжа — средний хват",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Incline_Shoulder_Raise": {
+      "preferred": "Штанга наклонный плечо подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Lunge": {
+      "preferred": "Штанга выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Rear_Delt_Row": {
+      "preferred": "Штанга задний delt тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Rollout_from_Bench": {
+      "preferred": "Штанга rollout из скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Seated_Calf_Raise": {
+      "preferred": "Штанга сидя подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shoulder_Press": {
+      "preferred": "Штанга жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shrug": {
+      "preferred": "Штанга шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Shrug_Behind_The_Back": {
+      "preferred": "Штанга шраги behind спина",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Side_Bend": {
+      "preferred": "Штанга боковые наклоны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Side_Split_Squat": {
+      "preferred": "Штанга боковой сплит-присед",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Squat": {
+      "preferred": "Штанга приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Squat_To_A_Bench": {
+      "preferred": "Штанга приседание к a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Step_Ups": {
+      "preferred": "Штанга step ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Barbell_Walking_Lunge": {
+      "preferred": "Штанга выпады в ходьбе",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Battling_Ropes": {
+      "preferred": "Battling ropes",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bear_Crawl_Sled_Drags": {
+      "preferred": "Bear crawl сани drags",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Behind_Head_Chest_Stretch": {
+      "preferred": "Behind head грудь растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Dips": {
+      "preferred": "Скамья dips",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Jump": {
+      "preferred": "Скамья прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_-_Powerlifting": {
+      "preferred": "Жим лёжа — powerlifting",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_-_With_Bands": {
+      "preferred": "Жим лёжа — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Press_with_Chains": {
+      "preferred": "Жим лёжа с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bench_Sprint": {
+      "preferred": "Скамья sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Arm_Barbell_Pullover": {
+      "preferred": "Bent-рука штанга пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Arm_Dumbbell_Pullover": {
+      "preferred": "Bent-рука гантель пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent-Knee_Hip_Raise": {
+      "preferred": "Bent-knee таз подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Barbell_Row": {
+      "preferred": "В наклоне тяга штанги в наклоне",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench": {
+      "preferred": "В наклоне гантель разведение на заднюю дельту с head на скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Low-Pulley_Side_Lateral": {
+      "preferred": "В наклоне нижний-pulley боковой lateral",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_One-Arm_Long_Bar_Row": {
+      "preferred": "В наклоне одной рукой long bar тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Arm_Long_Bar_Row": {
+      "preferred": "В наклоне двумя руками long bar тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Dumbbell_Row": {
+      "preferred": "В наклоне two-тяга гантели в наклоне",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Over_Two-Dumbbell_Row_With_Palms_In": {
+      "preferred": "В наклоне two-тяга гантели в наклоне с palms in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bent_Press": {
+      "preferred": "Bent жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bicycling": {
+      "preferred": "Bicycling",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bicycling_Stationary": {
+      "preferred": "Bicycling, stationary",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Board_Press": {
+      "preferred": "Board жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Body-Up": {
+      "preferred": "Body-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Body_Tricep_Press": {
+      "preferred": "Body трицепс жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Flyes": {
+      "preferred": "Вес тела разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Mid_Row": {
+      "preferred": "Вес тела mid тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Squat": {
+      "preferred": "Вес тела приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bodyweight_Walking_Lunge": {
+      "preferred": "Вес тела выпады в ходьбе",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bosu_Ball_Cable_Crunch_With_Side_Bends": {
+      "preferred": "Bosu ball блок скручивания с боковой bends",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bottoms-Up_Clean_From_The_Hang_Position": {
+      "preferred": "Bottoms-up взятие из в висе position",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bottoms_Up": {
+      "preferred": "Bottoms up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Jump_Multiple_Response": {
+      "preferred": "Запрыгивание на тумбу multiple response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Skip": {
+      "preferred": "Box skip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat": {
+      "preferred": "Box приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat_with_Bands": {
+      "preferred": "Box приседание с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Box_Squat_with_Chains": {
+      "preferred": "Box приседание с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Brachialis-SMR": {
+      "preferred": "Brachialis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Bradford_Rocky_Presses": {
+      "preferred": "Bradford/rocky presses",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butt-Ups": {
+      "preferred": "Butt-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butt_Lift_Bridge": {
+      "preferred": "Butt lift мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Butterfly": {
+      "preferred": "Butterfly",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Chest_Press": {
+      "preferred": "Блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crossover": {
+      "preferred": "Кроссовер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crunch": {
+      "preferred": "Блок скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Deadlifts": {
+      "preferred": "Блок deadlifts",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hammer_Curls_-_Rope_Attachment": {
+      "preferred": "Блок hammer curls — канат attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Adduction": {
+      "preferred": "Блок таз adduction",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Incline_Pushdown": {
+      "preferred": "Блок наклонный pushdown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Incline_Triceps_Extension": {
+      "preferred": "Блок наклонный разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Internal_Rotation": {
+      "preferred": "Блок internal вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Iron_Cross": {
+      "preferred": "Блок iron cross",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Judo_Flip": {
+      "preferred": "Блок judo flip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Lying_Triceps_Extension": {
+      "preferred": "Блок лёжа разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_One_Arm_Tricep_Extension": {
+      "preferred": "Блок одной рукой трицепс разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Preacher_Curl": {
+      "preferred": "Блок preacher сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rear_Delt_Fly": {
+      "preferred": "Блок задний delt разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Reverse_Crunch": {
+      "preferred": "Блок обратный скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rope_Overhead_Triceps_Extension": {
+      "preferred": "Блок канат разгибание рук из-за головы",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Rope_Rear-Delt_Rows": {
+      "preferred": "Блок канат задний-delt rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Russian_Twists": {
+      "preferred": "Блок russian twists",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Seated_Crunch": {
+      "preferred": "Блок сидя скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Seated_Lateral_Raise": {
+      "preferred": "Блок сидя махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Shoulder_Press": {
+      "preferred": "Блок жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Shrugs": {
+      "preferred": "Блок shrugs",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Wrist_Curl": {
+      "preferred": "Блок wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf-Machine_Shoulder_Shrug": {
+      "preferred": "Икроножная мышца-тренажёр плечо шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Press": {
+      "preferred": "Икроножная мышца жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Press_On_The_Leg_Press_Machine": {
+      "preferred": "Икроножная мышца жим на жим ногами тренажёр",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Raise_On_A_Dumbbell": {
+      "preferred": "Подъём на носки на a гантель",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Raises_-_With_Bands": {
+      "preferred": "Икроножная мышца raises — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Stretch_Elbows_Against_Wall": {
+      "preferred": "Икроножная мышца растяжка elbows against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calf_Stretch_Hands_Against_Wall": {
+      "preferred": "Икроножная мышца растяжка hands against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Calves-SMR": {
+      "preferred": "Calves-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Car_Deadlift": {
+      "preferred": "Car становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Car_Drivers": {
+      "preferred": "Car drivers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Carioca_Quick_Step": {
+      "preferred": "Carioca quick step",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cat_Stretch": {
+      "preferred": "Cat растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Catch_and_Overhead_Throw": {
+      "preferred": "Catch и над головой throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chain_Handle_Extension": {
+      "preferred": "Chain handle разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chain_Press": {
+      "preferred": "Chain жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Leg_Extended_Stretch": {
+      "preferred": "Chair нога extended растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Lower_Back_Stretch": {
+      "preferred": "Chair lower спина растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Squat": {
+      "preferred": "Chair приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chair_Upper_Body_Stretch": {
+      "preferred": "Chair upper body растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_And_Front_Of_Shoulder_Stretch": {
+      "preferred": "Грудь и передний of плечо растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_from_3_point_stance": {
+      "preferred": "Грудь отжимание из 3 point stance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_multiple_response": {
+      "preferred": "Грудь отжимание multiple response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_single_response": {
+      "preferred": "Грудь отжимание односторонний response",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Push_with_Run_Release": {
+      "preferred": "Грудь отжимание с run release",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chest_Stretch_on_Stability_Ball": {
+      "preferred": "Грудь растяжка на stability ball",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Childs_Pose": {
+      "preferred": "Child's pose",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chin-Up": {
+      "preferred": "Подтягивания обратным хватом",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Chin_To_Chest_Stretch": {
+      "preferred": "Chin к грудь растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Circus_Bell": {
+      "preferred": "Circus bell",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean": {
+      "preferred": "Взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Deadlift": {
+      "preferred": "Взятие становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Pull": {
+      "preferred": "Взятие тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_Shrug": {
+      "preferred": "Взятие шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_and_Jerk": {
+      "preferred": "Толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_and_Press": {
+      "preferred": "Взятие и жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clean_from_Blocks": {
+      "preferred": "Взятие из blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Clock_Push-Up": {
+      "preferred": "Clock отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Barbell_Bench_Press": {
+      "preferred": "Узкий хват жим штанги лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Dumbbell_Press": {
+      "preferred": "Узкий хват гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ-Bar_Curl_with_Band": {
+      "preferred": "Узкий хват EZ-гриф сгибание с резинка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ-Bar_Press": {
+      "preferred": "Узкий хват EZ-гриф жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_EZ_Bar_Curl": {
+      "preferred": "Узкий хват EZ-гриф сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Front_Lat_Pulldown": {
+      "preferred": "Узкий хват передний тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Push-Up_off_of_a_Dumbbell": {
+      "preferred": "Узкий хват отжимания off of a гантель",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Close-Grip_Standing_Barbell_Curl": {
+      "preferred": "Узкий хват стоя штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cocoons": {
+      "preferred": "Cocoons",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Conans_Wheel": {
+      "preferred": "Conan's wheel",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Concentration_Curls": {
+      "preferred": "Concentration curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross-Body_Crunch": {
+      "preferred": "Cross-body скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross_Body_Hammer_Curl": {
+      "preferred": "Cross body молотковые сгибания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cross_Over_-_With_Bands": {
+      "preferred": "Cross over — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crossover_Reverse_Lunge": {
+      "preferred": "Crossover обратные выпады",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crucifix": {
+      "preferred": "Crucifix",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunch_-_Hands_Overhead": {
+      "preferred": "Скручивания — hands над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunch_-_Legs_On_Exercise_Ball": {
+      "preferred": "Скручивания — ноги на фитбол",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Crunches": {
+      "preferred": "Скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cuban_Press": {
+      "preferred": "Cuban жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dancers_Stretch": {
+      "preferred": "Dancer's растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dead_Bug": {
+      "preferred": "Dead bug",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deadlift_with_Bands": {
+      "preferred": "Становая тяга с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deadlift_with_Chains": {
+      "preferred": "Становая тяга с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Barbell_Bench_Press": {
+      "preferred": "Отрицательный наклон жим штанги лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Close-Grip_Bench_To_Skull_Crusher": {
+      "preferred": "Отрицательный наклон узкий хват скамья к французский жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Crunch": {
+      "preferred": "Отрицательный наклон скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Bench_Press": {
+      "preferred": "Отрицательный наклон жим гантелей лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Flyes": {
+      "preferred": "Отрицательный наклон гантель разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Dumbbell_Triceps_Extension": {
+      "preferred": "Отрицательный наклон гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_EZ_Bar_Triceps_Extension": {
+      "preferred": "Отрицательный наклон EZ-гриф разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Oblique_Crunch": {
+      "preferred": "Отрицательный наклон oblique скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Push-Up": {
+      "preferred": "Отрицательный наклон отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Reverse_Crunch": {
+      "preferred": "Отрицательный наклон обратный скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Decline_Smith_Press": {
+      "preferred": "Отрицательный наклон smith жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Deficit_Deadlift": {
+      "preferred": "Deficit становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Depth_Jump_Leap": {
+      "preferred": "Depth прыжок leap",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dip_Machine": {
+      "preferred": "Dip тренажёр",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dips_-_Chest_Version": {
+      "preferred": "Dips — грудь version",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dips_-_Triceps_Version": {
+      "preferred": "Dips — triceps version",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Donkey_Calf_Raises": {
+      "preferred": "Donkey икроножная мышца raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Alternating_Hang_Clean": {
+      "preferred": "Двойной гиря поочерёдно в висе взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Jerk": {
+      "preferred": "Двойной гиря толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Push_Press": {
+      "preferred": "Двойной гиря отжимание жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Snatch": {
+      "preferred": "Двойной гиря рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Kettlebell_Windmill": {
+      "preferred": "Двойной гиря windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Double_Leg_Butt_Kick": {
+      "preferred": "Двойной нога butt kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Downward_Facing_Balance": {
+      "preferred": "Downward facing balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Drag_Curl": {
+      "preferred": "Drag сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Drop_Push": {
+      "preferred": "Drop отжимание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Alternate_Bicep_Curl": {
+      "preferred": "Гантель поочерёдно бицепс сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bench_Press": {
+      "preferred": "Жим гантелей лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bench_Press_with_Neutral_Grip": {
+      "preferred": "Жим гантелей лёжа с neutral grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Bicep_Curl": {
+      "preferred": "Гантель бицепс сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Clean": {
+      "preferred": "Гантель взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Floor_Press": {
+      "preferred": "Гантель на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Flyes": {
+      "preferred": "Гантель разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Incline_Row": {
+      "preferred": "Гантель наклонный тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Incline_Shoulder_Raise": {
+      "preferred": "Гантель наклонный плечо подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lunges": {
+      "preferred": "Гантель lunges",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise": {
+      "preferred": "Гантель лёжа одной рукой задний махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Pronation": {
+      "preferred": "Гантель лёжа pronation",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Rear_Lateral_Raise": {
+      "preferred": "Гантель лёжа задний махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Lying_Supination": {
+      "preferred": "Гантель лёжа supination",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Shoulder_Press": {
+      "preferred": "Гантель одной рукой жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Triceps_Extension": {
+      "preferred": "Гантель одной рукой разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_One-Arm_Upright_Row": {
+      "preferred": "Гантель одной рукой тяга к подбородку",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Prone_Incline_Curl": {
+      "preferred": "Гантель prone наклонный сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Raise": {
+      "preferred": "Гантель подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Rear_Lunge": {
+      "preferred": "Гантель задний выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Scaption": {
+      "preferred": "Гантель scaption",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Seated_Box_Jump": {
+      "preferred": "Гантель сидя запрыгивание на тумбу",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Seated_One-Leg_Calf_Raise": {
+      "preferred": "Гантель сидя one-нога подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Shoulder_Press": {
+      "preferred": "Гантель жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Shrug": {
+      "preferred": "Гантель шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Side_Bend": {
+      "preferred": "Гантель боковые наклоны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Squat": {
+      "preferred": "Гантель приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Squat_To_A_Bench": {
+      "preferred": "Гантель приседание к a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Step_Ups": {
+      "preferred": "Гантель step ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dumbbell_Tricep_Extension_-Pronated_Grip": {
+      "preferred": "Гантель трицепс разгибание — pronated grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dynamic_Back_Stretch": {
+      "preferred": "Dynamic спина растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Dynamic_Chest_Stretch": {
+      "preferred": "Dynamic грудь растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "EZ-Bar_Curl": {
+      "preferred": "EZ-гриф сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "EZ-Bar_Skullcrusher": {
+      "preferred": "EZ-гриф skullcrusher",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbow_Circles": {
+      "preferred": "Elbow circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbow_to_Knee": {
+      "preferred": "Elbow к knee",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elbows_Back": {
+      "preferred": "Elbows спина",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elevated_Back_Lunge": {
+      "preferred": "Elevated спина выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elevated_Cable_Rows": {
+      "preferred": "Elevated блок rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Elliptical_Trainer": {
+      "preferred": "Elliptical trainer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Exercise_Ball_Crunch": {
+      "preferred": "Фитбол скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Exercise_Ball_Pull-In": {
+      "preferred": "Фитбол тяга-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Extended_Range_One-Arm_Kettlebell_Floor_Press": {
+      "preferred": "Extended range одной рукой гиря на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation": {
+      "preferred": "External вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation_with_Band": {
+      "preferred": "External вращение с резинка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "External_Rotation_with_Cable": {
+      "preferred": "External вращение с блок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Face_Pull": {
+      "preferred": "Face тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Farmers_Walk": {
+      "preferred": "Farmer's walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Fast_Skipping": {
+      "preferred": "Fast skipping",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Finger_Curls": {
+      "preferred": "Finger curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Cable_Flyes": {
+      "preferred": "Flat скамья блок разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Leg_Pull-In": {
+      "preferred": "Flat скамья нога тяга-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flat_Bench_Lying_Leg_Raise": {
+      "preferred": "Flat скамья лёжа нога подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flexor_Incline_Dumbbell_Curls": {
+      "preferred": "Flexor наклонный гантель curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Glute-Ham_Raise": {
+      "preferred": "На полу ягодица-ham подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Press": {
+      "preferred": "На полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Floor_Press_with_Chains": {
+      "preferred": "На полу жим с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Flutter_Kicks": {
+      "preferred": "Flutter kicks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Foot-SMR": {
+      "preferred": "Foot-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Forward_Drag_with_Press": {
+      "preferred": "Forward drag с жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frankenstein_Squat": {
+      "preferred": "Frankenstein приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Freehand_Jump_Squat": {
+      "preferred": "Freehand прыжковые приседания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frog_Hops": {
+      "preferred": "Frog hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Frog_Sit-Ups": {
+      "preferred": "Frog sit-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Barbell_Squat": {
+      "preferred": "Передний штанга приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Barbell_Squat_To_A_Bench": {
+      "preferred": "Передний штанга приседание к a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Box_Jump": {
+      "preferred": "Передний запрыгивание на тумбу",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Cable_Raise": {
+      "preferred": "Передний блок подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Cone_Hops_or_hurdle_hops": {
+      "preferred": "Передний cone hops or hurdle hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Dumbbell_Raise": {
+      "preferred": "Передний гантель подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Incline_Dumbbell_Raise": {
+      "preferred": "Передний наклонный гантель подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Leg_Raises": {
+      "preferred": "Передний нога raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Plate_Raise": {
+      "preferred": "Передний plate подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Raise_And_Pullover": {
+      "preferred": "Подъём перед собой и пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Squat_Clean_Grip": {
+      "preferred": "Фронтальный присед взятие grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Squats_With_Two_Kettlebells": {
+      "preferred": "Передний squats с two kettlebells",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Front_Two-Dumbbell_Raise": {
+      "preferred": "Передний two-гантель подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Full_Range-Of-Motion_Lat_Pulldown": {
+      "preferred": "Full range-of-motion тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Gironda_Sternum_Chins": {
+      "preferred": "Gironda sternum chins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Glute_Ham_Raise": {
+      "preferred": "Ягодица ham подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Glute_Kickback": {
+      "preferred": "Ягодица kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Goblet_Squat": {
+      "preferred": "Goblet приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Good_Morning": {
+      "preferred": "Доброе утро",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Good_Morning_off_Pins": {
+      "preferred": "Доброе утро off pins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Gorilla_Chin_Crunch": {
+      "preferred": "Gorilla chin/скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Groin_and_Back_Stretch": {
+      "preferred": "Groin и спина растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Groiners": {
+      "preferred": "Groiners",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hack_Squat": {
+      "preferred": "Hack приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hammer_Curls": {
+      "preferred": "Hammer curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hammer_Grip_Incline_DB_Bench_Press": {
+      "preferred": "Hammer grip наклонный db жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hamstring-SMR": {
+      "preferred": "Hamstring-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hamstring_Stretch": {
+      "preferred": "Hamstring растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Handstand_Push-Ups": {
+      "preferred": "Handstand отжимание-ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Clean": {
+      "preferred": "В висе взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Clean_-_Below_the_Knees": {
+      "preferred": "В висе взятие — below knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Snatch": {
+      "preferred": "В висе рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hang_Snatch_-_Below_Knees": {
+      "preferred": "В висе рывок — below knees",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Bar_Good_Morning": {
+      "preferred": "Hanging bar доброе утро",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Leg_Raise": {
+      "preferred": "Hanging нога подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hanging_Pike": {
+      "preferred": "Hanging pike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Heaving_Snatch_Balance": {
+      "preferred": "Heaving рывок balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Heavy_Bag_Thrust": {
+      "preferred": "Heavy bag thrust",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "High_Cable_Curls": {
+      "preferred": "Верхний блок curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Circles_prone": {
+      "preferred": "Таз circles prone",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Extension_with_Bands": {
+      "preferred": "Таз разгибание с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Flexion_with_Band": {
+      "preferred": "Таз flexion с резинка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hip_Lift_with_Band": {
+      "preferred": "Таз lift с резинка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hug_A_Ball": {
+      "preferred": "Hug a ball",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hug_Knees_To_Chest": {
+      "preferred": "Hug knees к грудь",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hurdle_Hops": {
+      "preferred": "Hurdle hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hyperextensions_Back_Extensions": {
+      "preferred": "Hyperextensions спина extensions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Hyperextensions_With_No_Hyperextension_Bench": {
+      "preferred": "Hyperextensions с no hyperextension скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "IT_Band_and_Glute_Stretch": {
+      "preferred": "It резинка и ягодица растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iliotibial_Tract-SMR": {
+      "preferred": "Iliotibial tract-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inchworm": {
+      "preferred": "Inchworm",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Barbell_Triceps_Extension": {
+      "preferred": "Наклонный штанга разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Bench_Pull": {
+      "preferred": "Наклонный скамья тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Cable_Chest_Press": {
+      "preferred": "Наклонный блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Cable_Flye": {
+      "preferred": "Наклонный блок flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Bench_With_Palms_Facing_In": {
+      "preferred": "Наклонный гантель скамья с palms facing in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Curl": {
+      "preferred": "Наклонный гантель сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Flyes": {
+      "preferred": "Наклонный гантель разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Flyes_-_With_A_Twist": {
+      "preferred": "Наклонный гантель разведение — с a скручивание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Dumbbell_Press": {
+      "preferred": "Наклонный гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Hammer_Curls": {
+      "preferred": "Наклонный hammer curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Inner_Biceps_Curl": {
+      "preferred": "Наклонный inner сгибание рук на бицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up": {
+      "preferred": "Наклонный отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Close-Grip": {
+      "preferred": "Наклонный отжимания узкий хват",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Depth_Jump": {
+      "preferred": "Наклонный отжимания depth прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Medium": {
+      "preferred": "Наклонный отжимания medium",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Reverse_Grip": {
+      "preferred": "Наклонный отжимания обратный grip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Incline_Push-Up_Wide": {
+      "preferred": "Наклонный отжимания wide",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Intermediate_Groin_Stretch": {
+      "preferred": "Intermediate groin растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Intermediate_Hip_Flexor_and_Quad_Stretch": {
+      "preferred": "Intermediate таз flexor и quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Internal_Rotation_with_Band": {
+      "preferred": "Internal вращение с резинка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inverted_Row": {
+      "preferred": "Inverted тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Inverted_Row_with_Straps": {
+      "preferred": "Inverted тяга с straps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iron_Cross": {
+      "preferred": "Iron cross",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Iron_Crosses_stretch": {
+      "preferred": "Iron crosses растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Chest_Squeezes": {
+      "preferred": "Isometric грудь squeezes",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Neck_Exercise_-_Front_And_Back": {
+      "preferred": "Isometric шея exercise — передний и спина",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Neck_Exercise_-_Sides": {
+      "preferred": "Isometric шея exercise — sides",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Isometric_Wipers": {
+      "preferred": "Isometric wipers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "JM_Press": {
+      "preferred": "Jm жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jackknife_Sit-Up": {
+      "preferred": "Складной нож подъём туловища",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Janda_Sit-Up": {
+      "preferred": "Janda подъём туловища",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jefferson_Squats": {
+      "preferred": "Jefferson squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jerk_Balance": {
+      "preferred": "Толчок balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jerk_Dip_Squat": {
+      "preferred": "Толчок dip приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Jogging_Treadmill": {
+      "preferred": "Jogging, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Keg_Load": {
+      "preferred": "Keg load",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Arnold_Press": {
+      "preferred": "Гиря arnold жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Dead_Clean": {
+      "preferred": "Гиря dead взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Figure_8": {
+      "preferred": "Гиря figure 8",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Hang_Clean": {
+      "preferred": "Гиря в висе взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_One-Legged_Deadlift": {
+      "preferred": "Гиря one-legged становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pass_Between_The_Legs": {
+      "preferred": "Гиря pass between ноги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pirate_Ships": {
+      "preferred": "Гиря pirate ships",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Pistol_Squat": {
+      "preferred": "Гиря pistol приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Seated_Press": {
+      "preferred": "Гиря сидя жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Seesaw_Press": {
+      "preferred": "Гиря seesaw жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Sumo_High_Pull": {
+      "preferred": "Гиря sumo верхний тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Thruster": {
+      "preferred": "Гиря thruster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Turkish_Get-Up_Lunge_style": {
+      "preferred": "Гиря turkish get-up выпад style",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Turkish_Get-Up_Squat_style": {
+      "preferred": "Гиря turkish get-up приседание style",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kettlebell_Windmill": {
+      "preferred": "Гиря windmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kipping_Muscle_Up": {
+      "preferred": "Kipping muscle up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Across_The_Body": {
+      "preferred": "Knee across body",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Circles": {
+      "preferred": "Knee circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Hip_Raise_On_Parallel_Bars": {
+      "preferred": "Knee/таз подъём на parallel bars",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Knee_Tuck_Jump": {
+      "preferred": "Knee tuck прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Arm_Drill": {
+      "preferred": "На коленях рука drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists": {
+      "preferred": "На коленях блок скручивания с поочерёдно oblique twists",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Triceps_Extension": {
+      "preferred": "На коленях блок разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Forearm_Stretch": {
+      "preferred": "На коленях forearm растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_High_Pulley_Row": {
+      "preferred": "На коленях верхний pulley тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Hip_Flexor": {
+      "preferred": "На коленях таз flexor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Jump_Squat": {
+      "preferred": "На коленях прыжковые приседания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Single-Arm_High_Pulley_Row": {
+      "preferred": "На коленях односторонний-рука верхний pulley тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Squat": {
+      "preferred": "На коленях приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Landmine_180s": {
+      "preferred": "Landmine 180's",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Landmine_Linear_Jammer": {
+      "preferred": "Landmine linear jammer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Bound": {
+      "preferred": "Lateral bound",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Box_Jump": {
+      "preferred": "Lateral запрыгивание на тумбу",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Cone_Hops": {
+      "preferred": "Lateral cone hops",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lateral_Raise_-_With_Bands": {
+      "preferred": "Махи в стороны — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Latissimus_Dorsi-SMR": {
+      "preferred": "Latissimus dorsi-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg-Over_Floor_Press": {
+      "preferred": "Нога-over на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg-Up_Hamstring_Stretch": {
+      "preferred": "Нога-up hamstring растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Extensions": {
+      "preferred": "Нога extensions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Lift": {
+      "preferred": "Нога lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Press": {
+      "preferred": "Жим ногами",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leg_Pull-In": {
+      "preferred": "Нога тяга-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Chest_Press": {
+      "preferred": "Leverage жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Deadlift": {
+      "preferred": "Leverage становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Decline_Chest_Press": {
+      "preferred": "Leverage отрицательный наклон жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_High_Row": {
+      "preferred": "Leverage верхний тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Incline_Chest_Press": {
+      "preferred": "Leverage наклонный жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Iso_Row": {
+      "preferred": "Leverage iso тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Shoulder_Press": {
+      "preferred": "Leverage жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Leverage_Shrug": {
+      "preferred": "Leverage шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_3-Part_Start_Technique": {
+      "preferred": "Linear 3-part start technique",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_Acceleration_Wall_Drill": {
+      "preferred": "Linear acceleration wall drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Linear_Depth_Jump": {
+      "preferred": "Linear depth прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Log_Lift": {
+      "preferred": "Log lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "London_Bridges": {
+      "preferred": "London bridges",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Looking_At_Ceiling": {
+      "preferred": "Looking at ceiling",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Cable_Crossover": {
+      "preferred": "Нижний кроссовер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Cable_Triceps_Extension": {
+      "preferred": "Нижний блок разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Low_Pulley_Row_To_Neck": {
+      "preferred": "Нижний pulley тяга к шея",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lower_Back-SMR": {
+      "preferred": "Lower спина-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lower_Back_Curl": {
+      "preferred": "Lower спина сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lunge_Pass_Through": {
+      "preferred": "Выпад pass through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lunge_Sprint": {
+      "preferred": "Выпад sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Bent_Leg_Groin": {
+      "preferred": "Лёжа bent нога groin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Cable_Curl": {
+      "preferred": "Лёжа блок сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Cambered_Barbell_Row": {
+      "preferred": "Лёжа cambered тяга штанги в наклоне",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Bar_Curl_On_High_Pulley": {
+      "preferred": "Лёжа узкий хват bar сгибание на верхний pulley",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head": {
+      "preferred": "Лёжа узкий хват штанга разгибание рук на трицепс за головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin": {
+      "preferred": "Лёжа узкий хват штанга triceps жим к chin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Crossover": {
+      "preferred": "Лёжа crossover",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Dumbbell_Tricep_Extension": {
+      "preferred": "Лёжа гантель трицепс разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Face_Down_Plate_Neck_Resistance": {
+      "preferred": "Лёжа face down plate шея resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Face_Up_Plate_Neck_Resistance": {
+      "preferred": "Лёжа face up plate шея resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Glute": {
+      "preferred": "Лёжа ягодица",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Hamstring": {
+      "preferred": "Лёжа hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_High_Bench_Barbell_Curl": {
+      "preferred": "Лёжа верхний скамья штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Leg_Curls": {
+      "preferred": "Лёжа нога curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Machine_Squat": {
+      "preferred": "Лёжа тренажёр приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_One-Arm_Lateral_Raise": {
+      "preferred": "Лёжа одной рукой махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Prone_Quadriceps": {
+      "preferred": "Лёжа prone quadriceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Rear_Delt_Raise": {
+      "preferred": "Лёжа разведение на заднюю дельту",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Supine_Dumbbell_Curl": {
+      "preferred": "Лёжа supine гантель сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_T-Bar_Row": {
+      "preferred": "Лёжа t-bar тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Lying_Triceps_Press": {
+      "preferred": "Лёжа triceps жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Bench_Press": {
+      "preferred": "Тренажёр жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Bicep_Curl": {
+      "preferred": "Тренажёр бицепс сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Preacher_Curls": {
+      "preferred": "Тренажёр preacher curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Shoulder_Military_Press": {
+      "preferred": "Тренажёр плечо military жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Triceps_Extension": {
+      "preferred": "Тренажёр разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Chest_Pass": {
+      "preferred": "Медбол грудь pass",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Full_Twist": {
+      "preferred": "Медбол full скручивание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Medicine_Ball_Scoop_Throw": {
+      "preferred": "Медбол scoop throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Middle_Back_Shrug": {
+      "preferred": "Middle спина шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Middle_Back_Stretch": {
+      "preferred": "Middle спина растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Mixed_Grip_Chin": {
+      "preferred": "Mixed grip chin",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Monster_Walk": {
+      "preferred": "Monster walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Mountain_Climbers": {
+      "preferred": "Mountain climbers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Moving_Claw_Series": {
+      "preferred": "Moving claw series",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Muscle_Snatch": {
+      "preferred": "Muscle рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Muscle_Up": {
+      "preferred": "Muscle up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Hack_Squats": {
+      "preferred": "Narrow stance hack squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Leg_Press": {
+      "preferred": "Narrow stance жим ногами",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Narrow_Stance_Squats": {
+      "preferred": "Narrow stance squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Natural_Glute_Ham_Raise": {
+      "preferred": "Natural ягодица ham подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Neck-SMR": {
+      "preferred": "Шея-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Neck_Press": {
+      "preferred": "Шея жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Oblique_Crunches": {
+      "preferred": "Oblique crunches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Oblique_Crunches_-_On_The_Floor": {
+      "preferred": "Oblique crunches — на на полу",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Olympic_Squat": {
+      "preferred": "Olympic приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "On-Your-Back_Quad_Stretch": {
+      "preferred": "На-your-спина quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "On_Your_Side_Quad_Stretch": {
+      "preferred": "На your боковой quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Dumbbell_Row": {
+      "preferred": "Одной рукой тяга гантели в наклоне",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Flat_Bench_Dumbbell_Flye": {
+      "preferred": "Одной рукой flat скамья гантель flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_High-Pulley_Cable_Side_Bends": {
+      "preferred": "Одной рукой верхний-pulley блок боковой bends",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Incline_Lateral_Raise": {
+      "preferred": "Одной рукой наклонный махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Clean": {
+      "preferred": "Одной рукой гиря взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Clean_and_Jerk": {
+      "preferred": "Одной рукой гиря толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Floor_Press": {
+      "preferred": "Одной рукой гиря на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Jerk": {
+      "preferred": "Одной рукой гиря толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Military_Press_To_The_Side": {
+      "preferred": "Одной рукой гиря military жим к боковой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Para_Press": {
+      "preferred": "Одной рукой гиря para жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Push_Press": {
+      "preferred": "Одной рукой гиря отжимание жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Row": {
+      "preferred": "Одной рукой гиря тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Snatch": {
+      "preferred": "Одной рукой гиря рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Split_Jerk": {
+      "preferred": "Одной рукой гиря раздельный толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Split_Snatch": {
+      "preferred": "Одной рукой гиря раздельный рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Kettlebell_Swings": {
+      "preferred": "Одной рукой гиря swings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Long_Bar_Row": {
+      "preferred": "Одной рукой long bar тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Medicine_Ball_Slam": {
+      "preferred": "Одной рукой медбол slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Open_Palm_Kettlebell_Clean": {
+      "preferred": "Одной рукой open palm гиря взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Overhead_Kettlebell_Squats": {
+      "preferred": "Одной рукой над головой гиря squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Side_Deadlift": {
+      "preferred": "Одной рукой боковой становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Side_Laterals": {
+      "preferred": "Одной рукой боковой laterals",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Legged_Cable_Kickback": {
+      "preferred": "One-legged блок kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Against_Wall": {
+      "preferred": "Одной рукой against wall",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Chin-Up": {
+      "preferred": "Одной рукой подтягивания обратным хватом",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Dumbbell_Bench_Press": {
+      "preferred": "Одной рукой жим гантелей лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Dumbbell_Preacher_Curl": {
+      "preferred": "Одной рукой гантель preacher сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Floor_Press": {
+      "preferred": "Одной рукой на полу жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Lat_Pulldown": {
+      "preferred": "Одной рукой тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Pronated_Dumbbell_Triceps_Extension": {
+      "preferred": "Одной рукой pronated гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Arm_Supinated_Dumbbell_Triceps_Extension": {
+      "preferred": "Одной рукой supinated гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Half_Locust": {
+      "preferred": "One half locust",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Handed_Hang": {
+      "preferred": "One handed в висе",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Knee_To_Chest": {
+      "preferred": "One knee к грудь",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One_Leg_Barbell_Squat": {
+      "preferred": "One нога штанга приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Open_Palm_Kettlebell_Clean": {
+      "preferred": "Open palm гиря взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Otis-Up": {
+      "preferred": "Otis-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Cable_Curl": {
+      "preferred": "Над головой блок сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Lat": {
+      "preferred": "Над головой lat",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Slam": {
+      "preferred": "Над головой slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Squat": {
+      "preferred": "Приседания со штангой над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Stretch": {
+      "preferred": "Над головой растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Overhead_Triceps": {
+      "preferred": "Над головой triceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pallof_Press": {
+      "preferred": "Pallof жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pallof_Press_With_Rotation": {
+      "preferred": "Pallof жим с вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-down гантель wrist сгибание over a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Down_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-down wrist сгибание over a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-up штанга wrist сгибание over a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench": {
+      "preferred": "Palms-up гантель wrist сгибание over a скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Parallel_Bar_Dip": {
+      "preferred": "Parallel bar dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pelvic_Tilt_Into_Bridge": {
+      "preferred": "Pelvic tilt into мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Peroneals-SMR": {
+      "preferred": "Peroneals-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Peroneals_Stretch": {
+      "preferred": "Peroneals растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Physioball_Hip_Bridge": {
+      "preferred": "Physioball таз мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pin_Presses": {
+      "preferred": "Pin presses",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Piriformis-SMR": {
+      "preferred": "Piriformis-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plank": {
+      "preferred": "Планка",
+      "aliases": [],
+      "sourceRefs": [
+        "wger-api"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plate_Pinch": {
+      "preferred": "Plate pinch",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plate_Twist": {
+      "preferred": "Plate скручивание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Platform_Hamstring_Slides": {
+      "preferred": "Platform hamstring slides",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plie_Dumbbell_Squat": {
+      "preferred": "Plie гантель приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plyo_Kettlebell_Pushups": {
+      "preferred": "Plyo гиря pushups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Plyo_Push-up": {
+      "preferred": "Plyo отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Posterior_Tibialis_Stretch": {
+      "preferred": "Posterior tibialis растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Clean": {
+      "preferred": "Взятие на грудь",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Clean_from_Blocks": {
+      "preferred": "Взятие на грудь из blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Jerk": {
+      "preferred": "Силовой толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Partials": {
+      "preferred": "Силовой partials",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Snatch": {
+      "preferred": "Силовой рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Snatch_from_Blocks": {
+      "preferred": "Силовой рывок из blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Power_Stairs": {
+      "preferred": "Силовой stairs",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Preacher_Curl": {
+      "preferred": "Preacher сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Preacher_Hammer_Dumbbell_Curl": {
+      "preferred": "Preacher hammer гантель сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Press_Sit-Up": {
+      "preferred": "Жим подъём туловища",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Prone_Manual_Hamstring": {
+      "preferred": "Prone manual hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Prowler_Sprint": {
+      "preferred": "Prowler sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pull_Through": {
+      "preferred": "Тяга through",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pullups": {
+      "preferred": "Pullups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Up_Wide": {
+      "preferred": "Отжимания wide",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_-_Close_Triceps_Position": {
+      "preferred": "Отжимание-ups — close triceps position",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_With_Feet_Elevated": {
+      "preferred": "Отжимание-ups с feet elevated",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push-Ups_With_Feet_On_An_Exercise_Ball": {
+      "preferred": "Отжимание-ups с feet на an фитбол",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Press": {
+      "preferred": "Отжимание жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Press_-_Behind_the_Neck": {
+      "preferred": "Отжимание жим — за шеей",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Push_Up_to_Side_Plank": {
+      "preferred": "Отжимания к боковой планка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pushups": {
+      "preferred": "Pushups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pushups_Close_and_Wide_Hand_Positions": {
+      "preferred": "Pushups close и wide hand positions",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pyramid": {
+      "preferred": "Pyramid",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quad_Stretch": {
+      "preferred": "Quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quadriceps-SMR": {
+      "preferred": "Quadriceps-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Quick_Leap": {
+      "preferred": "Quick leap",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Delivery": {
+      "preferred": "Rack delivery",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Pull_with_Bands": {
+      "preferred": "Rack тяга с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rack_Pulls": {
+      "preferred": "Rack pulls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rear_Leg_Raises": {
+      "preferred": "Задний нога raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Recumbent_Bike": {
+      "preferred": "Recumbent bike",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Return_Push_from_Stance": {
+      "preferred": "Return отжимание из stance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Bench_Press": {
+      "preferred": "Обратный резинка жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Box_Squat": {
+      "preferred": "Обратный резинка box приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Deadlift": {
+      "preferred": "Обратный резинка становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Power_Squat": {
+      "preferred": "Обратный резинка силовой приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Band_Sumo_Deadlift": {
+      "preferred": "Обратный резинка sumo становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Barbell_Curl": {
+      "preferred": "Обратный штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Barbell_Preacher_Curls": {
+      "preferred": "Обратный штанга preacher curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Cable_Curl": {
+      "preferred": "Обратный блок сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Crunch": {
+      "preferred": "Обратный скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Flyes": {
+      "preferred": "Обратный разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Flyes_With_External_Rotation": {
+      "preferred": "Обратный разведение с external вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Grip_Bent-Over_Rows": {
+      "preferred": "Обратный grip bent-over rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Grip_Triceps_Pushdown": {
+      "preferred": "Обратный grip разгибание рук на блоке",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Hyperextension": {
+      "preferred": "Обратный hyperextension",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Machine_Flyes": {
+      "preferred": "Обратный тренажёр разведение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Plate_Curls": {
+      "preferred": "Обратный plate curls",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Reverse_Triceps_Bench_Press": {
+      "preferred": "Обратный triceps жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rhomboids-SMR": {
+      "preferred": "Rhomboids-smr",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rickshaw_Carry": {
+      "preferred": "Rickshaw carry",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rickshaw_Deadlift": {
+      "preferred": "Rickshaw становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Ring_Dips": {
+      "preferred": "Ring dips",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocket_Jump": {
+      "preferred": "Rocket прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocking_Standing_Calf_Raise": {
+      "preferred": "Rocking стоя подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rocky_Pull-Ups_Pulldowns": {
+      "preferred": "Rocky тяга-ups/pulldowns",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Romanian_Deadlift": {
+      "preferred": "Romanian становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Romanian_Deadlift_from_Deficit": {
+      "preferred": "Romanian становая тяга из deficit",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Climb": {
+      "preferred": "Канат climb",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Crunch": {
+      "preferred": "Канат скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Jumping": {
+      "preferred": "Канат jumping",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rope_Straight-Arm_Pulldown": {
+      "preferred": "Канат straight-рука pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Round_The_World_Shoulder_Stretch": {
+      "preferred": "Round world плечо растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Rowing_Stationary": {
+      "preferred": "Rowing, stationary",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Runners_Stretch": {
+      "preferred": "Runner's растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Running_Treadmill": {
+      "preferred": "Running, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Russian_Twist": {
+      "preferred": "Русские скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sandbag_Load": {
+      "preferred": "Sandbag load",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scapular_Pull-Up": {
+      "preferred": "Scapular подтягивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scissor_Kick": {
+      "preferred": "Scissor kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Scissors_Jump": {
+      "preferred": "Scissors прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Band_Hamstring_Curl": {
+      "preferred": "Сидя резинка hamstring сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Barbell_Military_Press": {
+      "preferred": "Сидя штанга military жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Barbell_Twist": {
+      "preferred": "Сидя штанга скручивание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "Сидя bent-over одной рукой гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_Rear_Delt_Raise": {
+      "preferred": "Сидя bent-over разведение на заднюю дельту",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "Сидя bent-over двумя руками гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Biceps": {
+      "preferred": "Сидя biceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Cable_Rows": {
+      "preferred": "Сидя блок rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Cable_Shoulder_Press": {
+      "preferred": "Сидя блок жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Calf_Raise": {
+      "preferred": "Сидя подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Calf_Stretch": {
+      "preferred": "Сидя икроножная мышца растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Close-Grip_Concentration_Barbell_Curl": {
+      "preferred": "Сидя узкий хват concentration штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Curl": {
+      "preferred": "Сидя гантель сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Inner_Biceps_Curl": {
+      "preferred": "Сидя гантель inner сгибание рук на бицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Palms-Down_Wrist_Curl": {
+      "preferred": "Сидя гантель palms-down wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Palms-Up_Wrist_Curl": {
+      "preferred": "Сидя гантель palms-up wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Dumbbell_Press": {
+      "preferred": "Сидя гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Flat_Bench_Leg_Pull-In": {
+      "preferred": "Сидя flat скамья нога тяга-in",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Floor_Hamstring_Stretch": {
+      "preferred": "Сидя на полу hamstring растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Front_Deltoid": {
+      "preferred": "Сидя передний дельта",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Glute": {
+      "preferred": "Сидя ягодица",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Good_Mornings": {
+      "preferred": "Сидя good mornings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hamstring": {
+      "preferred": "Сидя hamstring",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hamstring_and_Calf_Stretch": {
+      "preferred": "Сидя hamstring и икроножная мышца растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Head_Harness_Neck_Resistance": {
+      "preferred": "Сидя head harness шея resistance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Leg_Curl": {
+      "preferred": "Сидя сгибание ног",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Leg_Tucks": {
+      "preferred": "Сидя нога tucks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl": {
+      "preferred": "Сидя одной рукой гантель palms-down wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl": {
+      "preferred": "Сидя одной рукой гантель palms-up wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_One-arm_Cable_Pulley_Rows": {
+      "preferred": "Сидя одной рукой блок pulley rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Overhead_Stretch": {
+      "preferred": "Сидя над головой растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Palm-Up_Barbell_Wrist_Curl": {
+      "preferred": "Сидя palm-up штанга wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Palms-Down_Barbell_Wrist_Curl": {
+      "preferred": "Сидя palms-down штанга wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Side_Lateral_Raise": {
+      "preferred": "Сидя боковой махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Triceps_Press": {
+      "preferred": "Сидя triceps жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl": {
+      "preferred": "Сидя двумя руками palms-up нижний-pulley wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "See-Saw_Press_Alternating_Side_Press": {
+      "preferred": "See-saw жим поочерёдно боковой жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shotgun_Row": {
+      "preferred": "Shotgun тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Circles": {
+      "preferred": "Плечо circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Press_-_With_Bands": {
+      "preferred": "Жим над головой — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Raise": {
+      "preferred": "Плечо подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Shoulder_Stretch": {
+      "preferred": "Плечо растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Floor_Stretch": {
+      "preferred": "Боковой-лёжа на полу растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Bridge": {
+      "preferred": "Боковой мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Hop-Sprint": {
+      "preferred": "Боковой hop-sprint",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Jackknife": {
+      "preferred": "Боковой складной нож",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Lateral_Raise": {
+      "preferred": "Боковой махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Laterals_to_Front_Raise": {
+      "preferred": "Боковой laterals к подъём перед собой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Leg_Raises": {
+      "preferred": "Боковой нога raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Lying_Groin_Stretch": {
+      "preferred": "Боковой лёжа groin растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Neck_Stretch": {
+      "preferred": "Боковой шея растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Standing_Long_Jump": {
+      "preferred": "Боковой стоя long прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_To_Side_Chins": {
+      "preferred": "Боковой к боковой chins",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Wrist_Pull": {
+      "preferred": "Боковой wrist тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_to_Side_Box_Shuffle": {
+      "preferred": "Боковой к боковой box shuffle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Cable_Crossover": {
+      "preferred": "Односторонний-рука кроссовер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Linear_Jammer": {
+      "preferred": "Односторонний-рука linear jammer",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Arm_Push-Up": {
+      "preferred": "Односторонний-рука отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Cone_Sprint_Drill": {
+      "preferred": "Односторонний-cone sprint drill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_High_Box_Squat": {
+      "preferred": "Односторонний-нога верхний box приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Hop_Progression": {
+      "preferred": "Односторонний-нога hop progression",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Lateral_Hop": {
+      "preferred": "Односторонний-нога lateral hop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Leg_Extension": {
+      "preferred": "Односторонний-нога разгибание ног",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Stride_Jump": {
+      "preferred": "Односторонний-нога stride прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Dumbbell_Raise": {
+      "preferred": "Односторонний гантель подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Butt_Kick": {
+      "preferred": "Односторонний нога butt kick",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Glute_Bridge": {
+      "preferred": "Односторонний нога ягодичный мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single_Leg_Push-off": {
+      "preferred": "Односторонний нога отжимание-off",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sit-Up": {
+      "preferred": "Подъём туловища",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sit_Squats": {
+      "preferred": "Sit squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Skating": {
+      "preferred": "Skating",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Drag_-_Harness": {
+      "preferred": "Сани drag — harness",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Overhead_Backward_Walk": {
+      "preferred": "Сани над головой backward walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Overhead_Triceps_Extension": {
+      "preferred": "Сани разгибание рук из-за головы",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Push": {
+      "preferred": "Сани отжимание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Reverse_Flye": {
+      "preferred": "Сани обратный flye",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sled_Row": {
+      "preferred": "Сани тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sledgehammer_Swings": {
+      "preferred": "Sledgehammer swings",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Incline_Shoulder_Raise": {
+      "preferred": "Smith наклонный плечо подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Behind_the_Back_Shrug": {
+      "preferred": "Smith тренажёр behind спина шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Bench_Press": {
+      "preferred": "Smith тренажёр жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Bent_Over_Row": {
+      "preferred": "Smith тренажёр в наклоне тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Calf_Raise": {
+      "preferred": "Smith тренажёр подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Close-Grip_Bench_Press": {
+      "preferred": "Smith тренажёр узкий хват жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Decline_Press": {
+      "preferred": "Smith тренажёр отрицательный наклон жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Hang_Power_Clean": {
+      "preferred": "Smith тренажёр в висе взятие на грудь",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Hip_Raise": {
+      "preferred": "Smith тренажёр таз подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Incline_Bench_Press": {
+      "preferred": "Smith тренажёр наклонный жим лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Leg_Press": {
+      "preferred": "Smith тренажёр жим ногами",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_One-Arm_Upright_Row": {
+      "preferred": "Smith тренажёр одной рукой тяга к подбородку",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Overhead_Shoulder_Press": {
+      "preferred": "Smith тренажёр над головой жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Pistol_Squat": {
+      "preferred": "Smith тренажёр pistol приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Reverse_Calf_Raises": {
+      "preferred": "Smith тренажёр обратный икроножная мышца raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Squat": {
+      "preferred": "Smith тренажёр приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Stiff-Legged_Deadlift": {
+      "preferred": "Smith тренажёр stiff-legged становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Machine_Upright_Row": {
+      "preferred": "Smith тренажёр тяга к подбородку",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Smith_Single-Leg_Split_Squat": {
+      "preferred": "Smith односторонний-нога сплит-присед",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch": {
+      "preferred": "Рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Balance": {
+      "preferred": "Рывок balance",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Deadlift": {
+      "preferred": "Рывок становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Pull": {
+      "preferred": "Рывок тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_Shrug": {
+      "preferred": "Рывок шраги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Snatch_from_Blocks": {
+      "preferred": "Рывок из blocks",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Band_Overhead_Triceps": {
+      "preferred": "Speed резинка над головой triceps",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Box_Squat": {
+      "preferred": "Speed box приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Speed_Squats": {
+      "preferred": "Speed squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spell_Caster": {
+      "preferred": "Spell caster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spider_Crawl": {
+      "preferred": "Spider crawl",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spider_Curl": {
+      "preferred": "Spider сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Spinal_Stretch": {
+      "preferred": "Spinal растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Clean": {
+      "preferred": "Раздельный взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Jerk": {
+      "preferred": "Раздельный толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Jump": {
+      "preferred": "Раздельный прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Snatch": {
+      "preferred": "Раздельный рывок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Squat_with_Dumbbells": {
+      "preferred": "Сплит-присед с dumbbells",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Split_Squats": {
+      "preferred": "Раздельный squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_Jerk": {
+      "preferred": "Приседание толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Bands": {
+      "preferred": "Приседание с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Chains": {
+      "preferred": "Приседание с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_with_Plate_Movers": {
+      "preferred": "Приседание с plate movers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squats_-_With_Bands": {
+      "preferred": "Squats — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stairmaster": {
+      "preferred": "Stairmaster",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Alternating_Dumbbell_Press": {
+      "preferred": "Стоя поочерёдно гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Barbell_Calf_Raise": {
+      "preferred": "Стоя штанга подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Barbell_Press_Behind_Neck": {
+      "preferred": "Стоя штанга жим behind шея",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "Стоя bent-over одной рукой гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "Стоя bent-over двумя руками гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Biceps_Cable_Curl": {
+      "preferred": "Стоя biceps блок сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Biceps_Stretch": {
+      "preferred": "Стоя biceps растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Bradford_Press": {
+      "preferred": "Стоя bradford жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Chest_Press": {
+      "preferred": "Стоя блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Lift": {
+      "preferred": "Стоя блок lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Wood_Chop": {
+      "preferred": "Стоя блок wood chop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Calf_Raises": {
+      "preferred": "Стоя икроножная мышца raises",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Concentration_Curl": {
+      "preferred": "Стоя concentration сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Calf_Raise": {
+      "preferred": "Стоя гантель подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Press": {
+      "preferred": "Стоя гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Reverse_Curl": {
+      "preferred": "Стоя гантель обратный сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head": {
+      "preferred": "Стоя гантель straight-рука передний delt подъём above head",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Triceps_Extension": {
+      "preferred": "Стоя гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Dumbbell_Upright_Row": {
+      "preferred": "Стоя гантель тяга к подбородку",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Elevated_Quad_Stretch": {
+      "preferred": "Стоя elevated quad растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Front_Barbell_Raise_Over_Head": {
+      "preferred": "Стоя передний штанга подъём over head",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Gastrocnemius_Calf_Stretch": {
+      "preferred": "Стоя gastrocnemius икроножная мышца растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hamstring_and_Calf_Stretch": {
+      "preferred": "Стоя hamstring и икроножная мышца растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Circles": {
+      "preferred": "Стоя таз circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexors": {
+      "preferred": "Стоя таз flexors",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Inner-Biceps_Curl": {
+      "preferred": "Стоя inner-сгибание рук на бицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Lateral_Stretch": {
+      "preferred": "Стоя lateral растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Leg_Curl": {
+      "preferred": "Стоя сгибание ног",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Long_Jump": {
+      "preferred": "Стоя long прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Low-Pulley_Deltoid_Raise": {
+      "preferred": "Стоя нижний-pulley дельта подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Low-Pulley_One-Arm_Triceps_Extension": {
+      "preferred": "Стоя нижний-pulley одной рукой разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Military_Press": {
+      "preferred": "Стоя military жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Olympic_Plate_Hand_Squeeze": {
+      "preferred": "Стоя olympic plate hand squeeze",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Cable_Curl": {
+      "preferred": "Стоя одной рукой блок сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench": {
+      "preferred": "Стоя одной рукой гантель сгибание over наклонный скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Dumbbell_Triceps_Extension": {
+      "preferred": "Стоя одной рукой гантель разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Overhead_Barbell_Triceps_Extension": {
+      "preferred": "Стоя над головой штанга разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palm-In_One-Arm_Dumbbell_Press": {
+      "preferred": "Стоя palm-in одной рукой гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palms-In_Dumbbell_Press": {
+      "preferred": "Стоя palms-in гантель жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl": {
+      "preferred": "Стоя palms-up штанга behind спина wrist сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Pelvic_Tilt": {
+      "preferred": "Стоя pelvic tilt",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Rope_Crunch": {
+      "preferred": "Стоя канат скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Soleus_And_Achilles_Stretch": {
+      "preferred": "Стоя soleus и achilles растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Touches": {
+      "preferred": "Стоя toe touches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Towel_Triceps_Extension": {
+      "preferred": "Стоя towel разгибание рук на трицепс",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Two-Arm_Overhead_Throw": {
+      "preferred": "Стоя двумя руками над головой throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Star_Jump": {
+      "preferred": "Star прыжок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Step-up_with_Knee_Raise": {
+      "preferred": "Step-up с knee подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Step_Mill": {
+      "preferred": "Step mill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff-Legged_Barbell_Deadlift": {
+      "preferred": "Stiff-legged штанга становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff-Legged_Dumbbell_Deadlift": {
+      "preferred": "Stiff-legged гантель становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stiff_Leg_Barbell_Good_Morning": {
+      "preferred": "Stiff нога штанга доброе утро",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stomach_Vacuum": {
+      "preferred": "Stomach vacuum",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight-Arm_Dumbbell_Pullover": {
+      "preferred": "Straight-рука гантель пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight-Arm_Pulldown": {
+      "preferred": "Straight-рука pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight_Bar_Bench_Mid_Rows": {
+      "preferred": "Straight bar скамья mid rows",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Straight_Raises_on_Incline_Bench": {
+      "preferred": "Straight raises на наклонный скамья",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Stride_Jump_Crossover": {
+      "preferred": "Stride прыжок crossover",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift": {
+      "preferred": "Sumo становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift_with_Bands": {
+      "preferred": "Sumo становая тяга с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Sumo_Deadlift_with_Chains": {
+      "preferred": "Sumo становая тяга с chains",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Superman": {
+      "preferred": "Superman",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Chest_Throw": {
+      "preferred": "Supine грудь throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_One-Arm_Overhead_Throw": {
+      "preferred": "Supine одной рукой над головой throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Two-Arm_Overhead_Throw": {
+      "preferred": "Supine двумя руками над головой throw",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Fallout": {
+      "preferred": "В подвесе fallout",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Push-Up": {
+      "preferred": "В подвесе отжимания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Reverse_Crunch": {
+      "preferred": "В подвесе обратный скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Row": {
+      "preferred": "В подвесе тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Suspended_Split_Squat": {
+      "preferred": "В подвесе сплит-присед",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Svend_Press": {
+      "preferred": "Svend жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "T-Bar_Row_with_Handle": {
+      "preferred": "T-bar тяга с handle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tate_Press": {
+      "preferred": "Tate жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "The_Straddle": {
+      "preferred": "Straddle",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Thigh_Abductor": {
+      "preferred": "Thigh abductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Thigh_Adductor": {
+      "preferred": "Thigh adductor",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tire_Flip": {
+      "preferred": "Tire flip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Toe_Touchers": {
+      "preferred": "Toe touchers",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Torso_Rotation": {
+      "preferred": "Torso вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Trail_Running_Walking": {
+      "preferred": "Trail running/walking",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Trap_Bar_Deadlift": {
+      "preferred": "Trap bar становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tricep_Dumbbell_Kickback": {
+      "preferred": "Трицепс гантель kickback",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tricep_Side_Stretch": {
+      "preferred": "Трицепс боковой растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Overhead_Extension_with_Rope": {
+      "preferred": "Triceps над головой разгибание с канат",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown": {
+      "preferred": "Разгибание рук на блоке",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown_-_Rope_Attachment": {
+      "preferred": "Разгибание рук на блоке — канат attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Pushdown_-_V-Bar_Attachment": {
+      "preferred": "Разгибание рук на блоке — v-bar attachment",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Triceps_Stretch": {
+      "preferred": "Triceps растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Tuck_Crunch": {
+      "preferred": "Tuck скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Dumbbell_Preacher_Curl": {
+      "preferred": "Двумя руками гантель preacher сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Clean": {
+      "preferred": "Двумя руками гиря взятие",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Jerk": {
+      "preferred": "Двумя руками гиря толчок",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Military_Press": {
+      "preferred": "Двумя руками гиря military жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Two-Arm_Kettlebell_Row": {
+      "preferred": "Двумя руками гиря тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Underhand_Cable_Pulldowns": {
+      "preferred": "Underhand блок pulldowns",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upper_Back-Leg_Grab": {
+      "preferred": "Upper спина-нога grab",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upper_Back_Stretch": {
+      "preferred": "Upper спина растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Barbell_Row": {
+      "preferred": "Upright тяга штанги в наклоне",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Cable_Row": {
+      "preferred": "Upright тяга горизонтального блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upright_Row_-_With_Bands": {
+      "preferred": "Тяга к подбородку — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Upward_Stretch": {
+      "preferred": "Upward растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Bar_Pulldown": {
+      "preferred": "V-bar pulldown",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Bar_Pullup": {
+      "preferred": "V-bar pullup",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Vertical_Swing": {
+      "preferred": "Vertical мах",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Walking_Treadmill": {
+      "preferred": "Walking, treadmill",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Ball_Hyperextension": {
+      "preferred": "С отягощением ball hyperextension",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Ball_Side_Bend": {
+      "preferred": "С отягощением ball боковые наклоны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Bench_Dip": {
+      "preferred": "С отягощением скамья dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Crunches": {
+      "preferred": "С отягощением crunches",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Jump_Squat": {
+      "preferred": "С отягощением прыжковые приседания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Pull_Ups": {
+      "preferred": "С отягощением тяга ups",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Sissy_Squat": {
+      "preferred": "С отягощением sissy приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Sit-Ups_-_With_Bands": {
+      "preferred": "С отягощением sit-ups — с резинки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Weighted_Squat": {
+      "preferred": "С отягощением приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Barbell_Bench_Press": {
+      "preferred": "Широкий хват жим штанги лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Decline_Barbell_Bench_Press": {
+      "preferred": "Широкий хват отрицательный наклон жим штанги лёжа",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Decline_Barbell_Pullover": {
+      "preferred": "Широкий хват отрицательный наклон штанга пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Lat_Pulldown": {
+      "preferred": "Широкий хват тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Pulldown_Behind_The_Neck": {
+      "preferred": "Широкий хват pulldown за шеей",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Rear_Pull-Up": {
+      "preferred": "Широкий хват задний подтягивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide-Grip_Standing_Barbell_Curl": {
+      "preferred": "Широкий хват стоя штанга сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide_Stance_Barbell_Squat": {
+      "preferred": "Wide stance штанга приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wide_Stance_Stiff_Legs": {
+      "preferred": "Wide stance stiff ноги",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wind_Sprints": {
+      "preferred": "Wind sprints",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Windmills": {
+      "preferred": "Windmills",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Worlds_Greatest_Stretch": {
+      "preferred": "World's greatest растяжка",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Circles": {
+      "preferred": "Wrist circles",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Roller": {
+      "preferred": "Wrist roller",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Wrist_Rotations_with_Straight_Bar": {
+      "preferred": "Wrist rotations с straight bar",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Yoke_Walk": {
+      "preferred": "Yoke walk",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zercher_Squats": {
+      "preferred": "Zercher squats",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zottman_Curl": {
+      "preferred": "Zottman сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Zottman_Preacher_Curl": {
+      "preferred": "Zottman preacher сгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Push_Pull": {
+      "preferred": "Блок отжимание-тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Cable_Rotation": {
+      "preferred": "Стоя блок вращение",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Half-Kneeling_Cable_Lift": {
+      "preferred": "Half-на коленях блок lift",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Chop": {
+      "preferred": "На коленях блок chop",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_High_Pull": {
+      "preferred": "Блок верхний тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_One-Arm_Cable_Row": {
+      "preferred": "Стоя одной рукой тяга горизонтального блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "One-Arm_Bent-Over_Cable_Row": {
+      "preferred": "Одной рукой bent-over тяга горизонтального блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Cable_Lat_Pulldown": {
+      "preferred": "Поочерёдно блок тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Seated_High-to-Low_Cable_Row": {
+      "preferred": "Поочерёдно сидя верхний-к-нижний тяга горизонтального блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Flat-Bench_Cable_Chest_Press": {
+      "preferred": "Поочерёдно flat-скамья блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Alternating_Incline_Cable_Chest_Press": {
+      "preferred": "Поочерёдно наклонный блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Diagonal_Cable_Chest_Press": {
+      "preferred": "Стоя diagonal блок жим от груди",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Kneeling_Cable_Shoulder_Press": {
+      "preferred": "На коленях блок жим над головой",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Curl-to-Press": {
+      "preferred": "Блок сгибание-к-жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Flexion": {
+      "preferred": "Блок таз flexion",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Abduction": {
+      "preferred": "Блок таз abduction",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Standing_Leg_Curl": {
+      "preferred": "Блок стоя сгибание ног",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Hip_Extension": {
+      "preferred": "Блок таз разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Squat": {
+      "preferred": "Блок приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Front_Squat": {
+      "preferred": "Блок фронтальный присед",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Squat-to-Press": {
+      "preferred": "Блок приседание-к-жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Forward_Lunge": {
+      "preferred": "Блок forward выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Lateral_Lunge": {
+      "preferred": "Блок lateral выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Step-Up": {
+      "preferred": "Блок step-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Crossover_Step-Up": {
+      "preferred": "Кроссовер step-up",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Single-Arm_Cable_Romanian_Deadlift": {
+      "preferred": "Односторонний-нога односторонний-рука блок romanian становая тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Jump_Slam": {
+      "preferred": "Блок прыжок slam",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side_Plank_with_Cable_Row": {
+      "preferred": "Боковой планка с тяга горизонтального блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Alternating_Jackknife": {
+      "preferred": "Блок поочерёдно складной нож",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Cable_Calf-Box_Raise": {
+      "preferred": "Блок икроножная мышца-box подъём",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Lat_Pulldown": {
+      "preferred": "Тренажёр тяга верхнего блока",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Seated_Row": {
+      "preferred": "Тренажёр сидя тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Low_Row": {
+      "preferred": "Тренажёр нижний тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_High_Row": {
+      "preferred": "Тренажёр верхний тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Chest-Supported_Row": {
+      "preferred": "Тренажёр грудь-supported тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Diverging_Row": {
+      "preferred": "Тренажёр diverging тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Pullover": {
+      "preferred": "Тренажёр пуловер",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Back_Extension": {
+      "preferred": "Тренажёр спина разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Rotary_Torso": {
+      "preferred": "Тренажёр rotary torso",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Oblique_Crunch": {
+      "preferred": "Тренажёр oblique скручивания",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Glute_Extension": {
+      "preferred": "Тренажёр ягодица разгибание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Hip_Thrust": {
+      "preferred": "Тренажёр ягодичный мост",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Belt_Squat": {
+      "preferred": "Belt приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "V-Squat": {
+      "preferred": "V-приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Pendulum_Squat": {
+      "preferred": "Pendulum приседание",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat_Press_Machine": {
+      "preferred": "Тренажёр приседание жим",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Squat-Lunge_Machine": {
+      "preferred": "Тренажёр приседание-выпад",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_T-Bar_Row": {
+      "preferred": "Тренажёр t-bar тяга",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Standing_Lateral_Raise": {
+      "preferred": "Тренажёр стоя махи в стороны",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Assisted_Dip": {
+      "preferred": "Assisted dip",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Assisted_Chin-Up": {
+      "preferred": "Assisted подтягивания обратным хватом",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Four-Way_Neck_Machine": {
+      "preferred": "Four-way шея тренажёр",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Tibialis_Dorsiflexion": {
+      "preferred": "Тренажёр tibialis dorsiflexion",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Machine_Horizontal_Calf_Raise": {
+      "preferred": "Тренажёр horizontal подъём на носки",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    }
+  }
+}

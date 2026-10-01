@@ -13,7 +13,8 @@
     "ko",
     "hi",
     "ar",
-    "he"
+    "he",
+    "ru"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
@@ -27,6 +28,7 @@
     "ko": "translations/ko.json",
     "hi": "translations/hi.json",
     "ar": "translations/ar.json",
-    "he": "translations/he.json"
+    "he": "translations/he.json",
+    "ru": "translations/ru.json"
   }
 }
