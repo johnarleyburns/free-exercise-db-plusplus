@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:40:39.230710+00:00",
+    "generatedAt": "2026-10-01T16:43:26.103785+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1234,11 +1234,11 @@
         },
         "he": {
           "source": "translations/he.json",
-          "sha256": "cfc0a06d27a4756a4c5df30d37c2bebcf9354442bdc631acec3e93da8f5c7dd0",
+          "sha256": "7b762bf9716e475bc4e4006659fe3918180aede5aeba4d07d46df4a1f17809e2",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 803,
-          "untranslatedCount": 124
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         },
         "ru": {
           "source": "translations/ru.json",
@@ -1597,12 +1597,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "90/90 hamstring",
+          "preferred": "מתיחת המסטרינג 90/90",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "90/90 hamstring",
@@ -2100,12 +2100,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Adductor",
+          "preferred": "מקרבי הירך",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Adductor",
@@ -2264,12 +2264,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Adductor/groin",
+          "preferred": "מקרבי הירך/מפשעה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Adductor/groin",
@@ -2614,12 +2614,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Air bike",
+          "preferred": "אופני אוויר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Air bike",
@@ -4861,12 +4861,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Ankle circles",
+          "preferred": "סיבובי קרסול",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Ankle circles",
@@ -5186,12 +5186,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "שחרור פאשיאלי עצמי של השריר הטיביאלי הקדמי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Anterior tibialis-smr",
@@ -6061,12 +6061,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "אימון עם אבן אטלס",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Atlas stone trainer",
@@ -6254,12 +6254,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Atlas stones",
+          "preferred": "אבני אטלס",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Atlas stones",
@@ -6798,12 +6798,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Backward drag",
+          "preferred": "גרירה לאחור",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Backward drag",
@@ -7128,12 +7128,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Balance board",
+          "preferred": "לוח שיווי משקל",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Balance board",
@@ -13094,12 +13094,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Battling ropes",
+          "preferred": "חבלי קרב",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Battling ropes",
@@ -16602,12 +16602,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Bicycling",
+          "preferred": "רכיבה על אופניים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Bicycling",
@@ -16768,12 +16768,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "אופניים נייחים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Bicycling, stationary",
@@ -17117,12 +17117,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Body-up",
+          "preferred": "הרמת גוף",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Body-up",
@@ -18512,12 +18512,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Bottoms up",
+          "preferred": "קטלבל כשהבסיס כלפי מעלה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Bottoms up",
@@ -18852,12 +18852,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Box skip",
+          "preferred": "דילוג על קופסה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Box skip",
@@ -19564,12 +19564,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Brachialis-smr",
+          "preferred": "שחרור עצמי של השריר הברכיאלי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Brachialis-smr",
@@ -19740,12 +19740,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "לחיצות ברדפורד/רוקי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Bradford/rocky presses",
@@ -19909,12 +19909,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Butt-ups",
+          "preferred": "הרמת ישבן",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Butt-ups",
@@ -20253,12 +20253,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Butterfly",
+          "preferred": "פרפר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Butterfly",
@@ -25716,12 +25716,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Calves-smr",
+          "preferred": "שחרור עצמי של שרירי התאומים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Calves-smr",
@@ -26070,12 +26070,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Car drivers",
+          "preferred": "סיבובי הגה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Car drivers",
@@ -26240,12 +26240,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Carioca quick step",
+          "preferred": "צעדי קריוקה מהירים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Carioca quick step",
@@ -29288,12 +29288,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Circus bell",
+          "preferred": "פעמון קרקס",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Circus bell",
@@ -32344,12 +32344,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Cocoons",
+          "preferred": "כפיפות בטן בתנוחת גולם",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Cocoons",
@@ -32530,12 +32530,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Conan's wheel",
+          "preferred": "גלגל קונאן",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Conan's wheel",
@@ -32703,12 +32703,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Concentration curls",
+          "preferred": "כפיפת מרפקים בריכוז",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Concentration curls",
@@ -33557,12 +33557,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Crucifix",
+          "preferred": "צליבה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Crucifix",
@@ -34576,12 +34576,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Dead bug",
+          "preferred": "חרק מת",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Dead bug",
@@ -37715,12 +37715,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Dips — triceps version",
+          "preferred": "מקבילים לתלת-ראשי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Dips — triceps version",
@@ -39139,12 +39139,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Downward facing balance",
+          "preferred": "שיווי משקל בשכיבה על הבטן",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Downward facing balance",
@@ -45526,12 +45526,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Elbow circles",
+          "preferred": "סיבובי מרפקים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Elbow circles",
@@ -46381,12 +46381,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Elliptical trainer",
+          "preferred": "מכשיר אליפטי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Elliptical trainer",
@@ -47755,12 +47755,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Farmer's walk",
+          "preferred": "הליכת האיכר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Farmer's walk",
@@ -47924,12 +47924,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Fast skipping",
+          "preferred": "קפיצה מהירה בחבל",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Fast skipping",
@@ -48094,12 +48094,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Finger curls",
+          "preferred": "כפיפות אצבעות",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Finger curls",
@@ -49475,12 +49475,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Flutter kicks",
+          "preferred": "בעיטות רפרוף",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Flutter kicks",
@@ -49637,12 +49637,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Foot-smr",
+          "preferred": "שחרור עצמי של כף הרגל",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Foot-smr",
@@ -50354,12 +50354,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Frog hops",
+          "preferred": "קפיצות צפרדע",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Frog hops",
@@ -50525,12 +50525,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Frog sit-ups",
+          "preferred": "כפיפות בטן בצורת צפרדע",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Frog sit-ups",
@@ -53114,12 +53114,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "מתח לסטרנום של ג'ירונדה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Gironda sternum chins",
@@ -54493,12 +54493,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Groiners",
+          "preferred": "מתיחה דינמית למפשעה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Groiners",
@@ -54843,12 +54843,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Hammer curls",
+          "preferred": "כפיפות פטיש",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Hammer curls",
@@ -55183,12 +55183,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Hamstring-smr",
+          "preferred": "שחרור עצמי של ההמסטרינג",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Hamstring-smr",
@@ -56800,12 +56800,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Hanging pike",
+          "preferred": "פייק בתלייה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Hanging pike",
@@ -57152,12 +57152,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "דחיפה עם שק כבד",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Heavy bag thrust",
@@ -58174,12 +58174,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Hug a ball",
+          "preferred": "חיבוק כדור",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Hug a ball",
@@ -58509,12 +58509,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Hurdle hops",
+          "preferred": "קפיצות מעל משוכות",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Hurdle hops",
@@ -59185,12 +59185,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "שחרור עצמי של הרצועה האיליוטיביאלית",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Iliotibial tract-smr",
@@ -59350,12 +59350,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Inchworm",
+          "preferred": "תולעת",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Inchworm",
@@ -63320,12 +63320,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Iron cross",
+          "preferred": "צלב ברזל",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Iron cross",
@@ -64166,12 +64166,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Isometric wipers",
+          "preferred": "מגבי שמשה איזומטריים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Isometric wipers",
@@ -64861,12 +64861,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Jefferson squats",
+          "preferred": "סקוואט ג'פרסון",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Jefferson squats",
@@ -65388,12 +65388,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "ריצה קלה על הליכון",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Jogging, treadmill",
@@ -65581,12 +65581,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Keg load",
+          "preferred": "הרמת חבית",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Keg load",
@@ -68453,12 +68453,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Kipping muscle up",
+          "preferred": "מאסל-אפ עם תנופה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Kipping muscle up",
@@ -68784,12 +68784,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Knee circles",
+          "preferred": "סיבובי ברכיים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Knee circles",
@@ -70845,12 +70845,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Landmine 180's",
+          "preferred": "סיבוב 180 מעלות עם לנדמיין",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Landmine 180's",
@@ -71031,12 +71031,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "דחיפה ליניארית עם לנדמיין",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Landmine linear jammer",
@@ -71202,12 +71202,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Lateral bound",
+          "preferred": "קפיצה צידית",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Lateral bound",
@@ -71543,12 +71543,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Lateral cone hops",
+          "preferred": "קפיצות צידיות מעל קונוסים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Lateral cone hops",
@@ -71875,12 +71875,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "שחרור עצמי של הרחב גבי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Latissimus dorsi-smr",
@@ -74460,12 +74460,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "טכניקת זינוק ליניארית בשלושה חלקים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Linear 3-part start technique",
@@ -74628,12 +74628,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "תרגיל תאוצה ליניארית מול קיר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Linear acceleration wall drill",
@@ -74988,12 +74988,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Log lift",
+          "preferred": "הרמת גזע",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Log lift",
@@ -75160,12 +75160,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "London bridges",
+          "preferred": "גשרי לונדון",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "London bridges",
@@ -75322,12 +75322,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Looking at ceiling",
+          "preferred": "הסתכלות לתקרה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Looking at ceiling",
@@ -81972,12 +81972,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Mixed grip chin",
+          "preferred": "מתח באחיזה מעורבת",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Mixed grip chin",
@@ -82141,12 +82141,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Monster walk",
+          "preferred": "הליכת מפלצת",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Monster walk",
@@ -82473,12 +82473,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Moving claw series",
+          "preferred": "סדרת ציפורניים בתנועה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Moving claw series",
@@ -82850,12 +82850,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Muscle up",
+          "preferred": "מאסל-אפ",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Muscle up",
@@ -83030,12 +83030,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "האק סקוואט בעמידה צרה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Narrow stance hack squats",
@@ -83387,12 +83387,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Narrow stance squats",
+          "preferred": "סקוואט בעמידה צרה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Narrow stance squats",
@@ -84070,12 +84070,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Oblique crunches",
+          "preferred": "כפיפות בטן אלכסוניות",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Oblique crunches",
@@ -90394,12 +90394,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "One half locust",
+          "preferred": "חצי תנוחת ארבה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "One half locust",
@@ -91260,12 +91260,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Otis-up",
+          "preferred": "כפיפת בטן אוטיס",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Otis-up",
@@ -93501,12 +93501,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Parallel bar dip",
+          "preferred": "דיפס על מוטות מקבילים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Parallel bar dip",
@@ -93826,12 +93826,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Peroneals-smr",
+          "preferred": "שחרור עצמי של השרירים השוקיים הצידיים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Peroneals-smr",
@@ -94342,12 +94342,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Pin presses",
+          "preferred": "לחיצה מהפינים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Pin presses",
@@ -94504,12 +94504,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Piriformis-smr",
+          "preferred": "שחרור עצמי של הפיריפורמיס",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Piriformis-smr",
@@ -94841,12 +94841,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Plate pinch",
+          "preferred": "צביטת פלטה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Plate pinch",
@@ -95182,12 +95182,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "החלקות המסטרינג על פלטפורמה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Platform hamstring slides",
@@ -97877,12 +97877,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "תרגיל המסטרינג ידני בשכיבה על הבטן",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Prone manual hamstring",
@@ -98047,12 +98047,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Prowler sprint",
+          "preferred": "ספרינט עם מזחלת פרולר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Prowler sprint",
@@ -98397,12 +98397,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Pullups",
+          "preferred": "מתח",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Pullups",
@@ -99807,12 +99807,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Pushups",
+          "preferred": "שכיבות סמיכה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Pushups",
@@ -100145,12 +100145,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Pyramid",
+          "preferred": "פירמידה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Pyramid",
@@ -100469,12 +100469,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "שחרור עצמי של הארבע-ראשי",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Quadriceps-smr",
@@ -100636,12 +100636,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Quick leap",
+          "preferred": "קפיצה מהירה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Quick leap",
@@ -100820,12 +100820,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Rack delivery",
+          "preferred": "העברה לעמדת ראק",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Rack delivery",
@@ -101181,12 +101181,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Rack pulls",
+          "preferred": "משיכה מהרק",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Rack pulls",
@@ -101510,12 +101510,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Recumbent bike",
+          "preferred": "אופניים בשכיבה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Recumbent bike",
@@ -104840,12 +104840,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "שחרור עצמי של השרירים המעוינים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Rhomboids-smr",
@@ -105023,12 +105023,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Rickshaw carry",
+          "preferred": "נשיאת ריקשה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Rickshaw carry",
@@ -105381,12 +105381,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Ring dips",
+          "preferred": "מקבילים על טבעות",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Ring dips",
@@ -107282,12 +107282,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Rowing, stationary",
+          "preferred": "חתירה נייחת",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Rowing, stationary",
@@ -107613,12 +107613,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Running, treadmill",
+          "preferred": "ריצה על הליכון",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Running, treadmill",
@@ -107977,12 +107977,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Sandbag load",
+          "preferred": "הרמת שק חול",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Sandbag load",
@@ -108317,12 +108317,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Scissor kick",
+          "preferred": "בעיטת מספריים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Scissor kick",
@@ -120368,12 +120368,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Sit squats",
+          "preferred": "סקוואט עד ישיבה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Sit squats",
@@ -120536,12 +120536,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Skating",
+          "preferred": "מחליק",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Skating",
@@ -121767,12 +121767,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "הנפות פטיש כבד",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Sledgehammer swings",
@@ -126758,12 +126758,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Speed squats",
+          "preferred": "סקוואט מהיר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Speed squats",
@@ -126929,12 +126929,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Spell caster",
@@ -127108,12 +127108,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Spider crawl",
+          "preferred": "זחילת עכביש",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Spider crawl",
@@ -129613,12 +129613,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Stairmaster",
@@ -137944,12 +137944,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Step mill",
+          "preferred": "מכשיר מדרגות",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Step mill",
@@ -138646,12 +138646,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Stomach vacuum",
+          "preferred": "ואקום בטני",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Stomach vacuum",
@@ -140244,12 +140244,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Superman",
+          "preferred": "סופרמן",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Superman",
@@ -142479,12 +142479,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Thigh abductor",
+          "preferred": "הרחקת ירך",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Thigh abductor",
@@ -142650,12 +142650,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Thigh adductor",
+          "preferred": "קירוב ירך",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Thigh adductor",
@@ -142842,12 +142842,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Tire flip",
+          "preferred": "הפיכת צמיג",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Tire flip",
@@ -143008,12 +143008,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Toe touchers",
+          "preferred": "נגיעות באצבעות הרגליים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Toe touchers",
@@ -143336,12 +143336,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Trail running/walking",
+          "preferred": "ריצת או הליכת שטח",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Trail running/walking",
@@ -147114,12 +147114,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "V-bar pulldown",
+          "preferred": "משיכה מטה עם מוט V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "V-bar pulldown",
@@ -147292,12 +147292,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "V-bar pullup",
+          "preferred": "מתח עם מוט V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "V-bar pullup",
@@ -147626,12 +147626,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Walking, treadmill",
+          "preferred": "הליכה על הליכון",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Walking, treadmill",
@@ -150953,12 +150953,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Wind sprints",
+          "preferred": "ספרינטים",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Wind sprints",
@@ -151120,12 +151120,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Windmills",
+          "preferred": "טחנות רוח",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Windmills",
@@ -151450,12 +151450,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Wrist circles",
+          "preferred": "סיבובי שורש כף היד",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Wrist circles",
@@ -151621,12 +151621,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Wrist roller",
+          "preferred": "גליל שורש כף היד",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Wrist roller",
@@ -151973,12 +151973,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Yoke walk",
+          "preferred": "הליכה עם מוט נשיאה",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Yoke walk",
@@ -152154,12 +152154,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Zercher squats",
+          "preferred": "סקוואט זרצ'ר",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Zercher squats",
@@ -161145,12 +161145,12 @@
           "reviewStatus": "provisional"
         },
         "he": {
-          "preferred": "Assisted dip",
+          "preferred": "מקבילים בסיוע",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ru": {
           "preferred": "Assisted dip",
