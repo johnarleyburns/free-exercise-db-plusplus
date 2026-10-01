@@ -22,8 +22,8 @@
   source provenance, review status, and deterministic locale fallback.
 - Add Spanish, German, Simplified Chinese, Traditional Chinese, Brazilian
   Portuguese, French, Japanese, Korean, Hindi, Arabic, Hebrew, Russian, Dutch,
-  and Italian catalogs covering all 927 records; untranslated fallbacks remain
-  explicitly marked.
+  and Italian catalogs covering all 927 records; provisional terminology and
+  accepted international names remain explicitly marked.
 - Add Python, Swift, and Kotlin localized-name lookup/search APIs, bundled
   resource parity, BCP-47 locale handling, and localization CI contracts.
 - Add the research/mobile localization plan and catalog evidence policy.
