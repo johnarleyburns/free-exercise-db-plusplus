@@ -4,11 +4,13 @@
   "supportedLocales": [
     "en",
     "es",
-    "de"
+    "de",
+    "zh-Hans"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
     "es": "translations/es.json",
-    "de": "translations/de.json"
+    "de": "translations/de.json",
+    "zh-Hans": "translations/zh-Hans.json"
   }
 }
