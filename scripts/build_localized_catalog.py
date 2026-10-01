@@ -129,6 +129,58 @@ PROFILES: dict[str, dict[str, Any]] = {
             "pistol": "a una pierna", "off of": "desde", "multiple": "múltiple", "response": "respuesta",
         },
     },
+    "de": {
+        "wgerLanguage": 1,
+        "phrases": {
+            "barbell bench press": "Langhantel-Bankdrücken", "dumbbell bench press": "Kurzhantel-Bankdrücken",
+            "bench press": "Bankdrücken", "shoulder press": "Schulterdrücken", "chest press": "Brustpresse",
+            "leg press": "Beinpresse", "lat pulldown": "Latzug", "pull up": "Klimmzug", "pull-up": "Klimmzug",
+            "chin up": "Klimmzug im Untergriff", "chin-up": "Klimmzug im Untergriff", "push up": "Liegestütz",
+            "push-up": "Liegestütz", "sit up": "Sit-up", "sit-up": "Sit-up", "deadlift": "Kreuzheben",
+            "front raise": "Frontheben", "lateral raise": "Seitheben", "rear delt raise": "vorgebeugtes Seitheben",
+            "calf raise": "Wadenheben", "leg extension": "Beinstrecken", "leg curl": "Beinbeugen",
+            "triceps extension": "Trizepsstrecken", "biceps curl": "Bizepscurl", "good morning": "Good Morning",
+            "hip thrust": "Hip Thrust", "glute bridge": "Glute Bridge", "cable crossover": "Kabelzug über Kreuz",
+            "chest fly": "Fliegende", "chest flyes": "Fliegende", "reverse fly": "Reverse Fly",
+            "barbell row": "Langhantelrudern", "dumbbell row": "Kurzhantelrudern", "cable row": "Kabelrudern",
+            "upright row": "aufrechtes Rudern", "hammer curl": "Hammercurl", "skull crusher": "French Press",
+            "triceps pushdown": "Trizepsdrücken am Kabel", "overhead triceps extension": "Trizepsstrecken über Kopf",
+            "box jump": "Boxsprung", "jump squat": "Sprungkniebeuge", "walking lunge": "Ausfallschritte im Gehen",
+            "reverse lunge": "umgekehrter Ausfallschritt", "split squat": "Split Squat",
+            "bulgarian split squat": "Bulgarische Split Squat", "front squat": "Frontkniebeuge",
+            "back squat": "Kniebeuge", "overhead squat": "Overhead Squat", "kettlebell swing": "Kettlebell-Swing",
+            "clean and jerk": "Umsetzen und Stoßen", "power clean": "Umsetzen", "snatch": "Reißen",
+            "shrug": "Shrug", "side bend": "Seitbeugen", "russian twist": "Russian Twist", "plank": "Plank",
+            "crunch": "Crunch", "stretch": "Dehnung",
+        },
+        "words": {
+            "barbell": "Langhantel", "dumbbell": "Kurzhantel", "kettlebell": "Kettlebell", "cable": "Kabel",
+            "machine": "Maschine", "band": "Band", "bands": "Bänder", "bodyweight": "Körpergewicht",
+            "medicine ball": "Medizinball", "exercise ball": "Gymnastikball", "bench": "Bank",
+            "seated": "sitzend", "standing": "stehend", "lying": "liegend", "incline": "Schräg",
+            "decline": "negativ", "close-grip": "enger Griff", "close grip": "enger Griff",
+            "wide-grip": "weiter Griff", "wide grip": "weiter Griff", "medium grip": "mittlerer Griff",
+            "alternating": "abwechselnd", "alternate": "abwechselnd", "one-arm": "einarmig", "one arm": "einarmig",
+            "two-arm": "beidarmig", "two arm": "beidarmig", "reverse": "umgekehrt", "front": "vorderes",
+            "rear": "hinteres", "side": "seitlich", "rotation": "Rotation", "rotations": "Rotationen",
+            "twist": "Drehung", "curl": "Curl", "extension": "Strecken", "raise": "Heben", "row": "Rudern",
+            "press": "Drücken", "squat": "Kniebeuge", "lunge": "Ausfallschritt", "deadlift": "Kreuzheben",
+            "flyes": "Fliegende", "fly": "Fliegende", "pullover": "Pullover", "pull": "Ziehen", "push": "Drücken",
+            "jump": "Sprung", "jumps": "Sprünge", "stretch": "Dehnung", "bridge": "Brücke", "clean": "Umsetzen",
+            "jerk": "Stoßen", "swing": "Schwingen", "calf": "Wade", "hip": "Hüfte", "glute": "Gesäß",
+            "shoulder": "Schulter", "chest": "Brust", "back": "Rücken", "leg": "Bein", "legs": "Beine",
+            "arm": "Arm", "arms": "Arme", "ab": "Bauch", "abs": "Bauchmuskeln", "with": "mit", "from": "aus",
+            "on": "auf", "to": "zu", "the": "der", "and": "und", "kneeling": "kniend", "weighted": "mit Gewicht",
+            "overhead": "über Kopf", "behind the neck": "hinter dem Nacken", "behind the head": "hinter dem Kopf",
+            "bent over": "vorgebeugt", "power": "Power", "sled": "Schlitten", "rope": "Seil", "split": "geteilte",
+            "suspended": "hängend", "double": "doppelt", "single": "einzeln", "single-leg": "einbeinig",
+            "high-to-low": "von oben nach unten", "flat-bench": "Flachbank", "floor": "Boden", "hang": "Hängen",
+            "bicep": "Bizeps", "tricep": "Trizeps", "deltoid": "Deltamuskel", "heel touchers": "Fersenberührungen",
+            "renegade": "Renegade", "jackknife": "Klappmesser", "ez-bar": "SZ-Stange", "ez bar": "SZ-Stange",
+            "high": "hoch", "low": "tief", "neck": "Nacken", "stiff-legged": "mit gestreckten Beinen",
+            "pistol": "einbeinig", "off of": "von", "multiple": "mehrfach", "response": "Reaktion",
+        },
+    },
 }
 
 
@@ -153,7 +205,7 @@ def load_wger(path: Path | None, language: int) -> dict[str, str]:
     return result
 
 
-def compose(source_name: str, profile: dict[str, Any]) -> str:
+def compose(source_name: str, profile: dict[str, Any], locale: str) -> str:
     text = normalize(source_name)
     for source, target in sorted(profile["phrases"].items(), key=lambda item: len(item[0]), reverse=True):
         text = re.sub(rf"\b{re.escape(source)}\b", target, text)
@@ -161,7 +213,7 @@ def compose(source_name: str, profile: dict[str, Any]) -> str:
         text = re.sub(rf"\b{re.escape(source)}\b", target, text)
     text = re.sub(r"\s+", " ", text).strip(" -")
     text = re.sub(r"\s+-\s*", " — ", text)
-    if profile is PROFILES["es"]:
+    if locale == "es":
         # Spanish gym naming normally places the implement after the movement,
         # e.g. "peso muerto con barra", rather than "barra peso muerto".
         suffixes = (("barra", "con barra"), ("mancuerna", "con mancuerna"),
@@ -178,6 +230,14 @@ def compose(source_name: str, profile: dict[str, Any]) -> str:
         text = re.sub(r"^con peso (.+)$", r"\1 con peso", text)
         for modifier in ("inclinado", "declinado", "frontal", "posterior", "inverso", "lateral"):
             text = re.sub(rf"^{modifier} (.+)$", rf"\1 {modifier}", text)
+    elif locale == "de":
+        text = re.sub(r"^langhantel (.+)$", r"\1 mit Langhantel", text, flags=re.IGNORECASE)
+        text = re.sub(r"^kurzhantel (.+)$", r"\1 mit Kurzhanteln", text, flags=re.IGNORECASE)
+        text = re.sub(r"^enger griff (.+)$", r"\1 mit engem Griff", text, flags=re.IGNORECASE)
+        text = re.sub(r"^weiter griff (.+)$", r"\1 mit weitem Griff", text, flags=re.IGNORECASE)
+        text = re.sub(r"^mittlerer griff (.+)$", r"\1 mit mittlerem Griff", text, flags=re.IGNORECASE)
+        text = re.sub(r"^abwechselnd (.+)$", r"\1 abwechselnd", text, flags=re.IGNORECASE)
+        text = re.sub(r"^smith maschine (.+)$", r"\1 an der Smith-Maschine", text, flags=re.IGNORECASE)
     return text[:1].upper() + text[1:]
 
 
@@ -193,7 +253,7 @@ def build(locale: str, wger_path: Path | None) -> dict[str, Any]:
             preferred = localized
             source_refs = ["wger-api"]
         else:
-            preferred = compose(source_name, profile)
+            preferred = compose(source_name, profile, locale)
             source_refs = ["repo-domain-terminology"]
         entries[exercise_id] = {
             "preferred": preferred,

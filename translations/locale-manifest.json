@@ -3,10 +3,12 @@
   "defaultLocale": "en",
   "supportedLocales": [
     "en",
-    "es"
+    "es",
+    "de"
   ],
   "fallbackPolicy": "locale -> base language -> en",
   "catalogs": {
-    "es": "translations/es.json"
+    "es": "translations/es.json",
+    "de": "translations/de.json"
   }
 }
