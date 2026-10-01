@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-10-01T16:32:25.593085+00:00",
+    "generatedAt": "2026-10-01T16:34:20.667712+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -1194,11 +1194,11 @@
         },
         "fr": {
           "source": "translations/fr.json",
-          "sha256": "5bb370e7c934c40e68f21a07a536aa463e7f174a5ab524b373b62c664d24d491",
+          "sha256": "387cf8eaaf6b13039edd277eb0f155b952c8627dbd965fccee68eba5668382f2",
           "entryCount": 927,
           "reviewedCount": 0,
-          "provisionalCount": 771,
-          "untranslatedCount": 156
+          "provisionalCount": 927,
+          "untranslatedCount": 0
         },
         "ja": {
           "source": "translations/ja.json",
@@ -1557,12 +1557,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "90/90 hamstring",
+          "preferred": "Ischio-jambiers 90/90",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "90/90 hamstring",
@@ -2060,12 +2060,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Adductor",
+          "preferred": "Adducteurs",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Adductor",
@@ -2224,12 +2224,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Adductor/groin",
+          "preferred": "Adducteurs/aine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Adductor/groin",
@@ -2404,12 +2404,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Advanced kettlebell windmill",
+          "preferred": "Moulin avancé avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Advanced ケトルベル windmill",
@@ -2574,12 +2574,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Air bike",
+          "preferred": "Vélo à résistance à air",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Air bike",
@@ -4821,12 +4821,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Ankle circles",
+          "preferred": "Cercles de chevilles",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Ankle circles",
@@ -5146,12 +5146,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Anterior tibialis-smr",
+          "preferred": "Auto-massage du tibial antérieur",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Anterior tibialis-smr",
@@ -6021,12 +6021,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Atlas stone trainer",
+          "preferred": "Entraînement avec pierre Atlas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Atlas stone trainer",
@@ -6214,12 +6214,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Atlas stones",
+          "preferred": "Pierres Atlas",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Atlas stones",
@@ -6758,12 +6758,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Backward drag",
+          "preferred": "Traction arrière",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Backward drag",
@@ -7088,12 +7088,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Balance board",
+          "preferred": "Planche d’équilibre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Balance board",
@@ -13054,12 +13054,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Battling ropes",
+          "preferred": "Cordes ondulatoires",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Battling ropes",
@@ -16562,12 +16562,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Bicycling",
+          "preferred": "Vélo",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Bicycling",
@@ -16728,12 +16728,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Bicycling, stationary",
+          "preferred": "Vélo stationnaire",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Bicycling, stationary",
@@ -17077,12 +17077,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Body-up",
+          "preferred": "Relevé du corps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Body-up",
@@ -18472,12 +18472,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Bottoms up",
+          "preferred": "Kettlebell base vers le haut",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Bottoms up",
@@ -18812,12 +18812,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Box skip",
+          "preferred": "Saut alterné sur box",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Box skip",
@@ -18995,12 +18995,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Box squat",
+          "preferred": "Squat sur box",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Box スクワット",
@@ -19524,12 +19524,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Brachialis-smr",
+          "preferred": "Auto-massage du brachial",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Brachialis-smr",
@@ -19700,12 +19700,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Bradford/rocky presses",
+          "preferred": "Développés Bradford/Rocky",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Bradford/rocky presses",
@@ -19869,12 +19869,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Butt-ups",
+          "preferred": "Relevés de bassin",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Butt-ups",
@@ -20218,7 +20218,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Butterfly",
@@ -25676,12 +25676,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Calves-smr",
+          "preferred": "Auto-massage des mollets",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Calves-smr",
@@ -26030,12 +26030,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Car drivers",
+          "preferred": "Rotations de volant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Car drivers",
@@ -26200,12 +26200,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Carioca quick step",
+          "preferred": "Pas chassés carioca rapides",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Carioca quick step",
@@ -26702,12 +26702,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Chain handle extension",
+          "preferred": "Extension avec poignée à chaîne",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Chain handle エクステンション",
@@ -27389,12 +27389,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Chair squat",
+          "preferred": "Squat sur chaise",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Chair スクワット",
@@ -29248,12 +29248,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Circus bell",
+          "preferred": "Cloche de cirque",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Circus bell",
@@ -32304,12 +32304,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Cocoons",
+          "preferred": "Crunchs en cocon",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Cocoons",
@@ -32490,12 +32490,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Conan's wheel",
+          "preferred": "Roue de Conan",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Conan's wheel",
@@ -32663,12 +32663,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Concentration curls",
+          "preferred": "Curl concentré",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Concentration curls",
@@ -32832,12 +32832,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Cross-body crunch",
+          "preferred": "Crunch croisé",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Cross-body クランチ",
@@ -33522,7 +33522,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Crucifix",
@@ -34541,7 +34541,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Dead bug",
@@ -37327,12 +37327,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Dip machine",
+          "preferred": "Dips à la machine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Dip マシン",
@@ -37675,12 +37675,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Dips — triceps version",
+          "preferred": "Dips — variante triceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Dips — triceps version",
@@ -38759,12 +38759,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Double kettlebell windmill",
+          "preferred": "Moulin avec deux kettlebells",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ダブル ケトルベル windmill",
@@ -39099,12 +39099,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Downward facing balance",
+          "preferred": "Équilibre ventral",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Downward facing balance",
@@ -39272,12 +39272,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Drag curl",
+          "preferred": "Curl en traînée",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Drag カール",
@@ -45486,12 +45486,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Elbow circles",
+          "preferred": "Cercles de coudes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Elbow circles",
@@ -46341,12 +46341,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Elliptical trainer",
+          "preferred": "Vélo elliptique",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Elliptical trainer",
@@ -47021,12 +47021,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "External rotation",
+          "preferred": "Rotation externe",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "External ローテーション",
@@ -47715,12 +47715,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Farmer's walk",
+          "preferred": "Marche du fermier",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Farmer's walk",
@@ -47884,12 +47884,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Fast skipping",
+          "preferred": "Corde à sauter rapide",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Fast skipping",
@@ -48054,12 +48054,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Finger curls",
+          "preferred": "Flexions des doigts",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Finger curls",
@@ -49597,12 +49597,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Foot-smr",
+          "preferred": "Auto-massage du pied",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Foot-smr",
@@ -49967,12 +49967,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Frankenstein squat",
+          "preferred": "Squat Frankenstein",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Frankenstein スクワット",
@@ -50314,12 +50314,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Frog hops",
+          "preferred": "Sauts de grenouille",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Frog hops",
@@ -50485,12 +50485,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Frog sit-ups",
+          "preferred": "Relevés de buste grenouille",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Frog sit-ups",
@@ -53074,12 +53074,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Gironda sternum chins",
+          "preferred": "Tractions sternum de Gironda",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Gironda sternum chins",
@@ -53602,12 +53602,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Goblet squat",
+          "preferred": "Squat gobelet",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Goblet スクワット",
@@ -53784,7 +53784,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "グッドモーニング",
@@ -54127,12 +54127,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Gorilla chin/crunch",
+          "preferred": "Traction/crunch gorille",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Gorilla chin/クランチ",
@@ -54453,12 +54453,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Groiners",
+          "preferred": "Étirement dynamique des adducteurs",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Groiners",
@@ -54638,7 +54638,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hack スクワット",
@@ -55143,12 +55143,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Hamstring-smr",
+          "preferred": "Auto-massage des ischio-jambiers",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hamstring-smr",
@@ -56421,12 +56421,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Hanging bar good morning",
+          "preferred": "Good morning suspendu à la barre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hanging bar グッドモーニング",
@@ -56760,12 +56760,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Hanging pike",
+          "preferred": "Pike suspendu",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hanging pike",
@@ -57112,12 +57112,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Heavy bag thrust",
+          "preferred": "Poussée avec sac lourd",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Heavy bag thrust",
@@ -58134,12 +58134,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Hug a ball",
+          "preferred": "Étreindre un ballon",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hug a ball",
@@ -58469,12 +58469,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Hurdle hops",
+          "preferred": "Sauts de haies",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Hurdle hops",
@@ -59145,12 +59145,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Iliotibial tract-smr",
+          "preferred": "Auto-massage du tractus ilio-tibial",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Iliotibial tract-smr",
@@ -59310,12 +59310,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Inchworm",
+          "preferred": "Ver de terre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Inchworm",
@@ -63280,12 +63280,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Iron cross",
+          "preferred": "Croix de fer",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Iron cross",
@@ -64821,12 +64821,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Jefferson squats",
+          "preferred": "Squat Jefferson",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Jefferson squats",
@@ -65348,12 +65348,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Jogging, treadmill",
+          "preferred": "Jogging sur tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Jogging, treadmill",
@@ -65541,12 +65541,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Keg load",
+          "preferred": "Chargement de tonneau",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Keg load",
@@ -66075,12 +66075,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell figure 8",
+          "preferred": "Huit avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル figure 8",
@@ -66793,12 +66793,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell pirate ships",
+          "preferred": "Bateaux pirates avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル pirate ships",
@@ -66973,12 +66973,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell pistol squat",
+          "preferred": "Pistol squat avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル pistol スクワット",
@@ -67685,12 +67685,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell thruster",
+          "preferred": "Thruster avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル thruster",
@@ -68043,12 +68043,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell turkish get-up squat style",
+          "preferred": "Turkish get-up avec kettlebell, style squat",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル turkish get-up スクワット style",
@@ -68223,12 +68223,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kettlebell windmill",
+          "preferred": "Moulin avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "ケトルベル windmill",
@@ -68413,12 +68413,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Kipping muscle up",
+          "preferred": "Muscle-up avec impulsion",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Kipping muscle up",
@@ -68744,12 +68744,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Knee circles",
+          "preferred": "Cercles de genoux",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Knee circles",
@@ -70805,12 +70805,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Landmine 180's",
+          "preferred": "Rotation à 180 degrés avec landmine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Landmine 180's",
@@ -70991,12 +70991,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Landmine linear jammer",
+          "preferred": "Poussée linéaire avec landmine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Landmine linear jammer",
@@ -71162,12 +71162,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Lateral bound",
+          "preferred": "Bond latéral",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Lateral bound",
@@ -71503,12 +71503,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Lateral cone hops",
+          "preferred": "Sauts latéraux par-dessus des cônes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Lateral cone hops",
@@ -71835,12 +71835,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Latissimus dorsi-smr",
+          "preferred": "Auto-massage du grand dorsal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Latissimus dorsi-smr",
@@ -74420,12 +74420,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Linear 3-part start technique",
+          "preferred": "Technique de départ linéaire en trois parties",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Linear 3-part start technique",
@@ -74588,12 +74588,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Linear acceleration wall drill",
+          "preferred": "Exercice d’accélération linéaire au mur",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Linear acceleration wall drill",
@@ -74948,12 +74948,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Log lift",
+          "preferred": "Épaulé de tronc",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Log lift",
@@ -75120,12 +75120,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "London bridges",
+          "preferred": "Ponts de Londres",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "London bridges",
@@ -75282,12 +75282,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Looking at ceiling",
+          "preferred": "Regarder le plafond",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Looking at ceiling",
@@ -80575,12 +80575,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Machine preacher curls",
+          "preferred": "Curl pupitre à la machine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "マシン preacher curls",
@@ -81932,12 +81932,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Mixed grip chin",
+          "preferred": "Traction en prise mixte",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Mixed grip chin",
@@ -82101,12 +82101,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Monster walk",
+          "preferred": "Marche du monstre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Monster walk",
@@ -82433,12 +82433,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Moving claw series",
+          "preferred": "Série de griffes en mouvement",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Moving claw series",
@@ -82990,12 +82990,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Narrow stance hack squats",
+          "preferred": "Hack squat en position étroite",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Narrow stance hack squats",
@@ -83347,12 +83347,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Narrow stance squats",
+          "preferred": "Squat en position étroite",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Narrow stance squats",
@@ -84030,12 +84030,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Oblique crunches",
+          "preferred": "Crunchs obliques",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Oblique crunches",
@@ -84379,12 +84379,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Olympic squat",
+          "preferred": "Squat olympique",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Olympic スクワット",
@@ -90354,12 +90354,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "One half locust",
+          "preferred": "Demi-sauterelle",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "One half locust",
@@ -91220,12 +91220,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Otis-up",
+          "preferred": "Crunch Otis",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Otis-up",
@@ -93461,12 +93461,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Parallel bar dip",
+          "preferred": "Dips aux barres parallèles",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Parallel bar dip",
@@ -93786,12 +93786,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Peroneals-smr",
+          "preferred": "Auto-massage des péroniers",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Peroneals-smr",
@@ -94302,12 +94302,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Pin presses",
+          "preferred": "Développé depuis les supports",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Pin presses",
@@ -94464,12 +94464,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Piriformis-smr",
+          "preferred": "Auto-massage du piriforme",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Piriformis-smr",
@@ -94801,12 +94801,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Plate pinch",
+          "preferred": "Pince de disques",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Plate pinch",
@@ -95142,12 +95142,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Platform hamstring slides",
+          "preferred": "Glissements des ischio-jambiers sur plateforme",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Platform hamstring slides",
@@ -95496,12 +95496,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Plyo kettlebell pushups",
+          "preferred": "Pompes pliométriques avec kettlebell",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Plyo ケトルベル pushups",
@@ -97324,12 +97324,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Preacher curl",
+          "preferred": "Curl au pupitre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Preacher カール",
@@ -97837,12 +97837,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Prone manual hamstring",
+          "preferred": "Travail manuel des ischio-jambiers en position ventrale",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Prone manual hamstring",
@@ -98007,12 +98007,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Prowler sprint",
+          "preferred": "Sprint avec traîneau Prowler",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Prowler sprint",
@@ -98357,12 +98357,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Pullups",
+          "preferred": "Tractions",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Pullups",
@@ -99767,12 +99767,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Pushups",
+          "preferred": "Pompes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Pushups",
@@ -100105,12 +100105,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Pyramid",
+          "preferred": "Pyramide",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Pyramid",
@@ -100429,12 +100429,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Quadriceps-smr",
+          "preferred": "Auto-massage des quadriceps",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Quadriceps-smr",
@@ -100596,12 +100596,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Quick leap",
+          "preferred": "Saut rapide",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Quick leap",
@@ -100780,12 +100780,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Rack delivery",
+          "preferred": "Réception en position rack",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Rack delivery",
@@ -101141,12 +101141,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Rack pulls",
+          "preferred": "Soulevé de terre depuis les supports",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Rack pulls",
@@ -101470,12 +101470,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Recumbent bike",
+          "preferred": "Vélo couché",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Recumbent bike",
@@ -104800,12 +104800,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Rhomboids-smr",
+          "preferred": "Auto-massage des rhomboïdes",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Rhomboids-smr",
@@ -104983,12 +104983,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Rickshaw carry",
+          "preferred": "Marche avec rickshaw",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Rickshaw carry",
@@ -105341,12 +105341,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Ring dips",
+          "preferred": "Dips aux anneaux",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Ring dips",
@@ -107242,12 +107242,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Rowing, stationary",
+          "preferred": "Rameur stationnaire",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Rowing, stationary",
@@ -107573,12 +107573,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Running, treadmill",
+          "preferred": "Course sur tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Running, treadmill",
@@ -107937,12 +107937,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Sandbag load",
+          "preferred": "Chargement de sac de sable",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Sandbag load",
@@ -108277,12 +108277,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Scissor kick",
+          "preferred": "Battements en ciseaux",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Scissor kick",
@@ -120328,12 +120328,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Sit squats",
+          "preferred": "Squat jusqu’à la chaise",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Sit squats",
@@ -120496,12 +120496,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Skating",
+          "preferred": "Patineur",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Skating",
@@ -121727,12 +121727,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Sledgehammer swings",
+          "preferred": "Balancements de masse",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Sledgehammer swings",
@@ -124183,12 +124183,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Smith machine pistol squat",
+          "preferred": "Pistol squat à la machine Smith",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Smith マシン pistol スクワット",
@@ -126536,12 +126536,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Speed box squat",
+          "preferred": "Box squat dynamique",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Speed box スクワット",
@@ -126718,12 +126718,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Speed squats",
+          "preferred": "Squats de vitesse",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Speed squats",
@@ -126889,12 +126889,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Spell caster",
+          "preferred": "Spell Caster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Spell caster",
@@ -127068,12 +127068,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Spider crawl",
+          "preferred": "Marche de l’araignée",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Spider crawl",
@@ -127246,7 +127246,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Spider カール",
@@ -129573,12 +129573,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Stairmaster",
+          "preferred": "StairMaster",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Stairmaster",
@@ -137904,12 +137904,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Step mill",
+          "preferred": "Escalier ergométrique",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Step mill",
@@ -138606,12 +138606,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Stomach vacuum",
+          "preferred": "Vacuum abdominal",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Stomach vacuum",
@@ -140209,7 +140209,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Superman",
@@ -142439,12 +142439,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Thigh abductor",
+          "preferred": "Abduction de cuisse",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Thigh abductor",
@@ -142610,12 +142610,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Thigh adductor",
+          "preferred": "Adduction de cuisse",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Thigh adductor",
@@ -142802,12 +142802,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Tire flip",
+          "preferred": "Retournement de pneu",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Tire flip",
@@ -142968,12 +142968,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Toe touchers",
+          "preferred": "Toucher les orteils",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Toe touchers",
@@ -143130,12 +143130,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Torso rotation",
+          "preferred": "Rotation du torse",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Torso ローテーション",
@@ -143296,12 +143296,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Trail running/walking",
+          "preferred": "Course ou marche sur sentier",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Trail running/walking",
@@ -144816,12 +144816,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Tuck crunch",
+          "preferred": "Crunch groupé",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Tuck クランチ",
@@ -147074,12 +147074,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "V-bar pulldown",
+          "preferred": "Tirage vertical avec barre en V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "V-bar pulldown",
@@ -147252,12 +147252,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "V-bar pullup",
+          "preferred": "Traction avec barre en V",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "V-bar pullup",
@@ -147586,12 +147586,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Walking, treadmill",
+          "preferred": "Marche sur tapis roulant",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Walking, treadmill",
@@ -150913,12 +150913,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Wind sprints",
+          "preferred": "Sprints",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Wind sprints",
@@ -151080,12 +151080,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Windmills",
+          "preferred": "Moulins à vent",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Windmills",
@@ -151410,12 +151410,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Wrist circles",
+          "preferred": "Cercles de poignets",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Wrist circles",
@@ -151581,12 +151581,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Wrist roller",
+          "preferred": "Rouleau de poignets",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Wrist roller",
@@ -151933,12 +151933,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Yoke walk",
+          "preferred": "Marche avec joug",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Yoke walk",
@@ -152114,12 +152114,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Zercher squats",
+          "preferred": "Squat Zercher",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Zercher squats",
@@ -152293,7 +152293,7 @@
           "preferred": "Curl Zottman",
           "aliases": [],
           "sourceRefs": [
-            "wger-api"
+            "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
         },
@@ -152464,12 +152464,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Zottman preacher curl",
+          "preferred": "Curl Zottman au pupitre",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Zottman preacher カール",
@@ -159218,12 +159218,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Machine rotary torso",
+          "preferred": "Rotation du torse à la machine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "マシン rotary torso",
@@ -159384,12 +159384,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Machine oblique crunch",
+          "preferred": "Crunch oblique à la machine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "マシン oblique クランチ",
@@ -160082,7 +160082,7 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "V-スクワット",
@@ -160247,12 +160247,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Pendulum squat",
+          "preferred": "Squat pendulaire",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Pendulum スクワット",
@@ -161105,12 +161105,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Assisted dip",
+          "preferred": "Dips assistés",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "Assisted dip",
@@ -161609,12 +161609,12 @@
           "reviewStatus": "provisional"
         },
         "fr": {
-          "preferred": "Machine tibialis dorsiflexion",
+          "preferred": "Dorsiflexion du tibial à la machine",
           "aliases": [],
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "untranslated"
+          "reviewStatus": "provisional"
         },
         "ja": {
           "preferred": "マシン tibialis dorsiflexion",
