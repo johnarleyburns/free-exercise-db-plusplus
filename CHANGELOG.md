@@ -16,7 +16,7 @@
 
 # Changelog
 
-## 1.18.0 (unreleased)
+## 1.18.1 - 2026-11-02
 
 - Add locale-aware exercise names and aliases with stable canonical exercise IDs,
   source provenance, review status, and deterministic locale fallback.
@@ -27,6 +27,8 @@
 - Add Python, Swift, and Kotlin localized-name lookup/search APIs, bundled
   resource parity, BCP-47 locale handling, and localization CI contracts.
 - Add the research/mobile localization plan and catalog evidence policy.
+- Harden release CI for the current runner toolchains and make Swift fixture
+  discovery independent of the XCTest process working directory.
 
 ## 1.17.1 - 2026-09-29
 

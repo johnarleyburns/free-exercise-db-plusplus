@@ -40,7 +40,7 @@ oracle. Swift, Kotlin, and R consume the same canonical fixtures.
 
 ## Localized exercise names
 
-The v1.18.0 database preserves canonical English exercise IDs while exposing
+The v1.18.1 database preserves canonical English exercise IDs while exposing
 locale-specific `preferred`, `aliases`, `searchOnly`, `sourceRefs`, and
 `reviewStatus` values. Supported locale tags are:
 
