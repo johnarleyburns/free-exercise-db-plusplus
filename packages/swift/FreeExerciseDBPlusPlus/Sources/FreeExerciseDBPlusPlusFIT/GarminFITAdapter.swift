@@ -52,7 +52,7 @@ public struct GarminFITAdapter: Sendable {
         }
         if chunks.isEmpty { chunks = [""] }
         var descriptions: [FieldDescriptionMesg] = []
-        var fields: [DeveloperField] = []
+        var developerFields: [DeveloperField] = []
         for (index, chunk) in chunks.enumerated() {
             let description = FieldDescriptionMesg()
             try description.setDeveloperDataIndex(0)
@@ -63,7 +63,7 @@ public struct GarminFITAdapter: Sendable {
             try description.setNativeMesgNum(.session)
             let field = DeveloperField(fieldDescription: description, developerDataIdMesg: developerId)
             try field.setValue(index: 0, value: chunk)
-            descriptions.append(description); fields.append(field)
+            descriptions.append(description); developerFields.append(field)
         }
 
         let serial = stableSerialNumber(sessionId)
@@ -75,7 +75,7 @@ public struct GarminFITAdapter: Sendable {
         try fileId.setSerialNumber(serial)
 
         let device = DeviceInfoMesg()
-        try device.setDeviceIndex(.creator)
+        try device.setDeviceIndex(DeviceIndexValues.creator)
         try device.setManufacturer(.development)
         try device.setProduct(0)
         try device.setProductName("FEDB++")
@@ -88,14 +88,14 @@ public struct GarminFITAdapter: Sendable {
         let lap = LapMesg()
         try lap.setMessageIndex(0); try lap.setTimestamp(end); try lap.setStartTime(start)
         try lap.setTotalElapsedTime(elapsed); try lap.setTotalTimerTime(elapsed)
-        try lap.setSport(.strengthTraining); try lap.setSubSport(.strengthTraining)
+        try lap.setSport(.training); try lap.setSubSport(.strengthTraining)
 
         let session = SessionMesg()
         try session.setMessageIndex(0); try session.setTimestamp(end); try session.setStartTime(start)
         try session.setTotalElapsedTime(elapsed); try session.setTotalTimerTime(elapsed)
-        try session.setSport(.strengthTraining); try session.setSubSport(.strengthTraining)
+        try session.setSport(.training); try session.setSubSport(.strengthTraining)
         try session.setFirstLapIndex(0); try session.setNumLaps(1)
-        fields.forEach { session.setDeveloperField($0) }
+        developerFields.forEach { session.setDeveloperField($0) }
 
         let eventStop = EventMesg()
         try eventStop.setTimestamp(end); try eventStop.setEvent(.timer); try eventStop.setEventType(.stopAll)
