@@ -3,8 +3,7 @@ import XCTest
 
 final class PlanAnalysisTests: XCTestCase {
     func testPlanEvaluationMatchesPythonGoldenFixture() throws {
-        let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-            .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        let root = repositoryRoot()
         let decoder = JSONDecoder()
         let input = try decoder.decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/evaluation/input.json")))
         let plan = try XCTUnwrap(input.objectValue?["plan"])

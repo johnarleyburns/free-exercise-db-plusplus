@@ -2,6 +2,25 @@ import XCTest
 
 @testable import FreeExerciseDBPlusPlus
 
+/// Locate the repository from either a SwiftPM test bundle or a direct CLI run.
+/// SwiftPM may launch the XCTest binary outside the checkout, so the process
+/// working directory alone is not a reliable fixture anchor.
+func repositoryRoot() -> URL {
+  let candidates = [
+    URL(fileURLWithPath: #filePath),
+    URL(fileURLWithPath: FileManager.default.currentDirectoryPath),
+  ]
+  if let root = candidates.lazy
+    .flatMap({ url in sequence(first: url, next: { $0.deletingLastPathComponent() }) })
+    .first(where: { url in
+      FileManager.default.fileExists(atPath: url.appendingPathComponent("free-exercise-db-plusplus.json").path)
+        && FileManager.default.fileExists(atPath: url.appendingPathComponent("fixtures/cross-language").path)
+    }) {
+    return root
+  }
+  fatalError("Unable to locate the Free Exercise DB++ repository fixtures")
+}
+
 final class FreeExerciseDBPlusPlusTests: XCTestCase {
   func testEngineValueCanCrossConcurrencyBoundary() async throws {
     let engine = TrainingEngine(database: FEDatabase(exercises: [:]))
@@ -21,8 +40,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     }
 
   func testDatabaseLoadsAndQueries() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let db = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
     XCTAssertGreaterThan(db.count, 800)
     XCTAssertEqual(try db.getExercise("Bench_Dips").exerciseId, "Bench_Dips")
@@ -137,8 +155,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testExerciseStatePreservesPythonPerformanceFields() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let history = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/history/input.json")))
     let state = deriveTrainingState(history, asOf: "2026-08-27T12:00:00-04:00")
     let exercise = state.objectValue?["exerciseState"]?.objectValue?["Barbell_Bench_Press_-_Medium_Grip"]?.objectValue
@@ -203,8 +220,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testProgressionCasesMatchPythonGoldenFixture() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/progression/input.json")))
     let expected = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/progression/expected.json")))
     guard case .array(let cases)? = input.objectValue?["cases"], let parameters = input.objectValue?["parameters"] else { return XCTFail("invalid progression fixture") }
@@ -227,8 +243,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testTypedCoreDomainDocumentsDecodeAndRoundTrip() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let decoder = JSONDecoder()
     let target = try decoder.decode(VolumeTarget.self, from: Data(contentsOf: root.appendingPathComponent("examples/targets/example-hypertrophy.json")))
     XCTAssertEqual(target.muscles["chest"]?.min, 8)
@@ -241,8 +256,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testTypedTrainingHistoryDecodesCanonicalActualLinkage() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let decoder = JSONDecoder()
     let history = try decoder.decode(TrainingHistory.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/history-aware/history.json")))
     XCTAssertEqual(history.subjectId, "fixture-subject")
@@ -256,8 +270,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testTypedActualSupportsSubstitutionAndUnplannedWork() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let workout = try JSONDecoder().decode(Workout.self, from: Data(contentsOf: root.appendingPathComponent("examples/workouts/plan-linked.json")))
     XCTAssertEqual(workout.exercises[1].substitution?.plannedPrescriptionId, "upper-a-row")
     XCTAssertFalse(workout.exercises[1].isUnplanned)
@@ -284,8 +297,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     XCTAssertEqual(workout.effectiveSets(using: db)["triceps"], 0.5)
   }
   func testRelationshipArtifactLookup() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let relationships = try ExerciseRelationships.load(
       url: root.appendingPathComponent("exercise-relationships.json"))
     XCTAssertEqual(relationships.family(for: "Dumbbell_Bench_Press")?.familyId, "bench_press")
@@ -293,8 +305,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
       relationships.members(of: "bench_press").contains("Barbell_Bench_Press_-_Medium_Grip"))
   }
   func testPlanConsumerDecodesPeriodizedPlan() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let plan = try WorkoutPlan.load(
       url: root.appendingPathComponent("examples/plans/periodized-0.2.json"))
     XCTAssertEqual(plan.schemaVersion, "0.2.0")
@@ -320,8 +331,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testWorkoutIntentResolutionUsesCanonicalWeekdaysAndOverrides() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let url = root.appendingPathComponent(
       "fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")
     let intent = try JSONDecoder().decode(WorkoutIntent.self, from: Data(contentsOf: url))
@@ -385,8 +395,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testWorkoutIntentHistoryAndDraftHonorCanonicalWindowAndDays() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let fixture = root.appendingPathComponent("fixtures/cross-language/intent/history-aware")
     let intent = try JSONDecoder().decode(WorkoutIntent.self, from: Data(contentsOf: fixture.appendingPathComponent("input.json")))
     let history = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: fixture.appendingPathComponent("history.json")))
@@ -403,8 +412,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testTrainingEngineFacadeGeneratesIntentDraft() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
     let intent = try JSONDecoder().decode(
       WorkoutIntent.self,
@@ -470,8 +478,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testProductionGeneratorReturnsEvaluatedResultEnvelope() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/generation/input.json")))
     let database = try FEDatabase.load(url: root.appendingPathComponent("free-exercise-db-plusplus.json"))
     let relationships = try JSONDecoder().decode(ExerciseRelationships.self, from: JSONEncoder().encode(input.objectValue?["relationships"] ?? .null))
@@ -491,8 +498,7 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
   }
 
   func testFlagshipIntentResolvesCanonicalFiveDayOffsets() throws {
-    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-      .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let root = repositoryRoot()
     let input = try JSONDecoder().decode(JSONValue.self, from: Data(contentsOf: root.appendingPathComponent("fixtures/cross-language/intent/flagship-5day-hypertrophy/input.json")))
     let intent = try JSONDecoder().decode(WorkoutIntent.self, from: JSONEncoder().encode(input))
     let engine = try TrainingEngine.bundled()
