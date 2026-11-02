@@ -538,6 +538,15 @@ jobs:
           bash scripts/test_application_swift_parity.sh
           swift run --package-path examples/app-integration/swift AppIntegration
 
+      # Gradle 8.6 cannot run on the Ubuntu runner's default Java 25. The
+      # Kotlin packages declare a Java 17 toolchain, so run Gradle itself on
+      # that supported LTS runtime as well.
+      - name: Set up Java 17 for Kotlin consumers
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
       - name: Test Kotlin consumer package
         run: |
           packages/kotlin/fedbpp/gradlew --no-daemon test --project-dir packages/kotlin/fedbpp
