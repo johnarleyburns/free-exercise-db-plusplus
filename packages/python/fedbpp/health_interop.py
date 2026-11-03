@@ -289,7 +289,7 @@ def import_garmin_fit(data: bytes | bytearray | str | Path, *, mode: str = "stri
     if not chunks:
         result = ConversionResult({}, "lossy", ({"path": "session_mesgs.developer_fields", "reason": "FIT file has no DB++ canonical sidecar", "destination": "full DB++ ACTUAL"},), (), {"target": "garmin-fit"}, "garmin-fit", "dbpp-actual")
         if mode == "strict":
-            raise ConversionError("strict FIT import refused information loss", result=result)
+            raise ConversionError("strict FIT import refused information loss: FIT file has no DB++ canonical sidecar", result=result)
         raise ConversionError("FIT import without a DB++ sidecar is not reconstructible", result=result)
     raw_json = "".join(value for _, value in sorted(chunks))
     try:

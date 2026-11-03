@@ -92,7 +92,7 @@ and [exercise routes](https://developer.android.com/health-and-fitness/health-co
 | Language | Current support in this change | Native SDK boundary |
 |---|---|---|
 | Python | Lossless sidecar envelopes and strict/allow-lossy import/export projections for all three targets | Garmin binary SDK and platform APIs remain host dependencies |
-| Swift | Same envelope plus a real conditional HealthKit adapter; FIT is injectable through the official Garmin Swift SDK boundary | Add Garmin’s `FITSwiftSDK` to the host app; HealthKit exists only on Apple platforms |
+| Swift | Same envelope plus a real conditional HealthKit adapter and the `FreeExerciseDBPlusPlusFIT` binary FIT product | Add the package's separately licensed Garmin `FITSwiftSDK` dependency; HealthKit exists only on Apple platforms |
 | Kotlin/JVM | Lossless Health Connect envelope and projection model | Android `HealthConnectClient` must be supplied by an Android host; the current artifact is JVM-only |
 | R | Lossless sidecar envelope helpers for analysis/research workflows | Native mobile SDK access is outside R’s package boundary |
 | C | Portable sidecar ABI in `packages/c`; native projection is host-provided | Add Garmin’s official FIT C SDK and an Apple/Android host bridge for native records |

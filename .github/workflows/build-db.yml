@@ -91,8 +91,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install validator
-        run: python -m pip install --disable-pip-version-check jsonschema
+      - name: Install validators and Garmin FIT binary test dependency
+        run: python -m pip install --disable-pip-version-check jsonschema 'garmin-fit-sdk>=21.217.0'
 
       - name: Download upstream Free Exercise DB
         run: |
@@ -464,6 +464,26 @@ jobs:
                       function()
                       total += 1
           print(f"Python consumer package valid: {total} tests")
+          PY
+
+      - name: Test Garmin FIT binary import/export
+        run: |
+          PYTHONPATH=packages/python:. python - <<'PY'
+          import importlib.util, inspect
+          path = 'packages/python/tests/test_garmin_fit_binary.py'
+          spec = importlib.util.spec_from_file_location('garmin_fit_binary', path)
+          module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+          from pathlib import Path
+          import tempfile
+          for name in sorted(dir(module)):
+              function = getattr(module, name)
+              if name.startswith('test_') and callable(function):
+                  if len(inspect.signature(function).parameters) == 0:
+                      function()
+                  else:
+                      with tempfile.TemporaryDirectory() as directory:
+                          function(Path(directory))
+          print('Garmin FIT binary import/export tests passed')
           PY
 
       - name: Test v1.4 longitudinal analysis and CSV exports
