@@ -16,6 +16,17 @@
 
 # Changelog
 
+## 1.18.2 - 2026-11-02
+
+- Promote Garmin FIT binary ACTUAL import/export to a tested Python and Swift
+  consumer feature. FIT Activity files carry the canonical DB++ ACTUAL as
+  chunked developer fields for exact, UTF-8-safe round trips.
+- Expose the separately licensed `FreeExerciseDBPlusPlusFIT` Swift product in
+  the language-specific Swift package.
+- Add Python SDK, CLI, and Swift regression coverage for valid FIT files,
+  sidecar-free strict rejection, and binary round trips; enforce the Python
+  binary suite in CI.
+
 ## 1.18.1 - 2026-11-02
 
 - Add locale-aware exercise names and aliases with stable canonical exercise IDs,
