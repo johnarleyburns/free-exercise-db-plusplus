@@ -14,8 +14,9 @@ Before finishing a phase:
 2. Run the full relevant unit-test suite, not only newly added tests.
 3. Add or update integration/CI validation when the phase changes behavior covered by those checks.
 4. Review the final diff and working tree, preserving unrelated user changes.
-5. Commit and push the completed implementation only after the audit and tests pass.
-6. After the push, update `current_status.md` with the completed work, verification results, important decisions, remaining risks, and the next active phase.
+5. Commit to a small, task-named branch off `main` only after the audit and tests pass — never commit on or push directly to `main`, even though this repo has no branch-protection rule blocking it today. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create`) into `main`.
+6. Enable auto-merge (`gh pr merge <PR> --auto --squash --delete-branch`) without asking first — it only lands once CI passes, and the owner can always stop a PR by disabling automerge or saying so before it's opened.
+7. After the PR is opened, update `current_status.md` with the completed work, verification results, important decisions, remaining risks, and the next active phase.
 
 `current_status.md` is a local working handoff file. Never stage, commit, or push it. Check the staged file list before every commit to enforce this rule.
 
