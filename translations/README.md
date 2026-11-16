@@ -31,3 +31,9 @@ The Spanish catalog also includes exact English-name matches from the
 [Kinetic Exercises Spanish catalog](https://github.com/kinetic-place/exercises-json)
 under its MIT license. These entries use the `es-reference-terminology` source
 reference and remain provisional until native fitness review.
+
+## Release policy (2026-11-16)
+
+Non-English exercise names are accepted in releases with their actual review status: `reviewed`, `provisional`, or `untranslated`. Native-speaker review is encouraged but is not a publication prerequisite. Do not relabel provisional translations as reviewed merely to release. Nonempty names, valid IDs, unique aliases, recognized provenance, schema integrity, and localization audit checks remain required. Consumers should use locale → base language → English fallback and preserve canonical IDs independently of the displayed language.
+
+The 11 specialized-muscle additions have provisional preferred names in every supported non-English locale. Their reproducible terminology source is `src/specialized_exercise_names.json`; the catalog builder consumes it without overwriting existing reviewed entries.

@@ -3406,10 +3406,11 @@ def build(locale: str, wger_path: Path | None) -> dict[str, Any]:
     db = json.loads(DB_PATH.read_text(encoding="utf-8"))
     wger = load_wger(wger_path, profile["wgerLanguage"])
     reference_names = load_reference_names(locale)
+    specialized_names = json.loads((DB_PATH.parent / "src/specialized_exercise_names.json").read_text(encoding="utf-8"))[locale]
     entries: dict[str, Any] = {}
     for exercise_id, exercise in db["exercises"].items():
         source_name = exercise["source"]["name"]
-        exact = EXACT_FIXES.get(locale, {}).get(normalize(source_name))
+        exact = specialized_names.get(exercise_id) or EXACT_FIXES.get(locale, {}).get(normalize(source_name))
         localized = wger.get(normalize(source_name))
         if exact:
             preferred = exact

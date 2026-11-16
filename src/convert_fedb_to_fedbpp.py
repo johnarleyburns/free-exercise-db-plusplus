@@ -567,6 +567,23 @@ OVERRIDES: dict[str, dict[str, Any]] = {
 
 }
 
+# Reviewed exercise-specific evidence is kept out of broad pattern inference.
+SPECIALIZED_REVIEW = json.loads(
+    Path(__file__).with_name("specialized_muscle_review.json").read_text(encoding="utf-8")
+)
+EVIDENCE_REFERENCES.update(SPECIALIZED_REVIEW["references"])
+PATTERN_EVIDENCE.update(SPECIALIZED_REVIEW["patterns"])
+for pattern, references in SPECIALIZED_REVIEW["patternReferences"].items():
+    PATTERN_EVIDENCE[pattern]["references"] = list(dict.fromkeys(
+        PATTERN_EVIDENCE[pattern]["references"] + references
+    ))
+PATTERNS["neck_rotation"] = {"direct": ["neck"], "indirect": [], "stabilizers": []}
+for exercise_id, annotation in SPECIALIZED_REVIEW["annotationOverrides"].items():
+    OVERRIDES[exercise_id] = annotation
+    pattern = annotation["patterns"][0]
+    PATTERNS[pattern] = {role: annotation[role] for role in ("direct", "indirect", "stabilizers")}
+
+
 def normalize_muscle(label: str) -> str:
     return LABEL_MAP.get(label, label.replace(" ", "_"))
 
@@ -1266,6 +1283,22 @@ def load_curated_manifest(path: Path = CURATED_MANIFEST_PATH) -> list[dict[str, 
     if len(ids) != len(set(ids)):
         raise ValueError("Catalog addition IDs must be unique")
     for entry in entries:
+        roles = [set(entry[role]) for role in ("direct", "indirect", "stabilizers")]
+        if any(role - set(MUSCLES) for role in roles):
+            raise ValueError(f"Unknown muscle in catalog addition: {entry['id']}")
+        if any(roles[i] & roles[j] for i in range(3) for j in range(i + 1, 3)):
+            raise ValueError(f"Overlapping muscle roles in catalog addition: {entry['id']}")
+        source_refs = entry.get("sourceRefs", [])
+        if not entry.get("vendors") and not source_refs:
+            raise ValueError(f"Catalog addition needs review provenance: {entry['id']}")
+        if any(ref not in EVIDENCE_REFERENCES for ref in source_refs):
+            raise ValueError(f"Unknown evidence source for catalog addition: {entry['id']}")
+        if source_refs and (not entry.get("instructions") or not all(
+            ref in {r for pattern in entry["patterns"]
+                    for r in PATTERN_EVIDENCE.get(pattern, {}).get("references", [])}
+            for ref in source_refs
+        )):
+            raise ValueError(f"Catalog provenance is not reachable from its patterns: {entry['id']}")
         if not entry.get("patterns"):
             raise ValueError(f"Catalog addition has no patterns: {entry['id']}")
         unknown = set(entry["patterns"]) - set(PATTERNS)
@@ -1334,9 +1367,41 @@ def convert(source_path: Path, completeness: str) -> dict[str, Any]:
             "source": item,
         }
 
+    unknown_review_ids = (
+        set(SPECIALIZED_REVIEW["annotationOverrides"])
+        | set(SPECIALIZED_REVIEW["upstreamAliases"])
+    ) - upstream_ids
+    if unknown_review_ids:
+        raise ValueError(f"Unknown specialized review IDs: {sorted(unknown_review_ids)}")
+
     localization_metadata, localized_names = load_localization(set(exercises))
     for exercise_id, names in localized_names.items():
         exercises[exercise_id]["localizedNames"] = names
+
+    # Canonical English aliases resolve to existing IDs. Preserve the original
+    # upstream source record and localized names; add search terms to every locale.
+    aliases_by_id = {
+        entry["id"]: entry.get("aliases", []) for entry in curated
+        if entry.get("sourceRefs")
+    }
+    aliases_by_id.update(SPECIALIZED_REVIEW["upstreamAliases"])
+    for exercise_id, aliases in aliases_by_id.items():
+        record = exercises[exercise_id]
+        names = record.setdefault("localizedNames", {})
+        preferred = (aliases[0] if exercise_id == "External_Rotation"
+                     else record["source"]["name"])
+        english_aliases = list(dict.fromkeys([record["source"]["name"]] + aliases))
+        names["en"] = {
+            "preferred": preferred,
+            "aliases": [name for name in english_aliases if name != preferred],
+            "sourceRefs": ["repo-domain-terminology"],
+            "reviewStatus": "reviewed",
+        }
+        for locale, entry in names.items():
+            if locale != "en":
+                entry["searchOnly"] = list(dict.fromkeys(
+                    entry.get("searchOnly", []) + english_aliases
+                ))
 
     return {
         "metadata": {

@@ -39,6 +39,11 @@ python tests/test_golden_mappings.py free-exercise-db-plusplus.json
 python tests/test_medium_policy.py free-exercise-db-plusplus.json
 endstep
 
+step "Specialized muscle catalog contracts"
+python -m unittest discover -s tests/catalog -v
+python tests/test_catalog_expansion.py free-exercise-db-plusplus.json exercise-relationships.json
+endstep
+
 step "Swift package and resource parity"
 swift test
 bash scripts/test_swift_resources.sh

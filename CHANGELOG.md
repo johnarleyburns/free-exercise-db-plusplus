@@ -1,3 +1,14 @@
+## 1.19.0 - 2026-11-16
+
+- Add 11 distinct tibialis, hip-flexor, neck and rotator-cuff exercises; catalog grows from 927 to 938.
+- Resolve generic external-rotation and banded-hip-flexion names through searchable aliases while preserving upstream IDs and source records.
+- Add exact-record, medium-confidence indirect hip-flexor credit to three full sit-up variants, and rotator-cuff credit to scaption and reverse flyes with external rotation.
+- Preserve 1.0/0.5/0.0 accounting and non-volume exclusions. Do not infer tibialis or neck partial sets from stabilization alone.
+- Embed 15 catalog/research references with explicit reasons, including rejected-credit findings; see docs/SPECIALIZED-MUSCLE-REVIEW.md.
+- Keep canonical resources synchronized across Python, Swift, Kotlin and R. New exercise names initially use English fallback.
+
+No schema or upstream exercise-ID contract changes. Existing non-English translations retain their existing review status.
+
 ## 1.2.0 - 2026-08-25
 
 - Added authoritative interoperability audits and compatibility matrix for FIT, Health Connect, HealthKit, FHIR Physical Activity, IEEE 1752.1/Open mHealth, and legacy Google Fit.

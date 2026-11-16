@@ -167,6 +167,11 @@
       "familyId": "shoulder_press",
       "name": "Shoulder Press"
     },
+    "shoulder_rotation": {
+      "aliases": [],
+      "familyId": "shoulder_rotation",
+      "name": "Shoulder Rotation"
+    },
     "squat": {
       "aliases": [],
       "familyId": "squat",
@@ -247,7 +252,7 @@
     ],
     "semanticNotice": "Taxonomic/descriptive relationships do not imply physiological equivalence or substitution advice.",
     "sourceDatabaseSchemaVersion": "0.3.0",
-    "sourceExerciseCount": 927,
+    "sourceExerciseCount": 938,
     "sourceSha256": "d68a817484964095e6af0be2cdcbcc2c2504168d1d190c7d5c725ce52f3ae1f4"
   },
   "relationships": [
@@ -2450,7 +2455,8 @@
     {
       "confidence": "high",
       "dimensions": {
-        "equipment": "bodyweight"
+        "equipment": "bodyweight",
+        "laterality": "unilateral"
       },
       "familyId": "glute_bridge",
       "provenance": [
@@ -2542,6 +2548,73 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Cable_Hip_Flexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "hip_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Hip_Flexion_with_Band"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "bodyweight"
+      },
+      "familyId": "hip_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Hip_Flexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "bodyweight"
+      },
+      "familyId": "hip_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Hip_Flexion_Hold"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "hip_flexion",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Supine_Short-Lever_Hip_Flexion"
     },
     {
       "confidence": "high",
@@ -2662,7 +2735,8 @@
     {
       "confidence": "high",
       "dimensions": {
-        "equipment": "machine"
+        "equipment": "machine",
+        "laterality": "unilateral"
       },
       "familyId": "leg_extension",
       "provenance": [
@@ -2787,6 +2861,22 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Four-Way_Neck_Machine"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bodyweight"
+      },
+      "familyId": "neck_conditioning",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Resisted_Neck_Rotation_Isometric"
     },
     {
       "confidence": "high",
@@ -4209,6 +4299,138 @@
       "sourceExerciseId": "Two-Arm_Kettlebell_Military_Press"
     },
     {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Band_External_Rotation_90_Abduction"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Cable_Internal_Rotation"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "External_Rotation"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "External_Rotation_with_Band"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "cable"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "External_Rotation_with_Cable"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/relationships/overrides.py",
+          "type": "manual_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Internal_Rotation_with_Band"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "lying",
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Side-Lying_Dumbbell_Internal_Rotation"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "dumbbell"
+      },
+      "familyId": "shoulder_rotation",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Supine_Dumbbell_Shoulder_Rotation"
+    },
+    {
       "confidence": "medium",
       "dimensions": {
         "equipment": "barbell"
@@ -4807,7 +5029,8 @@
     {
       "confidence": "medium",
       "dimensions": {
-        "equipment": "other"
+        "equipment": "other",
+        "laterality": "unilateral"
       },
       "familyId": "squat",
       "provenance": [
@@ -5100,6 +5323,23 @@
     {
       "confidence": "high",
       "dimensions": {
+        "equipment": "bands",
+        "resistance_type": "bands"
+      },
+      "familyId": "tibialis_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Band_Ankle_Dorsiflexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
         "equipment": "machine"
       },
       "familyId": "tibialis_raise",
@@ -5112,6 +5352,57 @@
       ],
       "relationship": "member_of_family",
       "sourceExerciseId": "Machine_Tibialis_Dorsiflexion"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "seated",
+        "equipment": "other"
+      },
+      "familyId": "tibialis_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Seated_Tib_Bar_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "equipment": "other",
+        "laterality": "unilateral"
+      },
+      "familyId": "tibialis_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Single-Leg_Tib_Bar_Raise"
+    },
+    {
+      "confidence": "high",
+      "dimensions": {
+        "body_position": "standing",
+        "equipment": "bodyweight"
+      },
+      "familyId": "tibialis_raise",
+      "provenance": [
+        {
+          "rationale": "Curated taxonomic family assignment from reviewed DB++ metadata.",
+          "source": "src/catalog_additions.json",
+          "type": "catalog_review"
+        }
+      ],
+      "relationship": "member_of_family",
+      "sourceExerciseId": "Standing_Toe_Raise"
     },
     {
       "confidence": "high",

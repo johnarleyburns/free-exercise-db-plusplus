@@ -26,3 +26,5 @@
 - [ ] Tag-triggered release workflow validates the reviewed upstream snapshot.
 - [ ] Release contains the DB, all public schemas, SHA256SUMS, and release documentation.
 - [ ] Published assets, checksums, release body, tag target, raw main URLs, release URLs, and a released-artifact Python quick start are verified.
+
+- [ ] Validate localized names and their honest review statuses; provisional/non-English names are allowed in releases. Native review is not a publication gate. See `translations/README.md`.

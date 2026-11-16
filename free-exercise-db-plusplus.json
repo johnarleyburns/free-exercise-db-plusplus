@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-11-09T19:55:40.417645+00:00",
+    "generatedAt": "2026-11-16T00:00:00+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -425,6 +425,102 @@
           "type": "narrative_review",
           "doi": "10.1519/SSC.0000000000000218",
           "url": "https://journals.lww.com/nsca-scj/fulltext/2016/08000/application_of_the_repetitions_in_reserve_based.10.aspx"
+        },
+        "aaos_ankle_conditioning": {
+          "title": "Foot and Ankle Conditioning Program",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.orthoinfo.org/recovery/foot-and-ankle-conditioning-program/",
+          "reason": "Documents band-resisted dorsiflexion and identifies anterior tibialis; supports exercise selection, not a measured set-credit fraction."
+        },
+        "nhs_toe_raise": {
+          "title": "Strength and balance exercise programme for falls prevention",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.southtees.nhs.uk/resources/strength-and-balance-exercise-programme-for-falls-prevention/",
+          "reason": "Documents lifting the forefoot while retaining heel contact; supports the bodyweight toe-raise movement."
+        },
+        "nhs_seated_toe_raise": {
+          "title": "Lower limb strengthening activities",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.kentcht.nhs.uk/leaflet/lower-limb-strengthening-activities/",
+          "reason": "Documents seated toe lifts with heels down; supports toe-raise terminology and accessible progression."
+        },
+        "nhs_strength_balance_toe_raise": {
+          "title": "Strength and balance exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.nhsinform.scot/healthy-living/preventing-falls/keeping-well/strength-and-balance-exercises",
+          "reason": "Documents toe raises; corroborates bodyweight dorsiflexion as a distinct exercise from calf raises."
+        },
+        "tib_bar_manufacturer": {
+          "title": "Tib Bar – Tibialis Trainer",
+          "type": "manufacturer_exercise_guide",
+          "url": "https://tib-bar.com/products/tib-bar",
+          "reason": "Documents bilateral and unilateral tib-bar equipment and seated dorsiflexion technique only; commercial injury-prevention claims are not adopted."
+        },
+        "osu_iliopsoas_progression": {
+          "title": "Gluteus Medius Repair: Appendix A, Psoas Progression",
+          "type": "clinical_exercise_guide",
+          "url": "https://medicine.osu.edu/-/media/files/medicine/departments/sports-medicine/medical-professionals/hip/glute-med-repair-2020.pdf?hash=61FBA1E505B6173CD4D4C753FC8E8A8484725F81&la=en",
+          "reason": "Documents supine short-lever, seated, and standing resisted hip flexion; supports distinct positions, not transfer of postoperative dosage to general training."
+        },
+        "cuh_hip_flexion": {
+          "title": "Hip strengthening exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.cuh.nhs.uk/patient-information/hip-strengthening-exercises/",
+          "reason": "Documents supported standing hip flexion with the knee bent and a hold; supports the standing hip-flexion hold."
+        },
+        "uw_seated_hip_flexion": {
+          "title": "Physical Therapy Before and After Your ACL Surgery: Seated Hip Flexion",
+          "type": "clinical_exercise_guide",
+          "url": "https://healthonline.washington.edu/sites/default/files/record_pdfs/Physical-Therapy-Before-After-Your-ACL-Surgery-CH.pdf",
+          "reason": "Documents seated bent-knee hip flexion as distinct from a straight-leg raise; supports exercise identity only."
+        },
+        "nhs_resisted_neck_rotation": {
+          "title": "Neck pain: Resisted neck exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.dynamichealth.nhs.uk/help-and-advice/neck-pain/",
+          "reason": "Documents hand-resisted cervical rotation, flexion and side flexion; rotation is a distinct addition, while existing flexion/side records retain their IDs."
+        },
+        "aaos_rotator_cuff_conditioning": {
+          "title": "Rotator Cuff and Shoulder Conditioning Program",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.orthoinfo.org/bodypart/shoulder/rotator-cuff-and-shoulder-conditioning-program/?webid=24DCE756",
+          "reason": "Documents 90-degree-abducted external rotation, supine rotation and side-lying internal/external rotation. Existing side-lying external rotation is retained with aliases."
+        },
+        "andersson_hip_flexor_emg_1997": {
+          "title": "Abdominal and hip flexor muscle activation during various training exercises",
+          "type": "experimental",
+          "pmid": "9118976",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9118976/",
+          "reason": "Fine-wire iliacus evidence supports hip-flexor involvement during hip-flexion sit-ups and leg lifts, without extending the claim to every curl-up."
+        },
+        "juker_psoas_emg_1998": {
+          "title": "Quantitative intramuscular myoelectric activity of lumbar portions of psoas and the abdominal wall during a wide variety of tasks",
+          "type": "experimental",
+          "pmid": "9502361",
+          "doi": "10.1097/00005768-199802000-00020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9502361/",
+          "reason": "Sit-ups recruited psoas more than curl-ups. Supports exact full-sit-up indirect hip-flexor roles, not a measured 0.5 hypertrophy equivalence or general lifting credit."
+        },
+        "reinold_supraspinatus_emg_2007": {
+          "title": "Electromyographic analysis of the supraspinatus and deltoid muscles during 3 common rehabilitation exercises",
+          "type": "experimental",
+          "pmid": "18174934",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18174934/",
+          "reason": "Fine-wire EMG supports supraspinatus involvement in full-can scaption and prone horizontal abduction with external rotation. The incline reverse-fly mapping is a medium-confidence extrapolation; 0.5 remains the DB++ accounting convention."
+        },
+        "kim_split_squat_ankle_emg_2017": {
+          "title": "Comparison of Activities of Tibialis Anterior, Peroneus Longus, and Tibialis Posterior Muscles according to Lunge Squats and Bulgarian Split Squats in a Healthy Population",
+          "type": "experimental",
+          "doi": "10.29273/jkema.2017.1.1.26",
+          "url": "https://www.jkema.org/archive/view_article?pid=jkema-1-1-26",
+          "reason": "Measures ankle-stability activation during held squat postures; insufficient to assign 0.5 tibialis sets to ordinary squats or lunges."
+        },
+        "neck_shrug_training_1997": {
+          "title": "Effects of neck muscle training and detraining on neck muscle strength",
+          "type": "training_intervention",
+          "doi": "10.7600/jspfsm1949.46.201",
+          "url": "https://www.jstage.jst.go.jp/article/jspfsm1949/46/2/46_2_201/_article/-char/en",
+          "reason": "Narrow-grip shrug intervention suggests neck-strength transfer in a specific protocol; does not establish an independent neck hypertrophy dose for all shrug variants, so no blanket 0.5 credit is awarded."
         }
       },
       "patterns": {
@@ -526,7 +622,8 @@
           "summary": "Intramuscular/surface EMG directly supports infraspinatus and teres-minor as principal external rotators, with deltoid/scapular muscles contributing by position.",
           "references": [
             "external_rotation_emg_2004",
-            "external_rotation_roles_2012"
+            "external_rotation_roles_2012",
+            "aaos_rotator_cuff_conditioning"
           ]
         },
         "elbow_flexion": {
@@ -728,7 +825,8 @@
           "summary": "EMG directly supports subscapularis as a major internal rotator, with arm position strongly affecting selective activation.",
           "references": [
             "internal_rotation_emg_2003",
-            "subscapularis_exercise_2003"
+            "subscapularis_exercise_2003",
+            "aaos_rotator_cuff_conditioning"
           ]
         },
         "hip_flexion": {
@@ -736,7 +834,10 @@
           "summary": "A systematic review and fine-wire EMG evidence directly support iliopsoas and related hip-flexor recruitment during leg raises and loaded hip-flexion tasks.",
           "references": [
             "hip_flexor_systematic_review_2024",
-            "psoas_aslr_emg_2010"
+            "psoas_aslr_emg_2010",
+            "osu_iliopsoas_progression",
+            "cuh_hip_flexion",
+            "uw_seated_hip_flexion"
           ]
         },
         "plantar_flexion_bent_knee": {
@@ -752,7 +853,12 @@
           "status": "supported",
           "summary": "Dorsiflexion training studies directly record tibialis anterior activation during resisted dorsiflexion contractions.",
           "references": [
-            "dorsiflexion_tibialis_emg_2019"
+            "dorsiflexion_tibialis_emg_2019",
+            "aaos_ankle_conditioning",
+            "nhs_toe_raise",
+            "nhs_seated_toe_raise",
+            "nhs_strength_balance_toe_raise",
+            "tib_bar_manufacturer"
           ]
         },
         "anti_extension": {
@@ -1128,6 +1234,38 @@
             "forearm_grip_emg_2019",
             "power_grip_emg_2015"
           ]
+        },
+        "neck_rotation": {
+          "status": "supported",
+          "summary": "Hand-resisted cervical rotation is documented by NHS exercise guidance; direct neck credit follows the DB++ model.",
+          "references": [
+            "nhs_resisted_neck_rotation"
+          ]
+        },
+        "sit_up_hip_flexor_contribution": {
+          "status": "indirect_support",
+          "summary": "Exact full sit-up records include indirect hip-flexor credit based on iliacus/psoas studies. Curl-ups are excluded. The 0.5 fraction is an accounting convention, not a study-derived dose equivalence.",
+          "references": [
+            "andersson_hip_flexor_emg_1997",
+            "juker_psoas_emg_1998",
+            "fractional_sets_meta_regression_2025"
+          ]
+        },
+        "scaption_cuff_contribution": {
+          "status": "indirect_support",
+          "summary": "Full-can scapular-plane elevation recruits supraspinatus. DB++ conservatively records indirect cuff credit alongside deltoid/trapezius roles, without claiming EMG establishes 0.5 hypertrophy sets.",
+          "references": [
+            "reinold_supraspinatus_emg_2007",
+            "fractional_sets_meta_regression_2025"
+          ]
+        },
+        "reverse_fly_external_rotation_cuff_contribution": {
+          "status": "indirect_support",
+          "summary": "Prone full-can horizontal-abduction evidence supports cuff involvement. Transfer to the catalog incline reverse fly with external rotation is uncertain and remains medium confidence; ordinary reverse flyes are unchanged.",
+          "references": [
+            "reinold_supraspinatus_emg_2007",
+            "fractional_sets_meta_regression_2025"
+          ]
         }
       }
     },
@@ -1154,114 +1292,114 @@
       "catalogs": {
         "es": {
           "source": "translations/es.json",
-          "sha256": "1956659e73432cb81672142c0ba2aef35d5cc6000e3ca6f8fc2e85990ceaf907",
-          "entryCount": 927,
+          "sha256": "aba38ab609f2d824d7d667f678ec013abde30dc3886cee3c3760d67821ed642d",
+          "entryCount": 938,
           "reviewedCount": 1,
-          "provisionalCount": 926,
+          "provisionalCount": 937,
           "untranslatedCount": 0
         },
         "de": {
           "source": "translations/de.json",
-          "sha256": "10e7e193f008d02f560f8a0277b68aa0415e8cd3446647b2e223a5c757103633",
-          "entryCount": 927,
+          "sha256": "56429f7acfc517f6399f72fe3502d334e27a88e1cf5e17d42de63475f3e836c0",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "zh-Hans": {
           "source": "translations/zh-Hans.json",
-          "sha256": "b840fe2a5c423e87ad1f012b085c447ee9b46fc1781c61c62047ded9525d9532",
-          "entryCount": 927,
+          "sha256": "925dd467249366d232a8b9fde17c944900307bd214199e4d1a0d05872c8a40ff",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "zh-Hant": {
           "source": "translations/zh-Hant.json",
-          "sha256": "723f2434545c27b075ff64a161116eea65d0327ac608f3f6a2595ded8db47e1b",
-          "entryCount": 927,
+          "sha256": "e0ff26b893f54ddf9c7e14ae5787fe798629829e4a08b16c956bb16bfdb48897",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "pt-BR": {
           "source": "translations/pt-BR.json",
-          "sha256": "bdbe75bf7c268766c3c34fc2436ae8a9b3c2aa2a83afc7f48369e3fdf284d775",
-          "entryCount": 927,
+          "sha256": "35017b79997fc17c2b25c1e8c936640df6c2a677495ad58de3bef80b1bfaaf58",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "fr": {
           "source": "translations/fr.json",
-          "sha256": "1279d69dbcf0434d91e639206b15b86b33387fdfa9f722feebdcd470d8b94922",
-          "entryCount": 927,
+          "sha256": "c2c79bf36f40e334d71d0deb28a0a66d011a9b47b4b95c081707149a0dc8fd42",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ja": {
           "source": "translations/ja.json",
-          "sha256": "a1cf36c463efa9ee956b8f3ce295193619c99c16698777b4931b49e047d2e47b",
-          "entryCount": 927,
+          "sha256": "27f0bb0e6eb99ff7f4a7e1bd86815b31f11fb9f9e19c941f370f602a3f707496",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ko": {
           "source": "translations/ko.json",
-          "sha256": "da3408380ada1fbbea5a59c142bbef5ebe7ab6cf88ce76119d51fd9399868aa3",
-          "entryCount": 927,
+          "sha256": "e3d5195175b1b180c277ed561542bcc7dc6799e8683cf4270f4d6a7d91c9d490",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "hi": {
           "source": "translations/hi.json",
-          "sha256": "e02fef7a4167e47b44583956bf92bb4b203c1dd16b2a7c80f85b79adbbd5e9ae",
-          "entryCount": 927,
+          "sha256": "daf55023ceb906b9eee34dad2d65226fdf75edf31e81142b5f9d2b0be47dff62",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ar": {
           "source": "translations/ar.json",
-          "sha256": "511e86ecf866ee8514aad070755a48b32bfc907c0febf3c501a1641651bff892",
-          "entryCount": 927,
+          "sha256": "99c21ce982f45b7bc7779d97e749df05b8463394972441e095eb09ea1fd45832",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "he": {
           "source": "translations/he.json",
-          "sha256": "7b762bf9716e475bc4e4006659fe3918180aede5aeba4d07d46df4a1f17809e2",
-          "entryCount": 927,
+          "sha256": "d907728effbdd0739c9d1ccf48de369e7b0e347d131add806a5d5b2e271bcd15",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ru": {
           "source": "translations/ru.json",
-          "sha256": "f10a26463b73de75310139601a70993b45eeda8e7fd469d69c0825c12edf582e",
-          "entryCount": 927,
+          "sha256": "718224533546d3e9574da8746d0f71c1e0d4865f73c3ba4aed2856afe91e830a",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "nl": {
           "source": "translations/nl.json",
-          "sha256": "02becd3c1c1ce9fa7a2e25086f90aaab4d07e6484ac8eff790c131e640bf83f7",
-          "entryCount": 927,
+          "sha256": "c0c7ea82f80343e4ae02b04efd3e7fb9c761ccaa7717da0a88220b3e9dd29c20",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "it": {
           "source": "translations/it.json",
-          "sha256": "d9dfa2ea4296fdf3a4db5dd9f564f930ad4b85ae5c0207f9b52f0200f902c127",
-          "entryCount": 927,
+          "sha256": "a8b7a07eb26e3254d3cc3e0f9cfa337c26fae3f1b4dfd1d5e4f13258f97fe6f8",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         }
       }
@@ -1288,10 +1426,10 @@
       "rotator_cuff",
       "hip_flexors"
     ],
-    "sourceExerciseCount": 927,
+    "sourceExerciseCount": 938,
     "upstreamExerciseCount": 873,
-    "curatedExerciseCount": 54,
-    "outputExerciseCount": 927,
+    "curatedExerciseCount": 65,
+    "outputExerciseCount": 938,
     "completeness": "full"
   },
   "exercises": {
@@ -1311,18 +1449,22 @@
       },
       "annotation": {
         "patterns": [
-          "trunk_flexion"
+          "sit_up_hip_flexor_contribution"
         ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [],
+        "indirect": [
+          "hip_flexors"
+        ],
         "stabilizers": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
         "evidenceRefs": [
-          "pattern:trunk_flexion"
+          "pattern:sit_up_hip_flexor_contribution"
         ]
       },
       "source": {
@@ -43013,20 +43155,23 @@
       },
       "annotation": {
         "patterns": [
-          "shoulder_abduction"
+          "scaption_cuff_contribution"
         ],
         "direct": [
           "shoulders"
         ],
         "indirect": [
-          "traps"
+          "traps",
+          "rotator_cuff"
         ],
         "stabilizers": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
         "evidenceRefs": [
-          "pattern:shoulder_abduction"
+          "pattern:scaption_cuff_contribution"
         ]
       },
       "source": {
@@ -46986,7 +47131,12 @@
           "sourceRefs": [
             "es-reference-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "de": {
           "preferred": "Außenrotation",
@@ -46994,7 +47144,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "zh-Hans": {
           "preferred": "外旋 旋转",
@@ -47002,7 +47157,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "zh-Hant": {
           "preferred": "外旋 旋轉",
@@ -47010,7 +47170,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "pt-BR": {
           "preferred": "Externa rotação",
@@ -47018,7 +47183,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "fr": {
           "preferred": "Rotation externe",
@@ -47026,7 +47196,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "ja": {
           "preferred": "外旋 ローテーション",
@@ -47034,7 +47209,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "ko": {
           "preferred": "External 로테이션",
@@ -47042,7 +47222,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "hi": {
           "preferred": "External रोटेशन",
@@ -47050,7 +47235,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "ar": {
           "preferred": "External دوران",
@@ -47058,7 +47248,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "he": {
           "preferred": "External סיבוב",
@@ -47066,7 +47261,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "ru": {
           "preferred": "External вращение",
@@ -47074,7 +47274,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "nl": {
           "preferred": "External rotatie",
@@ -47082,7 +47287,12 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
         },
         "it": {
           "preferred": "External rotazione",
@@ -47090,7 +47300,23 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "External Rotation",
+            "Side-Lying Dumbbell External Rotation",
+            "Lying Dumbbell External Rotation"
+          ]
+        },
+        "en": {
+          "preferred": "Side-Lying Dumbbell External Rotation",
+          "aliases": [
+            "External Rotation",
+            "Lying Dumbbell External Rotation"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
         }
       }
     },
@@ -57756,7 +57982,13 @@
           "sourceRefs": [
             "es-reference-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "de": {
           "preferred": "Hüftbeugung mit Band",
@@ -57764,7 +57996,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "zh-Hans": {
           "preferred": "髋 flexion 带 弹力带",
@@ -57772,7 +58010,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "zh-Hant": {
           "preferred": "髖 flexion 帶 彈力帶",
@@ -57780,7 +58024,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "pt-BR": {
           "preferred": "Quadril flexion com faixa elástica",
@@ -57788,7 +58038,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "fr": {
           "preferred": "Hanche flexion avec élastique",
@@ -57796,7 +58052,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "ja": {
           "preferred": "ヒップ 屈曲 付き バンド",
@@ -57804,7 +58066,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "ko": {
           "preferred": "힙 flexion 밴드",
@@ -57812,7 +58080,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "hi": {
           "preferred": "हिप flexion के साथ रेज़िस्टेंस बैंड",
@@ -57820,7 +58094,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "ar": {
           "preferred": "ورك flexion مع حبل مطاطي",
@@ -57828,7 +58108,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "he": {
           "preferred": "אגן flexion עם גומייה",
@@ -57836,7 +58122,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "ru": {
           "preferred": "Таз flexion с резинка",
@@ -57844,7 +58136,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "nl": {
           "preferred": "Heup flexion met band",
@@ -57852,7 +58150,13 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
         },
         "it": {
           "preferred": "Anca flexion con elastico",
@@ -57860,7 +58164,25 @@
           "sourceRefs": [
             "repo-domain-terminology"
           ],
-          "reviewStatus": "provisional"
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Hip Flexion with Band",
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ]
+        },
+        "en": {
+          "preferred": "Hip Flexion with Band",
+          "aliases": [
+            "Standing Banded Hip Flexion",
+            "Banded March",
+            "Resistance Band March"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
         }
       }
     },
@@ -103509,21 +103831,24 @@
       },
       "annotation": {
         "patterns": [
-          "reverse_fly"
+          "reverse_fly_external_rotation_cuff_contribution"
         ],
         "direct": [
           "shoulders",
           "middle_back"
         ],
         "indirect": [
-          "traps"
+          "traps",
+          "rotator_cuff"
         ],
         "stabilizers": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
         "evidenceRefs": [
-          "pattern:reverse_fly"
+          "pattern:reverse_fly_external_rotation_cuff_contribution"
         ]
       },
       "source": {
@@ -120081,18 +120406,22 @@
       },
       "annotation": {
         "patterns": [
-          "trunk_flexion"
+          "sit_up_hip_flexor_contribution"
         ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [],
+        "indirect": [
+          "hip_flexors"
+        ],
         "stabilizers": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
         "evidenceRefs": [
-          "pattern:trunk_flexion"
+          "pattern:sit_up_hip_flexor_contribution"
         ]
       },
       "source": {
@@ -148900,18 +149229,22 @@
       },
       "annotation": {
         "patterns": [
-          "trunk_flexion"
+          "sit_up_hip_flexor_contribution"
         ],
         "direct": [
           "abdominals"
         ],
-        "indirect": [],
+        "indirect": [
+          "hip_flexors"
+        ],
         "stabilizers": [],
+        "confidence": "medium",
+        "reviewReasons": [
+          "indirect_evidence_pattern"
+        ],
         "volumeEligible": true,
-        "confidence": "high",
-        "reviewReasons": [],
         "evidenceRefs": [
-          "pattern:trunk_flexion"
+          "pattern:sit_up_hip_flexor_contribution"
         ]
       },
       "source": {
@@ -161843,6 +162176,2651 @@
             "repo-domain-terminology"
           ],
           "reviewStatus": "provisional"
+        }
+      }
+    },
+    "Standing_Toe_Raise": {
+      "exerciseId": "Standing_Toe_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "bodyweight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dorsiflexion"
+        ],
+        "direct": [
+          "tibialis"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dorsiflexion"
+        ]
+      },
+      "source": {
+        "id": "Standing_Toe_Raise",
+        "name": "Standing Toe Raise",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "body only",
+        "primaryMuscles": [
+          "tibialis"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Stand beside a stable support with your heels on the ground.",
+          "Lift the forefeet toward the shins without lifting the heels or curling the toes.",
+          "Lower the forefeet slowly; keep your body controlled."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Bodyweight Tibialis Raise",
+          "Toe Raise"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Elevación de puntas de pie",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "de": {
+          "preferred": "Zehenheben im Stehen",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "站姿抬脚尖",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "站姿抬腳尖",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Elevação das pontas dos pés em pé",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "fr": {
+          "preferred": "Relevé des pointes de pieds debout",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "ja": {
+          "preferred": "立位つま先上げ",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "ko": {
+          "preferred": "서서 발끝 들기",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "hi": {
+          "preferred": "खड़े होकर पंजे उठाना",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "ar": {
+          "preferred": "رفع مقدمة القدم واقفًا",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "he": {
+          "preferred": "הרמת קדמת כף הרגל בעמידה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "ru": {
+          "preferred": "Подъём носков стоя",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "nl": {
+          "preferred": "Tenen heffen in stand",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "it": {
+          "preferred": "Sollevamento delle punte in stazione eretta",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Toe Raise",
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ]
+        },
+        "en": {
+          "preferred": "Standing Toe Raise",
+          "aliases": [
+            "Bodyweight Tibialis Raise",
+            "Toe Raise"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "exerciseId": "Band_Ankle_Dorsiflexion",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "band"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dorsiflexion"
+        ],
+        "direct": [
+          "tibialis"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dorsiflexion"
+        ]
+      },
+      "source": {
+        "id": "Band_Ankle_Dorsiflexion",
+        "name": "Band-Resisted Ankle Dorsiflexion",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "bands",
+        "primaryMuscles": [
+          "tibialis"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Sit with your heel supported and anchor a band in front of the foot.",
+          "Secure the band across the forefoot so it resists lifting the foot toward the shin.",
+          "Pull the forefoot back without moving the knee, then return slowly."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Banded Tibialis Raise",
+          "Resisted Dorsiflexion"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Dorsiflexión de tobillo con banda",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "de": {
+          "preferred": "Sprunggelenk-Dorsalflexion mit Band",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "弹力带踝背屈",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "彈力帶踝背屈",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Dorsiflexão de tornozelo com elástico",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "fr": {
+          "preferred": "Flexion dorsale de cheville avec élastique",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "ja": {
+          "preferred": "バンド足関節背屈",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "ko": {
+          "preferred": "밴드 발목 등쪽굽힘",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "hi": {
+          "preferred": "बैंड से टखने का डॉर्सीफ्लेक्शन",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "ar": {
+          "preferred": "الثني الظهري للكاحل بشريط مقاومة",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "he": {
+          "preferred": "כפיפה גבית בקרסול עם גומייה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "ru": {
+          "preferred": "Тыльное сгибание стопы с резинкой",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "nl": {
+          "preferred": "Enkeldorsaalflexie met weerstandsband",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "it": {
+          "preferred": "Dorsiflessione della caviglia con elastico",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band-Resisted Ankle Dorsiflexion",
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ]
+        },
+        "en": {
+          "preferred": "Band-Resisted Ankle Dorsiflexion",
+          "aliases": [
+            "Banded Tibialis Raise",
+            "Resisted Dorsiflexion"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Seated_Tib_Bar_Raise": {
+      "exerciseId": "Seated_Tib_Bar_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "other"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dorsiflexion"
+        ],
+        "direct": [
+          "tibialis"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dorsiflexion"
+        ]
+      },
+      "source": {
+        "id": "Seated_Tib_Bar_Raise",
+        "name": "Seated Tib-Bar Raise",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "other",
+        "primaryMuscles": [
+          "tibialis"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Sit on a stable bench with your lower legs supported and feet beyond its edge.",
+          "Secure both feet in a tib bar loaded within the equipment rating.",
+          "Lift the forefeet toward the shins and lower the load under control."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Tib Bar Raise",
+          "Bilateral Tibialis Raise"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Elevación de tibial con barra sentado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "de": {
+          "preferred": "Tibialisheben mit Tib-Bar im Sitzen",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "坐姿胫骨前肌杠抬脚",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "坐姿脛骨前肌槓抬腳",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Elevação de tibial com barra sentado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "fr": {
+          "preferred": "Relevé tibial assis avec barre",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "ja": {
+          "preferred": "座位ティブバーつま先上げ",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "ko": {
+          "preferred": "앉아서 티브 바 발끝 들기",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "hi": {
+          "preferred": "बैठकर टिब बार से पंजे उठाना",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "ar": {
+          "preferred": "رفع مقدمة القدم بقضيب الظنبوب جلوسًا",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "he": {
+          "preferred": "הרמת קדמת כף הרגל עם מוט טיביאליס בישיבה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "ru": {
+          "preferred": "Подъём носков с тиб-баром сидя",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "nl": {
+          "preferred": "Zittend tibialis heffen met tib-bar",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "it": {
+          "preferred": "Sollevamento tibiale con barra da seduti",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Tib-Bar Raise",
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ]
+        },
+        "en": {
+          "preferred": "Seated Tib-Bar Raise",
+          "aliases": [
+            "Tib Bar Raise",
+            "Bilateral Tibialis Raise"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "exerciseId": "Single-Leg_Tib_Bar_Raise",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "other"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "dorsiflexion"
+        ],
+        "direct": [
+          "tibialis"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:dorsiflexion"
+        ]
+      },
+      "source": {
+        "id": "Single-Leg_Tib_Bar_Raise",
+        "name": "Single-Leg Tib-Bar Raise",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "other",
+        "primaryMuscles": [
+          "tibialis"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Sit with one lower leg supported and its foot beyond the bench edge.",
+          "Secure that foot in a unilateral tib bar and choose a controllable load.",
+          "Raise the forefoot toward the shin, lower slowly, and repeat on the other side."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Unilateral Tibialis Raise",
+          "Solo Tib-Bar Raise"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Elevación de tibial con barra a una pierna",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "de": {
+          "preferred": "Einbeiniges Tibialisheben mit Tib-Bar",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "单腿胫骨前肌杠抬脚",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "單腿脛骨前肌槓抬腳",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Elevação de tibial com barra unilateral",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "fr": {
+          "preferred": "Relevé tibial unilatéral avec barre",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "ja": {
+          "preferred": "片脚ティブバーつま先上げ",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "ko": {
+          "preferred": "한 다리 티브 바 발끝 들기",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "hi": {
+          "preferred": "एक पैर से टिब बार पंजा उठाना",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "ar": {
+          "preferred": "رفع مقدمة القدم بقضيب الظنبوب بساق واحدة",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "he": {
+          "preferred": "הרמת קדמת כף הרגל עם מוט טיביאליס ברגל אחת",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "ru": {
+          "preferred": "Подъём носка с тиб-баром одной ногой",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "nl": {
+          "preferred": "Tibialis heffen met tib-bar op één been",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "it": {
+          "preferred": "Sollevamento tibiale con barra a una gamba",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Single-Leg Tib-Bar Raise",
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ]
+        },
+        "en": {
+          "preferred": "Single-Leg Tib-Bar Raise",
+          "aliases": [
+            "Unilateral Tibialis Raise",
+            "Solo Tib-Bar Raise"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Seated_Hip_Flexion": {
+      "exerciseId": "Seated_Hip_Flexion",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "bodyweight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_flexion"
+        ],
+        "direct": [
+          "hip_flexors"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_flexion"
+        ]
+      },
+      "source": {
+        "id": "Seated_Hip_Flexion",
+        "name": "Seated Hip Flexion",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "body only",
+        "primaryMuscles": [
+          "hip_flexors"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Sit upright on a firm seat with both knees bent and feet supported.",
+          "Lift one bent knee without leaning the trunk backward or rotating the pelvis.",
+          "Lower slowly and alternate sides."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Seated March"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Flexión de cadera sentado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "de": {
+          "preferred": "Hüftbeugung im Sitzen",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "坐姿屈髋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "坐姿屈髖",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Flexão de quadril sentado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "fr": {
+          "preferred": "Flexion de hanche assise",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "ja": {
+          "preferred": "座位股関節屈曲",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "ko": {
+          "preferred": "앉아서 고관절 굽힘",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "hi": {
+          "preferred": "बैठकर कूल्हे का फ्लेक्शन",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "ar": {
+          "preferred": "ثني الورك جلوسًا",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "he": {
+          "preferred": "כפיפת ירך בישיבה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "ru": {
+          "preferred": "Сгибание бедра сидя",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "nl": {
+          "preferred": "Zittende heupflexie",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "it": {
+          "preferred": "Flessione dell’anca da seduti",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Seated Hip Flexion",
+            "Seated March"
+          ]
+        },
+        "en": {
+          "preferred": "Seated Hip Flexion",
+          "aliases": [
+            "Seated March"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "exerciseId": "Supine_Short-Lever_Hip_Flexion",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "bodyweight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_flexion"
+        ],
+        "direct": [
+          "hip_flexors"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_flexion"
+        ]
+      },
+      "source": {
+        "id": "Supine_Short-Lever_Hip_Flexion",
+        "name": "Supine Short-Lever Hip Flexion",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "body only",
+        "primaryMuscles": [
+          "hip_flexors"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Lie on your back with knees bent and feet supported.",
+          "Keep one knee bent while bringing it toward the torso without rocking the pelvis.",
+          "Lower that foot slowly before changing sides."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Supine Bent-Knee March"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Flexión de cadera en decúbito supino con rodilla flexionada",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "de": {
+          "preferred": "Hüftbeugung in Rückenlage mit gebeugtem Knie",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "仰卧屈膝屈髋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "仰臥屈膝屈髖",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Flexão de quadril deitado com joelho flexionado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "fr": {
+          "preferred": "Flexion de hanche sur le dos avec genou fléchi",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "ja": {
+          "preferred": "仰向け膝曲げ股関節屈曲",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "ko": {
+          "preferred": "누워서 무릎 굽힌 고관절 굽힘",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "hi": {
+          "preferred": "पीठ के बल घुटना मोड़कर कूल्हे का फ्लेक्शन",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "ar": {
+          "preferred": "ثني الورك مستلقيًا والركبة مثنية",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "he": {
+          "preferred": "כפיפת ירך בשכיבה על הגב עם ברך כפופה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "ru": {
+          "preferred": "Сгибание бедра лёжа с согнутым коленом",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "nl": {
+          "preferred": "Heupflexie in rugligging met gebogen knie",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "it": {
+          "preferred": "Flessione dell’anca supina con ginocchio piegato",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Short-Lever Hip Flexion",
+            "Supine Bent-Knee March"
+          ]
+        },
+        "en": {
+          "preferred": "Supine Short-Lever Hip Flexion",
+          "aliases": [
+            "Supine Bent-Knee March"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "exerciseId": "Standing_Hip_Flexion_Hold",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "bodyweight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "hip_flexion"
+        ],
+        "direct": [
+          "hip_flexors"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:hip_flexion"
+        ]
+      },
+      "source": {
+        "id": "Standing_Hip_Flexion_Hold",
+        "name": "Standing Hip-Flexion Hold",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "body only",
+        "primaryMuscles": [
+          "hip_flexors"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Stand upright beside a stable support.",
+          "Raise one bent knee to a comfortable height while keeping the pelvis level.",
+          "Hold against gravity without leaning, then lower slowly and change sides."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Standing Knee-Raise Hold"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Flexión de cadera de pie con mantenimiento",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "de": {
+          "preferred": "Hüftbeugung im Stehen halten",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "站姿屈髋保持",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "站姿屈髖保持",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Flexão de quadril em pé com sustentação",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "fr": {
+          "preferred": "Maintien en flexion de hanche debout",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "ja": {
+          "preferred": "立位股関節屈曲保持",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "ko": {
+          "preferred": "서서 고관절 굽힘 유지",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "hi": {
+          "preferred": "खड़े होकर कूल्हे का फ्लेक्शन होल्ड",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "ar": {
+          "preferred": "تثبيت ثني الورك واقفًا",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "he": {
+          "preferred": "החזקת כפיפת ירך בעמידה",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "ru": {
+          "preferred": "Удержание сгибания бедра стоя",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "nl": {
+          "preferred": "Staande heupflexie vasthouden",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "it": {
+          "preferred": "Tenuta della flessione dell’anca in piedi",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Standing Hip-Flexion Hold",
+            "Standing Knee-Raise Hold"
+          ]
+        },
+        "en": {
+          "preferred": "Standing Hip-Flexion Hold",
+          "aliases": [
+            "Standing Knee-Raise Hold"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "exerciseId": "Resisted_Neck_Rotation_Isometric",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "bodyweight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "neck_rotation"
+        ],
+        "direct": [
+          "neck"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:neck_rotation"
+        ]
+      },
+      "source": {
+        "id": "Resisted_Neck_Rotation_Isometric",
+        "name": "Resisted Neck Rotation Isometric",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "body only",
+        "primaryMuscles": [
+          "neck"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Sit upright with your head facing forward and place a hand against the side of your face.",
+          "Attempt to turn the head gently into the hand while the hand prevents movement.",
+          "Release gradually and repeat on the opposite side without forcing the neck."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Isometric Cervical Rotation",
+          "Hand-Resisted Neck Rotation"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Rotación cervical isométrica resistida",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "de": {
+          "preferred": "Isometrische Nackenrotation gegen Widerstand",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "抗阻颈部旋转等长收缩",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "抗阻頸部旋轉等長收縮",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Rotação cervical isométrica resistida",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "fr": {
+          "preferred": "Rotation cervicale isométrique contre résistance",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "ja": {
+          "preferred": "抵抗付き頸部回旋アイソメトリック",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "ko": {
+          "preferred": "저항성 목 회전 등척성 운동",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "hi": {
+          "preferred": "प्रतिरोध के साथ गर्दन घुमाने का आइसोमेट्रिक व्यायाम",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "ar": {
+          "preferred": "دوران الرقبة الثابت مع مقاومة",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "he": {
+          "preferred": "סיבוב צוואר איזומטרי נגד התנגדות",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "ru": {
+          "preferred": "Изометрический поворот шеи с сопротивлением",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "nl": {
+          "preferred": "Isometrische nekrotatie tegen weerstand",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "it": {
+          "preferred": "Rotazione cervicale isometrica contro resistenza",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Resisted Neck Rotation Isometric",
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ]
+        },
+        "en": {
+          "preferred": "Resisted Neck Rotation Isometric",
+          "aliases": [
+            "Isometric Cervical Rotation",
+            "Hand-Resisted Neck Rotation"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "exerciseId": "Band_External_Rotation_90_Abduction",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "band"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "shoulder_external_rotation"
+        ],
+        "direct": [
+          "rotator_cuff"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_external_rotation"
+        ]
+      },
+      "source": {
+        "id": "Band_External_Rotation_90_Abduction",
+        "name": "Band External Rotation at 90 Degrees Abduction",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "bands",
+        "primaryMuscles": [
+          "rotator_cuff"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Anchor a light band in front of you and hold the upper arm at shoulder height with the elbow bent.",
+          "Keep the upper arm and elbow level while rotating the forearm upward against resistance.",
+          "Return slowly without arching the back or moving the elbow."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "90/90 Band External Rotation"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Rotación externa con banda y abducción de 90 grados",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "de": {
+          "preferred": "Außenrotation mit Band bei 90 Grad Abduktion",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "肩外展90度弹力带外旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "肩外展90度彈力帶外旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Rotação externa com elástico e abdução de 90 graus",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "fr": {
+          "preferred": "Rotation externe avec élastique en abduction à 90 degrés",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "ja": {
+          "preferred": "肩外転90度でのバンド外旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "ko": {
+          "preferred": "어깨 벌림 90도 밴드 바깥돌림",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "hi": {
+          "preferred": "कंधा 90 डिग्री खोलकर बैंड से बाहरी घुमाव",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "ar": {
+          "preferred": "الدوران الخارجي بالشريط مع إبعاد الكتف 90 درجة",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "he": {
+          "preferred": "סיבוב חיצוני עם גומייה בהרחקת כתף של 90 מעלות",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "ru": {
+          "preferred": "Наружная ротация плеча с резинкой при отведении на 90 градусов",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "nl": {
+          "preferred": "Exorotatie met band bij 90 graden abductie",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "it": {
+          "preferred": "Rotazione esterna con elastico a 90 gradi di abduzione",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Band External Rotation at 90 Degrees Abduction",
+            "90/90 Band External Rotation"
+          ]
+        },
+        "en": {
+          "preferred": "Band External Rotation at 90 Degrees Abduction",
+          "aliases": [
+            "90/90 Band External Rotation"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "exerciseId": "Side-Lying_Dumbbell_Internal_Rotation",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "free_weight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "shoulder_internal_rotation"
+        ],
+        "direct": [
+          "rotator_cuff"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_internal_rotation"
+        ]
+      },
+      "source": {
+        "id": "Side-Lying_Dumbbell_Internal_Rotation",
+        "name": "Side-Lying Dumbbell Internal Rotation",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "dumbbell",
+        "primaryMuscles": [
+          "rotator_cuff"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Lie on the exercising side with the upper arm beside the torso and elbow bent.",
+          "Hold a light dumbbell in the lower hand and rotate the forearm toward the torso while keeping the elbow stationary.",
+          "Lower the forearm slowly without rolling the trunk."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Lying Dumbbell Internal Rotation"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Rotación interna con mancuerna tumbado de lado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "de": {
+          "preferred": "Innenrotation mit Kurzhantel in Seitenlage",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "侧卧哑铃肩内旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "側臥啞鈴肩內旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Rotação interna com halter deitado de lado",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "fr": {
+          "preferred": "Rotation interne avec haltère couché sur le côté",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "ja": {
+          "preferred": "横向きダンベル肩内旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "ko": {
+          "preferred": "옆으로 누워 덤벨 어깨 안쪽돌림",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "hi": {
+          "preferred": "करवट लेटकर डंबल से कंधे का अंदरूनी घुमाव",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "ar": {
+          "preferred": "الدوران الداخلي للكتف بالدمبل مستلقيًا على الجانب",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "he": {
+          "preferred": "סיבוב פנימי של הכתף עם משקולת בשכיבה על הצד",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "ru": {
+          "preferred": "Внутренняя ротация плеча с гантелью лёжа на боку",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "nl": {
+          "preferred": "Endorotatie met halter in zijligging",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "it": {
+          "preferred": "Rotazione interna con manubrio sul fianco",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Side-Lying Dumbbell Internal Rotation",
+            "Lying Dumbbell Internal Rotation"
+          ]
+        },
+        "en": {
+          "preferred": "Side-Lying Dumbbell Internal Rotation",
+          "aliases": [
+            "Lying Dumbbell Internal Rotation"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
+        }
+      }
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "exerciseId": "Supine_Dumbbell_Shoulder_Rotation",
+      "classification": {
+        "trainingTypes": [
+          "strength"
+        ],
+        "modalities": [
+          "free_weight"
+        ],
+        "sportContexts": [
+          "general_fitness"
+        ],
+        "competitionMovements": []
+      },
+      "annotation": {
+        "patterns": [
+          "shoulder_internal_rotation",
+          "shoulder_external_rotation"
+        ],
+        "direct": [
+          "rotator_cuff"
+        ],
+        "indirect": [],
+        "stabilizers": [],
+        "volumeEligible": true,
+        "confidence": "high",
+        "reviewReasons": [],
+        "evidenceRefs": [
+          "pattern:shoulder_internal_rotation",
+          "pattern:shoulder_external_rotation"
+        ]
+      },
+      "source": {
+        "id": "Supine_Dumbbell_Shoulder_Rotation",
+        "name": "Supine Dumbbell Shoulder Rotation",
+        "force": "pull",
+        "level": "beginner",
+        "mechanic": "isolation",
+        "equipment": "dumbbell",
+        "primaryMuscles": [
+          "rotator_cuff"
+        ],
+        "secondaryMuscles": [],
+        "instructions": [
+          "Lie on your back with the upper arm supported out to the side and elbow bent.",
+          "With a light dumbbell, rotate the forearm through a comfortable internal and external rotation arc.",
+          "Keep the elbow supported and control both directions without forcing the shoulder."
+        ],
+        "category": "strength",
+        "images": [],
+        "aliases": [
+          "Supine Internal and External Rotation"
+        ]
+      },
+      "localizedNames": {
+        "es": {
+          "preferred": "Rotación de hombro con mancuerna en decúbito supino",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "de": {
+          "preferred": "Schulterrotation mit Kurzhantel in Rückenlage",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "zh-Hans": {
+          "preferred": "仰卧哑铃肩旋转",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "zh-Hant": {
+          "preferred": "仰臥啞鈴肩旋轉",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "pt-BR": {
+          "preferred": "Rotação de ombro com halter deitado de costas",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "fr": {
+          "preferred": "Rotation d’épaule avec haltère couché sur le dos",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "ja": {
+          "preferred": "仰向けダンベル肩回旋",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "ko": {
+          "preferred": "바로 누워 덤벨 어깨 돌림",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "hi": {
+          "preferred": "पीठ के बल डंबल से कंधे का घुमाव",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "ar": {
+          "preferred": "دوران الكتف بالدمبل مستلقيًا على الظهر",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "he": {
+          "preferred": "סיבוב כתף עם משקולת בשכיבה על הגב",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "ru": {
+          "preferred": "Ротация плеча с гантелью лёжа на спине",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "nl": {
+          "preferred": "Schouderrotatie met halter in rugligging",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "it": {
+          "preferred": "Rotazione della spalla con manubrio in posizione supina",
+          "aliases": [],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "provisional",
+          "searchOnly": [
+            "Supine Dumbbell Shoulder Rotation",
+            "Supine Internal and External Rotation"
+          ]
+        },
+        "en": {
+          "preferred": "Supine Dumbbell Shoulder Rotation",
+          "aliases": [
+            "Supine Internal and External Rotation"
+          ],
+          "sourceRefs": [
+            "repo-domain-terminology"
+          ],
+          "reviewStatus": "reviewed"
         }
       }
     }

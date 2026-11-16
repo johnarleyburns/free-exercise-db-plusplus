@@ -277,6 +277,28 @@ final class FreeExerciseDBPlusPlusTests: XCTestCase {
     let unplanned = ExerciseObservation(exerciseId: "extra", order: 3, sets: [SetObservation(setNumber: 1, setType: "working", completed: true)])
     XCTAssertTrue(unplanned.isUnplanned)
   }
+  func testSpecializedMuscleCatalogAliasesAndCredits() throws {
+    let db = try FEDatabase.bundled()
+    XCTAssertEqual(db.count, 938)
+    XCTAssertTrue(db.findExercises(containing: "Side-Lying Dumbbell External Rotation").contains {
+      $0.exerciseId == "External_Rotation"
+    })
+    XCTAssertTrue(db.findExercises(containing: "Banded March").contains {
+      $0.exerciseId == "Hip_Flexion_with_Band"
+    })
+    let ids = ["Sit-Up", "Dumbbell_Scaption", "Standing_Toe_Raise"]
+    let workout = Workout(
+      schemaVersion: "0.2.0", sessionId: "specialized", startTime: "2026-11-16T00:00:00Z",
+      exercises: ids.enumerated().map { index, id in
+        ExerciseObservation(exerciseId: id, exerciseName: nil, order: index + 1, laterality: nil,
+          sets: [SetObservation(setNumber: 1, setType: "working", completed: true)])
+      })
+    let credits = workout.effectiveSets(using: db)
+    XCTAssertEqual(credits["hip_flexors"], 0.5)
+    XCTAssertEqual(credits["rotator_cuff"], 0.5)
+    XCTAssertEqual(credits["tibialis"], 1)
+  }
+
   func testEffectiveSets() throws {
     let ex = Exercise(
       exerciseId: "x",

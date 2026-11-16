@@ -3,6 +3,12 @@
 # These are deliberately small.  The rule engine handles the unambiguous
 # lexical cases; this table records taxonomy decisions that deserve review.
 FAMILY_OVERRIDES = {
+    "External_Rotation": "shoulder_rotation",
+    "External_Rotation_with_Band": "shoulder_rotation",
+    "External_Rotation_with_Cable": "shoulder_rotation",
+    "Cable_Internal_Rotation": "shoulder_rotation",
+    "Internal_Rotation_with_Band": "shoulder_rotation",
+    "Hip_Flexion_with_Band": "hip_flexion",
     "Barbell_Bench_Press_-_Medium_Grip": "bench_press",
     "Dumbbell_Bench_Press": "bench_press",
     "Front_Barbell_Squat": "squat",

@@ -117,7 +117,7 @@ def audit(root: Path) -> tuple[str, int]:
         lines.append(
             f"Semantic review candidates: {len(overlap_candidates)} entries retain source-language tokens "
             "outside the loanword allowlist. This queue is advisory and may include valid local loanwords; "
-            "it must be resolved by native domain review before release."
+            "native domain review remains encouraged; provisional names are releasable with their status preserved."
         )
         if overlap_tokens:
             top_tokens = sorted(overlap_tokens.items(), key=lambda item: (-item[1], item[0]))[:20]

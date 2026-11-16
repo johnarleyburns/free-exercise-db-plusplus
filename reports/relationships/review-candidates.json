@@ -577,12 +577,9 @@
     "dip_triceps_bias",
     "high_pull",
     "hip_abduction",
-    "hip_flexion",
     "knee_flexion",
-    "neck_conditioning",
     "pullover",
     "shoulder_abduction",
-    "tibialis_raise",
     "torso_rotation",
     "trunk_flexion"
   ]
