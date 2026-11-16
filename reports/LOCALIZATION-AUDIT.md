@@ -20,7 +20,6 @@ First semantic-review candidates:
 |---|---|---|
 | `Alternate_Leg_Diagonal_Bound` | Salto diagonal alterno a una pierna | diagonal |
 | `Anterior_Tibialis-SMR` | Liberación miofascial del tibial anterior | anterior |
-| `Assisted_Chin-Up` | Assisted dominada supina | assisted |
 | `Atlas_Stone_Trainer` | Entrenamiento con piedra Atlas | atlas |
 | `Atlas_Stones` | Piedras Atlas | atlas |
 | `Barbell_Hack_Squat` | Sentadilla Hack con Barra | hack |
@@ -28,21 +27,22 @@ First semantic-review candidates:
 | `Bench_Sprint` | Sprint en Banco | sprint |
 | `Bent_Over_Low-Pulley_Side_Lateral` | Elevación lateral inclinada en polea baja | lateral |
 | `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
-| `Cable_Crossover_Step-Up` | Cruce de poleas step-up | step-up |
 | `Cable_Crunch` | Crunch en Polea | crunch |
-| `Cable_Forward_Lunge` | Forward zancada en polea | forward |
-| `Cable_Hip_Abduction` | Cadera abduction en polea | abduction |
-| `Cable_Hip_Flexion` | Cadera flexion en polea | flexion |
 | `Cable_Judo_Flip` | Volteo de judo en polea | judo |
-| `Cable_Jump_Slam` | Salto slam en polea | slam |
-| `Cable_Lateral_Lunge` | Zancada en polea lateral | lateral |
 | `Cable_Seated_Lateral_Raise` | Elevación Lateral Sentado en Polea | lateral |
-| `Cable_Step-Up` | Step-up en polea | step-up |
 | `Carioca_Quick_Step` | Paso carioca rápido | carioca |
 | `Double_Kettlebell_Push_Press` | Push Press con Dos Pesas Rusas | push |
 | `Dumbbell_Lying_One-Arm_Rear_Lateral_Raise` | Elevación Lateral Posterior Acostado a Un Brazo | lateral |
 | `Dumbbell_Lying_Rear_Lateral_Raise` | Elevación Lateral Posterior Acostado con Mancuerna | lateral |
 | `Dumbbell_Rear_Lunge` | Lunge Trasero con Mancuerna | lunge |
+| `Elevated_Back_Lunge` | Lunge Trasero Elevado | lunge |
+| `Frankenstein_Squat` | Sentadilla Frankenstein | frankenstein |
+| `Gironda_Sternum_Chins` | Dominadas al esternón de Gironda | gironda |
+| `Goblet_Squat` | Sentadilla Goblet | goblet |
+| `Hack_Squat` | Sentadilla Hack | hack |
+| `IT_Band_and_Glute_Stretch` | Estiramiento de Banda IT y Glúteo | it |
+| `Iliotibial_Tract-SMR` | Liberación miofascial de la cintilla iliotibial | iliotibial |
+| `Janda_Sit-Up` | Sit-Up Janda | janda, sit-up |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -76,7 +76,6 @@ First semantic-review candidates:
 | `Barbell_Hack_Squat` | Hack Kniebeuge mit Langhantel | hack |
 | `Barbell_Hip_Thrust` | Hip Thrust mit Langhantel | thrust |
 | `Barbell_Side_Split_Squat` | Seitlicher Split Squat mit Langhantel | split |
-| `Belt_Squat` | Belt Kniebeuge | belt |
 | `Bench_Dips` | Dips an der Bank | dips |
 | `Bench_Press_-_Powerlifting` | Bankdrücken — Powerlifting | powerlifting |
 | `Bench_Sprint` | Bank Sprint | sprint |
@@ -90,8 +89,9 @@ First semantic-review candidates:
 | `Brachialis-SMR` | Brachialis-SMR | brachialis-smr |
 | `Butt_Lift_Bridge` | Butt Heben Brücke | butt |
 | `Butterfly` | Butterfly | butterfly |
-| `Cable_Crossover_Step-Up` | Kabelzug über Kreuz Step-up | step-up |
 | `Cable_Crunch` | Kabel Crunch | crunch |
+| `Cable_Deadlifts` | Kabel deadlifts | deadlifts |
+| `Cable_Hammer_Curls_-_Rope_Attachment` | Kabel hammer Curls — Seil attachment | attachment, curls |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -148,16 +148,9 @@ First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Belt_Squat` | Belt 深蹲 | belt |
 | `Bradford_Rocky_Presses` | Bradford/Rocky推举 | bradford |
-| `Cable_Crossover_Step-Up` | 绳索夹胸 step-up | step-up |
-| `Cable_Forward_Lunge` | 绳索 forward 弓步 | forward |
-| `Cable_Hip_Abduction` | 绳索 髋 abduction | abduction |
-| `Cable_Hip_Flexion` | 绳索 髋 flexion | flexion |
-| `Cable_Jump_Slam` | 绳索 跳 slam | slam |
 | `Cable_Russian_Twists` | 绳索 russian twists | russian, twists |
 | `Cable_Shrugs` | 绳索 shrugs | shrugs |
-| `Cable_Step-Up` | 绳索 step-up | step-up |
 | `Calf_Stretch_Elbows_Against_Wall` | 小腿 拉伸 elbows 靠 wall | elbows, wall |
 | `Calf_Stretch_Hands_Against_Wall` | 小腿 拉伸 hands 靠 wall | hands, wall |
 | `Car_Deadlift` | Car 硬拉 | car |
@@ -173,6 +166,13 @@ First semantic-review candidates:
 | `Cuban_Press` | Cuban 推举 | cuban |
 | `Dancers_Stretch` | Dancer's 拉伸 | dancer's |
 | `Deficit_Deadlift` | Deficit 硬拉 | deficit |
+| `Depth_Jump_Leap` | Depth 跳 leap | depth, leap |
+| `Donkey_Calf_Raises` | Donkey 小腿 举 | donkey |
+| `Double_Kettlebell_Windmill` | 双 壶铃 windmill | windmill |
+| `Double_Leg_Butt_Kick` | 双 腿 臀部 kick | kick |
+| `Drag_Curl` | Drag 弯举 | drag |
+| `Drop_Push` | Drop 推 | drop |
+| `Dumbbell_Bench_Press_with_Neutral_Grip` | 哑铃卧推 带 neutral grip | neutral |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -199,19 +199,12 @@ First semantic-review candidates:
 
 | exerciseId | preferred | retained source tokens |
 |---|---|---|
-| `Belt_Squat` | Belt 深蹲 | belt |
 | `Bradford_Rocky_Presses` | Bradford/Rocky推舉 | bradford |
-| `Cable_Crossover_Step-Up` | 繩索夾胸 step-up | step-up |
-| `Cable_Forward_Lunge` | 繩索 forward 弓步 | forward |
-| `Cable_Hip_Abduction` | 繩索 髖 abduction | abduction |
 | `Cable_Hip_Adduction` | 繩索 髖 adduction | adduction |
-| `Cable_Hip_Flexion` | 繩索 髖 flexion | flexion |
 | `Cable_Incline_Pushdown` | 繩索 上斜 pushdown | pushdown |
 | `Cable_Judo_Flip` | 繩索 judo flip | flip, judo |
-| `Cable_Jump_Slam` | 繩索 跳 slam | slam |
 | `Cable_Russian_Twists` | 繩索 russian twists | russian, twists |
 | `Cable_Shrugs` | 繩索 shrugs | shrugs |
-| `Cable_Step-Up` | 繩索 step-up | step-up |
 | `Calf_Stretch_Elbows_Against_Wall` | 小腿 伸展 elbows 靠 wall | elbows, wall |
 | `Calf_Stretch_Hands_Against_Wall` | 小腿 伸展 hands 靠 wall | hands, wall |
 | `Car_Deadlift` | Car 硬舉 | car |
@@ -224,6 +217,13 @@ First semantic-review candidates:
 | `Chair_Upper_Body_Stretch` | 椅上 upper 身體 伸展 | upper |
 | `Chest_Push_from_3_point_stance` | 胸 推 從 3 point 站距 | point |
 | `Chest_Stretch_on_Stability_Ball` | 胸 伸展 在 stability 球 | stability |
+| `Clock_Push-Up` | Clock 伏地挺身 | clock |
+| `Crunch_-_Hands_Overhead` | 捲腹 — hands 過頂 | hands |
+| `Cuban_Press` | Cuban 推舉 | cuban |
+| `Dancers_Stretch` | Dancer's 伸展 | dancer's |
+| `Deficit_Deadlift` | Deficit 硬舉 | deficit |
+| `Depth_Jump_Leap` | Depth 跳 leap | depth, leap |
+| `Donkey_Calf_Raises` | Donkey 小腿 舉 | donkey |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -254,14 +254,9 @@ First semantic-review candidates:
 | `Atlas_Stones` | Pedras Atlas | atlas |
 | `Axle_Deadlift` | Axle levantamento terra | axle |
 | `Barbell_Hack_Squat` | Agachamento hack com barra | hack |
-| `Belt_Squat` | Belt agachamento | belt |
 | `Bench_Press_-_Powerlifting` | Supino — powerlifting | powerlifting |
 | `Bent_Over_Low-Pulley_Side_Lateral` | Elevação lateral inclinada na polia baixa | lateral |
 | `Bradford_Rocky_Presses` | Press Bradford/Rocky | bradford |
-| `Cable_Hip_Abduction` | Cabo quadril abduction | abduction |
-| `Cable_Hip_Flexion` | Cabo quadril flexion | flexion |
-| `Cable_Jump_Slam` | Cabo salto slam | slam |
-| `Cable_Lateral_Lunge` | Avanço lateral na polia | lateral |
 | `Cable_Seated_Lateral_Raise` | Elevação lateral sentada na polia | lateral |
 | `Calf_Press_On_The_Leg_Press_Machine` | Prensa de panturrilhas na máquina de leg press | leg |
 | `Carioca_Quick_Step` | Passo carioca rápido | carioca |
@@ -273,6 +268,11 @@ First semantic-review candidates:
 | `Clock_Push-Up` | Clock flexão de braços | clock |
 | `Cuban_Press` | Cuban pressão | cuban |
 | `Dancers_Stretch` | Dancer's alongamento | dancer's |
+| `Deficit_Deadlift` | Deficit levantamento terra | deficit |
+| `Depth_Jump_Leap` | Profundidade salto leap | leap |
+| `Donkey_Calf_Raises` | Donkey panturrilha elevações | donkey |
+| `Double_Kettlebell_Windmill` | Duplo kettlebell windmill | windmill |
+| `Double_Leg_Butt_Kick` | Duplo perna glúteos kick | kick |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -303,7 +303,6 @@ First semantic-review candidates:
 | `Atlas_Stone_Trainer` | Entraînement avec pierre Atlas | atlas |
 | `Atlas_Stones` | Pierres Atlas | atlas |
 | `Ball_Leg_Curl` | Leg curl avec ballon | leg |
-| `Band_External_Rotation_90_Abduction` | Rotation externe avec élastique en abduction à 90 degrés | abduction, rotation |
 | `Band_Good_Morning` | Good morning avec élastique | morning |
 | `Band_Good_Morning_Pull_Through` | Good morning avec élastique et extension de hanche | morning |
 | `Band_Hip_Adductions` | Adductions de hanche avec élastique | adductions |
@@ -323,6 +322,7 @@ First semantic-review candidates:
 | `Box_Squat_with_Chains` | Squat sur box avec chaînes | box |
 | `Bradford_Rocky_Presses` | Développés Bradford/Rocky | bradford |
 | `Butterfly` | Butterfly | butterfly |
+| `Cable_Hip_Adduction` | Poulie hanche adduction | adduction |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -375,7 +375,6 @@ First semantic-review candidates:
 | `Anti-Gravity_Press` | Anti-gravity 프레스 | anti-gravity |
 | `Arm_Circles` | 팔 circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted 친업 | assisted |
 | `Axle_Deadlift` | Axle 데드리프트 | axle |
 | `Backward_Medicine_Ball_Throw` | Backward 메디신볼 throw | backward, throw |
 | `Ball_Leg_Curl` | Ball 레그 컬 | ball |
@@ -392,6 +391,7 @@ First semantic-review candidates:
 | `Barbell_Rear_Delt_Row` | 바벨 리어 delt 로우 | delt |
 | `Barbell_Rollout_from_Bench` | 바벨 rollout 벤치 | rollout |
 | `Barbell_Squat_To_A_Bench` | 바벨 스쿼트 a 벤치 | a |
+| `Barbell_Step_Ups` | 바벨 step ups | step, ups |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -423,7 +423,6 @@ First semantic-review candidates:
 | `Anti-Gravity_Press` | Anti-gravity प्रेस | anti-gravity |
 | `Arm_Circles` | आर्म circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted चिन-अप | assisted |
 | `Axle_Deadlift` | Axle डेडलिफ्ट | axle |
 | `Backward_Medicine_Ball_Throw` | Backward मेडिसिन बॉल throw | backward, throw |
 | `Ball_Leg_Curl` | Ball लेग कर्ल | ball |
@@ -440,6 +439,7 @@ First semantic-review candidates:
 | `Barbell_Rear_Delt_Row` | बारबेल रियर delt रो | delt |
 | `Barbell_Rollout_from_Bench` | बारबेल rollout से बेंच | rollout |
 | `Barbell_Squat_To_A_Bench` | बारबेल स्क्वाट तक a बेंच | a |
+| `Barbell_Step_Ups` | बारबेल step ups | step, ups |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -471,7 +471,6 @@ First semantic-review candidates:
 | `Anti-Gravity_Press` | Anti-gravity ضغط | anti-gravity |
 | `Arm_Circles` | ذراع circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted عقلة قبضة عكسية | assisted |
 | `Axle_Deadlift` | Axle رفعة ميتة | axle |
 | `Backward_Medicine_Ball_Throw` | Backward كرة طبية throw | backward, throw |
 | `Ball_Leg_Curl` | Ball ثني الساق | ball |
@@ -488,6 +487,7 @@ First semantic-review candidates:
 | `Barbell_Rear_Delt_Row` | بار خلفي delt تجديف | delt |
 | `Barbell_Rollout_from_Bench` | بار rollout من مقعد | rollout |
 | `Barbell_Squat_To_A_Bench` | بار سكوات إلى a مقعد | a |
+| `Barbell_Step_Ups` | بار step ups | step, ups |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -519,7 +519,6 @@ First semantic-review candidates:
 | `Anti-Gravity_Press` | Anti-gravity לחיצה | anti-gravity |
 | `Arm_Circles` | זרוע circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted מתח באחיזה הפוכה | assisted |
 | `Axle_Deadlift` | Axle דדליפט | axle |
 | `Backward_Medicine_Ball_Throw` | Backward כדור כוח throw | backward, throw |
 | `Ball_Leg_Curl` | Ball כפיפת ברך | ball |
@@ -536,6 +535,7 @@ First semantic-review candidates:
 | `Barbell_Rear_Delt_Row` | מוט אחורי delt חתירה | delt |
 | `Barbell_Rollout_from_Bench` | מוט rollout מ ספסל | rollout |
 | `Barbell_Squat_To_A_Bench` | מוט סקוואט ל a ספסל | a |
+| `Barbell_Step_Ups` | מוט step ups | step, ups |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -567,7 +567,6 @@ First semantic-review candidates:
 | `Anti-Gravity_Press` | Anti-gravity жим | anti-gravity |
 | `Arm_Circles` | Рука circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted подтягивания обратным хватом | assisted |
 | `Axle_Deadlift` | Axle становая тяга | axle |
 | `Backward_Medicine_Ball_Throw` | Backward медбол throw | backward, throw |
 | `Ball_Leg_Curl` | Ball сгибание ног | ball |
@@ -584,6 +583,7 @@ First semantic-review candidates:
 | `Barbell_Rear_Delt_Row` | Штанга задний delt тяга | delt |
 | `Barbell_Rollout_from_Bench` | Штанга rollout из скамья | rollout |
 | `Barbell_Squat_To_A_Bench` | Штанга приседание к a скамья | a |
+| `Barbell_Step_Ups` | Штанга step ups | step, ups |
 
 | exerciseId | unchanged preferred name |
 |---|---|
@@ -613,13 +613,11 @@ First semantic-review candidates:
 | `All_Fours_Quad_Stretch` | All fours quad rekken | all, fours, quad |
 | `Alternate_Incline_Dumbbell_Curl` | Afwisselend hellend dumbbell curl | dumbbell |
 | `Alternate_Leg_Diagonal_Bound` | Afwisselend been diagonal bound | bound, diagonal |
-| `Alternating_Cable_Lat_Pulldown` | Afwisselend kabel lat pulldown | lat, pulldown |
 | `Alternating_Renegade_Row` | Afwisselend renegade roeien | renegade |
 | `Ankle_On_The_Knee` | Ankle op knee | ankle, knee |
 | `Anti-Gravity_Press` | Anti-gravity drukken | anti-gravity |
 | `Arnold_Dumbbell_Press` | Arnold dumbbell drukken | dumbbell |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted optrekken met onderhandse greep | assisted |
 | `Backward_Medicine_Ball_Throw` | Backward medicijnbal throw | backward, throw |
 | `Ball_Leg_Curl` | Ball beencurl | ball |
 | `Band_Assisted_Pull-Up` | Band assisted optrekken | assisted |
@@ -632,13 +630,14 @@ First semantic-review candidates:
 | `Barbell_Curls_Lying_Against_An_Incline` | Halterstang curls liggend against an hellend | against, an, curls |
 | `Barbell_Full_Squat` | Halterstang full squat | full |
 | `Barbell_Guillotine_Bench_Press` | Halterstang guillotine bankdrukken | guillotine |
+| `Barbell_Hack_Squat` | Halterstang hack squat | hack |
+| `Barbell_Rear_Delt_Row` | Halterstang achterste delt roeien | delt |
 
 | exerciseId | unchanged preferred name |
 |---|---|
 | `3_4_Sit-Up` | 3/4-sit-up |
 | `Air_Bike` | airbike |
 | `Band_Skull_Crusher` | Band skullcrusher |
-| `Belt_Squat` | belt squat |
 | `Bottoms_Up` | bottoms-up |
 | `Box_Skip` | box skip |
 | `Box_Squat` | box squat |
@@ -675,7 +674,6 @@ First semantic-review candidates:
 | `Muscle_Snatch` | muscle snatch |
 | `Muscle_Up` | muscle-up |
 | `Otis-Up` | Otis-up |
-| `Pendulum_Squat` | pendulum squat |
 | `Preacher_Curl` | preacher curl |
 | `Prowler_Sprint` | Prowler-sprint |
 | `Rickshaw_Deadlift` | rickshaw-deadlift |
@@ -697,9 +695,11 @@ First semantic-review candidates:
 | `Superman` | Superman |
 | `Triceps_Pushdown` | triceps pushdown |
 | `Tuck_Crunch` | tuck-crunch |
-| `V-Squat` | V-squat |
 | `Wind_Sprints` | windsprints |
 | `Zottman_Curl` | Zottman-curl |
+| `Belt_Squat` | belt squat |
+| `V-Squat` | V-squat |
+| `Pendulum_Squat` | pendulum squat |
 
 Untranslated fallback entries: 0. These remain English source names and require target-language review before being called localized.
 
@@ -723,13 +723,11 @@ First semantic-review candidates:
 | `Air_Bike` | Air bike | air, bike |
 | `All_Fours_Quad_Stretch` | All fours quad stretching | all, fours, quad |
 | `Alternate_Leg_Diagonal_Bound` | Alternato gamba diagonal bound | bound, diagonal |
-| `Alternating_Cable_Lat_Pulldown` | Alternato cavo lat macchina | lat |
 | `Alternating_Renegade_Row` | Alternato renegade rematore | renegade |
 | `Ankle_On_The_Knee` | Ankle su knee | ankle, knee |
 | `Anti-Gravity_Press` | Anti-gravity spinta | anti-gravity |
 | `Arm_Circles` | Braccio circles | circles |
 | `Around_The_Worlds` | Around worlds | around, worlds |
-| `Assisted_Chin-Up` | Assisted trazioni supine | assisted |
 | `Atlas_Stone_Trainer` | Allenamento con pietra Atlas | atlas |
 | `Atlas_Stones` | Pietre Atlas | atlas |
 | `Axle_Deadlift` | Axle stacco da terra | axle |
@@ -743,11 +741,12 @@ First semantic-review candidates:
 | `Barbell_Ab_Rollout` | Bilanciere addome rollout | rollout |
 | `Barbell_Ab_Rollout_-_On_Knees` | Bilanciere addome rollout — su knees | knees, rollout |
 | `Barbell_Curls_Lying_Against_An_Incline` | Bilanciere curls sdraiato against an inclinato | against, an, curls |
+| `Barbell_Full_Squat` | Bilanciere full squat | full |
+| `Barbell_Guillotine_Bench_Press` | Bilanciere guillotine panca piana | guillotine |
 
 | exerciseId | unchanged preferred name |
 |---|---|
 | `Air_Bike` | Air bike |
-| `Belt_Squat` | Belt squat |
 | `Butterfly` | Butterfly |
 | `Dead_Bug` | Dead bug |
 | `Drag_Curl` | Drag curl |
@@ -756,13 +755,14 @@ First semantic-review candidates:
 | `Hack_Squat` | Hack squat |
 | `Inchworm` | Inchworm |
 | `Muscle_Up` | Muscle-up |
-| `Pendulum_Squat` | Pendulum squat |
 | `Plank` | Plank |
 | `Spell_Caster` | Spell Caster |
 | `Spider_Curl` | Spider curl |
 | `Stairmaster` | StairMaster |
 | `Superman` | Superman |
+| `Belt_Squat` | Belt squat |
 | `V-Squat` | V-squat |
+| `Pendulum_Squat` | Pendulum squat |
 
 Untranslated fallback entries: 0. These remain English source names and require target-language review before being called localized.
 

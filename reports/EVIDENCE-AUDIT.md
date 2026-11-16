@@ -1,6 +1,6 @@
 # DB++ Evidence Audit
 
-- Canonical patterns: **89**
+- Canonical patterns: **93**
 - Provisional patterns: **2**
 - Exercise-pattern uses still provisional: **0**
 

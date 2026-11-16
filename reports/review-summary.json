@@ -2,7 +2,7 @@
   "metadata": {
     "schemaVersion": "0.3.0",
     "converterVersion": "0.8.1",
-    "generatedAt": "2026-11-09T19:55:40.417645+00:00",
+    "generatedAt": "2026-11-16T18:59:49.665863+00:00",
     "upstream": {
       "project": "yuhonas/free-exercise-db",
       "sourceUrl": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json",
@@ -425,6 +425,102 @@
           "type": "narrative_review",
           "doi": "10.1519/SSC.0000000000000218",
           "url": "https://journals.lww.com/nsca-scj/fulltext/2016/08000/application_of_the_repetitions_in_reserve_based.10.aspx"
+        },
+        "aaos_ankle_conditioning": {
+          "title": "Foot and Ankle Conditioning Program",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.orthoinfo.org/recovery/foot-and-ankle-conditioning-program/",
+          "reason": "Documents band-resisted dorsiflexion and identifies anterior tibialis; supports exercise selection, not a measured set-credit fraction."
+        },
+        "nhs_toe_raise": {
+          "title": "Strength and balance exercise programme for falls prevention",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.southtees.nhs.uk/resources/strength-and-balance-exercise-programme-for-falls-prevention/",
+          "reason": "Documents lifting the forefoot while retaining heel contact; supports the bodyweight toe-raise movement."
+        },
+        "nhs_seated_toe_raise": {
+          "title": "Lower limb strengthening activities",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.kentcht.nhs.uk/leaflet/lower-limb-strengthening-activities/",
+          "reason": "Documents seated toe lifts with heels down; supports toe-raise terminology and accessible progression."
+        },
+        "nhs_strength_balance_toe_raise": {
+          "title": "Strength and balance exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.nhsinform.scot/healthy-living/preventing-falls/keeping-well/strength-and-balance-exercises",
+          "reason": "Documents toe raises; corroborates bodyweight dorsiflexion as a distinct exercise from calf raises."
+        },
+        "tib_bar_manufacturer": {
+          "title": "Tib Bar \u2013 Tibialis Trainer",
+          "type": "manufacturer_exercise_guide",
+          "url": "https://tib-bar.com/products/tib-bar",
+          "reason": "Documents bilateral and unilateral tib-bar equipment and seated dorsiflexion technique only; commercial injury-prevention claims are not adopted."
+        },
+        "osu_iliopsoas_progression": {
+          "title": "Gluteus Medius Repair: Appendix A, Psoas Progression",
+          "type": "clinical_exercise_guide",
+          "url": "https://medicine.osu.edu/-/media/files/medicine/departments/sports-medicine/medical-professionals/hip/glute-med-repair-2020.pdf?hash=61FBA1E505B6173CD4D4C753FC8E8A8484725F81&la=en",
+          "reason": "Documents supine short-lever, seated, and standing resisted hip flexion; supports distinct positions, not transfer of postoperative dosage to general training."
+        },
+        "cuh_hip_flexion": {
+          "title": "Hip strengthening exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.cuh.nhs.uk/patient-information/hip-strengthening-exercises/",
+          "reason": "Documents supported standing hip flexion with the knee bent and a hold; supports the standing hip-flexion hold."
+        },
+        "uw_seated_hip_flexion": {
+          "title": "Physical Therapy Before and After Your ACL Surgery: Seated Hip Flexion",
+          "type": "clinical_exercise_guide",
+          "url": "https://healthonline.washington.edu/sites/default/files/record_pdfs/Physical-Therapy-Before-After-Your-ACL-Surgery-CH.pdf",
+          "reason": "Documents seated bent-knee hip flexion as distinct from a straight-leg raise; supports exercise identity only."
+        },
+        "nhs_resisted_neck_rotation": {
+          "title": "Neck pain: Resisted neck exercises",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.dynamichealth.nhs.uk/help-and-advice/neck-pain/",
+          "reason": "Documents hand-resisted cervical rotation, flexion and side flexion; rotation is a distinct addition, while existing flexion/side records retain their IDs."
+        },
+        "aaos_rotator_cuff_conditioning": {
+          "title": "Rotator Cuff and Shoulder Conditioning Program",
+          "type": "clinical_exercise_guide",
+          "url": "https://www.orthoinfo.org/bodypart/shoulder/rotator-cuff-and-shoulder-conditioning-program/?webid=24DCE756",
+          "reason": "Documents 90-degree-abducted external rotation, supine rotation and side-lying internal/external rotation. Existing side-lying external rotation is retained with aliases."
+        },
+        "andersson_hip_flexor_emg_1997": {
+          "title": "Abdominal and hip flexor muscle activation during various training exercises",
+          "type": "experimental",
+          "pmid": "9118976",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9118976/",
+          "reason": "Fine-wire iliacus evidence supports hip-flexor involvement during hip-flexion sit-ups and leg lifts, without extending the claim to every curl-up."
+        },
+        "juker_psoas_emg_1998": {
+          "title": "Quantitative intramuscular myoelectric activity of lumbar portions of psoas and the abdominal wall during a wide variety of tasks",
+          "type": "experimental",
+          "pmid": "9502361",
+          "doi": "10.1097/00005768-199802000-00020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9502361/",
+          "reason": "Sit-ups recruited psoas more than curl-ups. Supports exact full-sit-up indirect hip-flexor roles, not a measured 0.5 hypertrophy equivalence or general lifting credit."
+        },
+        "reinold_supraspinatus_emg_2007": {
+          "title": "Electromyographic analysis of the supraspinatus and deltoid muscles during 3 common rehabilitation exercises",
+          "type": "experimental",
+          "pmid": "18174934",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18174934/",
+          "reason": "Fine-wire EMG supports supraspinatus involvement in full-can scaption and prone horizontal abduction with external rotation. The incline reverse-fly mapping is a medium-confidence extrapolation; 0.5 remains the DB++ accounting convention."
+        },
+        "kim_split_squat_ankle_emg_2017": {
+          "title": "Comparison of Activities of Tibialis Anterior, Peroneus Longus, and Tibialis Posterior Muscles according to Lunge Squats and Bulgarian Split Squats in a Healthy Population",
+          "type": "experimental",
+          "doi": "10.29273/jkema.2017.1.1.26",
+          "url": "https://www.jkema.org/archive/view_article?pid=jkema-1-1-26",
+          "reason": "Measures ankle-stability activation during held squat postures; insufficient to assign 0.5 tibialis sets to ordinary squats or lunges."
+        },
+        "neck_shrug_training_1997": {
+          "title": "Effects of neck muscle training and detraining on neck muscle strength",
+          "type": "training_intervention",
+          "doi": "10.7600/jspfsm1949.46.201",
+          "url": "https://www.jstage.jst.go.jp/article/jspfsm1949/46/2/46_2_201/_article/-char/en",
+          "reason": "Narrow-grip shrug intervention suggests neck-strength transfer in a specific protocol; does not establish an independent neck hypertrophy dose for all shrug variants, so no blanket 0.5 credit is awarded."
         }
       },
       "patterns": {
@@ -526,7 +622,8 @@
           "summary": "Intramuscular/surface EMG directly supports infraspinatus and teres-minor as principal external rotators, with deltoid/scapular muscles contributing by position.",
           "references": [
             "external_rotation_emg_2004",
-            "external_rotation_roles_2012"
+            "external_rotation_roles_2012",
+            "aaos_rotator_cuff_conditioning"
           ]
         },
         "elbow_flexion": {
@@ -728,7 +825,8 @@
           "summary": "EMG directly supports subscapularis as a major internal rotator, with arm position strongly affecting selective activation.",
           "references": [
             "internal_rotation_emg_2003",
-            "subscapularis_exercise_2003"
+            "subscapularis_exercise_2003",
+            "aaos_rotator_cuff_conditioning"
           ]
         },
         "hip_flexion": {
@@ -736,7 +834,10 @@
           "summary": "A systematic review and fine-wire EMG evidence directly support iliopsoas and related hip-flexor recruitment during leg raises and loaded hip-flexion tasks.",
           "references": [
             "hip_flexor_systematic_review_2024",
-            "psoas_aslr_emg_2010"
+            "psoas_aslr_emg_2010",
+            "osu_iliopsoas_progression",
+            "cuh_hip_flexion",
+            "uw_seated_hip_flexion"
           ]
         },
         "plantar_flexion_bent_knee": {
@@ -752,7 +853,12 @@
           "status": "supported",
           "summary": "Dorsiflexion training studies directly record tibialis anterior activation during resisted dorsiflexion contractions.",
           "references": [
-            "dorsiflexion_tibialis_emg_2019"
+            "dorsiflexion_tibialis_emg_2019",
+            "aaos_ankle_conditioning",
+            "nhs_toe_raise",
+            "nhs_seated_toe_raise",
+            "nhs_strength_balance_toe_raise",
+            "tib_bar_manufacturer"
           ]
         },
         "anti_extension": {
@@ -1128,6 +1234,38 @@
             "forearm_grip_emg_2019",
             "power_grip_emg_2015"
           ]
+        },
+        "neck_rotation": {
+          "status": "supported",
+          "summary": "Hand-resisted cervical rotation is documented by NHS exercise guidance; direct neck credit follows the DB++ model.",
+          "references": [
+            "nhs_resisted_neck_rotation"
+          ]
+        },
+        "sit_up_hip_flexor_contribution": {
+          "status": "indirect_support",
+          "summary": "Exact full sit-up records include indirect hip-flexor credit based on iliacus/psoas studies. Curl-ups are excluded. The 0.5 fraction is an accounting convention, not a study-derived dose equivalence.",
+          "references": [
+            "andersson_hip_flexor_emg_1997",
+            "juker_psoas_emg_1998",
+            "fractional_sets_meta_regression_2025"
+          ]
+        },
+        "scaption_cuff_contribution": {
+          "status": "indirect_support",
+          "summary": "Full-can scapular-plane elevation recruits supraspinatus. DB++ conservatively records indirect cuff credit alongside deltoid/trapezius roles, without claiming EMG establishes 0.5 hypertrophy sets.",
+          "references": [
+            "reinold_supraspinatus_emg_2007",
+            "fractional_sets_meta_regression_2025"
+          ]
+        },
+        "reverse_fly_external_rotation_cuff_contribution": {
+          "status": "indirect_support",
+          "summary": "Prone full-can horizontal-abduction evidence supports cuff involvement. Transfer to the catalog incline reverse fly with external rotation is uncertain and remains medium confidence; ordinary reverse flyes are unchanged.",
+          "references": [
+            "reinold_supraspinatus_emg_2007",
+            "fractional_sets_meta_regression_2025"
+          ]
         }
       }
     },
@@ -1154,114 +1292,114 @@
       "catalogs": {
         "es": {
           "source": "translations/es.json",
-          "sha256": "1956659e73432cb81672142c0ba2aef35d5cc6000e3ca6f8fc2e85990ceaf907",
-          "entryCount": 927,
+          "sha256": "aba38ab609f2d824d7d667f678ec013abde30dc3886cee3c3760d67821ed642d",
+          "entryCount": 938,
           "reviewedCount": 1,
-          "provisionalCount": 926,
+          "provisionalCount": 937,
           "untranslatedCount": 0
         },
         "de": {
           "source": "translations/de.json",
-          "sha256": "10e7e193f008d02f560f8a0277b68aa0415e8cd3446647b2e223a5c757103633",
-          "entryCount": 927,
+          "sha256": "56429f7acfc517f6399f72fe3502d334e27a88e1cf5e17d42de63475f3e836c0",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "zh-Hans": {
           "source": "translations/zh-Hans.json",
-          "sha256": "b840fe2a5c423e87ad1f012b085c447ee9b46fc1781c61c62047ded9525d9532",
-          "entryCount": 927,
+          "sha256": "925dd467249366d232a8b9fde17c944900307bd214199e4d1a0d05872c8a40ff",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "zh-Hant": {
           "source": "translations/zh-Hant.json",
-          "sha256": "723f2434545c27b075ff64a161116eea65d0327ac608f3f6a2595ded8db47e1b",
-          "entryCount": 927,
+          "sha256": "e0ff26b893f54ddf9c7e14ae5787fe798629829e4a08b16c956bb16bfdb48897",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "pt-BR": {
           "source": "translations/pt-BR.json",
-          "sha256": "bdbe75bf7c268766c3c34fc2436ae8a9b3c2aa2a83afc7f48369e3fdf284d775",
-          "entryCount": 927,
+          "sha256": "35017b79997fc17c2b25c1e8c936640df6c2a677495ad58de3bef80b1bfaaf58",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "fr": {
           "source": "translations/fr.json",
-          "sha256": "1279d69dbcf0434d91e639206b15b86b33387fdfa9f722feebdcd470d8b94922",
-          "entryCount": 927,
+          "sha256": "c2c79bf36f40e334d71d0deb28a0a66d011a9b47b4b95c081707149a0dc8fd42",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ja": {
           "source": "translations/ja.json",
-          "sha256": "a1cf36c463efa9ee956b8f3ce295193619c99c16698777b4931b49e047d2e47b",
-          "entryCount": 927,
+          "sha256": "27f0bb0e6eb99ff7f4a7e1bd86815b31f11fb9f9e19c941f370f602a3f707496",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ko": {
           "source": "translations/ko.json",
-          "sha256": "da3408380ada1fbbea5a59c142bbef5ebe7ab6cf88ce76119d51fd9399868aa3",
-          "entryCount": 927,
+          "sha256": "e3d5195175b1b180c277ed561542bcc7dc6799e8683cf4270f4d6a7d91c9d490",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "hi": {
           "source": "translations/hi.json",
-          "sha256": "e02fef7a4167e47b44583956bf92bb4b203c1dd16b2a7c80f85b79adbbd5e9ae",
-          "entryCount": 927,
+          "sha256": "daf55023ceb906b9eee34dad2d65226fdf75edf31e81142b5f9d2b0be47dff62",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ar": {
           "source": "translations/ar.json",
-          "sha256": "511e86ecf866ee8514aad070755a48b32bfc907c0febf3c501a1641651bff892",
-          "entryCount": 927,
+          "sha256": "99c21ce982f45b7bc7779d97e749df05b8463394972441e095eb09ea1fd45832",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "he": {
           "source": "translations/he.json",
-          "sha256": "7b762bf9716e475bc4e4006659fe3918180aede5aeba4d07d46df4a1f17809e2",
-          "entryCount": 927,
+          "sha256": "d907728effbdd0739c9d1ccf48de369e7b0e347d131add806a5d5b2e271bcd15",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "ru": {
           "source": "translations/ru.json",
-          "sha256": "f10a26463b73de75310139601a70993b45eeda8e7fd469d69c0825c12edf582e",
-          "entryCount": 927,
+          "sha256": "718224533546d3e9574da8746d0f71c1e0d4865f73c3ba4aed2856afe91e830a",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "nl": {
           "source": "translations/nl.json",
-          "sha256": "02becd3c1c1ce9fa7a2e25086f90aaab4d07e6484ac8eff790c131e640bf83f7",
-          "entryCount": 927,
+          "sha256": "c0c7ea82f80343e4ae02b04efd3e7fb9c761ccaa7717da0a88220b3e9dd29c20",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         },
         "it": {
           "source": "translations/it.json",
-          "sha256": "d9dfa2ea4296fdf3a4db5dd9f564f930ad4b85ae5c0207f9b52f0200f902c127",
-          "entryCount": 927,
+          "sha256": "a8b7a07eb26e3254d3cc3e0f9cfa337c26fae3f1b4dfd1d5e4f13258f97fe6f8",
+          "entryCount": 938,
           "reviewedCount": 0,
-          "provisionalCount": 927,
+          "provisionalCount": 938,
           "untranslatedCount": 0
         }
       }
@@ -1288,36 +1426,36 @@
       "rotator_cuff",
       "hip_flexors"
     ],
-    "sourceExerciseCount": 927,
+    "sourceExerciseCount": 938,
     "upstreamExerciseCount": 873,
-    "curatedExerciseCount": 54,
-    "outputExerciseCount": 927,
+    "curatedExerciseCount": 65,
+    "outputExerciseCount": 938,
     "completeness": "full"
   },
-  "eligibleExercises": 724,
+  "eligibleExercises": 735,
   "confidenceCounts": {
-    "high": 837,
-    "medium": 90
+    "medium": 95,
+    "high": 843
   },
   "reviewPriorityCounts": {
-    "reviewed": 635,
+    "rule_review": 94,
     "excluded_verified": 203,
-    "rule_review": 89
+    "reviewed": 641
   },
   "reviewReasonCounts": {
+    "indirect_evidence_pattern": 19,
     "non_volume_category:stretching": 123,
     "complex_pattern_bookkeeping": 73,
     "non_volume_category:plyometrics": 61,
-    "indirect_evidence_pattern": 14,
     "non_volume_named_override": 2,
     "non_volume_category:cardio": 14,
     "isolation_primary_secondary_fallback": 3
   },
   "evidenceStatusCounts": {
-    "supported": 645,
-    "complex_supported": 73,
-    "indirect_support": 14
+    "indirect_support": 19,
+    "supported": 652,
+    "complex_supported": 73
   },
-  "reviewQueueSize": 89,
+  "reviewQueueSize": 94,
   "lowConfidenceIds": []
 }
