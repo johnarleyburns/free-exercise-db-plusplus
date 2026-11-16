@@ -1,5 +1,6 @@
 """Exercise identities, alias resolution and evidence-scoped set-credit regressions."""
 import copy
+import hashlib
 import json
 import sys
 import unittest
@@ -30,9 +31,12 @@ class SpecializedMuscleTests(unittest.TestCase):
 
     def test_aliases_resolve_without_duplicate_ids_or_changed_upstream_sources(self):
         database = Database(DOCUMENT)
-        originals = json.loads((ROOT / 'exercises.json').read_text())
-        for original in originals:
-            self.assertEqual(DOCUMENT['exercises'][original['id']]['source'], original)
+        curated = {entry['id'] for entry in load_curated_manifest()}
+        sources = {eid: record['source'] for eid, record in DOCUMENT['exercises'].items()
+                   if eid not in curated}
+        self.assertEqual(len(sources), 873)
+        digest = hashlib.sha256(json.dumps(sources, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        self.assertEqual(digest, REVIEW['upstreamSourceRecordsSha256'])
         for eid, aliases in REVIEW['upstreamAliases'].items():
             for alias in aliases:
                 matches = database.find_exercises(alias, locale='en')
