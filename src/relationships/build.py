@@ -49,6 +49,7 @@ FAMILIES = {
     "shoulder_abduction": ("Shoulder Abduction", ()),
     "core_stability": ("Core Stability", ()),
     "neck_conditioning": ("Neck Conditioning", ()),
+    "shoulder_rotation": ("Shoulder Rotation", ()),
     "tibialis_raise": ("Tibialis Raise", ("tibialis dorsiflexion",)),
 }
 
@@ -114,7 +115,7 @@ def _dimensions(eid: str, rec: dict[str, Any]) -> dict[str, str]:
     if "incline" in text or "incline_press" in rec.get("annotation", {}).get("patterns", []): dims["angle"] = "incline"
     elif "decline" in text or "decline_press" in rec.get("annotation", {}).get("patterns", []): dims["angle"] = "decline"
     elif "flat" in text: dims["angle"] = "flat"
-    for value, tokens in (("unilateral", ("one-arm", "one arm", "single-arm", "single arm", "one-legged", "one leg")), ("bilateral", ("two-arm", "two arm", "two-dumbbell", "two dumbbell"))):
+    for value, tokens in (("unilateral", ("one-arm", "one arm", "single-arm", "single arm", "one-legged", "one leg", "single-leg", "single leg")), ("bilateral", ("two-arm", "two arm", "two-dumbbell", "two dumbbell"))):
         if any(t in text for t in tokens): dims["laterality"] = value; break
     if "wide stance" in text or "wide_stance" in eid.casefold(): dims["stance"] = "wide"
     elif "narrow stance" in text or "narrow_stance" in eid.casefold(): dims["stance"] = "narrow"

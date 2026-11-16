@@ -1,0 +1,251 @@
+{
+  "reviewedOn": "2026-11-16",
+  "references": {
+    "aaos_ankle_conditioning": {
+      "title": "Foot and Ankle Conditioning Program",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.orthoinfo.org/recovery/foot-and-ankle-conditioning-program/",
+      "reason": "Documents band-resisted dorsiflexion and identifies anterior tibialis; supports exercise selection, not a measured set-credit fraction."
+    },
+    "nhs_toe_raise": {
+      "title": "Strength and balance exercise programme for falls prevention",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.southtees.nhs.uk/resources/strength-and-balance-exercise-programme-for-falls-prevention/",
+      "reason": "Documents lifting the forefoot while retaining heel contact; supports the bodyweight toe-raise movement."
+    },
+    "nhs_seated_toe_raise": {
+      "title": "Lower limb strengthening activities",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.kentcht.nhs.uk/leaflet/lower-limb-strengthening-activities/",
+      "reason": "Documents seated toe lifts with heels down; supports toe-raise terminology and accessible progression."
+    },
+    "nhs_strength_balance_toe_raise": {
+      "title": "Strength and balance exercises",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.nhsinform.scot/healthy-living/preventing-falls/keeping-well/strength-and-balance-exercises",
+      "reason": "Documents toe raises; corroborates bodyweight dorsiflexion as a distinct exercise from calf raises."
+    },
+    "tib_bar_manufacturer": {
+      "title": "Tib Bar – Tibialis Trainer",
+      "type": "manufacturer_exercise_guide",
+      "url": "https://tib-bar.com/products/tib-bar",
+      "reason": "Documents bilateral and unilateral tib-bar equipment and seated dorsiflexion technique only; commercial injury-prevention claims are not adopted."
+    },
+    "osu_iliopsoas_progression": {
+      "title": "Gluteus Medius Repair: Appendix A, Psoas Progression",
+      "type": "clinical_exercise_guide",
+      "url": "https://medicine.osu.edu/-/media/files/medicine/departments/sports-medicine/medical-professionals/hip/glute-med-repair-2020.pdf?hash=61FBA1E505B6173CD4D4C753FC8E8A8484725F81&la=en",
+      "reason": "Documents supine short-lever, seated, and standing resisted hip flexion; supports distinct positions, not transfer of postoperative dosage to general training."
+    },
+    "cuh_hip_flexion": {
+      "title": "Hip strengthening exercises",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.cuh.nhs.uk/patient-information/hip-strengthening-exercises/",
+      "reason": "Documents supported standing hip flexion with the knee bent and a hold; supports the standing hip-flexion hold."
+    },
+    "uw_seated_hip_flexion": {
+      "title": "Physical Therapy Before and After Your ACL Surgery: Seated Hip Flexion",
+      "type": "clinical_exercise_guide",
+      "url": "https://healthonline.washington.edu/sites/default/files/record_pdfs/Physical-Therapy-Before-After-Your-ACL-Surgery-CH.pdf",
+      "reason": "Documents seated bent-knee hip flexion as distinct from a straight-leg raise; supports exercise identity only."
+    },
+    "nhs_resisted_neck_rotation": {
+      "title": "Neck pain: Resisted neck exercises",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.dynamichealth.nhs.uk/help-and-advice/neck-pain/",
+      "reason": "Documents hand-resisted cervical rotation, flexion and side flexion; rotation is a distinct addition, while existing flexion/side records retain their IDs."
+    },
+    "aaos_rotator_cuff_conditioning": {
+      "title": "Rotator Cuff and Shoulder Conditioning Program",
+      "type": "clinical_exercise_guide",
+      "url": "https://www.orthoinfo.org/bodypart/shoulder/rotator-cuff-and-shoulder-conditioning-program/?webid=24DCE756",
+      "reason": "Documents 90-degree-abducted external rotation, supine rotation and side-lying internal/external rotation. Existing side-lying external rotation is retained with aliases."
+    },
+    "andersson_hip_flexor_emg_1997": {
+      "title": "Abdominal and hip flexor muscle activation during various training exercises",
+      "type": "experimental",
+      "pmid": "9118976",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9118976/",
+      "reason": "Fine-wire iliacus evidence supports hip-flexor involvement during hip-flexion sit-ups and leg lifts, without extending the claim to every curl-up."
+    },
+    "juker_psoas_emg_1998": {
+      "title": "Quantitative intramuscular myoelectric activity of lumbar portions of psoas and the abdominal wall during a wide variety of tasks",
+      "type": "experimental",
+      "pmid": "9502361",
+      "doi": "10.1097/00005768-199802000-00020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9502361/",
+      "reason": "Sit-ups recruited psoas more than curl-ups. Supports exact full-sit-up indirect hip-flexor roles, not a measured 0.5 hypertrophy equivalence or general lifting credit."
+    },
+    "reinold_supraspinatus_emg_2007": {
+      "title": "Electromyographic analysis of the supraspinatus and deltoid muscles during 3 common rehabilitation exercises",
+      "type": "experimental",
+      "pmid": "18174934",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18174934/",
+      "reason": "Fine-wire EMG supports supraspinatus involvement in full-can scaption and prone horizontal abduction with external rotation. The incline reverse-fly mapping is a medium-confidence extrapolation; 0.5 remains the DB++ accounting convention."
+    },
+    "kim_split_squat_ankle_emg_2017": {
+      "title": "Comparison of Activities of Tibialis Anterior, Peroneus Longus, and Tibialis Posterior Muscles according to Lunge Squats and Bulgarian Split Squats in a Healthy Population",
+      "type": "experimental",
+      "doi": "10.29273/jkema.2017.1.1.26",
+      "url": "https://www.jkema.org/archive/view_article?pid=jkema-1-1-26",
+      "reason": "Measures ankle-stability activation during held squat postures; insufficient to assign 0.5 tibialis sets to ordinary squats or lunges."
+    },
+    "neck_shrug_training_1997": {
+      "title": "Effects of neck muscle training and detraining on neck muscle strength",
+      "type": "training_intervention",
+      "doi": "10.7600/jspfsm1949.46.201",
+      "url": "https://www.jstage.jst.go.jp/article/jspfsm1949/46/2/46_2_201/_article/-char/en",
+      "reason": "Narrow-grip shrug intervention suggests neck-strength transfer in a specific protocol; does not establish an independent neck hypertrophy dose for all shrug variants, so no blanket 0.5 credit is awarded."
+    }
+  },
+  "patterns": {
+    "neck_rotation": {
+      "status": "supported",
+      "summary": "Hand-resisted cervical rotation is documented by NHS exercise guidance; direct neck credit follows the DB++ model.",
+      "references": [
+        "nhs_resisted_neck_rotation"
+      ]
+    },
+    "sit_up_hip_flexor_contribution": {
+      "status": "indirect_support",
+      "summary": "Exact full sit-up records include indirect hip-flexor credit based on iliacus/psoas studies. Curl-ups are excluded. The 0.5 fraction is an accounting convention, not a study-derived dose equivalence.",
+      "references": [
+        "andersson_hip_flexor_emg_1997",
+        "juker_psoas_emg_1998",
+        "fractional_sets_meta_regression_2025"
+      ]
+    },
+    "scaption_cuff_contribution": {
+      "status": "indirect_support",
+      "summary": "Full-can scapular-plane elevation recruits supraspinatus. DB++ conservatively records indirect cuff credit alongside deltoid/trapezius roles, without claiming EMG establishes 0.5 hypertrophy sets.",
+      "references": [
+        "reinold_supraspinatus_emg_2007",
+        "fractional_sets_meta_regression_2025"
+      ]
+    },
+    "reverse_fly_external_rotation_cuff_contribution": {
+      "status": "indirect_support",
+      "summary": "Prone full-can horizontal-abduction evidence supports cuff involvement. Transfer to the catalog incline reverse fly with external rotation is uncertain and remains medium confidence; ordinary reverse flyes are unchanged.",
+      "references": [
+        "reinold_supraspinatus_emg_2007",
+        "fractional_sets_meta_regression_2025"
+      ]
+    }
+  },
+  "patternReferences": {
+    "dorsiflexion": [
+      "aaos_ankle_conditioning",
+      "nhs_toe_raise",
+      "nhs_seated_toe_raise",
+      "nhs_strength_balance_toe_raise",
+      "tib_bar_manufacturer"
+    ],
+    "hip_flexion": [
+      "osu_iliopsoas_progression",
+      "cuh_hip_flexion",
+      "uw_seated_hip_flexion"
+    ],
+    "shoulder_external_rotation": [
+      "aaos_rotator_cuff_conditioning"
+    ],
+    "shoulder_internal_rotation": [
+      "aaos_rotator_cuff_conditioning"
+    ]
+  },
+  "annotationOverrides": {
+    "Sit-Up": {
+      "patterns": [
+        "sit_up_hip_flexor_contribution"
+      ],
+      "direct": [
+        "abdominals"
+      ],
+      "indirect": [
+        "hip_flexors"
+      ],
+      "stabilizers": [],
+      "confidence": "medium",
+      "reviewReasons": [
+        "indirect_evidence_pattern"
+      ]
+    },
+    "3_4_Sit-Up": {
+      "patterns": [
+        "sit_up_hip_flexor_contribution"
+      ],
+      "direct": [
+        "abdominals"
+      ],
+      "indirect": [
+        "hip_flexors"
+      ],
+      "stabilizers": [],
+      "confidence": "medium",
+      "reviewReasons": [
+        "indirect_evidence_pattern"
+      ]
+    },
+    "Weighted_Sit-Ups_-_With_Bands": {
+      "patterns": [
+        "sit_up_hip_flexor_contribution"
+      ],
+      "direct": [
+        "abdominals"
+      ],
+      "indirect": [
+        "hip_flexors"
+      ],
+      "stabilizers": [],
+      "confidence": "medium",
+      "reviewReasons": [
+        "indirect_evidence_pattern"
+      ]
+    },
+    "Dumbbell_Scaption": {
+      "patterns": [
+        "scaption_cuff_contribution"
+      ],
+      "direct": [
+        "shoulders"
+      ],
+      "indirect": [
+        "traps",
+        "rotator_cuff"
+      ],
+      "stabilizers": [],
+      "confidence": "medium",
+      "reviewReasons": [
+        "indirect_evidence_pattern"
+      ]
+    },
+    "Reverse_Flyes_With_External_Rotation": {
+      "patterns": [
+        "reverse_fly_external_rotation_cuff_contribution"
+      ],
+      "direct": [
+        "shoulders",
+        "middle_back"
+      ],
+      "indirect": [
+        "traps",
+        "rotator_cuff"
+      ],
+      "stabilizers": [],
+      "confidence": "medium",
+      "reviewReasons": [
+        "indirect_evidence_pattern"
+      ]
+    }
+  },
+  "upstreamAliases": {
+    "External_Rotation": [
+      "Side-Lying Dumbbell External Rotation",
+      "Lying Dumbbell External Rotation"
+    ],
+    "Hip_Flexion_with_Band": [
+      "Standing Banded Hip Flexion",
+      "Banded March",
+      "Resistance Band March"
+    ]
+  }
+}

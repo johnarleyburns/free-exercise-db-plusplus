@@ -7,7 +7,7 @@ It preserves every upstream exercise record and adds normalized movement classif
 muscle-role annotations, resistance-volume eligibility, confidence, and embedded evidence
 provenance for training apps, coaches, researchers, and fitness software.
 
-Current release: **v1.18.2**
+Current release: **v1.19.0**
 
 ## Build an app with DB++
 
@@ -401,3 +401,5 @@ PLAN/ACTUAL/TARGET analysis uses the named `dbpp-default-volume-v1` counting pol
 ## Adaptive coaching (v1.9)
 
 The packaged Python API exposes deterministic advisory coaching: `from fedbpp.coaching import adapt_plan, COACHING_POLICIES`. It derives or accepts canonical TrainingState, emits explainable CoachDecision records, and returns an immutable proposed PLAN only after canonical validation and evaluation. DB++ never assigns, activates, sends, persists, or accepts a proposal. See [Adaptive coaching](docs/ADAPTIVE-COACHING.md).
+
+Non-English exercise names, including provisional translations, are allowed in releases with their review status preserved. Native review is encouraged rather than required for publication; schema, ID, provenance and localization integrity checks remain mandatory. See [localization release policy](translations/README.md#release-policy-2026-11-16).

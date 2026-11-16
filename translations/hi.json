@@ -7416,6 +7416,94 @@
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "preferred": "बैंड से टखने का डॉर्सीफ्लेक्शन",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "preferred": "कंधा 90 डिग्री खोलकर बैंड से बाहरी घुमाव",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "preferred": "प्रतिरोध के साथ गर्दन घुमाने का आइसोमेट्रिक व्यायाम",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hip_Flexion": {
+      "preferred": "बैठकर कूल्हे का फ्लेक्शन",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Tib_Bar_Raise": {
+      "preferred": "बैठकर टिब बार से पंजे उठाना",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "preferred": "करवट लेटकर डंबल से कंधे का अंदरूनी घुमाव",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "preferred": "एक पैर से टिब बार पंजा उठाना",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "preferred": "खड़े होकर कूल्हे का फ्लेक्शन होल्ड",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Raise": {
+      "preferred": "खड़े होकर पंजे उठाना",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "preferred": "पीठ के बल डंबल से कंधे का घुमाव",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "preferred": "पीठ के बल घुटना मोड़कर कूल्हे का फ्लेक्शन",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
     }
   }
 }

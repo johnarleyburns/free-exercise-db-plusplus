@@ -7416,6 +7416,94 @@
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "preferred": "כפיפה גבית בקרסול עם גומייה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "preferred": "סיבוב חיצוני עם גומייה בהרחקת כתף של 90 מעלות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "preferred": "סיבוב צוואר איזומטרי נגד התנגדות",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hip_Flexion": {
+      "preferred": "כפיפת ירך בישיבה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Tib_Bar_Raise": {
+      "preferred": "הרמת קדמת כף הרגל עם מוט טיביאליס בישיבה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "preferred": "סיבוב פנימי של הכתף עם משקולת בשכיבה על הצד",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "preferred": "הרמת קדמת כף הרגל עם מוט טיביאליס ברגל אחת",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "preferred": "החזקת כפיפת ירך בעמידה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Raise": {
+      "preferred": "הרמת קדמת כף הרגל בעמידה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "preferred": "סיבוב כתף עם משקולת בשכיבה על הגב",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "preferred": "כפיפת ירך בשכיבה על הגב עם ברך כפופה",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
     }
   }
 }

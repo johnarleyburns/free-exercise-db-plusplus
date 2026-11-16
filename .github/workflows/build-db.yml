@@ -152,6 +152,9 @@ jobs:
       - name: Verify catalog expansion contract
         run: python tests/test_catalog_expansion.py free-exercise-db-plusplus.json exercise-relationships.json
 
+      - name: Verify specialized muscle contracts
+        run: python -m unittest discover -s tests/catalog -v
+
       - name: Verify golden mappings
         run: python tests/test_golden_mappings.py free-exercise-db-plusplus.json
 

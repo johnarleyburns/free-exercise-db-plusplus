@@ -7416,6 +7416,94 @@
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "preferred": "Dorsiflexão de tornozelo com elástico",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "preferred": "Rotação externa com elástico e abdução de 90 graus",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "preferred": "Rotação cervical isométrica resistida",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hip_Flexion": {
+      "preferred": "Flexão de quadril sentado",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Tib_Bar_Raise": {
+      "preferred": "Elevação de tibial com barra sentado",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "preferred": "Rotação interna com halter deitado de lado",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "preferred": "Elevação de tibial com barra unilateral",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "preferred": "Flexão de quadril em pé com sustentação",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Raise": {
+      "preferred": "Elevação das pontas dos pés em pé",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "preferred": "Rotação de ombro com halter deitado de costas",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "preferred": "Flexão de quadril deitado com joelho flexionado",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
     }
   }
 }

@@ -7416,6 +7416,94 @@
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "preferred": "Dorsiflessione della caviglia con elastico",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "preferred": "Rotazione esterna con elastico a 90 gradi di abduzione",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "preferred": "Rotazione cervicale isometrica contro resistenza",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hip_Flexion": {
+      "preferred": "Flessione dell’anca da seduti",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Tib_Bar_Raise": {
+      "preferred": "Sollevamento tibiale con barra da seduti",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "preferred": "Rotazione interna con manubrio sul fianco",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "preferred": "Sollevamento tibiale con barra a una gamba",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "preferred": "Tenuta della flessione dell’anca in piedi",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Raise": {
+      "preferred": "Sollevamento delle punte in stazione eretta",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "preferred": "Rotazione della spalla con manubrio in posizione supina",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "preferred": "Flessione dell’anca supina con ginocchio piegato",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
     }
   }
 }

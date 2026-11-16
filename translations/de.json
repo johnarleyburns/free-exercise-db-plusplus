@@ -7416,6 +7416,94 @@
         "repo-domain-terminology"
       ],
       "reviewStatus": "provisional"
+    },
+    "Band_Ankle_Dorsiflexion": {
+      "preferred": "Sprunggelenk-Dorsalflexion mit Band",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Band_External_Rotation_90_Abduction": {
+      "preferred": "Außenrotation mit Band bei 90 Grad Abduktion",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Resisted_Neck_Rotation_Isometric": {
+      "preferred": "Isometrische Nackenrotation gegen Widerstand",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Hip_Flexion": {
+      "preferred": "Hüftbeugung im Sitzen",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Seated_Tib_Bar_Raise": {
+      "preferred": "Tibialisheben mit Tib-Bar im Sitzen",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Side-Lying_Dumbbell_Internal_Rotation": {
+      "preferred": "Innenrotation mit Kurzhantel in Seitenlage",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Single-Leg_Tib_Bar_Raise": {
+      "preferred": "Einbeiniges Tibialisheben mit Tib-Bar",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Hip_Flexion_Hold": {
+      "preferred": "Hüftbeugung im Stehen halten",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Standing_Toe_Raise": {
+      "preferred": "Zehenheben im Stehen",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Dumbbell_Shoulder_Rotation": {
+      "preferred": "Schulterrotation mit Kurzhantel in Rückenlage",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
+    },
+    "Supine_Short-Lever_Hip_Flexion": {
+      "preferred": "Hüftbeugung in Rückenlage mit gebeugtem Knie",
+      "aliases": [],
+      "sourceRefs": [
+        "repo-domain-terminology"
+      ],
+      "reviewStatus": "provisional"
     }
   }
 }
